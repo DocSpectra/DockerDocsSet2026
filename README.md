@@ -64,7 +64,7 @@ The verifier needs no network access, credentials or other repositories. It chec
 
 ## License and attribution
 
-The documentation in the `docs-*` branches is Docker documentation, "Copyright 2013-2026 Docker, Inc., released under the Apache 2.0 license"; each branch carries Docker's `LICENSE`, and the refinement branches carry a modification notice. Terms for the package's own material are in [`LICENSES.md`](LICENSES.md).
+DockerDocsSet2026 is released under the [Apache License 2.0](LICENSE). The documentation in the `docs-*` branches is Docker documentation, "Copyright 2013-2026 Docker, Inc., released under the Apache 2.0 license"; each branch carries Docker's `LICENSE`, and the refinement branches carry a modification notice. [`LICENSES.md`](LICENSES.md) lists the origin and terms of each part.
 
 ## Citation
 
@@ -77,6 +77,6 @@ Cite the dataset with [`CITATION.cff`](CITATION.cff) or the BibTeX in [`CITATION
   year         = {2026},
   howpublished = {Dataset, GitHub repository},
   url          = {https://github.com/DocSpectra/DockerDocsSet2026},
-  note         = {Version 1.0.0. Derived from Docker documentation (docker/docs), commit 274681c49355bd951ae60c9208e854ff70f12474}
+  note         = {Version 1.0.0 (Git tag v1.0.0). Apache License 2.0. Derived from Docker documentation (docker/docs), commit 274681c49355bd951ae60c9208e854ff70f12474}
 }
 ```

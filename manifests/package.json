@@ -15,7 +15,7 @@
   },
   "builder": {
     "script": "docker_docs_set_26.py",
-    "sha256": "dce135960513486c59936761981de3b620f6aa98d6da3e918f89066b865b56c0"
+    "sha256": "cf580e9791f85329e252ea83182ee49cd576a4930d6f5b774ed73ffc6451643c"
   },
   "judgments": {
     "tier2_qrels": [

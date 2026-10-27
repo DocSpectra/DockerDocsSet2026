@@ -10,6 +10,8 @@ abstract: >-
   documentation version. Used for the Docker application in the ICSC 2027 submission
   "Measuring Directed Documentation Structure with Normalized Magnetic Spectra".
 version: "1.0.0"
+date-released: "2026-10-27"
+license: Apache-2.0
 authors:
   - family-names: "D'Antonio"
     given-names: "Rocker"
@@ -17,6 +19,10 @@ authors:
     affiliation: "Mississippi State University"
 repository-code: "https://github.com/DocSpectra/DockerDocsSet2026"
 url: "https://github.com/DocSpectra/DockerDocsSet2026"
+identifiers:
+  - type: url
+    value: "https://github.com/DocSpectra/DockerDocsSet2026/tree/v1.0.0"
+    description: "Version 1.0.0, Git tag v1.0.0"
 keywords:
   - documentation
   - Docker
