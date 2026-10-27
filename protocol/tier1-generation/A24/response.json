@@ -1,0 +1,306 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "33a7bb365f92a69197bfb9807131ab7d54bae883420dd75460",
+      "task": null,
+      "rejection_reason": "Invalid cluster identifier."
+    },
+    {
+      "cluster_id": "33a7bb365f92a69197bfb9807131ab4dcc2781cae01b7d54bae883420dd75460",
+      "task": {
+        "question": "I maintain a working React/MUI Docker extension prototype and want to prepare it for Marketplace submission. What UI changes and local verification should I prioritize so it fits Docker Desktop, remains maintainable as its appearance changes, and is ready for the documented submission process? Include how to package the release information and handle subsequent updates.",
+        "actor": "Maintainer of a working React/MUI Docker extension prototype.",
+        "trigger": "The prototype is ready for a UI readiness review before Marketplace submission.",
+        "goal": "Prepare a consistent, maintainable extension UI and an actionable verification, release, and submission plan.",
+        "observable_success": "The maintainer can apply a concrete UI checklist, rebuild and preview the extension locally, prepare its release information, and follow the documented validation and submission route.",
+        "realism_rationale": "The publication documentation explicitly provides a workflow for making an extension discoverable and installable. The theme documentation establishes that appearance can change without warning, making maintainability a substantive constraint on a prepublication UI review.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_index__e34358af",
+            "exact_quote": "You can publish your extension in the Extensions Marketplace to make it more discoverable."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_mui_best_practices__f17acaf7",
+            "exact_quote": "Any specializations you make today will be relative to the current MUI theme, and may look worse when the theme changes."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Use the Docker Material UI theme as the baseline for the existing React/MUI frontend.",
+            "acceptance": "Identifies React+MUI as the officially supported combination and recommends using Docker's Material UI theme to reproduce Docker Desktop's appearance.",
+            "tier_reason": "Establishes the implementation baseline for the requested UI review.",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_index__1cafd635",
+            "exact_quote": "You can use our [Material UI theme](https://www.npmjs.com/package/@docker/docker-mui-theme) to automatically replicate Docker Desktop's look and feel."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Replace fragile visual specialization with semantic MUI styling.",
+            "acceptance": "Recommends minimizing overrides and using typography variants, canned component sizes, and semantic colors instead of fixed typography, pixel sizes, and explicit color codes.",
+            "tier_reason": "Directly addresses the requested resilience to theme changes.",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_mui_best_practices__f17acaf7",
+            "exact_quote": "-  Use canned sizes. e.g. use `size=\"small\"` on buttons, or `fontSize=\"small\"` on icons, instead of specifying sizes in pixels.\n-  Prefer semantic colors. e.g. use `error` or `primary` over explicit color codes."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Include light and dark themes in the UI readiness criteria.",
+            "acceptance": "Requires checking the extension in both light and dark themes and ties the use of Docker's prescribed components and styles to the documented level AA accessibility standard.",
+            "tier_reason": "Both theme modes are an explicit design requirement for a consistent extension.",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_design_guidelines__27a09d2d",
+            "exact_quote": "Ensure the extension has both a light and dark theme. Using the components and styles as per the Docker style guide ensures that your extension meets the [level AA accessibility standard.](https://www.w3.org/WAI/WCAG2AA-Conformance)."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Keep the extension's functional workflow inside Docker Desktop.",
+            "acceptance": "Reviews whether normal functionality sends users to a CLI or webpage and recommends implementing those actions natively inside Docker Desktop.",
+            "tier_reason": "Makes the review address workflow integration as well as appearance.",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_design_guidelines__27a09d2d",
+            "exact_quote": "In order not to disrupt the flow of users, avoid scenarios where the user has to navigate outside Docker Desktop, to the CLI or a webpage for example, in order to carry out certain functionalities."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Explain the documented validation gate and current Marketplace submission route.",
+            "acceptance": "States that validation checks must pass before submission and directs the maintainer to automated submission because manual review is paused.",
+            "tier_reason": "A minimally actionable preparation plan must identify how the prepared extension reaches submission.",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_publish__1aa55ed9",
+            "exact_quote": "The Docker manual review process for extensions is paused at the moment. Submit your extension through the [automated submission process](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Account for the local installation restriction on extensions outside the Marketplace.",
+            "acceptance": "Explains that local development may require deselecting Allow only extensions distributed through the Docker Marketplace in Docker Desktop's Extensions settings.",
+            "tier_reason": "Removes a specific obstacle to local verification.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "You may need to navigate to the **Extensions** tab in Docker Desktop settings and deselect **Allow only extensions distributed through the Docker Marketplace**."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Give a concrete rebuild, install, and preview loop.",
+            "acceptance": "Includes docker build -t <name-of-your-extension> . and docker extension install <name-of-your-extension>, then instructs the maintainer to open the installed frontend under Extensions.",
+            "tier_reason": "Turns the design review into a locally verifiable implementation loop.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "To install the extension in Docker Desktop, run:\n\n```console\n$ docker extension install <name-of-your-extension>\n```"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Offer hot reloading for UI iteration.",
+            "acceptance": "Suggests hot reloading to test UI changes without rebuilding the entire extension and identifies the linked development-preview guidance as the next reference.",
+            "tier_reason": "Provides a documented alternative that reduces iteration work.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire\n> extension."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Make the release image available through Docker Hub.",
+            "acceptance": "Includes publishing the extension image to Docker Hub as part of release preparation.",
+            "tier_reason": "Connects a locally verified prototype to the documented distribution mechanism.",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_index__e34358af",
+            "exact_quote": "- Making the extension image available on [Docker Hub](https://hub.docker.com/)"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Prepare descriptive release material for prospective users.",
+            "acceptance": "Calls for an extension description and screenshots that help users decide whether to install it.",
+            "tier_reason": "Adds the user-facing information needed for a useful release.",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_index__e34358af",
+            "exact_quote": "- Providing information about your extension: description, screenshots, etc. so users can decide to install your extension"
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Provide support and feedback destinations through extension labels.",
+            "acceptance": "Recommends additional label URLs for bug reports, feedback, documentation, and support.",
+            "tier_reason": "Supports users after publication rather than ending the plan at installation.",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_index__e34358af",
+            "exact_quote": "you should also specify additional URLs using [extension labels](labels.md). This direct users to your website for reporting bugs and feedback, and accessing documentation and support."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Explain how subsequent releases are versioned and announced.",
+            "acceptance": "States that a new release uses a new extension image version with an incremented semver tag and that Marketplace extensions receive update notifications for users who installed them.",
+            "tier_reason": "Addresses the requested maintenance and update workflow.",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_index__e34358af",
+            "exact_quote": "Once you have released your extension, you can push a new release just by pushing a new version of the extension image, with an incremented tag (still using `semver` conventions)."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Centralize unavoidable custom UI.",
+            "acceptance": "Advises contacting Docker about missing design-system components first and, if custom UI remains necessary, defining it once in a reusable form.",
+            "tier_reason": "Handles the exception where standard components cannot meet the extension's needs.",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_mui_best_practices__f17acaf7",
+            "exact_quote": "If you define your custom UI in just one place, it’ll make it easier to change in the future if our core theme changes."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Check extension icon visibility independently in both themes.",
+            "acceptance": "Adds an explicit check that the extension icon remains visible in light and dark mode.",
+            "tier_reason": "Catches a concrete theme-specific defect beyond general page styling.",
+            "page_id": "content_manuals_extensions_extensions_sdk_design_design_guidelines__27a09d2d",
+            "exact_quote": "Ensure that your extension icon is visible both in light and dark mode."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Broaden prepublication verification beyond visual inspection.",
+            "acceptance": "Includes testing with potential users, checking crashes, bugs, and performance, and testing on Mac, Windows, and Linux.",
+            "tier_reason": "Adds documented quality checks that can expose problems a local visual review misses.",
+            "page_id": "content_manuals_extensions_extensions_sdk_extensions_publish__1aa55ed9",
+            "exact_quote": "- Test your extension with potential users\n- Test your extension for crashes, bugs, and performance issues\n- Test your extension on various platforms (Mac, Windows, Linux)"
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "83dce0016192a5246cd05cde9a6761225bb4dbf9544067d4749590640d0ffd5f",
+      "task": {
+        "question": "I'm building a Docker Desktop extension whose UI starts a long-running operation. Users need to navigate to another tab and return to see its state. How should I structure the extension, package and configure its components, and connect the frontend to the backend? Give a local build-and-preview plan and identify compatibility or communication pitfalls relevant to this design.",
+        "actor": "Developer implementing a Docker Desktop extension with a long-running operation.",
+        "trigger": "The extension must preserve an operation and its state while users navigate away from its UI.",
+        "goal": "Choose an appropriate component architecture and obtain actionable packaging, metadata, communication, and local verification guidance.",
+        "observable_success": "The developer has a backend ownership plan for the operation and state, matching image and UI metadata, a current SDK communication example, and commands for building, installing, and previewing the extension locally.",
+        "realism_rationale": "The backend tutorial explicitly identifies preserving state across UI navigation as a reason to add a backend. The architecture excerpt explains that leaving the tab terminates the frontend and its subprocesses, creating a concrete lifecycle constraint that requires an architectural decision.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_extensions_extensions_sdk_build_backend_extension_tutorial__f4ff5525",
+            "exact_quote": "Store the extension state, for example when a button starts a long-running process, so that if you navigate away from the extension user interface and comes back, the frontend can pick up where it left off."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_extensions_extensions_sdk_architecture_index__f70577d6",
+            "exact_quote": "When they navigate away from the tab, both the UI itself and all the sub-processes started by it (if any) are terminated."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Place the long-running operation and recoverable state in a backend rather than relying on frontend lifetime.",
+            "acceptance": "Explains that navigating away terminates the UI and its subprocesses, assigns the operation and state to a backend service, and has the returning frontend retrieve that state.",
+            "tier_reason": "Resolves the central lifecycle problem in the user workflow.",
+            "page_id": "content_manuals_extensions_extensions_sdk_architecture_index__f70577d6",
+            "exact_quote": "- To run long-running processes that must outlive the frontend\n- To store data in a local database and serve them back with a REST API"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Explain how to add and package backend code in the extension.",
+            "acceptance": "Distinguishes an init-generated extension, which already has backend setup, from an existing extension that needs a vm source directory and Dockerfile changes to containerize the backend.",
+            "tier_reason": "Makes the chosen backend architecture implementable in the extension image.",
+            "page_id": "content_manuals_extensions_extensions_sdk_build_backend_extension_tutorial__f4ff5525",
+            "exact_quote": "If you created your extension using the `docker extension init` command, you already have a backend setup. Otherwise, you have to first create a `vm` directory that contains the code and updates the Dockerfile to\ncontainerize it."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Configure the image's required metadata and backend service.",
+            "acceptance": "Places metadata.json at the image filesystem root and gives a vm configuration defining either an image or a Compose file for the backend service.",
+            "tier_reason": "Docker Desktop needs this configuration to discover and run the backend.",
+            "page_id": "content_manuals_extensions_extensions_sdk_architecture_metadata__b0e6a5c5",
+            "exact_quote": "The `vm` section defines a backend service that runs inside the Desktop VM. It must define either an `image` or a\n`compose.yaml` file that specifies what service to run in the Desktop VM."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Configure the frontend dashboard tab and its image paths.",
+            "acceptance": "Shows a ui.dashboard-tab configuration with title, root, and src, explaining that root locates UI files inside the image and src names the tab entrypoint.",
+            "tier_reason": "Makes the frontend accessible and aligns its metadata with packaged files.",
+            "page_id": "content_manuals_extensions_extensions_sdk_architecture_metadata__b0e6a5c5",
+            "exact_quote": "`root` specifies the folder where the UI code is within the extension image filesystem.\n`src` specifies the entrypoint that should be loaded in the extension tab."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Use the current SDK service API for frontend-to-backend requests.",
+            "acceptance": "Provides a request example using ddClient.extension.vm.service.get with a backend route and explains that it communicates with the backend defined by the vm metadata.",
+            "tier_reason": "Supplies the concrete communication mechanism needed to recover backend state.",
+            "page_id": "content_manuals_extensions_extensions_sdk_dev_api_backend__1a8fe3a2",
+            "exact_quote": "```typescript\nddClient.extension.vm.service\n .get(\"/some/service\")\n .then((value: any) => console.log(value)\n```"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Establish the Docker Desktop prerequisite.",
+            "acceptance": "Tells the developer to install the latest Docker Desktop before following the extension setup guidance.",
+            "tier_reason": "Adds the documented environment prerequisite.",
+            "page_id": "content_manuals_extensions_extensions_sdk_build_frontend_extension_tutorial__a8814e52",
+            "exact_quote": "Before you start, make sure you have installed the latest version of [Docker Desktop](/manuals/desktop/release-notes.md)."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Scope NodeJS and Go prerequisites to the quickstart scaffolding route.",
+            "acceptance": "States that NodeJS and Go are required when using the quickstart's init command and avoids presenting them as universal requirements for every extension implementation.",
+            "tier_reason": "Prevents unnecessary toolchain assumptions when choosing how to start.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "NodeJS and Go are only required when you follow the quickstart guide to create an extension. It uses the `docker extension init` command to automatically generate boilerplate files."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Address settings that can block installation of the development image.",
+            "acceptance": "Explains that the developer may need to deselect Allow only extensions distributed through the Docker Marketplace in Extensions settings.",
+            "tier_reason": "Provides a specific remedy for a local installation obstacle.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "You may need to navigate to the **Extensions** tab in Docker Desktop settings and deselect **Allow only extensions distributed through the Docker Marketplace**."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Give a local image build command.",
+            "acceptance": "Instructs the developer to enter the extension directory and run docker build -t <name-of-your-extension> . with a consistent image name.",
+            "tier_reason": "Adds the concrete build step for exercising the proposed packaging.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "To build the extension, move into the newly created directory and run:\n\n```console\n$ docker build -t <name-of-your-extension> .\n```"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Give the install command and frontend preview location.",
+            "acceptance": "Uses docker extension install <name-of-your-extension> and directs the developer to open the extension's frontend from the Extensions menu after installation.",
+            "tier_reason": "Completes the local verification path from built image to visible frontend.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "To preview the extension in Docker Desktop, once the installation is complete and you should\nsee a **Quickstart** item underneath the **Extensions** menu. Selecting this item opens the extension's frontend."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Offer hot reloading for frontend iteration.",
+            "acceptance": "Identifies hot reloading as an option for testing UI changes without rebuilding the entire extension.",
+            "tier_reason": "Adds a documented development alternative after the initial build works.",
+            "page_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+            "exact_quote": "During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire\n> extension."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Separate local development from Hub distribution.",
+            "acceptance": "Explicitly states that the developer can build and develop the extension locally without pushing it to Docker Hub.",
+            "tier_reason": "Avoids adding a distribution prerequisite to the requested local workflow.",
+            "page_id": "content_manuals_extensions_extensions_sdk_index__abdf7c9c",
+            "exact_quote": "You distribute extensions through Docker Hub. However, you can develop them locally without the need to push \nthe extension to Docker Hub."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Choose backend communication transport with host constraints in mind.",
+            "acceptance": "Recommends sockets, with named pipes on Windows, rather than opening HTTP ports; explains port collisions and restricted environments, and checks that the backend framework supports socket connections.",
+            "tier_reason": "Handles documented communication risks across deployment environments.",
+            "page_id": "content_manuals_extensions_extensions_sdk_build_backend_extension_tutorial__f4ff5525",
+            "exact_quote": "We recommend that, the frontend and the backend communicate through sockets, and named pipes on Windows, instead of\n> HTTP. This prevents port collision with any other running application or container running\n> on the host."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Identify and avoid deprecated backend communication examples.",
+            "acceptance": "Flags window.ddClient.backend request methods as deprecated and subject to future removal, directing implementation to the current extension.vm API.",
+            "tier_reason": "Prevents copying a documented legacy API into the new implementation.",
+            "page_id": "content_manuals_extensions_extensions_sdk_dev_api_backend__1a8fe3a2",
+            "exact_quote": "The methods below that use `window.ddClient.backend` are deprecated and will be removed in a future version. Use the methods specified above."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Explain the self-image reference available for backend configuration.",
+            "acceptance": "Explains that ${DESKTOP_PLUGIN_IMAGE} refers to the image packaging the extension, that another full image name is possible, and that using image causes Docker Desktop to generate a default Compose file.",
+            "tier_reason": "Clarifies a packaging alternative and a special metadata value that could otherwise be misconfigured.",
+            "page_id": "content_manuals_extensions_extensions_sdk_architecture_metadata__b0e6a5c5",
+            "exact_quote": "`${DESKTOP_PLUGIN_IMAGE}` is a specific keyword that allows an easy way to refer to the image packaging the extension."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

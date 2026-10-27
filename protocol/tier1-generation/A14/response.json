@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "fd3eec3159d882462d7c13087fa083c8bf77d3a2d711b1aa2a3e4bccd800fee2",
+      "task": {
+        "question": "I maintain a containerized development app in Docker Desktop. A teammate's CI-built image produces errors and slowdowns with our existing data. How can I copy the app's volume, run a separate test instance against that copy, and use Desktop's container logs and build inspection tools to investigate? I need to preserve the original data and account for any interruption to containers using it.",
+        "actor": "Developer maintaining a containerized application in Docker Desktop.",
+        "trigger": "A teammate's CI-built image exhibits errors and slowdowns with existing application data.",
+        "goal": "Create a separate data-backed test instance and investigate its behavior using container, log, and build inspection.",
+        "observable_success": "A copied volume backs a separately named test container; the developer can verify its image and port mapping, observe its output, and inspect relevant build evidence while understanding the cloning interruption.",
+        "realism_rationale": "The excerpts explicitly support copying volume data and importing CI build records for inspection. The temporary stopping of volume consumers makes planning the copy substantive, particularly when preserving an existing development instance.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_desktop_use_desktop_builds__eac842dd",
+            "exact_quote": "The **Import builds** button lets you import build records for builds by other\npeople, or builds in a CI environment."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_desktop_use_desktop_volumes__234877e0",
+            "exact_quote": "When cloning a volume used by one or more running containers, the\ncontainers are temporarily stopped while Docker clones the data, and then\nrestarted when the cloning process is completed."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Identify the source volume and the containers that depend on it before copying.",
+            "acceptance": "Explain how to select the volume and use its Container in-use tab to identify its consumers and mounted target.",
+            "tier_reason": "The developer must identify the correct data and affected consumers.",
+            "page_id": "content_manuals_desktop_use_desktop_volumes__234877e0",
+            "exact_quote": "The **Container in-use** tab displays the name of the container using the\nvolume, the image name, the port number used by the container, and the target."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Use volume cloning to obtain a separate copy, including the sign-in prerequisite.",
+            "acceptance": "State that cloning copies all volume data into a new volume, requires signing in, and starts through the volume's Clone icon in the Actions column.",
+            "tier_reason": "Creating a distinct data copy is central to preserving the original.",
+            "page_id": "content_manuals_desktop_use_desktop_volumes__234877e0",
+            "exact_quote": "1. Sign in to Docker Desktop. You must be signed in to clone a volume.\n2. In the **Volumes** view, select the **Clone** icon in the **Actions** column\n   for the volume you want to clone."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Account for interruption during cloning.",
+            "acceptance": "Explicitly explain that running containers using the source volume are temporarily stopped and restarted after cloning completes.",
+            "tier_reason": "The requested preservation workflow must account for its immediate operational consequence.",
+            "page_id": "content_manuals_desktop_use_desktop_volumes__234877e0",
+            "exact_quote": "When cloning a volume used by one or more running containers, the\ncontainers are temporarily stopped while Docker clones the data, and then\nrestarted when the cloning process is completed."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Launch a separate test container with the copied volume.",
+            "acceptance": "Direct the developer to Run in the Images view and Optional settings to specify the test container's name, ports, copied volume, and any required environment variables.",
+            "tier_reason": "The copied data must be attached to a runnable test instance.",
+            "page_id": "content_manuals_desktop_use_desktop_images__f598e80d",
+            "exact_quote": "- Select the **Optional settings** drop-down to specify a name, port, volumes, environment variables and select **Run**"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Verify the test container configuration and begin observing its behavior.",
+            "acceptance": "Explain how to select the container, use Inspect to verify image version and port mapping, and use Logs to observe its real-time output.",
+            "tier_reason": "A minimally actionable investigation needs confirmation of the tested configuration and visible application output.",
+            "page_id": "content_manuals_desktop_use_desktop_container__fc9b41af",
+            "exact_quote": "Select **Inspect** to view low-level information about the container. It displays the local path, version number of the image, SHA-256, port mapping, and other details."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Inspect and optionally save selected source data for comparison.",
+            "acceptance": "Describe the Stored data tab and its Save as option for downloading a selected file or folder without deleting it.",
+            "tier_reason": "Selected artifacts can help compare the original data with test behavior.",
+            "page_id": "content_manuals_desktop_use_desktop_volumes__234877e0",
+            "exact_quote": "The **Stored data** tab displays the files and folders in the volume and the\nfile size. To save a file or a folder, right-click on the file or folder to\ndisplay the options menu, select **Save as...**, and then specify a location to\ndownload the file."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Explain how to refresh a Hub-hosted test image and the private-image prerequisite.",
+            "acceptance": "Describe More options > Pull and state that the repository must exist on Docker Hub and private-image pulls require signing in.",
+            "tier_reason": "This resolves image acquisition issues when the teammate's image is distributed through Hub.",
+            "page_id": "content_manuals_desktop_use_desktop_images__f598e80d",
+            "exact_quote": "The repository must exist on Docker Hub in order to pull the latest version of an image. You must be signed in to pull private images."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Import the teammate's CI build record for detailed inspection.",
+            "acceptance": "Explain that Import builds accepts other people's or CI build records and exposes logs and traces; identify the build-summary download link for the named Docker GitHub Actions as an available source.",
+            "tier_reason": "Imported records extend the investigation beyond the runtime symptom.",
+            "page_id": "content_manuals_desktop_use_desktop_builds__eac842dd",
+            "exact_quote": "The **Import builds** button lets you import build records for builds by other\npeople, or builds in a CI environment. When you've imported a build record, it\ngives you full access to the logs, traces, and other data for that build,\ndirectly in Docker Desktop."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Explain why a build might be absent from the Builds view.",
+            "acceptance": "State both that only BuildKit-powered builds appear and that builds from removed or stopped builders are not listed.",
+            "tier_reason": "These scope restrictions prevent a missing build from being mistaken for missing evidence or failed execution.",
+            "page_id": "content_manuals_desktop_use_desktop_builds__eac842dd",
+            "exact_quote": "Only builds from active, running builders are listed. Builds from removed or stopped builders are not shown."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Inspect the relevant platform when the CI build is multi-platform.",
+            "acceptance": "Explain that the Info tab's top-right drop-down filters multi-platform build information to a specific platform.",
+            "tier_reason": "Platform-specific inspection avoids comparing irrelevant build details.",
+            "page_id": "content_manuals_desktop_use_desktop_builds__eac842dd",
+            "exact_quote": "If you're inspecting a multi-platform build, the drop-down menu in the\ntop-right of this tab lets you filter the information down to a specific\nplatform:"
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Distinguish build timing measurements when investigating reported slowness.",
+            "acceptance": "Differentiate wall-clock Real time from total CPU Accumulated time and explain that Cache usage reports how much build work was cached.",
+            "tier_reason": "These measurements help determine whether a slowdown concerns build duration, CPU work, or cache use.",
+            "page_id": "content_manuals_desktop_use_desktop_builds__eac842dd",
+            "exact_quote": "- **Real time** refers to the wall-clock time that it took to complete the build.\n- **Accumulated time** shows the total CPU time for all steps.\n- **Cache usage** shows the extent to which build operations were cached."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Search the unified log stream for relevant errors and warnings.",
+            "acceptance": "Describe plain-text exact searches and regular-expression searches, including an error-or-warning expression such as /error|warn/.",
+            "tier_reason": "Targeted searches make a large stream useful for isolating the reported symptom.",
+            "page_id": "content_manuals_desktop_use_desktop_logs__a81a1b2a",
+            "exact_quote": "- Plain-text terms for exact match searches\n- Regular expressions (for example, `/error|warn/`)"
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Limit unified logs to the test instance and relevant application components.",
+            "acceptance": "Explain how the Filter panel selects individual containers or whole Compose stacks and can clear unrelated output.",
+            "tier_reason": "Filtering avoids confusing the original application with the separate test instance.",
+            "page_id": "content_manuals_desktop_use_desktop_logs__a81a1b2a",
+            "exact_quote": "- Check individual containers to show only their output\n- Check Compose stacks to show or hide entire groups\n- Use **Select all** or **Clear all** to quickly toggle every container at once"
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Correlate events across the test application's containers.",
+            "acceptance": "Recommend Table view when correlating events and explain that it identifies which container emitted each message and when.",
+            "tier_reason": "Cross-container timing can reveal the sequence behind an application failure.",
+            "page_id": "content_manuals_desktop_use_desktop_logs__a81a1b2a",
+            "exact_quote": "The table view is useful when you need to correlate events across multiple containers because each row clearly shows which container emitted a given message and when."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Check runtime resource use separately from build timing.",
+            "acceptance": "Use the inspected container's Stats tab to examine CPU, memory, network, and disk usage over time when assessing runtime slowdowns.",
+            "tier_reason": "Runtime resource evidence complements logs and distinguishes application slowness from build slowness.",
+            "page_id": "content_manuals_desktop_use_desktop_container__fc9b41af",
+            "exact_quote": "When you [inspect a container](#inspect-a-container), the **Stats** tab displays further information about a container's resource utilization. You can see how much CPU, memory, network and disk space your container is using over time."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "91dd354702a9d4ae397211b84ccd61a1fd884412bab2ce00f78bf5053955ebab",
+      "task": {
+        "question": "Our Apple Silicon development machines struggle with bind-mount performance in a large monorepo. Can you recommend how to set up synchronized file sharing and choose a Docker Desktop VM option for our Compose app? The stack includes MongoDB and an amd64-only tool, calls an API running on the host, and exposes a web app for browser testing. We also test a Kubernetes variant, so explain any limits on applying the same file-sharing setup there.",
+        "actor": "Developer configuring an Apple Silicon team's local container development environment.",
+        "trigger": "A large monorepo's bind mounts have become a development performance bottleneck.",
+        "goal": "Configure synchronized file sharing and select a suitable VM option while preserving database compatibility, architecture support, and host-service connectivity.",
+        "observable_success": "The repository share reaches its ready state, matching Compose bind mounts use it, the developer understands synchronization and Kubernetes exceptions, and the chosen VM and connectivity setup account for the stack's constraints.",
+        "realism_rationale": "The excerpts identify large repositories and file-sharing performance limits as intended use cases. They also describe a database compatibility risk with Docker VMM, making the VM choice consequential for this development stack.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "Synchronized file shares is ideal for developers who: \n- Have large repositories or monorepos with 100 000 files or more totaling hundreds of megabytes or even gigabytes."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_desktop_features_vmm__7c72f2e0",
+            "exact_quote": "- Certain databases, like MongoDB and Cassandra, may fail when using virtiofs with Docker VMM. This issue is expected to be resolved in a future release."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Assess whether synchronized file sharing addresses the reported bottleneck.",
+            "acceptance": "Explain its role as a bind-mount performance mechanism using synchronized filesystem caches and connect its intended use to large repositories whose virtual filesystems no longer scale well.",
+            "tier_reason": "The recommendation must establish why this mechanism fits the requested performance problem.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "Synchronized file shares is an alternative file sharing mechanism that provides fast and flexible host-to-VM file sharing, enhancing bind mount performance through the use of synchronized filesystem caches."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Provide the documented share-creation procedure.",
+            "acceptance": "Include signing in, opening Settings > Resources > File sharing, selecting Create share under Synchronized file shares, and choosing the host repository folder.",
+            "tier_reason": "The developer needs concrete steps to configure the feature.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "1. Sign in to Docker Desktop.\n2. In **Settings**, navigate to the **File sharing** tab within the **Resources** section. \n3. In the **Synchronized file shares** section, select **Create share**.\n4. Select a host folder to share."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Explain which bind mounts receive the optimization.",
+            "acceptance": "State that host bind-mount paths matching the share location or a subdirectory use synchronized sharing; unmatched paths use the normal virtual filesystem mechanism.",
+            "tier_reason": "Correct path selection is necessary for the Compose application to benefit.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "After creating a file share instance, any container using a bind mount that points to a location on the host filesystem matching the specified synchronized file share location, or a subdirectory within it,  utilizes the Synchronized File Shares feature."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Validate share readiness before relying on it.",
+            "acceptance": "Distinguish Preparing from Watching for filesystem changes and state that the latter indicates availability through standard bind mounts, including compose.yml.",
+            "tier_reason": "Readiness is the direct observable check that setup has completed.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "When the status indicator displays **Watching for filesystem changes**, your files are available to the VM through all the standard bind mount mechanisms, whether that's `-v` in the command line or specified in your `compose.yml` file."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Explain the effect of edits made on either side of the share.",
+            "acceptance": "State that changes made on the host or in VM containers propagate bidirectionally, so container-side changes can affect the synchronized host files.",
+            "tier_reason": "The developer must understand the data behavior of the configured development workspace.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "If you make filesystem changes on the host or in the VM’s containers, it propagates via bidirectional synchronization."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Identify platform exclusions when extending the setup to other team machines.",
+            "acceptance": "Explicitly state that synchronized file shares are unavailable on WSL and with Windows containers.",
+            "tier_reason": "This prevents applying the Mac recommendation to unsupported team environments.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "Synchronized file shares isn't available on WSL or when using Windows containers."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Explain the Kubernetes hostPath exception.",
+            "acceptance": "State that Docker Desktop Kubernetes hostPath volumes do not use synchronized file shares, so the same optimization cannot be assumed for that variant.",
+            "tier_reason": "This directly addresses the alternate workload's storage limitation.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Flag a mount option that bypasses the feature.",
+            "acceptance": "Explain that setting bind-mount consistency to :consistent when creating a new service bypasses synchronized file shares.",
+            "tier_reason": "This explains why a seemingly matching mount might fail to receive the intended optimization.",
+            "page_id": "content_manuals_desktop_features_synchronized_file_sharing__bef87244",
+            "exact_quote": "When you create a new service, setting the [bind mount option consistency](/reference/cli/docker/service/create/#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Include Docker VMM's memory prerequisite in the VM decision.",
+            "acceptance": "State that Docker VMM requires at least 4GB allocated to the Linux VM and that memory must be increased through Settings > Resources before enabling it.",
+            "tier_reason": "This is a concrete prerequisite for evaluating or adopting the performance alternative.",
+            "page_id": "content_manuals_desktop_features_vmm__7c72f2e0",
+            "exact_quote": "Docker VMM requires a minimum of 4GB of memory to be allocated to the Docker Linux VM. The memory needs to be increased before Docker VMM is enabled, and this can be done from the **Resources** tab in **Settings**."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Account for the amd64-only tool when considering Docker VMM.",
+            "acceptance": "Explain that Docker VMM currently lacks Rosetta support and that amd64 emulation is slow; treat this as a constraint on the recommendation.",
+            "tier_reason": "Architecture performance can offset filesystem gains for the stated stack.",
+            "page_id": "content_manuals_desktop_features_vmm__7c72f2e0",
+            "exact_quote": "- Docker VMM does not currently support Rosetta, so emulation of amd64 architectures is slow. Docker is exploring potential solutions."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Account for MongoDB compatibility when considering Docker VMM.",
+            "acceptance": "Warn that MongoDB and Cassandra may fail with virtiofs under Docker VMM and do not present that combination as an unqualified choice for this stack.",
+            "tier_reason": "The stated database creates a documented compatibility risk.",
+            "page_id": "content_manuals_desktop_features_vmm__7c72f2e0",
+            "exact_quote": "- Certain databases, like MongoDB and Cassandra, may fail when using virtiofs with Docker VMM. This issue is expected to be resolved in a future release."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Present a documented stable VM alternative and how to select a VMM.",
+            "acceptance": "Identify the Apple Virtualization framework as a stable option with broad compatibility and give Settings > General > Virtual Machine Manager as the selection location, without claiming that it guarantees compatibility for every workload.",
+            "tier_reason": "A usable recommendation needs an alternative when Docker VMM's limitations matter.",
+            "page_id": "content_manuals_desktop_features_vmm__7c72f2e0",
+            "exact_quote": "This framework is best suited for developers who prefer a proven solution with solid performance and broad compatibility."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Avoid recommending deprecated QEMU as the routine Apple Silicon alternative.",
+            "acceptance": "State that QEMU is deprecated in Docker Desktop 4.44 and later and frame newer VMM options as the documented transition choices.",
+            "tier_reason": "Version status affects the sustainability of the VM recommendation.",
+            "page_id": "content_manuals_desktop_features_vmm__7c72f2e0",
+            "exact_quote": "QEMU has been deprecated in versions 4.44 and later."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Preserve container access to the host API.",
+            "acceptance": "Use host.docker.internal for the container's host-service endpoint and distinguish it from gateway.docker.internal, which resolves to the VM gateway.",
+            "tier_reason": "File-sharing improvements alone do not configure the stack's required host connection.",
+            "page_id": "content_manuals_desktop_features_networking_networking_how_tos__3573e9db",
+            "exact_quote": "| `host.docker.internal`    | Resolves to the internal IP address of your host |\n| `gateway.docker.internal` | Resolves to the gateway IP of the Docker VM      |"
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Preserve browser access to the containerized web application.",
+            "acceptance": "Explain that container service ports must be published with -p or --publish for host access and illustrate that a published service is available through the corresponding localhost port.",
+            "tier_reason": "This supplies the other direction of connectivity needed for the requested development workflow.",
+            "page_id": "content_manuals_desktop_features_networking_networking_how_tos__3573e9db",
+            "exact_quote": "To access containerized services from your host or local network, publish ports with the `-p` or `--publish` flag."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

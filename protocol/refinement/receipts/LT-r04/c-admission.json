@@ -1,0 +1,36 @@
+{
+  "c_fix": "wc_refine_17.C2_FIX",
+  "c_version": "structural_connectivity_constraint.v1",
+  "code_sha256": "08658f1b61c6cd9d1566a1fc77abdd0b4b5e68d8de36242a48461b17d9562895",
+  "config_sha256": "7aad8fba4b6dbc9fbd684d8306645eb5a219ead151bcb2796b104e31ae531c09",
+  "editor_visible": false,
+  "form": "C0+C1+C1b+C2",
+  "mapping": {},
+  "result": {
+    "anchors_missing": [],
+    "baseline_graph_sha256": "996569e9c378c02f75a7f8a910de9625c14ab7fd5829afa3855e66ffffa45959",
+    "baseline_lambda2": 0.011037979927050976,
+    "baseline_pages_left_main_component": 0,
+    "baseline_pages_left_sample": [],
+    "c2_fix": "on a C2 failure, lambda2 is recomputed on the v1 evaluation set plus the baseline pages outside the baseline main component that the variant joined to its main component; C2 passes if that value meets the v1 threshold",
+    "c2_joined_pages": 2,
+    "config_sha256": "7aad8fba4b6dbc9fbd684d8306645eb5a219ead151bcb2796b104e31ae531c09",
+    "graph_sha256": "96e0e9b4997a854cfb7c9a838f221d0e801feb8fe5cc79f8f92212349a411302",
+    "lambda2": 0.0,
+    "lambda2_threshold": 0.009934181934345879,
+    "lambda2_v1": 0.0,
+    "main_component_size": 895,
+    "new_pages": 50,
+    "new_pages_outside_main_component": [
+      "content_reference_api_registry_auth_token_reference__9fa47952"
+    ],
+    "orphan_new_pages": [],
+    "passed": false,
+    "reasons": [
+      "C1-new-page-outside-main-component",
+      "C2-lambda2-below-tolerance"
+    ],
+    "version": "structural_connectivity_constraint.v1"
+  },
+  "schema_version": "docspectra.icsc.restructuring_run.v1.c_admission"
+}

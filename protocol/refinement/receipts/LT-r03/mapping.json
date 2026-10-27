@@ -1,0 +1,1613 @@
+{
+  "added": [
+    "content_manuals_dhi_core_concepts_catalog__07ac5d9b",
+    "content_manuals_dhi_core_concepts_definitions__804050c0",
+    "content_manuals_dhi_core_concepts_node_variants__a71004fd",
+    "content_manuals_dhi_core_concepts_openshift__148d1b6e",
+    "content_manuals_dhi_core_concepts_packages__a9a54a01",
+    "content_manuals_dhi_how_to_authenticate__4c76d7ba",
+    "content_manuals_dhi_how_to_build_alpine__097186e2",
+    "content_manuals_dhi_how_to_build_catalog__d8743b68",
+    "content_manuals_dhi_how_to_build_nginx__d8851537",
+    "content_manuals_dhi_how_to_build_redis__37df4b36",
+    "content_manuals_dhi_how_to_build_variants__e3a1bcf7",
+    "content_manuals_dhi_how_to_cis__dd620342",
+    "content_manuals_dhi_how_to_compare__8e161d50",
+    "content_manuals_dhi_how_to_contribute__5b8e0480",
+    "content_manuals_dhi_how_to_customize_chart__2c532e55",
+    "content_manuals_dhi_how_to_digests__3bdef8ac",
+    "content_manuals_dhi_how_to_discover_attestations__90a3f04a",
+    "content_manuals_dhi_how_to_export_vex__04aca9b7",
+    "content_manuals_dhi_how_to_fips__0dac7241",
+    "content_manuals_dhi_how_to_inspect_sbom__521e0180",
+    "content_manuals_dhi_how_to_kubernetes__76d00d58",
+    "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+    "content_manuals_dhi_how_to_multistage__a222e7cb",
+    "content_manuals_dhi_how_to_oci_artifacts__ef436e7c",
+    "content_manuals_dhi_how_to_openshift_access__85efc692",
+    "content_manuals_dhi_how_to_openshift_debug__eccd2984",
+    "content_manuals_dhi_how_to_openshift_helm__855bf059",
+    "content_manuals_dhi_how_to_openshift_permissions__086e4a2c",
+    "content_manuals_dhi_how_to_packages_enterprise__23e6da41",
+    "content_manuals_dhi_how_to_packages_public__45b2463d",
+    "content_manuals_dhi_how_to_scan_ci__a2e791a7",
+    "content_manuals_dhi_how_to_scan_derived__cff53b57",
+    "content_manuals_dhi_how_to_scan_grype__8ddc3600",
+    "content_manuals_dhi_how_to_scan_mend__0953df68",
+    "content_manuals_dhi_how_to_scan_scout__46814462",
+    "content_manuals_dhi_how_to_scan_trivy__f262741a",
+    "content_manuals_dhi_how_to_scan_wiz__740bc743",
+    "content_manuals_dhi_how_to_sign__10390b6b",
+    "content_manuals_dhi_how_to_static__ef76cae1",
+    "content_manuals_dhi_how_to_stig__d26b957e",
+    "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+    "content_manuals_dhi_how_to_verify_chart__7b66a340",
+    "content_manuals_dhi_how_to_verify_packages__4768214f",
+    "content_manuals_dhi_how_to_verify_slsa__673482a6",
+    "content_manuals_dhi_migration_example_patterns__7bdc1646",
+    "content_manuals_dhi_migration_workflow__84dd29e2",
+    "content_manuals_security_image_attestations__d86f9e4a",
+    "content_manuals_security_sbom__ae993bf7",
+    "content_manuals_security_vex__52596c94"
+  ],
+  "changed": [
+    "content_guides_dhi_backstage__98c3cde2",
+    "content_guides_dhi_openshift__a9eff475",
+    "content_guides_lab_dhi_node__dc2ca311",
+    "content_manuals_dhi_core_concepts_attestations__1762823b",
+    "content_manuals_dhi_core_concepts_cis__a1faafd4",
+    "content_manuals_dhi_core_concepts_cves__621682be",
+    "content_manuals_dhi_core_concepts_digests__c085e8ab",
+    "content_manuals_dhi_core_concepts_fips__6575c069",
+    "content_manuals_dhi_core_concepts_index__3104aecd",
+    "content_manuals_dhi_core_concepts_provenance__d08035a4",
+    "content_manuals_dhi_core_concepts_sbom__7d73c7f2",
+    "content_manuals_dhi_core_concepts_signatures__34188a57",
+    "content_manuals_dhi_core_concepts_slsa__9296dc2f",
+    "content_manuals_dhi_core_concepts_stig__5f98c6d7",
+    "content_manuals_dhi_core_concepts_vex__de040821",
+    "content_manuals_dhi_explore_index__90ef6054",
+    "content_manuals_dhi_explore_malware_scanning__ca2c1382",
+    "content_manuals_dhi_explore_scanner_integrations__4e8ebb78",
+    "content_manuals_dhi_explore_test__ac5aebad",
+    "content_manuals_dhi_features__933e7f28",
+    "content_manuals_dhi_get_started__dbbd451d",
+    "content_manuals_dhi_how_to_build__aef9a8dc",
+    "content_manuals_dhi_how_to_cli__ca795752",
+    "content_manuals_dhi_how_to_customize__db61f385",
+    "content_manuals_dhi_how_to_explore__0b49b83a",
+    "content_manuals_dhi_how_to_hardened_packages__4bcf22f9",
+    "content_manuals_dhi_how_to_helm__07f0a390",
+    "content_manuals_dhi_how_to_index__65f3cde3",
+    "content_manuals_dhi_how_to_mirror__819fcf55",
+    "content_manuals_dhi_how_to_policies__cb429eb1",
+    "content_manuals_dhi_how_to_scan__e82169ee",
+    "content_manuals_dhi_how_to_use__8d7b63c4",
+    "content_manuals_dhi_how_to_verify__6b740341",
+    "content_manuals_dhi_index__45a19c2b",
+    "content_manuals_dhi_migration_checklist__01c1189f",
+    "content_manuals_dhi_migration_examples_go__bb47b514",
+    "content_manuals_dhi_migration_examples_index__076e84c6",
+    "content_manuals_dhi_migration_examples_node__a40261b8",
+    "content_manuals_dhi_migration_examples_python__bdb76ca3",
+    "content_manuals_dhi_migration_index__0c1295f1",
+    "content_manuals_dhi_migration_migrate_from_doi__cf95b992",
+    "content_manuals_dhi_migration_migrate_from_ubuntu__b123ddd1",
+    "content_manuals_dhi_migration_migrate_from_wolfi__dffbc69a",
+    "content_manuals_dhi_migration_migrate_with_ai__33e3679e",
+    "content_manuals_dhi_troubleshoot__6fe3b12d"
+  ],
+  "mapping": {},
+  "partial_unit_loss": [
+    "content_guides_dhi_backstage__98c3cde2",
+    "content_guides_dhi_openshift__a9eff475",
+    "content_manuals_dhi_core_concepts_attestations__1762823b",
+    "content_manuals_dhi_core_concepts_cves__621682be",
+    "content_manuals_dhi_core_concepts_stig__5f98c6d7",
+    "content_manuals_dhi_core_concepts_vex__de040821",
+    "content_manuals_dhi_explore_malware_scanning__ca2c1382",
+    "content_manuals_dhi_explore_scanner_integrations__4e8ebb78",
+    "content_manuals_dhi_explore_test__ac5aebad",
+    "content_manuals_dhi_features__933e7f28",
+    "content_manuals_dhi_how_to_build__aef9a8dc",
+    "content_manuals_dhi_how_to_cli__ca795752",
+    "content_manuals_dhi_how_to_customize__db61f385",
+    "content_manuals_dhi_how_to_hardened_packages__4bcf22f9",
+    "content_manuals_dhi_how_to_mirror__819fcf55",
+    "content_manuals_dhi_how_to_scan__e82169ee",
+    "content_manuals_dhi_how_to_use__8d7b63c4",
+    "content_manuals_dhi_how_to_verify__6b740341",
+    "content_manuals_dhi_migration_examples_go__bb47b514",
+    "content_manuals_dhi_migration_examples_node__a40261b8",
+    "content_manuals_dhi_migration_examples_python__bdb76ca3",
+    "content_manuals_dhi_migration_migrate_from_doi__cf95b992",
+    "content_manuals_dhi_migration_migrate_from_ubuntu__b123ddd1",
+    "content_manuals_dhi_migration_migrate_from_wolfi__dffbc69a",
+    "content_manuals_dhi_migration_migrate_with_ai__33e3679e"
+  ],
+  "removed": [],
+  "rule": {
+    "min_share": 0.5,
+    "tie_break": "smallest variant doc id",
+    "unit": "normalized non-blank line, link targets stripped, lines without alphanumerics dropped",
+    "version": "moved_content_majority_v1"
+  },
+  "translation": {
+    "content_guides_dhi_backstage__98c3cde2": {
+      "coverage": 0.9919028340080972,
+      "holders": [
+        {
+          "doc_id": "content_guides_dhi_backstage__98c3cde2",
+          "rel_path": "content/guides/dhi-backstage.md",
+          "units": 243
+        },
+        {
+          "doc_id": "content_guides_dhi_openshift__a9eff475",
+          "rel_path": "content/guides/dhi-openshift.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_build_alpine__097186e2",
+          "rel_path": "content/manuals/dhi/how-to/build-alpine.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_build_variants__e3a1bcf7",
+          "rel_path": "content/manuals/dhi/how-to/build-variants.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/dhi-backstage.md",
+      "units": 247
+    },
+    "content_guides_dhi_openshift__a9eff475": {
+      "coverage": 0.9638888888888889,
+      "holders": [
+        {
+          "doc_id": "content_guides_dhi_openshift__a9eff475",
+          "rel_path": "content/guides/dhi-openshift.md",
+          "units": 157
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_openshift_permissions__086e4a2c",
+          "rel_path": "content/manuals/dhi/how-to/openshift-permissions.md",
+          "units": 116
+        },
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_openshift__148d1b6e",
+          "rel_path": "content/manuals/dhi/core-concepts/openshift.md",
+          "units": 39
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_openshift_debug__eccd2984",
+          "rel_path": "content/manuals/dhi/how-to/openshift-debug.md",
+          "units": 39
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_openshift_helm__855bf059",
+          "rel_path": "content/manuals/dhi/how-to/openshift-helm.md",
+          "units": 35
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/dhi-openshift.md",
+      "units": 360
+    },
+    "content_guides_lab_dhi_node__dc2ca311": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_lab_dhi_node__dc2ca311",
+          "rel_path": "content/guides/lab-dhi-node.md",
+          "units": 43
+        },
+        {
+          "doc_id": "content_guides_lab_attestation_basics__2e4df6e7",
+          "rel_path": "content/guides/lab-attestation-basics.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_lab_container_getting_started__ca0b1f83",
+          "rel_path": "content/guides/lab-container-getting-started.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_guides_lab_container_supported_development__ab0f9c20",
+          "rel_path": "content/guides/lab-container-supported-development.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_guides_lab_ai_fundamentals__91574448",
+          "rel_path": "content/guides/lab-ai-fundamentals.md",
+          "units": 10
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/lab-dhi-node.md",
+      "units": 43
+    },
+    "content_manuals_dhi_core_concepts_attestations__1762823b": {
+      "coverage": 0.8717948717948718,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_attestations__1762823b",
+          "rel_path": "content/manuals/dhi/core-concepts/attestations.md",
+          "units": 78
+        },
+        {
+          "doc_id": "content_manuals_security_image_attestations__d86f9e4a",
+          "rel_path": "content/manuals/security/image-attestations.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify_chart__7b66a340",
+          "rel_path": "content/manuals/dhi/how-to/verify-chart.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_scout_explore_metrics_exporter__c0a3bf6d",
+          "rel_path": "content/manuals/scout/explore/metrics-exporter.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/attestations.md",
+      "units": 117
+    },
+    "content_manuals_dhi_core_concepts_cis__a1faafd4": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_cis__a1faafd4",
+          "rel_path": "content/manuals/dhi/core-concepts/cis.md",
+          "units": 32
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_cis__dd620342",
+          "rel_path": "content/manuals/dhi/how-to/cis.md",
+          "units": 7
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_build_building_best_practices__bdbd3cf6",
+          "rel_path": "content/manuals/build/building/best-practices.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_build_buildkit_configure__4ac29f59",
+          "rel_path": "content/manuals/build/buildkit/configure.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/cis.md",
+      "units": 39
+    },
+    "content_manuals_dhi_core_concepts_cves__621682be": {
+      "coverage": 0.8118811881188119,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_cves__621682be",
+          "rel_path": "content/manuals/dhi/core-concepts/cves.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan_trivy__f262741a",
+          "rel_path": "content/manuals/dhi/how-to/scan-trivy.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan_grype__8ddc3600",
+          "rel_path": "content/manuals/dhi/how-to/scan-grype.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan_scout__46814462",
+          "rel_path": "content/manuals/dhi/how-to/scan-scout.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_export_vex__04aca9b7",
+          "rel_path": "content/manuals/dhi/how-to/export-vex.md",
+          "units": 10
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/cves.md",
+      "units": 101
+    },
+    "content_manuals_dhi_core_concepts_digests__c085e8ab": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_digests__c085e8ab",
+          "rel_path": "content/manuals/dhi/core-concepts/digests.md",
+          "units": 59
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_digests__3bdef8ac",
+          "rel_path": "content/manuals/dhi/how-to/digests.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_manuals_extensions_extensions_sdk_extensions_multi_arch__859bbf13",
+          "rel_path": "content/manuals/extensions/extensions-sdk/extensions/multi-arch.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_django__3f9a8cc6",
+          "rel_path": "content/guides/django.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/digests.md",
+      "units": 80
+    },
+    "content_manuals_dhi_core_concepts_fips__6575c069": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_fips__6575c069",
+          "rel_path": "content/manuals/dhi/core-concepts/fips.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_fips__0dac7241",
+          "rel_path": "content/manuals/dhi/how-to/fips.md",
+          "units": 34
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+          "rel_path": "content/manuals/dhi/how-to/malware-attestation.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+          "rel_path": "content/manuals/dhi/how-to/test-attestation.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/fips.md",
+      "units": 80
+    },
+    "content_manuals_dhi_core_concepts_index__3104aecd": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_index__3104aecd",
+          "rel_path": "content/manuals/dhi/core-concepts/_index.md",
+          "units": 93
+        },
+        {
+          "doc_id": "content_manuals_accounts_index__029c3a7a",
+          "rel_path": "content/manuals/accounts/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_index__65f3cde3",
+          "rel_path": "content/manuals/dhi/how-to/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_index__cd86d1e4",
+          "rel_path": "content/manuals/enterprise/security/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_introduction_index__137a2a05",
+          "rel_path": "content/get-started/introduction/_index.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/_index.md",
+      "units": 93
+    },
+    "content_manuals_dhi_core_concepts_provenance__d08035a4": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_provenance__d08035a4",
+          "rel_path": "content/manuals/dhi/core-concepts/provenance.md",
+          "units": 28
+        },
+        {
+          "doc_id": "content_manuals_security_image_attestations__d86f9e4a",
+          "rel_path": "content/manuals/security/image-attestations.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/provenance.md",
+      "units": 47
+    },
+    "content_manuals_dhi_core_concepts_sbom__7d73c7f2": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_security_sbom__ae993bf7",
+          "rel_path": "content/manuals/security/sbom.md",
+          "units": 32
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_inspect_sbom__521e0180",
+          "rel_path": "content/manuals/dhi/how-to/inspect-sbom.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_sbom__7d73c7f2",
+          "rel_path": "content/manuals/dhi/core-concepts/sbom.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_sbom__b809d236",
+          "rel_path": "content/manuals/build/metadata/attestations/sbom.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_guides_dotnet_containerize__df8c5bec",
+          "rel_path": "content/guides/dotnet/containerize.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/sbom.md",
+      "units": 61
+    },
+    "content_manuals_dhi_core_concepts_signatures__34188a57": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_sign__10390b6b",
+          "rel_path": "content/manuals/dhi/how-to/sign.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_signatures__34188a57",
+          "rel_path": "content/manuals/dhi/core-concepts/signatures.md",
+          "units": 22
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+          "rel_path": "content/manuals/dhi/how-to/test-attestation.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+          "rel_path": "content/manuals/dhi/how-to/malware-attestation.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/signatures.md",
+      "units": 60
+    },
+    "content_manuals_dhi_core_concepts_slsa__9296dc2f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_slsa__9296dc2f",
+          "rel_path": "content/manuals/dhi/core-concepts/slsa.md",
+          "units": 58
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify_slsa__673482a6",
+          "rel_path": "content/manuals/dhi/how-to/verify-slsa.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_build_building_best_practices__bdbd3cf6",
+          "rel_path": "content/manuals/build/building/best-practices.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_build_buildkit_frontend__899964cb",
+          "rel_path": "content/manuals/build/buildkit/frontend.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/slsa.md",
+      "units": 70
+    },
+    "content_manuals_dhi_core_concepts_stig__5f98c6d7": {
+      "coverage": 0.9736842105263158,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_stig__5f98c6d7",
+          "rel_path": "content/manuals/dhi/core-concepts/stig.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_stig__d26b957e",
+          "rel_path": "content/manuals/dhi/how-to/stig.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+          "rel_path": "content/manuals/dhi/how-to/malware-attestation.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+          "rel_path": "content/manuals/dhi/how-to/test-attestation.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/stig.md",
+      "units": 76
+    },
+    "content_manuals_dhi_core_concepts_vex__de040821": {
+      "coverage": 0.8780487804878049,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_vex__de040821",
+          "rel_path": "content/manuals/dhi/core-concepts/vex.md",
+          "units": 27
+        },
+        {
+          "doc_id": "content_manuals_security_vex__52596c94",
+          "rel_path": "content/manuals/security/vex.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_index__3104aecd",
+          "rel_path": "content/manuals/dhi/core-concepts/_index.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/core-concepts/vex.md",
+      "units": 41
+    },
+    "content_manuals_dhi_explore_index__90ef6054": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_explore_index__90ef6054",
+          "rel_path": "content/manuals/dhi/explore/_index.md",
+          "units": 51
+        },
+        {
+          "doc_id": "content_manuals_dhi_features__933e7f28",
+          "rel_path": "content/manuals/dhi/features.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_index__339b39a9",
+          "rel_path": "content/manuals/desktop/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_index__65f3cde3",
+          "rel_path": "content/manuals/dhi/how-to/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_engine_index__3a6da101",
+          "rel_path": "content/manuals/engine/_index.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/explore/_index.md",
+      "units": 51
+    },
+    "content_manuals_dhi_explore_malware_scanning__ca2c1382": {
+      "coverage": 0.9473684210526315,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+          "rel_path": "content/manuals/dhi/how-to/malware-attestation.md",
+          "units": 39
+        },
+        {
+          "doc_id": "content_manuals_dhi_explore_malware_scanning__ca2c1382",
+          "rel_path": "content/manuals/dhi/explore/malware-scanning.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+          "rel_path": "content/manuals/dhi/how-to/test-attestation.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_fips__0dac7241",
+          "rel_path": "content/manuals/dhi/how-to/fips.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/explore/malware-scanning.md",
+      "units": 57
+    },
+    "content_manuals_dhi_explore_scanner_integrations__4e8ebb78": {
+      "coverage": 0.9777777777777777,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_explore_scanner_integrations__4e8ebb78",
+          "rel_path": "content/manuals/dhi/explore/scanner-integrations.md",
+          "units": 131
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_best_practices__396cad09",
+          "rel_path": "content/manuals/ai/docker-agent/best-practices.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_integrations_a2a__75233c6a",
+          "rel_path": "content/manuals/ai/docker-agent/integrations/a2a.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_integrations_acp__e9622a17",
+          "rel_path": "content/manuals/ai/docker-agent/integrations/acp.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_ai_model_runner_ide_integrations__b10a6efe",
+          "rel_path": "content/manuals/ai/model-runner/ide-integrations.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/explore/scanner-integrations.md",
+      "units": 135
+    },
+    "content_manuals_dhi_explore_test__ac5aebad": {
+      "coverage": 0.9791666666666666,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_explore_test__ac5aebad",
+          "rel_path": "content/manuals/dhi/explore/test.md",
+          "units": 51
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+          "rel_path": "content/manuals/dhi/how-to/test-attestation.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+          "rel_path": "content/manuals/dhi/how-to/malware-attestation.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_sign__10390b6b",
+          "rel_path": "content/manuals/dhi/how-to/sign.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/explore/test.md",
+      "units": 96
+    },
+    "content_manuals_dhi_features__933e7f28": {
+      "coverage": 0.9829059829059829,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_features__933e7f28",
+          "rel_path": "content/manuals/dhi/features.md",
+          "units": 114
+        },
+        {
+          "doc_id": "content_manuals_dhi_explore_index__90ef6054",
+          "rel_path": "content/manuals/dhi/explore/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_multi_container_applications__f0fa6bfb",
+          "rel_path": "content/get-started/docker-concepts/running-containers/multi-container-applications.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_cpp_multistage__916ce9a1",
+          "rel_path": "content/guides/cpp/multistage.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/features.md",
+      "units": 117
+    },
+    "content_manuals_dhi_get_started__dbbd451d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_get_started__dbbd451d",
+          "rel_path": "content/manuals/dhi/get-started.md",
+          "units": 99
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_select_enterprise__d6b4e655",
+          "rel_path": "content/manuals/dhi/how-to/select-enterprise.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_compare__8e161d50",
+          "rel_path": "content/manuals/dhi/how-to/compare.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_dhi_backstage__98c3cde2",
+          "rel_path": "content/guides/dhi-backstage.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_guides_django__3f9a8cc6",
+          "rel_path": "content/guides/django.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/get-started.md",
+      "units": 99
+    },
+    "content_manuals_dhi_how_to_build__aef9a8dc": {
+      "coverage": 0.9914893617021276,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_definitions__804050c0",
+          "rel_path": "content/manuals/dhi/core-concepts/definitions.md",
+          "units": 146
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_build_redis__37df4b36",
+          "rel_path": "content/manuals/dhi/how-to/build-redis.md",
+          "units": 91
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_build_nginx__d8851537",
+          "rel_path": "content/manuals/dhi/how-to/build-nginx.md",
+          "units": 84
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_build_variants__e3a1bcf7",
+          "rel_path": "content/manuals/dhi/how-to/build-variants.md",
+          "units": 68
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_build_alpine__097186e2",
+          "rel_path": "content/manuals/dhi/how-to/build-alpine.md",
+          "units": 61
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/build.md",
+      "units": 470
+    },
+    "content_manuals_dhi_how_to_cli__ca795752": {
+      "coverage": 0.959349593495935,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_cli__ca795752",
+          "rel_path": "content/manuals/dhi/how-to/cli.md",
+          "units": 118
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+          "rel_path": "content/manuals/dhi/how-to/mirror.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_mcp_gateway__41492c1e",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_ai_model_runner_get_started__e89288b2",
+          "rel_path": "content/manuals/ai/model-runner/get-started.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_ai_sandboxes_agents_kiro__8f96881e",
+          "rel_path": "content/manuals/ai/sandboxes/agents/kiro.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/cli.md",
+      "units": 123
+    },
+    "content_manuals_dhi_how_to_customize__db61f385": {
+      "coverage": 0.9453924914675768,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_customize__db61f385",
+          "rel_path": "content/manuals/dhi/how-to/customize.md",
+          "units": 177
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_oci_artifacts__ef436e7c",
+          "rel_path": "content/manuals/dhi/how-to/oci-artifacts.md",
+          "units": 61
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_customize_chart__2c532e55",
+          "rel_path": "content/manuals/dhi/how-to/customize-chart.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+          "rel_path": "content/manuals/dhi/how-to/mirror.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_cli__ca795752",
+          "rel_path": "content/manuals/dhi/how-to/cli.md",
+          "units": 17
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/customize.md",
+      "units": 293
+    },
+    "content_manuals_dhi_how_to_explore__0b49b83a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_explore__0b49b83a",
+          "rel_path": "content/manuals/dhi/how-to/explore.md",
+          "units": 94
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_compare__8e161d50",
+          "rel_path": "content/manuals/dhi/how-to/compare.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_manuals_dhi_get_started__dbbd451d",
+          "rel_path": "content/manuals/dhi/get-started.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_bun_containerize__6872b268",
+          "rel_path": "content/guides/bun/containerize.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_deno_containerize__91ad6baf",
+          "rel_path": "content/guides/deno/containerize.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/explore.md",
+      "units": 137
+    },
+    "content_manuals_dhi_how_to_hardened_packages__4bcf22f9": {
+      "coverage": 0.9693251533742331,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify_packages__4768214f",
+          "rel_path": "content/manuals/dhi/how-to/verify-packages.md",
+          "units": 70
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_packages_enterprise__23e6da41",
+          "rel_path": "content/manuals/dhi/how-to/packages-enterprise.md",
+          "units": 37
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_packages_public__45b2463d",
+          "rel_path": "content/manuals/dhi/how-to/packages-public.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_manuals_dhi_core_concepts_packages__a9a54a01",
+          "rel_path": "content/manuals/dhi/core-concepts/packages.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_hardened_packages__4bcf22f9",
+          "rel_path": "content/manuals/dhi/how-to/hardened-packages.md",
+          "units": 18
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/hardened-packages.md",
+      "units": 163
+    },
+    "content_manuals_dhi_how_to_helm__07f0a390": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_helm__07f0a390",
+          "rel_path": "content/manuals/dhi/how-to/helm.md",
+          "units": 63
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_kubernetes__76d00d58",
+          "rel_path": "content/manuals/dhi/how-to/kubernetes.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+          "rel_path": "content/manuals/dhi/how-to/mirror.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_build_building_best_practices__bdbd3cf6",
+          "rel_path": "content/manuals/build/building/best-practices.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_buildkit_frontend__899964cb",
+          "rel_path": "content/manuals/build/buildkit/frontend.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/helm.md",
+      "units": 92
+    },
+    "content_manuals_dhi_how_to_index__65f3cde3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_index__65f3cde3",
+          "rel_path": "content/manuals/dhi/how-to/_index.md",
+          "units": 74
+        },
+        {
+          "doc_id": "content_manuals_build_index__792f2ff8",
+          "rel_path": "content/manuals/build/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_dhi_explore_index__90ef6054",
+          "rel_path": "content/manuals/dhi/explore/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_dhi_index__45a19c2b",
+          "rel_path": "content/manuals/dhi/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_index__993a2171",
+          "rel_path": "content/manuals/docker-hub/_index.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/_index.md",
+      "units": 74
+    },
+    "content_manuals_dhi_how_to_mirror__819fcf55": {
+      "coverage": 0.982078853046595,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+          "rel_path": "content/manuals/dhi/how-to/mirror.md",
+          "units": 274
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_customize__db61f385",
+          "rel_path": "content/manuals/dhi/how-to/customize.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_discover_attestations__90a3f04a",
+          "rel_path": "content/manuals/dhi/how-to/discover-attestations.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_quickstart__0fb28b3b",
+          "rel_path": "content/manuals/docker-hub/quickstart.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/mirror.md",
+      "units": 279
+    },
+    "content_manuals_dhi_how_to_policies__cb429eb1": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_policies__cb429eb1",
+          "rel_path": "content/manuals/dhi/how-to/policies.md",
+          "units": 76
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_sharing_agents__3cc82910",
+          "rel_path": "content/manuals/ai/docker-agent/sharing-agents.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_export__08849c5c",
+          "rel_path": "content/manuals/build/building/export.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_stage__7d6c6a7d",
+          "rel_path": "content/manuals/build/building/multi-stage.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/policies.md",
+      "units": 76
+    },
+    "content_manuals_dhi_how_to_scan__e82169ee": {
+      "coverage": 0.9771863117870723,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan_ci__a2e791a7",
+          "rel_path": "content/manuals/dhi/how-to/scan-ci.md",
+          "units": 69
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan_trivy__f262741a",
+          "rel_path": "content/manuals/dhi/how-to/scan-trivy.md",
+          "units": 55
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan_derived__cff53b57",
+          "rel_path": "content/manuals/dhi/how-to/scan-derived.md",
+          "units": 53
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_scan__e82169ee",
+          "rel_path": "content/manuals/dhi/how-to/scan.md",
+          "units": 27
+        },
+        {
+          "doc_id": "content_manuals_scout_integrations_ci_gha__c8cddf28",
+          "rel_path": "content/manuals/scout/integrations/ci/gha.md",
+          "units": 20
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/scan.md",
+      "units": 263
+    },
+    "content_manuals_dhi_how_to_use__8d7b63c4": {
+      "coverage": 0.9302325581395349,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_kubernetes__76d00d58",
+          "rel_path": "content/manuals/dhi/how-to/kubernetes.md",
+          "units": 58
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_use__8d7b63c4",
+          "rel_path": "content/manuals/dhi/how-to/use.md",
+          "units": 55
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_discover_attestations__90a3f04a",
+          "rel_path": "content/manuals/dhi/how-to/discover-attestations.md",
+          "units": 49
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_authenticate__4c76d7ba",
+          "rel_path": "content/manuals/dhi/how-to/authenticate.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_static__ef76cae1",
+          "rel_path": "content/manuals/dhi/how-to/static.md",
+          "units": 14
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/use.md",
+      "units": 215
+    },
+    "content_manuals_dhi_how_to_verify__6b740341": {
+      "coverage": 0.9491525423728814,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify__6b740341",
+          "rel_path": "content/manuals/dhi/how-to/verify.md",
+          "units": 149
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_verify_chart__7b66a340",
+          "rel_path": "content/manuals/dhi/how-to/verify-chart.md",
+          "units": 27
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+          "rel_path": "content/manuals/dhi/how-to/mirror.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_test_attestation__a95dbbef",
+          "rel_path": "content/manuals/dhi/how-to/test-attestation.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_malware_attestation__761a8de0",
+          "rel_path": "content/manuals/dhi/how-to/malware-attestation.md",
+          "units": 10
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/how-to/verify.md",
+      "units": 177
+    },
+    "content_manuals_dhi_index__45a19c2b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_index__45a19c2b",
+          "rel_path": "content/manuals/dhi/_index.md",
+          "units": 65
+        },
+        {
+          "doc_id": "content_manuals_offload_index__7d704ce4",
+          "rel_path": "content/manuals/offload/_index.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_ci_github_actions_github_builder_index__82ac01b8",
+          "rel_path": "content/manuals/build/ci/github-actions/github-builder/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_compose_compose_sdk__0e13f99d",
+          "rel_path": "content/manuals/compose/compose-sdk.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_index__65f3cde3",
+          "rel_path": "content/manuals/dhi/how-to/_index.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/_index.md",
+      "units": 65
+    },
+    "content_manuals_dhi_migration_checklist__01c1189f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_checklist__01c1189f",
+          "rel_path": "content/manuals/dhi/migration/checklist.md",
+          "units": 15
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_index__64bbda2b",
+          "rel_path": "content/get-started/docker-concepts/the-basics/_index.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_container__7fc5c227",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-container.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_get_docker__72d38170",
+          "rel_path": "content/get-started/get-docker.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/checklist.md",
+      "units": 15
+    },
+    "content_manuals_dhi_migration_examples_go__bb47b514": {
+      "coverage": 0.9148936170212766,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_go__bb47b514",
+          "rel_path": "content/manuals/dhi/migration/examples/go.md",
+          "units": 32
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_node__a40261b8",
+          "rel_path": "content/manuals/dhi/migration/examples/node.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_python__bdb76ca3",
+          "rel_path": "content/manuals/dhi/migration/examples/python.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_example_patterns__7bdc1646",
+          "rel_path": "content/manuals/dhi/migration/example-patterns.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_angular_containerize__589692c3",
+          "rel_path": "content/guides/angular/containerize.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/examples/go.md",
+      "units": 47
+    },
+    "content_manuals_dhi_migration_examples_index__076e84c6": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_index__076e84c6",
+          "rel_path": "content/manuals/dhi/migration/examples/_index.md",
+          "units": 24
+        },
+        {
+          "doc_id": "content_get_started_workshop_10_what_next__f647fdca",
+          "rel_path": "content/get-started/workshop/10_what_next.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_ai_gordon_index__d3b660cd",
+          "rel_path": "content/manuals/ai/gordon/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_index__0c1295f1",
+          "rel_path": "content/manuals/dhi/migration/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_scout_index__20ddd730",
+          "rel_path": "content/manuals/scout/_index.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/examples/_index.md",
+      "units": 24
+    },
+    "content_manuals_dhi_migration_examples_node__a40261b8": {
+      "coverage": 0.9215686274509803,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_node__a40261b8",
+          "rel_path": "content/manuals/dhi/migration/examples/node.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_go__bb47b514",
+          "rel_path": "content/manuals/dhi/migration/examples/go.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_python__bdb76ca3",
+          "rel_path": "content/manuals/dhi/migration/examples/python.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_example_patterns__7bdc1646",
+          "rel_path": "content/manuals/dhi/migration/example-patterns.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/examples/node.md",
+      "units": 51
+    },
+    "content_manuals_dhi_migration_examples_python__bdb76ca3": {
+      "coverage": 0.9285714285714286,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_python__bdb76ca3",
+          "rel_path": "content/manuals/dhi/migration/examples/python.md",
+          "units": 41
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_go__bb47b514",
+          "rel_path": "content/manuals/dhi/migration/examples/go.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_examples_node__a40261b8",
+          "rel_path": "content/manuals/dhi/migration/examples/node.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_example_patterns__7bdc1646",
+          "rel_path": "content/manuals/dhi/migration/example-patterns.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_php_develop__08e2c054",
+          "rel_path": "content/guides/php/develop.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/examples/python.md",
+      "units": 56
+    },
+    "content_manuals_dhi_migration_index__0c1295f1": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_index__0c1295f1",
+          "rel_path": "content/manuals/dhi/migration/_index.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_manuals_scout_index__20ddd730",
+          "rel_path": "content/manuals/scout/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_subscription_index__2711dc6d",
+          "rel_path": "content/manuals/subscription/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_index__90ad76c0",
+          "rel_path": "content/get-started/_index.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/_index.md",
+      "units": 42
+    },
+    "content_manuals_dhi_migration_migrate_from_doi__cf95b992": {
+      "coverage": 0.8974358974358975,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_doi__cf95b992",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-doi.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_workflow__84dd29e2",
+          "rel_path": "content/manuals/dhi/migration/workflow.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_wolfi__dffbc69a",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-wolfi.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_checklist__01c1189f",
+          "rel_path": "content/manuals/dhi/migration/checklist.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_ubuntu__b123ddd1",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-ubuntu.md",
+          "units": 9
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/migrate-from-doi.md",
+      "units": 78
+    },
+    "content_manuals_dhi_migration_migrate_from_ubuntu__b123ddd1": {
+      "coverage": 0.9021739130434783,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_ubuntu__b123ddd1",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-ubuntu.md",
+          "units": 59
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_workflow__84dd29e2",
+          "rel_path": "content/manuals/dhi/migration/workflow.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_checklist__01c1189f",
+          "rel_path": "content/manuals/dhi/migration/checklist.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_doi__cf95b992",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-doi.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_wolfi__dffbc69a",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-wolfi.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/migrate-from-ubuntu.md",
+      "units": 92
+    },
+    "content_manuals_dhi_migration_migrate_from_wolfi__dffbc69a": {
+      "coverage": 0.859375,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_wolfi__dffbc69a",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-wolfi.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_doi__cf95b992",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-doi.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_workflow__84dd29e2",
+          "rel_path": "content/manuals/dhi/migration/workflow.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_from_ubuntu__b123ddd1",
+          "rel_path": "content/manuals/dhi/migration/migrate-from-ubuntu.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_guides_angular_develop__975af6cd",
+          "rel_path": "content/guides/angular/develop.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/migrate-from-wolfi.md",
+      "units": 64
+    },
+    "content_manuals_dhi_migration_migrate_with_ai__33e3679e": {
+      "coverage": 0.8333333333333334,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_migration_migrate_with_ai__33e3679e",
+          "rel_path": "content/manuals/dhi/migration/migrate-with-ai.md",
+          "units": 25
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_index__d6c33b1f",
+          "rel_path": "content/manuals/ai/docker-agent/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_desktop_features_wasm__25734b27",
+          "rel_path": "content/manuals/desktop/features/wasm.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_build_policies_index__0d5e2f82",
+          "rel_path": "content/manuals/build/policies/_index.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/migration/migrate-with-ai.md",
+      "units": 30
+    },
+    "content_manuals_dhi_troubleshoot__6fe3b12d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_dhi_troubleshoot__6fe3b12d",
+          "rel_path": "content/manuals/dhi/troubleshoot.md",
+          "units": 106
+        },
+        {
+          "doc_id": "content_manuals_ai_gordon_index__d3b660cd",
+          "rel_path": "content/manuals/ai/gordon/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_docker_compose__1270249c",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-docker-compose.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_workshop_04_sharing_app__d8294d54",
+          "rel_path": "content/get-started/workshop/04_sharing_app.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/dhi/troubleshoot.md",
+      "units": 106
+    }
+  },
+  "unmapped_removals": []
+}

@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "2bc9f0446acef48a689dd6dec61d3b44ce1ba8260df91e2f105bf0c68fec04a1",
+      "task": {
+        "question": "I'm preparing a Spring Boot application's S3 and SQS integration-test environment for parallel CI builds. How should I configure the project and test harness to avoid real AWS calls and conflicting ports, verify that the environment runs and cleans up, and evaluate a cloud runtime if container workloads strain our development machines?",
+        "actor": "A Java developer responsible for a Spring Boot application's integration tests.",
+        "trigger": "The test environment must support parallel CI builds, while the team is also evaluating relief for local container resource constraints.",
+        "goal": "Establish an isolated AWS-emulation test environment with actionable project configuration, test wiring, execution checks, and a justified cloud-runtime option.",
+        "observable_success": "The application uses the test container's S3 and SQS endpoints and credentials; parallel builds avoid fixed-port conflicts; a test run starts the container, passes, and removes it afterward; the developer can identify the setup and runtime-minute implications of cloud offloading.",
+        "realism_rationale": "The documentation explicitly describes connecting Spring Cloud AWS tests to a containerized AWS emulator. Its parallel-CI guidance identifies port conflicts as a concrete constraint, making environment configuration and lifecycle verification a plausible engineering workflow.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "To test the application, you need a running LocalStack instance that emulates\nthe AWS S3 and SQS services. Testcontainers spins up LocalStack in a Docker\ncontainer and `@DynamicPropertySource` connects it to Spring Cloud AWS."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "For testing, use an ephemeral container that starts on a random available port\nso that you can run multiple builds in CI in parallel without port conflicts."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Configure a Testcontainers-managed LocalStack instance for the Spring Boot test.",
+            "acceptance": "Shows a Spring Boot test with Testcontainers lifecycle integration and a static @Container LocalStackContainer, identifying localstack/localstack:3.0 as the supplied example image.",
+            "tier_reason": "The test needs a concrete managed AWS-emulation dependency.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "@SpringBootTest\n@Testcontainers\nclass MessageListenerTest {\n\n  @Container\n  static LocalStackContainer localStack = new LocalStackContainer(\n    DockerImageName.parse(\"localstack/localstack:3.0\")\n  );"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Avoid a fixed host port for parallel test execution.",
+            "acceptance": "Specifies an ephemeral container on a random available port and explains that this prevents port conflicts between parallel CI builds.",
+            "tier_reason": "This directly satisfies the workflow's parallel-build constraint.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "For testing, use an ephemeral container that starts on a random available port\nso that you can run multiple builds in CI in parallel without port conflicts."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Wire both AWS service endpoints dynamically to the test container.",
+            "acceptance": "Registers spring.cloud.aws.s3.endpoint and spring.cloud.aws.sqs.endpoint through @DynamicPropertySource using the corresponding S3 and SQS endpoint overrides.",
+            "tier_reason": "Both service clients must reach the emulator rather than actual AWS services.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "registry.add(\n      \"spring.cloud.aws.s3.endpoint\",\n      () -> localStack.getEndpointOverride(S3).toString()\n    );\n    registry.add(\n      \"spring.cloud.aws.sqs.endpoint\",\n      () -> localStack.getEndpointOverride(SQS).toString()\n    );"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Configure the test region and credentials from the container.",
+            "acceptance": "Registers spring.cloud.aws.region.static, spring.cloud.aws.credentials.access-key, and spring.cloud.aws.credentials.secret-key using the container's region, access key, and secret key getters.",
+            "tier_reason": "Endpoint wiring alone does not supply the complete documented AWS client configuration.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "registry.add(\n      \"spring.cloud.aws.region.static\",\n      () -> localStack.getRegion()\n    );\n    registry.add(\n      \"spring.cloud.aws.credentials.access-key\",\n      () -> localStack.getAccessKey()\n    );\n    registry.add(\n      \"spring.cloud.aws.credentials.secret-key\",\n      () -> localStack.getSecretKey()\n    );"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Give execution commands and observable lifecycle checks.",
+            "acceptance": "Provides ./mvnw test or ./gradlew test and states that successful validation includes container startup, a passing test, and automatic container stop and removal after completion.",
+            "tier_reason": "The developer needs a way to run and verify the configured environment.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_run_tests__51513771",
+            "exact_quote": "## Run the tests\n\n```console\n$ ./mvnw test\n```\n\nOr with Gradle:\n\n```console\n$ ./gradlew test\n```\n\nYou should see the LocalStack Docker container start and the test pass. After\nthe tests finish, the container stops and is removed automatically."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Explain the project-generation route and its starter limitation.",
+            "acceptance": "For a fresh scaffold, recommends selecting the Testcontainers starter in Spring Initializr and explicitly notes that Spring Cloud AWS starters must be added manually.",
+            "tier_reason": "This prevents a missing-dependency problem when reproducing the setup in a new project.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_create_project__e8f06dfd",
+            "exact_quote": "Create a Spring Boot project from [Spring Initializr](https://start.spring.io)\nby selecting the **Testcontainers** starter. Spring Cloud AWS starters are not\navailable on Spring Initializr, so you need to add them manually."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Identify the AWS dependency-management and integration modules.",
+            "acceptance": "Names the Spring Cloud AWS BOM, S3 and SQS starters, and Testcontainers LocalStack module as project dependencies needed for the documented integration.",
+            "tier_reason": "These prerequisites make the environment reproducible beyond the test-class wiring.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_create_project__e8f06dfd",
+            "exact_quote": "Add the Spring Cloud AWS BOM to your dependency management and add the S3, SQS\nstarters as dependencies. Testcontainers provides a\n[LocalStack module](https://testcontainers.com/modules/localstack/) for testing\nAWS service integrations."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Account for asynchronous SQS testing.",
+            "acceptance": "Identifies Awaitility as the documented dependency for testing asynchronous SQS processing, without inventing an assertion or timeout absent from the excerpts.",
+            "tier_reason": "Asynchronous processing needs additional test support beyond service connectivity.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_create_project__e8f06dfd",
+            "exact_quote": "You also need\n[Awaitility](http://www.awaitility.org/) for testing asynchronous SQS\nprocessing."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "State the supplied dependency-version baseline.",
+            "acceptance": "Reports Java 17, Testcontainers 2.0.4, and awspring 3.0.3 as the example's declared versions, without claiming broader compatibility or current-version status.",
+            "tier_reason": "A concrete baseline helps reproduce the documented configuration.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_create_project__e8f06dfd",
+            "exact_quote": "<properties>\n    <java.version>17</java.version>\n    <testcontainers.version>2.0.4</testcontainers.version>\n    <awspring.version>3.0.3</awspring.version>\n</properties>"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Make application resource names configurable.",
+            "acceptance": "Describes an ApplicationProperties record with queue and bucket fields bound under the app prefix, so tests can supply resource names through configuration.",
+            "tier_reason": "Configurable resource names support isolation without embedding names in application logic.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_create_project__e8f06dfd",
+            "exact_quote": "@ConfigurationProperties(prefix = \"app\")\npublic record ApplicationProperties(String queue, String bucket) {}"
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Use unique bucket and queue names in the test configuration.",
+            "acceptance": "Explains the example's UUID-generated BUCKET_NAME and QUEUE_NAME and binds them to app.bucket and app.queue.",
+            "tier_reason": "Resource-name isolation complements port isolation.",
+            "page_id": "content_guides_testcontainers_java_aws_localstack_write_tests__a973eb0f",
+            "exact_quote": "static final String BUCKET_NAME = UUID.randomUUID().toString();\n  static final String QUEUE_NAME = UUID.randomUUID().toString();\n\n  @DynamicPropertySource\n  static void overrideProperties(DynamicPropertyRegistry registry) {\n    registry.add(\"app.bucket\", () -> BUCKET_NAME);\n    registry.add(\"app.queue\", () -> QUEUE_NAME);"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Explain when cloud offloading addresses the stated resource constraint.",
+            "acceptance": "Connects Testcontainers Cloud's management of containerized test dependencies to reduced resource constraints on local machines or CI servers and consistent test environments.",
+            "tier_reason": "This gives a relevant runtime alternative when local capacity becomes a constraint.",
+            "page_id": "content_guides_testcontainers_cloud_index__1d5aaa14",
+            "exact_quote": "By shifting the management of Testcontainers-based services to the cloud, Testcontainers Cloud optimizes performance, reduces resource constraints on local machines or CI servers, and ensures consistent test environments."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Include runtime-minute implications in the cloud decision.",
+            "acceptance": "States that Docker Pro, Team, and Business include Testcontainers Cloud runtime minutes, additional minutes use consumption pricing, and unused minutes do not roll over monthly.",
+            "tier_reason": "Resource offloading has a documented consumption constraint relevant to choosing the alternative.",
+            "page_id": "content_guides_testcontainers_cloud_index__1d5aaa14",
+            "exact_quote": "Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runtime minutes, and additional minutes are available via consumption pricing. Testcontainers Cloud runtime minutes do not rollover month to month."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Identify the documented local cloud-setup components.",
+            "acceptance": "Names configuration of Testcontainers Cloud and its CLI, plus the Testcontainers Desktop application for managing cloud-based containers during local tests; does not invent installation commands.",
+            "tier_reason": "The cloud option needs a concrete setup direction to be useful.",
+            "page_id": "content_guides_testcontainers_cloud_demo_local__a44d93c1",
+            "exact_quote": "- Install and configure Testcontainers Cloud and the CLI to seamlessly integrate with your local development environment.\n- Set up and configure the Testcontainers Desktop application to monitor and manage cloud-based containers during local tests."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Provide a cloud-runtime monitoring and troubleshooting destination.",
+            "acceptance": "Identifies the Testcontainers Cloud Dashboard as the documented place to review monitoring and troubleshooting options for the cloud alternative.",
+            "tier_reason": "The alternative needs an operational validation path after setup.",
+            "page_id": "content_guides_testcontainers_cloud_demo_local__a44d93c1",
+            "exact_quote": "- Review options for monitoring and troubleshooting in the Testcontainers Cloud Dashboard."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "c954c97d4300c70b61ccbda20dd529f1cb5014681c3692ff8283f13794ae0b79",
+      "task": {
+        "question": "Our Micronaut album API calls a third-party photo service, and provider outages are interrupting development. Help me set up an HTTP integration-test harness that exercises our album endpoint against controlled photo responses, including the project prerequisites and resource cleanup. We also use amd64 and ARM development machines; explain what the documentation supports for a Docker-hosted mock alternative and additional failure scenarios.",
+        "actor": "A Micronaut developer maintaining an album API that depends on a remote photo service.",
+        "trigger": "Remote-provider outages interrupt development, and the team needs reproducible tests across different development-machine architectures.",
+        "goal": "Exercise the application's HTTP integration against controlled responses, with a reproducible project setup and an informed Docker-mock alternative.",
+        "observable_success": "The test starts an application server configured to call the mock, stubs the album-photo request with JSON, sends an HTTP request to the application's album endpoint, and closes the application server afterward. The developer can identify the documented Docker prerequisites, architectures, and failure-simulation capabilities.",
+        "realism_rationale": "The project excerpt establishes an application endpoint that fetches album photos from a separate service. The WireMock guide identifies remote-service outages, rate limits, and network issues as development blockers, giving a concrete reason to build a controlled HTTP test environment.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_create_project__63acd9ce",
+            "exact_quote": "The application exposes a `GET /api/albums/{albumId}` endpoint that calls the\nphoto service to fetch photos for a given album."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_guides_wiremock__7faa47ee",
+            "exact_quote": "Network issues, rate limits, or even downtime of the API provider can halt your progress. This can significantly hinder your productivity and make testing more challenging."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Use HTTP-level mocking to exercise the external-service integration.",
+            "acceptance": "Explains that mocking the external API at the HTTP protocol level allows marshalling and unmarshalling behavior to be tested and network issues to be simulated.",
+            "tier_reason": "This establishes the testing boundary needed for the requested integration harness.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_write_tests__6e4b8324",
+            "exact_quote": "Mocking external API interactions at the HTTP protocol level, rather than\nmocking Java methods, lets you verify marshalling and unmarshalling behavior and\nsimulate network issues."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Start the in-process mock through WireMock's JUnit 5 extension on a dynamic port.",
+            "acceptance": "Shows or precisely describes a registered static WireMockExtension created with wireMockConfig().dynamicPort().",
+            "tier_reason": "The harness needs a running mock with a concrete lifecycle mechanism.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_write_tests__6e4b8324",
+            "exact_quote": "@RegisterExtension\n    static WireMockExtension wireMock = WireMockExtension.newInstance()\n            .options(wireMockConfig().dynamicPort())\n            .build();"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Redirect the Micronaut photo-service client to the mock's actual URL.",
+            "acceptance": "Sets micronaut.http.services.photosapi.url to wireMock.baseUrl() in the properties passed to the application server.",
+            "tier_reason": "The application must call the controlled dependency for the test to satisfy its goal.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_write_tests__6e4b8324",
+            "exact_quote": "private Map<String, Object> getProperties() {\n        return Collections.singletonMap(\"micronaut.http.services.photosapi.url\", wireMock.baseUrl());\n    }"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Stub the album-photo request with a JSON response.",
+            "acceptance": "Configures a GET stub matching /albums/{albumId}/photos, returning the controlled responseJson body with an application/json content type.",
+            "tier_reason": "A concrete request-response stub is necessary to exercise the photo integration.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_write_tests__6e4b8324",
+            "exact_quote": "wireMock.stubFor(WireMock.get(urlMatching(\"/albums/\" + albumId + \"/photos\"))\n                    .willReturn(aResponse()\n                            .withHeader(\"Content-Type\", MediaType.APPLICATION_JSON)\n                            .withBody(responseJson)));"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Run the application server and exercise its album endpoint over HTTP.",
+            "acceptance": "Starts EmbeddedServer with the mock-targeting properties, points RestAssured at server.getPort(), and sends GET /api/albums/{albumId}; does not claim that assertions missing from the excerpt are shown.",
+            "tier_reason": "This connects the mock setup to an observable request through the application under test.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_write_tests__6e4b8324",
+            "exact_quote": "try (EmbeddedServer server = ApplicationContext.run(EmbeddedServer.class, getProperties())) {\n            RestAssured.port = server.getPort();\n            Long albumId = 1L;"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Specify the project-generation features.",
+            "acceptance": "Identifies http-client, micronaut-test-rest-assured, and testcontainers as the documented Micronaut Launch feature selections.",
+            "tier_reason": "These prerequisites help reproduce the harness in a project lacking its supporting features.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_create_project__63acd9ce",
+            "exact_quote": "Create a Micronaut project from [Micronaut Launch](https://micronaut.io/launch)\nby selecting the **http-client**, **micronaut-test-rest-assured**, and\n**testcontainers** features."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Identify the mock libraries as test dependencies.",
+            "acceptance": "States that WireMock and Testcontainers WireMock libraries must be added as test dependencies after project generation.",
+            "tier_reason": "Generated project features alone do not supply all documented mock dependencies.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_create_project__63acd9ce",
+            "exact_quote": "After generating the project, add the **WireMock** and **Testcontainers\nWireMock** libraries as test dependencies."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "State the supplied Micronaut project baseline.",
+            "acceptance": "Identifies JDK 17, Micronaut 4.1.2, and the Netty runtime as the example's declared baseline, without asserting unprovided compatibility guarantees.",
+            "tier_reason": "A version and runtime reference improves reproducibility.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_create_project__63acd9ce",
+            "exact_quote": "<properties>\n    <jdk.version>17</jdk.version>\n    <micronaut.version>4.1.2</micronaut.version>\n    <micronaut.runtime>netty</micronaut.runtime>\n</properties>"
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Include the repository declared by the sample dependency configuration.",
+            "acceptance": "Shows or names the sample's jitpack.io Maven repository with URL https://jitpack.io, without inventing which dependency requires it.",
+            "tier_reason": "Repository configuration is useful when reproducing the supplied dependency setup.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_create_project__63acd9ce",
+            "exact_quote": "<repositories>\n    <repository>\n        <id>jitpack.io</id>\n        <url>https://jitpack.io</url>\n    </repository>\n</repositories>"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Offer the guide repository as a setup alternative.",
+            "acceptance": "Provides the supplied tc-guide-testing-rest-api-integrations-in-micronaut-apps-using-wiremock repository as an alternative to generating the project.",
+            "tier_reason": "A reference project provides a practical fallback for reproducing the setup.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_create_project__63acd9ce",
+            "exact_quote": "Alternatively, clone the\n[guide repository](https://github.com/testcontainers/tc-guide-testing-rest-api-integrations-in-micronaut-apps-using-wiremock)."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Describe the documented Docker-hosted mock alternative.",
+            "acceptance": "Identifies wiremock/wiremock as the official Docker image for deploying and managing WireMock instances, while keeping the in-process test setup distinct from this alternative.",
+            "tier_reason": "This answers the developer's request for a container-hosted development option.",
+            "page_id": "content_guides_wiremock__7faa47ee",
+            "exact_quote": "The official [Docker image for WireMock](https://hub.docker.com/r/wiremock/wiremock) provides a convenient way to deploy and manage WireMock instances."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Address the documented architecture support.",
+            "acceptance": "Reports amd64, armv7, and armv8 as the architectures named in the WireMock Docker guide, without extending that list to unmentioned architectures.",
+            "tier_reason": "Architecture support is a concrete constraint for the team's mixed development machines.",
+            "page_id": "content_guides_wiremock__7faa47ee",
+            "exact_quote": "WireMock is available for various CPU architectures, including amd64, armv7, and armv8, ensuring compatibility with different devices and platforms."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "State the Docker guide's prerequisite.",
+            "acceptance": "Identifies Docker Desktop as the prerequisite listed for the Docker-hosted WireMock guide and associates it with that alternative.",
+            "tier_reason": "The container option has an environment prerequisite separate from the in-process extension.",
+            "page_id": "content_guides_wiremock__7faa47ee",
+            "exact_quote": "The following prerequisites are required to follow along with this how-to guide:\n\n- [Docker Desktop](https://www.docker.com/products/docker-desktop/)"
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Expand the test plan to documented failure scenarios.",
+            "acceptance": "Suggests delays, errors, and different HTTP status codes as additional controlled scenarios, and notes HTTP and HTTPS support without inventing scenario-specific configuration.",
+            "tier_reason": "Failure simulation makes the harness useful beyond a single successful response.",
+            "page_id": "content_guides_wiremock__7faa47ee",
+            "exact_quote": "WireMock supports both HTTP and HTTPS protocols and can simulate various response scenarios, including delays, errors, and different HTTP status codes."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Preserve application-server cleanup in the test harness.",
+            "acceptance": "Uses the supplied try-with-resources EmbeddedServer pattern so the server's resource scope ends after the test, rather than leaving a manually started server unmanaged.",
+            "tier_reason": "Resource cleanup improves repeatability across test runs.",
+            "page_id": "content_guides_testcontainers_java_micronaut_wiremock_write_tests__6e4b8324",
+            "exact_quote": "try (EmbeddedServer server = ApplicationContext.run(EmbeddedServer.class, getProperties())) {"
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

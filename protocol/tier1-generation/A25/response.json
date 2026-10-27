@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "0daa1729fe47a031f0a74a172e1c9f9970e4b86e4ba2b7b1f17317f1be6f7219",
+      "task": {
+        "question": "I'm replacing a shell-based Docker smoke test with a Go application that runs Alpine's `echo hello world` command and waits for completion. How should I implement it and prepare the SDK connection, including on Docker Desktop for Linux, when the Docker client and daemon may have different versions?",
+        "actor": "A developer replacing a shell-based container smoke test with Go automation.",
+        "trigger": "The test must run from an application across environments with potentially different Docker client and daemon versions.",
+        "goal": "Implement the container lifecycle and establish the SDK prerequisites, connection settings, and compatibility checks needed to run it.",
+        "observable_success": "The application connects to the intended daemon, completes the Alpine pull, creates and starts the configured container, and reaches its wait result while handling reported errors.",
+        "realism_rationale": "The examples explicitly support running containers from applications. Their asynchronous image-pull condition creates a concrete sequencing requirement before container creation, while the other supplied pages support SDK setup and compatibility decisions.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "This first example shows how to run a container using the Docker API. On the\ncommand line, you would use the `docker run` command, but this is just as easy\nto do from your own apps too."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "// cli.ImagePull is asynchronous.\n\t// The reader needs to be read completely for the pull operation to complete."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Initialize the Go Docker client using environment-derived configuration and handle initialization failure.",
+            "acceptance": "Shows client.New with client.FromEnv and checks its returned error before proceeding.",
+            "tier_reason": "A usable client is required to perform the workflow.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "apiClient, err := client.New(client.FromEnv, client.WithUserAgent(\"my-application/1.0.0\"))\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Pull Alpine and consume the pull response completely before creating the container.",
+            "acceptance": "Uses ImagePull for docker.io/library/alpine, handles its error, and drains the returned reader before container creation.",
+            "tier_reason": "The image must be available before the container can be created.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "reader, err := apiClient.ImagePull(ctx, \"docker.io/library/alpine\", client.ImagePullOptions{})\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tdefer reader.Close()\n\t// cli.ImagePull is asynchronous.\n\t// The reader needs to be read completely for the pull operation to complete.\n\t// If stdout is not required, consider using io.Discard instead of os.Stdout.\n\tio.Copy(os.Stdout, reader)"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Create an Alpine container configured to execute the requested command.",
+            "acceptance": "Shows ContainerCreate with Image set to alpine, Cmd set to echo, hello world, Tty false, and an error check.",
+            "tier_reason": "The container configuration defines the requested smoke test.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "resp, err := apiClient.ContainerCreate(ctx, client.ContainerCreateOptions{\n\t\tConfig: &container.Config{\n\t\t\tCmd: []string{\"echo\", \"hello world\"},\n\t\t\tTty: false,\n\t\t},\n\t\tImage: \"alpine\",\n\t})\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Start the newly created container and handle start failure.",
+            "acceptance": "Passes the creation response's ID to ContainerStart and checks the returned error.",
+            "tier_reason": "Creation alone does not execute the command.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "if _, err := apiClient.ContainerStart(ctx, resp.ID, client.ContainerStartOptions{}); err != nil {\n\t\tlog.Fatal(err)\n\t}"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Wait for container completion and handle the wait error channel.",
+            "acceptance": "Uses ContainerWait with the created container ID and selects between wait.Error and wait.Result, handling a non-nil error.",
+            "tier_reason": "Completion is the observable endpoint of the smoke test.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "wait := apiClient.ContainerWait(ctx, resp.ID, client.ContainerWaitOptions{})\n\tselect {\n\tcase err := <-wait.Error:\n\t\tif err != nil {\n\t\t\tlog.Fatal(err)\n\t\t}\n\tcase <-wait.Result:\n\t}"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Provide the documented Go SDK installation command.",
+            "acceptance": "Includes go get github.com/moby/moby/client.",
+            "tier_reason": "Makes the implementation reproducible in a new Go project.",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "$ go get github.com/moby/moby/client"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Check that the Go runtime is currently supported.",
+            "acceptance": "Recommends running go version and ensuring a currently supported Go version without inventing a minimum release.",
+            "tier_reason": "Addresses an SDK installation prerequisite.",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "The client requires a recent version of Go. Run `go version` and ensure that you're running a currently supported version of Go."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Establish Docker installation as a prerequisite.",
+            "acceptance": "States that Docker must be installed before trying the SDK example.",
+            "tier_reason": "Prevents treating SDK installation as sufficient setup.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "After you\n[install Docker](/get-started/get-docker.md), you can\n[install the Go or Python SDK](index.md#install-the-sdks) and\nalso try out the Docker Engine API."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Configure the Docker Desktop for Linux per-user socket.",
+            "acceptance": "Explains the per-user socket distinction and gives export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock.",
+            "tier_reason": "Handles a platform-specific connection condition.",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. To use Docker SDKs with Docker Desktop for Linux, set the `DOCKER_HOST` environment variable:\n>\n> ```bash\n> export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Arrange for client cleanup.",
+            "acceptance": "Shows defer apiClient.Close() after successful client initialization.",
+            "tier_reason": "Adds resource cleanup to the lifecycle implementation.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "defer apiClient.Close()"
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Inspect the client and daemon API support before making compatibility decisions.",
+            "acceptance": "Uses docker version to inspect supported API versions instead of assuming the excerpt's example versions apply to the user's system.",
+            "tier_reason": "Provides an environment-specific compatibility check.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "To see the highest and lowest version of the API your Docker daemon and client\nsupport, use `docker version`:"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Explain the limitation when the daemon is newer than the client.",
+            "acceptance": "States that the client may lack knowledge of new features or deprecated daemon endpoints.",
+            "tier_reason": "Clarifies one direction of version mismatch.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "If the daemon is newer than the client, the client doesn't know about new\n>   features or deprecated API endpoints in the daemon."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Explain the risk when the client is newer than the daemon.",
+            "acceptance": "States that the client can request endpoints the daemon does not know about.",
+            "tier_reason": "Clarifies the opposite direction of version mismatch.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "If the client is newer than the daemon, the client can request API\n>   endpoints that the daemon doesn't know about."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Give the documented SDK version selection guidance.",
+            "acceptance": "Recommends the latest SDK version, with the minimum requirement that it incorporate the API features the application needs.",
+            "tier_reason": "Supports a dependency selection decision.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "When using the SDK, use the latest version. At a minimum, use the version\n  that incorporates the API version with the features you need."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Explain when an API upgrade requires application changes.",
+            "acceptance": "States that API backward compatibility generally avoids code updates unless new features are needed.",
+            "tier_reason": "Supports maintenance decisions after daemon upgrades.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "The Docker API\nis backward-compatible, so you don't need to update code that uses the API\nunless you need to take advantage of new features."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "8169fe2a4ac5015b6df6bde6d613e282756e099fa6e4ba341643046383598443",
+      "task": {
+        "question": "I'm setting up a Go project on Docker Desktop for Linux to run a container smoke test from the application. Can you walk me through setup and an implementation that runs Alpine's `echo hello world` command, waits for completion, handles failures, and remains maintainable when the Docker client or daemon is upgraded?",
+        "actor": "A developer setting up container automation in a Go project on Docker Desktop for Linux.",
+        "trigger": "The project needs its first application-driven container smoke test and a setup that accommodates later Docker upgrades.",
+        "goal": "Prepare the Go SDK and daemon connection, implement the requested container lifecycle, and understand the relevant version constraints.",
+        "observable_success": "The project can initialize its Docker client, finish pulling Alpine, create and start the requested container, and receive completion through ContainerWait.",
+        "realism_rationale": "The supplied example establishes running a container from an application as a supported workflow. The Linux socket note supplies a concrete setup condition that can affect whether the application reaches the intended daemon.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "This first example shows how to run a container using the Docker API. On the\ncommand line, you would use the `docker run` command, but this is just as easy\nto do from your own apps too."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. To use Docker SDKs with Docker Desktop for Linux, set the `DOCKER_HOST` environment variable:"
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Initialize the Go Docker client using environment-derived configuration and handle initialization failure.",
+            "acceptance": "Shows client.New with client.FromEnv and checks its returned error before proceeding.",
+            "tier_reason": "The application needs a usable client to perform container operations.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "apiClient, err := client.New(client.FromEnv, client.WithUserAgent(\"my-application/1.0.0\"))\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Pull Alpine and finish consuming the pull response before container creation.",
+            "acceptance": "Uses ImagePull for docker.io/library/alpine, handles its error, and drains the returned reader completely before continuing.",
+            "tier_reason": "The asynchronous pull must finish for the lifecycle sequence to proceed reliably.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "reader, err := apiClient.ImagePull(ctx, \"docker.io/library/alpine\", client.ImagePullOptions{})\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tdefer reader.Close()\n\t// cli.ImagePull is asynchronous.\n\t// The reader needs to be read completely for the pull operation to complete.\n\t// If stdout is not required, consider using io.Discard instead of os.Stdout.\n\tio.Copy(os.Stdout, reader)"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Create the container with the requested image and command.",
+            "acceptance": "Shows ContainerCreate with Image alpine, Cmd containing echo and hello world, Tty false, and handling of the creation error.",
+            "tier_reason": "Defines the smoke test that the application will execute.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "resp, err := apiClient.ContainerCreate(ctx, client.ContainerCreateOptions{\n\t\tConfig: &container.Config{\n\t\t\tCmd: []string{\"echo\", \"hello world\"},\n\t\t\tTty: false,\n\t\t},\n\t\tImage: \"alpine\",\n\t})\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Start the created container and handle start failure.",
+            "acceptance": "Calls ContainerStart with resp.ID and checks the returned error.",
+            "tier_reason": "The command runs only after the container is started.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "if _, err := apiClient.ContainerStart(ctx, resp.ID, client.ContainerStartOptions{}); err != nil {\n\t\tlog.Fatal(err)\n\t}"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Wait for completion while handling wait errors.",
+            "acceptance": "Calls ContainerWait with resp.ID and selects between its Error and Result channels, handling a non-nil error.",
+            "tier_reason": "Waiting establishes the requested completion behavior.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "wait := apiClient.ContainerWait(ctx, resp.ID, client.ContainerWaitOptions{})\n\tselect {\n\tcase err := <-wait.Error:\n\t\tif err != nil {\n\t\t\tlog.Fatal(err)\n\t\t}\n\tcase <-wait.Result:\n\t}"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Install the documented Go client package.",
+            "acceptance": "Provides go get github.com/moby/moby/client.",
+            "tier_reason": "Enables setup of a fresh project.",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "$ go get github.com/moby/moby/client"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Verify the Go version prerequisite.",
+            "acceptance": "Instructs the developer to run go version and use a currently supported Go version.",
+            "tier_reason": "Addresses runtime suitability before SDK use.",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "The client requires a recent version of Go. Run `go version` and ensure that you're running a currently supported version of Go."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Identify Docker installation as a setup prerequisite.",
+            "acceptance": "States that Docker should be installed before installing and trying the SDK.",
+            "tier_reason": "Completes the project setup prerequisites.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "After you\n[install Docker](/get-started/get-docker.md), you can\n[install the Go or Python SDK](index.md#install-the-sdks) and\nalso try out the Docker Engine API."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Set the Docker Desktop for Linux connection environment.",
+            "acceptance": "Explains that Desktop uses a per-user socket and gives export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock.",
+            "tier_reason": "Addresses the workflow's platform-specific connection requirement.",
+            "page_id": "content_reference_api_engine_sdk_index__8b9020be",
+            "exact_quote": "Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. To use Docker SDKs with Docker Desktop for Linux, set the `DOCKER_HOST` environment variable:\n>\n> ```bash\n> export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Close the client when the application finishes using it.",
+            "acceptance": "Includes defer apiClient.Close() after successful initialization.",
+            "tier_reason": "Adds cleanup to the example lifecycle.",
+            "page_id": "content_reference_api_engine_sdk_examples__eb819a43",
+            "exact_quote": "defer apiClient.Close()"
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Validate actual API support during setup or upgrades.",
+            "acceptance": "Recommends docker version to inspect the client and daemon's supported API versions.",
+            "tier_reason": "Makes upgrade assessment depend on the installed environment.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "To see the highest and lowest version of the API your Docker daemon and client\nsupport, use `docker version`:"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Describe the effect of upgrading the daemon beyond the client.",
+            "acceptance": "Explains that the older client may not know new features or deprecated daemon endpoints.",
+            "tier_reason": "Helps interpret one possible upgrade outcome.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "If the daemon is newer than the client, the client doesn't know about new\n>   features or deprecated API endpoints in the daemon."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Describe the effect of upgrading the client beyond the daemon.",
+            "acceptance": "Explains that the newer client can request endpoints unknown to the daemon.",
+            "tier_reason": "Helps diagnose the opposite compatibility condition.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "If the client is newer than the daemon, the client can request API\n>   endpoints that the daemon doesn't know about."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Choose an SDK version with the required API features.",
+            "acceptance": "Recommends the latest SDK version and states that the minimum acceptable version must incorporate the needed API features.",
+            "tier_reason": "Guides dependency selection as the application evolves.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "When using the SDK, use the latest version. At a minimum, use the version\n  that incorporates the API version with the features you need."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Explain the documented maintenance consequence of API backward compatibility.",
+            "acceptance": "States that existing API code generally need not be updated unless the application needs new features.",
+            "tier_reason": "Answers the user's concern about maintaining the test through upgrades.",
+            "page_id": "content_reference_api_engine_index__6dd2a778",
+            "exact_quote": "The Docker API\nis backward-compatible, so you don't need to update code that uses the API\nunless you need to take advantage of new features."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

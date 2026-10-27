@@ -1,0 +1,771 @@
+{
+  "answering": {
+    "agent_model_provider_sha256": "14e9f2bb055646be2c6802afa9dbedac4e7c151614fe154e4971704664bbadb6",
+    "archived_attempts": {
+      "ValueError:action-empty-answer": 1,
+      "ValueError:expected-exactly-one-function-call": 6,
+      "ValueError:response-incomplete-or-wrong-model": 4
+    },
+    "archived_note": "11 of 1,379 attempts archived under answers-19/infrastructure-attempts/ and rerun; 7 were model behaviour (6 expected-exactly-one-function-call, 1 action-empty-answer), 4 provider status incomplete; disclosure item",
+    "budgets": {
+      "history_bytes": 0,
+      "model_calls": 20,
+      "note_chars": 1200,
+      "notes": 6,
+      "reads": 12,
+      "wall_seconds": 2400
+    },
+    "conditions": [
+      {
+        "follow_links": false,
+        "id": "s1-no-follow",
+        "min_distinct_searches": 1,
+        "searches": 1
+      },
+      {
+        "follow_links": true,
+        "id": "s1-follow",
+        "min_distinct_searches": 1,
+        "searches": 1
+      },
+      {
+        "follow_links": false,
+        "id": "s6-no-follow",
+        "min_distinct_searches": 1,
+        "searches": 6
+      },
+      {
+        "follow_links": true,
+        "id": "s6-follow",
+        "min_distinct_searches": 1,
+        "searches": 6
+      }
+    ],
+    "datasets": "blind export variant folders (corpus/ + graph_edges.csv), opaque ids",
+    "loop": {
+      "path": "git/context/scripts/complex_task_agent_loop.py",
+      "sha256_plan": "8a238a1fd59c772f88afb0b223fe87b47635dce5e3907bcc232c25bb09f8a581"
+    },
+    "max_input_tokens": 22000,
+    "max_output_tokens": 4096,
+    "model": "gpt-6-luna",
+    "model_snapshot_or_revision": "none recorded: traces record model 'gpt-6-luna' and model_policy.digest null; provider responses report 'gpt-6-luna' (no dated snapshot)",
+    "operator_prompt": {
+      "path": "git/context/design/complex-task-agentic-operator-prompt-v12.txt",
+      "sha256_now": "f4c1e8c101dc55a3f322aff7bfb87919f30e20685944b31a8c8daa7bc3e91f0f",
+      "sha256_plan": "f4c1e8c101dc55a3f322aff7bfb87919f30e20685944b31a8c8daa7bc3e91f0f"
+    },
+    "provider_endpoint": "OpenAI Responses API, called from the host by the frozen 12b loop (deviation S19-1: not through the RA provider layer)",
+    "ra_model_turn_sha256": "dc8e5ff143ba38a3bb750b26c66e1e9399a626c8d18d9c0776f1341009e9cd21",
+    "reasoning_effort": "medium (per trace step)",
+    "retry_rule": "a recorded 429 rate-limit trace: archive it, wait 60 s, retry the cell at most twice; an infrastructure failure (model_api_error) is archived with archive-infra and rerun; other terminals stay in the denominator",
+    "service_tier": "default",
+    "terminals": {
+      "1": {
+        "answer": 479,
+        "invalid_action_limit": 1
+      },
+      "2": {
+        "answer": 888
+      }
+    },
+    "tiers": {
+      "1": {
+        "answers": 480,
+        "conditions": [
+          "s1-no-follow",
+          "s1-follow",
+          "s6-no-follow",
+          "s6-follow"
+        ],
+        "questions": 15,
+        "replicates": 2,
+        "source": "git\\context\\evidence\\wc-tier1-tasks-v2-2026-10-18.json",
+        "source_sha256": "671a15da2560ef5cd387788e87fd146bf2be90a520281531666adef258136a49"
+      },
+      "2": {
+        "answers": 888,
+        "conditions": [
+          "s1-no-follow",
+          "s1-follow"
+        ],
+        "label": "LLM-verified support (Claude Haiku 5.5)",
+        "question_ids_sha256": "7d51355b33559471a03a2c617b3e5a88129bd08596a159495c608e0cf55ea22f",
+        "questions": 111,
+        "replicates": 1,
+        "source": "git\\context\\evidence\\wc-tier2-freeze-v1-2026-10-14.json",
+        "source_sha256": "e026c28d72acfca6c9f53f3a97458b1214070c0aa2c5996f7bbab7bc8351a8a9"
+      }
+    }
+  },
+  "haiku_support_verification_tier2": {
+    "config": {
+      "concurrency": 8,
+      "generation": {
+        "effort": "low",
+        "thinking": "disabled"
+      },
+      "max_input_tokens": 16000,
+      "max_output_tokens": 512,
+      "model": "claude-haiku-5-5",
+      "pricing": {
+        "currency": "USD",
+        "input_per_mtok": 0.1,
+        "long_context": {
+          "above_input_tokens": 100000,
+          "input_per_mtok": 0.5,
+          "output_per_mtok": 2.5
+        },
+        "output_per_mtok": 0.5,
+        "source": "Anthropic first-party API price list as recorded by the claude-api skill (cached 2026-10-06), rechecked 2026-10-12"
+      },
+      "prompt_version": "pooled_support_verifier.v1",
+      "provider": "anthropic",
+      "retries": 1,
+      "revision": "claude-haiku-5-5",
+      "schema_version": "retrieval_arena.pooled_support_verifier_config.v1",
+      "seed": null,
+      "spend_cap_usd": 4.0,
+      "temperature": null,
+      "thinking": false,
+      "timeout_seconds": 120
+    },
+    "decision_rule": "page supported if any window is judged 'answers' with a verbatim supporting span; not_supported only if every window is 'not_answer'; otherwise undetermined (left out of qrels = unjudged)",
+    "image_and_commit": "receipt image tag retrieval-arena/ragas:icsc-c1 (local tag resolves to sha256:47aacffe4feb049adeb75920258e15e73feb268f8119cba5c0c0ddf596b0928e; receipt records the tag only); RA source 60af29d31bbb8127cea57a017cad27255f8d89af (clean)",
+    "label": "LLM-verified support (Claude Haiku 5.5)",
+    "missingness": "undetermined pages unjudged: nDCG@10 unavailable when top-k holds an unjudged page (RA pooled policy; 44-57 of 101 per run pre-re-judge); Recall@5/RR@10/navigation score undetermined as misses (primary) and as hits (SA5 bound); questions without any verified page on a variant leave the common set (S19-4, rebuilt under D-P5)",
+    "per_variant": {
+      "v-5d89a3217d52": {
+        "decisions": {
+          "not_supported": 5172,
+          "supported": 385,
+          "undetermined": 326
+        },
+        "pool_pairs": 4536,
+        "qrels_positive": 385,
+        "qrels_sha256": "de0c5e0b4d72caeacce3201508390ddd490599967f684f5eb1fc7fcb7f1e7368",
+        "qrels_version": 3,
+        "queries_dropped_no_verified_page": [
+          "docker_docs_faq_0016",
+          "docker_docs_faq_0018",
+          "docker_docs_faq_0019",
+          "docker_docs_faq_0021",
+          "docker_docs_faq_0022",
+          "docker_docs_faq_0027",
+          "docker_docs_faq_0028",
+          "docker_docs_faq_0029",
+          "docker_docs_faq_0030",
+          "docker_docs_faq_0032",
+          "docker_docs_faq_0036",
+          "docker_docs_faq_0037",
+          "docker_docs_faq_0048",
+          "docker_docs_faq_0058",
+          "docker_docs_faq_0059",
+          "docker_docs_faq_0060",
+          "docker_docs_faq_0066",
+          "docker_docs_faq_0073",
+          "docker_docs_faq_0076",
+          "docker_docs_faq_0081",
+          "docker_docs_faq_0092",
+          "docker_docs_faq_0098",
+          "docker_docs_faq_0104",
+          "docker_docs_faq_0106",
+          "docker_docs_faq_0108",
+          "docker_docs_faq_0110",
+          "docker_docs_faq_0112",
+          "docker_docs_faq_0121",
+          "docker_docs_faq_0126",
+          "docker_docs_faq_0141",
+          "docker_docs_faq_0143"
+        ],
+        "queries_kept": 111,
+        "run": {
+          "attempted_windows": 127,
+          "remaining_windows": 0,
+          "spend_stopped": false,
+          "statuses": {
+            "ok": 127
+          }
+        }
+      },
+      "v-6337600cdc97": {
+        "decisions": {
+          "not_supported": 4712,
+          "supported": 397,
+          "undetermined": 321
+        },
+        "pool_pairs": 4666,
+        "qrels_positive": 397,
+        "qrels_sha256": "ddd2c86f800330150f5920e535dbe8c4b5e9e782dea0e9fee89e026731c32484",
+        "qrels_version": 3,
+        "queries_dropped_no_verified_page": [
+          "docker_docs_faq_0016",
+          "docker_docs_faq_0018",
+          "docker_docs_faq_0019",
+          "docker_docs_faq_0020",
+          "docker_docs_faq_0021",
+          "docker_docs_faq_0022",
+          "docker_docs_faq_0027",
+          "docker_docs_faq_0028",
+          "docker_docs_faq_0029",
+          "docker_docs_faq_0030",
+          "docker_docs_faq_0032",
+          "docker_docs_faq_0036",
+          "docker_docs_faq_0037",
+          "docker_docs_faq_0048",
+          "docker_docs_faq_0058",
+          "docker_docs_faq_0059",
+          "docker_docs_faq_0060",
+          "docker_docs_faq_0066",
+          "docker_docs_faq_0068",
+          "docker_docs_faq_0073",
+          "docker_docs_faq_0076",
+          "docker_docs_faq_0077",
+          "docker_docs_faq_0080",
+          "docker_docs_faq_0081",
+          "docker_docs_faq_0092",
+          "docker_docs_faq_0098",
+          "docker_docs_faq_0104",
+          "docker_docs_faq_0106",
+          "docker_docs_faq_0108",
+          "docker_docs_faq_0110",
+          "docker_docs_faq_0112",
+          "docker_docs_faq_0115",
+          "docker_docs_faq_0121",
+          "docker_docs_faq_0126",
+          "docker_docs_faq_0127",
+          "docker_docs_faq_0141",
+          "docker_docs_faq_0143"
+        ],
+        "queries_kept": 105,
+        "run": {
+          "attempted_windows": 10779,
+          "remaining_windows": 0,
+          "spend_stopped": false,
+          "statuses": {
+            "ok": 10768,
+            "span_invalid": 11
+          }
+        }
+      },
+      "v-9a7d7f0e7b47": {
+        "decisions": {
+          "not_supported": 5168,
+          "supported": 384,
+          "undetermined": 327
+        },
+        "pool_pairs": 4532,
+        "qrels_positive": 384,
+        "qrels_sha256": "e63ac73dd0752a22e14611151545942c1a0c1de2743676354cdd767c2af3d974",
+        "qrels_version": 3,
+        "queries_dropped_no_verified_page": [
+          "docker_docs_faq_0016",
+          "docker_docs_faq_0018",
+          "docker_docs_faq_0019",
+          "docker_docs_faq_0021",
+          "docker_docs_faq_0022",
+          "docker_docs_faq_0027",
+          "docker_docs_faq_0028",
+          "docker_docs_faq_0029",
+          "docker_docs_faq_0030",
+          "docker_docs_faq_0032",
+          "docker_docs_faq_0036",
+          "docker_docs_faq_0037",
+          "docker_docs_faq_0048",
+          "docker_docs_faq_0058",
+          "docker_docs_faq_0059",
+          "docker_docs_faq_0060",
+          "docker_docs_faq_0066",
+          "docker_docs_faq_0073",
+          "docker_docs_faq_0076",
+          "docker_docs_faq_0081",
+          "docker_docs_faq_0092",
+          "docker_docs_faq_0098",
+          "docker_docs_faq_0104",
+          "docker_docs_faq_0106",
+          "docker_docs_faq_0108",
+          "docker_docs_faq_0110",
+          "docker_docs_faq_0112",
+          "docker_docs_faq_0121",
+          "docker_docs_faq_0126",
+          "docker_docs_faq_0141",
+          "docker_docs_faq_0143"
+        ],
+        "queries_kept": 111,
+        "run": {
+          "attempted_windows": 117,
+          "remaining_windows": 0,
+          "spend_stopped": false,
+          "statuses": {
+            "ok": 117
+          }
+        }
+      },
+      "v-c2c2731d2141": {
+        "decisions": {
+          "not_supported": 4154,
+          "supported": 363,
+          "undetermined": 309
+        },
+        "pool_pairs": 4500,
+        "qrels_positive": 363,
+        "qrels_sha256": "ceba891cfdb82c6b15c4f6268280bb0c9e58934fadfa5063e40c1f737f3e36d7",
+        "qrels_version": 3,
+        "queries_dropped_no_verified_page": [
+          "docker_docs_faq_0016",
+          "docker_docs_faq_0018",
+          "docker_docs_faq_0019",
+          "docker_docs_faq_0021",
+          "docker_docs_faq_0022",
+          "docker_docs_faq_0027",
+          "docker_docs_faq_0028",
+          "docker_docs_faq_0029",
+          "docker_docs_faq_0030",
+          "docker_docs_faq_0032",
+          "docker_docs_faq_0036",
+          "docker_docs_faq_0037",
+          "docker_docs_faq_0048",
+          "docker_docs_faq_0054",
+          "docker_docs_faq_0058",
+          "docker_docs_faq_0059",
+          "docker_docs_faq_0060",
+          "docker_docs_faq_0062",
+          "docker_docs_faq_0066",
+          "docker_docs_faq_0068",
+          "docker_docs_faq_0073",
+          "docker_docs_faq_0076",
+          "docker_docs_faq_0077",
+          "docker_docs_faq_0080",
+          "docker_docs_faq_0081",
+          "docker_docs_faq_0092",
+          "docker_docs_faq_0098",
+          "docker_docs_faq_0103",
+          "docker_docs_faq_0104",
+          "docker_docs_faq_0106",
+          "docker_docs_faq_0108",
+          "docker_docs_faq_0112",
+          "docker_docs_faq_0115",
+          "docker_docs_faq_0121",
+          "docker_docs_faq_0126",
+          "docker_docs_faq_0140",
+          "docker_docs_faq_0141",
+          "docker_docs_faq_0143"
+        ],
+        "queries_kept": 103,
+        "run": {
+          "attempted_windows": 12950,
+          "remaining_windows": 0,
+          "spend_stopped": false,
+          "statuses": {
+            "ok": 12939,
+            "span_invalid": 11
+          }
+        }
+      }
+    },
+    "pool_construction": {
+      "embedding_model_id": "sentence-transformers/all-MiniLM-L6-v2@c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "generator_depth": 20,
+      "members": "fixed retrievers top 10 (lexical, embedding, graph_expand) + agent read or cited pages + generator top 20 by reference answer (S19-2: same construction as O's C2 qrels)",
+      "query_field": "answer",
+      "run_depth": 10,
+      "stride_lines": 6,
+      "window_lines": 12,
+      "windows_per_generator": 2
+    },
+    "prior": "C2 (Oct 12) judgments reused byte for byte at the same page hash (qrels version 3); only new (query, page, page content) triples judged",
+    "prompt_sha256_state": "df4424c1bd8da8e06c7de2c4ec0927031b49bcde0b73fd958839e7888d150f90",
+    "prompt_version": "pooled_support_verifier.v1",
+    "qualification_status": "NOT calibrated: HR-18 (Oct 14) single-reviewer window spot-check on O's C2 qrels only: precision 29/34, miss rate 0/33 (Wilson high 0.104), 3 unsure; no spot-check of new S19 pool labels on edited variants; HR-20/HR-21 bear on lost questions and disputed credited pages",
+    "quote_rule": "supporting_span = shortest contiguous passage text, exactly as written; checked after whitespace normalization as a substring of the window; failure -> status span_invalid (never a silent 'no')",
+    "rejudge_D_P5": {
+      "config": {
+        "concurrency": 8,
+        "generation": {
+          "effort": "low",
+          "thinking": "disabled"
+        },
+        "max_input_tokens": 400000,
+        "max_output_tokens": 512,
+        "model": "claude-haiku-5-5",
+        "pricing": {
+          "currency": "USD",
+          "input_per_mtok": 0.1,
+          "long_context": {
+            "above_input_tokens": 100000,
+            "input_per_mtok": 0.5,
+            "output_per_mtok": 2.5
+          },
+          "output_per_mtok": 0.5,
+          "source": "Anthropic first-party API price list as recorded by the claude-api skill (cached 2026-10-06), rechecked 2026-10-12"
+        },
+        "prompt_version": "pooled_support_verifier.v1",
+        "provider": "anthropic",
+        "retries": 1,
+        "revision": "claude-haiku-5-5",
+        "schema_version": "retrieval_arena.pooled_support_verifier_config.v1",
+        "seed": null,
+        "spend_cap_usd": 2.0,
+        "temperature": null,
+        "thinking": false,
+        "timeout_seconds": 120
+      },
+      "image": "retrieval-arena/ragas:icsc-c1",
+      "outcome": "common set rebuilt to 105 questions (primary); original 101 is a sensitivity",
+      "policy": "whole_page_escalation_v1: every 'undetermined' question-page pair re-judged once on the whole page, same prompt/model; 1,192 pairs (291/307/292/302)",
+      "ra_commit": "9e68b89721d9b8e9fcd8f5126d5091da7ccd1d56",
+      "result": {
+        "path": "git/context/evidence/wc-rejudge-19-result-v1-2026-10-24.json",
+        "sha256": "1411e755496b0fec403f34ae93c471caf8c3e9641d103f83034af71dcc3a787b"
+      }
+    },
+    "repeats": "one judgment per window; retries 1 for transport only",
+    "returned_model": "response_model 'claude-haiku-5-5' (no dated revision recorded)"
+  },
+  "luna_tier1_task_grades_primary": {
+    "aggregation_s20": "per answer: mean over the passes that scored it; per question: mean over replicates within condition, then over the 4 conditions; contrasts are paired means over 15 questions with question-cluster bootstrap (10,000 reps, seed 20261024)",
+    "base_module_sha256": "3a51d0f605ac146d0034ee0f3924c99b2cd8908cc056050f673d61c7c2a880f9",
+    "disclosures_s20": [
+      "Luna scorer grades answers Luna wrote",
+      "no model snapshot",
+      "scorer chosen on the original 5 questions; 10 tasks are out of sample for it"
+    ],
+    "endpoint": "openai_responses_api",
+    "format": "json_schema strict (schema v2 as is)",
+    "input_cap": 8000,
+    "margin": 1,
+    "max_attempts": 2,
+    "max_output_tokens": 4000,
+    "measures": [
+      "correctness",
+      "fit",
+      "completeness",
+      "caveats",
+      "clarity"
+    ],
+    "model": "gpt-6-luna",
+    "module_sha256": "68be066a0c0819a28ec578caa792ac374e6af48b9863faf3da44964ba171e73e",
+    "prompt": {
+      "path": "git/context/design/answer-quality-scorer-prompt-v2.txt",
+      "sha256": "538005476fb991e62713df454ca2e3a95c0ef9e32a1d8e8e360ab19b9f8585ce"
+    },
+    "qualification_evidence": {
+      "analysis": {
+        "matches_expected": true,
+        "path": "git/context/evidence/scoring-pilot-11h-analysis-2026-10-08.json",
+        "sha256": "8bc3b006871f6b9bfea99899ae5d743ad8284d25e909313655eb348d37ce7b0e",
+        "sha256_expected": "8bc3b006871f6b9bfea99899ae5d743ad8284d25e909313655eb348d37ce7b0e"
+      },
+      "decision": {
+        "matches_expected": true,
+        "path": "git/context/evidence/scoring-pilot-11h-decision-2026-10-08.json",
+        "sha256": "5d4902a0feb92c76daab8cc856aa26e5baadd2f04a85fa93c8f9505a5cbeabc9",
+        "sha256_expected": "5d4902a0feb92c76daab8cc856aa26e5baadd2f04a85fa93c8f9505a5cbeabc9"
+      },
+      "plan": {
+        "matches_expected": true,
+        "path": "git/context/evidence/scoring-pilot-11h-plan-2026-10-08.json",
+        "sha256": "61acadb9940548645317067d2072f8c68723ac0a1bebbd1846fcd184f82171f3",
+        "sha256_expected": "61acadb9940548645317067d2072f8c68723ac0a1bebbd1846fcd184f82171f3"
+      }
+    },
+    "qualification_status": "NOT calibrated/qualified: scorer-v2-on-Luna pilot 11h decision 'needs_revision' (stability failed: same-ranking 11/20 cells = 0.55 vs >= 0.80 threshold; within +-1 293/300; spread and sham balance pass); human agreement not collected by author decision (Oct 8). Used as the frozen 12b instrument by author choice.",
+    "quote_rule": "none: Luna scorer gives notes and scores, no quoted spans",
+    "rank_rule": "lexicographic_margin_v1",
+    "reasoning_effort": "medium",
+    "reference_notes": "scorer sees question, reference notes (from the frozen tier-1 tasks) and answer; citations in brackets are neither rewarded nor penalized",
+    "repeats": {
+      "k": 2,
+      "passes": {
+        "A": {
+          "manifest_sha256": "7679bba8df6261811f74f0b45d9405409cd3a881ea5c381c374158406c8199d0",
+          "packets": 479,
+          "receipt": {
+            "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/scoring-19/luna-t1/pass-A/receipt.json",
+            "sha256": "e89aabf6bed37ffc51a7da5d1507bc7e411b0af2962309c43ed68ced5f2cbe5c"
+          },
+          "seed": 20261023
+        },
+        "B": {
+          "manifest_sha256": "2153f11bace303644302c81ba26b87934d361e5995c641790a49bd1dd752734b",
+          "packets": 479,
+          "receipt": {
+            "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/scoring-19/luna-t1/pass-B/receipt.json",
+            "sha256": "ff085cd6df5ad9e35bd3cffde2f342977000d0025d52d13bca0a3479d6e968fe"
+          },
+          "seed": 20261024
+        }
+      },
+      "seed_meaning": "label/packet-order seed for blinding; the model call has no seed"
+    },
+    "scale": "1-5 each, note then score; plus an 'errors' list",
+    "schema": {
+      "path": "git/context/design/answer-quality-scorer-schema-v2.json",
+      "sha256": "f781faba426dd663ea39ffba945aa8207c6494e75083025a5dd6b202a74ff082"
+    },
+    "service_tier": "default",
+    "store": false,
+    "validity": {
+      "A": {
+        "manifest_sha256": "7679bba8df6261811f74f0b45d9405409cd3a881ea5c381c374158406c8199d0",
+        "packets": 479,
+        "valid": 479
+      },
+      "B": {
+        "manifest_sha256": "2153f11bace303644302c81ba26b87934d361e5995c641790a49bd1dd752734b",
+        "packets": 479,
+        "valid": 479
+      }
+    }
+  },
+  "note": "configurations as recorded at run time; paths name records in DocSpectra/DocSpectraICSC2027 or its artifact layout",
+  "qwen_requirement_judgments_secondary": {
+    "calibration_evidence": {
+      "decision_handoff": {
+        "matches_expected": true,
+        "path": "git/context/handoffs/2026-09-28-gptoss-v2-clean-replacement.md",
+        "sha256": "0f1875dd8b87dfd942b4b9ecd45e67b023a9a984bc01d0be8614bab5c5cfa112",
+        "sha256_expected": "0f1875dd8b87dfd942b4b9ecd45e67b023a9a984bc01d0be8614bab5c5cfa112"
+      },
+      "labels": {
+        "matches_expected": true,
+        "path": "validations/rockerd-answer-variant-labels-adjudicated-v1.json",
+        "sha256": "abbcbe5998770d84b2aa92f664373479a4894048b7d4019d201679211f3a9396",
+        "sha256_expected": "abbcbe5998770d84b2aa92f664373479a4894048b7d4019d201679211f3a9396"
+      }
+    },
+    "digest_check": "digest_before == digest_after on every recorded attempt (957 records, one digest)",
+    "endpoint": "localhost_ollama_api_chat",
+    "model": "qwen3:14b",
+    "num_ctx": 32768,
+    "ollama_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "prompt_template_sha256": "22a4cc95683986bc16bee61100159d6b572b84ae9043a5285336591e70b425c5",
+    "qualification_status": "NOT calibrated: Sept 26-28 authored-answer calibration (70 constructed answers, 154 author element labels): all three v2 judges failed gates (Qwen macro-F1 0.693 on the 51-answer common subset) per claim register; no judge admitted by that calibration",
+    "quote_code": {
+      "path": "git/context/scripts/rubric_quote_match.py",
+      "sha256": "d198069c87dd145cfb4faef0c4033baf345ebdbac53377e2ed97454c2b617d75"
+    },
+    "quote_rule": "satisfied/contradicted need answer_span = short exact substring of the answer; score rubric_v1_relaxed counts a raw 'satisfied' if its span passes quote_match_relaxed_v1 (NFKC, drop line-citation tags, strip */backticks/quotes, collapse whitespace; exact_normalized, ellipsis_pieces in order, or >=90% words in order via LCS). Also computed: rubric_v1_strict, rubric_v1_raw. Score = counted satisfied / number of elements",
+    "repeats": "single pass, one attempt per packet (runner not run with --retry; a later resume reported previous_failure and did not retry)",
+    "role": "secondary measure (rubric_relaxed) in Sprint 20; Sprint 25 element-level audit re-reads these saved labels with zero calls (RA answer_element_comparison.v1 at c813511)",
+    "schema_sha256": "8b0fc910d3f9c2489582bef249acd62ff1dac32a885abbd367f0db29600feae9",
+    "temperature": 0,
+    "transport_dir": "scoring-19/rubric-t1/local-qwen-v4",
+    "unit": "one packet per distinct tier-1 answer; one verdict per frozen core requirement (73 elements over 15 tasks): satisfied / missing / contradicted / uncertain",
+    "validity": {
+      "failed": 1,
+      "note": "one local TimeoutError kept as a failure (12b precedent, runner without --retry)",
+      "valid": 478
+    }
+  },
+  "ragas_tier2": {
+    "config": {
+      "answer_prompt": "answer_satisfaction.v4",
+      "context_prompt": "context_support.v4",
+      "context_recall": true,
+      "element_completeness": false,
+      "factual_correctness": {
+        "atomicity": "low",
+        "beta": 1.0,
+        "coverage": "low",
+        "mode": "f1"
+      },
+      "faithfulness": true,
+      "generation": {
+        "effort": "medium",
+        "thinking": "disabled"
+      },
+      "max_input_tokens": 64000,
+      "max_output_tokens": 16000,
+      "model": "claude-haiku-5-5",
+      "pricing": {
+        "currency": "USD",
+        "input_per_mtok": 0.1,
+        "long_context": {
+          "above_input_tokens": 100000,
+          "input_per_mtok": 0.5,
+          "output_per_mtok": 2.5
+        },
+        "output_per_mtok": 0.5,
+        "source": "Anthropic first-party API price list as recorded by the claude-api skill (cached 2026-10-06), rechecked 2026-10-12"
+      },
+      "provider": "anthropic",
+      "retries": 1,
+      "revision": "claude-haiku-5-5",
+      "schema_version": "retrieval_arena.ragas_judge_config.v4",
+      "seed": null,
+      "spend_cap_usd": 3.0,
+      "temperature": null,
+      "thinking": false,
+      "timeout_seconds": 600
+    },
+    "image": {
+      "dependency_lock_sha256": "3da1d0e1ee72cff63ea7a244f58ae1d51820fa209bb8e5c64c58b9711614e627",
+      "id": "sha256:c53ee752d5ab1c3d17e4aa3db3eca1363142a2dc5e9f8b156b0e41a992a49daf",
+      "note": "rebuilt at 60af29d because run-ragas.ps1 binds receipt to checkout HEAD; same lock/adapters as C3",
+      "ra_source_commit": "60af29d31bbb8127cea57a017cad27255f8d89af",
+      "receipt": "git/RetrievalArena/.tmp/ragas-image-wc19.json (untracked)",
+      "tag": "retrieval-arena/ragas:icsc-wc19"
+    },
+    "metrics": "Faithfulness, ContextRecall, FactualCorrectness (mode f1, atomicity low, coverage low, beta 1.0); FactualCorrectness is the main tier-2 RAGAS number, the other two descriptive",
+    "qualification_evidence": {
+      "matches_expected": true,
+      "path": "git/context/evidence/wc-ragas-judge-qualification-c3-2026-10-12.json",
+      "sha256": "5d28251fd8b7bf886122d8e2da23b7c579b046a5a85f0949e22caf8771013973",
+      "sha256_expected": "5d28251fd8b7bf886122d8e2da23b7c579b046a5a85f0949e22caf8771013973"
+    },
+    "qualification_status": "NOT calibrated: C3 qualification (Oct 12): FactualCorrectness passed controls (repeat within 0.1 on 78/80 control units); Faithfulness and ContextRecall failed controls; on real-tier1 units the repeat checks failed for all three metrics",
+    "references": "historical FAQ answers; contexts = lines the agent read or followed (15b trace_contexts)",
+    "repeats": "single run per unit (no repeat in Sprint 19)",
+    "scores_sha256": {
+      "v-5d89a3217d52": "6a98f9de8be7f457b732f58c16e5c854d0adbef3019ed316155f4a204bf69d47",
+      "v-6337600cdc97": "a8cfd28c44a305325f1ac892132f513a73f01dd122bac86554ec2092b0562c90",
+      "v-9a7d7f0e7b47": "df0d0104c0f6ab81ba7daa1bf48da99557ab5bd1c84450c534328e870fe6d2c2",
+      "v-c2c2731d2141": "9c1fa6964fc75f7fa9bebc4201bf1d075bc80e24b35402cab20af505ed0cae57"
+    },
+    "tier1": "no RAGAS on tier 1 (FactualCorrectness omitted, author Oct 14)",
+    "units": "222 per variant (111 questions x 2 conditions), 888 total; parse ok 888/888 on each metric"
+  },
+  "retrieval_and_navigation_tier2": {
+    "fixed_retrievers": {
+      "images": {
+        "embedding": "retrieval-arena/rag-embedding-topk:latest sha256:eac5614e9d9e887bf4457d2bd40396a1a338b95e4b3cdd3a3b681eaf1d511569 (all-MiniLM-L6-v2@c9745ed1d9f207416be6d2e6f8de32d1f16199bf)",
+        "graph_expand": "retrieval-arena/rag-graph-ranked-expand:s025 sha256:f8ace4e954772119ed719159674e6a94ac5448a71ebd9a8ef29840c8fbe3697f",
+        "lexical": "retrieval-arena/rag-lexical-topk:s024 sha256:f2f5a80146491273ce67ad4d0d6c54bf14dfc521f9668a62e470416744eb18f2"
+      },
+      "network": "none",
+      "pins": {
+        "path": "git/context/evidence/wc-refinement-15-retriever-pins-v1-2026-10-10.json",
+        "sha256": "6ca84d85290a79b31e40472c24843d53835e46fd5a9e139e1afe8bb80f8725ed"
+      },
+      "ra_commit_runner_bytes": "ffe09f1124fe7a08380af60dea82b36737ca2fe0"
+    },
+    "navigation": "Sprint 15 navigation_metrics (wc_refinement_15.py); O1 sensitivity via Sprint 15 ranked_scores (credited equivalence sets)",
+    "score_ranked": {
+      "engines": "ir-measures 0.4.3, pytrec-eval-terrier 0.5.10",
+      "image": "retrieval-arena/verification:icsc-c2 sha256:07c2637a3a98c386dd0e02a3370fe75d97f3c45226635a681a80898e6a4c34d5 (built at RA 2f75016)",
+      "note": "Sprint 20 primary (re-judged 105) scored in-process after equality with RA on the original 101 (max |delta| 2.2e-16); RA not rerun on the 105",
+      "ra_source_mounted": "60af29d31bbb8127cea57a017cad27255f8d89af"
+    }
+  },
+  "reviews_existing": {
+    "HR-03": {
+      "caveat": "D-P4: reviewed after structural (Sprint 18) results were seen; criteria/stop rule frozen and packet hashed before review; LT trunk pages may be recognizable",
+      "date": "reviewed 2026-10-20..22 (verdict file 2026-10-21)",
+      "evidence": {
+        "matches_expected": true,
+        "path": "git/context/evidence/wc-hr03-review-2026-10-21.json",
+        "sha256": "3a2f5fa503051f0b5192dc93e1e2d429eb019d01eb4adcb22da4b992d836f2b0",
+        "sha256_expected": "3a2f5fa503051f0b5192dc93e1e2d429eb019d01eb4adcb22da4b992d836f2b0"
+      },
+      "result": "LT 20/20 no_problem; R0 20/20 no_problem; 0 loss/error; no stop",
+      "sample": "20 pages per arm (40), blinded to arm; stop rule >= 3 of 20 per arm",
+      "what": "blinded factual review of edited pages"
+    },
+    "HR-18": {
+      "date": "2026-10-14",
+      "evidence": {
+        "matches_expected": true,
+        "path": "git/context/evidence/c2-pooled-qrels-docker-tier2-2026-10-12.json",
+        "sha256": "4d77d513baa104b827fb13628de8e8d30dd5d738f52d2d7c83374d15bf11d4d0",
+        "sha256_expected": "4d77d513baa104b827fb13628de8e8d30dd5d738f52d2d7c83374d15bf11d4d0"
+      },
+      "limits": "misses outside pool not measured; strata sampled separately; no inter-annotator agreement",
+      "result": "precision 29/34 definite (85%), 1 unsure; miss rate 0/33 definite (95% high 0.104), 2 unsure",
+      "sample": "70 windows: 35 verifier-yes stratum, 35 verifier-no stratum; single reviewer (author); one window, not whole page",
+      "what": "pooled-qrel (C2, variant O) window spot-check"
+    },
+    "HR-19": {
+      "date": "2026-10-15 (revisions to 2026-10-18)",
+      "evidence": {
+        "matches_expected": true,
+        "path": "git/context/evidence/wc-tier1-review-hr19-2026-10-15.json",
+        "sha256": "d8ac19a6f8f75226183b90701f0cfb61da2c3412d0a4a82816a91cd0c8b9049a",
+        "sha256_expected": "d8ac19a6f8f75226183b90701f0cfb61da2c3412d0a4a82816a91cd0c8b9049a"
+      },
+      "result": "63 accept, 10 revise, 2 reject -> 73 frozen elements",
+      "sample": "15 tasks, 75 proposed core requirements",
+      "scope_note": "validates task requirements, not generated answers or grades",
+      "tasks": {
+        "matches_expected": true,
+        "path": "git/context/evidence/wc-tier1-tasks-v2-2026-10-18.json",
+        "sha256": "671a15da2560ef5cd387788e87fd146bf2be90a520281531666adef258136a49",
+        "sha256_expected": "671a15da2560ef5cd387788e87fd146bf2be90a520281531666adef258136a49"
+      },
+      "what": "tier-1 task requirement review"
+    },
+    "HR-20": {
+      "agreement_source": {
+        "matches_expected": true,
+        "path": "git/context/reports/2026-10-24-whole-corpus-refinement-report.md",
+        "sha256": "38939b07e45144fe4edce7e3a81b622edab1e535c8b05bdea14475a2828dcfa5",
+        "sha256_expected": "38939b07e45144fe4edce7e3a81b622edab1e535c8b05bdea14475a2828dcfa5"
+      },
+      "caveat": "one case (Q01) exposed the model verdict, so not fully blinded",
+      "date": "2026-10-24",
+      "evidence": {
+        "matches_expected": true,
+        "path": "git/context/evidence/wc-hr20-verdicts-v1-2026-10-24.json",
+        "sha256": "74d6efa702ee9ac2b93b6ef011dee1bcdabc20b7c935fb0dda4e3c4d15dea8de",
+        "sha256_expected": "74d6efa702ee9ac2b93b6ef011dee1bcdabc20b7c935fb0dda4e3c4d15dea8de"
+      },
+      "result": "3 still answers, 4 answer moved, 0 answer lost, 7 unsure; agreement with D-P5 re-judge 7/14",
+      "sample": "14 items (10 distinct questions), 16 gold pages",
+      "what": "author blind check of tier-2 questions that lost all verified support on an edited variant"
+    },
+    "HR-21": {
+      "date": "2026-10-24",
+      "evidence": {
+        "matches_expected": true,
+        "path": "git/context/evidence/wc-hr21-result-v1-2026-10-24.json",
+        "sha256": "9f2ec33b0161879dfe18630d49ee4c944a394f3934dae96ff75c2bfb59f00300",
+        "sha256_expected": "9f2ec33b0161879dfe18630d49ee4c944a394f3934dae96ff75c2bfb59f00300"
+      },
+      "plan": {
+        "matches_expected": true,
+        "path": "git/context/evidence/wc-hr21-plan-v1-2026-10-24.json",
+        "sha256": "a29fddf2a96ee76f38eb952a79fc0bd0453c4e40fdbd14aca62d17bde59faebd",
+        "sha256_expected": "a29fddf2a96ee76f38eb952a79fc0bd0453c4e40fdbd14aca62d17bde59faebd"
+      },
+      "result": "disputed: 4 answers, 3 partly, 9 does_not_answer (answers 0.25 [0.10,0.49]; answers-or-partly 0.44 [0.23,0.67]); controls: 2 answers, 1 partly, 1 no",
+      "sample": "16 disputed pages sampled from population 53, plus 4 controls; blind to verifier decision, not to arm",
+      "scope_note": "page support, not answer grading",
+      "verdicts": {
+        "path": "git/context/evidence/wc-hr21-verdicts-v1-2026-10-24.json",
+        "sha256": "db1d49207bce2b3eecc469d34c6139f7e8182cd971b4805f71d9db3537b81ec3"
+      },
+      "what": "disputed O1-credited pages (credited by O1, rejected by direct judgment)"
+    },
+    "HR-22": "deliberately omitted (author, Oct 26); no judgments collected; not to be cited as a review",
+    "calibration_E02": {
+      "evidence": {
+        "matches_expected": true,
+        "path": "validations/rockerd-answer-variant-labels-adjudicated-v1.json",
+        "sha256": "abbcbe5998770d84b2aa92f664373479a4894048b7d4019d201679211f3a9396",
+        "sha256_expected": "abbcbe5998770d84b2aa92f664373479a4894048b7d4019d201679211f3a9396"
+      },
+      "result": "no judge admitted; all three v2 judges failed gates",
+      "sample": "70 constructed answers, 154 element labels",
+      "what": "authored-answer judge calibration (Sept 26-28)"
+    },
+    "provenance_file": {
+      "path": "git/paper/review-calibration-provenance.json",
+      "sha256": "9c6c8f98fda1ebaaafc4161cf1a849bc249ed6defc058e9d12fb3c68ba0f9c5e"
+    },
+    "wording_rule": "no judge (Luna scorer, Qwen rubric, Haiku verifier, Haiku RAGAS) is recorded as calibrated or qualified for this application; describe them as frozen instruments with the listed qualification results and spot checks"
+  },
+  "variant_key": {
+    "LT": "v-6337600cdc97",
+    "O": "v-5d89a3217d52",
+    "R0": "v-c2c2731d2141",
+    "S": "v-9a7d7f0e7b47",
+    "corpus_tree_sha256": {
+      "v-5d89a3217d52": "ebce0bcead737137cce154bf6415413cc60d58e371432ac6c046a312cc1bcadc",
+      "v-6337600cdc97": "d4496be66c10e9050ed2467bab12d95277064b62464284d17d448a1c4c79171f",
+      "v-9a7d7f0e7b47": "ebce0bcead737137cce154bf6415413cc60d58e371432ac6c046a312cc1bcadc",
+      "v-c2c2731d2141": "bd3ce666479bed1e1d401c9207dc467313a2b75c2e6721174425a396f09f15b5"
+    },
+    "note": "O and S exports are byte-identical corpora (same corpus_tree_sha256)",
+    "source": "git/context/evidence/wc-analysis-20-v1-2026-10-24.json (arms); blind key itself is host-private/answers-19-key.json"
+  }
+}

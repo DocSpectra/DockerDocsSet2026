@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "345c89ea9e4a230d82eb5f1e0f132cbc71ace8da79efa69ecde0805f228fc538",
+      "task": {
+        "question": "I own a Docker organization and maintain a Node.js service whose image contains Express 4.17.1. We have different versions running in staging and production. How can I enable ongoing Scout analysis, investigate application and base-image vulnerabilities, publish a corrected candidate, and compare it with production before deciding to promote it? Include build-attestation constraints and how to keep tracking security improvements after the initial fix.",
+        "actor": "Docker organization owner maintaining a containerized Node.js service.",
+        "trigger": "A vulnerable service image needs remediation before promotion from staging to production.",
+        "goal": "Establish ongoing analysis, remediate the documented application vulnerability, and evaluate the candidate against the production image.",
+        "observable_success": "The repository has analysis enabled, a corrected tagged image is pushed, its vulnerability origins are inspected, and an analyzed production reference is available for comparison with the candidate.",
+        "realism_rationale": "The quickstart explicitly supports identifying and fixing vulnerabilities and comparing versions. Environment assignments require analyzed images, making repository setup and comparison prerequisites substantive parts of this release decision.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_scout_quickstart__bf4353bf",
+            "exact_quote": "This guide takes a vulnerable container image and shows you how to use Docker\nScout to identify and fix the vulnerabilities, compare image versions over time,\nand share the results with your team."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_scout_integrations_environment_index__49dcad7e",
+            "exact_quote": "Additionally, Docker Scout only assigns an image to an environment if the\n> image [has been analyzed](/manuals/scout/explore/analysis.md), either manually or\n> through a [registry integration](/manuals/scout/integrations/_index.md#container-registries)."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Explain how to enable repository image analysis.",
+            "acceptance": "Direct the owner to Repository settings in the Scout Dashboard, select the service repository, and select Enable image analysis.",
+            "tier_reason": "Repository activation is necessary for ongoing analysis.",
+            "page_id": "content_manuals_scout_explore_analysis__f28ca754",
+            "exact_quote": "1. Go to [Repository settings](https://scout.docker.com/settings/repos) in the Docker Scout Dashboard.\n2. Select the repositories that you want to enable.\n3. Select **Enable image analysis**."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Explain how to trigger analysis of the published candidate.",
+            "acceptance": "State that the candidate must be pushed to an integrated registry and a repository with image analysis activated.",
+            "tier_reason": "The candidate must reach the analysis workflow before its results can inform promotion.",
+            "page_id": "content_manuals_scout_explore_analysis__f28ca754",
+            "exact_quote": "To trigger image analysis for an image in a registry, push the image to a\nregistry that's integrated with Docker Scout, to a repository where image\nanalysis is activated."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Provide a way to distinguish base-image contributions from application layers.",
+            "acceptance": "Explain that selecting a base image identifies its originating layers and selecting layers filters packages and vulnerabilities to their contributions.",
+            "tier_reason": "Remediation needs actionable attribution rather than a vulnerability count alone.",
+            "page_id": "content_manuals_scout_explore_image_details_view__128790b0",
+            "exact_quote": "Selecting a base image under **Image hierarchy** \nhighlights with layers originate from a base image.\n\nSelecting individual or multiple layers filters the packages and vulnerabilities\non the right-hand side to show what the selected layers added."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Describe the documented Express remediation and publication step.",
+            "acceptance": "Identify Express 4.17.3 as the documented fix for CVE-2022-24999, update package.json from 4.17.1, and rebuild and push under a new tag.",
+            "tier_reason": "A corrected candidate is the concrete output of the remediation workflow.",
+            "page_id": "content_manuals_scout_quickstart__bf4353bf",
+            "exact_quote": "The version 4.17.3 of the express package fixes the vulnerability. Therefore, update the `package.json` file to the new version:\n\n   ```diff\n      \"dependencies\": {\n   -    \"express\": \"4.17.1\"\n   +    \"express\": \"4.17.3\"\n      }\n   ```\n   \nRebuild the image with a new tag and push it to your Docker Hub repository:"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Establish deployment references and compare the candidate with production.",
+            "acceptance": "Use docker scout env <environment> <image> to record the deployed image references and explain using docker scout compare with --to-env production to compare the candidate with production.",
+            "tier_reason": "The promotion decision requires an explicit deployed baseline.",
+            "page_id": "content_manuals_scout_integrations_environment_index__49dcad7e",
+            "exact_quote": "You can also compare with streams using the `--to-env` flag on the\n[`docker scout compare`](/reference/cli/docker/scout/compare/)\nCLI command:"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Explain SBOM attestation selection and fallback.",
+            "acceptance": "State that Scout uses an available SBOM attestation and otherwise indexes image contents to create one.",
+            "tier_reason": "This clarifies what package inventory analysis relies on.",
+            "page_id": "content_manuals_scout_how_tos_view_create_sboms__7d212776",
+            "exact_quote": "Docker Scout uses SBOM attestations if available on the image (recommended).\nIf no SBOM attestation is available, Docker Scout creates one by indexing the image contents."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Offer a compatible build-time SBOM generator.",
+            "acceptance": "Show the --attest type=sbom,generator=docker/scout-sbom-indexer:latest build option with --push and explain its richer results and Scout compatibility.",
+            "tier_reason": "This improves the inventory supplied by the build without being necessary for basic analysis.",
+            "page_id": "content_manuals_scout_how_tos_view_create_sboms__7d212776",
+            "exact_quote": "The Docker Scout SBOM indexer provides richer results\nand ensures better compatibility with the Docker Scout image analysis.\n\n```console\n$ docker build --tag <org>/<image> \\\n  --attest type=sbom,generator=docker/scout-sbom-indexer:latest \\\n  --push .\n```"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Identify the image-store prerequisite for SBOM attestations.",
+            "acceptance": "Require either the containerd image store or a docker-container builder with --push; explain that the classic image store lacks the necessary manifest-list or image-index support.",
+            "tier_reason": "This prevents an attestation build from failing because of the chosen storage backend.",
+            "page_id": "content_manuals_scout_how_tos_view_create_sboms__7d212776",
+            "exact_quote": "To build images with SBOM attestations, you must use either the [containerd\nimage store](/manuals/desktop/features/containerd.md) feature, or use a `docker-container`\nbuilder together with the `--push` flag to push the image (with attestations)\ndirectly to a registry."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Explain incremental policy tracking for remaining issues.",
+            "acceptance": "Explain that changes in the policy fail gap can show improvement or deterioration even while the image remains non-compliant.",
+            "tier_reason": "This provides useful progress measurement when one fix does not resolve every issue.",
+            "page_id": "content_manuals_scout_policy_index__324ebf24",
+            "exact_quote": "By tracking how the fail gap changes over time, you more\neasily see whether your artifact is improving or deteriorating relative to\npolicy."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Include base-image freshness in ongoing policy tracking.",
+            "acceptance": "Explain that policies can track base-image up-to-dateness as well as vulnerabilities, so the release review need not be limited to the Express fix.",
+            "tier_reason": "This extends monitoring to a relevant source of future remediation.",
+            "page_id": "content_manuals_scout_policy_index__324ebf24",
+            "exact_quote": "Policies don't necessarily have to be related to application security and\nvulnerabilities. You can use policies to measure and track other aspects of\nsupply chain management as well, such as open-source license usage and base\nimage up-to-dateness."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Explain how to interpret disagreement with another vulnerability assessment.",
+            "acceptance": "Acknowledge that assessment discrepancies can arise from different information sources and methodologies; do not treat disagreement alone as proof that Scout is incorrect.",
+            "tier_reason": "This supports troubleshooting conflicting security reports.",
+            "page_id": "content_manuals_scout_deep_dive_advisory_db_sources__a894634a",
+            "exact_quote": "Given the diversity of sources and methodologies in the industry,\ndiscrepancies in vulnerability assessment results can and do happen."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Distinguish ongoing repository monitoring from one-off analysis.",
+            "acceptance": "State that one-off CLI or Desktop analysis stores no image data, whereas enabled repositories retain metadata snapshots that are reevaluated as vulnerability data changes.",
+            "tier_reason": "This explains why a one-time scan does not meet the ongoing-monitoring goal.",
+            "page_id": "content_manuals_scout_explore_analysis__f28ca754",
+            "exact_quote": "If you run image analysis as a one-off task using the CLI or Docker Desktop,\nDocker Scout won't store any data about your image.\nIf you enable Docker Scout for your container image repositories however,\nDocker Scout saves a metadata snapshot of your images after the analysis."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Check the platform image-size constraint.",
+            "acceptance": "State that platform analysis has a 10 GB maximum image file size unless the image has an SBOM attestation.",
+            "tier_reason": "This identifies a concrete exception that may change the build approach.",
+            "page_id": "content_manuals_scout_explore_analysis__f28ca754",
+            "exact_quote": "Image analysis on the Docker Scout platform has a maximum image file size\n> limit of 10 GB, unless the image has an SBOM attestation."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Check environment creation and assignment prerequisites.",
+            "acceptance": "State that only organization owners can create environments or set up integrations and that an image must already have been analyzed before assignment.",
+            "tier_reason": "These prerequisites explain otherwise unsuccessful environment setup.",
+            "page_id": "content_manuals_scout_integrations_environment_index__49dcad7e",
+            "exact_quote": "Only organization owners can create new environments and set up integrations.\n> Additionally, Docker Scout only assigns an image to an environment if the\n> image [has been analyzed](/manuals/scout/explore/analysis.md), either manually or\n> through a [registry integration](/manuals/scout/integrations/_index.md#container-registries)."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Inspect fix availability and base-image update indicators.",
+            "acceptance": "Explain that vulnerability entries can be expanded to inspect fix availability, and that available base-image updates are indicated beside Image hierarchy.",
+            "tier_reason": "This helps select additional remediation after the documented application fix.",
+            "page_id": "content_manuals_scout_explore_image_details_view__128790b0",
+            "exact_quote": "One or more of the base images may have updates available, which may include\nupdated security patches that remove vulnerabilities from your image. Any base\nimages with available updates are noted to the right of **Image hierarchy**."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "24381bbc6d28a106bcab42eecabd9539aad3b636c748a708937b31da0e308288",
+      "task": {
+        "question": "I'm responsible for our Docker organization's image compliance review. We want Scout policies and Docker Hub health scores to reflect our own requirements, including SonarQube quality gates. How should I configure and roll out the policies, connect SonarQube, and verify the resulting health scores? We need to preserve earlier evaluation results when temporarily setting a policy aside, and our team has older instructions for where policy actions appear in the Dashboard.",
+        "actor": "Engineer responsible for a Docker organization's image compliance review.",
+        "trigger": "Organization-specific compliance requirements and SonarQube checks need to replace reliance on default assessments.",
+        "goal": "Configure relevant policies, integrate code-quality results, and review health scores without accidentally discarding evaluation history.",
+        "observable_success": "The intended policy configurations are saved with explicit activation choices, SonarQube passes its connection test, image-linking prerequisites are understood, and authorized reviewers can inspect health scores with the correct policy context.",
+        "realism_rationale": "Policy configuration explicitly supports organization-specific parameters, and health scores can reflect those configurations. The documented loss of historic default evaluations makes configuration and temporary disabling a consequential workflow.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_scout_policy_configure__1e3ce5f0",
+            "exact_quote": "Some policy types are configurable. This means that you can create new,\ncustomized version of that policy type with your own configuration parameters."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_scout_policy_configure__1e3ce5f0",
+            "exact_quote": "Historic evaluation results for the default policy configuration are removed\n> if you delete or customize a policy."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Provide the Dashboard workflow for adding a configured policy.",
+            "acceptance": "Direct the engineer to the Policies page, select Add policy, select Configure for the desired policy type, and update its parameters.",
+            "tier_reason": "This is the primary action for adapting policy evaluation to organizational requirements.",
+            "page_id": "content_manuals_scout_policy_configure__1e3ce5f0",
+            "exact_quote": "1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.\n2. Select the **Add policy** button to open the policy configuration screen.\n3. On the policy configuration screen, locate the policy type that you want to\n   configure, and select **Configure** to open the policy configuration page."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Make policy activation an explicit rollout choice.",
+            "acceptance": "Explain that Save policy commits and enables the policy for the current organization, while Save and disable saves the configuration without enabling it.",
+            "tier_reason": "The rollout needs an actionable distinction between preparation and activation.",
+            "page_id": "content_manuals_scout_policy_configure__1e3ce5f0",
+            "exact_quote": "Select **Save policy** to commit the changes and enable the policy for\n     your current organization.\n   - Select **Save and disable** to save the policy configuration without enabling\n     it."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Preserve evaluation history when temporarily disregarding a policy.",
+            "acceptance": "Recommend disabling for the temporary pause, explain that results become hidden but remain available after re-enabling, and warn that deleting or customizing removes historic default-configuration results.",
+            "tier_reason": "Preserving history is an explicit constraint of the requested workflow.",
+            "page_id": "content_manuals_scout_policy_configure__1e3ce5f0",
+            "exact_quote": "When you disable a policy, evaluation results for that policy are hidden, and\nno longer appear in the Docker Scout Dashboard or in the CLI. Historic\nevaluation results aren't deleted if you disable a policy, so if you change\nyour mind and re-enable a policy later, results from earlier evaluations will\nstill be available."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Provide a concrete health-score verification path.",
+            "acceptance": "Tell the reviewer to sign in to Docker Hub and open the organization's page; explain that repository-list scores are based on the latest pushed tag and that the repository page shows contributing policies.",
+            "tier_reason": "The workflow needs an observable result reviewers can inspect.",
+            "page_id": "content_manuals_scout_policy_scores__33911484",
+            "exact_quote": "To view the health score of an image in Docker Hub:\n\n1. Go to Docker Hub and sign in.\n2. Navigate to your organization's page.\n\nIn the list of repositories, you can see the health score of each repository\nbased on the latest pushed tag."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Describe SonarQube connection setup and its validation.",
+            "acceptance": "Direct the engineer to the SonarQube integrations page, provide a configuration name and a User token with project or global Administer permission, enter the instance URL and required organization details, select Enable configuration, and check the connection-test outcome.",
+            "tier_reason": "Connecting SonarQube is necessary to include the requested code-quality assessment.",
+            "page_id": "content_manuals_scout_integrations_code_quality_sonarqube__4b6c0c92",
+            "exact_quote": "Enter the token, your SonarQube URL, and the ID of your SonarQube\n   organization. The SonarQube organization is required if you're using\n   SonarCloud.\n\n5. Select **Enable configuration**.\n\n   Docker Scout performs a connection test to verify that the provided details\n   are correct, and that the token has the necessary permissions."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Explain the policy context behind health scores.",
+            "acceptance": "State that enrolled repositories are scored using enabled organization policies, including custom configurations; unenrolled organizations receive scores based on default policies.",
+            "tier_reason": "This prevents misinterpreting a score as independent of organizational configuration.",
+            "page_id": "content_manuals_scout_policy_scores__33911484",
+            "exact_quote": "If your image repositories are already enrolled with Docker Scout, the health\nscore is calculated automatically based on the policies that are enabled for\nyour organization. This also includes any custom policies that you have\nconfigured."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Check reviewer permissions for health-score visibility.",
+            "acceptance": "Require membership in the repository-owning organization and at least read access; explain that outside users and members without read access cannot see the score.",
+            "tier_reason": "This resolves an access-related verification failure.",
+            "page_id": "content_manuals_scout_policy_scores__33911484",
+            "exact_quote": "Only users who are members of the organization that owns the repository, and\nhave at least “read” access to the repository, can view the health score. The\nscore is not visible to users outside the organization or members without\n\"read\" access."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Reconcile older Dashboard instructions with the documented UI change.",
+            "acceptance": "Explain that the 2024-10-09 update made results and the details side panel read-only and moved edit, disable, and delete actions to the policy details page.",
+            "tier_reason": "This directly addresses the team's older navigation instructions.",
+            "page_id": "content_manuals_scout_release_notes_platform__323e462a",
+            "exact_quote": "The policy results page and the policy details side panel are now read-only.\n  Policy actions (edit, disable, delete) are now accessible from the policy\n  details page."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Explain the documented change to custom-policy creation.",
+            "acceptance": "Identify the 2024-09-30 change from copying an out-of-the-box policy to customization based on policy types, so older copy-based instructions are not followed.",
+            "tier_reason": "This resolves a second concrete mismatch with older procedures.",
+            "page_id": "content_manuals_scout_release_notes_platform__323e462a",
+            "exact_quote": "Before, custom\npolicies were created by copying an out-of-the-box policy. Now, you can\ncustomize policies either by editing the default policy from a **policy type**\nwhich acts as a template."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Check repository analysis activation prerequisites.",
+            "acceptance": "State that activating analysis requires the Editor or Owner role; if the repository is in a third-party registry, integrate that registry with the Docker organization first.",
+            "tier_reason": "Policy results depend on analysis, which can be blocked by role or registry setup.",
+            "page_id": "content_manuals_scout_explore_analysis__f28ca754",
+            "exact_quote": "Before you can activate image analysis on a repository in a third-party registry,\nthe registry must be integrated with Docker Scout for your Docker organization.\nDocker Hub is integrated by default."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Explain why assessment status can change without a new image build.",
+            "acceptance": "State that enabled repositories retain metadata snapshots and Scout recalibrates analysis as vulnerability data changes, so new CVE disclosures do not require image reanalysis.",
+            "tier_reason": "This helps interpret later assessment changes during compliance review.",
+            "page_id": "content_manuals_scout_explore_analysis__f28ca754",
+            "exact_quote": "As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot, which means your security status for images is updated in real-time.\nThis dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Check the metadata prerequisites for matching images to SonarQube results.",
+            "acceptance": "Require a Scout-integrated image repository and images containing Git repository information through provenance attestations or the org.opencontainers.image.revision annotation.",
+            "tier_reason": "A successful connection alone does not establish image-to-analysis matching.",
+            "page_id": "content_manuals_scout_integrations_code_quality_sonarqube__4b6c0c92",
+            "exact_quote": "- Your image repository is [integrated with Docker Scout](../_index.md#container-registries).\n- Your images are built with [provenance attestations](/manuals/build/metadata/attestations/slsa-provenance.md),\n  or the `org.opencontainers.image.revision` annotation,\n  containing information about the Git repository."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Set expectations for historic SonarQube results.",
+            "acceptance": "Explain that Scout cannot access historic SonarQube analysis records and only results recorded after integration enablement are available.",
+            "tier_reason": "This prevents treating missing older code-quality results as an integration failure.",
+            "page_id": "content_manuals_scout_integrations_code_quality_sonarqube__4b6c0c92",
+            "exact_quote": "Docker Scout doesn't have access to historic SonarQube analysis records. Only\n> analysis results recorded after the integration is enabled will be available\n> to Docker Scout."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Explain the SonarQube result-delivery and evaluation sequence.",
+            "acceptance": "Describe analysis-completion webhooks delivering results to Scout and a subsequent image push causing evaluation of the corresponding SonarQube analysis record.",
+            "tier_reason": "This supplies a concrete troubleshooting sequence when the connection works but results are absent.",
+            "page_id": "content_manuals_scout_integrations_code_quality_sonarqube__4b6c0c92",
+            "exact_quote": "When you push a new image to a repository, Docker Scout evaluates the results\nof the SonarQube analysis record corresponding to the image. Docker Scout uses\nGit provenance metadata on the images, from provenance attestations or an OCI\nannotations, to link image repositories with SonarQube analysis results."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Interpret incremental improvement separately from compliance.",
+            "acceptance": "Explain that changes in the fail gap indicate whether artifacts are improving or deteriorating relative to a policy even before they meet its requirements.",
+            "tier_reason": "This makes the review useful during a gradual compliance rollout.",
+            "page_id": "content_manuals_scout_policy_index__324ebf24",
+            "exact_quote": "By tracking how the fail gap changes over time, you more\neasily see whether your artifact is improving or deteriorating relative to\npolicy."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

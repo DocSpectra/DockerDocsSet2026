@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "42f436b5b230b7c878fd211dd2bcac0209969647757c37697262ecc0d2e3500d",
+      "task": {
+        "question": "I’m a .NET developer with the add-db sample and its local database development setup already configured. Before handing it off for a deployment rehearsal, how should I check database persistence, run containerized unit tests locally and during image builds, and prepare the Docker Desktop Kubernetes manifest? Include the image and repository prerequisites for using an image published through GitHub Actions, and keep the configuration aligned with the documented sample.",
+        "actor": ".NET developer preparing a database-backed sample for a deployment rehearsal.",
+        "trigger": "The local database development setup is complete and the application is ready for predeployment checks.",
+        "goal": "Establish persistence and test checks, and prepare a local Kubernetes manifest with the correct published-image reference.",
+        "observable_success": "The student name survives container removal and recreation, the local unit test passes, the Dockerfile executes tests during builds, and the Kubernetes manifest contains the documented application and database resources with the developer's image reference.",
+        "realism_rationale": "The deployment excerpt explicitly describes local Kubernetes testing before deployment. The persistence excerpt supplies a concrete check across container removal and recreation, making the preparation workflow substantive rather than a request for configuration facts.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_guides_dotnet_deploy__a508745b",
+            "exact_quote": "This allows you to test and debug your workloads on Kubernetes locally\nbefore deploying."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_guides_dotnet_develop__b9588047",
+            "exact_quote": "Refresh [http://localhost:8080](http://localhost:8080) in your browser and verify that the student name persisted, even after the containers were removed and ran again."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Provide the documented database persistence check.",
+            "acceptance": "Check that localhost:8080 displays Student name is Moby Whale, stop the application, run docker compose rm and docker compose up --build, then refresh and confirm the name remains.",
+            "tier_reason": "Persistence is a primary acceptance check for the existing database setup.",
+            "page_id": "content_guides_dotnet_develop__b9588047",
+            "exact_quote": "In the terminal, run `docker compose rm` to remove your containers and then run `docker compose up` to run your application again.\n\n```console\n$ docker compose rm\n$ docker compose up --build\n```"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Give the local containerized unit-test command and its success criterion.",
+            "acceptance": "Run docker compose run --build --rm server dotnet test /source/tests from docker-dotnet-sample and identify the documented result as one passed test with zero failures.",
+            "tier_reason": "The developer needs an executable local test check.",
+            "page_id": "content_guides_dotnet_run_tests__df5b8b95",
+            "exact_quote": "Run the following command in the `docker-dotnet-sample` directory to run the tests inside a container.\n\n```console\n$ docker compose run --build --rm server dotnet test /source/tests\n```"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Add unit-test execution to the image build.",
+            "acceptance": "Place RUN dotnet test /source/tests in the Dockerfile build stage, following the documented publish instruction.",
+            "tier_reason": "Build-time test execution is a requested handoff condition.",
+            "page_id": "content_guides_dotnet_run_tests__df5b8b95",
+            "exact_quote": "RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \\\n    dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app\nRUN dotnet test /source/tests"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Prepare the documented local Kubernetes resource structure and prerequisite.",
+            "acceptance": "Require Kubernetes to be enabled in Docker Desktop and prepare docker-dotnet-kubernetes.yaml with a Deployment and Service for server and a Deployment and Service for db, retaining the sample's matching service labels and selectors.",
+            "tier_reason": "These resources and the enabled local cluster are necessary for the rehearsal manifest.",
+            "page_id": "content_guides_dotnet_deploy__a508745b",
+            "exact_quote": "In this Kubernetes YAML file, there are four objects, separated by the `---`. In addition to a Service and Deployment for the database, the other two objects"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Replace the manifest's application-image placeholder.",
+            "acceptance": "Set the server image to the developer's Docker username and repository created for the CI/CD workflow rather than leaving DOCKER_USERNAME/REPO_NAME.",
+            "tier_reason": "The manifest cannot identify the intended application image without this substitution.",
+            "page_id": "content_guides_dotnet_deploy__a508745b",
+            "exact_quote": "Replace `DOCKER_USERNAME/REPO_NAME` with your Docker\nusername and the name of the repository that you created in [Configure CI/CD for\nyour .NET application](configure-ci-cd.md)."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Preserve the database readiness gate in the Kubernetes application deployment.",
+            "acceptance": "Include the wait-for-db init container using busybox:1.28 and the documented loop checking db on port 5432 before application startup.",
+            "tier_reason": "This handles the database startup dependency beyond the basic resource structure.",
+            "page_id": "content_guides_dotnet_deploy__a508745b",
+            "exact_quote": "initContainers:\n        - name: wait-for-db\n          image: busybox:1.28\n          command:\n            [\n              \"sh\",\n              \"-c\",\n              'until nc -zv db 5432; do echo \"waiting for db\"; sleep 2; done;',\n            ]"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Explain the sample's application Service port mapping.",
+            "acceptance": "Retain the server NodePort Service with port and targetPort 8080 and nodePort 30001, distinguishing the service's node port from its target port.",
+            "tier_reason": "The port distinction helps prevent incorrect access assumptions during the later rehearsal.",
+            "page_id": "content_guides_dotnet_deploy__a508745b",
+            "exact_quote": "spec:\n  type: NodePort\n  ports:\n    - name: \"8080\"\n      port: 8080\n      targetPort: 8080\n      nodePort: 30001"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Keep the Kubernetes database configuration consistent with the supplied sample.",
+            "acceptance": "Use postgres:18 with POSTGRES_DB=example and POSTGRES_PASSWORD=example in the sample database deployment.",
+            "tier_reason": "These sample-specific settings reduce configuration drift when preparing the manifest.",
+            "page_id": "content_guides_dotnet_deploy__a508745b",
+            "exact_quote": "- name: POSTGRES_DB\n              value: example\n            - name: POSTGRES_PASSWORD\n              value: example\n          image: postgres:18"
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Present the documented base-image alternatives.",
+            "acceptance": "Explain that the application can use official .NET images or Docker Hardened Images, identifying the excerpt's security rationale for DHI.",
+            "tier_reason": "This supports a base-image choice without making one optional image family mandatory.",
+            "page_id": "content_guides_dotnet_containerize__df8c5bec",
+            "exact_quote": "You can choose between using the official .NET images or Docker Hardened Images (DHI)."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Include registry authentication when choosing DHI.",
+            "acceptance": "For the DHI option, instruct the developer to sign in with docker login dhi.io before pulling the images.",
+            "tier_reason": "This is a conditional prerequisite for the alternative image source.",
+            "page_id": "content_guides_dotnet_containerize__df8c5bec",
+            "exact_quote": "1. Sign in to the DHI registry:\n   ```console\n   $ docker login dhi.io\n   ```"
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Distinguish the DHI SDK image from the runtime image and check versions.",
+            "acceptance": "Identify dhi.io/dotnet:10-sdk as the SDK image and dhi.io/aspnetcore:10 as the runtime image, and advise checking the catalog for available versions.",
+            "tier_reason": "The build and runtime stages have different image requirements.",
+            "page_id": "content_guides_dotnet_containerize__df8c5bec",
+            "exact_quote": "2. Pull the .NET SDK DHI (check the catalog for available versions):\n   ```console\n   $ docker pull dhi.io/dotnet:10-sdk\n   ```\n\n3. Pull the ASP.NET Core runtime DHI (check the catalog for available versions):\n   ```console\n   $ docker pull dhi.io/aspnetcore:10\n   ```"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "State the account prerequisites for the CI publishing handoff.",
+            "acceptance": "Require a GitHub account and a verified Docker account before following the CI/CD setup.",
+            "tier_reason": "These prerequisites matter when progressing from local checks to published images.",
+            "page_id": "content_guides_dotnet_configure_ci_cd__9ad09014",
+            "exact_quote": "You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Configure the Docker identity as a GitHub repository variable.",
+            "acceptance": "In repository Settings under Secrets and variables > Actions, create the Repository variable DOCKER_USERNAME with the developer's Docker ID.",
+            "tier_reason": "This supplies the documented identity configuration for CI authentication.",
+            "page_id": "content_guides_dotnet_configure_ci_cd__9ad09014",
+            "exact_quote": "3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Configure the Docker Hub token with the documented permissions and secret name.",
+            "acceptance": "Create a Docker Hub PAT with Read and Write permissions and store it as the GitHub Repository secret DOCKERHUB_TOKEN.",
+            "tier_reason": "This provides the authenticated write access needed by the publishing handoff.",
+            "page_id": "content_guides_dotnet_configure_ci_cd__9ad09014",
+            "exact_quote": "Make sure access permissions include Read and Write.\n\n5. Add the PAT as a **Repository secret** in your GitHub repository, with the name\n   `DOCKERHUB_TOKEN`."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Prepare the local repository for the developer's GitHub publishing workflow.",
+            "acceptance": "Point origin at the developer's GitHub repository, rename the branch to main, then stage, commit, and push with git push -u origin main.",
+            "tier_reason": "The repository must be transferred to the configured workflow's source location.",
+            "page_id": "content_guides_dotnet_configure_ci_cd__9ad09014",
+            "exact_quote": "$ git remote set-url origin https://github.com/your-username/your-repository.git\n   ```\n\n7. In your local repository on your machine, run the following command to rename\n   the branch to main.\n\n   ```console\n   $ git branch -M main"
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "2d5827834c3afaceb6ac5a5aea9023decc8fab3d4862d71f9192b8dc753beed7",
+      "task": {
+        "question": "I’m preparing the cloned docker-gs-ping Go service for a CI handoff. How should I make its containerized unit tests run reproducibly, confirm the service is reachable from my host, and configure the repository and GitHub Actions workflow for Docker Hub publication on main for both amd64 and arm64? Include the relevant build-stage and runtime constraints, and make sure repeated test runs actually execute the tests.",
+        "actor": "Go developer preparing the sample service for a CI handoff.",
+        "trigger": "The sample repository has been cloned and the developer wants repeatable checks before configuring image publication.",
+        "goal": "Run uncached containerized tests, validate local HTTP access, and prepare authenticated multiarchitecture CI publication.",
+        "observable_success": "The targeted test build reports passing Go tests, a host request returns Hello, Docker! <3, and the repository contains a main-push workflow configured with Docker Hub credentials, Buildx, and both documented target platforms.",
+        "realism_rationale": "The CI excerpt explicitly supports building and pushing images with GitHub Actions. The test excerpt identifies build caching as a reason to request forced test execution, giving this handoff a concrete validation constraint.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_guides_golang_configure_ci_cd__e1163fe4",
+            "exact_quote": "In this section, you'll learn how to set up and use GitHub Actions to build and push your Docker image to Docker Hub."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_guides_golang_run_tests__ec5a3bf0",
+            "exact_quote": "Include `--progress plain` to view the build output, `--no-cache` to ensure the tests always run, and `--target run-test-stage` to target the test stage."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Use the documented dedicated Go test stage.",
+            "acceptance": "In Dockerfile.multistage, define run-test-stage from build-stage and execute RUN go test -v ./....",
+            "tier_reason": "The test stage provides the executable containerized test gate.",
+            "page_id": "content_guides_golang_run_tests__ec5a3bf0",
+            "exact_quote": "# Run the tests in the container\nFROM build-stage AS run-test-stage\nRUN go test -v ./..."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Give the reproducible test-build command and result check.",
+            "acceptance": "Run docker build -f Dockerfile.multistage -t docker-gs-ping-test --progress plain --no-cache --target run-test-stage . and check for passing tests and PASS in the output.",
+            "tier_reason": "The requested repeated execution depends on targeting the test stage and bypassing cache.",
+            "page_id": "content_guides_golang_run_tests__ec5a3bf0",
+            "exact_quote": "$ docker build -f Dockerfile.multistage -t docker-gs-ping-test --progress plain --no-cache --target run-test-stage ."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Configure Docker Hub authentication in the GitHub repository.",
+            "acceptance": "Create DOCKER_USERNAME as a Repository variable holding the Docker ID, and create DOCKERHUB_TOKEN as a Repository secret holding a Docker Hub PAT with Read and Write permissions.",
+            "tier_reason": "Authenticated image publication requires the documented identity and token setup.",
+            "page_id": "content_guides_golang_configure_ci_cd__e1163fe4",
+            "exact_quote": "Make sure access permissions include Read and Write.\n\n5. Add the PAT as a **Repository secret** in your GitHub repository, with the name\n   `DOCKERHUB_TOKEN`."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Connect and push the source repository to GitHub.",
+            "acceptance": "Create the developer's GitHub repository, replace the origin URL placeholders with its owner and name, and stage, commit, and push the local source to main.",
+            "tier_reason": "The workflow needs its source in the configured GitHub repository.",
+            "page_id": "content_guides_golang_configure_ci_cd__e1163fe4",
+            "exact_quote": "$ git remote set-url origin https://github.com/your-username/your-repository.git\n   ```\n\n7. Run the following commands to stage, commit, and push your local repository to GitHub."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Configure the documented main-branch, multiarchitecture publication workflow.",
+            "acceptance": "Create the GitHub Actions workflow under .github/workflows/main.yml with a push trigger for main, Docker Hub login using the configured variable and secret, Docker Buildx setup, and a build-and-push action targeting linux/amd64 and linux/arm64.",
+            "tier_reason": "This establishes the requested publication trigger and platform coverage.",
+            "page_id": "content_guides_golang_configure_ci_cd__e1163fe4",
+            "exact_quote": "- name: Build and push\n           uses: docker/build-push-action@{{% param \"build_push_action_version\" %}}\n           with:\n             platforms: linux/amd64,linux/arm64"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Check the local Docker prerequisite before executing the handoff checks.",
+            "acceptance": "State that Docker must be running locally before running the image build and container commands.",
+            "tier_reason": "This is an execution prerequisite rather than a change to the test gate.",
+            "page_id": "content_guides_golang_build_images__68431fa3",
+            "exact_quote": "- Docker running locally. Follow the [instructions to download and install Docker](/manuals/desktop/_index.md)."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Account for the application's configurable listening port.",
+            "acceptance": "Explain that PORT controls the application's listening port and defaults to 8080; align the published container port with that setting.",
+            "tier_reason": "This handles a configuration variation that can invalidate a smoke test.",
+            "page_id": "content_guides_golang_build_images__68431fa3",
+            "exact_quote": "The application listens on a TCP port defined by the value of environment variable `PORT`. The default value is `8080`."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Use the documented endpoint behavior as smoke-test expectations.",
+            "acceptance": "Identify the root endpoint's heart-containing response, /health returning {\"Status\" : \"OK\"}, and other paths returning HTTP 404.",
+            "tier_reason": "These expectations distinguish a successful request from testing an unsupported path.",
+            "page_id": "content_guides_golang_build_images__68431fa3",
+            "exact_quote": "- It responds with a string containing a heart symbol (`<3`) to requests to `/`.\n- It responds with `{\"Status\" : \"OK\"}` JSON to a request to `/health`.\n\nIt responds with HTTP error 404 to any other request."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Explain and remedy host connection refusal for an unpublished container port.",
+            "acceptance": "Explain that container networking isolation prevents the initial localhost connection and restart the container with docker run --publish 8080:8080 docker-gs-ping.",
+            "tier_reason": "This addresses the documented local connectivity failure.",
+            "page_id": "content_guides_golang_run_containers__cd22a1fc",
+            "exact_quote": "This is\nexpected because your container is running in isolation which includes\nnetworking. Stop the container and restart with port 8080 published on your\nlocal network."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Offer the documented alternative host-port mapping.",
+            "acceptance": "Explain host_port:container_port ordering and show that publishing 3000:8080 exposes the application's container port 8080 through host port 3000.",
+            "tier_reason": "This provides an access alternative when the developer chooses a different host port.",
+            "page_id": "content_guides_golang_run_containers__cd22a1fc",
+            "exact_quote": "The format of the `--publish` command is `[host_port]:[container_port]`. So if you wanted to expose port `8080` inside the container to port `3000` outside the container, you would pass `3000:8080` to the `--publish` flag."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Provide a concrete host HTTP verification command.",
+            "acceptance": "After publishing 8080:8080, run curl http://localhost:8080/ and expect Hello, Docker! <3; also check that the GET request appears in the server console.",
+            "tier_reason": "This verifies runtime reachability independently of the unit-test build.",
+            "page_id": "content_guides_golang_run_containers__cd22a1fc",
+            "exact_quote": "$ curl http://localhost:8080/\nHello, Docker! <3"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Explain foreground-server behavior and how to stop the smoke-test container.",
+            "acceptance": "Explain that the REST server keeps the terminal occupied while waiting for requests and use ctrl-c to stop it and regain the prompt.",
+            "tier_reason": "This lets the developer complete the foreground smoke test without mistaking the running server for a hung command.",
+            "page_id": "content_guides_golang_run_containers__cd22a1fc",
+            "exact_quote": "To stop the container, press ctrl-c. This will return you to the terminal prompt."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Preserve the sample's Go compilation settings.",
+            "acceptance": "Use the documented build command with CGO_ENABLED=0, GOOS=linux, and output binary /docker-gs-ping when describing the multistage build.",
+            "tier_reason": "These settings constrain the binary produced for the sample's runtime stage.",
+            "page_id": "content_guides_golang_run_tests__ec5a3bf0",
+            "exact_quote": "RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping"
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Keep the release stage separate from the test and toolchain stages.",
+            "acceptance": "Describe the release stage as gcr.io/distroless/base-debian11, copying the binary from build-stage and running it as nonroot:nonroot.",
+            "tier_reason": "This preserves the documented lean runtime and runtime user while adding tests.",
+            "page_id": "content_guides_golang_run_tests__ec5a3bf0",
+            "exact_quote": "FROM gcr.io/distroless/base-debian11 AS build-release-stage\n\nWORKDIR /\n\nCOPY --from=build-stage /docker-gs-ping /docker-gs-ping\n\nEXPOSE 8080\n\nUSER nonroot:nonroot"
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Preserve the dependency-restoration order in the sample build stage.",
+            "acceptance": "Copy go.mod and go.sum and run go mod download before copying the Go source files, using the supplied Dockerfile layout.",
+            "tier_reason": "This supplies the build-stage prerequisites needed by the derived test stage.",
+            "page_id": "content_guides_golang_run_tests__ec5a3bf0",
+            "exact_quote": "COPY go.mod go.sum ./\nRUN go mod download\n\nCOPY *.go ./"
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

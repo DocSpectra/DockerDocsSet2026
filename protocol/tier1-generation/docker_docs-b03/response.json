@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs",
+  "candidates": [
+    {
+      "cluster_id": "da8ea8afe45a4e2d07e6011dd99cd6e26648f9bcb45149e59f0f00dc91fa49b4",
+      "task": {
+        "question": "I maintain a GitHub-hosted application and want Docker Hub to build and publish its image when I push to the main branch, but only after container tests pass. How should I set this up, verify the builds, and handle common failures, including a possible private submodule?",
+        "actor": "Application release engineer",
+        "trigger": "Moving image publication from manual builds to Docker Hub automation",
+        "goal": "Configure a tested, observable image publication workflow for the source repository",
+        "observable_success": "A push to the configured branch produces a successful build report and a published image only when the tests pass; failures can be diagnosed from the report and logs.",
+        "realism_rationale": "The setup page describes building on source pushes and withholding the image when tests fail. The testing page clarifies that testing alone does not publish an image, making the configuration choice consequential.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+            "exact_quote": "You can configure repositories in Docker Hub so that they automatically\nbuild an image each time you push new code to your source provider."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+            "exact_quote": "Enabling `Autotest` builds an image for testing purposes, but does not\nautomatically push the built image to the Docker repository."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "State the subscription prerequisite.",
+            "acceptance": "Identifies Docker Pro, Team, or Business as required for automated builds.",
+            "tier_reason": "The workflow cannot be enabled without an eligible subscription.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+            "exact_quote": "Automated builds require a\n> Docker Pro, Team, or Business subscription."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Explain where to begin configuring the repository and source connection.",
+            "acceptance": "Directs the user to the repository's Builds tab and to connect GitHub as the source provider.",
+            "tier_reason": "These are the entry points for the requested setup.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+            "exact_quote": "1. In [Docker Hub](https://hub.docker.com), go to **My Hub** > **Repositories**, and select a repository to view its details.\n\n2. Select the **Builds** tab.\n\n3. Select either GitHub or Bitbucket to connect where the image's source code is stored."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Select the intended source repository.",
+            "acceptance": "Instructs the user to choose the GitHub repository that contains the image source.",
+            "tier_reason": "The build must point at the correct code.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+            "exact_quote": "4. Select the **source repository** to build the Docker images from."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Configure the branch-to-image build rule and enable Autobuild for that branch.",
+            "acceptance": "Explains that build rules determine source branch and resulting tag, notes the default main/master to latest mapping, and calls for Autobuild to be enabled on the intended branch.",
+            "tier_reason": "This determines which push publishes which image tag.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+            "exact_quote": "This\n    default rule sets builds from the `Branch` in your source code repository\n    called `master` or `main`, and creates a Docker image tagged with `latest`."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Set up container tests that gate the pushed image.",
+            "acceptance": "Specifies a docker-compose.test.yml beside the Dockerfile with a sut service, and explains that the image is pushed only when configured tests succeed.",
+            "tier_reason": "Passing tests is the user's publication condition.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+            "exact_quote": "To set up your automated tests, create a `docker-compose.test.yml` file which\ndefines a `sut` service that lists the tests to be run.\nThe `docker-compose.test.yml` file should be located in the same directory that\ncontains the Dockerfile used to build the image."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Explain the test pass criterion.",
+            "acceptance": "States that the sut service's return code is decisive: zero passes and nonzero fails.",
+            "tier_reason": "Helps validate why publication was allowed or blocked.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+            "exact_quote": "Its return code determines if tests passed or not.\nTests pass if the `sut` service returns `0`, and fail otherwise."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Distinguish pull-request Autotest from image publication.",
+            "acceptance": "Explains that Autotest can run on pull requests, but only branches configured for Autobuild push images.",
+            "tier_reason": "Prevents a mistaken expectation that a passing pull request test publishes an image.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+            "exact_quote": "Only branches that are configured to use autobuild push images to the\nDocker repository, regardless of the Autotest settings."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Show how to verify a build and locate diagnostic information.",
+            "acceptance": "Points to the repository's General or Builds view and identifies the build report's source, logs, timing, and account information.",
+            "tier_reason": "Provides observable confirmation and failure evidence.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_manage_builds__8620f585",
+            "exact_quote": "From either location, you can select a build job to view its build report. The\nbuild report shows information about the build job. This includes the source\nrepository and branch, or tag, the build logs, the build duration, creation time and location, and the user account the build occurred in."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Describe a temporary pause of automatic builds.",
+            "acceptance": "Explains that Autobuild can be disabled per branch or tag and re-enabled, while Autotest remains enabled.",
+            "tier_reason": "Useful during refactoring without dismantling test coverage.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_manage_builds__8620f585",
+            "exact_quote": "Automated builds are enabled per branch or tag, and can be disabled and\nre-enabled. You might do this when you want to only build manually for\na while, for example when you are doing major refactoring in your code. Disabling autobuilds doesn't disable [autotests](automated-testing.md)."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Give a retry path for a failed build and its permission condition.",
+            "acceptance": "Names the Retry control in a failed build's views and notes that organization repositories require Read & Write access for Retry or Cancel controls.",
+            "tier_reason": "Makes failure recovery actionable when the control is missing.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2",
+            "exact_quote": "If you are viewing the build details for a repository that belongs to an\n> organization, the **Cancel** and **Retry** buttons only appear if you have `Read & Write` access to the repository."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Account for the build time limit.",
+            "acceptance": "States the four-hour limit and advises checking duration to distinguish an automatic timeout from a manual cancellation when the shared log message appears.",
+            "tier_reason": "Prevents misdiagnosis of long-running failures.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2",
+            "exact_quote": "This log message is the same as when you actively cancel a build. To identify\nwhether a build was automatically cancelled, check the build duration."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Handle a private Git submodule if the repository has one.",
+            "acceptance": "Explains the single-repository deploy-key limitation, describes the SSH_PRIVATE build variable workaround, and requires an SSH rather than HTTPS submodule URL.",
+            "tier_reason": "Addresses the user's stated possible dependency and its specific access failure.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2",
+            "exact_quote": "If your source code repository uses private Git\nsubmodules, or requires that you clone other private repositories to build,\nDocker Hub cannot access these additional repositories, your build cannot complete,\nand an error is logged in your build timeline."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Explain the scope of build environment variables.",
+            "acceptance": "States that Docker Hub's utility variables apply during builds, tests, and hooks but do not configure the running service.",
+            "tier_reason": "Avoids using build metadata as a presumed runtime setting.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7",
+            "exact_quote": "These environment variables are only available to the build and test\nprocesses and don't affect your service's run environment."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "State the consequence of replacing build commands with hooks.",
+            "acceptance": "If recommending hooks, warns that the hook must include an equivalent build, test, or push command because it replaces the default command.",
+            "tier_reason": "A customization can otherwise silently break the pipeline.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7",
+            "exact_quote": "The contents of these hook files replace the\nbasic `docker` commands, so you must include a similar build, test or push\ncommand in the hook or your automated process does not complete."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Cover source-provider authorization for a team or organization.",
+            "acceptance": "Notes that team autobuilds call for a service account before linking and that GitHub organization repository access may require an organization owner.",
+            "tier_reason": "Explains a common authorization barrier to selecting the source.",
+            "page_id": "content_manuals_docker_hub_repos_manage_builds_link_source__f2b3efa2",
+            "exact_quote": "If you are linking a source code provider to create autobuilds for a team, follow the instructions to [create a service account](setup.md#service-users-for-team-autobuilds) for the team before linking the account as described below."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "564c2588fa2f88334c5a256446c64992784368e27044fe9f8d48a919888ae21d",
+      "task": {
+        "question": "I maintain a growing codebase and want a Docker Agent coding assistant in my ACP-capable editor to find relevant code by meaning without loading the whole repository into its prompt. How should I configure the searchable source and editor integration, then check that it works and choose sensible operating options?",
+        "actor": "Developer maintaining a large codebase",
+        "trigger": "Filename search and direct file reading are consuming context while investigating code",
+        "goal": "Run an editor-based Docker Agent that can retrieve relevant indexed code and read project files",
+        "observable_success": "The agent responds in the editor, reads a project file, and can use the configured RAG source to retrieve relevant chunks.",
+        "realism_rationale": "The RAG page describes semantic search over indexed content for codebase questions. The ACP page gives a concrete editor workflow and identifies working-directory and configuration-path failures that must be checked.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_ai_docker_agent_rag__ee9ce84f",
+            "exact_quote": "RAG indexes your content ahead of time and enables semantic search. The agent\nsearches pre-indexed content by meaning, not exact words."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_ai_docker_agent_integrations_acp__e9622a17",
+            "exact_quote": "If the agent starts but can't access files or perform other actions, check:\n\n- Working directory in your editor is set correctly to your project root\n- Agent configuration file path is absolute or relative to working directory"
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Configure a RAG source over code paths.",
+            "acceptance": "Shows a rag source with docs paths, a chunked-embeddings strategy, embedding model, vector dimensions, and local database path consistent with the supplied example.",
+            "tier_reason": "The searchable index is the central capability requested.",
+            "page_id": "content_manuals_ai_docker_agent_rag__ee9ce84f",
+            "exact_quote": "rag:\n  codebase:\n    docs: [./src, ./pkg]\n    strategies:\n      - type: chunked-embeddings\n        embedding_model: openai/text-embedding-3-small\n        vector_dimensions: 1536\n        database: ./code.db"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Attach the named RAG source to the agent.",
+            "acceptance": "Shows the agent's rag array referencing the defined source and an instruction to search the codebase when needed.",
+            "tier_reason": "Defining a source alone does not give this agent its search tool.",
+            "page_id": "content_manuals_ai_docker_agent_rag__ee9ce84f",
+            "exact_quote": "agents:\n  root:\n    model: openai/gpt-5\n    instruction: You are a coding assistant. Search the codebase when needed.\n    rag: [codebase]"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Use a valid agent configuration structure.",
+            "acceptance": "Places agent definitions under the required agents top-level section and the RAG source under rag.",
+            "tier_reason": "The editor needs a usable Docker Agent configuration file.",
+            "page_id": "content_manuals_ai_docker_agent_reference_config__fb52747e",
+            "exact_quote": "agents: # Required - agent definitions\n  root:\n    model: anthropic/claude-sonnet-4-5\n    description: What this agent does\n    instruction: How it should behave"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Identify ACP prerequisites.",
+            "acceptance": "Calls for Docker Agent, an agent YAML configuration, an ACP-capable editor, and the chosen model provider's API key in the editor's shell environment.",
+            "tier_reason": "The editor session cannot start the configured agent without these inputs.",
+            "page_id": "content_manuals_ai_docker_agent_integrations_acp__e9622a17",
+            "exact_quote": "Your agents will use model provider API keys from your shell environment\n(`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc.). Make sure these are set before\nlaunching your editor."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Validate the editor integration.",
+            "acceptance": "Describes starting the ACP server through the editor, sending a test prompt, checking the reply, and asking it to read a file.",
+            "tier_reason": "These are observable checks of both agent startup and file access.",
+            "page_id": "content_manuals_ai_docker_agent_integrations_acp__e9622a17",
+            "exact_quote": "1. Start the Docker Agent ACP server using your editor's configured method\n2. Send a test prompt through your editor's interface\n3. Check that the agent responds\n4. Verify filesystem operations work by asking the agent to read a file"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Set expectations for first-run indexing and subsequent updates.",
+            "acceptance": "Explains that first-run indexing blocks startup, later runs reuse the index, and modified files are re-indexed.",
+            "tier_reason": "Distinguishes expected startup delay from a broken editor setup.",
+            "page_id": "content_manuals_ai_docker_agent_rag__ee9ce84f",
+            "exact_quote": "1. **At startup** - Indexes your documents (first run only, blocks until complete)\n2. **During conversation** - Gives the agent a search tool\n3. **When the agent searches** - Retrieves relevant chunks and adds them to context\n4. **On file changes** - Automatically re-indexes modified files"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Explain index file selection and reuse.",
+            "acceptance": "Notes that configured paths are read, .gitignore patterns are respected by default, and the index is stored in a local database for reuse.",
+            "tier_reason": "These controls affect whether the desired code is searchable.",
+            "page_id": "content_manuals_ai_docker_agent_rag__ee9ce84f",
+            "exact_quote": "- Reads files from configured paths\n- Respects `.gitignore` patterns (can be disabled)\n- Splits documents into chunks\n- Creates searchable representations using your chosen strategy\n- Stores everything in a local database"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Distinguish ACP file access from direct agent filesystem access.",
+            "acceptance": "Explains that ACP routes reads and writes through the editor, keeping the agent aligned with the editor's working directory and file state.",
+            "tier_reason": "Clarifies which component to inspect when file operations fail.",
+            "page_id": "content_manuals_ai_docker_agent_integrations_acp__e9622a17",
+            "exact_quote": "When the\nagent needs to read or write a file, it requests it from your editor. This keeps\nthe agent's view of your code synchronized with yours - same working directory,\nsame files, same state."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Describe toolset choices for additional actions.",
+            "acceptance": "Separates built-in filesystem or shell tools from MCP and custom script toolsets, recommending only capabilities needed for the agent's work.",
+            "tier_reason": "Search and editor access may need different tools from command execution or external resources.",
+            "page_id": "content_manuals_ai_docker_agent_reference_toolsets__d35d831a",
+            "exact_quote": "Docker Agent supports three types of toolsets:\n\nBuilt-in toolsets\n: Core functionality built directly into Docker Agent (`filesystem`, `shell`,\n`memory`, etc.)."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Show where toolsets are configured.",
+            "acceptance": "Places any selected toolsets under the agent's toolsets array and explains that configured tools become available to that agent.",
+            "tier_reason": "Prevents placing tool configuration in the wrong YAML section.",
+            "page_id": "content_manuals_ai_docker_agent_reference_toolsets__d35d831a",
+            "exact_quote": "When you configure toolsets for an agent, those tools become available in the\nagent's context. The agent can invoke tools by name with appropriate parameters\nbased on the task at hand."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Handle large command output safely if shell validation is added.",
+            "acceptance": "Advises redirecting verbose test or build output to a file and reading relevant portions rather than returning it all into the agent context.",
+            "tier_reason": "Protects the constrained context that motivated the workflow.",
+            "page_id": "content_manuals_ai_docker_agent_best_practices__396cad09",
+            "exact_quote": "Shell commands that produce large output can overflow your agent's context\nwindow. Validation tools, test suites, and build logs often generate thousands\nof lines."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Keep documentation edits focused if the assistant is allowed to modify docs.",
+            "acceptance": "Suggests instructions to match the existing document's scope and length and add only missing material.",
+            "tier_reason": "Prevents an optional editing capability from expanding concise guides.",
+            "page_id": "content_manuals_ai_docker_agent_best_practices__396cad09",
+            "exact_quote": "When updating documentation:\n\n    1. Understand the current document's scope and length\n    2. Match that character - don't transform minimal guides into tutorials\n    3. Add only what's genuinely missing"
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Offer a local-model option when cloud credentials or offline work matter.",
+            "acceptance": "Identifies Docker Model Runner as an alternative, its installed-and-running prerequisite, and the docker model version check.",
+            "tier_reason": "Gives a concrete operating choice for the model dependency.",
+            "page_id": "content_manuals_ai_docker_agent_local_models__a6e885fe",
+            "exact_quote": "Docker Model Runner lets you run models locally without API keys or recurring\ncosts. Your data stays on your machine, and you can work offline once models\nare downloaded."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Distinguish MCP client integration from the requested editor integration.",
+            "acceptance": "States that MCP mode exposes Docker Agent agents as tools in MCP clients, whereas ACP is the route for agents embedded in an editor.",
+            "tier_reason": "Helps the user choose the correct integration mode.",
+            "page_id": "content_manuals_ai_docker_agent_integrations_mcp__0eec5ac7",
+            "exact_quote": "When you run Docker Agent in MCP mode, your agents show up as tools in Claude Desktop\nand other MCP clients. Instead of switching to a terminal to run your security\nagent, you ask Claude to use it and Claude calls it for you."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "State the installation and naming compatibility constraint.",
+            "acceptance": "Notes Docker Agent's Docker Desktop version threshold and the older cagent name, so a user can recognize an older installation.",
+            "tier_reason": "Avoids misidentifying the available feature while setting up the editor.",
+            "page_id": "content_manuals_ai_docker_agent_index__d6c33b1f",
+            "exact_quote": "Docker Agent is included in Docker Desktop 4.63 and later. In Docker Desktop versions 4.49 through 4.62, this feature was called cagent."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

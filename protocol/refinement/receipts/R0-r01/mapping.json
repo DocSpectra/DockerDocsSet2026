@@ -1,0 +1,1513 @@
+{
+  "added": [],
+  "changed": [
+    "content_guides_lab_attestation_basics__2e4df6e7",
+    "content_guides_lab_building_images__f1b761aa",
+    "content_manuals_build_building_best_practices__bdbd3cf6",
+    "content_manuals_build_building_cdi__8bfc39d3",
+    "content_manuals_build_building_index__fb495d28",
+    "content_manuals_build_building_multi_platform__b06e522a",
+    "content_manuals_build_building_multi_stage__7d6c6a7d",
+    "content_manuals_build_building_secrets__d5061171",
+    "content_manuals_build_building_variables__3eccde2a",
+    "content_manuals_build_cache_backends_azblob__9606d4f3",
+    "content_manuals_build_cache_backends_gha__a92f2e1b",
+    "content_manuals_build_cache_backends_index__093cec26",
+    "content_manuals_build_cache_backends_inline__d0e5de37",
+    "content_manuals_build_cache_backends_local__29b529a8",
+    "content_manuals_build_cache_backends_registry__84b6a1dc",
+    "content_manuals_build_cache_backends_s3__b7fe7639",
+    "content_manuals_build_cache_garbage_collection__a57c1e1c",
+    "content_manuals_build_cache_index__36852302",
+    "content_manuals_build_cache_invalidation__e2963c26",
+    "content_manuals_build_cache_optimize__84803589",
+    "content_manuals_build_checks__c485c279",
+    "content_manuals_build_concepts_context__33dc419b",
+    "content_manuals_build_concepts_dockerfile__1975b6a7",
+    "content_manuals_build_concepts_index__11b99d1a",
+    "content_manuals_build_concepts_overview__ba8ddaa8",
+    "content_manuals_build_exporters_image_registry__65581484",
+    "content_manuals_build_exporters_index__172dc7af",
+    "content_manuals_build_exporters_local_tar__39e9afad",
+    "content_manuals_build_exporters_oci_docker__80eff27e",
+    "content_manuals_build_index__792f2ff8",
+    "content_manuals_build_metadata_annotations__a61a0dbb",
+    "content_manuals_build_metadata_attestations_index__799dfbe5",
+    "content_manuals_build_metadata_attestations_sbom__b809d236",
+    "content_manuals_build_metadata_attestations_slsa_provenance__0d80691d",
+    "content_manuals_build_metadata_index__7b26933a",
+    "content_manuals_build_policies_debugging__5ce95293",
+    "content_manuals_build_policies_examples__526d2b0b",
+    "content_manuals_build_policies_index__0d5e2f82",
+    "content_manuals_build_policies_inputs__b1f0e2d9",
+    "content_manuals_build_policies_intro__69332bb3",
+    "content_manuals_build_policies_testing__18acf5d3",
+    "content_manuals_build_policies_usage__43829299",
+    "content_manuals_build_policies_validate_git__154081bf",
+    "content_manuals_build_policies_validate_images__fcc4c57a"
+  ],
+  "mapping": {},
+  "partial_unit_loss": [],
+  "removed": [],
+  "rule": {
+    "min_share": 0.5,
+    "tie_break": "smallest variant doc id",
+    "unit": "normalized non-blank line, link targets stripped, lines without alphanumerics dropped",
+    "version": "moved_content_majority_v1"
+  },
+  "translation": {
+    "content_guides_lab_attestation_basics__2e4df6e7": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_lab_attestation_basics__2e4df6e7",
+          "rel_path": "content/guides/lab-attestation-basics.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_guides_lab_building_images__f1b761aa",
+          "rel_path": "content/guides/lab-building-images.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_lab_compose_quickstart__1e48c2ac",
+          "rel_path": "content/guides/lab-compose-quickstart.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_lab_dhi_node__dc2ca311",
+          "rel_path": "content/guides/lab-dhi-node.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_lab_ai_fundamentals__91574448",
+          "rel_path": "content/guides/lab-ai-fundamentals.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/lab-attestation-basics.md",
+      "units": 45
+    },
+    "content_guides_lab_building_images__f1b761aa": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_lab_building_images__f1b761aa",
+          "rel_path": "content/guides/lab-building-images.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_guides_lab_container_getting_started__ca0b1f83",
+          "rel_path": "content/guides/lab-container-getting-started.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_guides_lab_attestation_basics__2e4df6e7",
+          "rel_path": "content/guides/lab-attestation-basics.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_lab_compose_quickstart__1e48c2ac",
+          "rel_path": "content/guides/lab-compose-quickstart.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_lab_ai_fundamentals__91574448",
+          "rel_path": "content/guides/lab-ai-fundamentals.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/lab-building-images.md",
+      "units": 45
+    },
+    "content_manuals_build_building_best_practices__bdbd3cf6": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_building_best_practices__bdbd3cf6",
+          "rel_path": "content/manuals/build/building/best-practices.md",
+          "units": 521
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_dockerfile__1975b6a7",
+          "rel_path": "content/manuals/build/concepts/dockerfile.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_engine_storage_drivers_index__c50eb66e",
+          "rel_path": "content/manuals/engine/storage/drivers/_index.md",
+          "units": 9
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/best-practices.md",
+      "units": 521
+    },
+    "content_manuals_build_building_cdi__8bfc39d3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_building_cdi__8bfc39d3",
+          "rel_path": "content/manuals/build/building/cdi.md",
+          "units": 283
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_golang_build_images__68431fa3",
+          "rel_path": "content/guides/golang/build-images.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_buildkit_index__2030924f",
+          "rel_path": "content/manuals/build/buildkit/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_quickstart__0fb28b3b",
+          "rel_path": "content/manuals/docker-hub/quickstart.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/cdi.md",
+      "units": 283
+    },
+    "content_manuals_build_building_index__fb495d28": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_manage_index__a8c484b6",
+          "rel_path": "content/manuals/admin/company/manage/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_index__1a65c71e",
+          "rel_path": "content/manuals/admin/organization/manage/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_ai_gordon_concepts_index__20470d28",
+          "rel_path": "content/manuals/ai/gordon/concepts/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_reference_api_engine_latest__2f426cef",
+          "rel_path": "content/reference/api/engine/latest.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_index__cf12634c",
+          "rel_path": "content/get-started/docker-concepts/_index.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/_index.md",
+      "units": 4
+    },
+    "content_manuals_build_building_multi_platform__b06e522a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 287
+        },
+        {
+          "doc_id": "content_guides_dhi_backstage__98c3cde2",
+          "rel_path": "content/guides/dhi-backstage.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_guides_dotnet_develop__b9588047",
+          "rel_path": "content/guides/dotnet/develop.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_cache_optimize__84803589",
+          "rel_path": "content/manuals/build/cache/optimize.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/multi-platform.md",
+      "units": 287
+    },
+    "content_manuals_build_building_multi_stage__7d6c6a7d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_building_multi_stage__7d6c6a7d",
+          "rel_path": "content/manuals/build/building/multi-stage.md",
+          "units": 137
+        },
+        {
+          "doc_id": "content_guides_golang_build_images__68431fa3",
+          "rel_path": "content/guides/golang/build-images.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_using_the_build_cache__7103c78d",
+          "rel_path": "content/get-started/docker-concepts/building-images/using-the-build-cache.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_sbom__b809d236",
+          "rel_path": "content/manuals/build/metadata/attestations/sbom.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/multi-stage.md",
+      "units": 137
+    },
+    "content_manuals_build_building_secrets__d5061171": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_building_secrets__d5061171",
+          "rel_path": "content/manuals/build/building/secrets.md",
+          "units": 152
+        },
+        {
+          "doc_id": "content_manuals_build_ci_github_actions_secrets__8a83da3f",
+          "rel_path": "content/manuals/build/ci/github-actions/secrets.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_customize__db61f385",
+          "rel_path": "content/manuals/dhi/how-to/customize.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/secrets.md",
+      "units": 152
+    },
+    "content_manuals_build_building_variables__3eccde2a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_building_variables__3eccde2a",
+          "rel_path": "content/manuals/build/building/variables.md",
+          "units": 377
+        },
+        {
+          "doc_id": "content_manuals_build_ci_github_actions_secrets__8a83da3f",
+          "rel_path": "content/manuals/build/ci/github-actions/secrets.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_dhi_openshift__a9eff475",
+          "rel_path": "content/guides/dhi-openshift.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/building/variables.md",
+      "units": 377
+    },
+    "content_manuals_build_cache_backends_azblob__9606d4f3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_azblob__9606d4f3",
+          "rel_path": "content/manuals/build/cache/backends/azblob.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_s3__b7fe7639",
+          "rel_path": "content/manuals/build/cache/backends/s3.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_gha__a92f2e1b",
+          "rel_path": "content/manuals/build/cache/backends/gha.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/azblob.md",
+      "units": 35
+    },
+    "content_manuals_build_cache_backends_gha__a92f2e1b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_gha__a92f2e1b",
+          "rel_path": "content/manuals/build/cache/backends/gha.md",
+          "units": 114
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_azblob__9606d4f3",
+          "rel_path": "content/manuals/build/cache/backends/azblob.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_s3__b7fe7639",
+          "rel_path": "content/manuals/build/cache/backends/s3.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/gha.md",
+      "units": 114
+    },
+    "content_manuals_build_cache_backends_index__093cec26": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_index__093cec26",
+          "rel_path": "content/manuals/build/cache/backends/_index.md",
+          "units": 115
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_index__172dc7af",
+          "rel_path": "content/manuals/build/exporters/_index.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_kubernetes__6f9f45f6",
+          "rel_path": "content/manuals/build/builders/drivers/kubernetes.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/_index.md",
+      "units": 115
+    },
+    "content_manuals_build_cache_backends_inline__d0e5de37": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_inline__d0e5de37",
+          "rel_path": "content/manuals/build/cache/backends/inline.md",
+          "units": 32
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_azblob__9606d4f3",
+          "rel_path": "content/manuals/build/cache/backends/azblob.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_gha__a92f2e1b",
+          "rel_path": "content/manuals/build/cache/backends/gha.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/inline.md",
+      "units": 32
+    },
+    "content_manuals_build_cache_backends_local__29b529a8": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 65
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_azblob__9606d4f3",
+          "rel_path": "content/manuals/build/cache/backends/azblob.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_gha__a92f2e1b",
+          "rel_path": "content/manuals/build/cache/backends/gha.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_s3__b7fe7639",
+          "rel_path": "content/manuals/build/cache/backends/s3.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/local.md",
+      "units": 65
+    },
+    "content_manuals_build_cache_backends_registry__84b6a1dc": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 51
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_azblob__9606d4f3",
+          "rel_path": "content/manuals/build/cache/backends/azblob.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_gha__a92f2e1b",
+          "rel_path": "content/manuals/build/cache/backends/gha.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_s3__b7fe7639",
+          "rel_path": "content/manuals/build/cache/backends/s3.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/registry.md",
+      "units": 51
+    },
+    "content_manuals_build_cache_backends_s3__b7fe7639": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_backends_s3__b7fe7639",
+          "rel_path": "content/manuals/build/cache/backends/s3.md",
+          "units": 49
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_azblob__9606d4f3",
+          "rel_path": "content/manuals/build/cache/backends/azblob.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_gha__a92f2e1b",
+          "rel_path": "content/manuals/build/cache/backends/gha.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_registry__84b6a1dc",
+          "rel_path": "content/manuals/build/cache/backends/registry.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/backends/s3.md",
+      "units": 49
+    },
+    "content_manuals_build_cache_garbage_collection__a57c1e1c": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_garbage_collection__a57c1e1c",
+          "rel_path": "content/manuals/build/cache/garbage-collection.md",
+          "units": 195
+        },
+        {
+          "doc_id": "content_guides_golang_develop__45148e1f",
+          "rel_path": "content/guides/golang/develop.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_python_develop__087af4e2",
+          "rel_path": "content/guides/python/develop.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_e2b_sandboxes__ac053bf9",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/e2b-sandboxes.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_get_started__f60611f0",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/get-started.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/garbage-collection.md",
+      "units": 195
+    },
+    "content_manuals_build_cache_index__36852302": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_index__36852302",
+          "rel_path": "content/manuals/build/cache/_index.md",
+          "units": 43
+        },
+        {
+          "doc_id": "content_manuals_build_buildkit_frontend__899964cb",
+          "rel_path": "content/manuals/build/buildkit/frontend.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_build_cache_optimize__84803589",
+          "rel_path": "content/manuals/build/cache/optimize.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_engine_containers_multi_service_container__7bb67d42",
+          "rel_path": "content/manuals/engine/containers/multi-service_container.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_engine_storage_drivers_index__c50eb66e",
+          "rel_path": "content/manuals/engine/storage/drivers/_index.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/_index.md",
+      "units": 43
+    },
+    "content_manuals_build_cache_invalidation__e2963c26": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_invalidation__e2963c26",
+          "rel_path": "content/manuals/build/cache/invalidation.md",
+          "units": 73
+        },
+        {
+          "doc_id": "content_manuals_build_building_best_practices__bdbd3cf6",
+          "rel_path": "content/manuals/build/building/best-practices.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_secrets__d5061171",
+          "rel_path": "content/manuals/build/building/secrets.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_variables__3eccde2a",
+          "rel_path": "content/manuals/build/building/variables.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/invalidation.md",
+      "units": 73
+    },
+    "content_manuals_build_cache_optimize__84803589": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_cache_optimize__84803589",
+          "rel_path": "content/manuals/build/cache/optimize.md",
+          "units": 249
+        },
+        {
+          "doc_id": "content_manuals_build_ci_github_actions_cache__77229b72",
+          "rel_path": "content/manuals/build/ci/github-actions/cache.md",
+          "units": 23
+        },
+        {
+          "doc_id": "content_manuals_build_ci_github_actions_annotations__8363535c",
+          "rel_path": "content/manuals/build/ci/github-actions/annotations.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_build_ci_github_actions_secrets__8a83da3f",
+          "rel_path": "content/manuals/build/ci/github-actions/secrets.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_guides_bun_configure_ci_cd__df823a5d",
+          "rel_path": "content/guides/bun/configure-ci-cd.md",
+          "units": 18
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/cache/optimize.md",
+      "units": 249
+    },
+    "content_manuals_build_checks__c485c279": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_checks__c485c279",
+          "rel_path": "content/manuals/build/checks.md",
+          "units": 166
+        },
+        {
+          "doc_id": "content_guides_bun_configure_ci_cd__df823a5d",
+          "rel_path": "content/guides/bun/configure-ci-cd.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_cpp_configure_ci_cd__a181fa64",
+          "rel_path": "content/guides/cpp/configure-ci-cd.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_dotnet_configure_ci_cd__9ad09014",
+          "rel_path": "content/guides/dotnet/configure-ci-cd.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_golang_configure_ci_cd__e1163fe4",
+          "rel_path": "content/guides/golang/configure-ci-cd.md",
+          "units": 10
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/checks.md",
+      "units": 166
+    },
+    "content_manuals_build_concepts_context__33dc419b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_concepts_context__33dc419b",
+          "rel_path": "content/manuals/build/concepts/context.md",
+          "units": 459
+        },
+        {
+          "doc_id": "content_manuals_build_cache_optimize__84803589",
+          "rel_path": "content/manuals/build/cache/optimize.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_golang_build_images__68431fa3",
+          "rel_path": "content/guides/golang/build-images.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/concepts/context.md",
+      "units": 459
+    },
+    "content_manuals_build_concepts_dockerfile__1975b6a7": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_concepts_dockerfile__1975b6a7",
+          "rel_path": "content/manuals/build/concepts/dockerfile.md",
+          "units": 171
+        },
+        {
+          "doc_id": "content_manuals_build_building_best_practices__bdbd3cf6",
+          "rel_path": "content/manuals/build/building/best-practices.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_compose_gettingstarted__7ae78cf6",
+          "rel_path": "content/manuals/compose/gettingstarted.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_engine_swarm_stack_deploy__2adb33d5",
+          "rel_path": "content/manuals/engine/swarm/stack-deploy.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_engine_storage_drivers_index__c50eb66e",
+          "rel_path": "content/manuals/engine/storage/drivers/_index.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/concepts/dockerfile.md",
+      "units": 171
+    },
+    "content_manuals_build_concepts_index__11b99d1a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_index__64bbda2b",
+          "rel_path": "content/get-started/docker-concepts/the-basics/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_index__8bf6cde2",
+          "rel_path": "content/manuals/admin/organization/setup/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_compose_intro_index__e25de20d",
+          "rel_path": "content/manuals/compose/intro/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_desktop_setup_index__cac1b9d5",
+          "rel_path": "content/manuals/desktop/setup/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_desktop_setup_install_index__c3c88910",
+          "rel_path": "content/manuals/desktop/setup/install/_index.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/concepts/_index.md",
+      "units": 4
+    },
+    "content_manuals_build_concepts_overview__ba8ddaa8": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_concepts_overview__ba8ddaa8",
+          "rel_path": "content/manuals/build/concepts/overview.md",
+          "units": 57
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_get_docker__72d38170",
+          "rel_path": "content/get-started/get-docker.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_dotnet_containerize__df8c5bec",
+          "rel_path": "content/guides/dotnet/containerize.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_genai_pdf_bot_containerize__dfc4e97e",
+          "rel_path": "content/guides/genai-pdf-bot/containerize.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/concepts/overview.md",
+      "units": 57
+    },
+    "content_manuals_build_exporters_image_registry__65581484": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_exporters_image_registry__65581484",
+          "rel_path": "content/manuals/build/exporters/image-registry.md",
+          "units": 49
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_oci_docker__80eff27e",
+          "rel_path": "content/manuals/build/exporters/oci-docker.md",
+          "units": 24
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_kubernetes__6f9f45f6",
+          "rel_path": "content/manuals/build/builders/drivers/kubernetes.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_local_tar__39e9afad",
+          "rel_path": "content/manuals/build/exporters/local-tar.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_docker_container__a402d191",
+          "rel_path": "content/manuals/build/builders/drivers/docker-container.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/exporters/image-registry.md",
+      "units": 49
+    },
+    "content_manuals_build_exporters_index__172dc7af": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_exporters_index__172dc7af",
+          "rel_path": "content/manuals/build/exporters/_index.md",
+          "units": 184
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_index__093cec26",
+          "rel_path": "content/manuals/build/cache/backends/_index.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_index__d6c33b1f",
+          "rel_path": "content/manuals/ai/docker-agent/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_docker_container__a402d191",
+          "rel_path": "content/manuals/build/builders/drivers/docker-container.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_kubernetes__6f9f45f6",
+          "rel_path": "content/manuals/build/builders/drivers/kubernetes.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/exporters/_index.md",
+      "units": 184
+    },
+    "content_manuals_build_exporters_local_tar__39e9afad": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_exporters_local_tar__39e9afad",
+          "rel_path": "content/manuals/build/exporters/local-tar.md",
+          "units": 65
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_oci_docker__80eff27e",
+          "rel_path": "content/manuals/build/exporters/oci-docker.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_platform__b06e522a",
+          "rel_path": "content/manuals/build/building/multi-platform.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_image_registry__65581484",
+          "rel_path": "content/manuals/build/exporters/image-registry.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_docker_container__a402d191",
+          "rel_path": "content/manuals/build/builders/drivers/docker-container.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/exporters/local-tar.md",
+      "units": 65
+    },
+    "content_manuals_build_exporters_oci_docker__80eff27e": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_exporters_oci_docker__80eff27e",
+          "rel_path": "content/manuals/build/exporters/oci-docker.md",
+          "units": 44
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_image_registry__65581484",
+          "rel_path": "content/manuals/build/exporters/image-registry.md",
+          "units": 24
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_local_tar__39e9afad",
+          "rel_path": "content/manuals/build/exporters/local-tar.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_builders_drivers_docker_container__a402d191",
+          "rel_path": "content/manuals/build/builders/drivers/docker-container.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/exporters/oci-docker.md",
+      "units": 44
+    },
+    "content_manuals_build_index__792f2ff8": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_index__792f2ff8",
+          "rel_path": "content/manuals/build/_index.md",
+          "units": 55
+        },
+        {
+          "doc_id": "content_manuals_compose_index__f7f6f3d3",
+          "rel_path": "content/manuals/compose/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_engine_index__3a6da101",
+          "rel_path": "content/manuals/engine/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_index__339b39a9",
+          "rel_path": "content/manuals/desktop/_index.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/_index.md",
+      "units": 55
+    },
+    "content_manuals_build_metadata_annotations__a61a0dbb": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_metadata_annotations__a61a0dbb",
+          "rel_path": "content/manuals/build/metadata/annotations.md",
+          "units": 134
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_index__799dfbe5",
+          "rel_path": "content/manuals/build/metadata/attestations/_index.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_build_cache_backends_local__29b529a8",
+          "rel_path": "content/manuals/build/cache/backends/local.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_build_bake_overrides__8a2c16bf",
+          "rel_path": "content/manuals/build/bake/overrides.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_engine_security_certificates__0d5ddf60",
+          "rel_path": "content/manuals/engine/security/certificates.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/metadata/annotations.md",
+      "units": 134
+    },
+    "content_manuals_build_metadata_attestations_index__799dfbe5": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_index__799dfbe5",
+          "rel_path": "content/manuals/build/metadata/attestations/_index.md",
+          "units": 152
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_sbom__b809d236",
+          "rel_path": "content/manuals/build/metadata/attestations/sbom.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_annotations__a61a0dbb",
+          "rel_path": "content/manuals/build/metadata/annotations.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_slsa_provenance__0d80691d",
+          "rel_path": "content/manuals/build/metadata/attestations/slsa-provenance.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_guides_docker_scout_attestations__22a6854c",
+          "rel_path": "content/guides/docker-scout/attestations.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/metadata/attestations/_index.md",
+      "units": 152
+    },
+    "content_manuals_build_metadata_attestations_sbom__b809d236": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_sbom__b809d236",
+          "rel_path": "content/manuals/build/metadata/attestations/sbom.md",
+          "units": 180
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_index__799dfbe5",
+          "rel_path": "content/manuals/build/metadata/attestations/_index.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_slsa_provenance__0d80691d",
+          "rel_path": "content/manuals/build/metadata/attestations/slsa-provenance.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_building_export__08849c5c",
+          "rel_path": "content/manuals/build/building/export.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_building_multi_stage__7d6c6a7d",
+          "rel_path": "content/manuals/build/building/multi-stage.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/metadata/attestations/sbom.md",
+      "units": 180
+    },
+    "content_manuals_build_metadata_attestations_slsa_provenance__0d80691d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_slsa_provenance__0d80691d",
+          "rel_path": "content/manuals/build/metadata/attestations/slsa-provenance.md",
+          "units": 194
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_sbom__b809d236",
+          "rel_path": "content/manuals/build/metadata/attestations/sbom.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_metadata_attestations_index__799dfbe5",
+          "rel_path": "content/manuals/build/metadata/attestations/_index.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_build_cloud_usage__3cfe1950",
+          "rel_path": "content/manuals/build-cloud/usage.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_build_bake_compose_file__136df9b9",
+          "rel_path": "content/manuals/build/bake/compose-file.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/metadata/attestations/slsa-provenance.md",
+      "units": 194
+    },
+    "content_manuals_build_metadata_index__7b26933a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_compose_support_and_feedback_index__7e46f7d7",
+          "rel_path": "content/manuals/compose/support-and-feedback/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_index__cf12634c",
+          "rel_path": "content/get-started/docker-concepts/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_index__0e626a51",
+          "rel_path": "content/get-started/docker-concepts/running-containers/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_index__64bbda2b",
+          "rel_path": "content/get-started/docker-concepts/the-basics/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_index__a8c484b6",
+          "rel_path": "content/manuals/admin/company/manage/_index.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/metadata/_index.md",
+      "units": 4
+    },
+    "content_manuals_build_policies_debugging__5ce95293": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_debugging__5ce95293",
+          "rel_path": "content/manuals/build/policies/debugging.md",
+          "units": 108
+        },
+        {
+          "doc_id": "content_manuals_build_policies_usage__43829299",
+          "rel_path": "content/manuals/build/policies/usage.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_get_started_workshop_07_multi_container__6917f3a6",
+          "rel_path": "content/get-started/workshop/07_multi_container.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/debugging.md",
+      "units": 108
+    },
+    "content_manuals_build_policies_examples__526d2b0b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 272
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_git__154081bf",
+          "rel_path": "content/manuals/build/policies/validate-git.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_build_policies_inputs__b1f0e2d9",
+          "rel_path": "content/manuals/build/policies/inputs.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/examples.md",
+      "units": 272
+    },
+    "content_manuals_build_policies_index__0d5e2f82": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_index__0d5e2f82",
+          "rel_path": "content/manuals/build/policies/_index.md",
+          "units": 114
+        },
+        {
+          "doc_id": "content_manuals_build_policies_usage__43829299",
+          "rel_path": "content/manuals/build/policies/usage.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_git__154081bf",
+          "rel_path": "content/manuals/build/policies/validate-git.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/_index.md",
+      "units": 114
+    },
+    "content_manuals_build_policies_inputs__b1f0e2d9": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_inputs__b1f0e2d9",
+          "rel_path": "content/manuals/build/policies/inputs.md",
+          "units": 225
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_git__154081bf",
+          "rel_path": "content/manuals/build/policies/validate-git.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_build_policies_built_ins__ee5de3cf",
+          "rel_path": "content/manuals/build/policies/built-ins.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/inputs.md",
+      "units": 225
+    },
+    "content_manuals_build_policies_intro__69332bb3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 185
+        },
+        {
+          "doc_id": "content_manuals_build_policies_usage__43829299",
+          "rel_path": "content/manuals/build/policies/usage.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_git__154081bf",
+          "rel_path": "content/manuals/build/policies/validate-git.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/intro.md",
+      "units": 185
+    },
+    "content_manuals_build_policies_testing__18acf5d3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_testing__18acf5d3",
+          "rel_path": "content/manuals/build/policies/testing.md",
+          "units": 101
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_build_policies_usage__43829299",
+          "rel_path": "content/manuals/build/policies/usage.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/testing.md",
+      "units": 101
+    },
+    "content_manuals_build_policies_usage__43829299": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_usage__43829299",
+          "rel_path": "content/manuals/build/policies/usage.md",
+          "units": 255
+        },
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_build_policies_debugging__5ce95293",
+          "rel_path": "content/manuals/build/policies/debugging.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_policies_index__0d5e2f82",
+          "rel_path": "content/manuals/build/policies/_index.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/usage.md",
+      "units": 255
+    },
+    "content_manuals_build_policies_validate_git__154081bf": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_validate_git__154081bf",
+          "rel_path": "content/manuals/build/policies/validate-git.md",
+          "units": 165
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_build_policies_inputs__b1f0e2d9",
+          "rel_path": "content/manuals/build/policies/inputs.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/validate-git.md",
+      "units": 165
+    },
+    "content_manuals_build_policies_validate_images__fcc4c57a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_build_policies_validate_images__fcc4c57a",
+          "rel_path": "content/manuals/build/policies/validate-images.md",
+          "units": 178
+        },
+        {
+          "doc_id": "content_manuals_build_policies_validate_git__154081bf",
+          "rel_path": "content/manuals/build/policies/validate-git.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_manuals_build_policies_examples__526d2b0b",
+          "rel_path": "content/manuals/build/policies/examples.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_build_policies_intro__69332bb3",
+          "rel_path": "content/manuals/build/policies/intro.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_build_policies_usage__43829299",
+          "rel_path": "content/manuals/build/policies/usage.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/build/policies/validate-images.md",
+      "units": 178
+    }
+  },
+  "unmapped_removals": []
+}

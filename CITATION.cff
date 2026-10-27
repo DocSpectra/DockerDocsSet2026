@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below. Cite the upstream Docker documentation and the associated paper separately."
+type: dataset
+title: "DockerDocsSet2026: Docker documentation variants, question sets and support judgments"
+abstract: >-
+  Docker documentation from docker/docs at commit 274681c49355bd951ae60c9208e854ff70f12474,
+  two experimental refinements of it (LT, leaf-and-trunk; R0, uninformed), the retrieval
+  corpora and link graphs derived from each version, 144 FAQ questions with reference answers,
+  15 complex tasks with 73 core requirements, and LLM-verified page-support judgments for each
+  documentation version. Used for the Docker application in the ICSC 2027 submission
+  "Measuring Directed Documentation Structure with Normalized Magnetic Spectra".
+version: "1.0.0"
+authors:
+  - family-names: "D'Antonio"
+    given-names: "Rocker"
+    orcid: "https://orcid.org/0009-0001-8444-1772"
+    affiliation: "Mississippi State University"
+repository-code: "https://github.com/DocSpectra/DockerDocsSet2026"
+url: "https://github.com/DocSpectra/DockerDocsSet2026"
+keywords:
+  - documentation
+  - Docker
+  - retrieval
+  - question answering
+  - support judgments
+  - link graph
+references:
+  - type: software
+    title: "Docker documentation (docker/docs)"
+    authors:
+      - name: "Docker, Inc."
+    repository-code: "https://github.com/docker/docs"
+    commit: "274681c49355bd951ae60c9208e854ff70f12474"
+    license: Apache-2.0
+  - type: software
+    title: "Retrieval Arena"
+    authors:
+      - name: "DocSpectra"
+    repository-code: "https://github.com/DocSpectra/RetrievalArena"
+    license: MIT
+  - type: software
+    title: "DocSpectraICSC2027"
+    authors:
+      - family-names: "D'Antonio"
+        given-names: "Rocker"
+    repository-code: "https://github.com/DocSpectra/DocSpectraICSC2027"
+  - type: conference-paper
+    title: "Measuring Directed Documentation Structure with Normalized Magnetic Spectra"
+    authors:
+      - family-names: "D'Antonio"
+        given-names: "Rocker"
+        affiliation: "Mississippi State University"
+    status: in-preparation
+    conference:
+      name: "ICSC 2027"

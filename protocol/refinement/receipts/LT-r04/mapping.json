@@ -1,0 +1,1486 @@
+{
+  "added": [
+    "content_manuals_docker_hub_build_notifications__d09ac8af",
+    "content_manuals_docker_hub_default_privacy__4f3c9464",
+    "content_manuals_docker_hub_disable_public_repositories__5916619c",
+    "content_manuals_docker_hub_image_library_content_types__e1d30b00",
+    "content_manuals_docker_hub_image_library_mirror_behavior__7a344bbf",
+    "content_manuals_docker_hub_image_library_official_image_pull_failures__90388579",
+    "content_manuals_docker_hub_image_library_official_image_variants__35bf0535",
+    "content_manuals_docker_hub_image_library_trusted_content_types__d3f304d1",
+    "content_manuals_docker_hub_repos_archive_behavior__8b9d7361",
+    "content_manuals_docker_hub_repos_manage_access_model__e3013358",
+    "content_manuals_docker_hub_repos_manage_builds_build_environment__00cb3ca8",
+    "content_manuals_docker_hub_repos_manage_builds_build_rules__825b5bdd",
+    "content_manuals_docker_hub_repos_manage_builds_requirements__32d4b9c7",
+    "content_manuals_docker_hub_repos_manage_builds_service_users__ab53bce1",
+    "content_manuals_docker_hub_repos_manage_builds_source_account_procedures__18ae891c",
+    "content_manuals_docker_hub_repos_manage_change_visibility__55271175",
+    "content_manuals_docker_hub_repos_manage_collaborators__7a6e6f51",
+    "content_manuals_docker_hub_repos_manage_gated_distribution__5689e830",
+    "content_manuals_docker_hub_repos_manage_hub_images_image_objects__6110baf9",
+    "content_manuals_docker_hub_repos_manage_hub_images_oci_artifact_support__6bd49ebe",
+    "content_manuals_docker_hub_repos_manage_hub_images_push_generic_artifact__71e8d1ca",
+    "content_manuals_docker_hub_repos_manage_hub_images_push_helm_chart__d0b53302",
+    "content_manuals_docker_hub_repos_manage_hub_images_push_volume__1591410b",
+    "content_manuals_docker_hub_repos_manage_hub_images_tag_images__fd35a96e",
+    "content_manuals_docker_hub_repos_manage_hub_images_verify_migration__abaf6252",
+    "content_manuals_docker_hub_repos_manage_image_security__e5159f05",
+    "content_manuals_docker_hub_repos_manage_open_repository__c2d441bb",
+    "content_manuals_docker_hub_repos_manage_repository_information_guidance__26ffa0bd",
+    "content_manuals_docker_hub_repos_manage_scout_analysis__d98f590d",
+    "content_manuals_docker_hub_repos_manage_static_scanning__8fcdd559",
+    "content_manuals_docker_hub_repos_manage_team_permissions__13ed18e4",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_access__80ab385c",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_legacy__16a6e713",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_legacy_data__6066d980",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_privacy__5a7b8e57",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_report_fields__3b7d2830",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_summary__85682e4e",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_technographic__aa7af565",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_technographic_companies__93cf79be",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_tracked_companies__a7bfd878",
+    "content_manuals_docker_hub_repos_manage_trusted_content_analytics_trends__9a1ed8ac",
+    "content_manuals_docker_hub_repos_manage_trusted_content_configure_analytics__5d6e1c69",
+    "content_manuals_docker_hub_repos_manage_trusted_content_repository_logo__8df8353c",
+    "content_manuals_docker_hub_usage_authenticate__152bce87",
+    "content_manuals_docker_hub_usage_check_rate_limit__2bbb4101",
+    "content_manuals_docker_hub_usage_limits__4a355b5d",
+    "content_manuals_docker_hub_usage_pull_accounting__41b5f25d",
+    "content_manuals_docker_hub_usage_pull_reports__92be152e",
+    "content_reference_api_hub_deprecation_policy__f711fd77",
+    "content_reference_api_registry_auth_token_reference__9fa47952"
+  ],
+  "changed": [
+    "content_manuals_docker_hub_image_library_mirror__513a87bd",
+    "content_manuals_docker_hub_image_library_search__30ca1741",
+    "content_manuals_docker_hub_image_library_trusted_content__2b3fcc50",
+    "content_manuals_docker_hub_index__993a2171",
+    "content_manuals_docker_hub_quickstart__0fb28b3b",
+    "content_manuals_docker_hub_repos_archive__2cd7bd47",
+    "content_manuals_docker_hub_repos_create__4e0e0239",
+    "content_manuals_docker_hub_repos_delete__d490167b",
+    "content_manuals_docker_hub_repos_index__c0a4f3f7",
+    "content_manuals_docker_hub_repos_manage_access__2b46bddd",
+    "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7",
+    "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+    "content_manuals_docker_hub_repos_manage_builds_index__e0dad38a",
+    "content_manuals_docker_hub_repos_manage_builds_link_source__f2b3efa2",
+    "content_manuals_docker_hub_repos_manage_builds_manage_builds__8620f585",
+    "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+    "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2",
+    "content_manuals_docker_hub_repos_manage_export__8c8a1eeb",
+    "content_manuals_docker_hub_repos_manage_hub_images_bulk_migrate__60f40c96",
+    "content_manuals_docker_hub_repos_manage_hub_images_immutable_tags__e9a8698e",
+    "content_manuals_docker_hub_repos_manage_hub_images_index__9fecd53b",
+    "content_manuals_docker_hub_repos_manage_hub_images_manage__426af43d",
+    "content_manuals_docker_hub_repos_manage_hub_images_move__2eeecce0",
+    "content_manuals_docker_hub_repos_manage_hub_images_oci_artifacts__0ac90380",
+    "content_manuals_docker_hub_repos_manage_hub_images_push__9ba0c89a",
+    "content_manuals_docker_hub_repos_manage_hub_images_tags__b1d5c04a",
+    "content_manuals_docker_hub_repos_manage_information__60dfdd1c",
+    "content_manuals_docker_hub_repos_manage_trusted_content_dsos_program__35843953",
+    "content_manuals_docker_hub_repos_manage_trusted_content_dvp_program__47e448f0",
+    "content_manuals_docker_hub_repos_manage_trusted_content_insights_analytics__4c7f14b1",
+    "content_manuals_docker_hub_repos_manage_vulnerability_scanning__7f00e5ea",
+    "content_manuals_docker_hub_repos_manage_webhooks__e9bdc5d2",
+    "content_manuals_docker_hub_settings__4078ed43",
+    "content_manuals_docker_hub_troubleshoot__e8ac8f40",
+    "content_manuals_docker_hub_usage_index__a42c6be3",
+    "content_manuals_docker_hub_usage_manage__02d3c240",
+    "content_manuals_docker_hub_usage_pulls__11e1d9a8",
+    "content_reference_api_dvp_deprecated__60095339",
+    "content_reference_api_hub_changelog__59a9b915",
+    "content_reference_api_hub_deprecated__3415a202",
+    "content_reference_api_registry_auth__66a8839e"
+  ],
+  "mapping": {},
+  "partial_unit_loss": [
+    "content_manuals_docker_hub_image_library_search__30ca1741",
+    "content_manuals_docker_hub_repos_archive__2cd7bd47",
+    "content_manuals_docker_hub_repos_create__4e0e0239",
+    "content_manuals_docker_hub_repos_delete__d490167b",
+    "content_manuals_docker_hub_repos_manage_access__2b46bddd",
+    "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7",
+    "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+    "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+    "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2",
+    "content_manuals_docker_hub_repos_manage_hub_images_oci_artifacts__0ac90380",
+    "content_manuals_docker_hub_repos_manage_hub_images_push__9ba0c89a",
+    "content_manuals_docker_hub_repos_manage_hub_images_tags__b1d5c04a",
+    "content_manuals_docker_hub_repos_manage_information__60dfdd1c",
+    "content_manuals_docker_hub_repos_manage_trusted_content_dsos_program__35843953",
+    "content_manuals_docker_hub_repos_manage_trusted_content_dvp_program__47e448f0",
+    "content_manuals_docker_hub_repos_manage_trusted_content_insights_analytics__4c7f14b1",
+    "content_manuals_docker_hub_repos_manage_vulnerability_scanning__7f00e5ea",
+    "content_manuals_docker_hub_repos_manage_webhooks__e9bdc5d2",
+    "content_manuals_docker_hub_settings__4078ed43",
+    "content_manuals_docker_hub_usage_index__a42c6be3",
+    "content_manuals_docker_hub_usage_pulls__11e1d9a8",
+    "content_reference_api_dvp_deprecated__60095339",
+    "content_reference_api_hub_deprecated__3415a202"
+  ],
+  "removed": [],
+  "rule": {
+    "min_share": 0.5,
+    "tie_break": "smallest variant doc id",
+    "unit": "normalized non-blank line, link targets stripped, lines without alphanumerics dropped",
+    "version": "moved_content_majority_v1"
+  },
+  "translation": {
+    "content_manuals_docker_hub_image_library_mirror__513a87bd": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_mirror__513a87bd",
+          "rel_path": "content/manuals/docker-hub/image-library/mirror.md",
+          "units": 82
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_mirror_behavior__7a344bbf",
+          "rel_path": "content/manuals/docker-hub/image-library/mirror-behavior.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_engine_daemon_prometheus__434192b0",
+          "rel_path": "content/manuals/engine/daemon/prometheus.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_reference_compose_file_services__c8e812e7",
+          "rel_path": "content/reference/compose-file/services.md",
+          "units": 6
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/image-library/mirror.md",
+      "units": 95
+    },
+    "content_manuals_docker_hub_image_library_search__30ca1741": {
+      "coverage": 0.9779005524861878,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_content_types__e1d30b00",
+          "rel_path": "content/manuals/docker-hub/image-library/content-types.md",
+          "units": 89
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_search__30ca1741",
+          "rel_path": "content/manuals/docker-hub/image-library/search.md",
+          "units": 84
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_trusted_content_types__d3f304d1",
+          "rel_path": "content/manuals/docker-hub/image-library/trusted-content-types.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_get_docker__72d38170",
+          "rel_path": "content/get-started/get-docker.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/image-library/search.md",
+      "units": 181
+    },
+    "content_manuals_docker_hub_image_library_trusted_content__2b3fcc50": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_official_image_variants__35bf0535",
+          "rel_path": "content/manuals/docker-hub/image-library/official-image-variants.md",
+          "units": 73
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_trusted_content_types__d3f304d1",
+          "rel_path": "content/manuals/docker-hub/image-library/trusted-content-types.md",
+          "units": 67
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_trusted_content__2b3fcc50",
+          "rel_path": "content/manuals/docker-hub/image-library/trusted-content.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_dvp_program__47e448f0",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dvp-program.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_build_building_variables__3eccde2a",
+          "rel_path": "content/manuals/build/building/variables.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/image-library/trusted-content.md",
+      "units": 159
+    },
+    "content_manuals_docker_hub_index__993a2171": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_index__993a2171",
+          "rel_path": "content/manuals/docker-hub/_index.md",
+          "units": 55
+        },
+        {
+          "doc_id": "content_manuals_compose_index__f7f6f3d3",
+          "rel_path": "content/manuals/compose/_index.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_desktop_index__339b39a9",
+          "rel_path": "content/manuals/desktop/_index.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_scout_index__20ddd730",
+          "rel_path": "content/manuals/scout/_index.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/_index.md",
+      "units": 55
+    },
+    "content_manuals_docker_hub_quickstart__0fb28b3b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_quickstart__0fb28b3b",
+          "rel_path": "content/manuals/docker-hub/quickstart.md",
+          "units": 194
+        },
+        {
+          "doc_id": "content_guides_rust_build_images__1f637f03",
+          "rel_path": "content/guides/rust/build-images.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_get_started_workshop_02_our_app__e816f7c0",
+          "rel_path": "content/get-started/workshop/02_our_app.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_get_started_workshop_05_persisting_data__1becd954",
+          "rel_path": "content/get-started/workshop/05_persisting_data.md",
+          "units": 9
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/quickstart.md",
+      "units": 194
+    },
+    "content_manuals_docker_hub_repos_archive__2cd7bd47": {
+      "coverage": 0.8648648648648649,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_archive_behavior__8b9d7361",
+          "rel_path": "content/manuals/docker-hub/repos/archive-behavior.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_archive__2cd7bd47",
+          "rel_path": "content/manuals/docker-hub/repos/archive.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_open_repository__c2d441bb",
+          "rel_path": "content/manuals/docker-hub/repos/manage/open-repository.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_create__4e0e0239",
+          "rel_path": "content/manuals/docker-hub/repos/create.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/archive.md",
+      "units": 37
+    },
+    "content_manuals_docker_hub_repos_create__4e0e0239": {
+      "coverage": 0.9743589743589743,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_create__4e0e0239",
+          "rel_path": "content/manuals/docker-hub/repos/create.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+          "rel_path": "content/manuals/admin/organization/setup/onboard.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_compose_install_standalone__1c47492d",
+          "rel_path": "content/manuals/compose/install/standalone.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_default_privacy__4f3c9464",
+          "rel_path": "content/manuals/docker-hub/default-privacy.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/create.md",
+      "units": 39
+    },
+    "content_manuals_docker_hub_repos_delete__d490167b": {
+      "coverage": 0.7777777777777778,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_delete__d490167b",
+          "rel_path": "content/manuals/docker-hub/repos/delete.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_open_repository__c2d441bb",
+          "rel_path": "content/manuals/docker-hub/repos/manage/open-repository.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_create__4e0e0239",
+          "rel_path": "content/manuals/docker-hub/repos/create.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_admin_set_up_deploy__3410f2c6",
+          "rel_path": "content/guides/admin-set-up/deploy.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/delete.md",
+      "units": 18
+    },
+    "content_manuals_docker_hub_repos_index__c0a4f3f7": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_index__c0a4f3f7",
+          "rel_path": "content/manuals/docker-hub/repos/_index.md",
+          "units": 43
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_an_image__32b12b73",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-an-image.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_overview__039a8050",
+          "rel_path": "content/get-started/docker-overview.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_workshop_02_our_app__e816f7c0",
+          "rel_path": "content/get-started/workshop/02_our_app.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_bun_develop__7d231d40",
+          "rel_path": "content/guides/bun/develop.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/_index.md",
+      "units": 43
+    },
+    "content_manuals_docker_hub_repos_manage_access__2b46bddd": {
+      "coverage": 0.9117647058823529,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_access_model__e3013358",
+          "rel_path": "content/manuals/docker-hub/repos/manage/access-model.md",
+          "units": 43
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_access__2b46bddd",
+          "rel_path": "content/manuals/docker-hub/repos/manage/access.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_change_visibility__55271175",
+          "rel_path": "content/manuals/docker-hub/repos/manage/change-visibility.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_gated_distribution__5689e830",
+          "rel_path": "content/manuals/docker-hub/repos/manage/gated-distribution.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/access.md",
+      "units": 102
+    },
+    "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7": {
+      "coverage": 0.9814814814814815,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/advanced.md",
+          "units": 106
+        },
+        {
+          "doc_id": "content_manuals_compose_how_tos_environment_variables_variable_interpolation__45e59fc9",
+          "rel_path": "content/manuals/compose/how-tos/environment-variables/variable-interpolation.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/automated-testing.md",
+          "units": 8
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/advanced.md",
+      "units": 108
+    },
+    "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2": {
+      "coverage": 0.975609756097561,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_automated_testing__4c9411b2",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/automated-testing.md",
+          "units": 80
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_advanced__93b7d1c7",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/advanced.md",
+          "units": 8
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_compose_gettingstarted__7ae78cf6",
+          "rel_path": "content/manuals/compose/gettingstarted.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_guides_nodejs_configure_github_actions__06013c01",
+          "rel_path": "content/guides/nodejs/configure-github-actions.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/automated-testing.md",
+      "units": 82
+    },
+    "content_manuals_docker_hub_repos_manage_builds_index__e0dad38a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_index__e0dad38a",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/_index.md",
+          "units": 30
+        },
+        {
+          "doc_id": "content_manuals_build_exporters_index__172dc7af",
+          "rel_path": "content/manuals/build/exporters/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_compose_how_tos_gpu_support__c0d27339",
+          "rel_path": "content/manuals/compose/how-tos/gpu-support.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_engine_install_linux_postinstall__a0800c74",
+          "rel_path": "content/manuals/engine/install/linux-postinstall.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/_index.md",
+      "units": 30
+    },
+    "content_manuals_docker_hub_repos_manage_builds_link_source__f2b3efa2": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_source_account_procedures__18ae891c",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/source-account-procedures.md",
+          "units": 72
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_link_source__f2b3efa2",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/link-source.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_guides_genai_pdf_bot_develop__3864775d",
+          "rel_path": "content/guides/genai-pdf-bot/develop.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_engine_storage_bind_mounts__4cfc390b",
+          "rel_path": "content/manuals/engine/storage/bind-mounts.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/link-source.md",
+      "units": 88
+    },
+    "content_manuals_docker_hub_repos_manage_builds_manage_builds__8620f585": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_manage_builds__8620f585",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/manage-builds.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_manuals_engine_security_certificates__0d5ddf60",
+          "rel_path": "content/manuals/engine/security/certificates.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_multi_container_applications__f0fa6bfb",
+          "rel_path": "content/get-started/docker-concepts/running-containers/multi-container-applications.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/manage-builds.md",
+      "units": 36
+    },
+    "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98": {
+      "coverage": 0.9789473684210527,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_build_rules__825b5bdd",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/build-rules.md",
+          "units": 77
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_setup__80a4da98",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/setup.md",
+          "units": 64
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_service_users__ab53bce1",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/service-users.md",
+          "units": 27
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_requirements__32d4b9c7",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/requirements.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_build_environment__00cb3ca8",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/build-environment.md",
+          "units": 12
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/setup.md",
+      "units": 190
+    },
+    "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2": {
+      "coverage": 0.9565217391304348,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_builds_troubleshoot__951604b2",
+          "rel_path": "content/manuals/docker-hub/repos/manage/builds/troubleshoot.md",
+          "units": 44
+        },
+        {
+          "doc_id": "content_manuals_desktop_troubleshoot_and_support_troubleshoot_topics__18f358b2",
+          "rel_path": "content/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_multi_container_applications__f0fa6bfb",
+          "rel_path": "content/get-started/docker-concepts/running-containers/multi-container-applications.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_workshop_06_bind_mounts__03f6a403",
+          "rel_path": "content/get-started/workshop/06_bind_mounts.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_workshop_07_multi_container__6917f3a6",
+          "rel_path": "content/get-started/workshop/07_multi_container.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/builds/troubleshoot.md",
+      "units": 46
+    },
+    "content_manuals_docker_hub_repos_manage_export__8c8a1eeb": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_export__8c8a1eeb",
+          "rel_path": "content/manuals/docker-hub/repos/manage/export.md",
+          "units": 92
+        },
+        {
+          "doc_id": "content_manuals_ai_model_runner_ide_integrations__b10a6efe",
+          "rel_path": "content/manuals/ai/model-runner/ide-integrations.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_engine_install_raspberry_pi_os__fb8bc431",
+          "rel_path": "content/manuals/engine/install/raspberry-pi-os.md",
+          "units": 4
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_angular_containerize__589692c3",
+          "rel_path": "content/guides/angular/containerize.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/export.md",
+      "units": 92
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_bulk_migrate__60f40c96": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_bulk_migrate__60f40c96",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/bulk-migrate.md",
+          "units": 147
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_verify_migration__abaf6252",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/verify-migration.md",
+          "units": 54
+        },
+        {
+          "doc_id": "content_manuals_build_cloud_ci__7eeeab54",
+          "rel_path": "content/manuals/build-cloud/ci.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_golang_develop__45148e1f",
+          "rel_path": "content/guides/golang/develop.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_guides_nextjs_containerize__2ddfb5de",
+          "rel_path": "content/guides/nextjs/containerize.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/bulk-migrate.md",
+      "units": 187
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_immutable_tags__e9a8698e": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_immutable_tags__e9a8698e",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/immutable-tags.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_default_privacy__4f3c9464",
+          "rel_path": "content/manuals/docker-hub/default-privacy.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_disable_public_repositories__5916619c",
+          "rel_path": "content/manuals/docker-hub/disable-public-repositories.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_create__4e0e0239",
+          "rel_path": "content/manuals/docker-hub/repos/create.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_manage__426af43d",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/manage.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/immutable-tags.md",
+      "units": 35
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_index__9fecd53b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_index__9fecd53b",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/_index.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_get_started_workshop_06_bind_mounts__03f6a403",
+          "rel_path": "content/get-started/workshop/06_bind_mounts.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_guides_angular_configure_github_actions__f4f2ecd4",
+          "rel_path": "content/guides/angular/configure-github-actions.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_guides_angular_deploy__286aadc9",
+          "rel_path": "content/guides/angular/deploy.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_guides_cpp_security__51b62994",
+          "rel_path": "content/guides/cpp/security.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/_index.md",
+      "units": 29
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_manage__426af43d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_manage__426af43d",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/manage.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_image_objects__6110baf9",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/image-objects.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_create__4e0e0239",
+          "rel_path": "content/manuals/docker-hub/repos/create.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_immutable_tags__e9a8698e",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/immutable-tags.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_registry__26330443",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-registry.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/manage.md",
+      "units": 47
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_move__2eeecce0": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_move__2eeecce0",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/move.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_guides_angular_run_tests__82fafeb6",
+          "rel_path": "content/guides/angular/run-tests.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_nextjs_run_tests__c2119b59",
+          "rel_path": "content/guides/nextjs/run-tests.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_reactjs_run_tests__fd81ce7b",
+          "rel_path": "content/guides/reactjs/run-tests.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_ruby_develop__7f092806",
+          "rel_path": "content/guides/ruby/develop.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/move.md",
+      "units": 36
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_oci_artifacts__0ac90380": {
+      "coverage": 0.9891304347826086,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_oci_artifact_support__6bd49ebe",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/oci-artifact-support.md",
+          "units": 33
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_push_helm_chart__d0b53302",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/push-helm-chart.md",
+          "units": 23
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_push_volume__1591410b",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/push-volume.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_oci_artifacts__0ac90380",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_push_generic_artifact__71e8d1ca",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/push-generic-artifact.md",
+          "units": 12
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md",
+      "units": 92
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_push__9ba0c89a": {
+      "coverage": 0.9565217391304348,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_push__9ba0c89a",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/push.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_tag_images__fd35a96e",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/tag-images.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_ai_docker_agent_reference_cli__7f44a2ee",
+          "rel_path": "content/manuals/ai/docker-agent/reference/cli.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_ai_gordon_how_to_permissions__4ccfbde0",
+          "rel_path": "content/manuals/ai/gordon/how-to/permissions.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_engine_daemon_proxy__5a606549",
+          "rel_path": "content/manuals/engine/daemon/proxy.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/push.md",
+      "units": 23
+    },
+    "content_manuals_docker_hub_repos_manage_hub_images_tags__b1d5c04a": {
+      "coverage": 0.8857142857142857,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_tag_images__fd35a96e",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/tag-images.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_hub_images_tags__b1d5c04a",
+          "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/tags.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_open_repository__c2d441bb",
+          "rel_path": "content/manuals/docker-hub/repos/manage/open-repository.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/hub-images/tags.md",
+      "units": 35
+    },
+    "content_manuals_docker_hub_repos_manage_information__60dfdd1c": {
+      "coverage": 0.9239130434782609,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_information__60dfdd1c",
+          "rel_path": "content/manuals/docker-hub/repos/manage/information.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_repository_information_guidance__26ffa0bd",
+          "rel_path": "content/manuals/docker-hub/repos/manage/repository-information-guidance.md",
+          "units": 37
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_open_repository__c2d441bb",
+          "rel_path": "content/manuals/docker-hub/repos/manage/open-repository.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_features_gpu__99c906c3",
+          "rel_path": "content/manuals/desktop/features/gpu.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/information.md",
+      "units": 92
+    },
+    "content_manuals_docker_hub_repos_manage_trusted_content_dsos_program__35843953": {
+      "coverage": 0.8833333333333333,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_dsos_program__35843953",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dsos-program.md",
+          "units": 39
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_repository_logo__8df8353c",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/repository-logo.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_dvp_program__47e448f0",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dvp-program.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_registry__26330443",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-registry.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dsos-program.md",
+      "units": 60
+    },
+    "content_manuals_docker_hub_repos_manage_trusted_content_dvp_program__47e448f0": {
+      "coverage": 0.967479674796748,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_dvp_program__47e448f0",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dvp-program.md",
+          "units": 102
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_repository_logo__8df8353c",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/repository-logo.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_trusted_content_types__d3f304d1",
+          "rel_path": "content/manuals/docker-hub/image-library/trusted-content-types.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_dsos_program__35843953",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dsos-program.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_registry__26330443",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-registry.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/dvp-program.md",
+      "units": 123
+    },
+    "content_manuals_docker_hub_repos_manage_trusted_content_insights_analytics__4c7f14b1": {
+      "coverage": 0.9941176470588236,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_analytics_legacy_data__6066d980",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/analytics-legacy-data.md",
+          "units": 94
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_analytics_report_fields__3b7d2830",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/analytics-report-fields.md",
+          "units": 65
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_analytics_legacy__16a6e713",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/analytics-legacy.md",
+          "units": 57
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_insights_analytics__4c7f14b1",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/insights-analytics.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_analytics_summary__85682e4e",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/analytics-summary.md",
+          "units": 22
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/insights-analytics.md",
+      "units": 340
+    },
+    "content_manuals_docker_hub_repos_manage_vulnerability_scanning__7f00e5ea": {
+      "coverage": 0.9345794392523364,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_static_scanning__8fcdd559",
+          "rel_path": "content/manuals/docker-hub/repos/manage/static-scanning.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_image_security__e5159f05",
+          "rel_path": "content/manuals/docker-hub/repos/manage/image-security.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_vulnerability_scanning__7f00e5ea",
+          "rel_path": "content/manuals/docker-hub/repos/manage/vulnerability-scanning.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_open_repository__c2d441bb",
+          "rel_path": "content/manuals/docker-hub/repos/manage/open-repository.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/vulnerability-scanning.md",
+      "units": 107
+    },
+    "content_manuals_docker_hub_repos_manage_webhooks__e9bdc5d2": {
+      "coverage": 0.9777777777777777,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_webhooks__e9bdc5d2",
+          "rel_path": "content/manuals/docker-hub/repos/manage/webhooks.md",
+          "units": 44
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+          "rel_path": "content/manuals/dhi/how-to/mirror.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_image_library_mirror__513a87bd",
+          "rel_path": "content/manuals/docker-hub/image-library/mirror.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_guides_golang_develop__45148e1f",
+          "rel_path": "content/guides/golang/develop.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_python_develop__087af4e2",
+          "rel_path": "content/guides/python/develop.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/repos/manage/webhooks.md",
+      "units": 45
+    },
+    "content_manuals_docker_hub_settings__4078ed43": {
+      "coverage": 0.9180327868852459,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_default_privacy__4f3c9464",
+          "rel_path": "content/manuals/docker-hub/default-privacy.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_settings__4078ed43",
+          "rel_path": "content/manuals/docker-hub/settings.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_disable_public_repositories__5916619c",
+          "rel_path": "content/manuals/docker-hub/disable-public-repositories.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_build_notifications__d09ac8af",
+          "rel_path": "content/manuals/docker-hub/build-notifications.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_dhi_how_to_customize__db61f385",
+          "rel_path": "content/manuals/dhi/how-to/customize.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/settings.md",
+      "units": 61
+    },
+    "content_manuals_docker_hub_troubleshoot__e8ac8f40": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_troubleshoot__e8ac8f40",
+          "rel_path": "content/manuals/docker-hub/troubleshoot.md",
+          "units": 41
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_provisioning_troubleshoot_provisioning__b9517b9b",
+          "rel_path": "content/manuals/enterprise/security/provisioning/troubleshoot-provisioning.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_single_sign_on_troubleshoot_sso__95fb14c4",
+          "rel_path": "content/manuals/enterprise/security/single-sign-on/troubleshoot-sso.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_get_started_workshop_06_bind_mounts__03f6a403",
+          "rel_path": "content/get-started/workshop/06_bind_mounts.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_hub_mcp__19c1c35b",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/hub-mcp.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/troubleshoot.md",
+      "units": 41
+    },
+    "content_manuals_docker_hub_usage_index__a42c6be3": {
+      "coverage": 0.9696969696969697,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_usage_limits__4a355b5d",
+          "rel_path": "content/manuals/docker-hub/usage/limits.md",
+          "units": 25
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_usage_index__a42c6be3",
+          "rel_path": "content/manuals/docker-hub/usage/_index.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_registry__26330443",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-registry.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_introduction_index__137a2a05",
+          "rel_path": "content/get-started/introduction/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_workshop_03_updating_app__6b17f188",
+          "rel_path": "content/get-started/workshop/03_updating_app.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/usage/_index.md",
+      "units": 33
+    },
+    "content_manuals_docker_hub_usage_manage__02d3c240": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_usage_manage__02d3c240",
+          "rel_path": "content/manuals/docker-hub/usage/manage.md",
+          "units": 33
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_dynamic_mcp__27a2f2ee",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_engine_containers_gpu__5e881c67",
+          "rel_path": "content/manuals/engine/containers/gpu.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_index__cf12634c",
+          "rel_path": "content/get-started/docker-concepts/_index.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_docker_compose__1270249c",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-docker-compose.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/usage/manage.md",
+      "units": 33
+    },
+    "content_manuals_docker_hub_usage_pulls__11e1d9a8": {
+      "coverage": 0.9115646258503401,
+      "holders": [
+        {
+          "doc_id": "content_manuals_docker_hub_usage_authenticate__152bce87",
+          "rel_path": "content/manuals/docker-hub/usage/authenticate.md",
+          "units": 40
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_usage_check_rate_limit__2bbb4101",
+          "rel_path": "content/manuals/docker-hub/usage/check-rate-limit.md",
+          "units": 34
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_usage_pull_accounting__41b5f25d",
+          "rel_path": "content/manuals/docker-hub/usage/pull-accounting.md",
+          "units": 32
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_usage_pulls__11e1d9a8",
+          "rel_path": "content/manuals/docker-hub/usage/pulls.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_usage_pull_reports__92be152e",
+          "rel_path": "content/manuals/docker-hub/usage/pull-reports.md",
+          "units": 14
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/docker-hub/usage/pulls.md",
+      "units": 147
+    },
+    "content_reference_api_dvp_deprecated__60095339": {
+      "coverage": 0.9411764705882353,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_dvp_deprecated__60095339",
+          "rel_path": "content/reference/api/dvp/deprecated.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_reference_api_hub_deprecated__3415a202",
+          "rel_path": "content/reference/api/hub/deprecated.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_reference_api_hub_deprecation_policy__f711fd77",
+          "rel_path": "content/reference/api/hub/deprecation-policy.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_persisting_container_data__d3b00014",
+          "rel_path": "content/get-started/docker-concepts/running-containers/persisting-container-data.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/dvp/deprecated.md",
+      "units": 17
+    },
+    "content_reference_api_hub_changelog__59a9b915": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_hub_changelog__59a9b915",
+          "rel_path": "content/reference/api/hub/changelog.md",
+          "units": 37
+        },
+        {
+          "doc_id": "content_reference_api_dvp_changelog__eec86d9b",
+          "rel_path": "content/reference/api/dvp/changelog.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_engine_release_notes_28__993e8676",
+          "rel_path": "content/manuals/engine/release-notes/28.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_engine_release_notes_29__7f7bd061",
+          "rel_path": "content/manuals/engine/release-notes/29.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_previous_versions_3_x_mac__0884d8e0",
+          "rel_path": "content/manuals/desktop/previous-versions/3.x-mac.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/hub/changelog.md",
+      "units": 37
+    },
+    "content_reference_api_hub_deprecated__3415a202": {
+      "coverage": 0.9772727272727273,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_hub_deprecated__3415a202",
+          "rel_path": "content/reference/api/hub/deprecated.md",
+          "units": 39
+        },
+        {
+          "doc_id": "content_reference_api_dvp_deprecated__60095339",
+          "rel_path": "content/reference/api/dvp/deprecated.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_reference_api_hub_deprecation_policy__f711fd77",
+          "rel_path": "content/reference/api/hub/deprecation-policy.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_persisting_container_data__d3b00014",
+          "rel_path": "content/get-started/docker-concepts/running-containers/persisting-container-data.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/hub/deprecated.md",
+      "units": 44
+    },
+    "content_reference_api_registry_auth__66a8839e": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_registry_auth__66a8839e",
+          "rel_path": "content/reference/api/registry/auth.md",
+          "units": 106
+        },
+        {
+          "doc_id": "content_reference_api_registry_auth_token_reference__9fa47952",
+          "rel_path": "content/reference/api/registry/auth-token-reference.md",
+          "units": 50
+        },
+        {
+          "doc_id": "content_manuals_ai_model_runner_index__9675fde2",
+          "rel_path": "content/manuals/ai/model-runner/_index.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_scout_policy_scores__33911484",
+          "rel_path": "content/manuals/scout/policy/scores.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/registry/auth.md",
+      "units": 153
+    }
+  },
+  "unmapped_removals": []
+}

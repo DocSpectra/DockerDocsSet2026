@@ -1,0 +1,4039 @@
+{
+  "added": [
+    "content_guides_add_pgadmin__d022c37f",
+    "content_guides_database_tasks_compose__a03fe53b",
+    "content_guides_database_tasks_connect_from_container__b45370ca",
+    "content_guides_database_tasks_connect_from_host__6f3cef48",
+    "content_guides_database_tasks_custom_image__a819bc9f",
+    "content_guides_database_tasks_persist_data__79cf793f",
+    "content_guides_database_tasks_remove_container__1d01da69",
+    "content_guides_database_tasks_run__d1b8f892",
+    "content_guides_database_tasks_shell__e9ca409d",
+    "content_guides_go_prometheus_monitoring_configuration__75005dfb",
+    "content_guides_go_prometheus_monitoring_image__f9b6f2a3",
+    "content_guides_go_prometheus_monitoring_metrics__c73818ed",
+    "content_guides_go_prometheus_monitoring_setup__c9e0fdf0",
+    "content_guides_hardened_image_access__f7616f0b",
+    "content_guides_jupyter_bind_mount__4df4cce4",
+    "content_guides_jupyter_compose__c480842e",
+    "content_guides_jupyter_context__483b1f29",
+    "content_guides_jupyter_customize__49ed1d94",
+    "content_guides_jupyter_notebooks__e8711902",
+    "content_guides_jupyter_run__bf017f9b",
+    "content_guides_jupyter_share__323266ef",
+    "content_guides_kafka_container_app__9a3c6e42",
+    "content_guides_kafka_images__9a9f76ef",
+    "content_guides_kafka_listeners__847a2f5b",
+    "content_guides_kafka_native_app__aa7f2d11",
+    "content_guides_kafka_project__ed492e88",
+    "content_guides_kafka_start__87ea3393",
+    "content_guides_kafka_ui__eaeefae8",
+    "content_guides_observability_context__3aabcd1a",
+    "content_guides_opentelemetry_app__137b7341",
+    "content_guides_opentelemetry_stack__aedc7d30",
+    "content_guides_pgadmin_auto_connect__97a06123",
+    "content_guides_pgadmin_context__8ac76c5d",
+    "content_guides_postgresql_benchmark__cc515371",
+    "content_guides_postgresql_bind_mounts__994384c7",
+    "content_guides_postgresql_compose__e27192c9",
+    "content_guides_postgresql_compose_networking__ef1e1ae8",
+    "content_guides_postgresql_configure_locale__07e77965",
+    "content_guides_postgresql_connect_from_containers__27a1dfaa",
+    "content_guides_postgresql_connect_from_host__f4e8a19c",
+    "content_guides_postgresql_connection_pooling__39d76695",
+    "content_guides_postgresql_connection_troubleshooting__e5203aff",
+    "content_guides_postgresql_data_persistence__fae48c6f",
+    "content_guides_postgresql_initialization__522f19da",
+    "content_guides_postgresql_initialize_database__211506c1",
+    "content_guides_postgresql_named_volumes__b2128cf2",
+    "content_guides_postgresql_pgadmin__6a1b9809",
+    "content_guides_postgresql_pgbouncer__bae2b0e0",
+    "content_guides_postgresql_psql__83b1a6bc",
+    "content_guides_postgresql_start__06cfc0c6",
+    "content_guides_postgresql_tune_performance__56514662",
+    "content_guides_pre_seeding_image__aaae02f2",
+    "content_guides_pre_seeding_javascript__56f92c28",
+    "content_guides_pre_seeding_sql__7457e724",
+    "content_guides_pre_seeding_start__7e675eb6",
+    "content_guides_prerequisites__56c0492d",
+    "content_guides_ros2_concepts__cb8bf9fe",
+    "content_guides_ros2_display_forwarding__833f637d",
+    "content_guides_sample_service_setup__a5b790e5",
+    "content_guides_traefik_development__d2d5d658",
+    "content_guides_traefik_docker__97499dbd",
+    "content_guides_traefik_native__0cf6a564",
+    "content_guides_traefik_project__d3f75738",
+    "content_guides_traefik_providers__a729f77e",
+    "content_manuals_accounts_accept_invitation__4aa69381",
+    "content_manuals_accounts_back_up_images__e1a46f22",
+    "content_manuals_accounts_change_password__219213ec",
+    "content_manuals_accounts_connected_accounts__243eed75",
+    "content_manuals_accounts_settings__c9e86f8f",
+    "content_manuals_accounts_sign_in__01b7ddff",
+    "content_manuals_accounts_update_email__293103e1",
+    "content_manuals_accounts_update_profile__c517d866",
+    "content_manuals_admin_access_model__f5fd9193",
+    "content_manuals_admin_activity_log_events__0d995e24",
+    "content_manuals_admin_identify_users__857b3e3c",
+    "content_manuals_admin_insights_metrics__9d7c8574",
+    "content_manuals_admin_invitations__0e2d8e37",
+    "content_manuals_admin_organization_manage_team_members__184d5f66",
+    "content_manuals_admin_organization_merge__8aaf1a2f",
+    "content_manuals_admin_product_access__c1675259",
+    "content_manuals_admin_product_usage__e5e76878",
+    "content_manuals_admin_products_build_cloud__cba7851a",
+    "content_manuals_admin_products_desktop__98a71ab9",
+    "content_manuals_admin_products_hub__1fe44719",
+    "content_manuals_admin_products_offload__3ee1bfc9",
+    "content_manuals_admin_products_scout__b70358a7",
+    "content_manuals_admin_products_testcontainers_cloud__d6d0e092",
+    "content_manuals_admin_security_setup__71383a7b",
+    "content_manuals_admin_user_provisioning__ba4f1172",
+    "content_manuals_billing_failed_payments__d2ea2378",
+    "content_manuals_billing_payment_options__9763badf",
+    "content_manuals_security_account_security__cb7ffddd",
+    "content_manuals_subscription_downgrade__691ad3f3",
+    "content_manuals_subscription_upgrade__bc6bdc2b",
+    "content_manuals_support_desktop_support__1efb2aae",
+    "content_manuals_support_diagnostics__29354ef7",
+    "content_manuals_unassociated_machines_about__025ce2d2",
+    "content_manuals_unassociated_machines_add_users__2201067c",
+    "content_manuals_unassociated_machines_sign_in_enforcement__be2c803a",
+    "content_reference_api_engine_http_socket__e0b0b353",
+    "content_reference_api_engine_sdk_commit_container__18c92dbf",
+    "content_reference_api_engine_sdk_container_logs__7f5e4f09",
+    "content_reference_api_engine_sdk_install__7cca9109",
+    "content_reference_api_engine_sdk_libraries__96fb9a98",
+    "content_reference_api_engine_sdk_list_containers__ec49a12d",
+    "content_reference_api_engine_sdk_list_images__0b0e1abb",
+    "content_reference_api_engine_sdk_pull_image__065bee26",
+    "content_reference_api_engine_sdk_pull_image_auth__2294e740",
+    "content_reference_api_engine_sdk_quickstart__e94c7e9c",
+    "content_reference_api_engine_sdk_run_container__27e91b9d",
+    "content_reference_api_engine_sdk_run_container_background__67c23b8e",
+    "content_reference_api_engine_sdk_stop_containers__f443ae8e",
+    "content_reference_api_engine_versioning__f9c03b91"
+  ],
+  "changed": [
+    "content_guides_admin_user_management_audit_and_monitor__0256ff3c",
+    "content_guides_admin_user_management_index__74b283ff",
+    "content_guides_admin_user_management_onboard__afb17e64",
+    "content_guides_admin_user_management_setup__130f5f47",
+    "content_guides_databases__359bdd96",
+    "content_guides_go_prometheus_monitoring_application__d0fe802d",
+    "content_guides_go_prometheus_monitoring_compose__a65b2e3b",
+    "content_guides_go_prometheus_monitoring_containerize__3dbaaf2f",
+    "content_guides_go_prometheus_monitoring_develop__507ce707",
+    "content_guides_go_prometheus_monitoring_index__47a40689",
+    "content_guides_jupyter__97aeda02",
+    "content_guides_kafka__cac664f2",
+    "content_guides_opentelemetry__b0142d60",
+    "content_guides_pgadmin__96f10a97",
+    "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+    "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+    "content_guides_postgresql_immediate_setup_and_data_persistence__d85fc8e4",
+    "content_guides_postgresql_index__b56749ce",
+    "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+    "content_guides_pre_seeding__81a7de15",
+    "content_guides_ros2_develop__4aca0ab0",
+    "content_guides_ros2_index__2c0e89f9",
+    "content_guides_ros2_run_ros2__53f6270c",
+    "content_guides_ros2_turtlesim_example__dd866e79",
+    "content_guides_traefik__eb1ec636",
+    "content_includes_desktop_license_update__ad02595b",
+    "content_manuals_accounts_create_account__99d15f69",
+    "content_manuals_accounts_deactivate_user_account__002abf0b",
+    "content_manuals_accounts_index__029c3a7a",
+    "content_manuals_accounts_manage_account__ad60928d",
+    "content_manuals_admin_activity_logs__7c7cb05e",
+    "content_manuals_admin_company_index__00b824ef",
+    "content_manuals_admin_company_manage_index__a8c484b6",
+    "content_manuals_admin_company_manage_organizations__3cbf65b3",
+    "content_manuals_admin_company_manage_owners__900c9395",
+    "content_manuals_admin_company_manage_users__45c9b965",
+    "content_manuals_admin_company_new_company__a30053c3",
+    "content_manuals_admin_index__8237d74d",
+    "content_manuals_admin_insights__40692ae8",
+    "content_manuals_admin_organization_deactivate_account__248df1c2",
+    "content_manuals_admin_organization_index__56e6f62c",
+    "content_manuals_admin_organization_manage_index__1a65c71e",
+    "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+    "content_manuals_admin_organization_manage_manage_products__542f067a",
+    "content_manuals_admin_organization_manage_members__86a15bd2",
+    "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+    "content_manuals_admin_organization_setup_general_settings__063a2f31",
+    "content_manuals_admin_organization_setup_index__8bf6cde2",
+    "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+    "content_manuals_admin_organization_setup_orgs__6bc6add1",
+    "content_manuals_billing_3d_secure__4d54a4bb",
+    "content_manuals_billing_cycle__b5adea3a",
+    "content_manuals_billing_details__6467f3eb",
+    "content_manuals_billing_history__6d638f08",
+    "content_manuals_billing_index__d4cf997e",
+    "content_manuals_billing_payment_method__af49f6a6",
+    "content_manuals_billing_tax_certificate__1a8c56e0",
+    "content_manuals_security_2fa_index__0d0f3aca",
+    "content_manuals_security_2fa_recover_hub_account__65376fe8",
+    "content_manuals_security_access_tokens__d642dc2c",
+    "content_manuals_security_index__a4372f0d",
+    "content_manuals_subscription_change__72a15720",
+    "content_manuals_subscription_desktop_license__1ae880bc",
+    "content_manuals_subscription_details__1ef6ab1f",
+    "content_manuals_subscription_index__2711dc6d",
+    "content_manuals_subscription_manage_seats__09a0f0f8",
+    "content_manuals_subscription_scale__7e1bbb05",
+    "content_manuals_subscription_setup__f8cab1e2",
+    "content_manuals_support_index__501a2ecf",
+    "content_manuals_unassociated_machines_index__d49ab312",
+    "content_reference_api_engine_index__6dd2a778",
+    "content_reference_api_engine_sdk_examples__eb819a43",
+    "content_reference_api_engine_sdk_index__8b9020be",
+    "content_reference_samples_agentic_ai__ee1428fa",
+    "content_reference_samples_ai_ml__37082400",
+    "content_reference_samples_angular__ba737692",
+    "content_reference_samples_cloudflared__87536dc4",
+    "content_reference_samples_django__dbcb33c8",
+    "content_reference_samples_dotnet__32a2a445",
+    "content_reference_samples_elasticsearch__9f6c6555",
+    "content_reference_samples_express__5d7c3fc7",
+    "content_reference_samples_fastapi__a659cb88",
+    "content_reference_samples_flask__8e6c9907",
+    "content_reference_samples_gitea__96239345",
+    "content_reference_samples_go__c28248c4",
+    "content_reference_samples_index__60d75ebd",
+    "content_reference_samples_java__8d3884ae",
+    "content_reference_samples_javascript__89e7b11e",
+    "content_reference_samples_mariadb__b9c982ec",
+    "content_reference_samples_minecraft__9c4a38d5",
+    "content_reference_samples_mongodb__b409db63",
+    "content_reference_samples_ms_sql__40244f60",
+    "content_reference_samples_mysql__50377bd4",
+    "content_reference_samples_nextcloud__293c7409",
+    "content_reference_samples_nginx__0ebc5bdc",
+    "content_reference_samples_nodejs__13a5efaa",
+    "content_reference_samples_php__5b078119",
+    "content_reference_samples_pi_hole__e0905622",
+    "content_reference_samples_plex__8d28bb6f",
+    "content_reference_samples_portainer__0dd42600",
+    "content_reference_samples_postgres__df11bd62",
+    "content_reference_samples_prometheus__8ee58a42",
+    "content_reference_samples_python__41a595a8",
+    "content_reference_samples_rails__9756bc0b",
+    "content_reference_samples_react__e9e4550b",
+    "content_reference_samples_redis__6550ffa9",
+    "content_reference_samples_ruby__88ea152f",
+    "content_reference_samples_rust__0c89f0ca",
+    "content_reference_samples_spark__3dcf6d98",
+    "content_reference_samples_spring__8cdb5c98",
+    "content_reference_samples_traefik__bbec6fdc",
+    "content_reference_samples_typescript__1d48cf7f",
+    "content_reference_samples_vuejs__2df1bb7a",
+    "content_reference_samples_wireguard__0068946d",
+    "content_reference_samples_wordpress__f5ec4cc2"
+  ],
+  "mapping": {},
+  "partial_unit_loss": [
+    "content_guides_admin_user_management_audit_and_monitor__0256ff3c",
+    "content_guides_admin_user_management_onboard__afb17e64",
+    "content_guides_admin_user_management_setup__130f5f47",
+    "content_guides_databases__359bdd96",
+    "content_guides_go_prometheus_monitoring_application__d0fe802d",
+    "content_guides_jupyter__97aeda02",
+    "content_guides_kafka__cac664f2",
+    "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+    "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+    "content_guides_postgresql_immediate_setup_and_data_persistence__d85fc8e4",
+    "content_guides_ros2_index__2c0e89f9",
+    "content_guides_ros2_turtlesim_example__dd866e79",
+    "content_guides_traefik__eb1ec636",
+    "content_includes_desktop_license_update__ad02595b",
+    "content_manuals_accounts_create_account__99d15f69",
+    "content_manuals_accounts_deactivate_user_account__002abf0b",
+    "content_manuals_accounts_manage_account__ad60928d",
+    "content_manuals_admin_activity_logs__7c7cb05e",
+    "content_manuals_admin_company_manage_users__45c9b965",
+    "content_manuals_admin_index__8237d74d",
+    "content_manuals_admin_insights__40692ae8",
+    "content_manuals_admin_organization_deactivate_account__248df1c2",
+    "content_manuals_admin_organization_index__56e6f62c",
+    "content_manuals_admin_organization_manage_manage_products__542f067a",
+    "content_manuals_admin_organization_manage_members__86a15bd2",
+    "content_manuals_billing_cycle__b5adea3a",
+    "content_manuals_billing_details__6467f3eb",
+    "content_manuals_billing_history__6d638f08",
+    "content_manuals_billing_payment_method__af49f6a6",
+    "content_manuals_security_2fa_index__0d0f3aca",
+    "content_manuals_security_access_tokens__d642dc2c",
+    "content_manuals_subscription_change__72a15720",
+    "content_manuals_subscription_manage_seats__09a0f0f8",
+    "content_manuals_support_index__501a2ecf",
+    "content_manuals_unassociated_machines_index__d49ab312",
+    "content_reference_api_engine_sdk_examples__eb819a43",
+    "content_reference_api_engine_sdk_index__8b9020be"
+  ],
+  "removed": [],
+  "rule": {
+    "min_share": 0.5,
+    "tie_break": "smallest variant doc id",
+    "unit": "normalized non-blank line, link targets stripped, lines without alphanumerics dropped",
+    "version": "moved_content_majority_v1"
+  },
+  "translation": {
+    "content_guides_admin_user_management_audit_and_monitor__0256ff3c": {
+      "coverage": 0.9375,
+      "holders": [
+        {
+          "doc_id": "content_guides_admin_user_management_audit_and_monitor__0256ff3c",
+          "rel_path": "content/guides/admin-user-management/audit-and-monitor.md",
+          "units": 30
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_registry__26330443",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-registry.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_workshop_03_updating_app__6b17f188",
+          "rel_path": "content/get-started/workshop/03_updating_app.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_angular_develop__975af6cd",
+          "rel_path": "content/guides/angular/develop.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_dotnet_run_tests__df5b8b95",
+          "rel_path": "content/guides/dotnet/run-tests.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/admin-user-management/audit-and-monitor.md",
+      "units": 32
+    },
+    "content_guides_admin_user_management_index__74b283ff": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_admin_user_management_index__74b283ff",
+          "rel_path": "content/guides/admin-user-management/_index.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_guides_admin_set_up_index__09826164",
+          "rel_path": "content/guides/admin-set-up/_index.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_guides_container_supported_development__a62cc6e0",
+          "rel_path": "content/guides/container-supported-development.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_docker_scout_index__429d0b99",
+          "rel_path": "content/guides/docker-scout/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_github_sonarqube_sandbox_index__2bc4ab81",
+          "rel_path": "content/guides/github-sonarqube-sandbox/_index.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/admin-user-management/_index.md",
+      "units": 36
+    },
+    "content_guides_admin_user_management_onboard__afb17e64": {
+      "coverage": 0.926829268292683,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_user_provisioning__ba4f1172",
+          "rel_path": "content/manuals/admin/user-provisioning.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_guides_admin_user_management_onboard__afb17e64",
+          "rel_path": "content/guides/admin-user-management/onboard.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_index__4bf715a8",
+          "rel_path": "content/get-started/docker-concepts/building-images/_index.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_an_image__32b12b73",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_overview__039a8050",
+          "rel_path": "content/get-started/docker-overview.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/admin-user-management/onboard.md",
+      "units": 41
+    },
+    "content_guides_admin_user_management_setup__130f5f47": {
+      "coverage": 0.9285714285714286,
+      "holders": [
+        {
+          "doc_id": "content_guides_admin_user_management_setup__130f5f47",
+          "rel_path": "content/guides/admin-user-management/setup.md",
+          "units": 23
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_index__64bbda2b",
+          "rel_path": "content/get-started/docker-concepts/the-basics/_index.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_container__7fc5c227",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-container.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/admin-user-management/setup.md",
+      "units": 28
+    },
+    "content_guides_databases__359bdd96": {
+      "coverage": 0.9863760217983651,
+      "holders": [
+        {
+          "doc_id": "content_guides_database_tasks_persist_data__79cf793f",
+          "rel_path": "content/guides/database-tasks/persist-data.md",
+          "units": 80
+        },
+        {
+          "doc_id": "content_guides_database_tasks_custom_image__a819bc9f",
+          "rel_path": "content/guides/database-tasks/custom-image.md",
+          "units": 69
+        },
+        {
+          "doc_id": "content_guides_database_tasks_compose__a03fe53b",
+          "rel_path": "content/guides/database-tasks/compose.md",
+          "units": 59
+        },
+        {
+          "doc_id": "content_guides_database_tasks_shell__e9ca409d",
+          "rel_path": "content/guides/database-tasks/shell.md",
+          "units": 49
+        },
+        {
+          "doc_id": "content_guides_database_tasks_run__d1b8f892",
+          "rel_path": "content/guides/database-tasks/run.md",
+          "units": 46
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/databases.md",
+      "units": 367
+    },
+    "content_guides_go_prometheus_monitoring_application__d0fe802d": {
+      "coverage": 0.9732142857142857,
+      "holders": [
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_metrics__c73818ed",
+          "rel_path": "content/guides/go-prometheus-monitoring/metrics.md",
+          "units": 53
+        },
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_application__d0fe802d",
+          "rel_path": "content/guides/go-prometheus-monitoring/application.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_setup__c9e0fdf0",
+          "rel_path": "content/guides/go-prometheus-monitoring/setup.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_guides_bun_containerize__6872b268",
+          "rel_path": "content/guides/bun/containerize.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_deno_containerize__91ad6baf",
+          "rel_path": "content/guides/deno/containerize.md",
+          "units": 9
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/go-prometheus-monitoring/application.md",
+      "units": 112
+    },
+    "content_guides_go_prometheus_monitoring_compose__a65b2e3b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_configuration__75005dfb",
+          "rel_path": "content/guides/go-prometheus-monitoring/configuration.md",
+          "units": 63
+        },
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_compose__a65b2e3b",
+          "rel_path": "content/guides/go-prometheus-monitoring/compose.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_develop__507ce707",
+          "rel_path": "content/guides/go-prometheus-monitoring/develop.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_guides_nodejs_develop__a1ceda6a",
+          "rel_path": "content/guides/nodejs/develop.md",
+          "units": 18
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/go-prometheus-monitoring/compose.md",
+      "units": 107
+    },
+    "content_guides_go_prometheus_monitoring_containerize__3dbaaf2f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_image__f9b6f2a3",
+          "rel_path": "content/guides/go-prometheus-monitoring/image.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_containerize__3dbaaf2f",
+          "rel_path": "content/guides/go-prometheus-monitoring/containerize.md",
+          "units": 25
+        },
+        {
+          "doc_id": "content_get_started_workshop_02_our_app__e816f7c0",
+          "rel_path": "content/get-started/workshop/02_our_app.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_bun_containerize__6872b268",
+          "rel_path": "content/guides/bun/containerize.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_deno_containerize__91ad6baf",
+          "rel_path": "content/guides/deno/containerize.md",
+          "units": 9
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/go-prometheus-monitoring/containerize.md",
+      "units": 58
+    },
+    "content_guides_go_prometheus_monitoring_develop__507ce707": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_develop__507ce707",
+          "rel_path": "content/guides/go-prometheus-monitoring/develop.md",
+          "units": 56
+        },
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_configuration__75005dfb",
+          "rel_path": "content/guides/go-prometheus-monitoring/configuration.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_guides_java_develop__b872b1f0",
+          "rel_path": "content/guides/java/develop.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_guides_nodejs_develop__a1ceda6a",
+          "rel_path": "content/guides/nodejs/develop.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_guides_r_develop__9e8f6fa5",
+          "rel_path": "content/guides/r/develop.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/go-prometheus-monitoring/develop.md",
+      "units": 56
+    },
+    "content_guides_go_prometheus_monitoring_index__47a40689": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_go_prometheus_monitoring_index__47a40689",
+          "rel_path": "content/guides/go-prometheus-monitoring/_index.md",
+          "units": 22
+        },
+        {
+          "doc_id": "content_guides_bun_index__23c486c1",
+          "rel_path": "content/guides/bun/_index.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_deno_index__b5b9615d",
+          "rel_path": "content/guides/deno/_index.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_genai_video_bot_index__192378dc",
+          "rel_path": "content/guides/genai-video-bot/index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_guides_golang_index__e18d09d3",
+          "rel_path": "content/guides/golang/_index.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/go-prometheus-monitoring/_index.md",
+      "units": 26
+    },
+    "content_guides_jupyter__97aeda02": {
+      "coverage": 0.9959677419354839,
+      "holders": [
+        {
+          "doc_id": "content_guides_jupyter_customize__49ed1d94",
+          "rel_path": "content/guides/jupyter-customize.md",
+          "units": 60
+        },
+        {
+          "doc_id": "content_guides_jupyter_share__323266ef",
+          "rel_path": "content/guides/jupyter-share.md",
+          "units": 50
+        },
+        {
+          "doc_id": "content_guides_jupyter_notebooks__e8711902",
+          "rel_path": "content/guides/jupyter-notebooks.md",
+          "units": 43
+        },
+        {
+          "doc_id": "content_guides_jupyter__97aeda02",
+          "rel_path": "content/guides/jupyter.md",
+          "units": 41
+        },
+        {
+          "doc_id": "content_guides_jupyter_compose__c480842e",
+          "rel_path": "content/guides/jupyter-compose.md",
+          "units": 36
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/jupyter.md",
+      "units": 248
+    },
+    "content_guides_kafka__cac664f2": {
+      "coverage": 0.9534883720930233,
+      "holders": [
+        {
+          "doc_id": "content_guides_kafka_container_app__9a3c6e42",
+          "rel_path": "content/guides/kafka-container-app.md",
+          "units": 40
+        },
+        {
+          "doc_id": "content_guides_kafka__cac664f2",
+          "rel_path": "content/guides/kafka.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_guides_kafka_start__87ea3393",
+          "rel_path": "content/guides/kafka-start.md",
+          "units": 26
+        },
+        {
+          "doc_id": "content_guides_kafka_ui__eaeefae8",
+          "rel_path": "content/guides/kafka-ui.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_guides_localstack__874a4f75",
+          "rel_path": "content/guides/localstack.md",
+          "units": 15
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/kafka.md",
+      "units": 129
+    },
+    "content_guides_opentelemetry__b0142d60": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_opentelemetry_stack__aedc7d30",
+          "rel_path": "content/guides/opentelemetry-stack.md",
+          "units": 62
+        },
+        {
+          "doc_id": "content_guides_opentelemetry_app__137b7341",
+          "rel_path": "content/guides/opentelemetry-app.md",
+          "units": 44
+        },
+        {
+          "doc_id": "content_guides_opentelemetry__b0142d60",
+          "rel_path": "content/guides/opentelemetry.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_manuals_engine_cli_otel__cc1e727a",
+          "rel_path": "content/manuals/engine/cli/otel.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_guides_localstack__874a4f75",
+          "rel_path": "content/guides/localstack.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/opentelemetry.md",
+      "units": 124
+    },
+    "content_guides_pgadmin__96f10a97": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_add_pgadmin__d022c37f",
+          "rel_path": "content/guides/add-pgadmin.md",
+          "units": 43
+        },
+        {
+          "doc_id": "content_guides_pgadmin_auto_connect__97a06123",
+          "rel_path": "content/guides/pgadmin-auto-connect.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_guides_pgadmin__96f10a97",
+          "rel_path": "content/guides/pgadmin.md",
+          "units": 17
+        },
+        {
+          "doc_id": "content_guides_genai_claude_code_mcp_claude_code_mcp_guide__1476e49b",
+          "rel_path": "content/guides/genai-claude-code-mcp/claude-code-mcp-guide.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_reference_compose_file_services__c8e812e7",
+          "rel_path": "content/reference/compose-file/services.md",
+          "units": 9
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/pgadmin.md",
+      "units": 98
+    },
+    "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234": {
+      "coverage": 0.9803921568627451,
+      "holders": [
+        {
+          "doc_id": "content_guides_postgresql_tune_performance__56514662",
+          "rel_path": "content/guides/postgresql/tune-performance.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_guides_postgresql_initialize_database__211506c1",
+          "rel_path": "content/guides/postgresql/initialize-database.md",
+          "units": 28
+        },
+        {
+          "doc_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+          "rel_path": "content/guides/postgresql/advanced-configuration-and-initialization.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_guides_postgresql_configure_locale__07e77965",
+          "rel_path": "content/guides/postgresql/configure-locale.md",
+          "units": 20
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 11
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/postgresql/advanced-configuration-and-initialization.md",
+      "units": 102
+    },
+    "content_guides_postgresql_companions_for_postgresql__a03fe3ed": {
+      "coverage": 0.9926470588235294,
+      "holders": [
+        {
+          "doc_id": "content_guides_postgresql_pgbouncer__bae2b0e0",
+          "rel_path": "content/guides/postgresql/pgbouncer.md",
+          "units": 62
+        },
+        {
+          "doc_id": "content_guides_postgresql_benchmark__cc515371",
+          "rel_path": "content/guides/postgresql/benchmark.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_guides_postgresql_pgadmin__6a1b9809",
+          "rel_path": "content/guides/postgresql/pgadmin.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+          "rel_path": "content/guides/postgresql/companions-for-postgresql.md",
+          "units": 15
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/postgresql/companions-for-postgresql.md",
+      "units": 136
+    },
+    "content_guides_postgresql_immediate_setup_and_data_persistence__d85fc8e4": {
+      "coverage": 0.9923076923076923,
+      "holders": [
+        {
+          "doc_id": "content_guides_postgresql_named_volumes__b2128cf2",
+          "rel_path": "content/guides/postgresql/named-volumes.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_guides_postgresql_start__06cfc0c6",
+          "rel_path": "content/guides/postgresql/start.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_guides_postgresql_compose__e27192c9",
+          "rel_path": "content/guides/postgresql/compose.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_guides_postgresql_bind_mounts__994384c7",
+          "rel_path": "content/guides/postgresql/bind-mounts.md",
+          "units": 25
+        },
+        {
+          "doc_id": "content_guides_postgresql_immediate_setup_and_data_persistence__d85fc8e4",
+          "rel_path": "content/guides/postgresql/immediate-setup-and-data-persistence.md",
+          "units": 24
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/postgresql/immediate-setup-and-data-persistence.md",
+      "units": 130
+    },
+    "content_guides_postgresql_index__b56749ce": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_postgresql_index__b56749ce",
+          "rel_path": "content/guides/postgresql/_index.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_guides_ruby_index__c0fd17dd",
+          "rel_path": "content/guides/ruby/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_guides_angular_index__3416985e",
+          "rel_path": "content/guides/angular/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_cpp_index__4ae38b9b",
+          "rel_path": "content/guides/cpp/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_dotnet_index__1c625454",
+          "rel_path": "content/guides/dotnet/_index.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/postgresql/_index.md",
+      "units": 12
+    },
+    "content_guides_postgresql_networking_and_connectivity__d1bf4f64": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_postgresql_connect_from_containers__27a1dfaa",
+          "rel_path": "content/guides/postgresql/connect-from-containers.md",
+          "units": 72
+        },
+        {
+          "doc_id": "content_guides_postgresql_connect_from_host__f4e8a19c",
+          "rel_path": "content/guides/postgresql/connect-from-host.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_guides_postgresql_compose_networking__ef1e1ae8",
+          "rel_path": "content/guides/postgresql/compose-networking.md",
+          "units": 35
+        },
+        {
+          "doc_id": "content_guides_postgresql_connection_troubleshooting__e5203aff",
+          "rel_path": "content/guides/postgresql/connection-troubleshooting.md",
+          "units": 33
+        },
+        {
+          "doc_id": "content_reference_compose_file_services__c8e812e7",
+          "rel_path": "content/reference/compose-file/services.md",
+          "units": 15
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/postgresql/networking-and-connectivity.md",
+      "units": 178
+    },
+    "content_guides_pre_seeding__81a7de15": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_pre_seeding_javascript__56f92c28",
+          "rel_path": "content/guides/pre-seeding-javascript.md",
+          "units": 57
+        },
+        {
+          "doc_id": "content_guides_pre_seeding_image__aaae02f2",
+          "rel_path": "content/guides/pre-seeding-image.md",
+          "units": 55
+        },
+        {
+          "doc_id": "content_guides_pre_seeding_sql__7457e724",
+          "rel_path": "content/guides/pre-seeding-sql.md",
+          "units": 47
+        },
+        {
+          "doc_id": "content_guides_pre_seeding__81a7de15",
+          "rel_path": "content/guides/pre-seeding.md",
+          "units": 25
+        },
+        {
+          "doc_id": "content_guides_pre_seeding_start__7e675eb6",
+          "rel_path": "content/guides/pre-seeding-start.md",
+          "units": 20
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/pre-seeding.md",
+      "units": 177
+    },
+    "content_guides_ros2_develop__4aca0ab0": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_ros2_develop__4aca0ab0",
+          "rel_path": "content/guides/ros2/develop.md",
+          "units": 51
+        },
+        {
+          "doc_id": "content_guides_python_develop__087af4e2",
+          "rel_path": "content/guides/python/develop.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_ros2_run_ros2__53f6270c",
+          "rel_path": "content/guides/ros2/run-ros2.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_ruby_develop__7f092806",
+          "rel_path": "content/guides/ruby/develop.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_angular_containerize__589692c3",
+          "rel_path": "content/guides/angular/containerize.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/ros2/develop.md",
+      "units": 51
+    },
+    "content_guides_ros2_index__2c0e89f9": {
+      "coverage": 0.9696969696969697,
+      "holders": [
+        {
+          "doc_id": "content_guides_ros2_index__2c0e89f9",
+          "rel_path": "content/guides/ros2/_index.md",
+          "units": 28
+        },
+        {
+          "doc_id": "content_guides_golang_index__e18d09d3",
+          "rel_path": "content/guides/golang/_index.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_nextjs_index__6c9f1944",
+          "rel_path": "content/guides/nextjs/_index.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_guides_nodejs_index__79a74d67",
+          "rel_path": "content/guides/nodejs/_index.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_guides_python_index__3d083c0f",
+          "rel_path": "content/guides/python/_index.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/ros2/_index.md",
+      "units": 33
+    },
+    "content_guides_ros2_run_ros2__53f6270c": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_guides_ros2_run_ros2__53f6270c",
+          "rel_path": "content/guides/ros2/run-ros2.md",
+          "units": 39
+        },
+        {
+          "doc_id": "content_guides_angular_containerize__589692c3",
+          "rel_path": "content/guides/angular/containerize.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_dotnet_containerize__df8c5bec",
+          "rel_path": "content/guides/dotnet/containerize.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_genai_pdf_bot_containerize__dfc4e97e",
+          "rel_path": "content/guides/genai-pdf-bot/containerize.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_nextjs_containerize__2ddfb5de",
+          "rel_path": "content/guides/nextjs/containerize.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/ros2/run-ros2.md",
+      "units": 39
+    },
+    "content_guides_ros2_turtlesim_example__dd866e79": {
+      "coverage": 0.9914529914529915,
+      "holders": [
+        {
+          "doc_id": "content_guides_ros2_turtlesim_example__dd866e79",
+          "rel_path": "content/guides/ros2/turtlesim-example.md",
+          "units": 98
+        },
+        {
+          "doc_id": "content_guides_ros2_display_forwarding__833f637d",
+          "rel_path": "content/guides/ros2/display-forwarding.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_guides_ros2_develop__4aca0ab0",
+          "rel_path": "content/guides/ros2/develop.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_guides_angular_run_tests__82fafeb6",
+          "rel_path": "content/guides/angular/run-tests.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_guides_ros2_run_ros2__53f6270c",
+          "rel_path": "content/guides/ros2/run-ros2.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/ros2/turtlesim-example.md",
+      "units": 117
+    },
+    "content_guides_traefik__eb1ec636": {
+      "coverage": 0.9790209790209791,
+      "holders": [
+        {
+          "doc_id": "content_guides_traefik_native__0cf6a564",
+          "rel_path": "content/guides/traefik-native.md",
+          "units": 53
+        },
+        {
+          "doc_id": "content_guides_traefik_development__d2d5d658",
+          "rel_path": "content/guides/traefik-development.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_guides_traefik_docker__97499dbd",
+          "rel_path": "content/guides/traefik-docker.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_guides_traefik__eb1ec636",
+          "rel_path": "content/guides/traefik.md",
+          "units": 22
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 13
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/guides/traefik.md",
+      "units": 143
+    },
+    "content_includes_desktop_license_update__ad02595b": {
+      "coverage": 0.8,
+      "holders": [
+        {
+          "doc_id": "content_manuals_desktop_setup_install_mac_install__7b39b11f",
+          "rel_path": "content/manuals/desktop/setup/install/mac-install.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/includes/desktop-license-update.md",
+      "units": 5
+    },
+    "content_manuals_accounts_create_account__99d15f69": {
+      "coverage": 0.8846153846153846,
+      "holders": [
+        {
+          "doc_id": "content_manuals_accounts_create_account__99d15f69",
+          "rel_path": "content/manuals/accounts/create-account.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_manuals_accounts_sign_in__01b7ddff",
+          "rel_path": "content/manuals/accounts/sign-in.md",
+          "units": 27
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_domain_management__d1ce77f6",
+          "rel_path": "content/manuals/enterprise/security/domain-management.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_container__7fc5c227",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-container.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/accounts/create-account.md",
+      "units": 78
+    },
+    "content_manuals_accounts_deactivate_user_account__002abf0b": {
+      "coverage": 0.9047619047619048,
+      "holders": [
+        {
+          "doc_id": "content_manuals_accounts_deactivate_user_account__002abf0b",
+          "rel_path": "content/manuals/accounts/deactivate-user-account.md",
+          "units": 37
+        },
+        {
+          "doc_id": "content_manuals_admin_insights__40692ae8",
+          "rel_path": "content/manuals/admin/insights.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_deactivate_account__248df1c2",
+          "rel_path": "content/manuals/admin/organization/deactivate-account.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_compliance_reporting__1df97eb9",
+          "rel_path": "content/manuals/enterprise/security/hardened-desktop/settings-management/compliance-reporting.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_provisioning_scim_migrate_scim__4768ffbb",
+          "rel_path": "content/manuals/enterprise/security/provisioning/scim/migrate-scim.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/accounts/deactivate-user-account.md",
+      "units": 42
+    },
+    "content_manuals_accounts_index__029c3a7a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_accounts_index__029c3a7a",
+          "rel_path": "content/manuals/accounts/_index.md",
+          "units": 40
+        },
+        {
+          "doc_id": "content_manuals_security_index__a4372f0d",
+          "rel_path": "content/manuals/security/_index.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_compose_index__f7f6f3d3",
+          "rel_path": "content/manuals/compose/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_index__339b39a9",
+          "rel_path": "content/manuals/desktop/_index.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/accounts/_index.md",
+      "units": 40
+    },
+    "content_manuals_accounts_manage_account__ad60928d": {
+      "coverage": 0.8923076923076924,
+      "holders": [
+        {
+          "doc_id": "content_manuals_accounts_manage_account__ad60928d",
+          "rel_path": "content/manuals/accounts/manage-account.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_accounts_update_profile__c517d866",
+          "rel_path": "content/manuals/accounts/update-profile.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_accounts_update_email__293103e1",
+          "rel_path": "content/manuals/accounts/update-email.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_accounts_settings__c9e86f8f",
+          "rel_path": "content/manuals/accounts/settings.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_accounts_connected_accounts__243eed75",
+          "rel_path": "content/manuals/accounts/connected-accounts.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/accounts/manage-account.md",
+      "units": 65
+    },
+    "content_manuals_admin_activity_logs__7c7cb05e": {
+      "coverage": 0.9636363636363636,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_activity_log_events__0d995e24",
+          "rel_path": "content/manuals/admin/activity-log-events.md",
+          "units": 61
+        },
+        {
+          "doc_id": "content_manuals_admin_activity_logs__7c7cb05e",
+          "rel_path": "content/manuals/admin/activity-logs.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_manuals_desktop_setup_install_windows_install__d9e924ae",
+          "rel_path": "content/manuals/desktop/setup/install/windows-install.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_trusted_content_insights_analytics__4c7f14b1",
+          "rel_path": "content/manuals/docker-hub/repos/manage/trusted-content/insights-analytics.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_engine_daemon_proxy__5a606549",
+          "rel_path": "content/manuals/engine/daemon/proxy.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/activity-logs.md",
+      "units": 110
+    },
+    "content_manuals_admin_company_index__00b824ef": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_index__00b824ef",
+          "rel_path": "content/manuals/admin/company/_index.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 14
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_index__56e6f62c",
+          "rel_path": "content/manuals/admin/organization/_index.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_index__cd86d1e4",
+          "rel_path": "content/manuals/enterprise/security/_index.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/company/_index.md",
+      "units": 61
+    },
+    "content_manuals_admin_company_manage_index__a8c484b6": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_manage_index__a8c484b6",
+          "rel_path": "content/manuals/admin/company/manage/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_index__1a65c71e",
+          "rel_path": "content/manuals/admin/organization/manage/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_ai_gordon_concepts_index__20470d28",
+          "rel_path": "content/manuals/ai/gordon/concepts/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_index__fb495d28",
+          "rel_path": "content/manuals/build/building/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_index__7c293800",
+          "rel_path": "content/manuals/docker-hub/repos/manage/_index.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/company/manage/_index.md",
+      "units": 4
+    },
+    "content_manuals_admin_company_manage_organizations__3cbf65b3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_manage_organizations__3cbf65b3",
+          "rel_path": "content/manuals/admin/company/manage/organizations.md",
+          "units": 41
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_owners__900c9395",
+          "rel_path": "content/manuals/admin/company/manage/owners.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_users__45c9b965",
+          "rel_path": "content/manuals/admin/company/manage/users.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_admin_company_new_company__a30053c3",
+          "rel_path": "content/manuals/admin/company/new-company.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/company/manage/organizations.md",
+      "units": 41
+    },
+    "content_manuals_admin_company_manage_owners__900c9395": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_manage_owners__900c9395",
+          "rel_path": "content/manuals/admin/company/manage/owners.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_organizations__3cbf65b3",
+          "rel_path": "content/manuals/admin/company/manage/organizations.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_users__45c9b965",
+          "rel_path": "content/manuals/admin/company/manage/users.md",
+          "units": 3
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/company/manage/owners.md",
+      "units": 26
+    },
+    "content_manuals_admin_company_manage_users__45c9b965": {
+      "coverage": 0.5520833333333334,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_invitations__0e2d8e37",
+          "rel_path": "content/manuals/admin/invitations.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_users__45c9b965",
+          "rel_path": "content/manuals/admin/company/manage/users.md",
+          "units": 24
+        },
+        {
+          "doc_id": "content_manuals_admin_company_manage_organizations__3cbf65b3",
+          "rel_path": "content/manuals/admin/company/manage/organizations.md",
+          "units": 4
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_multi_container_applications__f0fa6bfb",
+          "rel_path": "content/get-started/docker-concepts/running-containers/multi-container-applications.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/company/manage/users.md",
+      "units": 96
+    },
+    "content_manuals_admin_company_new_company__a30053c3": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_new_company__a30053c3",
+          "rel_path": "content/manuals/admin/company/new-company.md",
+          "units": 33
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+          "rel_path": "content/manuals/admin/organization/setup/orgs.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_provisioning_scim_migrate_scim__4768ffbb",
+          "rel_path": "content/manuals/enterprise/security/provisioning/scim/migrate-scim.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_container__7fc5c227",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-container.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_guides_bun_containerize__6872b268",
+          "rel_path": "content/guides/bun/containerize.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/company/new-company.md",
+      "units": 33
+    },
+    "content_manuals_admin_index__8237d74d": {
+      "coverage": 0.9857142857142858,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 48
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 21
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_index__56e6f62c",
+          "rel_path": "content/manuals/admin/organization/_index.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_index__993a2171",
+          "rel_path": "content/manuals/docker-hub/_index.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_admin_company_index__00b824ef",
+          "rel_path": "content/manuals/admin/company/_index.md",
+          "units": 7
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/_index.md",
+      "units": 70
+    },
+    "content_manuals_admin_insights__40692ae8": {
+      "coverage": 0.9708029197080292,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_insights__40692ae8",
+          "rel_path": "content/manuals/admin/insights.md",
+          "units": 69
+        },
+        {
+          "doc_id": "content_manuals_admin_insights_metrics__9d7c8574",
+          "rel_path": "content/manuals/admin/insights-metrics.md",
+          "units": 63
+        },
+        {
+          "doc_id": "content_guides_angular_run_tests__82fafeb6",
+          "rel_path": "content/guides/angular/run-tests.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_nextjs_run_tests__c2119b59",
+          "rel_path": "content/guides/nextjs/run-tests.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_reactjs_run_tests__fd81ce7b",
+          "rel_path": "content/guides/reactjs/run-tests.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/insights.md",
+      "units": 137
+    },
+    "content_manuals_admin_organization_deactivate_account__248df1c2": {
+      "coverage": 0.9117647058823529,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_deactivate_account__248df1c2",
+          "rel_path": "content/manuals/admin/organization/deactivate-account.md",
+          "units": 30
+        },
+        {
+          "doc_id": "content_manuals_engine_install_raspberry_pi_os__fb8bc431",
+          "rel_path": "content/manuals/engine/install/raspberry-pi-os.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_guides_bun_deploy__329b581d",
+          "rel_path": "content/guides/bun/deploy.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_cpp_deploy__8a7e4894",
+          "rel_path": "content/guides/cpp/deploy.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_deno_deploy__2c09b51e",
+          "rel_path": "content/guides/deno/deploy.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/deactivate-account.md",
+      "units": 34
+    },
+    "content_manuals_admin_organization_index__56e6f62c": {
+      "coverage": 0.9649122807017544,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_index__56e6f62c",
+          "rel_path": "content/manuals/admin/organization/_index.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_manuals_admin_company_index__00b824ef",
+          "rel_path": "content/manuals/admin/company/_index.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 9
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_index__cd86d1e4",
+          "rel_path": "content/manuals/enterprise/security/_index.md",
+          "units": 8
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/_index.md",
+      "units": 57
+    },
+    "content_manuals_admin_organization_manage_index__1a65c71e": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_company_manage_index__a8c484b6",
+          "rel_path": "content/manuals/admin/company/manage/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_index__1a65c71e",
+          "rel_path": "content/manuals/admin/organization/manage/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_ai_gordon_concepts_index__20470d28",
+          "rel_path": "content/manuals/ai/gordon/concepts/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_building_index__fb495d28",
+          "rel_path": "content/manuals/build/building/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_index__7c293800",
+          "rel_path": "content/manuals/docker-hub/repos/manage/_index.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/manage/_index.md",
+      "units": 4
+    },
+    "content_manuals_admin_organization_manage_manage_a_team__93b41425": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 48
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_manuals_docker_hub_repos_manage_access__2b46bddd",
+          "rel_path": "content/manuals/docker-hub/repos/manage/access.md",
+          "units": 11
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+          "rel_path": "content/manuals/admin/organization/setup/onboard.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+          "rel_path": "content/manuals/admin/organization/setup/orgs.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+      "units": 91
+    },
+    "content_manuals_admin_organization_manage_manage_products__542f067a": {
+      "coverage": 0.9519230769230769,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_products_offload__3ee1bfc9",
+          "rel_path": "content/manuals/admin/products/offload.md",
+          "units": 22
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_products__542f067a",
+          "rel_path": "content/manuals/admin/organization/manage/manage-products.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_manuals_admin_product_access__c1675259",
+          "rel_path": "content/manuals/admin/product-access.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_admin_products_scout__b70358a7",
+          "rel_path": "content/manuals/admin/products/scout.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_admin_product_usage__e5e76878",
+          "rel_path": "content/manuals/admin/product-usage.md",
+          "units": 10
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/manage/manage-products.md",
+      "units": 104
+    },
+    "content_manuals_admin_organization_manage_members__86a15bd2": {
+      "coverage": 0.9279279279279279,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+          "rel_path": "content/manuals/admin/organization/manage/members.md",
+          "units": 52
+        },
+        {
+          "doc_id": "content_manuals_admin_invitations__0e2d8e37",
+          "rel_path": "content/manuals/admin/invitations.md",
+          "units": 24
+        },
+        {
+          "doc_id": "content_manuals_accounts_accept_invitation__4aa69381",
+          "rel_path": "content/manuals/accounts/accept-invitation.md",
+          "units": 16
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_team_members__184d5f66",
+          "rel_path": "content/manuals/admin/organization/manage/team-members.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+          "rel_path": "content/manuals/admin/organization/setup/orgs.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/manage/members.md",
+      "units": 111
+    },
+    "content_manuals_admin_organization_setup_convert_account__5a9f6069": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+          "rel_path": "content/manuals/admin/organization/setup/convert-account.md",
+          "units": 61
+        },
+        {
+          "doc_id": "content_guides_bun_configure_ci_cd__df823a5d",
+          "rel_path": "content/guides/bun/configure-ci-cd.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_cpp_configure_ci_cd__a181fa64",
+          "rel_path": "content/guides/cpp/configure-ci-cd.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_deno_configure_ci_cd__6901b8f0",
+          "rel_path": "content/guides/deno/configure-ci-cd.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_dotnet_configure_ci_cd__9ad09014",
+          "rel_path": "content/guides/dotnet/configure-ci-cd.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/setup/convert-account.md",
+      "units": 61
+    },
+    "content_manuals_admin_organization_setup_general_settings__063a2f31": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_setup_general_settings__063a2f31",
+          "rel_path": "content/manuals/admin/organization/setup/general-settings.md",
+          "units": 26
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_a_registry__26330443",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-a-registry.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_workshop_03_updating_app__6b17f188",
+          "rel_path": "content/get-started/workshop/03_updating_app.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_dotnet_run_tests__df5b8b95",
+          "rel_path": "content/guides/dotnet/run-tests.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_golang_run_tests__ec5a3bf0",
+          "rel_path": "content/guides/golang/run-tests.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/setup/general-settings.md",
+      "units": 26
+    },
+    "content_manuals_admin_organization_setup_index__8bf6cde2": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_setup_index__8bf6cde2",
+          "rel_path": "content/manuals/admin/organization/setup/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_desktop_setup_index__cac1b9d5",
+          "rel_path": "content/manuals/desktop/setup/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_index__64bbda2b",
+          "rel_path": "content/get-started/docker-concepts/the-basics/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_build_concepts_index__11b99d1a",
+          "rel_path": "content/manuals/build/concepts/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_compose_intro_index__e25de20d",
+          "rel_path": "content/manuals/compose/intro/_index.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/setup/_index.md",
+      "units": 4
+    },
+    "content_manuals_admin_organization_setup_onboard__0d66a7b1": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+          "rel_path": "content/manuals/admin/organization/setup/onboard.md",
+          "units": 72
+        },
+        {
+          "doc_id": "content_manuals_admin_security_setup__71383a7b",
+          "rel_path": "content/manuals/admin/security-setup.md",
+          "units": 33
+        },
+        {
+          "doc_id": "content_manuals_admin_identify_users__857b3e3c",
+          "rel_path": "content/manuals/admin/identify-users.md",
+          "units": 26
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_enforce_sign_in_index__f15bee2d",
+          "rel_path": "content/manuals/enterprise/security/enforce-sign-in/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_extensions_extensions_sdk_quickstart__93bb4eb8",
+          "rel_path": "content/manuals/extensions/extensions-sdk/quickstart.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/setup/onboard.md",
+      "units": 130
+    },
+    "content_manuals_admin_organization_setup_orgs__6bc6add1": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+          "rel_path": "content/manuals/admin/organization/setup/orgs.md",
+          "units": 47
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_merge__8aaf1a2f",
+          "rel_path": "content/manuals/admin/organization/merge.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_admin_company_new_company__a30053c3",
+          "rel_path": "content/manuals/admin/company/new-company.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+          "rel_path": "content/manuals/admin/organization/manage/members.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/admin/organization/setup/orgs.md",
+      "units": 60
+    },
+    "content_manuals_billing_3d_secure__4d54a4bb": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_3d_secure__4d54a4bb",
+          "rel_path": "content/manuals/billing/3d-secure.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_mcp_gateway__41492c1e",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_angular_run_tests__82fafeb6",
+          "rel_path": "content/guides/angular/run-tests.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_nextjs_run_tests__c2119b59",
+          "rel_path": "content/guides/nextjs/run-tests.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_reactjs_run_tests__fd81ce7b",
+          "rel_path": "content/guides/reactjs/run-tests.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/3d-secure.md",
+      "units": 36
+    },
+    "content_manuals_billing_cycle__b5adea3a": {
+      "coverage": 0.9142857142857143,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_cycle__b5adea3a",
+          "rel_path": "content/manuals/billing/cycle.md",
+          "units": 32
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_compliance_reporting__1df97eb9",
+          "rel_path": "content/manuals/enterprise/security/hardened-desktop/settings-management/compliance-reporting.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_admin_console__af18d129",
+          "rel_path": "content/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_single_sign_on_manage__fc89b5c1",
+          "rel_path": "content/manuals/enterprise/security/single-sign-on/manage.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_subscription_downgrade__691ad3f3",
+          "rel_path": "content/manuals/subscription/downgrade.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/cycle.md",
+      "units": 35
+    },
+    "content_manuals_billing_details__6467f3eb": {
+      "coverage": 0.8947368421052632,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_details__6467f3eb",
+          "rel_path": "content/manuals/billing/details.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_manuals_admin_activity_logs__7c7cb05e",
+          "rel_path": "content/manuals/admin/activity-logs.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_single_sign_on_manage__fc89b5c1",
+          "rel_path": "content/manuals/enterprise/security/single-sign-on/manage.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_admin_console__af18d129",
+          "rel_path": "content/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/details.md",
+      "units": 38
+    },
+    "content_manuals_billing_history__6d638f08": {
+      "coverage": 0.9540229885057471,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_history__6d638f08",
+          "rel_path": "content/manuals/billing/history.md",
+          "units": 68
+        },
+        {
+          "doc_id": "content_manuals_billing_details__6467f3eb",
+          "rel_path": "content/manuals/billing/details.md",
+          "units": 19
+        },
+        {
+          "doc_id": "content_manuals_admin_activity_logs__7c7cb05e",
+          "rel_path": "content/manuals/admin/activity-logs.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_subscription_manage_seats__09a0f0f8",
+          "rel_path": "content/manuals/subscription/manage-seats.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/history.md",
+      "units": 87
+    },
+    "content_manuals_billing_index__d4cf997e": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_index__d4cf997e",
+          "rel_path": "content/manuals/billing/_index.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_subscription_index__2711dc6d",
+          "rel_path": "content/manuals/subscription/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_index__339b39a9",
+          "rel_path": "content/manuals/desktop/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/_index.md",
+      "units": 38
+    },
+    "content_manuals_billing_payment_method__af49f6a6": {
+      "coverage": 0.9903846153846154,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_payment_options__9763badf",
+          "rel_path": "content/manuals/billing/payment-options.md",
+          "units": 55
+        },
+        {
+          "doc_id": "content_manuals_billing_payment_method__af49f6a6",
+          "rel_path": "content/manuals/billing/payment-method.md",
+          "units": 37
+        },
+        {
+          "doc_id": "content_manuals_billing_failed_payments__d2ea2378",
+          "rel_path": "content/manuals/billing/failed-payments.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_admin_company_new_company__a30053c3",
+          "rel_path": "content/manuals/admin/company/new-company.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+          "rel_path": "content/manuals/admin/organization/setup/orgs.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/payment-method.md",
+      "units": 104
+    },
+    "content_manuals_billing_tax_certificate__1a8c56e0": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_billing_tax_certificate__1a8c56e0",
+          "rel_path": "content/manuals/billing/tax-certificate.md",
+          "units": 37
+        },
+        {
+          "doc_id": "content_guides_nodejs_configure_github_actions__06013c01",
+          "rel_path": "content/guides/nodejs/configure-github-actions.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_engine_install_raspberry_pi_os__fb8bc431",
+          "rel_path": "content/manuals/engine/install/raspberry-pi-os.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_guides_angular_containerize__589692c3",
+          "rel_path": "content/guides/angular/containerize.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_azure_pipelines__7f0540af",
+          "rel_path": "content/guides/azure-pipelines.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/billing/tax-certificate.md",
+      "units": 37
+    },
+    "content_manuals_security_2fa_index__0d0f3aca": {
+      "coverage": 0.975,
+      "holders": [
+        {
+          "doc_id": "content_manuals_security_2fa_index__0d0f3aca",
+          "rel_path": "content/manuals/security/2fa/_index.md",
+          "units": 31
+        },
+        {
+          "doc_id": "content_manuals_security_account_security__cb7ffddd",
+          "rel_path": "content/manuals/security/account-security.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_engine_install_debian__4c434451",
+          "rel_path": "content/manuals/engine/install/debian.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_access_tokens__a10425aa",
+          "rel_path": "content/manuals/enterprise/security/access-tokens.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_provisioning_just_in_time__24b7cd6e",
+          "rel_path": "content/manuals/enterprise/security/provisioning/just-in-time.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/security/2fa/_index.md",
+      "units": 40
+    },
+    "content_manuals_security_2fa_recover_hub_account__65376fe8": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_security_2fa_recover_hub_account__65376fe8",
+          "rel_path": "content/manuals/security/2fa/recover-hub-account.md",
+          "units": 22
+        },
+        {
+          "doc_id": "content_manuals_security_2fa_index__0d0f3aca",
+          "rel_path": "content/manuals/security/2fa/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_the_basics_what_is_an_image__32b12b73",
+          "rel_path": "content/get-started/docker-concepts/the-basics/what-is-an-image.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_docker_overview__039a8050",
+          "rel_path": "content/get-started/docker-overview.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_get_started_workshop_02_our_app__e816f7c0",
+          "rel_path": "content/get-started/workshop/02_our_app.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/security/2fa/recover-hub-account.md",
+      "units": 22
+    },
+    "content_manuals_security_access_tokens__d642dc2c": {
+      "coverage": 0.9850746268656716,
+      "holders": [
+        {
+          "doc_id": "content_manuals_security_access_tokens__d642dc2c",
+          "rel_path": "content/manuals/security/access-tokens.md",
+          "units": 38
+        },
+        {
+          "doc_id": "content_manuals_security_account_security__cb7ffddd",
+          "rel_path": "content/manuals/security/account-security.md",
+          "units": 30
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_nodejs_containerize__b7a9584f",
+          "rel_path": "content/guides/nodejs/containerize.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_troubleshoot_and_support_troubleshoot_index__9e6484af",
+          "rel_path": "content/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/security/access-tokens.md",
+      "units": 67
+    },
+    "content_manuals_security_index__a4372f0d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_security_index__a4372f0d",
+          "rel_path": "content/manuals/security/_index.md",
+          "units": 57
+        },
+        {
+          "doc_id": "content_manuals_accounts_index__029c3a7a",
+          "rel_path": "content/manuals/accounts/_index.md",
+          "units": 10
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_index__cd86d1e4",
+          "rel_path": "content/manuals/enterprise/security/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_index__6aeb8409",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/_index.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_billing_index__d4cf997e",
+          "rel_path": "content/manuals/billing/_index.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/security/_index.md",
+      "units": 57
+    },
+    "content_manuals_subscription_change__72a15720": {
+      "coverage": 0.9534883720930233,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_downgrade__691ad3f3",
+          "rel_path": "content/manuals/subscription/downgrade.md",
+          "units": 18
+        },
+        {
+          "doc_id": "content_manuals_subscription_upgrade__bc6bdc2b",
+          "rel_path": "content/manuals/subscription/upgrade.md",
+          "units": 13
+        },
+        {
+          "doc_id": "content_manuals_subscription_change__72a15720",
+          "rel_path": "content/manuals/subscription/change.md",
+          "units": 12
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_single_sign_on_manage__fc89b5c1",
+          "rel_path": "content/manuals/enterprise/security/single-sign-on/manage.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_admin_activity_logs__7c7cb05e",
+          "rel_path": "content/manuals/admin/activity-logs.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/change.md",
+      "units": 43
+    },
+    "content_manuals_subscription_desktop_license__1ae880bc": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_desktop_license__1ae880bc",
+          "rel_path": "content/manuals/subscription/desktop-license.md",
+          "units": 27
+        },
+        {
+          "doc_id": "content_guides_angular_run_tests__82fafeb6",
+          "rel_path": "content/guides/angular/run-tests.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_nextjs_run_tests__c2119b59",
+          "rel_path": "content/guides/nextjs/run-tests.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_reactjs_run_tests__fd81ce7b",
+          "rel_path": "content/guides/reactjs/run-tests.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_guides_ruby_develop__7f092806",
+          "rel_path": "content/guides/ruby/develop.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/desktop-license.md",
+      "units": 27
+    },
+    "content_manuals_subscription_details__1ef6ab1f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_details__1ef6ab1f",
+          "rel_path": "content/manuals/subscription/details.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_admin_index__8237d74d",
+          "rel_path": "content/manuals/admin/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_index__6aeb8409",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/_index.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_billing_index__d4cf997e",
+          "rel_path": "content/manuals/billing/_index.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/details.md",
+      "units": 5
+    },
+    "content_manuals_subscription_index__2711dc6d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_index__2711dc6d",
+          "rel_path": "content/manuals/subscription/_index.md",
+          "units": 42
+        },
+        {
+          "doc_id": "content_manuals_billing_index__d4cf997e",
+          "rel_path": "content/manuals/billing/_index.md",
+          "units": 6
+        },
+        {
+          "doc_id": "content_manuals_compose_index__f7f6f3d3",
+          "rel_path": "content/manuals/compose/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_desktop_index__339b39a9",
+          "rel_path": "content/manuals/desktop/_index.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_manuals_scout_index__20ddd730",
+          "rel_path": "content/manuals/scout/_index.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/_index.md",
+      "units": 42
+    },
+    "content_manuals_subscription_manage_seats__09a0f0f8": {
+      "coverage": 0.972972972972973,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_manage_seats__09a0f0f8",
+          "rel_path": "content/manuals/subscription/manage-seats.md",
+          "units": 36
+        },
+        {
+          "doc_id": "content_manuals_admin_activity_logs__7c7cb05e",
+          "rel_path": "content/manuals/admin/activity-logs.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_admin_organization_manage_manage_a_team__93b41425",
+          "rel_path": "content/manuals/admin/organization/manage/manage-a-team.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_billing_details__6467f3eb",
+          "rel_path": "content/manuals/billing/details.md",
+          "units": 4
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_access_tokens__a10425aa",
+          "rel_path": "content/manuals/enterprise/security/access-tokens.md",
+          "units": 4
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/manage-seats.md",
+      "units": 37
+    },
+    "content_manuals_subscription_scale__7e1bbb05": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_scale__7e1bbb05",
+          "rel_path": "content/manuals/subscription/scale.md",
+          "units": 29
+        },
+        {
+          "doc_id": "content_manuals_admin_insights__40692ae8",
+          "rel_path": "content/manuals/admin/insights.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_manuals_accounts_deactivate_user_account__002abf0b",
+          "rel_path": "content/manuals/accounts/deactivate-user-account.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_admin_console__af18d129",
+          "rel_path": "content/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_manuals_enterprise_security_single_sign_on_manage__fc89b5c1",
+          "rel_path": "content/manuals/enterprise/security/single-sign-on/manage.md",
+          "units": 2
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/scale.md",
+      "units": 29
+    },
+    "content_manuals_subscription_setup__f8cab1e2": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_manuals_subscription_setup__f8cab1e2",
+          "rel_path": "content/manuals/subscription/setup.md",
+          "units": 15
+        },
+        {
+          "doc_id": "content_guides_python_develop__087af4e2",
+          "rel_path": "content/guides/python/develop.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_guides_ros2_develop__4aca0ab0",
+          "rel_path": "content/guides/ros2/develop.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_manuals_ai_sandboxes_security_defaults__936e059b",
+          "rel_path": "content/manuals/ai/sandboxes/security/defaults.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_manuals_dhi_explore_build_process__d80113eb",
+          "rel_path": "content/manuals/dhi/explore/build-process.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/subscription/setup.md",
+      "units": 15
+    },
+    "content_manuals_support_index__501a2ecf": {
+      "coverage": 0.9411764705882353,
+      "holders": [
+        {
+          "doc_id": "content_manuals_support_desktop_support__1efb2aae",
+          "rel_path": "content/manuals/support/desktop-support.md",
+          "units": 46
+        },
+        {
+          "doc_id": "content_manuals_support_index__501a2ecf",
+          "rel_path": "content/manuals/support/_index.md",
+          "units": 31
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_manuals_ai_mcp_catalog_and_toolkit_get_started__f60611f0",
+          "rel_path": "content/manuals/ai/mcp-catalog-and-toolkit/get-started.md",
+          "units": 7
+        },
+        {
+          "doc_id": "content_guides_dhi_backstage__98c3cde2",
+          "rel_path": "content/guides/dhi-backstage.md",
+          "units": 6
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/support/_index.md",
+      "units": 85
+    },
+    "content_manuals_unassociated_machines_index__d49ab312": {
+      "coverage": 0.9703703703703703,
+      "holders": [
+        {
+          "doc_id": "content_manuals_unassociated_machines_sign_in_enforcement__be2c803a",
+          "rel_path": "content/manuals/unassociated-machines/sign-in-enforcement.md",
+          "units": 64
+        },
+        {
+          "doc_id": "content_manuals_unassociated_machines_index__d49ab312",
+          "rel_path": "content/manuals/unassociated-machines/_index.md",
+          "units": 44
+        },
+        {
+          "doc_id": "content_manuals_unassociated_machines_add_users__2201067c",
+          "rel_path": "content/manuals/unassociated-machines/add-users.md",
+          "units": 34
+        },
+        {
+          "doc_id": "content_manuals_unassociated_machines_about__025ce2d2",
+          "rel_path": "content/manuals/unassociated-machines/about.md",
+          "units": 30
+        },
+        {
+          "doc_id": "content_manuals_admin_access_model__f5fd9193",
+          "rel_path": "content/manuals/admin/access-model.md",
+          "units": 5
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/manuals/unassociated-machines/_index.md",
+      "units": 135
+    },
+    "content_reference_api_engine_index__6dd2a778": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_engine_versioning__f9c03b91",
+          "rel_path": "content/reference/api/engine/versioning.md",
+          "units": 152
+        },
+        {
+          "doc_id": "content_reference_api_engine_index__6dd2a778",
+          "rel_path": "content/reference/api/engine/_index.md",
+          "units": 41
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 3
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_running_containers_multi_container_applications__f0fa6bfb",
+          "rel_path": "content/get-started/docker-concepts/running-containers/multi-container-applications.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/engine/_index.md",
+      "units": 193
+    },
+    "content_reference_api_engine_sdk_examples__eb819a43": {
+      "coverage": 0.9438775510204082,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_engine_sdk_run_container__27e91b9d",
+          "rel_path": "content/reference/api/engine/sdk/run-container.md",
+          "units": 58
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_pull_image_auth__2294e740",
+          "rel_path": "content/reference/api/engine/sdk/pull-image-auth.md",
+          "units": 56
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_commit_container__18c92dbf",
+          "rel_path": "content/reference/api/engine/sdk/commit-container.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_quickstart__e94c7e9c",
+          "rel_path": "content/reference/api/engine/sdk/quickstart.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_stop_containers__f443ae8e",
+          "rel_path": "content/reference/api/engine/sdk/stop-containers.md",
+          "units": 43
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/engine/sdk/examples.md",
+      "units": 196
+    },
+    "content_reference_api_engine_sdk_index__8b9020be": {
+      "coverage": 0.9436619718309859,
+      "holders": [
+        {
+          "doc_id": "content_reference_api_engine_sdk_quickstart__e94c7e9c",
+          "rel_path": "content/reference/api/engine/sdk/quickstart.md",
+          "units": 50
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_run_container__27e91b9d",
+          "rel_path": "content/reference/api/engine/sdk/run-container.md",
+          "units": 45
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_libraries__96fb9a98",
+          "rel_path": "content/reference/api/engine/sdk/libraries.md",
+          "units": 30
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_run_container_background__67c23b8e",
+          "rel_path": "content/reference/api/engine/sdk/run-container-background.md",
+          "units": 26
+        },
+        {
+          "doc_id": "content_reference_api_engine_sdk_commit_container__18c92dbf",
+          "rel_path": "content/reference/api/engine/sdk/commit-container.md",
+          "units": 24
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/api/engine/sdk/_index.md",
+      "units": 142
+    },
+    "content_reference_samples_agentic_ai__ee1428fa": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_agentic_ai__ee1428fa",
+          "rel_path": "content/reference/samples/agentic-ai.md",
+          "units": 3
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/agentic-ai.md",
+      "units": 3
+    },
+    "content_reference_samples_ai_ml__37082400": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_ai_ml__37082400",
+          "rel_path": "content/reference/samples/ai-ml.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/ai-ml.md",
+      "units": 5
+    },
+    "content_reference_samples_angular__ba737692": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_angular__ba737692",
+          "rel_path": "content/reference/samples/angular.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/angular.md",
+      "units": 5
+    },
+    "content_reference_samples_cloudflared__87536dc4": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_cloudflared__87536dc4",
+          "rel_path": "content/reference/samples/cloudflared.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/cloudflared.md",
+      "units": 5
+    },
+    "content_reference_samples_django__dbcb33c8": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_django__dbcb33c8",
+          "rel_path": "content/reference/samples/django.md",
+          "units": 6
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/django.md",
+      "units": 6
+    },
+    "content_reference_samples_dotnet__32a2a445": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_dotnet__32a2a445",
+          "rel_path": "content/reference/samples/dotnet.md",
+          "units": 8
+        },
+        {
+          "doc_id": "content_reference_samples_fastapi__a659cb88",
+          "rel_path": "content/reference/samples/fastapi.md",
+          "units": 2
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/dotnet.md",
+      "units": 8
+    },
+    "content_reference_samples_elasticsearch__9f6c6555": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_elasticsearch__9f6c6555",
+          "rel_path": "content/reference/samples/elasticsearch.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/elasticsearch.md",
+      "units": 5
+    },
+    "content_reference_samples_express__5d7c3fc7": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_express__5d7c3fc7",
+          "rel_path": "content/reference/samples/express.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/express.md",
+      "units": 5
+    },
+    "content_reference_samples_fastapi__a659cb88": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_fastapi__a659cb88",
+          "rel_path": "content/reference/samples/fastapi.md",
+          "units": 5
+        },
+        {
+          "doc_id": "content_guides_python_deploy__2a52624f",
+          "rel_path": "content/guides/python/deploy.md",
+          "units": 2
+        },
+        {
+          "doc_id": "content_reference_samples_dotnet__32a2a445",
+          "rel_path": "content/reference/samples/dotnet.md",
+          "units": 2
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/fastapi.md",
+      "units": 5
+    },
+    "content_reference_samples_flask__8e6c9907": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_flask__8e6c9907",
+          "rel_path": "content/reference/samples/flask.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/flask.md",
+      "units": 5
+    },
+    "content_reference_samples_gitea__96239345": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_gitea__96239345",
+          "rel_path": "content/reference/samples/gitea.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/gitea.md",
+      "units": 5
+    },
+    "content_reference_samples_go__c28248c4": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_go__c28248c4",
+          "rel_path": "content/reference/samples/go.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/go.md",
+      "units": 5
+    },
+    "content_reference_samples_index__60d75ebd": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_index__60d75ebd",
+          "rel_path": "content/reference/samples/_index.md",
+          "units": 21
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/_index.md",
+      "units": 22
+    },
+    "content_reference_samples_java__8d3884ae": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_java__8d3884ae",
+          "rel_path": "content/reference/samples/java.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/java.md",
+      "units": 5
+    },
+    "content_reference_samples_javascript__89e7b11e": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_javascript__89e7b11e",
+          "rel_path": "content/reference/samples/javascript.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/javascript.md",
+      "units": 5
+    },
+    "content_reference_samples_mariadb__b9c982ec": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_mariadb__b9c982ec",
+          "rel_path": "content/reference/samples/mariadb.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/mariadb.md",
+      "units": 5
+    },
+    "content_reference_samples_minecraft__9c4a38d5": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_minecraft__9c4a38d5",
+          "rel_path": "content/reference/samples/minecraft.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/minecraft.md",
+      "units": 5
+    },
+    "content_reference_samples_mongodb__b409db63": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_mongodb__b409db63",
+          "rel_path": "content/reference/samples/mongodb.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/mongodb.md",
+      "units": 5
+    },
+    "content_reference_samples_ms_sql__40244f60": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_ms_sql__40244f60",
+          "rel_path": "content/reference/samples/ms-sql.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/ms-sql.md",
+      "units": 5
+    },
+    "content_reference_samples_mysql__50377bd4": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_mysql__50377bd4",
+          "rel_path": "content/reference/samples/mysql.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/mysql.md",
+      "units": 5
+    },
+    "content_reference_samples_nextcloud__293c7409": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_nextcloud__293c7409",
+          "rel_path": "content/reference/samples/nextcloud.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/nextcloud.md",
+      "units": 5
+    },
+    "content_reference_samples_nginx__0ebc5bdc": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_nginx__0ebc5bdc",
+          "rel_path": "content/reference/samples/nginx.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/nginx.md",
+      "units": 5
+    },
+    "content_reference_samples_nodejs__13a5efaa": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_nodejs__13a5efaa",
+          "rel_path": "content/reference/samples/nodejs.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/nodejs.md",
+      "units": 5
+    },
+    "content_reference_samples_php__5b078119": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_php__5b078119",
+          "rel_path": "content/reference/samples/php.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/php.md",
+      "units": 5
+    },
+    "content_reference_samples_pi_hole__e0905622": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_pi_hole__e0905622",
+          "rel_path": "content/reference/samples/pi-hole.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/pi-hole.md",
+      "units": 5
+    },
+    "content_reference_samples_plex__8d28bb6f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_plex__8d28bb6f",
+          "rel_path": "content/reference/samples/plex.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/plex.md",
+      "units": 5
+    },
+    "content_reference_samples_portainer__0dd42600": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_portainer__0dd42600",
+          "rel_path": "content/reference/samples/portainer.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/portainer.md",
+      "units": 5
+    },
+    "content_reference_samples_postgres__df11bd62": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_postgres__df11bd62",
+          "rel_path": "content/reference/samples/postgres.md",
+          "units": 7
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/postgres.md",
+      "units": 7
+    },
+    "content_reference_samples_prometheus__8ee58a42": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_prometheus__8ee58a42",
+          "rel_path": "content/reference/samples/prometheus.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/prometheus.md",
+      "units": 5
+    },
+    "content_reference_samples_python__41a595a8": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_python__41a595a8",
+          "rel_path": "content/reference/samples/python.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/python.md",
+      "units": 5
+    },
+    "content_reference_samples_rails__9756bc0b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_rails__9756bc0b",
+          "rel_path": "content/reference/samples/rails.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/rails.md",
+      "units": 5
+    },
+    "content_reference_samples_react__e9e4550b": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_react__e9e4550b",
+          "rel_path": "content/reference/samples/react.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/react.md",
+      "units": 5
+    },
+    "content_reference_samples_redis__6550ffa9": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_redis__6550ffa9",
+          "rel_path": "content/reference/samples/redis.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/redis.md",
+      "units": 5
+    },
+    "content_reference_samples_ruby__88ea152f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_ruby__88ea152f",
+          "rel_path": "content/reference/samples/ruby.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/ruby.md",
+      "units": 5
+    },
+    "content_reference_samples_rust__0c89f0ca": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_rust__0c89f0ca",
+          "rel_path": "content/reference/samples/rust.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/rust.md",
+      "units": 5
+    },
+    "content_reference_samples_spark__3dcf6d98": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_spark__3dcf6d98",
+          "rel_path": "content/reference/samples/spark.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/spark.md",
+      "units": 5
+    },
+    "content_reference_samples_spring__8cdb5c98": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_spring__8cdb5c98",
+          "rel_path": "content/reference/samples/spring.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/spring.md",
+      "units": 5
+    },
+    "content_reference_samples_traefik__bbec6fdc": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_traefik__bbec6fdc",
+          "rel_path": "content/reference/samples/traefik.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/traefik.md",
+      "units": 5
+    },
+    "content_reference_samples_typescript__1d48cf7f": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_typescript__1d48cf7f",
+          "rel_path": "content/reference/samples/typescript.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/typescript.md",
+      "units": 5
+    },
+    "content_reference_samples_vuejs__2df1bb7a": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_vuejs__2df1bb7a",
+          "rel_path": "content/reference/samples/vuejs.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/vuejs.md",
+      "units": 5
+    },
+    "content_reference_samples_wireguard__0068946d": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_wireguard__0068946d",
+          "rel_path": "content/reference/samples/wireguard.md",
+          "units": 5
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/wireguard.md",
+      "units": 5
+    },
+    "content_reference_samples_wordpress__f5ec4cc2": {
+      "coverage": 1.0,
+      "holders": [
+        {
+          "doc_id": "content_reference_samples_wordpress__f5ec4cc2",
+          "rel_path": "content/reference/samples/wordpress.md",
+          "units": 6
+        },
+        {
+          "doc_id": "components__4c11375d",
+          "rel_path": "COMPONENTS.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_build_tag_and_publish_an_image__59a2c119",
+          "rel_path": "content/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_multi_stage_builds__5a237b51",
+          "rel_path": "content/get-started/docker-concepts/building-images/multi-stage-builds.md",
+          "units": 1
+        },
+        {
+          "doc_id": "content_get_started_docker_concepts_building_images_understanding_image_layers__2fafbe21",
+          "rel_path": "content/get-started/docker-concepts/building-images/understanding-image-layers.md",
+          "units": 1
+        }
+      ],
+      "kept": true,
+      "rel_path": "content/reference/samples/wordpress.md",
+      "units": 6
+    }
+  },
+  "unmapped_removals": []
+}

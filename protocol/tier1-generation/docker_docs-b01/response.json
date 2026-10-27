@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs",
+  "candidates": [
+    {
+      "cluster_id": "c8394a5ced84ab75fd3971c1f77d4d71245d1b5f3c1aa98135ee9aa60aa73596",
+      "task": {
+        "question": "I manage two application containers on one Linux Docker host. They need to reach each other by name, while a web endpoint should initially be reachable only from the host. How should I set up and check their networking, and what changes if we later need access from another host or have a legacy application that requires a physical-network identity?",
+        "actor": "A platform engineer deploying a small containerized application",
+        "trigger": "The application is moving from an ad hoc default-network setup to a deployment with explicit connectivity requirements.",
+        "goal": "Choose and configure networking for named container communication and controlled web access, with criteria for later topology changes.",
+        "observable_success": "The two containers communicate by name, the intended host-only endpoint works, unintended external access is avoided, and the engineer can identify when a different driver is required.",
+        "realism_rationale": "The excerpts describe a common same-host container workflow and show that publishing a port changes who can reach it. Those facts make the deployment decision consequential.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_engine_network_drivers_index__d209a78f",
+            "exact_quote": "User-defined bridge networks enable containers on the same Docker host to\n  communicate with each other."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_engine_network_port_publishing__05c5f445",
+            "exact_quote": "Publishing container ports is insecure by default. Meaning, when you publish\n> a container's ports it becomes available not only to the Docker host, but to\n> the outside world as well."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Choose a user-defined bridge for the same-host containers and explain its name-resolution benefit.",
+            "acceptance": "Recommends a user-defined bridge and states that it provides automatic DNS resolution between containers.",
+            "tier_reason": "This determines the primary network and satisfies the name-based communication goal.",
+            "page_id": "content_manuals_engine_network_drivers_bridge__a8bf8c6e",
+            "exact_quote": "**User-defined bridges provide automatic DNS resolution between containers**."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Give an actionable way to create the bridge and attach a container.",
+            "acceptance": "Includes `docker network create -d bridge my-net` and a `docker run` example using `--network=my-net`, or equivalent commands grounded in the excerpt.",
+            "tier_reason": "The recommendation must be executable.",
+            "page_id": "content_manuals_engine_network_index__3d09088c",
+            "exact_quote": "The following example creates a network using the `bridge` network driver and\nruns a container in that network:\n\n```console\n$ docker network create -d bridge my-net\n$ docker run --network=my-net -it busybox\n```"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Explain the bridge's communication boundary.",
+            "acceptance": "States that containers on the same bridge can communicate and that containers on different bridges are isolated by default except through published ports.",
+            "tier_reason": "The engineer needs to know which peers can reach the application.",
+            "page_id": "content_manuals_engine_network_drivers_bridge__a8bf8c6e",
+            "exact_quote": "By\ndefault, the Docker bridge driver automatically installs rules in the host\nmachine so that containers connected to different bridge networks can only\ncommunicate with each other using published ports."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Explain how to publish the web container's port when access beyond its bridge is intended.",
+            "acceptance": "Shows a host-to-container port mapping such as `-p 8080:80` and identifies which side is the host port.",
+            "tier_reason": "Port mapping is the concrete mechanism for the requested endpoint.",
+            "page_id": "content_manuals_engine_network_port_publishing__05c5f445",
+            "exact_quote": "For example, `docker run -p 8080:80 [...]` creates a mapping\nbetween port 8080 on any address on the Docker host, and the container's\nport 80."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Bind the initial published endpoint to localhost.",
+            "acceptance": "Uses `127.0.0.1` or `::1` in the publish mapping and explains that this limits access to the Docker host, subject to the version caveat in R8.",
+            "tier_reason": "This is essential to the stated host-only access constraint.",
+            "page_id": "content_manuals_engine_network_port_publishing__05c5f445",
+            "exact_quote": "If you include the localhost IP address (`127.0.0.1`, or `::1`) with the\n> publish flag, only the Docker host can access the published container port."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Describe the isolation tradeoff of host networking if considered for performance.",
+            "acceptance": "States that host mode shares the host networking namespace and does not allocate the container its own IP address.",
+            "tier_reason": "This prevents an inappropriate switch to host mode.",
+            "page_id": "content_manuals_engine_network_drivers_host__38ed00c1",
+            "exact_quote": "that container's network\nstack isn't isolated from the Docker host (the container shares the host's\nnetworking namespace), and the container doesn't get its own IP-address allocated."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Warn that publishing flags do not work in host mode.",
+            "acceptance": "Says `-p` and related publish options are ignored in host network mode.",
+            "tier_reason": "This changes how the endpoint would be configured under that alternative.",
+            "page_id": "content_manuals_engine_network_drivers_host__38ed00c1",
+            "exact_quote": "`host` mode networking, [port-mapping](overlay.md#publish-ports) doesn't\n> take effect, and the `-p`, `--publish`, `-P`, and `--publish-all` option are\n> ignored, producing a warning instead:"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Identify overlay networking as a cross-host option and its Swarm prerequisite.",
+            "acceptance": "Explains that overlay connects multiple Docker daemon hosts and requires Swarm even for standalone containers.",
+            "tier_reason": "This answers the stated future cross-host decision.",
+            "page_id": "content_manuals_engine_network_drivers_overlay__a869f576",
+            "exact_quote": "Overlay networks are often used to create a connection between Swarm services,\nbut you can also use it to connect standalone containers running on different\nhosts. When using standalone containers, it's still required that you use\nSwarm mode to establish a connection between the hosts."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "State the inter-host ports required before using overlay.",
+            "acceptance": "Lists 2377/tcp, 4789/udp, and 7946/tcp plus 7946/udp with their documented roles.",
+            "tier_reason": "These are operational prerequisites for the cross-host option.",
+            "page_id": "content_manuals_engine_network_drivers_overlay__a869f576",
+            "exact_quote": "- `2377/tcp`: Swarm control plane (configurable)\n- `4789/udp`: Overlay traffic (configurable)\n- `7946/tcp` and `7946/udp`: Node communication (not configurable)"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Reserve macvlan for the legacy physical-network requirement and check platform support.",
+            "acceptance": "Explains the unique-MAC physical-network appearance and states that macvlan works only on Linux hosts, not Docker Desktop for Mac or Windows.",
+            "tier_reason": "The later legacy requirement may justify a different driver, but platform support limits it.",
+            "page_id": "content_manuals_engine_network_drivers_macvlan__6372c8a9",
+            "exact_quote": "The macvlan driver only works on Linux hosts. It is not supported on\n  Docker Desktop for Mac or Windows, or Docker Engine on Windows."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Account for macvlan's direct host-communication restriction.",
+            "acceptance": "States that macvlan containers cannot communicate directly with the host and mentions the documented additional bridge-network option when that communication is needed.",
+            "tier_reason": "This can invalidate macvlan for a deployment that depends on host access.",
+            "page_id": "content_manuals_engine_network_drivers_macvlan__6372c8a9",
+            "exact_quote": "Containers attached to a macvlan network cannot communicate with the host\n  directly, this is a restriction in the Linux kernel. If you need communication\n  between the host and the containers, you can connect the containers to a\n  bridge network as well as the macvlan."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Explain when the `none` driver would meet an isolation requirement.",
+            "acceptance": "Says `--network none` leaves only loopback in the container and therefore is unsuitable for the two communicating services.",
+            "tier_reason": "It rules out a superficially secure but unusable option.",
+            "page_id": "content_manuals_engine_network_drivers_none__ff2dc0f3",
+            "exact_quote": "If you want to completely isolate the networking stack of a container, you can\nuse the `--network none` flag when starting the container. Within the container,\nonly the loopback device is created."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Qualify localhost publishing for older Docker releases.",
+            "acceptance": "Notes that before release 28.0.0, hosts on the same L2 segment can reach ports published to localhost.",
+            "tier_reason": "It is a version-specific exception to the host-only access plan.",
+            "page_id": "content_manuals_engine_network_port_publishing__05c5f445",
+            "exact_quote": "In releases older than 28.0.0, hosts within the same L2 segment (for example,\n> > hosts connected to the same network switch) can reach ports published to localhost."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Explain why simply using the default bridge misses the naming goal.",
+            "acceptance": "States that containers on the default bridge can use each other's IP addresses but cannot refer to each other by name.",
+            "tier_reason": "This validates the choice of a user-defined network against the starting setup.",
+            "page_id": "content_manuals_engine_network_index__3d09088c",
+            "exact_quote": "With the default configuration, containers attached to the default\nbridge network have unrestricted network access to each other using\ncontainer IP addresses. They cannot refer to each other by name."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Separate outbound connectivity from inbound publishing.",
+            "acceptance": "Explains that default-bridge containers can access outside services through masquerading when the host has Internet access; publishing is for inbound access.",
+            "tier_reason": "This avoids exposing a port merely to obtain outbound connectivity.",
+            "page_id": "content_manuals_engine_network_index__3d09088c",
+            "exact_quote": "Containers attached to the default bridge have access to network services\noutside the Docker host. They use \"masquerading\" which means, if the\nDocker host has Internet access, no additional configuration is needed\nfor the container to have Internet access."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "0bd92302d01a168473f81ef844df922786c79dd8cb880b330c254314d87fc82f",
+      "task": {
+        "question": "Our organization has a DHI Select subscription and needs a FIPS variant of a Python image with an additional company certificate for a regulated service. As the platform engineer, how should I find and mirror the right repository, create the customized image, and check that the resulting image is suitable to hand to the application team?",
+        "actor": "A platform engineer responsible for an organization's container images",
+        "trigger": "A regulated application needs a FIPS-capable hardened base image and a company certificate.",
+        "goal": "Produce an organization-owned customized DHI image with a traceable selection, mirroring, and validation path.",
+        "observable_success": "The selected variant is identified, its repository appears in the organization namespace, the certificate customization is created from the mirrored repository, and the handoff includes relevant scanning and compliance limits.",
+        "realism_rationale": "The excerpts explicitly describe mirroring as the path to compliance variants and customization, while also requiring a subscription. That dependency makes this a plausible multistep adoption task.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+            "exact_quote": "With a DHI Select or Enterprise subscription, you must mirror to your\norganization to get:\n\n- Compliance variants (FIPS-enabled or STIG-ready images)\n- Extended Lifecycle Support (ELS) variants (requires add-on)\n- Image or Helm chart customization"
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_dhi_how_to_customize__db61f385",
+            "exact_quote": "To add a customized Docker Hardened Image to your organization, an organization\nowner must first [mirror](./mirror.md) the DHI repository to your organization\non Docker Hub."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Check subscription and organizational authority before mirroring.",
+            "acceptance": "States that mirroring requires Select or Enterprise and that an organization owner or editor, or an authorized PAT/OAT, is needed.",
+            "tier_reason": "These are gating conditions for the workflow.",
+            "page_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+            "exact_quote": "Mirroring requires a DHI Select or Enterprise subscription. Without a\nsubscription, you can pull Docker Hardened Images directly from `dhi.io` without\nmirroring."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Find a Python repository with a FIPS variant.",
+            "acceptance": "Describes using the catalog's FIPS filter or `docker dhi catalog list --filter python --fips` to narrow the choice.",
+            "tier_reason": "The correct variant must be selected before mirroring.",
+            "page_id": "content_manuals_dhi_how_to_select_enterprise__d6b4e655",
+            "exact_quote": "To filter by name and FIPS compliance, use the `--filter` and `--fips` flags:\n\n   ```console\n   $ docker dhi catalog list --filter python --fips\n   ```"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Start mirroring the selected repository to the organization.",
+            "acceptance": "Provides the documented `docker dhi mirror start --org <your-org> -r dhi/python,<your-org>/dhi-python` pattern, with placeholders identified.",
+            "tier_reason": "This creates the organization copy needed for customization.",
+            "page_id": "content_manuals_dhi_how_to_select_enterprise__d6b4e655",
+            "exact_quote": "$ docker dhi mirror start --org <your-org> \\\n       -r dhi/python,<your-org>/dhi-python"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Verify that the mirror is available before customization.",
+            "acceptance": "Tells the engineer to wait for mirroring and confirm a `dhi-` prefixed repository in the organization namespace.",
+            "tier_reason": "The downstream customization depends on a completed mirror.",
+            "page_id": "content_manuals_dhi_how_to_select_enterprise__d6b4e655",
+            "exact_quote": "Wait for images to finish mirroring. This can take a few minutes.\n4. Verify the mirrored repository appears in your organization namespace with a\n   `dhi-` prefix (for example, `dhi-python`)."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Create the certificate customization from the mirrored repository.",
+            "acceptance": "Describes customizing the mirrored DHI image by adding an OCI artifact for the company certificate and states the owner-first mirroring dependency.",
+            "tier_reason": "This produces the requested image variant.",
+            "page_id": "content_manuals_dhi_how_to_customize__db61f385",
+            "exact_quote": "For images, this lets you select a base image, add packages,\nadd OCI artifacts (such as custom certificates or additional tools), and\nconfigure settings."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Specify the mirroring permission route.",
+            "acceptance": "States that the operator must be an organization owner or editor, or use a PAT or OAT with the required permissions.",
+            "tier_reason": "This resolves an access failure before the mirror step.",
+            "page_id": "content_manuals_dhi_how_to_mirror__819fcf55",
+            "exact_quote": "To mirror repositories, you must be an organization owner or editor, or use a\npersonal access token (PAT) or organization access token (OAT). See the CLI and\nTerraform tabs in the following sections for required permission scopes."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "State the DHI CLI version prerequisite.",
+            "acceptance": "Notes that using `docker dhi` requires Docker Desktop 4.65 or later.",
+            "tier_reason": "The command-line path depends on this version.",
+            "page_id": "content_manuals_dhi_how_to_select_enterprise__d6b4e655",
+            "exact_quote": "- [Docker Desktop](../../desktop/release-notes.md) 4.65 or later to use the\n  `docker dhi` CLI."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Give the registry authentication step for pulling a DHI.",
+            "acceptance": "Includes `docker login dhi.io` and identifies Docker credentials or an access token as authentication options.",
+            "tier_reason": "The application team needs to retrieve and test the base or source image.",
+            "page_id": "content_manuals_dhi_how_to_use__8d7b63c4",
+            "exact_quote": "You must authenticate to the Docker Hardened Images registry (`dhi.io`) to\n> pull DHI Community images. You can authenticate using either of the following:"
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Flag runtime migration assumptions for the application team.",
+            "acceptance": "Warns that runtime images may lack shells or package managers and run as non-root by default.",
+            "tier_reason": "The customized base may require application or debugging adjustments.",
+            "page_id": "content_manuals_dhi_how_to_use__8d7b63c4",
+            "exact_quote": "runtime images don't include shells or package managers, run as non-root users\nby default, and may have different configurations than images you're familiar\nwith."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Avoid overstating what the FIPS variant proves.",
+            "acceptance": "Explains that use of a FIPS image variant alone does not make the application or system fully compliant.",
+            "tier_reason": "The regulated-service handoff needs an accurate compliance claim.",
+            "page_id": "content_manuals_dhi_core_concepts_fips__6575c069",
+            "exact_quote": "Using a FIPS image variant helps meet compliance requirements but does not\n> make an application or system fully compliant. Compliance depends on how the\n> image is integrated and used within the broader system."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Identify available evidence for the FIPS variant.",
+            "acceptance": "Mentions signed test attestations documenting validated cryptographic modules as audit-supporting evidence.",
+            "tier_reason": "This guides what evidence can accompany the image handoff.",
+            "page_id": "content_manuals_dhi_core_concepts_fips__6575c069",
+            "exact_quote": "Docker provides signed test attestations that document the use of validated\n  cryptographic modules. These attestations can support internal audits and\n  compliance reporting."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Check cryptographic entropy-source assumptions when choosing a base.",
+            "acceptance": "Distinguishes the documented Debian-based OpenSSL entropy source from Alpine-based use of the host kernel.",
+            "tier_reason": "This is a relevant variant-level consideration for a regulated service.",
+            "page_id": "content_manuals_dhi_core_concepts_fips__6575c069",
+            "exact_quote": "Entropy sources (random number generation for cryptographic operations) vary\n  by base image. Debian-based images use the OpenSSL entropy source, while\n  Alpine-based images source entropy from the host kernel."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Use a VEX-aware scanner to assess vulnerabilities.",
+            "acceptance": "Recommends a scanner that applies DHI VEX statements and identifies Docker Scout as a documented option.",
+            "tier_reason": "The handoff needs an assessment that interprets included VEX evidence.",
+            "page_id": "content_manuals_dhi_how_to_scan__e82169ee",
+            "exact_quote": "To get accurate vulnerability assessments, use scanners that support\n[VEX](/manuals/dhi/core-concepts/vex.md) attestations. The following scanners can\nread and apply the VEX statements included with Docker Hardened Images:\n\n- [Docker Scout](#docker-scout): Automatically applies VEX statements with zero configuration"
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Provide a concrete Scout scan for the chosen tag and platform.",
+            "acceptance": "Includes the `docker scout cves dhi.io/<image>:<tag> --platform <platform>` pattern and says to substitute the selected image, tag, and platform.",
+            "tier_reason": "This turns the vulnerability check into an executable validation step.",
+            "page_id": "content_manuals_dhi_how_to_scan__e82169ee",
+            "exact_quote": "$ docker login dhi.io\n$ docker scout cves dhi.io/<image>:<tag> --platform <platform>"
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Check architecture availability of the certificate artifact before customization.",
+            "acceptance": "Explains that a platform cannot be selected in the customization UI if any added OCI artifact lacks that platform.",
+            "tier_reason": "This prevents a platform-specific customization failure.",
+            "page_id": "content_manuals_dhi_how_to_customize__db61f385",
+            "exact_quote": "The customization UI will only allow you to select platforms that are\n> available in all OCI artifacts you've added. If a platform is missing from\n> any OCI artifact, you won't be able to select that platform for your\n> customization."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs",
+  "candidates": [
+    {
+      "cluster_id": "3799b9691ad17b5504febc0f92bba5e7638a3ca2f454b03730169a07ba8295b9",
+      "task": {
+        "question": "A community issue asks for a new Docker documentation guide with platform-specific steps and links to existing product pages. As a contributor, how should I prepare a focused, reviewable pull request?",
+        "actor": "Community documentation contributor",
+        "trigger": "A request for missing task-oriented documentation",
+        "goal": "Add a usable guide and propose it through the documentation contribution workflow",
+        "observable_success": "A focused pull request contains the guide in the appropriate source location, with valid page metadata, clear platform-specific instructions, working source cross-references, and only intended files staged.",
+        "realism_rationale": "The contribution guide explicitly invites requests for missing content and describes pull requests as the way to propose changes. The separate source structure and link rules make creating a new guide a substantive task.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "contributing__b8334458",
+            "exact_quote": "You can also use\nthe issue tracker to raise requests on improvements, or suggest new content\nthat you think is missing or that you would like to see."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "When writing internal cross-references in source files, keep the `/manuals/`\nprefix in the path — Hugo requires the full source path. The stripping only\naffects the published URL, not the internal link target."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Treat the reported gap as a documentation contribution and identify the requested content change.",
+            "acceptance": "The answer ties the proposed guide to an issue requesting missing or improved documentation.",
+            "tier_reason": "Defines the concrete contribution being made.",
+            "page_id": "contributing__b8334458",
+            "exact_quote": "You can also use\nthe issue tracker to raise requests on improvements, or suggest new content\nthat you think is missing or that you would like to see."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Locate the editable Markdown source under the repository's content directory.",
+            "acceptance": "The answer identifies `/content` as the primary Markdown source and checks whether the relevant content is edited there.",
+            "tier_reason": "The contributor needs the correct source before editing.",
+            "page_id": "contributing__b8334458",
+            "exact_quote": "The content is primarily\nMarkdown files in the `/content` directory of this repository (with a few\nexceptions, see [Content not edited here](#content-not-edited-here))."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Work from a fork and local clone.",
+            "acceptance": "The answer directs the contributor to fork `docker/docs` and clone that fork before preparing changes.",
+            "tier_reason": "A fork is required to propose the pull request.",
+            "page_id": "contributing__b8334458",
+            "exact_quote": "You must fork this repository to create a pull request to propose changes. For more details, see [Local setup](#local-setup)."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Create a branch for the contribution.",
+            "acceptance": "The answer includes checking out a branch for the guide change.",
+            "tier_reason": "This is part of the documented local contribution sequence.",
+            "page_id": "contributing__b8334458",
+            "exact_quote": "3. Configure Git to sync your docs fork with the upstream docker/docs\n   repository and prevent accidental pushes to the upstream repository:"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Write the guide to be accurate, succinct, sufficient to complete the task, and understandable.",
+            "acceptance": "The answer applies the four stated writing principles to the proposed instructions.",
+            "tier_reason": "These properties make the new guide minimally usable.",
+            "page_id": "style__137b172f",
+            "exact_quote": "1. **Correct** - Information is accurate\n2. **Concise** - Succinct without unnecessary words\n3. **Complete** - Includes enough detail to complete the task\n4. **Clear** - Easy to understand"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Add required front matter to the new page.",
+            "acceptance": "The answer specifies `title`, `description`, and `keywords` at the top of the page.",
+            "tier_reason": "Prevents an invalid new documentation page.",
+            "page_id": "components__4c11375d",
+            "exact_quote": "Every documentation page requires front matter at the top of the file.\n\n### Required fields\n\n```yaml\n---\ntitle: Install Docker Engine on Ubuntu\ndescription: Instructions for installing Docker Engine on Ubuntu\nkeywords: requirements, apt, installation, ubuntu\n---"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Use `linkTitle` only when the sidebar needs a shorter title.",
+            "acceptance": "The answer distinguishes the page `title` from the optional sidebar `linkTitle`.",
+            "tier_reason": "Helps navigation without adding unnecessary metadata.",
+            "page_id": "components__4c11375d",
+            "exact_quote": "| linkTitle       | Shorter title for navigation and sidebar (if different from title) |"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Present platform-specific variants with tabs when appropriate.",
+            "acceptance": "The answer recommends tabs for the requested platform-specific instructions.",
+            "tier_reason": "Makes the distinct platform paths usable.",
+            "page_id": "components__4c11375d",
+            "exact_quote": "Use tabs for platform-specific instructions or content variations."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Consider the task-oriented guides section for the new page.",
+            "acceptance": "The answer identifies `content/guides/` as the task-oriented guide area and chooses placement based on the page's purpose.",
+            "tier_reason": "Avoids placing a guide among unrelated reference material.",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "content/          # Documentation source (Markdown + Hugo front matter)\n├── manuals/      # Product docs (Engine, Desktop, Hub, etc.)\n├── guides/       # Task-oriented guides\n├── reference/    # API and CLI reference"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Keep the `/manuals/` prefix in source cross-references.",
+            "acceptance": "The answer distinguishes internal source links from published URLs and retains `/manuals/` in internal targets.",
+            "tier_reason": "Prevents broken cross-references.",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "When writing internal cross-references in source files, keep the `/manuals/`\nprefix in the path — Hugo requires the full source path. The stripping only\naffects the published URL, not the internal link target."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Check heading anchors used by cross-references.",
+            "acceptance": "The answer says anchor fragments must match Hugo's generated heading IDs.",
+            "tier_reason": "Catches links that reach the page but miss the intended section.",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "Anchor links must\nexactly match the generated heading ID (Hugo lowercases and slugifies\nheadings)."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Avoid local edits to vendored or generated reference material.",
+            "acceptance": "The answer routes a needed fix in `_vendor/`, `data/cli/`, or generated CLI reference pages to its source repository.",
+            "tier_reason": "Those local changes would target non-owned source.",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "Content in `_vendor/` and CLI reference data in `data/cli/` are vendored\nfrom upstream repos. Content pages under `content/reference/cli/` are\ngenerated from `data/cli/` YAML. Do not edit any of these files — changes\nmust go to the source repository:"
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Inspect staged files before committing.",
+            "acceptance": "The answer includes `git diff --cached --name-only` and removing unintentionally staged generated files.",
+            "tier_reason": "Keeps the pull request limited to intended source changes.",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "Run `git diff --cached --name-only` and\n  confirm only documentation files appear. If `package-lock.json` or other\n  generated files are staged, unstage them:"
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Confirm the push target is the contributor's fork.",
+            "acceptance": "The answer checks `origin` before pushing and uses the fork owner as the pull request head.",
+            "tier_reason": "Prevents targeting the upstream repository for a contributor push.",
+            "page_id": "agents__c2c873be",
+            "exact_quote": "Before pushing, confirm\n  `git remote get-url origin` returns your fork URL, not\n  `github.com/docker/docs`. Use `--head FORK_OWNER:branch-name` with\n  `gh pr create`."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Keep product bug reports separate from the documentation change.",
+            "acceptance": "The answer routes an underlying product bug or feature request to that project's repository instead of folding it into the docs pull request.",
+            "tier_reason": "Clarifies the boundary of the contribution.",
+            "page_id": "readme__275d783e",
+            "exact_quote": "If you have an idea for a new feature or behavior change in a specific aspect of\nDocker or have found a product bug, file an issue in the project's\nrepository."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "babbe78033329f877450be092868f86384c61efed5a4d0c37d8d065f94174238",
+      "task": {
+        "question": "I'm an IT administrator rolling out Docker Desktop to managed Windows devices through Intune. How should I prepare the deployment so the installation and organization settings are consistent, users can sign in under our policy, and I can verify when a restart or update is needed?",
+        "actor": "IT administrator",
+        "trigger": "A planned bulk deployment to managed Windows devices",
+        "goal": "Deploy Docker Desktop through Intune with enforceable organization settings",
+        "observable_success": "The Intune Windows app is configured with the MSI package and an appropriate install command, restart-required installs are handled, and the intended settings take effect for signed-in organization users.",
+        "realism_rationale": "The MSI page explicitly describes bulk, policy-driven installation for administrators. The Intune instructions identify a restart consequence tied to installed Windows features and local group membership.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_msi_install_and_configure__21afaa33",
+            "exact_quote": "The MSI package supports various MDM (Mobile Device Management) solutions, making it ideal for bulk installations and eliminating the need for manual setups by individual users."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_use_intune__3c1b6e2e",
+            "exact_quote": "This is because the Docker Desktop installer installs Windows features depending on your engine selection and also updates the membership of the `docker-users` local group."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Obtain the organization's Windows MSI installer from the Admin Console.",
+            "acceptance": "The answer directs the administrator to Docker Home, Admin Console, Enterprise deployment, and the Windows OS MSI download.",
+            "tier_reason": "Provides the deployment package.",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_msi_install_and_configure__21afaa33",
+            "exact_quote": "1. In [Docker Home](http://app.docker.com), choose your organization.\n2. Select **Admin Console**, then **Enterprise deployment**.\n3. From the **Windows OS** tab, select the **Download MSI installer** button."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Create an Intune Windows Win32 app using the packaged installer.",
+            "acceptance": "The answer identifies the Windows app (Win32) type and selects the `intunewin` package.",
+            "tier_reason": "Establishes the managed deployment path.",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_use_intune__3c1b6e2e",
+            "exact_quote": "2. Add a new app. Select **Apps**, then **Windows**, then **Add**.\n3. For the app type, select **Windows app (Win32)**\n4. Select the `intunewin` package."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Set or confirm the silent MSI install command in Intune.",
+            "acceptance": "The answer uses the documented `msiexec /i \"DockerDesktop.msi\" /qn` default and notes that the Program install command can be adjusted.",
+            "tier_reason": "Specifies how the package installs without manual interaction.",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_use_intune__3c1b6e2e",
+            "exact_quote": "On the **Program** tab, you can update the **Install command** field to suit your needs. The field is pre-populated with `msiexec /i \"DockerDesktop.msi\" /qn`."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Choose an installation backend supported by target devices.",
+            "acceptance": "The answer accounts for WSL versus Hyper-V and the case where only one backend is supported.",
+            "tier_reason": "The backend affects the installation configuration.",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_msi_install_and_configure__21afaa33",
+            "exact_quote": "Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Handle a successful install that requires a restart.",
+            "acceptance": "The answer recommends scheduling a reboot and treats return code `3010` as success with reboot required.",
+            "tier_reason": "A deployment can succeed while remaining incomplete until restart.",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_use_intune__3c1b6e2e",
+            "exact_quote": "It's recommended you configure the Intune deployment to schedule a reboot of the machine on successful installs.\n   >\n   > This is because the Docker Desktop installer installs Windows features depending on your engine selection and also updates the membership of the `docker-users` local group.\n   >\n   > You may also want to set Intune to determine behaviour based on return codes and watch for a return code of `3010`. Return code 3010 means the installation succeeded but a reboot is required."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Choose a Settings Management method for the fleet.",
+            "acceptance": "The answer distinguishes Admin Console policies from distributing a local `admin-settings.json` file.",
+            "tier_reason": "Identifies the available enforcement mechanisms.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_index__e6b96c1b",
+            "exact_quote": "Administrators can define settings using one of these methods:\n\n- [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the\n  Docker Admin Console."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Account for policy precedence.",
+            "acceptance": "The answer states that user-specific and organization default Admin Console policies outrank local `admin-settings.json` settings.",
+            "tier_reason": "Explains why an intended local value might not apply.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_index__e6b96c1b",
+            "exact_quote": "1. User-specific policies: Highest priority\n1. Organization default policy: Applied when no user-specific policy exists\n1. Local `admin-settings.json` file: Lowest priority, overridden by Admin Console policies"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Verify the organization domain before relying on managed policies.",
+            "acceptance": "The answer includes domain verification as a condition for policies to take effect.",
+            "tier_reason": "Prevents a configured policy from being mistaken for an active one.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_index__e6b96c1b",
+            "exact_quote": "You can create settings management policies at any time, but your organization needs to verify a domain before the policies take effect."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Explain the effect of enforced settings on users.",
+            "acceptance": "The answer says enforced values override user-defined configurations and developers cannot modify them.",
+            "tier_reason": "Clarifies the operational effect of central management.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_index__e6b96c1b",
+            "exact_quote": "Enforced settings override user-defined configurations and can't be modified by developers."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Check subscription and sign-in eligibility for a settings file.",
+            "acceptance": "The answer states that users must be signed in to a Docker Business organization or the file is ignored.",
+            "tier_reason": "Gives a concrete reason for settings failing to apply.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_json_file__0c326283",
+            "exact_quote": "Users must be signed in and part of a Docker Business organization. If either condition isn't met, the settings file is ignored."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Place a manually distributed settings file at the Windows location in the required encoding.",
+            "acceptance": "The answer identifies `C:\\ProgramData\\DockerDesktop\\admin-settings.json` and UTF-8 without BOM.",
+            "tier_reason": "Makes the local policy discoverable and parseable.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_json_file__0c326283",
+            "exact_quote": "- Create it manually (UTF-8 without BOM) and place it in the following locations:\n  - Mac: `/Library/Application\\ Support/com.docker.docker/admin-settings.json`\n  - Windows: `C:\\ProgramData\\DockerDesktop\\admin-settings.json`"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Protect the local policy file when distributing it.",
+            "acceptance": "The answer places the file in a protected directory and describes MDM distribution at scale.",
+            "tier_reason": "Reduces unauthorized changes to enforced settings.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_json_file__0c326283",
+            "exact_quote": "Place the file in a protected directory to prevent unauthorized changes. Use Mobile Device Management (MDM) tools like Jamf to distribute the file at scale across your organization."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Fully quit and reopen existing Docker Desktop installations after changing local settings.",
+            "acceptance": "The answer distinguishes a full quit and relaunch from a menu restart.",
+            "tier_reason": "Provides a validation step for existing devices.",
+            "page_id": "content_manuals_enterprise_security_hardened_desktop_settings_management_configure_json_file__0c326283",
+            "exact_quote": "For existing installations:\n\n1. Quit Docker Desktop completely.\n1. Relaunch Docker Desktop.\n\n> [!IMPORTANT]\n>\n> You must fully quit and reopen Docker Desktop. Restarting from the menu isn't sufficient."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Select a Windows sign-in enforcement method and verify its prompt.",
+            "acceptance": "The answer identifies the Windows registry key method with `allowedOrgs`, a Docker Desktop restart, and the `Sign in required!` prompt as verification.",
+            "tier_reason": "Connects organization authentication to observable behavior.",
+            "page_id": "content_manuals_enterprise_security_enforce_sign_in_methods__bad0ddea",
+            "exact_quote": "1. Create a multi-string value name `allowedOrgs`.\n1. Use your organization names as string data. You can add multiple organizations:\n   - Use lowercase letters only\n   - Add each organization on a separate line\n   - Do not use spaces or commas as separators\n1. Restart Docker Desktop.\n1. Verify the `Sign in required!` prompt appears in Docker Desktop."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Plan the MSI update path and version-specific exception.",
+            "acceptance": "The answer states that MSI in-app updates are disabled by default, updates ordinarily use a new Admin Console installer, and version 4.60 or later can enable in-app updates through `disableUpdate=false` in Settings Management.",
+            "tier_reason": "Supports ongoing version control after deployment.",
+            "page_id": "content_manuals_enterprise_enterprise_deployment_msi_install_and_configure__21afaa33",
+            "exact_quote": "When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates.\n> Starting with Docker Desktop version 4.60 and later, in-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](../security/hardened-desktop/settings-management/)."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

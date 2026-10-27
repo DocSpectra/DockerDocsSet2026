@@ -1,0 +1,144 @@
+{"question": "What is a Docker ID?", "question_id": "docker_docs_faq_0001"}
+{"question": "Can I change my Docker ID?", "question_id": "docker_docs_faq_0002"}
+{"question": "What if my Docker ID is taken?", "question_id": "docker_docs_faq_0003"}
+{"question": "What's an organization name or namespace?", "question_id": "docker_docs_faq_0004"}
+{"question": "Some of my organizations don\u2019t have a Docker Business subscription. Can I still use a parent company?", "question_id": "docker_docs_faq_0005"}
+{"question": "What happens if one of my organizations downgrades from Docker Business, but I still need access as a company owner?", "question_id": "docker_docs_faq_0006"}
+{"question": "Do company owners occupy a subscription seat?", "question_id": "docker_docs_faq_0007"}
+{"question": "What permissions does the company owner have in the associated/nested organizations?", "question_id": "docker_docs_faq_0008"}
+{"question": "How can I see how many active users are in my organization?", "question_id": "docker_docs_faq_0009"}
+{"question": "Do users need to authenticate with Docker before an owner can add them to an organization?", "question_id": "docker_docs_faq_0010"}
+{"question": "Can I force my organization's members to authenticate before using Docker Desktop and are there any benefits?", "question_id": "docker_docs_faq_0011"}
+{"question": "Can I convert my personal Docker ID to an organization account?", "question_id": "docker_docs_faq_0012"}
+{"question": "Do organization invitees take up seats?", "question_id": "docker_docs_faq_0013"}
+{"question": "Do organization owners take a seat?", "question_id": "docker_docs_faq_0014"}
+{"question": "What is the difference between user, invitee, seat, and member?", "question_id": "docker_docs_faq_0015"}
+{"question": "If I have two organizations and a user belongs to both organizations, do they take up two seats?", "question_id": "docker_docs_faq_0016"}
+{"question": "What process does Docker follow to add a new MCP server to the catalog?", "question_id": "docker_docs_faq_0017"}
+{"question": "Under what conditions does Docker reject MCP server submissions?", "question_id": "docker_docs_faq_0018"}
+{"question": "Does Docker take accountability for malicious MCP servers in the Toolkit?", "question_id": "docker_docs_faq_0019"}
+{"question": "How are credentials managed for MCP servers?", "question_id": "docker_docs_faq_0020"}
+{"question": "Are credentials removed when an MCP server is uninstalled?", "question_id": "docker_docs_faq_0021"}
+{"question": "Why don't I see remote MCP servers in the catalog?", "question_id": "docker_docs_faq_0022"}
+{"question": "What's the difference between profiles and the catalog?", "question_id": "docker_docs_faq_0023"}
+{"question": "Can I share profiles with my team?", "question_id": "docker_docs_faq_0024"}
+{"question": "Do I need to create a profile to use MCP Toolkit?", "question_id": "docker_docs_faq_0025"}
+{"question": "What happens to servers when I switch profiles?", "question_id": "docker_docs_faq_0026"}
+{"question": "Can I use the same server in multiple profiles?", "question_id": "docker_docs_faq_0027"}
+{"question": "Why do I need to sign in?", "question_id": "docker_docs_faq_0028"}
+{"question": "Does the CLI collect telemetry?", "question_id": "docker_docs_faq_0029"}
+{"question": "How do I set custom environment variables inside a sandbox?", "question_id": "docker_docs_faq_0030"}
+{"question": "Why do agents run without approval prompts?", "question_id": "docker_docs_faq_0031"}
+{"question": "How do I know if my agent is running in a sandbox?", "question_id": "docker_docs_faq_0032"}
+{"question": "Why doesn't the sandbox use my user-level agent configuration?", "question_id": "docker_docs_faq_0033"}
+{"question": "What happens if my subscription payment fails?", "question_id": "docker_docs_faq_0034"}
+{"question": "Can I manually retry a failed payment?", "question_id": "docker_docs_faq_0035"}
+{"question": "Does Docker collect sales tax and/or VAT?", "question_id": "docker_docs_faq_0036"}
+{"question": "Does Docker offer academic pricing?", "question_id": "docker_docs_faq_0037"}
+{"question": "Can I use pay by invoice for upgrades or additional seats?", "question_id": "docker_docs_faq_0038"}
+{"question": "What's the difference between `up`, `run`, and `start`?", "question_id": "docker_docs_faq_0039"}
+{"question": "Why do my services take 10 seconds to recreate or stop?", "question_id": "docker_docs_faq_0040"}
+{"question": "How do I run multiple copies of a Compose file on the same host?", "question_id": "docker_docs_faq_0041"}
+{"question": "Can I use JSON instead of YAML for my Compose file?", "question_id": "docker_docs_faq_0042"}
+{"question": "Should I include my code with `COPY`/`ADD` or a volume?", "question_id": "docker_docs_faq_0043"}
+{"question": "Can I use Docker Desktop offline?", "question_id": "docker_docs_faq_0044"}
+{"question": "How do I connect to the remote Docker Engine API?", "question_id": "docker_docs_faq_0045"}
+{"question": "How do I connect from a container to a service on the host?", "question_id": "docker_docs_faq_0046"}
+{"question": "Can I pass through a USB device to a container?", "question_id": "docker_docs_faq_0047"}
+{"question": "How do I verify Docker Desktop is using a proxy server ?", "question_id": "docker_docs_faq_0048"}
+{"question": "How do I run Docker Desktop without administrator privileges?", "question_id": "docker_docs_faq_0049"}
+{"question": "Why does Docker Desktop for Linux run a VM?", "question_id": "docker_docs_faq_0050"}
+{"question": "How do I enable file sharing?", "question_id": "docker_docs_faq_0051"}
+{"question": "How do I use Docker SDKs with Docker Desktop for Linux?", "question_id": "docker_docs_faq_0052"}
+{"question": "Where does Docker Desktop store Linux containers?", "question_id": "docker_docs_faq_0053"}
+{"question": "Where is the disk image file?", "question_id": "docker_docs_faq_0054"}
+{"question": "What if the file is too large?", "question_id": "docker_docs_faq_0055"}
+{"question": "How do I move the file to a bigger drive?", "question_id": "docker_docs_faq_0056"}
+{"question": "How do I delete unnecessary containers and images?", "question_id": "docker_docs_faq_0057"}
+{"question": "How do I reduce the maximum size of the file?", "question_id": "docker_docs_faq_0058"}
+{"question": "What is HyperKit?", "question_id": "docker_docs_faq_0059"}
+{"question": "What is the benefit of HyperKit?", "question_id": "docker_docs_faq_0060"}
+{"question": "Where does Docker Desktop store Linux containers and images?", "question_id": "docker_docs_faq_0061"}
+{"question": "Where is the disk image file?", "question_id": "docker_docs_faq_0062"}
+{"question": "What if the file is too big?", "question_id": "docker_docs_faq_0063"}
+{"question": "How do I move the file to a bigger drive?", "question_id": "docker_docs_faq_0064"}
+{"question": "How do I delete unnecessary containers and images?", "question_id": "docker_docs_faq_0065"}
+{"question": "How do I reduce the maximum size of the file?", "question_id": "docker_docs_faq_0066"}
+{"question": "How do I add TLS certificates?", "question_id": "docker_docs_faq_0067"}
+{"question": "How frequent will new releases be?", "question_id": "docker_docs_faq_0068"}
+{"question": "How do I ensure that all users in my organization are using the same version?", "question_id": "docker_docs_faq_0069"}
+{"question": "Can I use VirtualBox alongside Docker Desktop?", "question_id": "docker_docs_faq_0070"}
+{"question": "Why is Windows 10 or Windows 11 required?", "question_id": "docker_docs_faq_0071"}
+{"question": "Can I run Docker Desktop on Windows Server?", "question_id": "docker_docs_faq_0072"}
+{"question": "How do symlinks work on Windows?", "question_id": "docker_docs_faq_0073"}
+{"question": "How do I add custom CA certificates?", "question_id": "docker_docs_faq_0074"}
+{"question": "How do I add client certificates?", "question_id": "docker_docs_faq_0075"}
+{"question": "What happens to user data if they have an older Docker Desktop installation (i.e. `.exe`)?", "question_id": "docker_docs_faq_0076"}
+{"question": "What happens if the user's machine has an older `.exe` installation?", "question_id": "docker_docs_faq_0077"}
+{"question": "My installation failed, how do I find out what happened?", "question_id": "docker_docs_faq_0078"}
+{"question": "Why does the installer prompt for a reboot at the end of every fresh installation?", "question_id": "docker_docs_faq_0079"}
+{"question": "Why isn't the `docker-users` group populated when the MSI is installed with Intune or another MDM solution?", "question_id": "docker_docs_faq_0080"}
+{"question": "Why doesn't my MDM tool apply all Docker Desktop configuration settings at once?", "question_id": "docker_docs_faq_0081"}
+{"question": "Do I need to change the way I use Docker when ECI is switched on?", "question_id": "docker_docs_faq_0082"}
+{"question": "Do all container workloads work well with ECI?", "question_id": "docker_docs_faq_0083"}
+{"question": "Why not just restrict usage of the `--privileged` flag?", "question_id": "docker_docs_faq_0084"}
+{"question": "Does ECI affect container performance?", "question_id": "docker_docs_faq_0085"}
+{"question": "Can I override the container runtime with ECI turned on?", "question_id": "docker_docs_faq_0086"}
+{"question": "Does ECI protect containers created before turning it on?", "question_id": "docker_docs_faq_0087"}
+{"question": "Which containers does ECI protect?", "question_id": "docker_docs_faq_0088"}
+{"question": "Can I mount the Docker socket with ECI turned on?", "question_id": "docker_docs_faq_0089"}
+{"question": "What bind mounts does ECI restrict?", "question_id": "docker_docs_faq_0090"}
+{"question": "Can I add sub-domains?", "question_id": "docker_docs_faq_0091"}
+{"question": "Do I need to keep the DNS TXT record permanently?", "question_id": "docker_docs_faq_0092"}
+{"question": "Can I verify the same domain for multiple organizations?", "question_id": "docker_docs_faq_0093"}
+{"question": "Does Docker SSO support authenticating through the command line?", "question_id": "docker_docs_faq_0094"}
+{"question": "How does SSO affect automation systems and CI/CD pipelines?", "question_id": "docker_docs_faq_0095"}
+{"question": "Can I turn on SSO without enforcing it immediately?", "question_id": "docker_docs_faq_0096"}
+{"question": "SSO is enforced, but a user can sign in using a username and password. Why is this happening?", "question_id": "docker_docs_faq_0097"}
+{"question": "Can I test SSO functionality before going to production?", "question_id": "docker_docs_faq_0098"}
+{"question": "What is enforcing SSO versus enforcing sign-in?", "question_id": "docker_docs_faq_0099"}
+{"question": "What SSO flows does Docker support?", "question_id": "docker_docs_faq_0100"}
+{"question": "Does Docker SSO support multi-factor authentication?", "question_id": "docker_docs_faq_0101"}
+{"question": "Can I retain my Docker ID when using SSO?", "question_id": "docker_docs_faq_0102"}
+{"question": "Are there any firewall rules required for SSO configuration?", "question_id": "docker_docs_faq_0103"}
+{"question": "Does Docker use my IdP's default session timeout?", "question_id": "docker_docs_faq_0104"}
+{"question": "Can I use multiple identity providers with Docker SSO?", "question_id": "docker_docs_faq_0105"}
+{"question": "Can I change my identity provider after configuring SSO?", "question_id": "docker_docs_faq_0106"}
+{"question": "What information do I need from my identity provider to configure SSO?", "question_id": "docker_docs_faq_0107"}
+{"question": "What happens if my existing certificate expires?", "question_id": "docker_docs_faq_0108"}
+{"question": "What happens if my IdP goes down when SSO is turned on?", "question_id": "docker_docs_faq_0109"}
+{"question": "Do bot accounts need seats to access organizations using SSO?", "question_id": "docker_docs_faq_0110"}
+{"question": "Does SAML SSO use Just-in-Time provisioning?", "question_id": "docker_docs_faq_0111"}
+{"question": "My Entra ID SSO connection isn't working and shows an error. How can I troubleshoot this?", "question_id": "docker_docs_faq_0112"}
+{"question": "Do I need to manually add users to my organization?", "question_id": "docker_docs_faq_0113"}
+{"question": "Can users use different email addresses to authenticate through SSO?", "question_id": "docker_docs_faq_0114"}
+{"question": "How will users know they're being added to a Docker organization?", "question_id": "docker_docs_faq_0115"}
+{"question": "Can I convert existing users from non-SSO to SSO accounts?", "question_id": "docker_docs_faq_0116"}
+{"question": "Is Docker SSO fully synced with the IdP?", "question_id": "docker_docs_faq_0117"}
+{"question": "How does turning off Just-in-Time provisioning affect user sign-in?", "question_id": "docker_docs_faq_0118"}
+{"question": "Can someone join an organization without an invitation?", "question_id": "docker_docs_faq_0119"}
+{"question": "What happens to existing licensed users when SCIM is turned on?", "question_id": "docker_docs_faq_0120"}
+{"question": "Is user information visible in Docker Hub?", "question_id": "docker_docs_faq_0121"}
+{"question": "How are containers isolated from the host in Docker Desktop?", "question_id": "docker_docs_faq_0122"}
+{"question": "Which portions of the host filesystem can containers access?", "question_id": "docker_docs_faq_0123"}
+{"question": "Can containers running as root access admin-owned files on the host?", "question_id": "docker_docs_faq_0124"}
+{"question": "How do I report a vulnerability?", "question_id": "docker_docs_faq_0125"}
+{"question": "Does Docker lockout users after failed sign-ins?", "question_id": "docker_docs_faq_0126"}
+{"question": "Do you support physical multi-factor authentication (MFA) with YubiKeys?", "question_id": "docker_docs_faq_0127"}
+{"question": "How are sessions managed and do they expire?", "question_id": "docker_docs_faq_0128"}
+{"question": "How does Docker distinguish between employee users and contractor users?", "question_id": "docker_docs_faq_0129"}
+{"question": "How long are activity logs available?", "question_id": "docker_docs_faq_0130"}
+{"question": "Can I export a list of users with their roles and privileges?", "question_id": "docker_docs_faq_0131"}
+{"question": "How does Docker Desktop handle authentication information?", "question_id": "docker_docs_faq_0132"}
+{"question": "How do I remove users who aren't part of my IdP when using SSO without SCIM?", "question_id": "docker_docs_faq_0133"}
+{"question": "What metadata does Scout collect from container images?", "question_id": "docker_docs_faq_0134"}
+{"question": "How are Marketplace extensions vetted for security?", "question_id": "docker_docs_faq_0135"}
+{"question": "Can I prevent users from pushing images to Docker Hub private repositories?", "question_id": "docker_docs_faq_0136"}
+{"question": "How can I limit container internet access?", "question_id": "docker_docs_faq_0137"}
+{"question": "Can I apply firewall rules to container network traffic?", "question_id": "docker_docs_faq_0138"}
+{"question": "Does Docker Desktop for Windows with Hyper-V allow users to create other VMs?", "question_id": "docker_docs_faq_0139"}
+{"question": "How does Docker Desktop achieve network isolation with Hyper-V and WSL 2?", "question_id": "docker_docs_faq_0140"}
+{"question": "Can I transfer my subscription from one user or organization account to another?", "question_id": "docker_docs_faq_0141"}
+{"question": "Can I pause or delay my Docker subscription?", "question_id": "docker_docs_faq_0142"}
+{"question": "Does Docker offer academic pricing?", "question_id": "docker_docs_faq_0143"}
+{"question": "How can I contribute to Docker content?", "question_id": "docker_docs_faq_0144"}

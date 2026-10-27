@@ -1,0 +1,25 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "reason": {
+      "type": "string"
+    },
+    "supporting_span": {
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "answers",
+        "not_answer",
+        "insufficient"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "verdict",
+    "supporting_span",
+    "reason"
+  ],
+  "type": "object"
+}

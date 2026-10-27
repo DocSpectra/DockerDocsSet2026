@@ -1,0 +1,75 @@
+{
+  "groups": [
+    {
+      "in_freeze_111": [
+        false,
+        false
+      ],
+      "question_ids": [
+        "docker_docs_faq_0037",
+        "docker_docs_faq_0143"
+      ],
+      "source_paths": [
+        "content/manuals/billing/faqs.md",
+        "content/manuals/subscription/faq.md"
+      ]
+    },
+    {
+      "in_freeze_111": [
+        true,
+        true
+      ],
+      "question_ids": [
+        "docker_docs_faq_0054",
+        "docker_docs_faq_0062"
+      ],
+      "source_paths": [
+        "content/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md",
+        "content/manuals/desktop/troubleshoot-and-support/faqs/macfaqs.md"
+      ]
+    },
+    {
+      "in_freeze_111": [
+        true,
+        true
+      ],
+      "question_ids": [
+        "docker_docs_faq_0056",
+        "docker_docs_faq_0064"
+      ],
+      "source_paths": [
+        "content/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md",
+        "content/manuals/desktop/troubleshoot-and-support/faqs/macfaqs.md"
+      ]
+    },
+    {
+      "in_freeze_111": [
+        true,
+        true
+      ],
+      "question_ids": [
+        "docker_docs_faq_0057",
+        "docker_docs_faq_0065"
+      ],
+      "source_paths": [
+        "content/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md",
+        "content/manuals/desktop/troubleshoot-and-support/faqs/macfaqs.md"
+      ]
+    },
+    {
+      "in_freeze_111": [
+        false,
+        false
+      ],
+      "question_ids": [
+        "docker_docs_faq_0058",
+        "docker_docs_faq_0066"
+      ],
+      "source_paths": [
+        "content/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md",
+        "content/manuals/desktop/troubleshoot-and-support/faqs/macfaqs.md"
+      ]
+    }
+  ],
+  "rule": "question text equal after lowercasing and whitespace collapse; distinct IDs and source pages are kept"
+}

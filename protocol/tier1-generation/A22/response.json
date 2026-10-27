@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "d15b7bbaff38c4e8f1cda19b0d65aef99ba824bbe8d1b2f30ba5d31739d672f8",
+      "task": {
+        "question": "I'm the owner of a Docker organization onboarding 1,200 colleagues from an email export. How should I prepare capacity, invite them with appropriate roles, and restrict Docker Desktop use to organization members? Include checks that prevent onboarding blockers and options for managing future joiners through our identity provider.",
+        "actor": "Docker organization owner responsible for employee onboarding and Desktop access.",
+        "trigger": "A rollout requires inviting 1,200 colleagues, while available seats and invitees' account readiness need checking.",
+        "goal": "Complete bulk onboarding with sufficient subscription capacity and establish membership-based Desktop access, with a path toward automated onboarding.",
+        "observable_success": "Invitation files meet the documented limits, review identifies problematic entries, pending invitations are visible, roles are assigned, and the access plan connects enforced Desktop sign-in to organization membership.",
+        "realism_rationale": "The documentation explicitly supports bulk invitations by owners. Its statement that pending invitations consume seats makes capacity planning substantive before a large rollout; related excerpts support Desktop access control and future provisioning.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email addresses."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "When inviting members, their pending invitation occupies a seat."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Explain how to add subscription seats before inviting users when capacity is insufficient.",
+            "acceptance": "Direct the owner to select the organization in Docker Home, open Billing, and select Add seats.",
+            "tier_reason": "Insufficient capacity can block the planned invitations.",
+            "page_id": "content_manuals_subscription_manage_seats__09a0f0f8",
+            "exact_quote": "1. Select **Add seats** and follow the on-screen instructions to complete\n   adding seats."
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Prepare valid CSV files for the 1,200-person invitation batch.",
+            "acceptance": "Require an email header and split the export into at least two files, each containing no more than 1,000 email-address rows; explain that additional columns are ignored.",
+            "tier_reason": "The export must satisfy import limits to be usable.",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.\n   - The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Describe the CSV invitation route and review gate.",
+            "acceptance": "Use Members > Invite > CSV upload in the selected organization, and require Review to identify invalid addresses, already invited users, existing members, and duplicates before continuing.",
+            "tier_reason": "This supplies the executable invitation workflow and its main validation step.",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "After the CSV file has been uploaded, select **Review** to identify any invalid email addresses, already invited users, invited users who are already members, or duplicated email addresses within the same CSV file."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Include role assignment during invitations.",
+            "acceptance": "State that invitees receive a role when invited and direct the owner to Roles and permissions to assess the access granted; do not invent role capabilities absent from these excerpts.",
+            "tier_reason": "Inviting users without addressing their access level leaves onboarding incomplete.",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md) for\ndetails about the access permissions for each role."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Connect Desktop access restriction to enforced sign-in and membership management.",
+            "acceptance": "Explain that Desktop access management requires enforcing sign-in and managing membership manually or through provisioning; state that enforced sign-in limits use after signing in to organization members.",
+            "tier_reason": "This is the requested access-control outcome.",
+            "page_id": "content_manuals_admin_organization_manage_manage_products__542f067a",
+            "exact_quote": "1. [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).\n1. Manage members [manually](./members.md) or use\n   [provisioning](/manuals/enterprise/security/provisioning/_index.md).\n\nWith sign-in enforced, only users who are a member of your organization can\nuse Docker Desktop after signing in."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Explain the cost consequence of adding seats during a billing cycle.",
+            "acceptance": "State that seats added mid-cycle incur a prorated charge.",
+            "tier_reason": "This supports procurement planning beyond the basic seat-addition procedure.",
+            "page_id": "content_manuals_subscription_manage_seats__09a0f0f8",
+            "exact_quote": "When you add seats mid-billing cycle, you're charged a prorated amount for the additional seats."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Identify the sales-assisted seat-purchase exception.",
+            "acceptance": "For a sales-assisted Docker Business subscription, direct the owner to their account manager to add seats.",
+            "tier_reason": "This prevents applying the self-service route to an unsupported purchasing arrangement.",
+            "page_id": "content_manuals_subscription_manage_seats__09a0f0f8",
+            "exact_quote": "If you have a sales-assisted Docker Business subscription,\n> contact your account manager to add seats to your subscription."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Account for invitation seats and account-readiness blockers.",
+            "acceptance": "Count pending invitations as occupied seats and explain that invitees without accounts must create an account and verify their email before accepting.",
+            "tier_reason": "These conditions explain why purchased seats or sent invitations do not alone establish completed membership.",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "If an invitee does not have a Docker account, they must create an account and verify their email address before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies a seat."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Describe how to confirm invitation delivery and the recipient action.",
+            "acceptance": "Explain that pending invitations appear in the table and invitees receive an email linking to Docker Hub where they can accept or decline.",
+            "tier_reason": "This supplies an observable checkpoint and distinguishes invitation from acceptance.",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "Pending invitations appear in the table. Invitees receive an email with a link to Docker Hub where they can accept or decline the invitation."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Verify the onboarding subscription prerequisite.",
+            "acceptance": "Require checking that the organization has a Docker Team or Business subscription before proceeding with organizational onboarding.",
+            "tier_reason": "This checks eligibility before executing the rollout.",
+            "page_id": "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+            "exact_quote": "Before you start onboarding your organization, ensure you:\n\n- Have a Docker Team or Business subscription."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Offer a device-management inventory check for the proposed invitation list.",
+            "acceptance": "Suggest using existing device management to identify Docker users and give the documented Mac, Windows, and Linux Desktop installation paths.",
+            "tier_reason": "This helps validate who needs seats rather than accepting the export as an unquestioned allocation.",
+            "page_id": "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+            "exact_quote": "identify Docker users by checking if Docker Desktop is installed at the\n     following location on each user's machine:\n     - Mac: `/Applications/Docker.app`\n     - Windows: `C:\\Program Files\\Docker\\Docker`\n     - Linux: `/opt/docker-desktop`"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Recommend considering an additional owner for administrative continuity.",
+            "acceptance": "Present additional owners as optional and explain that they distribute administration and prevent blockers when the primary owner is unavailable.",
+            "tier_reason": "This reduces operational dependence on a single administrator during a large rollout.",
+            "page_id": "content_guides_admin_user_management_onboard__afb17e64",
+            "exact_quote": "While optional, adding additional owners can significantly ease the process of onboarding and managing your organization by distributing administrative responsibilities. It also ensures continuity and prevents blockers if the primary owner is unavailable."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Explain the authentication role of SSO in future onboarding.",
+            "acceptance": "Describe organizational-credential sign-in and the documented connection between SSO, SCIM, and group mapping for automated provisioning.",
+            "tier_reason": "This explains how the identity provider can support the future workflow.",
+            "page_id": "content_guides_admin_user_management_onboard__afb17e64",
+            "exact_quote": "- Simplifies sign in, as users sign in with their organizational credentials.\n- Reduces password-related vulnerabilities.\n- Simplifies onboarding as it works seamlessly with SCIM and group mapping for automated provisioning."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Offer SCIM for directory-driven lifecycle management.",
+            "acceptance": "Explain that SCIM can synchronize users and roles with the identity provider and automate adding, updating, or removing users based on directory changes.",
+            "tier_reason": "This offers an ongoing lifecycle alternative to repeated manual CSV imports.",
+            "page_id": "content_guides_admin_user_management_onboard__afb17e64",
+            "exact_quote": "With SCIM you can:\n\n- Sync users and roles automatically with your identity provider.\n- Automate adding, updating, or removing users based on directory changes."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Distinguish JIT provisioning as a first-sign-in onboarding option.",
+            "acceptance": "Explain that JIT can automatically add users on their first sign-in based on group mapping.",
+            "tier_reason": "This gives a distinct provisioning alternative with a different onboarding trigger.",
+            "page_id": "content_guides_admin_user_management_onboard__afb17e64",
+            "exact_quote": "With JIT provisioning you can:\n\n- Automatically add users upon first sign in based on [group mapping](#simplify-access-with-group-mapping)."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "32eaf0a94003ee850d7e3b8e3c070669c8bdd9d045abbeea08e7a504536f0b7b",
+      "task": {
+        "question": "Our developers need shared access to repositories currently attached to an individual Docker account. I'm responsible for establishing a managed organization, and retaining that account's name would be useful. Help me choose between creating an organization and converting the account, then plan initial member onboarding and access roles. Identify prerequisites and irreversible consequences before I commit.",
+        "actor": "Team administrator responsible for moving individual-account repository access into a managed Docker organization.",
+        "trigger": "Multiple developers need access to repositories associated with an individual account, and the team is considering retaining its name.",
+        "goal": "Choose an organization setup route with understood consequences and prepare member onboarding with appropriate administrative and repository access.",
+        "observable_success": "The administrator can choose a setup route, identify required accounts and subscription capacity, assess namespace constraints and conversion risks, and execute invitations with roles matched to responsibilities.",
+        "realism_rationale": "The conversion documentation explicitly describes the multiple-user repository-access workflow. Its permanence warning makes choosing a setup route a consequential decision that benefits from consulting organization creation, conversion, invitation, and role documentation.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "This is\nuseful if you need multiple users to access your account and the repositories\nit’s connected to."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "Converting an account into an organization is permanent. Back up any data\n> or settings you want to retain."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Frame the setup decision around the two documented organization-creation routes.",
+            "acceptance": "Explain that the team can create a new organization or convert an existing user account, and evaluate these routes against the stated name-retention and shared-access goals.",
+            "tier_reason": "The administrator needs an explicit setup decision before taking action.",
+            "page_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+            "exact_quote": "There are multiple ways to create an organization. You can either:\n\n- Create a new organization using the **Create Organization** option in the\n  Admin Console or Docker Hub\n- Convert an existing user account to an organization"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Provide the starting procedure and purchasing choices for a new organization.",
+            "acceptance": "Direct the administrator to Docker Home's Create new organization option and require selecting a subscription, billing cycle, and seat count.",
+            "tier_reason": "This makes the new-organization alternative actionable.",
+            "page_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+            "exact_quote": "1. Sign in to [Docker Home](https://app.docker.com/) and navigate to the bottom\n   of the organization list. Select **Create new organization**.\n1. Choose a subscription for your organization, a billing cycle, and specify how many seats you need."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Explain namespace constraints that affect retaining the existing account name.",
+            "acceptance": "State that an organization name cannot later be changed, cannot match a Docker ID, and requires account conversion if the desired organization name is the existing Docker ID.",
+            "tier_reason": "These constraints directly determine whether the preferred name is compatible with the chosen route.",
+            "page_id": "content_manuals_admin_organization_setup_orgs__6bc6add1",
+            "exact_quote": "It's not possible to change the name of the organization after you've created it.\n   - Your Docker ID and organization can't share the same name.\n   - If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/setup/convert-account.md)."
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Provide an initial member-invitation procedure.",
+            "acceptance": "Describe selecting the organization in Docker Home, then Members > Invite > Emails or usernames, with multiple entries separated by comma, semicolon, or space and a maximum of 1,000 members per invitation operation.",
+            "tier_reason": "Shared organizational access requires a concrete way to invite the developers.",
+            "page_id": "content_manuals_admin_organization_manage_members__86a15bd2",
+            "exact_quote": "1. Select **Members**, then **Invite**.\n1. Select **Emails or usernames**.\n1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Match invitation roles to the team's responsibilities.",
+            "acceptance": "Distinguish Member as non-administrative, Editor as having repository management and existing-team permission editing, and Owner as having full organization administration including billing; propose assignments based on the team's responsibilities.",
+            "tier_reason": "Role selection is necessary to make shared access controlled and usable.",
+            "page_id": "content_guides_admin_user_management_setup__130f5f47",
+            "exact_quote": "- Editor: Partial administrative access to the organization. Editors can create, edit, and delete repositories. They can also edit an existing team's access permissions.\n- Owner: Full organization administrative access. Owners can manage organization repositories, teams, members, settings, and billing."
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Check conversion eligibility against existing memberships.",
+            "acceptance": "Require removing the account being converted from any company, teams, and organizations before conversion.",
+            "tier_reason": "This is a route-specific prerequisite that can prevent conversion.",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "The user account that you want to convert must not be a member of a company or any teams or organizations. You must remove the account from all teams, organizations, or the company."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Handle sole ownership before leaving an existing organization or company.",
+            "acceptance": "If the account is a sole owner, require assigning another user the owner role before removing it from that organization or company.",
+            "tier_reason": "This resolves an exception to the membership-removal prerequisite.",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "If the user account is the sole owner of any organization or company, assign another user the owner role and then remove yourself from the organization or company."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Prepare a separate owner identity for conversion.",
+            "acceptance": "Require a separate Docker ID to own the converted organization, creating another user account if necessary rather than using the account being converted.",
+            "tier_reason": "This ensures there is a valid administrator identity for the converted organization.",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "You must have a separate Docker ID ready to assign as the owner of the organization during conversion."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Make the conversion's permanence and backup requirement explicit.",
+            "acceptance": "Warn before committing that conversion is permanent and instruct the administrator to back up data or settings they want to retain.",
+            "tier_reason": "This addresses an irreversible consequence of the optional conversion route.",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "Converting an account into an organization is permanent. Back up any data\n> or settings you want to retain."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Explain the subscription consequence of account conversion.",
+            "acceptance": "State that converting the user account migrates it to a Docker Team subscription by default.",
+            "tier_reason": "This informs the route decision's subscription implications.",
+            "page_id": "content_manuals_admin_organization_setup_convert_account__5a9f6069",
+            "exact_quote": "When you convert a user account to an organization, the account is migrated to\na Docker Team subscription by default."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Validate the seat estimate against actual Docker users.",
+            "acceptance": "Recommend identifying Docker users before finalizing allocation, explaining that this supports efficient seat allocation and receipt of subscription benefits.",
+            "tier_reason": "This improves the initial capacity estimate beyond merely entering a seat count.",
+            "page_id": "content_manuals_admin_organization_setup_onboard__0d66a7b1",
+            "exact_quote": "Identifying your users helps you allocate seats efficiently and ensures they\nreceive your Docker subscription benefits."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Prepare developers' account email addresses for organizational onboarding.",
+            "acceptance": "Encourage users to update their Docker accounts to organizational email addresses.",
+            "tier_reason": "This adds an account-preparation step relevant to subscription integration.",
+            "page_id": "content_guides_admin_user_management_setup__130f5f47",
+            "exact_quote": "Encourage all users to update their Docker accounts to use organizational email addresses, ensuring seamless integration with your subscription."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Explain the default scope of product access after onboarding.",
+            "acceptance": "State that access to subscription-included Docker products is enabled by default for all users, so role planning should consider product access as well as repository administration.",
+            "tier_reason": "This surfaces a default access condition beyond the invitation workflow.",
+            "page_id": "content_manuals_admin_organization_manage_manage_products__542f067a",
+            "exact_quote": "Access to the Docker products included in your subscription is turned on by\ndefault for all users."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Offer membership-based Desktop access control if the team needs it.",
+            "acceptance": "Explain that enforcing sign-in makes Docker Desktop use after signing in conditional on organization membership, and point to the documented sign-in enforcement workflow.",
+            "tier_reason": "This adds an optional product-access control relevant to the managed organization.",
+            "page_id": "content_manuals_admin_organization_manage_manage_products__542f067a",
+            "exact_quote": "With sign-in enforced, only users who are a member of your organization can\nuse Docker Desktop after signing in."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Include organization owners in seat planning.",
+            "acceptance": "State that organization owners occupy a seat rather than treating administrator identities as outside subscription capacity.",
+            "tier_reason": "This prevents undercounting capacity when establishing administrative ownership.",
+            "page_id": "content_manuals_admin_index__8237d74d",
+            "exact_quote": "They can manage organization settings, users, and access controls, but occupy a [seat](/manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member)."
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

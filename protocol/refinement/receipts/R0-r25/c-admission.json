@@ -1,0 +1,27 @@
+{
+  "c_version": "structural_connectivity_constraint.v1",
+  "code_sha256": "08658f1b61c6cd9d1566a1fc77abdd0b4b5e68d8de36242a48461b17d9562895",
+  "config_sha256": "7aad8fba4b6dbc9fbd684d8306645eb5a219ead151bcb2796b104e31ae531c09",
+  "editor_visible": false,
+  "form": "C0+C1+C1b+C2",
+  "mapping": {},
+  "result": {
+    "anchors_missing": [],
+    "baseline_graph_sha256": "996569e9c378c02f75a7f8a910de9625c14ab7fd5829afa3855e66ffffa45959",
+    "baseline_lambda2": 0.011037979927050976,
+    "baseline_pages_left_main_component": 0,
+    "baseline_pages_left_sample": [],
+    "config_sha256": "7aad8fba4b6dbc9fbd684d8306645eb5a219ead151bcb2796b104e31ae531c09",
+    "graph_sha256": "801b0c55e57e97db9aff7cc5deb0c402795a0a4b1b7d347c13767c4e6f7e194f",
+    "lambda2": 0.013341768127828214,
+    "lambda2_threshold": 0.009934181934345879,
+    "main_component_size": 1181,
+    "new_pages": 11,
+    "new_pages_outside_main_component": [],
+    "orphan_new_pages": [],
+    "passed": true,
+    "reasons": [],
+    "version": "structural_connectivity_constraint.v1"
+  },
+  "schema_version": "docspectra.icsc.restructuring_run.v1.c_admission"
+}

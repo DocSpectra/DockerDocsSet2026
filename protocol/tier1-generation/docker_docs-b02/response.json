@@ -1,0 +1,158 @@
+{
+  "corpus_id": "docker_docs",
+  "candidates": [
+    {
+      "cluster_id": "0e75b648d1017a598d29f5257782e5677f0a42d0c34e2a05e499b663ced624e7",
+      "task": {
+        "question": "I maintain a Dockerfile that uses a base image and downloads a remote file. How should I set up a build policy so our builds accept images from approved registries and permit only HTTPS downloads, then check that the policy behaves as intended before using it in our builds?",
+        "actor": "A developer responsible for a team's Docker builds",
+        "trigger": "The team wants to control the remote inputs consumed by an existing Dockerfile.",
+        "goal": "Create and validate a policy for image and HTTP inputs while allowing the local build context.",
+        "observable_success": "The policy loads for the Dockerfile, approved sources are allowed, disallowed sources are denied, and tests plus build output show the decisions.",
+        "realism_rationale": "The documentation presents build policies as a way to validate inputs across a build. A violation stops the build before instructions run, making correct rules and validation consequential.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_manuals_build_policies_index__0d5e2f82",
+            "exact_quote": "Build policies solve this problem. They let you define rules that validate all\nyour build inputs, enforcing requirements like provenance attestations,\napproved registries, and signed Git tags across your entire build process."
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_manuals_build_policies_intro__69332bb3",
+            "exact_quote": "If any input violates a policy, the build fails before any\ninstructions execute."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Check that the installed Buildx and BuildKit versions support build policies before proceeding.",
+            "acceptance": "States the experimental status and checks for Buildx 0.31.0 or later and BuildKit 0.27.0 or later using the documented version and inspect commands.",
+            "tier_reason": "The workflow cannot be put into use without supported tooling.",
+            "page_id": "content_manuals_build_policies_index__0d5e2f82",
+            "exact_quote": "Build policies is currently an experimental feature. To try it out, you'll\nneed:\n\n- Buildx 0.31.0 or later - Check your version: `docker buildx version`\n- BuildKit 0.27.0 or later - Verify with: `docker buildx inspect --bootstrap`"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Place the policy where Buildx will load it for the Dockerfile.",
+            "acceptance": "Names `Dockerfile.rego` beside `Dockerfile`, and explains the corresponding `app.Dockerfile.rego` name if the Dockerfile is named `app.Dockerfile`.",
+            "tier_reason": "A correct policy has no effect unless it is loaded.",
+            "page_id": "content_manuals_build_policies_usage__43829299",
+            "exact_quote": "Buildx automatically loads policies that match your Dockerfile name. When you\nbuild with `Dockerfile`, Buildx looks for `Dockerfile.rego` in the same\ndirectory. For a file named `app.Dockerfile`, it looks for\n`app.Dockerfile.rego`."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Give the policy a valid deny-by-default decision while allowing local input.",
+            "acceptance": "Includes `package docker`, `default allow := false`, `allow if input.local`, and a `decision` object returning the allow result; explains why local access is needed.",
+            "tier_reason": "These rules form a usable policy and keep the Dockerfile accessible.",
+            "page_id": "content_manuals_build_policies_intro__69332bb3",
+            "exact_quote": "package docker\n\ndefault allow := false\n\nallow if input.local\nallow if {\n  input.http.host == \"example.com\"\n}\n\ndecision := {\"allow\": allow}"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Restrict image inputs to the team's chosen registry hosts.",
+            "acceptance": "Shows an image rule using `input.image.host` and makes the approved host values explicit customization points.",
+            "tier_reason": "The image rule directly implements one of the requested input controls.",
+            "page_id": "content_manuals_build_policies_examples__526d2b0b",
+            "exact_quote": "# Allow common public registries\nallow if {\n  input.image.host == \"docker.io\"  # Docker Hub\n}\n\nallow if {\n  input.image.host == \"ghcr.io\"  # GitHub Container Registry\n}"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Allow HTTP download inputs only when they use HTTPS.",
+            "acceptance": "Shows a rule checking `input.http.schema == \"https\"` and applies it to remote downloads referenced by the Dockerfile.",
+            "tier_reason": "This implements the requested download restriction.",
+            "page_id": "content_manuals_build_policies_inputs__b1f0e2d9",
+            "exact_quote": "#### `input.http.schema`\n\nThe URL scheme (`http` or `https`).\n\n```rego\n# Require HTTPS for all downloads\nallow if {\n    input.http.schema == \"https\"\n}"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Consider requiring a checksum as well as HTTPS for downloaded files.",
+            "acceptance": "Explains that `input.http.checksum` is empty when no `ADD --checksum` is provided and shows how to reject an empty value if checksum enforcement is wanted.",
+            "tier_reason": "A checksum is an additional content check beyond the requested transport rule.",
+            "page_id": "content_manuals_build_policies_inputs__b1f0e2d9",
+            "exact_quote": "The checksum specified with `ADD --checksum=...`, if present. Empty string if\nno checksum was provided.\n\n```rego\n# Require checksums for all downloads\nallow if {\n    input.http.checksum != \"\"\n}"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Inspect all inputs encountered during an actual build.",
+            "acceptance": "Uses `docker buildx build --progress=plain --policy log-level=debug .` to inspect complete policy inputs and decisions.",
+            "tier_reason": "Actual inputs can reveal sources omitted from an initial rule design.",
+            "page_id": "content_manuals_build_policies_usage__43829299",
+            "exact_quote": "To see the inputs that your Dockerfile references (images, Git repos, HTTP\ndownloads), build with debug logging:\n\n```console\n$ docker buildx build --progress=plain --policy log-level=debug .\n```"
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Use plain progress output when diagnosing a policy decision.",
+            "acceptance": "States that `--progress=plain` exposes policy checks, decisions, and `print()` output, while ordinary progress can be silent unless there is an error.",
+            "tier_reason": "This makes unexpected decisions observable.",
+            "page_id": "content_manuals_build_policies_debugging__5ce95293",
+            "exact_quote": "This shows all policy checks, decisions, and `print()` output. Without\n`--progress=plain`, policy evaluation is silent unless there's an error."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Account for fields that are unresolved during policy evaluation.",
+            "acceptance": "Advises inspecting the debug output's unknowns before relying on metadata fields such as image checksum, labels, provenance, or signatures.",
+            "tier_reason": "A rule based on unavailable data may behave unexpectedly.",
+            "page_id": "content_manuals_build_policies_debugging__5ce95293",
+            "exact_quote": "#1 0.007 unknowns for policy evaluation: [input.image.checksum input.image.labels input.image.user input.image.volumes input.image.workingDir input.image.env input.image.hasProvenance input.image.signatures]"
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Test policy logic with mocked allow and deny inputs.",
+            "acceptance": "Uses `docker buildx policy test <path>` and includes at least one expected allow case and one expected deny case.",
+            "tier_reason": "Unit tests catch rule mistakes before relying on a build.",
+            "page_id": "content_manuals_build_policies_testing__18acf5d3",
+            "exact_quote": "The [`docker buildx policy test`](/reference/cli/docker/buildx/policy/test/)\ncommand runs unit tests for build policies using OPA's [standard test\nframework](https://www.openpolicyagent.org/docs/policy-testing).\n\n```console\n$ docker buildx policy test <path>\n```\n\nThis validates policy logic with mocked inputs."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Name and structure the Rego test file so the test command finds it.",
+            "acceptance": "Specifies a `*_test.rego` file and test functions beginning with `test_`.",
+            "tier_reason": "The tests must be discoverable to provide useful validation.",
+            "page_id": "content_manuals_build_policies_testing__18acf5d3",
+            "exact_quote": "Create a test file with the `*_test.rego` suffix. Test functions must start\nwith `test_`:"
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Evaluate a real source separately from mocked policy tests.",
+            "acceptance": "Uses `docker buildx policy eval` for an actual image or URL and distinguishes its purpose from `policy test`.",
+            "tier_reason": "Real source evaluation checks behavior against source data that mocks may omit.",
+            "page_id": "content_manuals_build_policies_testing__18acf5d3",
+            "exact_quote": "For testing against real sources (actual image metadata, Git repositories), use\n[`docker buildx policy eval`](/reference/cli/docker/buildx/policy/eval/)\ninstead. You can use the `eval --print` option to resolve input for a specific\nsource for writing a test case."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Avoid treating one `policy eval` call as a check of the entire Dockerfile.",
+            "acceptance": "States that `policy eval` checks the supplied source, and uses a build with plain progress to observe all Dockerfile inputs.",
+            "tier_reason": "This prevents a misleading validation result.",
+            "page_id": "content_manuals_build_policies_usage__43829299",
+            "exact_quote": "Note: `docker buildx policy eval` tests the source specified as the argument.\nIt doesn't parse your Dockerfile to evaluate all inputs - for that, [build with\n--progress=plain](#viewing-inputs-from-your-dockerfile)."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Explain how to diagnose a failed policy unit test.",
+            "acceptance": "Uses the reported input, decision output, and missing fields to identify which assertion or input field needs correction.",
+            "tier_reason": "The failure report gives specific evidence for refining rules or tests.",
+            "page_id": "content_manuals_build_policies_testing__18acf5d3",
+            "exact_quote": "Failed tests show input, decision output, and missing fields:\n\n```console\ntest_invalid: FAIL (allow=false)\ninput:\n  {\n    \"image\": {}\n  }\ndecision:"
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Offer an external approved-version list if the team needs to maintain image versions separately from policy code.",
+            "acceptance": "Shows `load_json(\"versions.json\")` with a path relative to the policy directory and compares an image tag with an approved value.",
+            "tier_reason": "This is a relevant maintenance option when approved versions change.",
+            "page_id": "content_manuals_build_policies_built_ins__ee5de3cf",
+            "exact_quote": "approved_versions = load_json(\"versions.json\")\n\nallow if {\n    input.image.repo == \"alpine\"\n    some version in approved_versions.alpine\n    input.image.tag == version\n}"
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "af684f06847255e9e671c2f474735527d2cd1b9e94dafc248fd9f8ccd8330888",
+      "task": null,
+      "rejection_reason": "The excerpts cover separate Docker Desktop problems and environments: registry TLS failures, display artifacts, upgrades, diagnostics, installation, WSL, virtual desktops, and bind mounts. They do not support one coherent user workflow with five essential and ten distinct decision-useful requirements without combining unrelated issues."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+area_id,label,original_page_count,lt_admitted,r0_admitted,lt_sessions,r0_sessions
+A01,"Documentation authoring and discovery (repo guidance, templates, landing pages, general snippets)",18,False,True,LT-r08,R0-r08
+A02,Get started: beginner foundations and workshop,41,True,True,LT-r26,R0-r25
+A03,JavaScript and browser application language guides,40,True,True,LT-r20,R0-r19
+A04,Other language and framework guides,60,True,True,LT-r13,R0-r13
+A05,Testcontainers tutorials and dependency-testing recipes,87,False,True,LT-r12,R0-r12
+A06,"Application recipes, data services, observability and sample catalog",63,True,True,LT-r05,R0-r05
+A07,"AI models, agents and AI application development",60,True,True,LT-r23,R0-r22
+A08,"AI tool connections and isolated workspaces (MCP catalog/toolkit, sandboxes)",44,False,False,LT-r21,R0-r20
+A09,"Build: image construction, cache, exporters, metadata and build policy",49,False,True,LT-r01 LT-r02,R0-r01
+A10,"Build execution and automation (builders, Bake, BuildKit, CI, Build Cloud)",66,True,True,LT-r18 LT-r28,R0-r17
+A11,"Compose user workflows, install, quickstart and Bridge",48,True,True,LT-r19,R0-r18
+A12,Compose file specification reference and its include fragments,42,True,True,LT-r24 LT-r29,R0-r23
+A13,"Docker Desktop installation, uninstall and troubleshooting",25,True,True,LT-r17,R0-r16
+A14,"Docker Desktop daily use and runtime features (WSL, networking, Kubernetes, Offload)",34,True,True,LT-r09,R0-r09
+A15,"Release notes, lifecycle, retirement and security announcements",44,True,True,LT-r16,R0-r15
+A16,Docker Engine installation and runtime administration (incl. CLI reference),41,True,True,LT-r22,R0-r21
+A17,"Docker Engine networking, storage and logging",44,False,False,LT-r27,R0-r26
+A18,Docker Engine security and Swarm/orchestration,52,True,True,LT-r25,R0-r24
+A19,"Docker Hub repositories, publishing, trusted programs and registry APIs",56,False,True,LT-r04,R0-r03 R0-r04
+A20,Docker Scout,55,True,True,LT-r11,R0-r11
+A21,Docker Hardened Images (DHI) concepts and adoption,63,True,True,LT-r03 LT-r15,R0-r02
+A22,"Accounts, organizations, billing, subscriptions and support",49,False,True,LT-r07,R0-r07
+A23,"Enterprise deployment and policy (managed installs, SSO/provisioning, hardened Desktop)",48,True,True,LT-r10,R0-r10
+A24,Docker Extensions development and Extensions SDK reference,69,True,True,LT-r14,R0-r14
+A25,Docker Engine API and SDK reference,20,True,True,LT-r06,R0-r06

@@ -1,0 +1,75 @@
+{
+  "branches": {
+    "lt": {
+      "arm": "LT",
+      "branch": "docs-lt",
+      "documentation_files": 1823,
+      "documentation_tree_sha256": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74",
+      "export_corpus_tree_sha256": "d4496be66c10e9050ed2467bab12d95277064b62464284d17d448a1c4c79171f",
+      "export_edges": 5203,
+      "export_graph_sha256": "83d6bcd62df873e1ea7257f5f468f90fa0d50093425c54a719ff8b9fc68a5d0c",
+      "final_checkpoint_session": "LT-r30",
+      "packaging_commit": "99c2e8b2cf2c684a89ea5831076a1143166915ae",
+      "status_vs_original": {
+        "added": 605,
+        "modified": 773,
+        "unchanged": 445
+      },
+      "study_variant_ids": [
+        "v-6337600cdc97"
+      ]
+    },
+    "original": {
+      "arm": "O",
+      "branch": "docs-original",
+      "documentation_files": 1218,
+      "documentation_tree_sha256": "4c5e0499392bb25dd9641ea191ed3e2fff075bbee27ad798fba6deeff731c43c",
+      "export_corpus_tree_sha256": "ebce0bcead737137cce154bf6415413cc60d58e371432ac6c046a312cc1bcadc",
+      "export_edges": 2494,
+      "export_graph_sha256": "ff89ed48d6318c00c6b2bf5adf5dc0f2fc43ec56f3d11b5a45cf356fa98c3945",
+      "extra_trees": {
+        "historical-export/corpus/": "093304d8ad4e88bfb16dcdee225e8d0587a031f9180574080b7a29e8477eb674",
+        "upstream-pages/": "7b54d187fa99f9acc09353f6ae114aa9bfa2579d645df3168c9bc0d2043a9445"
+      },
+      "packaging_commit": "74cc4d954757108bd54d757d888d86b417188a16",
+      "status_vs_original": {
+        "added": 0,
+        "modified": 0,
+        "unchanged": 1218
+      },
+      "study_variant_ids": [
+        "v-5d89a3217d52",
+        "v-9a7d7f0e7b47"
+      ]
+    },
+    "r0": {
+      "arm": "R0",
+      "branch": "docs-r0",
+      "documentation_files": 1229,
+      "documentation_tree_sha256": "a01b9cedb040a7f7c52845a1ea7bd66a5da8f26dc6b78889b21f87a5e3d658d1",
+      "export_corpus_tree_sha256": "bd3ce666479bed1e1d401c9207dc467313a2b75c2e6721174425a396f09f15b5",
+      "export_edges": 4502,
+      "export_graph_sha256": "a77abe7a9bbdaa995b5d3edaabba89037b3f5c7e39aea1bc6f703f4ef0dd5590",
+      "final_checkpoint_session": "R0-r27",
+      "packaging_commit": "0ad905403150879f1557a339eb1667c966e9b044",
+      "status_vs_original": {
+        "added": 11,
+        "modified": 1006,
+        "unchanged": 212
+      },
+      "study_variant_ids": [
+        "v-c2c2731d2141"
+      ]
+    }
+  },
+  "sham_control_S": {
+    "documentation": "original",
+    "note": "S is byte-identical to O in documentation and export; it differs only in its own answer runs and pools",
+    "study_variant_id": "v-9a7d7f0e7b47"
+  },
+  "tree_identity_rule": "sha256 of compact key-sorted JSON {posix relpath: sha256(bytes)}",
+  "upstream": {
+    "commit": "274681c49355bd951ae60c9208e854ff70f12474",
+    "repository": "https://github.com/docker/docs"
+  }
+}

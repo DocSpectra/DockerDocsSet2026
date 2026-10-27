@@ -1,0 +1,329 @@
+{
+  "composition": {
+    "decided": "author, October 18, before authorization 2 (no editing session had run)",
+    "r0_wording": [
+      [
+        "meets the target structure",
+        "meets the reorganization goal above"
+      ],
+      [
+        "plus any new pages your target structure needs",
+        "plus any new pages your reorganization needs"
+      ],
+      [
+        "toward the same target structure",
+        "toward the same reorganization goal"
+      ],
+      [
+        "unless the target structure requires it",
+        "unless the reorganization goal requires it"
+      ]
+    ],
+    "stale_limits_removed": "You have one session of at most 60 minutes and may change at most 150 page paths; the host enforces these limits and stops the session if they are exceeded.",
+    "version": 2
+  },
+  "editor_runtime": {
+    "argv": "codex exec --json --skip-git-repo-check --ephemeral --ignore-rules --color never - (in /work)",
+    "billing": "ChatGPT subscription (no USD)",
+    "codex_cli": "0.161.0",
+    "editor_image": "docspectra/codex-editor:v1 sha256:893251d3ed33fe170c3870a5aa1806db3fd3a6b0045ec10a14bb5f975ba5b3d3",
+    "information_boundary": "editor sees only its tree and own shell output; never C status, spectra, questions, answers, grades, receipts, transcripts or other variants",
+    "limits": "model_calls 1 per session (one codex exec), wall 5400 s per session; arm budget 250M tokens / 259,200 s",
+    "model": "gpt-6.1-sol",
+    "model_revision": "none recorded beyond the model string",
+    "proxy_image": "docspectra/egress-proxy:v1 sha256:5882a196b5e2998f8761d3e05ebd10caca8490ac41308a172e3cef4d24547f08",
+    "reasoning_effort": "medium",
+    "runtime_identity": "codex_container_v1:codex-exec:codex-cli-0.161.0",
+    "security_testing": "waived by author 2026-10-08; configuration set, not attack-tested"
+  },
+  "exclusion_sensitivity": {
+    "SA1": "drop LT A10, A12, A21 (second chances): n = 15, mean -1.07, p = 0.044 (min p 6.1e-5); sensitivity only, never headline",
+    "SA2": "frozen v1 C2 (no F3): LT has no admitted area (all LT v1 lambda2 = 0), no realization to test",
+    "SA4": "paired areas only = identical to primary",
+    "admitted": {
+      "LT": [
+        "A02",
+        "A03",
+        "A04",
+        "A06",
+        "A07",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A18",
+        "A20",
+        "A21",
+        "A23",
+        "A24",
+        "A25"
+      ],
+      "R0": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24",
+        "A25"
+      ]
+    },
+    "counts": "LT 18/25, R0 23/25 (before AM1 and reruns: LT 16, R0 23)",
+    "primary_test": "n = 18 areas edited by both arms; mean LT - R0 z of magnetic lambda1(q=0.25) vs LN = -0.80; p = 0.079 two-sided (under F6); min attainable p 7.6e-6",
+    "source": "git/context/docs/manuscript-deviations-wc-refinement.md; evidence/wc-spectra-18-v1-2026-10-19.json"
+  },
+  "fix_texts": {
+    "C1B_EXEMPTION": "C1b ignores a new page under content/includes/ that a variant page references with an include shortcode, and a new section _index.md whose folder holds another page (author, October 19)",
+    "C2_FIX": "on a C2 failure, lambda2 is recomputed on the v1 evaluation set plus the baseline pages outside the baseline main component that the variant joined to its main component; C2 passes if that value meets the v1 threshold",
+    "HUGO_FIX": "root-relative link /<p>/ resolves if content/manuals/<p> or content/<p> exists as <p>.md, <p>/_index.md or <p>/index.md in the variant tree (fragment and query ignored); applied to introduced_unresolved_v3 only; the baseline set, C v1 and the reported v1 count are unchanged",
+    "PROMPT_FIX": "a baseline protected line counts as present if it equals a variant protected line once a leading \"$\" prompt marker and its following whitespace are removed from both, and (fix 5b, LT A18) runs of internal whitespace are collapsed to one space; (fix 5c, LT reconciliation) a code-fence opener whose only change is a completed closing attribute brace is present"
+  },
+  "fixes": [
+    {
+      "driver_commit": "ffbaad0/a5605e7",
+      "effective_ledger_seq": 5,
+      "id": "F1_infra_void_rerun",
+      "ledger_time_utc": "2026-10-19T04:50:42Z",
+      "what": "void and rerun sessions that never reached the editor"
+    },
+    {
+      "driver_commit": "14997dd",
+      "effective_ledger_seq": 14,
+      "id": "F2_HUGO_FIX",
+      "ledger_time_utc": "2026-10-19T05:22:04Z",
+      "what": "Hugo site-URL resolver for P2"
+    },
+    {
+      "driver_commit": "53c9eb4",
+      "effective_ledger_seq": 16,
+      "id": "F3_C2_FIX",
+      "ledger_time_utc": "2026-10-19T05:40:00Z",
+      "what": "C2 evaluation set includes joined formerly-orphaned pages"
+    },
+    {
+      "driver_commit": "876050e",
+      "effective_ledger_seq": 21,
+      "id": "F4_auth_writeback",
+      "ledger_time_utc": "2026-10-19T05:53:12Z",
+      "what": "Codex auth write-back"
+    },
+    {
+      "driver_commit": "49f68bd",
+      "effective_ledger_seq": 66,
+      "id": "F5_PROMPT_FIX",
+      "ledger_time_utc": "2026-10-19T11:13:53Z",
+      "what": "P1 $-prompt canonicalization"
+    },
+    {
+      "driver_commit": "aa5d62f",
+      "effective_ledger_seq": 112,
+      "id": "F5b_PROMPT_FIX_whitespace",
+      "ledger_time_utc": "2026-10-19T15:21:26Z",
+      "what": "P1 internal whitespace collapse"
+    },
+    {
+      "driver_commit": "09dbff7",
+      "effective_ledger_seq": 125,
+      "id": "AM1_C1B_EXEMPTION",
+      "ledger_time_utc": "2026-10-20T02:36:44Z",
+      "what": "author amendment: C1b exemption for referenced includes and section _index pages with children"
+    },
+    {
+      "driver_commit": "3aa76d7",
+      "effective_ledger_seq": 135,
+      "id": "F5c_PROMPT_FIX_fence_brace",
+      "ledger_time_utc": "2026-10-20T03:11:14Z",
+      "what": "P1 code-fence opener with closed attribute brace"
+    }
+  ],
+  "fixes_in_force_note": "fixes in force per session are inferred from ledger order and driver commit times",
+  "incoming_link_exemption": {
+    "A21_differs": "LT A21: LT-r03 (initial, launched before F2/F3/F5 took effect) rolled back on C2 (v1 lambda2 = 0), protected-lines-missing:13 and introduced-unresolved:18; all three were implementation defects later fixed. Reopened Oct 19 11:14Z (R1, author standing instruction of Oct 18 on implementation errors), not AM1; fresh pass LT-r15 from head 465728db admitted",
+    "R0": "R0 never failed C1b; AM1 affected no R0 decision",
+    "neither_rerun_used_exemption": true,
+    "reruns": {
+      "LT-r28 (A10)": "new session from LT head b8c42ee0; admitted; C receipt c_fix 'wc_refine_17.C2_FIX' only, reasons [], orphan_new_pages [], no c1b_exempted field -> exemption code path never entered",
+      "LT-r29 (A12)": "new session from LT head b88943a3; admitted; same: exemption not used"
+    },
+    "triggering_failures": {
+      "LT-r18 (A10)": "only C1b: content_manuals_build_bake_examples_index__019aab66",
+      "LT-r24 (A12)": "only C1b: content_includes_compose_synchronized_file_shares__922ba14a"
+    },
+    "what": "C1b (every new page needs an incoming Markdown link) does not count against (a) a new page under content/includes/ referenced by an include shortcode or (b) a new section _index.md whose folder holds another page; both arms; constant C1B_EXEMPTION in wc_refine_17.py (commit 09dbff7)",
+    "when": "author decision Oct 19 (local; ledger reopen/void rows seq 125-127 at 2026-10-20T02:36Z), after all 25 area passes in both arms and before either reconciliation",
+    "why": "the link graph excludes Hugo templating by design, so templated pages can never have a Markdown in-link; reachability checked before deciding (include used on >=2 pages; index links its 4 children)"
+  },
+  "reconciliation": {
+    "LT": {
+      "amended": {
+        "amend_seq": 135,
+        "amend_utc": "2026-10-20T03:11:14Z",
+        "final_action": "advance",
+        "final_head_after": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74",
+        "reason": "admission implementation fix 5c: the 'missing' line is a baseline code-fence opener with an unclosed attribute brace that the reconciliation closed; the code block is intact"
+      },
+      "c_admission": {
+        "c1b_exempted": "field absent (exemption code path not entered)",
+        "c2_joined_pages": 222,
+        "c_fix": "wc_refine_17.C2_FIX",
+        "c_version": "structural_connectivity_constraint.v1",
+        "lambda2": 0.012746001729749086,
+        "lambda2_threshold": 0.009934181934345879,
+        "lambda2_v1": 0.0,
+        "new_pages": 605,
+        "orphan_new_pages": [],
+        "passed": true,
+        "reasons": []
+      },
+      "end_utc": "2026-10-20T03:10:24Z",
+      "final_action": "advance",
+      "final_head_after": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74",
+      "launch_utc": "2026-10-20T02:56:37Z",
+      "mapping_counts_vs_O": {
+        "added": 605,
+        "changed": 773,
+        "mapping": 0,
+        "partial_unit_loss": 339,
+        "removed": 0,
+        "translation": 773,
+        "unmapped_removals": 0
+      },
+      "prompt_file": {
+        "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/prompts/LT-reconcile-ALL.txt",
+        "sha256_manifest": "0193485ba3e622879d9dfb54087627b0bdb01e8d7ea5b6cb966aee31f3dd0742",
+        "sha256_now": "0193485ba3e622879d9dfb54087627b0bdb01e8d7ea5b6cb966aee31f3dd0742",
+        "version": "LT-reconcile-ALL-v1"
+      },
+      "receipts": {
+        "c_admission": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/LT-r30/host/receipts/c-admission.json",
+          "sha256": "f068b29ed4e09ab63172e2ae37d416419fb7a7472177f710414804dce68ce7bd"
+        },
+        "mapping": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/LT-r30/host/receipts/mapping.json",
+          "sha256": "33e3588b7ffe2a3f432c04303b48dcb89a69e92c5dde2fde56235770214108dc"
+        },
+        "preservation_mapping": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/LT-r30/exports/preservation-review/mapping.json",
+          "sha256": "33e3588b7ffe2a3f432c04303b48dcb89a69e92c5dde2fde56235770214108dc"
+        },
+        "preservation_review": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/LT-r30/exports/preservation-review/review.json",
+          "sha256": "1a614ebaa81b652759b45ff820edd636c8ad0237a2063fbdf763cc6776ae0420"
+        },
+        "spectral_profile": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/LT-r30/host/receipts/spectral-profile.json",
+          "sha256": "7ae6a95380d12a9f5f575cfae99efea7a14499aaf681220612de146a02e0c4ce"
+        },
+        "support_mapping": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/LT-r30/exports/support-mapping.json",
+          "sha256": "e02f9c3b3914a3832716e196165b2546b01135cb1263ec2c6fb6b61d5fb62d2f"
+        }
+      },
+      "recorded_action": "rollback",
+      "recorded_not_admitted_because": [
+        "protected-lines-missing:1"
+      ],
+      "session": "LT-r30",
+      "start_tree": "48b6e1085cc20ff03d4ff8e440add132966a838120018016c8fcaafdf95c3610",
+      "terminal_tree": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74"
+    },
+    "R0": {
+      "amended": null,
+      "c_admission": {
+        "c1b_exempted": "field absent (exemption code path not entered)",
+        "c2_joined_pages": null,
+        "c_fix": null,
+        "c_version": "structural_connectivity_constraint.v1",
+        "lambda2": 0.01334646781286039,
+        "lambda2_threshold": 0.009934181934345879,
+        "lambda2_v1": null,
+        "new_pages": 11,
+        "orphan_new_pages": [],
+        "passed": true,
+        "reasons": []
+      },
+      "end_utc": "2026-10-20T03:21:04Z",
+      "final_action": "advance",
+      "final_head_after": "a01b9cedb040a7f7c52845a1ea7bd66a5da8f26dc6b78889b21f87a5e3d658d1",
+      "launch_utc": "2026-10-20T03:10:24Z",
+      "mapping_counts_vs_O": {
+        "added": 11,
+        "changed": 1006,
+        "mapping": 0,
+        "partial_unit_loss": 187,
+        "removed": 0,
+        "translation": 1006,
+        "unmapped_removals": 0
+      },
+      "prompt_file": {
+        "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/prompts/R0-reconcile-ALL.txt",
+        "sha256_manifest": "77092e3dc88a9b3f47de4d678f35e3f26deb4c3d402c103b2ac8abd9c1cdf2c4",
+        "sha256_now": "77092e3dc88a9b3f47de4d678f35e3f26deb4c3d402c103b2ac8abd9c1cdf2c4",
+        "version": "R0-reconcile-ALL-v1"
+      },
+      "receipts": {
+        "c_admission": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/R0-r27/host/receipts/c-admission.json",
+          "sha256": "8c1b4c1c716f299aea6634040d2d5cac27946a4163283419d89992a9d5ecf832"
+        },
+        "mapping": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/R0-r27/host/receipts/mapping.json",
+          "sha256": "ffdebe3235ac8c2219831101b990773c2158ca5a8a44b2f95eb82e755134c987"
+        },
+        "preservation_mapping": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/R0-r27/exports/preservation-review/mapping.json",
+          "sha256": "ffdebe3235ac8c2219831101b990773c2158ca5a8a44b2f95eb82e755134c987"
+        },
+        "preservation_review": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/R0-r27/exports/preservation-review/review.json",
+          "sha256": "2483980354001d5db6991a13fa1f87554cfb722669a1a0279a7b3f5db10c5cb6"
+        },
+        "spectral_profile": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/R0-r27/host/receipts/spectral-profile.json",
+          "sha256": "5173bd221fc3a039c64873bcbce29005c4209d0cc9d9f55f0d319c41703235c2"
+        },
+        "support_mapping": {
+          "exists": true,
+          "path": "artifacts/docker-corpus-variants-v1/runs/wc-v1/R0-r27/exports/support-mapping.json",
+          "sha256": "0173cda5f485deef1382c3699da436609427d840b15a7c95f22fe8616bfac840"
+        }
+      },
+      "recorded_action": "advance",
+      "recorded_not_admitted_because": [],
+      "session": "R0-r27",
+      "start_tree": "e9cb1bd4222292deb39c27ada1dba3c30ff624d7231d2a01fabc32e9f235dff6",
+      "terminal_tree": "a01b9cedb040a7f7c52845a1ea7bd66a5da8f26dc6b78889b21f87a5e3d658d1"
+    }
+  }
+}

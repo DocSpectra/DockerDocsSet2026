@@ -1,0 +1,291 @@
+{
+  "branches": {
+    "lt": {
+      "branch": "docs-lt",
+      "packaging_commit": "99c2e8b2cf2c684a89ea5831076a1143166915ae"
+    },
+    "original": {
+      "branch": "docs-original",
+      "packaging_commit": "74cc4d954757108bd54d757d888d86b417188a16"
+    },
+    "r0": {
+      "branch": "docs-r0",
+      "packaging_commit": "0ad905403150879f1557a339eb1667c966e9b044"
+    }
+  },
+  "builder": {
+    "script": "docker_docs_set_26.py",
+    "sha256": "dce135960513486c59936761981de3b620f6aa98d6da3e918f89066b865b56c0"
+  },
+  "judgments": {
+    "tier2_qrels": [
+      {
+        "arm": "O",
+        "decisions": {
+          "not_supported": 5140,
+          "supported": 381,
+          "undetermined": 326
+        },
+        "decisions_path": "judgments/tier2/c2-v2/O/page_decisions.jsonl",
+        "documentation": "original",
+        "path": "judgments/tier2/c2-v2/O/qrels.jsonl",
+        "qrels_rows": 4209,
+        "qrels_version": 2,
+        "ra_commit": "2f75016924353eabc4b194fc69a6eaca310cb239",
+        "raw_decisions_on_other_page_bytes": 0,
+        "source_qrels_sha256": "bc1c4a5c1d8563d44c4cf786708df8ba4f9c7189918f5e7f32d4a9f945a036e1",
+        "spans": 590,
+        "spans_path": "judgments/tier2/c2-v2/O/supporting_spans.jsonl",
+        "stage": "c2-v2"
+      },
+      {
+        "arm": "O",
+        "decisions": {
+          "not_supported": 5172,
+          "supported": 385,
+          "undetermined": 326
+        },
+        "decisions_path": "judgments/tier2/pool-v3/O/page_decisions.jsonl",
+        "documentation": "original",
+        "path": "judgments/tier2/pool-v3/O/qrels.jsonl",
+        "qrels_rows": 4245,
+        "qrels_version": 3,
+        "ra_commit": "60af29d31bbb8127cea57a017cad27255f8d89af",
+        "raw_decisions_on_other_page_bytes": 0,
+        "source_qrels_sha256": "de0c5e0b4d72caeacce3201508390ddd490599967f684f5eb1fc7fcb7f1e7368",
+        "spans": 594,
+        "spans_path": "judgments/tier2/pool-v3/O/supporting_spans.jsonl",
+        "stage": "pool-v3"
+      },
+      {
+        "arm": "O",
+        "decisions": {
+          "not_supported": 5385,
+          "supported": 424,
+          "undetermined": 74
+        },
+        "decisions_path": "judgments/tier2/final-v4/O/page_decisions.jsonl",
+        "documentation": "original",
+        "path": "judgments/tier2/final-v4/O/qrels.jsonl",
+        "qrels_rows": 4497,
+        "qrels_version": 4,
+        "ra_commit": "9e68b89721d9b8e9fcd8f5126d5091da7ccd1d56",
+        "raw_decisions_on_other_page_bytes": 0,
+        "source_qrels_sha256": "61023f71a402fd97e90b6eb58740b9af0b8603e72eafc272964515c65931e82f",
+        "spans": 633,
+        "spans_path": "judgments/tier2/final-v4/O/supporting_spans.jsonl",
+        "stage": "final-v4"
+      },
+      {
+        "arm": "S",
+        "decisions": {
+          "not_supported": 5168,
+          "supported": 384,
+          "undetermined": 327
+        },
+        "decisions_path": "judgments/tier2/pool-v3/S/page_decisions.jsonl",
+        "documentation": "original",
+        "path": "judgments/tier2/pool-v3/S/qrels.jsonl",
+        "qrels_rows": 4240,
+        "qrels_version": 3,
+        "ra_commit": "60af29d31bbb8127cea57a017cad27255f8d89af",
+        "raw_decisions_on_other_page_bytes": 0,
+        "source_qrels_sha256": "e63ac73dd0752a22e14611151545942c1a0c1de2743676354cdd767c2af3d974",
+        "spans": 593,
+        "spans_path": "judgments/tier2/pool-v3/S/supporting_spans.jsonl",
+        "stage": "pool-v3"
+      },
+      {
+        "arm": "S",
+        "decisions": {
+          "not_supported": 5381,
+          "supported": 423,
+          "undetermined": 75
+        },
+        "decisions_path": "judgments/tier2/final-v4/S/page_decisions.jsonl",
+        "documentation": "original",
+        "path": "judgments/tier2/final-v4/S/qrels.jsonl",
+        "qrels_rows": 4492,
+        "qrels_version": 4,
+        "ra_commit": "9e68b89721d9b8e9fcd8f5126d5091da7ccd1d56",
+        "raw_decisions_on_other_page_bytes": 0,
+        "source_qrels_sha256": "dd3be58090bc0004304f8759ea69f6f6f6ae571f85661c0d1ae34fc8d3b36560",
+        "spans": 632,
+        "spans_path": "judgments/tier2/final-v4/S/supporting_spans.jsonl",
+        "stage": "final-v4"
+      },
+      {
+        "arm": "LT",
+        "decisions": {
+          "not_supported": 4712,
+          "supported": 397,
+          "undetermined": 321
+        },
+        "decisions_path": "judgments/tier2/pool-v3/LT/page_decisions.jsonl",
+        "documentation": "lt",
+        "path": "judgments/tier2/pool-v3/LT/qrels.jsonl",
+        "qrels_rows": 4331,
+        "qrels_version": 3,
+        "ra_commit": "60af29d31bbb8127cea57a017cad27255f8d89af",
+        "raw_decisions_on_other_page_bytes": 3901,
+        "source_qrels_sha256": "ddd2c86f800330150f5920e535dbe8c4b5e9e782dea0e9fee89e026731c32484",
+        "spans": 628,
+        "spans_path": "judgments/tier2/pool-v3/LT/supporting_spans.jsonl",
+        "stage": "pool-v3"
+      },
+      {
+        "arm": "LT",
+        "decisions": {
+          "not_supported": 4922,
+          "supported": 442,
+          "undetermined": 66
+        },
+        "decisions_path": "judgments/tier2/final-v4/LT/page_decisions.jsonl",
+        "documentation": "lt",
+        "path": "judgments/tier2/final-v4/LT/qrels.jsonl",
+        "qrels_rows": 4790,
+        "qrels_version": 4,
+        "ra_commit": "9e68b89721d9b8e9fcd8f5126d5091da7ccd1d56",
+        "raw_decisions_on_other_page_bytes": 3901,
+        "source_qrels_sha256": "dab9639135fc394ef1583e61292bd65c26617cf5f03d19967810f7d21bd63b8c",
+        "spans": 673,
+        "spans_path": "judgments/tier2/final-v4/LT/supporting_spans.jsonl",
+        "stage": "final-v4"
+      },
+      {
+        "arm": "R0",
+        "decisions": {
+          "not_supported": 4154,
+          "supported": 363,
+          "undetermined": 309
+        },
+        "decisions_path": "judgments/tier2/pool-v3/R0/page_decisions.jsonl",
+        "documentation": "r0",
+        "path": "judgments/tier2/pool-v3/R0/qrels.jsonl",
+        "qrels_rows": 3942,
+        "qrels_version": 3,
+        "ra_commit": "60af29d31bbb8127cea57a017cad27255f8d89af",
+        "raw_decisions_on_other_page_bytes": 4968,
+        "source_qrels_sha256": "ceba891cfdb82c6b15c4f6268280bb0c9e58934fadfa5063e40c1f737f3e36d7",
+        "spans": 568,
+        "spans_path": "judgments/tier2/pool-v3/R0/supporting_spans.jsonl",
+        "stage": "pool-v3"
+      },
+      {
+        "arm": "R0",
+        "decisions": {
+          "not_supported": 4373,
+          "supported": 413,
+          "undetermined": 40
+        },
+        "decisions_path": "judgments/tier2/final-v4/R0/page_decisions.jsonl",
+        "documentation": "r0",
+        "path": "judgments/tier2/final-v4/R0/qrels.jsonl",
+        "qrels_rows": 4302,
+        "qrels_version": 4,
+        "ra_commit": "9e68b89721d9b8e9fcd8f5126d5091da7ccd1d56",
+        "raw_decisions_on_other_page_bytes": 4968,
+        "source_qrels_sha256": "516251f5959bf043f8c2eb1f992ec8e18a756f935621be2eebfcf9aff5a3e762",
+        "spans": 618,
+        "spans_path": "judgments/tier2/final-v4/R0/supporting_spans.jsonl",
+        "stage": "final-v4"
+      }
+    ],
+    "verifier": {
+      "identical_at_ra_commits": [
+        "2f75016924353eabc4b194fc69a6eaca310cb239",
+        "60af29d31bbb8127cea57a017cad27255f8d89af",
+        "9e68b89721d9b8e9fcd8f5126d5091da7ccd1d56"
+      ],
+      "model": "claude-haiku-5-5",
+      "prompt_sha256": "df4424c1bd8da8e06c7de2c4ec0927031b49bcde0b73fd958839e7888d150f90",
+      "prompt_version": "pooled_support_verifier.v1"
+    }
+  },
+  "name": "DocSpectra/DockerDocsSet2026",
+  "populations": {
+    "tier1_requirements": 73,
+    "tier1_tasks": 15,
+    "tier2_candidate_pool": 142,
+    "tier2_common": 105,
+    "tier2_common_original": 101,
+    "tier2_extracted": 144,
+    "tier2_freeze": 111
+  },
+  "related": {
+    "paper": {
+      "author": "Rocker D'Antonio",
+      "public_url": null,
+      "status": "In preparation for submission to ICSC 2027 (submission deadline November 3, 2026); not published",
+      "title": "Measuring Directed Documentation Structure with Normalized Magnetic Spectra"
+    },
+    "retrievalarena": "https://github.com/DocSpectra/RetrievalArena",
+    "study_code": "https://github.com/DocSpectra/DocSpectraICSC2027"
+  },
+  "release_assets": [
+    {
+      "bytes": 12764526,
+      "content": "docs-original branch snapshot",
+      "file": "DockerDocsSet2026-1.0.0-docs-original.zip",
+      "prefix": "DockerDocsSet2026-docs-original",
+      "sha256": "f432761e751393679ed916276e078c15a704db933a2e4e29ca81cc9228fd8c8a",
+      "trees": {
+        "documentation/": "4c5e0499392bb25dd9641ea191ed3e2fff075bbee27ad798fba6deeff731c43c",
+        "export/corpus/": "ebce0bcead737137cce154bf6415413cc60d58e371432ac6c046a312cc1bcadc",
+        "historical-export/corpus/": "093304d8ad4e88bfb16dcdee225e8d0587a031f9180574080b7a29e8477eb674",
+        "upstream-pages/": "7b54d187fa99f9acc09353f6ae114aa9bfa2579d645df3168c9bc0d2043a9445"
+      }
+    },
+    {
+      "bytes": 6893800,
+      "content": "docs-lt branch snapshot",
+      "file": "DockerDocsSet2026-1.0.0-docs-lt.zip",
+      "prefix": "DockerDocsSet2026-docs-lt",
+      "sha256": "57fd071928c4278e6764f8d9b0554c5e0724abf2b1a2c0d51b2f20a8dcccfb97",
+      "trees": {
+        "documentation/": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74",
+        "export/corpus/": "d4496be66c10e9050ed2467bab12d95277064b62464284d17d448a1c4c79171f"
+      }
+    },
+    {
+      "bytes": 6375096,
+      "content": "docs-r0 branch snapshot",
+      "file": "DockerDocsSet2026-1.0.0-docs-r0.zip",
+      "prefix": "DockerDocsSet2026-docs-r0",
+      "sha256": "51e9d912a9ab545d448b98dfb77ed7eba01acd55980bd4caaa654ce9b1aea114",
+      "trees": {
+        "documentation/": "a01b9cedb040a7f7c52845a1ea7bd66a5da8f26dc6b78889b21f87a5e3d658d1",
+        "export/corpus/": "bd3ce666479bed1e1d401c9207dc467313a2b75c2e6721174425a396f09f15b5"
+      }
+    },
+    {
+      "bytes": 7197,
+      "content": "question text only (tier 1 tasks, tier 2 questions); no answers or labels",
+      "file": "DockerDocsSet2026-1.0.0-questions-only.zip",
+      "prefix": "DockerDocsSet2026-questions-only",
+      "sha256": "be3cd65913318097daecc44ddb9595a8c618cd0d02e27aa1288189c1c636d89a"
+    },
+    {
+      "bytes": 4669061,
+      "content": "questions/ and judgments/ from main",
+      "file": "DockerDocsSet2026-1.0.0-questions-and-labels.zip",
+      "prefix": "DockerDocsSet2026-questions-and-labels",
+      "sha256": "1b85dcec9a873e2548066570511b448c8a65e36495c50b0f9c9fd672f5752526"
+    },
+    {
+      "bytes": 78201995,
+      "content": "raw RetrievalArena verifier records per stage and arm: judgments, page decisions, qrels, qrels manifests, pools and windows",
+      "file": "DockerDocsSet2026-1.0.0-support-verification-records.zip",
+      "prefix": "DockerDocsSet2026-support-verification-records",
+      "sha256": "ca9de91f054d926880f35174d4472e2d2f80956eefaaba3051039b659360747d"
+    }
+  ],
+  "schema_version": "dockerdocsset2026.package.v1",
+  "upstream": {
+    "commit": "274681c49355bd951ae60c9208e854ff70f12474",
+    "license": "Apache-2.0 (stated by docker/docs at the commit)",
+    "repository": "https://github.com/docker/docs"
+  },
+  "url": "https://github.com/DocSpectra/DockerDocsSet2026",
+  "version": "1.0.0"
+}

@@ -1,0 +1,301 @@
+{
+  "corpus_id": "docker_docs_scope_v1_O",
+  "candidates": [
+    {
+      "cluster_id": "37820b00f201f7df4548931e1f62f78600dceca7946bb57cd701a92dcc8b3ea2",
+      "task": {
+        "question": "Our team already runs PostgreSQL in Docker Compose with persistent development data. How can I add a browser-based database interface that teammates can start without repeated login prompts, connect it to the database without publishing the database port, and check that it is ready? Include ways to preserve the interface's settings, diagnose connection-address mistakes, and assess what must change before using shared or sensitive data.",
+        "actor": "A developer maintaining a team's local PostgreSQL Compose environment.",
+        "trigger": "Teammates need a visual database interface for troubleshooting but currently lack a convenient way to navigate the development database.",
+        "goal": "Add and verify a convenient local pgAdmin service while keeping database communication internal and understanding the limits of the local convenience settings.",
+        "observable_success": "The Compose stack starts pgAdmin, its browser interface is reachable through the configured host port, and it connects to PostgreSQL by its internal service name without publishing PostgreSQL's port.",
+        "realism_rationale": "The guide explicitly describes adding pgAdmin to an application stack and automatically connecting it to a development database. Its plaintext-credential warning creates a concrete boundary between convenient local onboarding and use with sensitive data.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "1. Add pgAdmin to your application stack\n2. Configure pgAdmin to automatically connect to the development database"
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "In order to auto-connect, the database credentials are shared using plaintext files. During local development, this is often acceptable as local data is not real customer data.\n> However, if you are using production or sensitive data, this practice is strongly discouraged."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Add a pgAdmin service with an image and browser-access port mapping.",
+            "acceptance": "Provides a Compose pgadmin service using dpage/pgadmin4:9.8 and the documented 5050:80 mapping, identifying host port 5050 as the browser entry point.",
+            "tier_reason": "The interface cannot be started or reached without a service definition and port mapping.",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "      pgadmin:\n        image: dpage/pgadmin4:9.8\n        ports:\n          - 5050:80"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Supply the required pgAdmin account environment variables.",
+            "acceptance": "Includes PGADMIN_DEFAULT_EMAIL and PGADMIN_DEFAULT_PASSWORD in the pgAdmin service, clearly treating the documented values as example credentials.",
+            "tier_reason": "These variables are explicitly required for the supplied setup.",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "          # Required by pgAdmin\n          PGADMIN_DEFAULT_EMAIL: demo@example.com\n          PGADMIN_DEFAULT_PASSWORD: secret"
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Configure the requested local login convenience.",
+            "acceptance": "Sets PGADMIN_CONFIG_SERVER_MODE and PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED to the quoted string 'False', explaining that these disable the login and master-password prompts in the documented local configuration.",
+            "tier_reason": "Avoiding repeated prompts is an explicit workflow constraint.",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "          # Don't require the user to login\n          PGADMIN_CONFIG_SERVER_MODE: 'False'\n\n          # Don't require a \"master\" password after logging in\n          PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Start the stack and identify pgAdmin readiness.",
+            "acceptance": "Uses docker compose up and tells the developer to check the pgAdmin startup output for its listening message before attempting browser access.",
+            "tier_reason": "A minimally actionable procedure must include startup and an observable readiness check.",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "2. Start the Compose stack with the following command:\n\n    ```console\n    $ docker compose up\n    ```\n\n    After the image is downloaded the container starts, you will see output that looks similar to the following indicating pgAdmin is ready:"
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Use the PostgreSQL Compose service name for the database connection.",
+            "acceptance": "Configures pgAdmin's database host as the existing PostgreSQL service name, with port 5432, and explains why localhost inside pgAdmin is the wrong database address.",
+            "tier_reason": "The browser interface only satisfies the task if it can reach the database.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "**Networking**: In a Docker Compose environment, pgAdmin connects to the database using the internal service name (for example, `db:5432`) rather than `localhost`"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Preserve pgAdmin's own state separately from PostgreSQL data.",
+            "acceptance": "Adds or recommends a named volume mounted at /var/lib/pgadmin, distinguishing interface state from the existing database volume.",
+            "tier_reason": "State persistence improves repeated use but is not required for the first successful connection.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "  volumes:\n    - pgadmin_data:/var/lib/pgadmin"
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Explain the alternative for a shared multi-user interface.",
+            "acceptance": "Identifies Server Mode as the documented multi-user web-interface mode and distinguishes it from the local prompt-free configuration.",
+            "tier_reason": "This addresses a future deployment choice beyond local onboarding.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "When deployed in Docker, it typically runs in **Server Mode**, providing a multi-user web interface to manage one or more database instances."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Change pgAdmin password handling for production use.",
+            "acceptance": "Recommends supplying PGADMIN_DEFAULT_PASSWORD through an external environment variable or Docker secrets rather than storing its value in the Compose file for production.",
+            "tier_reason": "This is a deployment safety boundary rather than a prerequisite for disposable local data.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "In production environments, pass `PGADMIN_DEFAULT_PASSWORD` as an external environment variable or use Docker secrets. Storing passwords in plain text within `docker-compose.yml` poses a security risk."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Assess automatic database connection against the data's sensitivity.",
+            "acceptance": "Explains that the documented auto-connect approach shares credentials in plaintext files and strongly discourages it for production or sensitive data.",
+            "tier_reason": "Automatic connection is an optional convenience with a documented security consequence.",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "In order to auto-connect, the database credentials are shared using plaintext files. During local development, this is often acceptable as local data is not real customer data.\n> However, if you are using production or sensitive data, this practice is strongly discouraged."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Keep the database connection on a private Docker network.",
+            "acceptance": "Explains that pgAdmin-to-PostgreSQL communication is container-to-container and does not require publishing PostgreSQL's port to the host.",
+            "tier_reason": "This clarifies the exposure constraint and prevents unnecessary port publication.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "**Container-to-container**: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Diagnose unstable addresses caused by use of the default bridge network.",
+            "acceptance": "Explains that the default bridge requires IP-based addressing and that a user-defined bridge provides DNS names that remain usable across changing container IP addresses.",
+            "tier_reason": "This resolves a networking failure mode beyond choosing the correct initial hostname.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "User-defined bridge networks solve this by providing automatic DNS resolution, ensuring your PostgreSQL connection strings remain stable even if containers restart and receive new IP addresses."
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Distinguish browser access from a host-side PostgreSQL client connection.",
+            "acceptance": "Explains that a database client running on the laptop would use localhost and a published PostgreSQL port, unlike pgAdmin running in a container.",
+            "tier_reason": "This prevents applying container connection settings to a different client location.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "**Host-to-container**: Connect from your laptop or development machine using `localhost` and a published port."
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Explain the consequence of later publishing PostgreSQL on all interfaces.",
+            "acceptance": "Warns that 0.0.0.0:5432 permits access from devices that can reach the host and limits that option to trusted networks or firewall protection.",
+            "tier_reason": "This covers an exposure risk if the team later adds external database access.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "Exposing PostgreSQL to all network interfaces (`0.0.0.0:5432`) makes it accessible from any device that can reach your host. Only use this in trusted network environments or behind a firewall."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Use appropriately restricted database accounts when introducing external access.",
+            "acceptance": "Recommends dedicated users with only needed privileges instead of the postgres superuser for application access.",
+            "tier_reason": "Least-privilege account selection adds safety beyond establishing a development connection.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "**Avoid using the `postgres` superuser**: The default `postgres` user has full database privileges. Create dedicated users with only the permissions your application needs."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "State the runtime prerequisite for teammates following the setup.",
+            "acceptance": "States that Docker must be installed before teammates can run the containerized environment.",
+            "tier_reason": "The maintainer already has a running stack, but teammate onboarding still requires this prerequisite.",
+            "page_id": "content_guides_databases__359bdd96",
+            "exact_quote": "To follow along with this guide, you must have Docker installed."
+          }
+        ]
+      },
+      "rejection_reason": null
+    },
+    {
+      "cluster_id": "4a4b69158223e7e42164e844ce4f4cbee5b4cd848bc40155cefcfff85ef43426",
+      "task": {
+        "question": "I'm replacing a disposable PostgreSQL development container with a repeatable Compose setup for our application. How should I bootstrap a users table for new teammates, keep database data when the container is replaced, and verify persistence? Explain what happens when someone already has database data, troubleshoot initialization permission errors, and give connection options for the application container, a laptop client, and an optional browser administration tool without casually exposing credentials or the database.",
+        "actor": "An application developer building a repeatable PostgreSQL development environment.",
+        "trigger": "The current disposable container does not provide a reliable combination of initial schema creation and data survival when containers are replaced.",
+        "goal": "Create a persistent Compose database with first-run schema initialization, verifiable data survival, and appropriate client connection options.",
+        "observable_success": "A fresh data directory receives the users table, an existing data directory skips initialization, and a test database remains available after replacing the container with one attached to the same named volume.",
+        "realism_rationale": "The excerpts explicitly support automated schema creation during startup and keeping PostgreSQL data across container removals. The empty-directory condition makes this a substantive onboarding and persistence workflow because an existing volume changes initialization behavior.",
+        "realism_evidence": [
+          {
+            "role": "workflow_goal",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "- Automate database, schema, and user creation during container startup"
+          },
+          {
+            "role": "condition_or_consequence",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "Initialization scripts only run when the PostgreSQL data directory (`/var/lib/postgresql/data`) is empty. If you mount a volume containing existing data, initialization is skipped. This behavior prevents overwriting existing databases."
+          }
+        ],
+        "core_elements": [
+          {
+            "element_id": "C1",
+            "requirement": "Define PostgreSQL with persistent named storage in Compose.",
+            "acceptance": "Provides a postgres:18 service with POSTGRES_PASSWORD, mounts postgres_data at /var/lib/postgresql, and declares the postgres_data named volume.",
+            "tier_reason": "A runnable database and reusable storage are essential to the requested replacement workflow.",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "services:\n  db:\n    image: postgres:18\n    volumes:\n      - ./init-db:/docker-entrypoint-initdb.d\n      - postgres_data:/var/lib/postgresql\n    environment:\n      POSTGRES_PASSWORD: mysecretpassword\n\nvolumes:\n  postgres_data:"
+          },
+          {
+            "element_id": "C2",
+            "requirement": "Mount first-run initialization files at the supported entrypoint directory.",
+            "acceptance": "Creates a local init-db directory and mounts it at /docker-entrypoint-initdb.d, explaining that files execute in alphabetical order during first initialization.",
+            "tier_reason": "The schema bootstrap cannot run automatically without the supported script location.",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "The official PostgreSQL Docker image supports running initialization scripts automatically when the container starts for the first time. Any files placed in the `/docker-entrypoint-initdb.d/` directory are executed in alphabetical order."
+          },
+          {
+            "element_id": "C3",
+            "requirement": "Provide a concrete users-table initialization script.",
+            "acceptance": "Places init.sql in init-db and supplies the documented users table with a serial primary key, unique non-null email, non-null name, and default creation timestamp.",
+            "tier_reason": "A concrete schema script makes the requested bootstrap actionable.",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "CREATE TABLE users (\n    id SERIAL PRIMARY KEY,\n    email VARCHAR(255) UNIQUE NOT NULL,\n    name VARCHAR(100) NOT NULL,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);"
+          },
+          {
+            "element_id": "C4",
+            "requirement": "Explain the existing-data exception to initialization.",
+            "acceptance": "States that initialization runs only with an empty PostgreSQL data directory and that attaching existing data skips the scripts rather than applying the new schema automatically.",
+            "tier_reason": "This condition determines whether the central bootstrap action will occur.",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "Initialization scripts only run when the PostgreSQL data directory (`/var/lib/postgresql/data`) is empty. If you mount a volume containing existing data, initialization is skipped. This behavior prevents overwriting existing databases."
+          },
+          {
+            "element_id": "C5",
+            "requirement": "Verify persistence through container replacement.",
+            "acceptance": "Describes creating testdb with psql, stopping the disposable test container, starting a replacement attached to the same named volume, and confirming testdb appears in the database listing.",
+            "tier_reason": "The requested data-survival property needs a concrete observable test.",
+            "page_id": "content_guides_postgresql_immediate_setup_and_data_persistence__d85fc8e4",
+            "exact_quote": "$ docker exec postgres-dev psql -U postgres -c \"CREATE DATABASE testdb;\"\nCREATE DATABASE\n\n$ docker stop postgres-dev\npostgres-dev\n\n$ docker run --rm --name postgres-dev \\\n  -e POSTGRES_PASSWORD=mysecretpassword \\\n  -p 5432:5432 \\\n  -v postgres_data:/var/lib/postgresql \\\n  -d dhi.io/postgres:18"
+          }
+        ],
+        "robustness_elements": [
+          {
+            "element_id": "R1",
+            "requirement": "Choose stable private networking for the application container.",
+            "acceptance": "Recommends a user-defined bridge network and a container-name hostname, explaining automatic DNS resolution instead of tracking changing IP addresses.",
+            "tier_reason": "This makes the database useful to the application without changing the bootstrap procedure.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "When your application runs in another container, connecting to PostgreSQL through a user-defined bridge network is the recommended approach. This setup provides automatic DNS resolution, so your application can connect to PostgreSQL using the container name as the hostname, without needing to track IP addresses."
+          },
+          {
+            "element_id": "R2",
+            "requirement": "Provide the distinct laptop-client connection option.",
+            "acceptance": "Explains that a client running on the laptop uses localhost and a published PostgreSQL port, whereas container-to-container access does not require host port exposure.",
+            "tier_reason": "This addresses an alternate client location beyond the core database setup.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "- **Container-to-container**: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host.\n- **Host-to-container**: Connect from your laptop or development machine using `localhost` and a published port."
+          },
+          {
+            "element_id": "R3",
+            "requirement": "Assess the risk of publishing PostgreSQL to all interfaces.",
+            "acceptance": "Explains the reachability consequence of 0.0.0.0:5432 and recommends trusted networks or a firewall, identifying a reverse proxy or VPN as documented production alternatives.",
+            "tier_reason": "External access introduces a conditional exposure risk.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "Exposing PostgreSQL to all network interfaces (`0.0.0.0:5432`) makes it accessible from any device that can reach your host. Only use this in trusted network environments or behind a firewall. For production, consider using a reverse proxy or VPN instead."
+          },
+          {
+            "element_id": "R4",
+            "requirement": "Select a restricted database account for application access.",
+            "acceptance": "Recommends a dedicated database user with only the application's required permissions instead of using the postgres superuser.",
+            "tier_reason": "Privilege selection improves safety but is separate from proving initialization and persistence.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "**Avoid using the `postgres` superuser**: The default `postgres` user has full database privileges. Create dedicated users with only the permissions your application needs."
+          },
+          {
+            "element_id": "R5",
+            "requirement": "Replace weak example database passwords before external access.",
+            "acceptance": "Explicitly recommends a strong, complex PostgreSQL password rather than retaining the example password when exposing database access.",
+            "tier_reason": "Credential strength is a distinct external-access safeguard.",
+            "page_id": "content_guides_postgresql_networking_and_connectivity__d1bf4f64",
+            "exact_quote": "**Use strong passwords**: PostgreSQL passwords should be complex."
+          },
+          {
+            "element_id": "R6",
+            "requirement": "Offer a concrete optional browser administration service.",
+            "acceptance": "Provides the documented dpage/pgadmin4 service with PGADMIN_DEFAULT_EMAIL, PGADMIN_DEFAULT_PASSWORD, and 8080:80, and identifies http://localhost:8080 as its browser URL.",
+            "tier_reason": "The browser interface is an optional administration path rather than necessary database infrastructure.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "pgadmin:\n  image: dpage/pgadmin4:8.14\n  environment:\n    PGADMIN_DEFAULT_EMAIL: admin@example.com\n    PGADMIN_DEFAULT_PASSWORD: secure_password\n  volumes:\n    - pgadmin_data:/var/lib/pgadmin\n  ports:\n    - \"8080:80\""
+          },
+          {
+            "element_id": "R7",
+            "requirement": "Persist the optional administration tool's state.",
+            "acceptance": "Recommends pgadmin_data mounted at /var/lib/pgadmin and distinguishes this volume from PostgreSQL's data volume.",
+            "tier_reason": "This preserves administration settings without affecting database persistence.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "  volumes:\n    - pgadmin_data:/var/lib/pgadmin"
+          },
+          {
+            "element_id": "R8",
+            "requirement": "Keep production pgAdmin passwords out of plaintext Compose configuration.",
+            "acceptance": "Recommends an external environment variable or Docker secrets for PGADMIN_DEFAULT_PASSWORD in production.",
+            "tier_reason": "This safeguards the optional tool's credentials in a later deployment context.",
+            "page_id": "content_guides_postgresql_companions_for_postgresql__a03fe3ed",
+            "exact_quote": "In production environments, pass `PGADMIN_DEFAULT_PASSWORD` as an external environment variable or use Docker secrets. Storing passwords in plain text within `docker-compose.yml` poses a security risk."
+          },
+          {
+            "element_id": "R9",
+            "requirement": "Explain the sensitive-data limitation of pgAdmin auto-connect.",
+            "acceptance": "States that the documented automatic connection shares database credentials through plaintext files and strongly discourages this for production or sensitive data.",
+            "tier_reason": "This assesses a separate optional convenience that can expose database credentials.",
+            "page_id": "content_guides_pgadmin__96f10a97",
+            "exact_quote": "In order to auto-connect, the database credentials are shared using plaintext files. During local development, this is often acceptable as local data is not real customer data.\n> However, if you are using production or sensitive data, this practice is strongly discouraged."
+          },
+          {
+            "element_id": "R10",
+            "requirement": "Troubleshoot unreadable SQL initialization files.",
+            "acceptance": "For Permission denied errors on SQL initialization files, recommends checking read permissions and gives chmod 644 init-db/*.sql as the documented remedy.",
+            "tier_reason": "This handles a specific startup failure beyond the normal initialization path.",
+            "page_id": "content_guides_postgresql_advanced_configuration_and_initialization__12ce9234",
+            "exact_quote": "Ensure initialization scripts have proper read permissions. If you encounter \"Permission denied\" errors, run `chmod 644 init-db/*.sql`"
+          }
+        ]
+      },
+      "rejection_reason": null
+    }
+  ]
+}

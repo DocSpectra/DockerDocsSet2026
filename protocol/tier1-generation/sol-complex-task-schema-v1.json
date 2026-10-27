@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "corpus_id": {"type": "string"},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cluster_id": {"type": "string"},
+          "task": {
+            "type": ["object", "null"],
+            "properties": {
+              "question": {"type": "string"},
+              "actor": {"type": "string"},
+              "trigger": {"type": "string"},
+              "goal": {"type": "string"},
+              "observable_success": {"type": "string"},
+              "realism_rationale": {"type": "string"},
+              "realism_evidence": {
+                "type": "array", "items": {
+                  "type": "object", "properties": {
+                    "role": {"type": "string", "enum": ["workflow_goal", "condition_or_consequence"]},
+                    "page_id": {"type": "string"}, "exact_quote": {"type": "string"}
+                  }, "required": ["role", "page_id", "exact_quote"], "additionalProperties": false
+                }
+              },
+              "core_elements": {"type": "array", "items": {
+                "type": "object", "properties": {
+                  "element_id": {"type": "string"}, "requirement": {"type": "string"},
+                  "acceptance": {"type": "string"}, "tier_reason": {"type": "string"},
+                  "page_id": {"type": "string"}, "exact_quote": {"type": "string"}
+                }, "required": ["element_id", "requirement", "acceptance", "tier_reason", "page_id", "exact_quote"], "additionalProperties": false
+              }},
+              "robustness_elements": {"type": "array", "items": {
+                "type": "object", "properties": {
+                  "element_id": {"type": "string"}, "requirement": {"type": "string"},
+                  "acceptance": {"type": "string"}, "tier_reason": {"type": "string"},
+                  "page_id": {"type": "string"}, "exact_quote": {"type": "string"}
+                }, "required": ["element_id", "requirement", "acceptance", "tier_reason", "page_id", "exact_quote"], "additionalProperties": false
+              }}
+            },
+            "required": ["question", "actor", "trigger", "goal", "observable_success", "realism_rationale", "realism_evidence", "core_elements", "robustness_elements"],
+            "additionalProperties": false
+          },
+          "rejection_reason": {"type": ["string", "null"]}
+        },
+        "required": ["cluster_id", "task", "rejection_reason"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["corpus_id", "candidates"],
+  "additionalProperties": false
+}
