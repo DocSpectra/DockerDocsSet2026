@@ -64,3 +64,16 @@ Hardened Docker Desktop features work independently and together to create a def
 Explore Hardened Docker Desktop features to understand how they can strengthen your organization's security posture:
 
 {{< grid >}}
+
+## Enhanced Container Isolation tasks
+
+- [Enable ECI](enhanced-container-isolation/enable-eci.md)
+- [Configure Docker socket exceptions](enhanced-container-isolation/config.md)
+- [Allow Testcontainers socket access](enhanced-container-isolation/testcontainers.md)
+- [Allow CI/CD tools socket access](enhanced-container-isolation/ci-tools.md)
+- [Allow development tools socket access](enhanced-container-isolation/development-tools.md)
+
+## Shared access-control context
+
+- [Image and registry access control scope](image-registry-controls.md)
+- [Container proxy rules and PAC reference](container-proxy-reference.md)

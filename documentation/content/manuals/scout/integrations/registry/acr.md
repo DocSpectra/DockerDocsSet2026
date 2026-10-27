@@ -11,6 +11,8 @@ Scout with ACR and activating Docker Scout for a repository, pushing an image
 to the repository automatically triggers image analysis. You can view image
 insights using the Docker Scout Dashboard, or the `docker scout` CLI commands.
 
+For registry context, see [Container registry integrations](/manuals/scout/deep-dive/integration-types.md#container-registries).
+
 ## How it works
 
 To help you integrate your Azure Container Registry with Docker Scout, you can
@@ -110,7 +112,7 @@ redirected to the Azure registry summary page, which shows you all your Azure
 integrations for the current organization.
 
 Next, activate Docker Scout for the repositories that you want to analyze in
-[Repository settings](https://scout.docker.com/settings/repos/).
+[Repository settings](https://scout.docker.com/settings/repos/) (see [activation prerequisites and steps](/manuals/scout/how-tos/enable-repositories.md)).
 
 After activating repositories, images that you push are analyzed by Docker
 Scout. The analysis results appear in the Docker Scout Dashboard.

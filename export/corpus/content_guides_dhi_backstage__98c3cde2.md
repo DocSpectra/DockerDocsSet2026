@@ -23,12 +23,15 @@ By the end of this guide, you'll have a Backstage container image that is distro
 - Docker Desktop or Docker Engine with BuildKit enabled
 - A Docker Hub account authenticated with `docker login` and `docker login dhi.io`
 - A Backstage project created with `@backstage/create-app`
+- Basic familiarity with multi-stage Dockerfiles and Node.js native modules
+
+See [DHI registry authentication](/dhi/how-to/authenticate/), [CLI setup](/dhi/how-to/cli/), and the [customization context](/dhi/core-concepts/customizations/) before following the steps.
 
 ## Why Backstage needs customization
 
 The DHI migration examples cover applications where you can swap the base image and everything works. Backstage is different. It uses `better-sqlite3` and other packages that compile native Node.js modules at install time, which means the build stage needs `g++`, `make`, `python3`, and `sqlite-dev` — none of which are in the base `dhi.io/node` image. The runtime image only needs the shared library (`sqlite-libs`) that the compiled native module links against.
 
-This is a common pattern. Any Node.js application that depends on native addons (such as `bcrypt`, `sharp`, `sqlite3`, or `node-canvas`) faces the same challenge. The approach in this guide applies to all of them.
+See [native Node.js addons and runtime customizations](/dhi/core-concepts/node-native-addons/) for the shared pattern.
 
 ## Step 1: Examine the original Dockerfile
 
@@ -217,7 +220,7 @@ DHI images ship with 15 attestations including CycloneDX SBOM, SLSA provenance, 
 
 ## Step 3: Add Socket Firewall protection
 
-DHI provides `-sfw` (Socket Firewall) variants for Node.js images. Socket Firewall intercepts `npm` and `yarn` commands during the build to detect and block malicious packages before they execute install scripts.
+See [Socket Firewall variants](/dhi/core-concepts/socket-firewall/) for context.
 
 To enable Socket Firewall, change the `-dev` tags to `-sfw-dev` in all three stages. The SFW version of the Dockerfile:
 
@@ -288,18 +291,7 @@ The previous steps still use the `-dev` or `-sfw-dev` variant as the runtime ima
 
 > [!IMPORTANT]
 >
-> When creating a customization, only add what your application needs at runtime:
->
-> - **System packages** - add shared libraries (such as `sqlite-libs`) and
->   language runtimes from the DHI catalog (such as `python-3.14`).
->   Do not add build tools (such as `g++`, `make`, or `python3` from Alpine).
-> - **Build tools** - keep these in the `-dev` build stage only. Never add them
->   to the runtime customization.
->
-> Language runtimes installed from the DHI hardened package feed are patched and
-> tracked in the image SBOM, which is why they are acceptable as system packages.
-> Build tools from Alpine or Debian package feeds are not hardened and should
-> never appear in the runtime image.
+> Review the [runtime-library and build-tool requirements](/dhi/core-concepts/node-native-addons/) before creating the customization.
 
 For Backstage, the runtime image needs:
 
@@ -320,7 +312,7 @@ After you mirror the Node.js DHI repository to your organization's namespace:
 3. Under **Packages**, add `sqlite-libs` and `python-3.14`.
 4. Create the customization.
 
-For more information, see [Customize an image](/dhi/how-to/customize/).
+For more information, see [Customize an image](/dhi/how-to/customize-image/).
 
 {{< /tab >}}
 {{< tab name="dhictl CLI" >}}
@@ -430,7 +422,7 @@ docker exec -it <container-id> sh
 OCI runtime exec failed: exec failed: unable to start container process: ...
 ```
 
-Use [Docker Debug](/dhi/troubleshoot/#general-debugging) if you need to troubleshoot a running distroless container.
+Use [Docker Debug](/dhi/how-to/debug/#general-debugging) if you need to troubleshoot a running distroless container.
 
 > [!NOTE]
 >
@@ -479,5 +471,5 @@ Different scanners detect different issues. Running all three gives you the most
 - [Create and build a DHI](/dhi/how-to/build/) — learn how to write a DHI definition file, build images locally.
 - [Use the DHI CLI](/dhi/how-to/cli/) — manage DHI images, mirrors, and customizations from the command line.
 - [Migrate to DHI](/dhi/migration/) — for applications that work with standard DHI images without additional packages.
-- [Compare images](/dhi/how-to/explore/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
-- [Docker Debug](/dhi/troubleshoot/#general-debugging) — troubleshoot distroless containers that have no shell.
+- [Compare images](/dhi/how-to/compare-images/) — evaluate security improvements between your original and hardened images.
+- [Docker Debug](/dhi/how-to/debug/#general-debugging) — troubleshoot distroless containers that have no shell.

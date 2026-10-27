@@ -13,6 +13,22 @@ sitemap: false
 
 This page contains release notes for Docker Desktop for Mac 3.x. 
 
+## Related guidance
+
+- [Release availability and update prerequisites](/manuals/desktop/release-availability.md)
+- [Historical upgrade and update procedures](upgrade-guidance.md)
+
+## Check known issues
+
+- [Docker Desktop 3.4.0](#docker-desktop-340)
+- [Docker Desktop 3.3.1](#docker-desktop-331)
+- [Docker Desktop 3.2.0](#docker-desktop-320)
+- [Docker Desktop 3.0.4](#docker-desktop-304)
+- [Docker Desktop 3.0.3](#docker-desktop-303)
+- [Docker Desktop 3.0.2](#docker-desktop-302)
+- [Docker Desktop 3.0.1](#docker-desktop-301)
+- [Docker Desktop 3.0.0](#docker-desktop-300)
+
 ## Docker Desktop 3.6.0
 2021-08-11
 
@@ -175,7 +191,7 @@ This page contains release notes for Docker Desktop for Mac 3.x.
 
 - Fixed the diagnostics failing to upload from the Troubleshoot screen.
 
-### Docker Desktop 3.3.2
+## Docker Desktop 3.3.2
 2021-05-03
 
 ### Upgrades
@@ -221,11 +237,7 @@ Docker Desktop is now available for Apple silicon as well as Intel chips. This e
 ## Docker Desktop 3.3.0
 2021-04-08
 
-You can now specify when to download and install a Docker Desktop update. When an update becomes available, Docker Desktop displays an icon to indicate the availability of a newer version. You can download the update in the background whenever convenient. When the download is complete, all you need to do is to click Update and restart to install the latest update.
-
-Developers who use Docker Desktop for professional development purposes may at times need to skip a specific update. For this reason, users with a paid Docker subscription can skip notifications for a particular update when a reminder appears.
-
-For developers in IT managed environments, who don’t have administrative access to install updates to Docker Desktop, there is now an option in the Settings menu to opt out of notifications altogether for Docker Desktop updates if your Docker ID is part of a Team subscription.
+See [Docker Desktop 3.3.0 update controls](upgrade-guidance.md#docker-desktop-330-update-controls) for downloading, installing, skipping, and opting out of update notifications.
 
 ### Upgrades
 
@@ -363,7 +375,7 @@ Docker Desktop can sometimes fail to start after updating to version 3.2.0. If y
 ## Docker Desktop 3.0.2
 2020-12-18
 
-### Bug fixes and minor changes
+### Bug fixes and minor changes
 
 - Avoid timeouts during `docker-compose up` by making cache invalidation faster. Fixes [docker/for-mac#4957](https://github.com/docker/for-mac/issues/4957).
 - Avoid generating a spurious filesystem DELETE event while invalidating caches. Fixes [docker/for-mac#5124](https://github.com/docker/for-mac/issues/5124).

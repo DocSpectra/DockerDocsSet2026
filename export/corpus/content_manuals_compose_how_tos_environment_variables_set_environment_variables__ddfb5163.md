@@ -17,6 +17,12 @@ A container's environment is not set until there's an explicit entry in the serv
 > Don't use environment variables to pass sensitive information, such as passwords, in to your containers. Use [secrets](../use-secrets.md) instead.
 
 
+## Shared context
+
+- [Container environment precedence](envvars-precedence.md)
+- [Interpolation and environment file syntax](interpolation-syntax.md)
+- [Secret access and environment variable risks](../../intro/secrets.md)
+
 ## Use the `environment` attribute
 
 You can set environment variables directly in your container's environment with the

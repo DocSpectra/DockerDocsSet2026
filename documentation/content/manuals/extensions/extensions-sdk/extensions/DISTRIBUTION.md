@@ -7,7 +7,7 @@ aliases:
 weight: 30
 ---
 
-This page contains additional information on how to package and distribute extensions.
+After you have developed your extension and tested it locally, you are ready to release the extension and make it available for others to install and use (either internally with your team, or more publicly).
 
 ## Package your extension
 
@@ -23,13 +23,13 @@ To package and release an extension, you must build a Docker image (`docker buil
 Docker image tags must follow semver conventions in order to allow fetching the latest version of the extension, and to know if there are updates available. See [semver.org](https://semver.org/) to learn more about semantic versioning.
 
 Extension images must be multi-arch images so that users can install extensions on ARM/AMD hardware. These multi-arch images can include ARM/AMD specific binaries. Mac users will automatically use the right image based on their architecture.
-Extensions that install binaries on the host must also provide Windows binaries in the same extension image. See how to [build a multi-arch image](multi-arch.md) for your extension.
+Extensions that install binaries on the host must also provide Windows binaries in the same extension image. 
 
 You can implement extensions without any constraints on the code repository. Docker doesn't need access to the code repository in order to use the extension. Also, you can manage new releases of your extension, without any dependency on Docker Desktop releases.
 
 ## New releases and updates
 
-You can release a new version of your Docker extension by pushing a new image with a new tag to Docker Hub.
+You can release a new version of your Docker extension by pushing a new image with an incremented tag to Docker Hub, still using `semver` conventions.
 
 Any new image pushed to an image repository corresponding to an extension defines a new version of that extension. Image tags are used to identify version numbers. Extension versions must follow semver to make it easy to understand and compare versions.
 

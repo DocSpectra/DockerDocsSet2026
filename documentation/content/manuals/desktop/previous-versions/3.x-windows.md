@@ -13,6 +13,15 @@ sitemap: false
 
 This page contains release notes for Docker Desktop for Windows 3.x. 
 
+## Related guidance
+
+- [Release availability and update prerequisites](/manuals/desktop/release-availability.md)
+- [Historical upgrade and update procedures](upgrade-guidance.md)
+
+## Check known issues
+
+- [Docker Desktop 3.0.0](#docker-desktop-300)
+
 ## Docker Desktop 3.6.0
 2021-08-11
 
@@ -206,11 +215,7 @@ This page contains release notes for Docker Desktop for Windows 3.x.
 
 ### New
 
-You can now specify when to download and install a Docker Desktop update. When an update becomes available, Docker Desktop displays an icon to indicate the availability of a newer version. You can download the update in the background whenever convenient. When the download is complete, all you need to do is to click Update and restart to install the latest update.
-
-Developers who use Docker Desktop for professional development purposes may at times need to skip a specific update. For this reason, users with a paid Docker subscription can skip notifications for a particular update when a reminder appears.
-
-For developers in IT managed environments, who don’t have administrative access to install updates to Docker Desktop, there is now an option in the Settings menu to opt out of notifications altogether for Docker Desktop updates if your Docker ID is part of a Team subscription.
+See [Docker Desktop 3.3.0 update controls](upgrade-guidance.md#docker-desktop-330-update-controls) for downloading, installing, skipping, and opting out of update notifications.
 
 ### Upgrades
 
@@ -293,7 +298,7 @@ For developers in IT managed environments, who don’t have administrative acces
 ## Docker Desktop 3.1.0
 2021-01-14
 
-## New
+### New
 
 - Add experimental support for GPU workloads with WSL 2 backend (requires Windows Insider developer channel).
 - Docker daemon now runs within a Debian Buster based container (instead of Alpine).
@@ -321,7 +326,7 @@ pgrades
 ## Docker Desktop 3.0.0
 2020-12-10
 
-## New
+### New
 
 - Use of three-digit version number for Docker Desktop releases.
 - Docker Desktop updates are now much smaller as they will be applied using delta patches. For more information, see.

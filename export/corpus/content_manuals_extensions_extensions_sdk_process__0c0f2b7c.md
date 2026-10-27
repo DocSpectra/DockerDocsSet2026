@@ -34,7 +34,7 @@ For further inspiration, see the other examples in the [samples folder](https://
 
 > [!TIP]
 >
-> Whilst creating your extension, make sure you follow the [design](design/design-guidelines.md) and [UI styling](design/_index.md) guidelines to ensure visual consistency and [level AA accessibility standards](https://www.w3.org/WAI/WCAG2AA-Conformance).
+> Whilst creating your extension, make sure you follow the [design](design/design-guidelines.md) and [UI styling](design/ui-styling.md) guidelines to ensure visual consistency and [level AA accessibility standards](https://www.w3.org/WAI/WCAG2AA-Conformance).
 
 ## Part two: Publish and distribute your extension
 
@@ -48,7 +48,7 @@ If you want your extension published in the Marketplace, read the [publish docum
 
 If you want to get up and running with creating a Docker Extension, see the [Quickstart guide](quickstart.md).
 
-Alternatively, get started with reading the "Part one: Build" section for more in-depth information about each step of the extension creation process.
+Alternatively, get started with reading [Build an extension](build/_index.md) for more in-depth information about each step of the extension creation process.
 
 For an in-depth tutorial of the entire build process, we recommend the following video walkthrough from DockerCon 2022.
 

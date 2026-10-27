@@ -15,7 +15,11 @@ GitHub and as a container image on Docker Hub. Use the client to invoke the
 For more information about how to use the `docker scout environment` command,
 refer to the [CLI reference](/reference/cli/docker/scout/environment/).
 
-## Examples
+## Prerequisites
+
+For environment permissions and image-analysis requirements, see [Assign to environments](./_index.md#assign-to-environments).
+
+For CLI and container-image installation, see [Install Docker Scout](/manuals/scout/install.md).
 
 Before you start, set the following environment variables in your CI system:
 
@@ -23,6 +27,8 @@ Before you start, set the following environment variables in your CI system:
 - `DOCKER_SCOUT_HUB_PASSWORD`: your Docker Hub personal access token
 
 Make sure the variables are accessible to your project.
+
+## CI examples
 
 {{< tabs >}}
 {{< tab name="Circle CI" >}}

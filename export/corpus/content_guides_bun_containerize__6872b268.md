@@ -10,7 +10,7 @@ aliases:
 
 ## Prerequisites
 
-* You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
+* Have a [Git client](/guides/prerequisites.md#git-client).
 
 ## Overview
 
@@ -127,34 +127,9 @@ In addition to specifying the base image, the Dockerfile also:
 
 ## Run the application
 
-Inside the `bun-docker` directory, run the following command in a terminal.
+In the `bun-docker` directory, follow [Run an application with Compose](/guides/run-compose-application.md) for foreground or background startup and shutdown.
 
-```console
-$ docker compose up --build
-```
-
-Open a browser and view the application at [http://localhost:3000](http://localhost:3000). You will see a message `{"Status" : "OK"}` in the browser.
-
-In the terminal, press `ctrl`+`c` to stop the application.
-
-### Run the application in the background
-
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `bun-docker` directory, run the following command
-in a terminal.
-
-```console
-$ docker compose up --build -d
-```
-
-Open a browser and view the application at [http://localhost:3000](http://localhost:3000).
-
-
-In the terminal, run the following command to stop the application.
-
-```console
-$ docker compose down
-```
+Open a browser at [http://localhost:3000](http://localhost:3000). You will see the message `{"Status" : "OK"}` in the browser.
 
 ## Summary
 
@@ -164,7 +139,7 @@ application using Docker.
 Related information:
 
  - [Dockerfile reference](/reference/dockerfile.md)
- - [.dockerignore file](/reference/dockerfile.md#dockerignore-file)
+ - [.dockerignore file](/manuals/build/concepts/context.md#dockerignore-files)
  - [Docker Compose overview](/manuals/compose/_index.md)
  - [Compose file reference](/reference/compose-file/_index.md)
  - [Docker Hardened Images](/dhi/)

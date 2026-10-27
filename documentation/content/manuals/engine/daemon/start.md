@@ -7,6 +7,9 @@ aliases:
   - /config/daemon/start/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 This page shows how to start the daemon, either manually or using OS utilities.
 
 ## Start the daemon using operating system utilities

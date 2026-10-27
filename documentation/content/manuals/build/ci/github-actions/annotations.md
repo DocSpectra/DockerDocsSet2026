@@ -5,6 +5,11 @@ description: Add OCI annotations to image components using GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, annotations, oci
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 Annotations let you specify arbitrary metadata for OCI image components, such
 as manifests, indexes, and descriptors.
 

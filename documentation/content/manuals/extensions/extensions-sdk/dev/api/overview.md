@@ -6,32 +6,18 @@ aliases:
  - /desktop/extensions-sdk/dev/api/overview/
 ---
 
-The extensions UI runs in a sandboxed environment and doesn't have access to any
-electron or nodejs APIs.
+## Set up the API client
 
-The extension UI API provides a way for the frontend to perform different actions
-and communicate with the Docker Desktop dashboard or the underlying system.
-
-JavaScript API libraries, with Typescript support, are available in order to get all the API definitions in to your extension code.
-
-- [@docker/extension-api-client](https://www.npmjs.com/package/@docker/extension-api-client) gives access to the extension API entrypoint `DockerDesktopClient`.
-- [@docker/extension-api-client-types](https://www.npmjs.com/package/@docker/extension-api-client-types) can be added as a dev dependency in order to get types auto-completion in your IDE.
-
-```Typescript
-import { createDockerDesktopClient } from '@docker/extension-api-client';
-
-export function App() {
-  // obtain Docker Desktop client
-  const ddClient = createDockerDesktopClient();
-  // use ddClient to perform extension actions
-}
-```
+See [Set up the extension UI API client](client.md).
 
 The `ddClient` object gives access to various APIs:
 
 - [Extension Backend](backend.md)
-- [Docker](docker.md)
+- [Docker objects](docker-objects.md)
+- [Docker commands](docker-commands.md)
 - [Dashboard](dashboard.md)
 - [Navigation](dashboard-routes-navigation.md)
 
-See also the [Extensions API reference](reference/api/extensions-sdk/_index.md).
+See also the [DockerDesktopClient reference](/reference/api/extensions-sdk/DockerDesktopClient.md).
+
+For UI isolation and storage, see [Extension security](../../architecture/security.md#policies-enforced-for-the-front-end-code).

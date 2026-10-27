@@ -27,7 +27,7 @@ In this guide, you will learn how to:
 
 - Go 1.25+
 - Your preferred IDE (VS Code, GoLand)
-- A Docker environment supported by Testcontainers. For details, see
+- A [Docker environment supported by Testcontainers](/manuals/testcontainers.md#prerequisites). For details, see
   the [testcontainers-go system requirements](https://golang.testcontainers.org/system_requirements/).
 
 > [!NOTE]

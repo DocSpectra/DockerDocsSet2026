@@ -72,6 +72,23 @@ services:
 
 For more example Compose files, explore the [Awesome Compose samples](https://github.com/docker/awesome-compose).
 
+## Find attributes by task
+
+| Task | Attributes and shared rules |
+| --- | --- |
+| Select or build an image | [image](#image), [pull_policy](#pull_policy), [build](build.md), [platform](#platform) |
+| Set commands and lifecycle behavior | [command](#command), [entrypoint](#entrypoint), [init](#init), [post_start](#post_start), [pre_stop](#pre_stop), [restart](#restart), [stop_signal](#stop_signal), [stop_grace_period](#stop_grace_period) |
+| Configure startup dependencies | [depends_on](#depends_on), [healthcheck](#healthcheck), [profiles](#profiles) |
+| Set environment and metadata | [env_file](#env_file), [environment](#environment), [labels](#labels), [label_file](#label_file), [annotations](#annotations) |
+| Connect services and publish ports | [networks](#networks), [network_mode](#network_mode), [ports](#ports), [expose](#expose), [DNS](#dns), [extra_hosts](#extra_hosts), [links](#links), [external_links](#external_links) |
+| Mount data and configuration | [volumes](#volumes), [volumes_from](#volumes_from), [tmpfs](#tmpfs), [configs](#configs), [secrets](#secrets), [read_only](#read_only) |
+| Set CPU, memory, and device constraints | [blkio_config](#blkio_config), [cpus](#cpus), [mem_limit](#mem_limit), [mem_reservation](#mem_reservation), [memswap_limit](#memswap_limit), [devices](#devices), [gpus](#gpus), [deploy resources](deploy.md#resources) |
+| Set identity, isolation, and privileges | [user](#user), [group_add](#group_add), [credential_spec](#credential_spec), [isolation](#isolation), [security_opt](#security_opt), [privileged](#privileged), [cap_add](#cap_add), [cap_drop](#cap_drop), [use_api_socket](#use_api_socket) |
+| Configure local development or external resources | [develop](develop.md), [provider](#provider), [models](#models) |
+| Reuse service configuration | [extends](#extends), [fragments](fragments.md), [extensions](extension.md) |
+
+For byte and duration syntax, see [value formats](value-formats.md).
+
 ## Attributes
 
 <!-- vale off(Docker.HeadingSentenceCase.yml) -->
@@ -183,7 +200,7 @@ on Linux kernel.
 ### `cpu_rt_runtime`
 
 `cpu_rt_runtime` configures CPU allocation parameters for platforms with support for real-time scheduler. It can be either
-an integer value using microseconds as unit or a [duration](extension.md#specifying-durations).
+an integer value using microseconds as unit or a [duration](value-formats.md#specifying-durations).
 
 ```yml
  cpu_rt_runtime: '400ms'
@@ -193,7 +210,7 @@ an integer value using microseconds as unit or a [duration](extension.md#specify
 ### `cpu_rt_period`
 
 `cpu_rt_period` configures CPU allocation parameters for platforms with support for real-time scheduler. It can be either
-an integer value using microseconds as unit or a [duration](extension.md#specifying-durations).
+an integer value using microseconds as unit or a [duration](value-formats.md#specifying-durations).
 
 ```yml
  cpu_rt_period: '1400us'
@@ -1077,7 +1094,7 @@ healthcheck:
   start_interval: 5s
 ```
 
-`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](https://github.com/docker/compose/releases/tag/v2.20.2)
+`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](value-formats.md#specifying-durations). Introduced in Docker Compose version [2.20.2](https://github.com/docker/compose/releases/tag/v2.20.2)
 
 `test` defines the command Compose runs to check container health. It can be
 either a string or a list. If it's a list, the first item must be either `NONE`, `CMD` or `CMD-SHELL`.
@@ -1262,13 +1279,13 @@ are platform specific. Driver specific options can be set with `options` as key-
 
 ### `mem_limit`
 
-`mem_limit` configures a limit on the amount of memory a container can allocate, set as a string expressing a [byte value](extension.md#specifying-byte-values).
+`mem_limit` configures a limit on the amount of memory a container can allocate, set as a string expressing a [byte value](value-formats.md#specifying-byte-values).
 
 When set, `mem_limit` must be consistent with the `limits.memory` attribute in the [Deploy Specification](deploy.md#memory).
 
 ### `mem_reservation`
 
-`mem_reservation` configures a reservation on the amount of memory a container can allocate, set as a string expressing a [byte value](extension.md#specifying-byte-values).
+`mem_reservation` configures a reservation on the amount of memory a container can allocate, set as a string expressing a [byte value](value-formats.md#specifying-byte-values).
 
 When set, `mem_reservation` must be consistent with the `reservations.memory` attribute in the [Deploy Specification](deploy.md#memory).
 
@@ -1988,7 +2005,7 @@ For further default labeling schemes you can override, see [Security configurati
 ### `shm_size`
 
 `shm_size` configures the size of the shared memory (`/dev/shm` partition on Linux) allowed by the service container.
-It's specified as a [byte value](extension.md#specifying-byte-values).
+It's specified as a [byte value](value-formats.md#specifying-byte-values).
 
 ### `stdin_open`
 
@@ -2002,7 +2019,7 @@ Supported values are `true` or `false`.
 `stop_grace_period` specifies how long Compose must wait when attempting to stop a container if it doesn't
 handle SIGTERM (or whichever stop signal has been specified with
 [`stop_signal`](#stop_signal)), before sending SIGKILL. It's specified
-as a [duration](extension.md#specifying-durations).
+as a [duration](value-formats.md#specifying-durations).
 
 ```yml
     stop_grace_period: 1s

@@ -1,3 +1,5 @@
+## Deployment options
+
 Now that we have configured a CI/CD pipeline, let's look at how we can deploy the application. Docker supports deploying containers on Azure ACI and AWS ECS. You can also deploy your application to Kubernetes if you have enabled Kubernetes in Docker Desktop.
 
 ## Docker and Azure ACI
@@ -25,4 +27,7 @@ To enable Kubernetes:
 
     This starts a Kubernetes single-node cluster when Docker Desktop starts.
 
-For detailed information, see [Deploy on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md) and [Describing apps using Kubernetes YAML](/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md) and [Describing apps using Kubernetes YAML](/guides/kube-deploy.md#describing-apps-using-kubernetes-yaml).
+
+
+For setup and validation steps, see [Enable and verify Kubernetes in Docker Desktop](/guides/orchestration-kubernetes-setup.md).

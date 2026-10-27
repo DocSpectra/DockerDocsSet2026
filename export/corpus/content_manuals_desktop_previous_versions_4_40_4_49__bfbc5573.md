@@ -1,0 +1,654 @@
+---
+title: Docker Desktop 4.40-4.49 release notes
+linkTitle: Desktop 4.40-4.49
+description: Docker Desktop release notes for versions 4.40-4.49.
+toc_max: 2
+sitemap: false
+---
+<!-- vale off -->
+
+Before updating, see [release availability and update prerequisites](/manuals/desktop/release-availability.md).
+
+## Find a release
+
+- [4.49.0](#4490)
+- [4.48.0](#4480)
+- [4.47.0](#4470)
+- [4.46.0](#4460)
+- [4.45.0](#4450)
+- [4.44.3](#4443)
+- [4.44.2](#4442)
+- [4.44.1](#4441)
+- [4.44.0](#4440)
+- [4.43.2](#4432)
+- [4.43.1](#4431)
+- [4.43.0](#4430)
+- [4.42.1](#4421)
+- [4.42.0](#4420)
+- [4.41.2](#4412)
+- [4.41.1](#4411)
+- [4.41.0](#4410)
+- [4.40.0](#4400)
+
+## Check known issues
+
+- [4.43.0](#4430)
+- [4.42.0](#4420)
+- [4.41.0](#4410)
+- [4.40.0](#4400)
+
+## 4.49.0
+
+{{< release-date date="2025-10-23" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.49.0" build_path="/208700/" >}}
+
+> [!IMPORTANT]
+>
+> Support for Windows 10 21H2 (19044) and 11 22H2 (22621) has ended. Installing Docker Desktop will require Windows 10 22H2 (19045) or Windows 11 23H2 (22631) in the next release.
+
+### Security
+
+- Fixed [CVE-2025-9164](https://www.cve.org/cverecord?id=CVE-2025-9164) where the Docker Desktop for Windows installer was vulnerable to DLL hijacking due to insecure DLL search order. The installer searches for required DLLs in the user's Downloads folder before checking system directories, allowing local privilege escalation through malicious DLL placement.
+
+### New 
+
+- [Docker Agent](/manuals/ai/docker-agent/_index.md) is now available through Docker Desktop. 
+- [Docker Debug](/reference/cli/docker/debug/) is now free for all users. 
+
+### Upgrades
+
+- [Docker Engine v28.5.1](/manuals/engine/release-notes/28.md#2851)
+- [Docker Compose v2.40.2](https://github.com/docker/compose/releases/tag/v2.40.2)
+- [NVIDIA Container Toolkit v1.17.9](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.9)
+- Docker Debug `v0.0.45` 
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one.
+- Fixed a 'chown' error shown on startup with Docker Debug.
+- Fixed a bug that caused some forwarded UDP ports to hang. 
+
+#### For Mac
+
+- Fixed Kubernetes startup hanging when another Kubernetes context was active. Fixes https://github.com/docker/for-mac/issues/7771.
+- If a Rosetta install is cancelled or fails, Rosetta will be disabled in Docker Desktop.
+- Minimum OS version to install or update Docker Desktop on macOS is now macOS Sonoma (version 14) or later.
+
+## 4.48.0
+
+{{< release-date date="2025-10-09" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.48.0" build_path="/207573/" >}}
+
+> [!IMPORTANT]
+>
+> Support for macOS 13 has ended. Installing Docker Desktop will require macOS 14 in the next release.
+
+### New
+
+- You can now specify PAC files and Embedded PAC scripts with installer flags for [macOS](/manuals/desktop/setup/install/mac-install.md#proxy-configuration) and [Windows](/manuals/desktop/setup/install/windows-install.md#proxy-configuration). 
+- Administrators can set proxy settings via [macOS configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#macos-configuration-profiles-method-recommended). 
+
+### Upgrades
+
+- [Docker Compose v2.40.0](https://github.com/docker/compose/releases/tag/v2.40.0)
+- [Docker Buildx v0.29.1](https://github.com/docker/buildx/releases/tag/v0.29.1)
+- [Docker Engine v28.5.1](https://docs.docker.com/engine/release-notes/28/#2851)
+- Docker MCP plugin `v0.22.0`
+- [Docker Model CLI v0.1.42](https://github.com/docker/model-cli/releases/tag/v0.1.42)
+
+### Bug fixes and enhancements
+
+#### For all platforms 
+
+- Fixed an issue where kind cluster state is sometimes reset when Desktop restarts. Fixes [docker/for-mac#77445](https://github.com/docker/for-mac/issues/7745).
+- Removed the obsolete `mcp` key to align with the latest VS Code MCP server changes.
+- Update credential helpers to [v0.9.4](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.4).
+- Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one. 
+- Fixed a bug which caused Docker Desktop to regularly create new processes with Docker CLI tools under certain conditions. Fixes [docker/for-win#14944](https://github.com/docker/for-win/issues/14944).
+- Fixed a bug which caused models to not be configured for embeddings with Docker Model Runner via Compose. To specify that a model should be configured for embeddings, you must explicitly add the `--embeddings` runtime flag as described in [AI Models in Docker Compose](https://docs.docker.com/ai/compose/models-and-compose/#model-configuration-options). Fixes [docker/model-runner#166](https://github.com/docker/model-runner/issues/166).
+
+#### For Windows
+
+- Removed the `HKLM\SOFTWARE\Docker Inc.\Docker\1.0` registry key. Look for `docker.exe` in the path to find out where Docker Desktop is installed instead.
+- Fixed startup in WSL 2 mode when IPv6 has been disabled.
+
+## 4.47.0
+
+{{< release-date date="2025-09-25" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.47.0" build_path="/206054/" >}}
+
+### Security
+
+- Fixed [CVE-2025-10657](https://www.cve.org/CVERecord?id=CVE-2025-10657) where the Enhanced Container Isolation [Docker Socket command restrictions](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#command-restrictions) feature was not working properly in Docker Desktop 4.46.0 only (the configuration for it was being ignored).
+
+### New
+
+- Added dynamic MCP server discovery and support to Docker's MCP catalog.
+- With Enhanced Container Isolation, administrators can now block `docker plugin` and `docker login` commands in containers with Docker socket mounts.
+- Added a new Docker Model Runner command. With `docker model requests` you can fetch requests and responses.
+
+### Upgrades
+
+- [Docker Compose v2.39.4](https://github.com/docker/compose/releases/tag/v2.39.4)
+- [Kubernetes v1.34.1](https://github.com/kubernetes/kubernetes/releases/tag/v1.34.1)
+  - [CNI plugins v1.7.1](https://github.com/containernetworking/plugins/releases/tag/v1.7.1)
+  - [cri-tools v1.33.0](https://github.com/kubernetes-sigs/cri-tools/releases/tag/v1.33.0)
+  - [cri-dockerd v0.3.20](https://github.com/Mirantis/cri-dockerd/releases/tag/v0.3.20)
+- Docker Debug `v0.0.44`
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- You can now search for MCP servers more easily with filters, sorting, and improved search functionality.
+- Docker Debug no longer hangs when debugging containers that have environment variables set to an empty value.
+- Enhanced Docker Model Runner with rich response rendering in the CLI, conversational context in the Docker Desktop Dashboard, and resumable downloads.
+
+#### For Mac
+
+- Removed the `com.apple.security.cs.allow-dyld-environment-variables` entitlement which allow a signed, arbitrary dynamic library to be loaded with Docker Desktop via the `DYLD_INSERT_LIBRARIES` environment variable.
+- Fixed a regression where config profile sign-in enforcement broke for some customer environments.
+- Fixed a bug that sometimes caused the `docker model package` command to hang when writing to the local content store (without the `--push` flag).
+- Fixed a bug where containers started with the restart policy `unless-stopped` were never restarted. Fixes [docker/for-mac#7744](https://github.com/docker/for-mac/issues/7744).
+
+#### For Windows
+
+- Fixed the Goose MCP client connection on Windows for the Docker MCP Toolkit.
+- Addressed an issue with the "Skipping integration" of a WSL distro option, after a failed integration attempt.
+- Fixed a bug that sometimes caused the `docker model package` command to hang when writing to the local content store (without the `--push` flag).
+
+## 4.46.0
+
+{{< release-date date="2025-09-11" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.46.0" build_path="/204649/" >}}
+
+### New
+
+- Added a new Learning center walkthrough for Docker MCP Toolkit and other onboarding improvements.
+- Administrators can now control [PAC configurations with Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#proxy-settings).
+- The update experience has been redesigned to make it easier to understand and manage updates for Docker Desktop and its components.
+
+### Upgrades
+
+- [Docker Buildx v0.28.0](https://github.com/docker/buildx/releases/tag/v0.28.0)
+- [Docker Engine v28.4.0](https://docs.docker.com/engine/release-notes/28/#2840)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- With the Docker CLI, you can now set the `GODEBUG` environment variable when the key-value pair (`"GODEBUG":"..."`) exists inside the Docker context metadata. This means certificates that have negative serial numbers in the CLI binaries are supported by default.
+- Updated the Docker Subscription Service Agreement link to point to the latest version.
+
+#### For Mac
+
+- Improved the security of Docker Model Runner by enabling sandboxing of the `llama.cpp` inference processes.
+- Fixed a bug which caused Docker Desktop to start slowly and appear frozen. Fixes [docker/for-mac#7671](https://github.com/docker/for-mac/issues/7671).
+
+#### For Windows
+
+- Improved the security of Docker Model Runner by enabling sandboxing of the `llama.cpp` inference processes.
+
+#### For Linux
+
+- Fixed a path issue in the RHEL post-uninstall sequence.
+
+## 4.45.0
+
+{{< release-date date="2025-08-28" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.45.0" build_path="/203075/" >}}
+
+### New
+
+- [Docker Model Runner](/manuals/ai/model-runner/_index.md) is now generally available.
+
+### Upgrades
+
+- [Docker Compose v2.39.2](https://github.com/docker/compose/releases/tag/v2.39.2)
+- [Docker Buildx v0.27.0](https://github.com/docker/buildx/releases/tag/v0.27.0)
+- [Docker Scout CLI v1.18.3](https://github.com/docker/scout-cli/releases/tag/v1.18.3)
+- [Docker Engine v28.3.3](https://docs.docker.com/engine/release-notes/28/#2833)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed a bug that caused the `com.docker.diagnose` to crash when uploading a diagnostics bundle behind a proxy that requires authentication.
+- The `kind` dependency image `envoyproxy/envoy` was upgraded from v1.32.0 to v1.32.6. If you mirror `kind` images, ensure your mirrors are updated.
+
+#### For Mac
+
+- Fixed a bug that caused Docker Desktop to crash after the laptop woke from sleep. Fixes [docker/for-mac#7741](https://github.com/docker/for-mac/issues/7741).
+- Fixed an issue where the VM would sometimes fail with the error **The virtual machine stopped unexpectedly.**
+- Fixed a bug that would break port mappings when a container was connected to or disconnected from a network after it was started. Fixes [docker/for-mac#7693](https://github.com/docker/for-mac/issues/7693).
+
+#### For Windows
+
+- Fixed a bug that prevented CLI plugins from being deployed to `~/.docker/cli-plugins` by default when users lacked the correct permissions.
+- Fixed a bug where relocating the WSL data distribution would fail if the `docker-desktop` distribution was not present.
+- Fixed a typo in the WSL install URL in the Docker Desktop Dashboard.
+- Fixed an issue where certain WSL distros would fail to integrate. Fixes [docker/for-win#14686](https://github.com/docker/for-win/issues/14686)
+
+## 4.44.3
+
+{{< release-date date="2025-08-20" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.3" build_path="/202357/" >}}
+
+### Security
+
+- Fixed [CVE-2025-9074](https://www.cve.org/CVERecord?id=CVE-2025-9074) where a malicious container running on Docker Desktop could access the Docker Engine and launch additional containers without requiring the Docker socket to be mounted. This could allow unauthorized access to user files on the host system. Enhanced Container Isolation (ECI) does not mitigate this vulnerability.
+
+### Bug fixes and enhancements
+
+- Fixed a bug which caused the Docker Offload dialog to block users from accessing the dashboard.
+
+## 4.44.2
+
+{{< release-date date="2025-08-15" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.2" build_path="/202017/" >}}
+
+### Bug fixes and enhancements
+
+ - Adds [Docker Offload](/manuals/offload/_index.md) to the **Beta features** settings tab and includes updates to support [Docker Offload Beta](https://www.docker.com/products/docker-offload/).
+
+## 4.44.1
+
+{{< release-date date="2025-08-13" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.1" build_path="/201842/" >}}
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue found in version 4.44.0 that caused startup to fail when `vpnkit` CIDR is locked without specifying a value in Desktop Settings Management.
+
+#### For Windows
+
+- Fixed an issue where volumes and containers were not visible after an upgrade from distributions using the legacy `version-pack-data` directory structure.
+- Resolved a rare issue in WSL 2 where the Docker CLI failed with a **Proxy Authentication Required** error.
+- Fixed a bug where CLI plugins were not deployed to `~/.docker/cli-plugins` if the user lacked execution permissions on that directory.
+
+## 4.44.0
+
+{{< release-date date="2025-08-07" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.0" build_path="/201307/" >}}
+
+### New
+
+- WSL 2 stability improvements.
+- You can now inspect requests and responses to help you diagnose model-related issues in Docker Model Runner.
+- Added the ability to run multiple models and receive a warning on insufficient resources. This avoids Docker Desktop freezing when using big models.
+- Added new MCP clients to the MCP Toolkit: Gemini CLI, Goose.
+- Introduced `--gpu` (Windows only) and `--cors` flags for `docker desktop enable model-runner`.
+- Added a new `docker desktop kubernetes` command to the Docker Desktop CLI.
+- You can now search for specific configuration options within **Settings**.
+- Apple Virtualization is now the default VMM for better performance and QEMU Virtualization is removed. See [blog post](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/).
+- Performance and stability improvements to the DockerVMM.
+
+### Upgrades
+
+- [Docker Compose v2.39.1](https://github.com/docker/compose/releases/tag/v2.39.1)
+- [Docker Buildx v0.26.1](https://github.com/docker/buildx/releases/tag/v0.26.1)
+- [Docker Engine v28.3.2](https://docs.docker.com/engine/release-notes/28/#2832)
+- [Docker Scout CLI v1.18.2](https://github.com/docker/scout-cli/releases/tag/v1.18.2)
+- [Docker Model CLI v0.1.36](https://github.com/docker/model-cli/releases/tag/v0.1.36)
+- [Docker Desktop CLI v0.2.0](/manuals/desktop/features/desktop-cli.md)
+
+### Security
+
+We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266), a critical vulnerability affecting the NVIDIA Container Toolkit in CDI mode up to version 1.17.7. Docker Desktop includes version 1.17.8, which is not impacted. However, older versions of Docker Desktop that bundled earlier toolkit versions may be affected if CDI mode was manually enabled. Upgrade to Docker Desktop 4.44 or later to ensure you're using the patched version.
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue pulling images with zstd differential layers when the containerd image store is enabled.
+- Fixed a bug causing containers launching  with the `--restart` flag to not restart properly when using Enhanced Container Isolation.
+- Improved interaction between [Kubernetes custom registry images](/manuals/desktop/use-desktop/kubernetes.md#configuring-a-custom-image-registry-for-kubernetes-control-plane-images) and Enhanced Container Isolation (ECI), so the [ECI Docker Socket image list](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md) no longer needs to be manually updated when using a custom registry for Kubernetes control plane images.
+- Fixed a bug where a Docker Desktop Kubernetes cluster in kind mode fails to start after restarting Docker Desktop if the user is required to be signed in but is currently signed out.
+- Fixed a bug that prevented the mounting of MCP secrets into containers when [Enhanced Container Isolation](/enterprise/security/hardened-desktop/enhanced-container-isolation/) is enabled.
+- Fixed a bug preventing the use of `--publish-all` when `--publish` was already specified.
+- Fixed a bug causing the **Images** view to scroll infinitely. Fixes [docker/for-mac#7725](https://github.com/docker/for-mac/issues/7725).
+- Fixed a bug which caused the **Volumes** tab to be blank while in Resource Saver mode.
+- Updated terms of service text on first launch.
+- More robustness in parsing newly released GGUF formats.
+
+#### For Mac
+
+- Fixed disk corruption on DockerVMM when reclaiming disk space.
+- Fixed regression since 4.42.0 on DockerVMM by re-introducing performance boost on general usage.
+- Removed QEMU hypervisor and switched to Apple Virtualization as the new default. See [blog post](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/).
+- Fixed a bug preventing Traefik from autodetecting containers' ports. Fixes [docker/for-mac#7693](https://github.com/docker/for-mac/issues/7693).
+- Fixed a bug that caused port mappings to break when a container was connected to or disconnected from a network after it was started. Fixes [docker/for-mac#7693](https://github.com/docker/for-mac/issues/7693#issuecomment-3131427879).
+- Removed eBPF which blocked `io_uring`. To enable `io_uring` in a container, use `--security-opt seccomp=unconfined`. Fixes [docker/for-mac#7707](https://github.com/docker/for-mac/issues/7707).
+- Docker Model Runner now supports GPT OSS models.
+
+#### For Windows
+
+- Re-added `docker-users` group to the named pipe security descriptors.
+- Fixed an installer crash when the current user has no `SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` registry key.
+- Fixed a bug where Docker Desktop could leak a `com.docker.build` process and fail to start. Fixed [docker/for-win#14840](https://github.com/docker/for-win/issues/14840).
+- Fixed a bug that was preventing Docker Desktop Kubernetes in kind mode from starting when using WSL with `cgroups v1` and Enhanced Container Isolation (ECI) is enabled.
+- Fixed a typo in the WSL installation URL in the UI.
+- Docker Model Runner now supports GPT OSS models
+
+## 4.43.2
+
+{{< release-date date="2025-07-15" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.2" build_path="/199162/" >}}
+
+### Upgrades
+
+- [Docker Compose v2.38.2](https://github.com/docker/compose/releases/tag/v2.38.2)
+- [Docker Engine v28.3.2](https://docs.docker.com/engine/release-notes/28/#2832)
+- Docker Model CLI v0.1.33
+
+## 4.43.1
+
+{{< release-date date="2025-07-04" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.1" build_path="/198352/" >}}
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue that caused Docker Desktop UI to break when Ask Gordon responses contained HTML tags.
+- Fixed an issue that prevented extensions from communicating with their backends.
+
+## 4.43.0
+
+{{< release-date date="2025-07-03" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.0" build_path="/198134/" >}}
+
+### New
+
+- [Compose Bridge](/manuals/compose/bridge/_index.md) is now generally available.
+
+### Upgrades
+
+- [Docker Buildx v0.25.0](https://github.com/docker/buildx/releases/tag/v0.25.0)
+- [Docker Compose v2.38.1](https://github.com/docker/compose/releases/tag/v2.38.1)
+- [Docker Engine v28.3.0](https://docs.docker.com/engine/release-notes/28/#2830)
+- [NVIDIA Container Toolkit v1.17.8](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.8)
+
+### Security
+
+- Fixed [CVE-2025-6587](https://www.cve.org/CVERecord?id=CVE-2025-6587) where sensitive system environment variables were included in Docker Desktop diagnostic logs, allowing for potential secret exposure.
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed a bug causing `docker start` to drop the container's port mappings for a container already running.
+- Fixed a bug that prevented container ports to be displayed on the GUI when a container was re-started.
+- Fixed a bug that caused Docker API `500 Internal Server Error for API route and version` error application start.
+- The settings **Apply & restart** button is now labeled **Apply**. The VM is no longer restarted when applying changed settings.
+- Fixed a bug where the disk would be corrupted if Docker is shutdown during a `fsck`.
+- Fixed a bug causing an incorrect `~/.kube/config` in WSL2 when using a `kind` Kubernetes cluster.
+- Return an explicit error to a Docker API / `docker` CLI command if Docker Desktop has been manually paused.
+- Fixed an issue where unknown keys in Admin and Cloud settings caused a failure.
+
+#### For Mac
+
+- Removed `eBPF` which blocked `io_uring`. To enable `io_uring` in a container, use `--security-opt seccomp=unconfined`. Fixes [docker/for-mac#7707](https://github.com/docker/for-mac/issues/7707).
+
+#### For Windows
+
+- Fixed an issue that caused the Docker Desktop installer to crash when the current user has no `SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` registry key.
+- Fixed a bug where Docker Desktop could leak a `com.docker.build` process and fail to start. Fixes [docker/for-win#14840](https://github.com/docker/for-win/issues/14840)
+
+### Known issues
+
+#### For all platforms
+
+- `docker buildx bake` will not build images in Compose files with a top-level models attribute. Use `docker compose build` instead.
+- Gordon responses containing HTML can cause Desktop UI to be permanently broken. As a workaround, you can delete `persisted-state.json` file to reset the UI. The file is located in the following directories:
+  - Windows: `%APPDATA%\Docker Desktop\persisted-state.json`
+  - Linux: `$XDG_CONFIG_HOME/Docker Desktop/persisted-state.json` or `~/.config/Docker Desktop/persisted-state.json`
+  - Mac: `~/Library/Application Support/Docker Desktop/persisted-state.json`
+
+#### For Windows
+
+- Possible incompatibility between the "host networking" feature of Docker Desktop and the most recent WSL 2 Linux kernel. If you encounter such issues, downgrade WSL 2 to 2.5.7.
+
+## 4.42.1
+
+{{< release-date date="2025-06-18" >}}
+
+### Upgrades
+
+- [Docker Compose v2.37.1](https://github.com/docker/compose/releases/tag/v2.37.1)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue where Docker domains were not reachable when the proxy configuration is not valid.
+- Fixed a possible deadlock when exposing ports.
+- Fixed a race condition which can cause `docker run -p` ports to disappear.
+
+#### For Mac
+
+- Fixed a bug where a container’s port list appeared empty when inspected immediately after it was created, for example, when using a script. [docker/for-mac#7693](https://github.com/docker/for-mac/issues/7693)
+
+#### For Windows
+
+- Disabled the Resource Saver mode in WSL 2 to prevent `docker` CLI commands hanging in WSL 2 distros. [docker/for-win#14656](https://github.com/docker/for-win/issues/14656#issuecomment-2960285463)
+
+## 4.42.0
+
+{{< release-date date="2025-06-04" >}}
+
+### New
+
+- Expanded network compatibility with IPv6 support.
+- The Docker MCP Toolkit is now natively integrated into Docker Desktop.
+- Docker Model Runner is now available for Windows systems running on Qualcomm/ARM GPUs.
+- Added a **Logs** tab to the Models view so you can see the inference engine output in real time.
+- Gordon now integrates the MCP Toolkit, providing access to 100+ MCP servers.
+
+### Upgrades
+
+- [Docker Buildx v0.24.0](https://github.com/docker/buildx/releases/tag/v0.24.0)
+- [Docker Engine v28.2.2](https://docs.docker.com/engine/release-notes/28/#2822)
+- [Compose Bridge v0.0.20](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.20)
+- [Docker Compose v2.36.2](https://github.com/docker/compose/releases/tag/v2.36.2)
+- [NVIDIA Container Toolkit v1.17.7](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.7)
+- [Docker Scout CLI v1.18.0](https://github.com/docker/scout-cli/releases/tag/v1.18.0)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Docker Desktop now accepts certificates with a negative serial number.
+- Re-enable `seccomp` for containers by default. Use `docker run --security-opt seccomp=unconfined` to disable seccomp for a container.
+- Fixed a bug that caused Docker Desktop to hang when it ran out of memory.
+- Block `io_uring` syscalls in containers.
+- Added support for pulling models from Docker Hub directly, simplifying the process of accessing and using models.
+- Docker Desktop now sets the disk usage limit to the size of the physical disk on fresh install and reset to defaults on Mac and Linux.
+- The maximum disk size in the settings UI now aligns with the full capacity of the host file system.
+- The **Models** view now has a **Docker Hub** tab that lists models under the `ai` namespace.
+- Improved the sign-in enforcement message when more than 10 organizations are enforced.
+- Changed the way ports are mapped by Docker Desktop to fully support IPv6 ports.
+- Fixed a bug in the Dashboard container logs screen causing the scrollbar to disappear as the mouse approaches.
+- [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) fixed for Teams subscription users.
+- `llama.cpp` server now supports streaming and tool calling in Model Runner.
+- Sign-in Enforcement capability is now available to all subscriptions.
+
+#### For Mac
+
+- Fixed a bug where the disk would always have a minimum usage limit of 64GB when using Docker VMM.
+- Disabled the memory protection keys mechanism in the Docker Desktop Linux VM. This caused VS Code Dev Containers to not work properly. See [docker/for-mac#7667](https://github.com/docker/for-mac/issues/7667).
+- Fixed persistent volume claims under Kubernetes. Fixes [docker/for-mac#7625](https://github.com/docker/for-mac/issues/7625).
+- Fixed a bug where the VM failed to start using Apple virtualization.framework.
+- Minimum version to install or update Docker Desktop on is now macOS Ventura 13.3.
+
+#### For Windows
+
+- Fixed a bug in Enhanced Container Isolation on Windows WSL, where files with hardlinks inside containers had `nobody:nogroup` ownership.
+- Fixed a bug that caused Docker Desktop to crash. Related to [docker/for-win#14782](https://github.com/docker/for-win/issues/14782).
+- Fixed a bug that caused `The network name cannot be found` error when starting with WSL 2. Fixes [docker/for-win#14714](https://github.com/docker/for-win/issues/14714).
+- Fixed an issue where Docker Desktop would not remove entries in the hosts file when uninstalling.
+- Fixed an issue when reading auto-start registry key for some system languages. Fixes [docker/for-win#14731](https://github.com/docker/for-win/issues/14731).
+- Fixed a bug where Docker Desktop was adding unrecognised /etc/wsl.conf `crossDistro` option which was causing WSL 2 to log an error. See [microsoft/WSL#4577](https://github.com/microsoft/WSL/issues/4577)
+- Fixed a bug where Docker Desktop failed to start on WSL 2.5.7 if another WSL distro is still using Linux cgroups v1. Fixes [docker/for-win#14801](https://github.com/docker/for-win/issues/14801)
+- Windows Subsystem for Linux (WSL) version 2.1.5 is now the minimum version required for proper functioning of Docker Desktop application
+
+### Known issues
+
+#### For all platforms
+
+- This release contains a regression with  `docker port`, resulting in "No host port found for host IP" errors when using testcontainers-node. See [testcontainers/testcontainers-node#818](https://github.com/testcontainers/testcontainers-node/issues/818#issuecomment-2941575369)
+
+#### For Windows
+
+- Running containers with Wasm will hang sporadically. See [docker/for-mac#7666](https://github.com/docker/for-mac/issues/7666).
+- On some machines Resource Saver will cause other WSL 2 distros to freeze. The workaround is to disable Resource Saver. See [docker/for-win#14656](https://github.com/docker/for-win/issues/14656).
+
+## 4.41.2
+
+{{< release-date date="2025-05-06" >}}
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue where the `Models` menu was displayed in the GUI even when Docker Model Runner was not supported or not enabled.
+
+## 4.41.1
+
+{{< release-date date="2025-04-30" >}}
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue where Docker Desktop failed to start when a proxy configuration was specified in the `admin-settings.json` file.
+
+#### For Windows
+
+- Fixed possible conflict with 3rd party tools (for example, Ollama) by avoiding placing `llama.cpp` DLLs in a directory included in the system `PATH`.
+
+## 4.41.0
+
+{{< release-date date="2025-04-28" >}}
+
+### New
+
+- Docker Model Runner is now available on x86 Windows machines with NVIDIA GPUs.
+- You can now [push models](/manuals/ai/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
+- Added support for Docker Model Runner's model management and chat interface in Docker Desktop for Mac and Windows (on hardware supporting Docker Model Runner). Users can now view, interact with, and manage local AI models through a new dedicated interface.
+- [Docker Compose](/manuals/ai/compose/models-and-compose.md) and Testcontainers [Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/) now support Docker Model Runner.
+- Introducing Docker Desktop in the [Microsoft App Store](https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB).
+
+### Upgrades
+
+- [Docker Engine v28.1.1](https://docs.docker.com/engine/release-notes/28.1/#2811)
+- [Docker Compose v2.35.1](https://github.com/docker/compose/releases/tag/v2.35.1)
+- [Docker Buildx v0.23.0](https://github.com/docker/buildx/releases/tag/v0.23.0)
+- [Docker Scout CLI v1.17.1](https://github.com/docker/scout-cli/releases/tag/v1.17.1)
+- [Compose Bridge v0.0.19](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.19)
+
+### Security
+
+- Fixed [CVE-2025-3224](https://www.cve.org/CVERecord?id=CVE-2025-3224) allowing an attacker with access to a user machine to perform an elevation of privilege when Docker Desktop updates.
+- Fixed [CVE-2025-4095](https://www.cve.org/CVERecord?id=CVE-2025-4095) where Registry Access Management (RAM) policies were not enforced when using a MacOS configuration profile, allowing users to pull images from unapproved registries.
+- Fixed [CVE-2025-3911](https://www.cve.org/CVERecord?id=CVE-2025-3911) allowing an attacker with read access to a user's machine to obtain sensitive information from Docker Desktop log files, including environment variables configured for running containers.
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed a bug in DockerVMM that caused an excessive number of open file handles on the host.
+- Fixed an issue where Docker Desktop failed to start if the `admin-settings.json` file didn't contain the optional `configurationFileVersion` configuration.
+- Fixed a bug that was causing outgoing UDP connections to be eagerly closed.
+- Enhanced log reading experience with advanced search capabilities and container-level filtering, enabling quicker debugging and troubleshooting.
+- Improved error messages when downloading Registry Access Management configuration.
+- If Docker can't bind an ICMPv4 socket, it now logs an error and continues rather than quits.
+- Enabled the memory protection keys mechanism in the Docker Desktop Linux VM, allowing containers like Oracle database images to run correctly.
+- Fixed a problem with containers accessing `/proc/sys/kernel/shm*` sysctls when [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) is enabled on Mac, Windows Hyper-V, or Linux.
+- Added kernel module `nft_fib_inet`, required for running firewalld in a Linux container.
+- MacOS QEMU Virtualization option is being deprecated on July 14, 2025.
+
+#### For Mac
+
+- Fixed a bug that caused high CPU usage. Fixes [docker/for-mac#7643](https://github.com/docker/for-mac/issues/7643).
+- Fixed multi-arch build issue with Rosetta on M3 Macs.
+- Fixed an issue where absence of `/Library/Application Support/com.docker.docker/` directory can cause failure to apply RAM policy restrictions.
+
+#### For Windows
+
+- The Windows `.exe` installer now includes improved handling of locked files. Fixes [docker/for-win#14299](https://github.com/docker/for-win/issues/14299) and [docker/for-win#14316](https://github.com/docker/for-win/issues/14316).
+- Fixed `Docker Desktop.exe` not showing version information after installation. Fixes [docker/for-win#14703](https://github.com/docker/for-win/issues/14703).
+
+### Known issues
+
+#### For all platforms
+
+- If you have enforced sign-in using `desktop.plist` (on macOS) or Registry key (on Windows) and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist`/ registry key but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
+
+#### For Windows
+
+- If multiple organizations are specified in the `allowedOrgs` Windows registry key using space-separated format, sign-in will fail and user will be logged out. As a workaround, specify each organization on a separate line in the registry key value.
+
+## 4.40.0
+
+{{< release-date date="2025-03-31" >}}
+
+### New
+
+- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](/manuals/ai/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
+
+### Upgrades
+
+- [Docker Buildx v0.22.0](https://github.com/docker/buildx/releases/tag/v0.22.0)
+- [Docker Compose v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0)
+- [Docker Engine v28.0.4](https://docs.docker.com/engine/release-notes/28/#2804)
+- [Docker Scout CLI v1.17.0](https://github.com/docker/scout-cli/releases/tag/v1.17.0)
+- [compose-bridge v0.0.18](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.18)
+- [NVIDIA Container Toolkit v1.17.5](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.5)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed a bug that caused `docker-proxy` to stop forwarding UDP datagrams to containers.
+- Fixed a bug that caused docker-proxy to close UDP connections to containers eagerly and resulting in the source address to change needlessly
+- Fixed a race condition that prevented Docker Desktop Kubernetes from starting in some scenarios.
+- Improved the way ECI collects image digest info from a repository in environments where proxies are configured.
+- Users can now to specify a timeout when generating  a private Extension Marketplace using the new `--timeout` flag.
+- Removed unused internal helper tool `com.docker.admin` for Mac and Linux.
+
+#### For Mac
+
+- Fixed an issue where stale directory cache in Docker VMM that prevented detecting moved or new files.
+- Removed Continue/Restart pop up when Time Machine utility is restricted.
+- Docker Desktop now allows Unix domain sockets to be shared with containers via `docker run -v /path/to/unix.sock:/unix.sock`. The full socket path must be specified in the bind-mount. See [for-mac/#483](https://github.com/docker/for-mac/issues/483).
+- Fixed a bug that caused the `docker-credential-osxkeychain` and `docker-credential-desktop` to return malformed URIs when a token was stored for a server with a port specified.
+
+#### For Windows
+
+- The Windows MSI and `.exe` installers now disable Windows Containers by default when installing with the GUI.
+- Improved port-mapping throughput on WSL2.
+
+### Known issues
+
+#### For Windows
+
+- Switching to Windows Containers while the privileged helper error message is displayed could cause inconsistent state. As a workaround, quit Docker Desktop, change `UseWindowsContainers` to `false` in `settings-store.json` and restart Docker Desktop.
+- After installation, `Docker Desktop.exe` does not contain the latest version information.
+

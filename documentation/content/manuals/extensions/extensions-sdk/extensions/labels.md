@@ -42,7 +42,7 @@ Here is the list of labels you can or need to specify when building your extensi
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
 > [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
-> [styling guidelines](../design/_index.md).
+> [styling guidelines](../design/ui-styling.md).
 
 ## Preview the extension in the Marketplace
 
@@ -58,3 +58,8 @@ When you create and install your unpublished extension, you can preview the exte
 > Use `docker tag org/published-extension unpublished-extension` and then `docker extension install unpublished-extension`.
 
 ![List preview](images/list-preview.png)
+
+## Support and user feedback links
+
+In addition to providing a description of your extension's features and screenshots, you should also specify additional URLs using extension labels. This direct users to your website for reporting bugs and feedback, and accessing documentation and support.
+

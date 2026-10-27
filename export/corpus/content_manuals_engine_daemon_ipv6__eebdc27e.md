@@ -8,6 +8,9 @@ aliases:
 - /config/daemon/ipv6/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 IPv6 is only supported on Docker daemons running on Linux hosts.
 
 ## Create an IPv6 network

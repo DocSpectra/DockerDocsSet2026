@@ -113,9 +113,7 @@ docker dhi mirror stop dhi-golang --org my-org --delete --force
 
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 
-The CLI can be used to create and manage DHI image customizations. For detailed
-instructions on creating customizations using the GUI, see [Customize a Docker
-Hardened Image](./customize.md).
+The CLI can be used to create and manage DHI image customizations. See [customization capabilities](../core-concepts/customizations.md) for context.
 
 The following is a quick reference for CLI commands. For complete details on all
 options and flags, see the
@@ -160,9 +158,7 @@ docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
 
 Generate authentication credentials for accessing the enterprise hardened
 package repository. This is used when configuring your package manager to
-install compliance-specific packages in your own images. For detailed
-instructions, see [Enterprise
-repository](./hardened-packages.md#enterprise-repository).
+install compliance-specific packages in your own images. See [hardened package access](../core-concepts/packages.md) for subscription context.
 
 ```bash
 docker dhi auth apk

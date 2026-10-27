@@ -9,10 +9,17 @@ toc_max: 2
 
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 25.0.
 
-For more information about:
+## Related guidance
 
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Security notes: [25.0.5](#2505), [25.0.2](#2502)
+- Deprecations, removals, and breaking changes: [25.0.0](#2500)
+- Notes and warnings: [25.0.0](#2500)
 
 ## 25.0.5
 

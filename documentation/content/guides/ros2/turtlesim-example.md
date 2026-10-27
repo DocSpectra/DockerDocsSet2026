@@ -6,6 +6,12 @@ keywords: ros2, turtlesim, example, nodes, topics, teleop
 description: Run a complete end-to-end ROS 2 example with Turtlesim.
 ---
 
+## Prerequisites and context
+
+[ROS 2 concepts and prerequisites](concepts.md).
+
+[Build and develop a ROS 2 workspace](develop.md).
+
 ## Overview
 
 Turtlesim is a simple simulation tool that demonstrates fundamental ROS 2 concepts such as nodes, topics, and services. In this section, you'll run a complete example with Turtlesim, control the turtle, monitor topics, and visualize the system with rqt.
@@ -14,53 +20,11 @@ Turtlesim is a simple simulation tool that demonstrates fundamental ROS 2 concep
 
 ## Configure display forwarding
 
-### Linux
-
-Allow Docker access to your X server:
-
-```console
-$ xhost +local:docker
-```
-
-### macOS
-
-On macOS, use XQuartz to provide X11 support. Install XQuartz using Homebrew:
-
-1. Install XQuartz using Homebrew:
-
-   ```console
-   $ brew install --cask xquartz
-   ```
-
-2. Open XQuartz from Applications, then navigate to `Preferences > Security` and enable `Allow connections from network clients`. Restart your computer to ensure the changes take effect.
-
-3. After rebooting, open a terminal and allow local connections:
-
-   ```console
-   $ defaults write org.xquartz.X11 nolisten_tcp -bool false
-   $ xhost +localhost
-   $ xhost + 127.0.0.1
-   ```
+[Forward displays on Linux or macOS](display-forwarding.md).
 
 ## Start the container
 
-Start the container using the same Docker Compose setup from the workspace section.
-
-For Linux:
-
-```console
-$ cd ws_linux
-$ docker compose up -d
-$ docker compose exec ros2 /bin/bash
-```
-
-For macOS:
-
-```console
-$ cd ws_mac
-$ docker compose up -d
-$ docker compose exec ros2 /bin/bash
-```
+[Open and build the workspace container](develop.md#open-and-build-the-container).
 
 ## Install and Run Turtlesim
 

@@ -27,6 +27,13 @@ development lifecycle. You'll write a Compose file for local development,
 integration tests using Testcontainers, a CI/CD pipeline, and Kubernetes
 manifests — using the same container image throughout.
 
+## Shared context and procedures
+
+- [Docker Compose](/get-started/docker-concepts/the-basics/what-is-docker-compose.md)
+- [Compose Watch](/manuals/compose/how-tos/file-watch.md)
+- [Testcontainers](/manuals/testcontainers.md)
+- [Multi-stage builds](/manuals/build/building/multi-stage.md)
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-containerized-sdlc" browserUrl="http://dockerlabs.xyz" >}}

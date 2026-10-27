@@ -9,6 +9,16 @@ Once Model Runner is enabled, new API endpoints are available. You can use
 these endpoints to interact with a model programmatically. Docker Model Runner
 provides compatibility with OpenAI, Anthropic, and Ollama API formats.
 
+## Enable host TCP access
+
+Docker Desktop: Enable **host-side TCP support** in Settings > AI, or run:
+
+```console
+$ docker desktop enable model-runner --tcp 12434
+```
+
+Docker Engine: TCP is enabled by default on port 12434.
+
 ## Determine the base URL
 
 The base URL to interact with the endpoints depends on how you run Docker and
@@ -23,7 +33,7 @@ which API format you're using.
 | Host processes (TCP) | `http://localhost:12434` |
 
 > [!NOTE]
-> TCP host access must be enabled. See [Enable Docker Model Runner](get-started.md#enable-docker-model-runner-in-docker-desktop).
+> TCP host access must be enabled. See [Enable Docker Model Runner](setup.md#docker-desktop).
 
 {{< /tab >}}
 {{< tab name="Docker Engine">}}
@@ -57,7 +67,21 @@ When configuring third-party tools that expect OpenAI-compatible APIs, use these
 | Anthropic SDK / clients | `http://localhost:12434` |
 | Ollama-compatible clients | `http://localhost:12434` |
 
-See [IDE and tool integrations](ide-integrations.md) for specific configuration examples.
+See [Supported APIs](#supported-apis) for API formats.
+
+## Verify host connectivity
+
+Verify DMR is running:
+
+```console
+$ docker model status
+```
+
+Test the endpoint directly:
+
+```console
+$ curl http://localhost:12434/engines/v1/models
+```
 
 ## Supported APIs
 
@@ -327,7 +351,7 @@ To call the `chat/completions` OpenAI endpoint from the host via TCP:
    For example: `docker desktop enable model-runner --tcp <port>`.
 
    If you are running on Windows, also enable GPU-backed inference.
-   See [Enable Docker Model Runner](get-started.md#enable-docker-model-runner-in-docker-desktop).
+   See [Enable Docker Model Runner](setup.md#docker-desktop).
 
 1. Interact with it as documented in the previous section using `localhost` and the correct port.
 
@@ -434,6 +458,5 @@ console.log(response.choices[0].message.content);
 
 ## What's next
 
-- [IDE and tool integrations](ide-integrations.md) - Configure Cline, Continue, Cursor, and other tools
 - [Configuration options](configuration.md) - Adjust context size and runtime parameters
 - [Inference engines](inference-engines.md) - Learn about llama.cpp, vLLM, and Diffusers options

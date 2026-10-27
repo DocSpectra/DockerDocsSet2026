@@ -5,6 +5,11 @@ description: How to create reproducible builds in GitHub Actions using the SOURC
 keywords: build, buildx, github actions, ci, gha, reproducible builds, SOURCE_DATE_EPOCH
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 `SOURCE_DATE_EPOCH` is a [standardized environment variable][source_date_epoch]
 for instructing build tools to produce a reproducible output.
 Setting the environment variable for a build makes the timestamps in the

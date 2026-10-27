@@ -1,8 +1,15 @@
 ---
-title: Common challenges and questions
+title: Docker Build Cloud clients, plans, and CI
 description: Explore common challenges and questions related to Docker Build Cloud.
 weight: 40
 ---
+
+For procedures, see [Build Cloud setup](/manuals/build-cloud/setup.md),
+[Compose builds](/manuals/build-cloud/compose.md), and
+[CI requirements](/manuals/build-cloud/ci-requirements.md).
+
+
+## Client choices
 
 ### Is Docker Build Cloud a standalone product or a part of Docker Desktop?
 
@@ -23,14 +30,20 @@ If you plan on building with Docker Build Cloud using the `docker compose
 build` command, you also need a version of Docker Compose that supports Docker
 Build Cloud.
 
+## Docker Compose integration
+
 ### How does Docker Build Cloud work with Docker Compose?
 
 Docker Compose works out of the box with Docker Build Cloud. Install the Docker
 Build Cloud-compatible client (buildx) and it works with both commands.
 
+## Plan minutes
+
 ### How many minutes are included in Docker Build Cloud Team plans?
 
 Pricing details for Docker Build Cloud can be found on the [pricing page](https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesBuildCloudFaq).
+
+## Trials and shared-cache access
 
 ### I’m a Docker personal user. Can I try Docker Build Cloud?
 
@@ -43,6 +56,8 @@ single user.
 
 For teams to receive the shared cache benefit, they must either be on a Docker
 Team or Docker Business subscription.
+
+## CI integration
 
 ### Does Docker Build Cloud support CI platforms? Does it work with GitHub Actions?
 

@@ -94,7 +94,7 @@ repository from that repository's **Settings** page.
 
 Organizations can use roles for individuals, giving them different
 permissions in the organization. For more details, see [Roles and
-permissions](/manuals/enterprise/security/roles-and-permissions.md).
+permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ## Organization teams
 
@@ -103,29 +103,7 @@ access.
 
 ### Configure team repository permissions
 
-You must create a team before you are able to configure repository permissions.
-For more details, see [Create and manage a
-team](/manuals/admin/organization/manage/manage-a-team.md).
-
-To configure team repository permissions:
-
-1. Sign in to [Docker Hub](https://hub.docker.com).
-
-2. Select **My Hub** > **Repositories**.
-
-   A list of your repositories appears.
-
-3. Select a repository.
-
-   The **General** page for the repository appears.
-
-4. Select the **Permissions** tab.
-
-5. Add, modify, or remove a team's repository permissions.
-
-   - Add: Specify the **Team**, select the **Permission**, and then select **Add**.
-   - Modify: Specify the new permission next to the team.
-   - Remove: Select the **Remove permission** icon next to the team.
+Follow [Set team repository permissions](/manuals/admin/organization/manage/team-repository-permissions.md#set-team-repository-permissions). For access levels and the verified-email requirement, see the [permissions reference](/manuals/admin/organization/manage/team-repository-permissions.md#permissions-reference).
 
 ## Organization access tokens (OATs)
 
@@ -156,7 +134,7 @@ If you are interested in Gated Distribution contact the [Docker Sales Team](http
 ### Invite distributor members via API
 
 > [!NOTE]
-> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for details about the access permissions for each role.
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md) for details about the access permissions for each role.
 
 Distributor members (used for gated distribution) can only be invited using the Docker Hub API. UI-based invitations are not currently supported for this role. To invite distributor members, use the Bulk create invites API endpoint.
 

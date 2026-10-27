@@ -22,6 +22,8 @@ several ways to optimize your setup for Docker Offload:
 - [Fetch remote files during the build](#fetch-remote-files-in-build)
 - [Leverage multi-threaded tools](#multi-threaded-tools)
 
+For cloud resource sizes and session limits, see [About Docker Offload](about.md).
+
 For general Dockerfile tips, see [Building best practices](/manuals/build/building/best-practices.md).
 
 ## dockerignore files
@@ -50,7 +52,7 @@ For fully static binaries, you can use [`scratch`](https://hub.docker.com/_/scra
 
 ## Multi-stage builds
 
-[Multi-stage builds](/build/building/multi-stage/) let you separate build-time
+[Multi-stage builds](/manuals/build/building/multi-stage.md) let you separate build-time
 and runtime environments in your Dockerfile. This not only reduces the size of
 the final image but also allows for parallel stage execution during the build.
 
@@ -68,7 +70,7 @@ You can do this using:
 - The Dockerfile [`ADD` instruction](/reference/dockerfile/#add)
 - `RUN` commands like `wget`, `curl`, or `rsync`
 
-### Multi-threaded tools
+## Multi-threaded tools
 
 Some build tools, such as `make`, are single-threaded by default. If the tool
 supports it, configure it to run in parallel. For example, use `make --jobs=4`

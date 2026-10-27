@@ -14,39 +14,11 @@ the Docker daemon, as long as the [prerequisites](#prerequisites) are met.
 
 ## How it works
 
-Rootless mode executes the Docker daemon and containers inside a user namespace.
-This is similar to [`userns-remap` mode](../userns-remap.md), except that
-with `userns-remap` mode, the daemon itself is running with root privileges,
-whereas in rootless mode, both the daemon and the container are running without
-root privileges.
-
-Rootless mode does not use binaries with `SETUID` bits or file capabilities,
-except `newuidmap` and `newgidmap`, which are needed to allow multiple
-UIDs/GIDs to be used in the user namespace.
-
+See [How rootless mode works](context.md).
 
 ## Prerequisites
 
--  You must install `newuidmap` and `newgidmap` on the host. These commands
-  are provided by the `uidmap` package on most distributions.
-
-- `/etc/subuid` and `/etc/subgid` should contain at least 65,536 subordinate
-  UIDs/GIDs for the user. In the following example, the user `testuser` has
-  65,536 subordinate UIDs/GIDs (231072-296607).
-
-```console
-$ id -u
-1001
-$ whoami
-testuser
-$ grep ^$(whoami): /etc/subuid
-testuser:231072:65536
-$ grep ^$(whoami): /etc/subgid
-testuser:231072:65536
-```
-
-The `dockerd-rootless-setuptool.sh install` script (see following) automatically shows help
-when the prerequisites are not satisfied.
+Read [Rootless mode prerequisites, distribution-specific setup, and limitations](requirements.md) before installation.
 
 ## Install
 

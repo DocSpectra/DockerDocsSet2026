@@ -13,7 +13,9 @@ aliases:
 
 ## Prerequisites
 
-- You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
+
+For context, see [Docker Compose overview](/manuals/compose/_index.md).
 
 ## Overview
 
@@ -46,17 +48,12 @@ directory.
 To learn more about the files in the repository, see the following:
 
 - [Dockerfile](/reference/dockerfile.md)
-- [.dockerignore](/reference/dockerfile.md#dockerignore-file)
+- [.dockerignore](/manuals/build/concepts/context.md#dockerignore-files)
 - [compose.yaml](/reference/compose-file/_index.md)
 
 ## Run the application
 
-Inside the `r-docker-dev` directory, run the following command in a
-terminal.
-
-```console
-$ docker compose up --build
-```
+Inside the `r-docker-dev` directory, follow [Run in the foreground](/guides/run-compose-application.md#run-in-the-foreground).
 
 Open a browser and view the application at [http://localhost:3838](http://localhost:3838). You should see a simple Shiny application.
 
@@ -64,23 +61,13 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 ### Run the application in the background
 
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `r-docker-dev` directory, run the following command
-in a terminal.
-
-```console
-$ docker compose up --build -d
-```
+Inside the `r-docker-dev` directory, follow [Run in the background](/guides/run-compose-application.md#run-in-the-background).
 
 Open a browser and view the application at [http://localhost:3838](http://localhost:3838).
 
 You should see a simple Shiny application.
 
-In the terminal, run the following command to stop the application.
-
-```console
-$ docker compose down
-```
+Follow [Stop the background application](/guides/run-compose-application.md#stop-the-background-application).
 
 For more information about Compose commands, see the [Compose CLI
 reference](/reference/cli/docker/compose/).

@@ -4,6 +4,8 @@ description: Learn how to configure, disable, or delete policies in Docker Scout
 keywords: scout, policy, configure, delete, enable, parametrize, thresholds
 ---
 
+For policy definitions and parameters, see [Docker Scout policy types](./types.md).
+
 Some policy types are configurable. This means that you can create new,
 customized version of that policy type with your own configuration parameters.
 You can also disable a policy if you need to temporarily disregard it, or
@@ -24,7 +26,7 @@ You can not change the name of the policy type, only its display names.
 
 The available configuration parameters for a policy depends on the
 policy type that you're editing. For more information, refer to
-[Policy types](/manuals/scout/policy/_index.md#policy-types).
+[Policy types](/manuals/scout/policy/types.md#policy-types).
 
 To add a policy:
 

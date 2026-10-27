@@ -24,6 +24,18 @@ Make sure you have:
 - [Installed the latest version of Docker Compose](/manuals/compose/install/_index.md)
 - A basic understanding of Docker concepts and how Docker works
 
+## Task navigation
+
+| Task | Tutorial step | Shared procedure or context |
+| --- | --- | --- |
+| Create the project | [Step 1](#step-1-set-up-the-project) | [Installation prerequisites](install/_index.md), [interpolation](how-tos/environment-variables/variable-interpolation.md) |
+| Define and start services | [Step 2](#step-2-define-and-start-your-services) | [Application model](intro/compose-application-model.md), [CLI procedures](intro/compose-cli.md) |
+| Wait for Redis | [Step 3](#step-3-fix-the-startup-race-with-health-checks) | [Startup order](how-tos/startup-order.md) |
+| Update code live | [Step 4](#step-4-enable-compose-watch-for-live-updates) | [Compose Watch](how-tos/file-watch.md) |
+| Keep Redis data | [Step 5](#step-5-persist-data-with-named-volumes) | [Volume lifecycle](/manuals/engine/storage/volumes.md) |
+| Split the configuration | [Step 6](#step-6-structure-your-project-with-multiple-compose-files) | [Include](how-tos/multiple-compose-files/include.md), [networking](how-tos/networking.md) |
+| Inspect the stack | [Step 7](#step-7-inspect-and-debug-your-running-stack) | [CLI procedures](intro/compose-cli.md), [trust model](trust-model.md) |
+
 ## Step 1: Set up the project
 
 1. Create a directory for the project:
@@ -139,7 +151,7 @@ Compose simplifies the control of your entire application stack, making it easy 
 
    - The `redis` service uses a public [Redis](https://registry.hub.docker.com/_/redis/) image pulled from the Docker Hub registry.
 
-   For more information on the `compose.yaml` file, see [How Compose works](compose-application-model.md).
+   For more information on the `compose.yaml` file, see [How Compose works](intro/compose-application-model.md).
 
 2. Start up your application: 
 

@@ -125,6 +125,16 @@ incrementally. The swarm manager lets you control the delay between service
 deployment to different sets of nodes. If anything goes wrong, you can
 roll back to a previous version of the service.
 
+## Tasks
+
+- [Check host and network prerequisites](prerequisites.md)
+- [Create a swarm](swarm-mode.md) or [join nodes](join-nodes.md)
+- [Create and configure services](services.md) or [deploy a stack](stack-deploy.md)
+- [Manage service networks](networking.md) and [publish ports](ingress.md)
+- [Use configs](configs.md) or [secrets](secrets.md)
+- [Manage nodes](manage-nodes.md) and [administer the swarm](admin_guide.md)
+- [Protect manager encryption keys](swarm_manager_locking.md)
+
 ## What's next?
 
 * Learn Swarm mode [key concepts](key-concepts.md).

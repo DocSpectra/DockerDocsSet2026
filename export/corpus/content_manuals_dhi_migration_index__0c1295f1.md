@@ -51,3 +51,11 @@ Choose the migration approach that best fits your needs:
 {{< grid items="grid_migration_resources" >}}
 
 
+
+## Shared preparation and procedure
+
+- [Authenticate to dhi.io](../how-to/authenticate.md)
+- [Review image differences](image-differences.md)
+- [Review the migration checklist](checklist.md)
+- [Update Dockerfile build and runtime stages](dockerfile.md)
+

@@ -48,111 +48,31 @@ with AI models locally.
 
 ## Requirements
 
-Docker Model Runner is supported on the following platforms:
-
-{{< tabs >}}
-{{< tab name="Windows">}}
-
-Windows(amd64):
--  NVIDIA GPUs
--  NVIDIA drivers 576.57+
-
-Windows(arm64):
-- OpenCL for Adreno
-- Qualcomm Adreno GPU (6xx series and later)
-
-  > [!NOTE]
-  > Some llama.cpp features might not be fully supported on the 6xx series.
-
-{{< /tab >}}
-{{< tab name="MacOS">}}
-
-- Apple Silicon
-
-{{< /tab >}}
-{{< tab name="Linux">}}
-
-Docker Engine only:
-
-- Supports CPU, NVIDIA (CUDA), AMD (ROCm), and Vulkan backends
-- Requires NVIDIA driver 575.57.08+ when using NVIDIA GPUs
-
-{{< /tab >}}
-{{</tabs >}}
+See [platform requirements](requirements.md).
 
 ## How Docker Model Runner works
 
-Models are pulled from Docker Hub, an OCI-compliant registry, or
-[Hugging Face](https://huggingface.co/) the first time you use them and are
-stored locally. They load into memory only at runtime when a request is made,
-and unload when not in use to optimize resources. Because models can be large,
-the initial pull may take some time. After that, they're cached locally for
-faster access. You can interact with the model using
-[OpenAI and Ollama-compatible APIs](api-reference.md).
+See [runtime behavior, engines, and context size](runtime-and-privacy.md).
 
 ### Inference engines
 
-Docker Model Runner supports three inference engines:
-
-| Engine | Best for | Model format |
-|--------|----------|--------------|
-| [llama.cpp](inference-engines.md#llamacpp) | Local development, resource efficiency | GGUF (quantized) |
-| [vLLM](inference-engines.md#vllm) | Production, high throughput | Safetensors |
-| [Diffusers](inference-engines.md#diffusers) | Image generation (Stable Diffusion) | Safetensors |
-
-llama.cpp is the default engine and works on all platforms. vLLM requires NVIDIA GPUs and is supported on Linux x86_64 and Windows with WSL2. Diffusers enables image generation and requires NVIDIA GPUs on Linux (x86_64 or ARM64). See [Inference engines](inference-engines.md) for detailed comparison and setup.
+See [inference engines](runtime-and-privacy.md#inference-engines).
 
 ### Context size
 
-Models have a configurable context size (context length) that determines how many tokens they can process. The default varies by model but is typically 2,048-8,192 tokens. You can adjust this per-model:
-
-```console
-$ docker model configure --context-size 8192 ai/qwen2.5-coder
-```
-
-See [Configuration options](configuration.md) for details on context size and other parameters.
-
-> [!TIP]
->
-> Using Testcontainers or Docker Compose?
-> [Testcontainers for Java](https://java.testcontainers.org/modules/docker_model_runner/)
-> and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/), and
-> [Docker Compose](/manuals/ai/compose/models-and-compose.md) support Docker
-> Model Runner.
+See [context size](runtime-and-privacy.md#context-size).
 
 ## Known issues
 
+See [Model Runner diagnostics](diagnose.md#known-issues).
+
 ### `docker model` is not recognised
 
-If you run a Docker Model Runner command and see:
-
-```text
-docker: 'model' is not a docker command
-```
-
-It means Docker can't find the plugin because it's not in the expected CLI plugins directory.
-
-To fix this, create a symlink so Docker can detect it:
-
-```console
-$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
-```
-
-Once linked, rerun the command.
+See [plugin discovery](diagnose.md#docker-model-is-not-recognised).
 
 ## Privacy and data collection
 
-Docker Model Runner respects your privacy settings in Docker Desktop. Data collection is controlled by the **Send usage statistics** setting:
-
-- **Disabled**: No usage data is collected
-- **Enabled**: Only minimal, non-personal data is collected:
-  - [Model names](https://github.com/docker/model-runner/blob/eb76b5defb1a598396f99001a500a30bbbb48f01/pkg/metrics/metrics.go#L96) (via HEAD requests to Docker Hub)
-  - User agent information
-  - Whether requests originate from the host or containers
-
-When using Docker Model Runner with Docker Engine, HEAD requests to Docker Hub are made to track model names, regardless of any settings.
-
-No prompt content, responses, or personally identifiable information is ever collected.
+See [privacy and data collection](runtime-and-privacy.md#privacy-and-data-collection).
 
 ## Share feedback
 

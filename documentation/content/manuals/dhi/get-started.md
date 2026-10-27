@@ -22,6 +22,10 @@ Docker account, pull and run an image, and compare it with a Docker Official Ima
 > Hub to enable customization, SLA-backed security updates, and access to
 > compliance variants.
 
+## Before you begin
+
+Review [DHI registry authentication](how-to/authenticate.md), [adoption considerations](how-to/pull-run.md#considerations-when-adopting-dhis), and [image comparison prerequisites](how-to/compare-images.md#prerequisites).
+
 ## Step 1: Find an image to use
 
 1. Go to the Hardened Images catalog in [Docker
@@ -39,7 +43,7 @@ You can pull and run a DHI like any other Docker image. Note that Docker Hardene
 Images are designed to be minimal and secure, so they may not include all the
 tools or libraries you expect in a typical image. You can view the typical
 differences in [Considerations when adopting
-DHIs](./how-to/use.md#considerations-when-adopting-dhis).
+DHIs](./how-to/pull-run.md#considerations-when-adopting-dhis).
 
 The following example demonstrates that you can run the Python image and execute
 a simple Python command just like you would with any other Docker image:
@@ -73,7 +77,7 @@ a simple Python command just like you would with any other Docker image:
 
 To dive deeper into using images, see:
 
-- [Use a Docker Hardened Image](./how-to/use.md) for general usage
+- [Use a Docker Hardened Image](./how-to/pull-run.md) for general usage
 - [Use a Helm chart](./how-to/helm.md) for deploying with Helm
 
 ## Step 3: Compare with other images
@@ -129,7 +133,7 @@ This comparison shows that the Docker Hardened Image:
 - Reduces size: From 412 MB down to 35 MB (91% reduction)
 - Minimizes packages: From 610 packages down to 80 (87% reduction)
 
-To dive deeper into comparing images see [Search and evaluate Docker Hardened Images](./how-to/explore.md#compare-and-evaluate-images).
+To dive deeper into comparing images see [Search and evaluate Docker Hardened Images](./how-to/compare-images.md).
 
 ## What's next
 
@@ -146,7 +150,7 @@ You've pulled and run your first Docker Hardened Image. Here are a few ways to k
   After subscribing to a DHI subscription or starting a trial, learn how to
   mirror repositories, customize images, and access compliance variants.
 
-- [Verify DHIs](./how-to/verify.md): Use tools like [Docker Scout](/scout/) or
+- [Verify DHIs](./how-to/verify-attestations.md): Use tools like [Docker Scout](/scout/) or
   Cosign to inspect and verify signed attestations, like SBOMs and provenance.
 
 - [Scan DHIs](./how-to/scan.md): Analyze the image with Docker Scout or other

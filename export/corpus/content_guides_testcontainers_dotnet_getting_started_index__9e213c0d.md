@@ -26,7 +26,7 @@ In this guide, you will learn how to:
 ## Prerequisites
 
 - .NET 8.0+ SDK
-- A Docker environment supported by Testcontainers
+- A [Docker environment supported by Testcontainers](/manuals/testcontainers.md#prerequisites)
 
 > [!NOTE]
 > If you're new to Testcontainers, visit the

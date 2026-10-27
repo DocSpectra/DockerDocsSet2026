@@ -25,6 +25,10 @@ params:
       description: Step-by-step guides for using, verifying, scanning, and migrating to Docker Hardened Images.
       icon: play_arrow
       link: /dhi/how-to/
+    - title: Migration
+      description: Choose a migration path and review shared preparation and examples.
+      icon: transform
+      link: /dhi/migration/
     - title: Core concepts
       description: Understand the secure supply chain principles that make Docker Hardened Images production-ready.
       icon: fact_check

@@ -29,20 +29,8 @@ flag. For more information about available drivers, see
 
 ## List available builders
 
-Use `docker buildx ls` to see builder instances available on your system, and
-the drivers they're using.
-
-```console
-$ docker buildx ls
-NAME/NODE       DRIVER/ENDPOINT      STATUS   BUILDKIT PLATFORMS
-default *       docker
-  default       default              running  v0.11.6  linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
-my_builder      docker-container
-  my_builder0   default              running  v0.11.6  linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
-```
-
-The asterisk (`*`) next to the builder name indicates the
-[selected builder](_index.md#selected-builder).
+For `docker buildx ls`, its output, and the selected-builder marker, see
+[Select a builder](selection.md#selected-builder).
 
 ## Inspect a builder
 
@@ -67,6 +55,8 @@ Status:    running
 Buildkit:  v0.11.6
 Platforms: linux/arm64, linux/amd64, linux/amd64/v2, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/mips64le, linux/mips64, linux/arm/v7, linux/arm/v6
 ```
+
+## Check builder disk usage
 
 If you want to see how much disk space a builder is using, use the
 `docker buildx du` command. By default, this command shows the total disk usage
@@ -123,4 +113,4 @@ It only removes your connection to the builder.
 
 If you have turned on the
 [Docker Desktop Builds view](/manuals/desktop/use-desktop/builds.md),
-you can inspect builders in [Docker Desktop settings](/manuals/desktop/settings-and-maintenance/settings.md#builders). 
+you can inspect builders in [Docker Desktop settings](/manuals/desktop/settings-and-maintenance/settings.md#builders).

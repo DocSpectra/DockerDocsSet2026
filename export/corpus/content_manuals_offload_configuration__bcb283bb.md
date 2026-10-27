@@ -13,12 +13,14 @@ role. Organization owners can manage settings for all users in their
 organization, while individual developers can configure their own Docker Desktop
 settings when allowed by their organization.
 
+Before configuring Offload, see [Docker Offload prerequisites and access requirements](requirements.md).
+
 ## Manage settings for your organization
 
 For organization owners, you can manage Docker Offload settings for all users in
 your organization. For more details, see [Manage Docker
 products](../admin/organization/manage/manage-products.md). To view usage for Docker
-Offload, see [Docker Offload usage](/offload/usage/).
+Offload, see [Docker Offload usage](usage.md).
 
 ## Configure settings in Docker Desktop
 

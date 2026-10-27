@@ -14,7 +14,9 @@ aliases:
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
-- You have a [Git client](https://git-scm.com/downloads). The examples in this section show the Git CLI, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
+
+For context, see [Multi-stage builds](/manuals/build/building/multi-stage.md).
 
 ## Overview
 
@@ -352,23 +354,13 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 ## 3. Run the application in the background
 
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `docker-ruby-on-rails` directory, run the following command
-in a terminal.
-
-```console
-$ docker compose up --build -d
-```
+Inside the `docker-ruby-on-rails` directory, follow [Run in the background](/guides/run-compose-application.md#run-in-the-background).
 
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000).
 
 You should see a simple Ruby on Rails application.
 
-In the terminal, run the following command to stop the application.
-
-```console
-$ docker compose down
-```
+Follow [Stop the background application](/guides/run-compose-application.md#stop-the-background-application).
 
 For more information about Compose commands, see the [Compose CLI
 reference](/reference/cli/docker/compose/).

@@ -14,27 +14,11 @@ weight: 40
 
 {{< summary-bar feature_name="Registry access management" >}}
 
-Registry Access Management (RAM) lets administrators control which container registries developers can access through Docker Desktop. This DNS-level filtering ensures developers only pull and push images from approved registries, improving supply chain security.
-
-RAM works with all registry types including cloud services, on-premises registries, and registry mirrors. You can allow any hostname or domain, but must include redirect domains (like `s3.amazonaws.com` for some registries) in your allowlist.
-
-## Supported registries
-
-Registry Access Management works with any container registry, including:
-
-- Docker Hub (allowed by default)
-- Cloud registries: Amazon ECR, Google Artifact Registry, Azure Container Registry
-- Git-based registries: GitHub Container Registry, GitLab Container Registry
-- On-premises solutions: Nexus, Artifactory, Harbor
-- Registry mirrors: Including Docker Hub mirrors
+For supported registries and filtering scope, review [Registry controls](image-registry-controls.md#registry-controls).
 
 ## Prerequisites
 
-Before configuring Registry Access Management, you must:
-
-- [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). Registry Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
-- Use [personal access tokens (PATs)](/manuals/security/access-tokens.md) for authentication (Organization access tokens aren't supported)
-- Have a Docker Business subscription
+Review the [shared image and registry control prerequisites](image-registry-controls.md#shared-prerequisites).
 
 ## Configure registry permissions
 
@@ -84,56 +68,4 @@ and builds that reference external registries.
 
 ## Registry limits and platform constraints
 
-Registry Access Management has these limits and platform-specific behaviors:
-
-- Maximum allowlist size: 100 registries or domains per organization
-- DNS-based filtering: Restrictions work at the hostname level, not IP addresses
-- Redirect domains required: Must include all domains a registry redirects to (CDN endpoints, storage services)
-- Windows containers: Windows image operations aren't restricted by default. Turn on **Use proxy for Windows Docker daemon** in Docker Desktop settings to apply restrictions
-- WSL 2 requirements: Requires Linux kernel 5.4 or later, restrictions apply to all WSL 2 distributions
-
-## Build and deployment restrictions
-
-These scenarios are not restricted by Registry Access Management:
-
-- Docker buildx with Kubernetes driver
-- Docker buildx with custom Docker-container driver
-- Some Docker Debug and Kubernetes image pulls (even if Docker Hub is blocked)
-- Images previously cached by registry mirrors may still be blocked if the source registry is restricted
-
-## Security bypass considerations
-
-Users can potentially bypass Registry Access Management through:
-
-- Local proxies or DNS manipulation
-- Signing out of Docker Desktop (unless sign-in is enforced)
-- Network-level modifications outside Docker Desktop's control
-
-To maximize security effectiveness:
-
-- [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) to prevent bypass through sign-out
-- Implement additional network-level controls for complete protection
-- Use Registry Access Management as part of a broader security strategy
-
-## Registry allowlist best practices
-
-- Include all registry domains: Some registries redirect to multiple
-domains. For AWS ECR, include:
-
-    ```text
-    your-account.dkr.ecr.us-west-2.amazonaws.com
-    amazonaws.com
-    s3.amazonaws.com
-    ```
-
-- Practice regular allowlist maintenance:
-    - Remove unused registries periodically
-    - Add newly approved registries as needed
-    - Update domain names that may have changed
-    - Monitor registry usage through Docker Desktop analytics
-- Test configuration changes:
-    - Verify registry access after making allowlist updates
-    - Check that all necessary redirect domains are included
-    - Ensure development workflows aren't disrupted
-    - Combine with [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) for comprehensive protection
-    
+See [Registry limits and platform constraints](image-registry-controls.md#registry-limits-and-platform-constraints), including build exceptions, bypass considerations, and allowlist guidance.

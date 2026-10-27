@@ -12,7 +12,7 @@ interface for your models.
 
 ## Prerequisites
 
-- Docker Model Runner enabled with TCP access
+- Docker Model Runner enabled with [TCP access](api-reference.md#enable-host-tcp-access)
 - A model pulled (e.g., `docker model pull ai/llama3.2`)
 
 ## Quick start with Docker Compose
@@ -82,6 +82,8 @@ volumes:
 ```
 
 ## Network configuration
+
+See the [API base URL reference](api-reference.md#determine-the-base-url) for host and container endpoints.
 
 ### Docker Desktop
 

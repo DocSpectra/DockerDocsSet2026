@@ -1,5 +1,5 @@
 ---
-title: Deploy to Kubernetes
+title: Deploy the Todo application to Kubernetes
 keywords: kubernetes, pods, deployments, kubernetes services
 description: Learn how to describe and deploy a simple application on Kubernetes.
 aliases:
@@ -15,9 +15,9 @@ params:
 ## Prerequisites
 
 - Download and install Docker Desktop as described in [Get Docker](/get-started/get-docker.md).
-- Work through containerizing an application in [Part 2](02_our_app.md).
+- Work through containerizing an application in [Part 2](/get-started/workshop/02_our_app.md).
 - Make sure that Kubernetes is turned on in Docker Desktop:
-  If Kubernetes isn't running, follow the instructions in [Orchestration](orchestration.md) to finish setting it up.
+  If Kubernetes isn't running, follow the instructions in [Enable and verify Kubernetes](orchestration-kubernetes-setup.md) to finish setting it up.
 
 ## Introduction
 
@@ -27,9 +27,9 @@ In order to validate that your containerized application works well on Kubernete
 
 ## Describing apps using Kubernetes YAML
 
-All containers in Kubernetes are scheduled as pods, which are groups of co-located containers that share some resources. Furthermore, in a realistic application you almost never create individual pods. Instead, most of your workloads are scheduled as deployments, which are scalable groups of pods maintained automatically by Kubernetes. Lastly, all Kubernetes objects can and should be described in manifests called Kubernetes YAML files. These YAML files describe all the components and configurations of your Kubernetes app, and can be used to create and destroy your app in any Kubernetes environment.
+See [Kubernetes YAML concepts and fields](orchestration-manifests.md#kubernetes-yaml).
 
-You already wrote a basic Kubernetes YAML file in the Orchestration overview part of this tutorial. Now, you can write a slightly more sophisticated YAML file to run and manage your Todo app, the container `getting-started` image created in [Part 2](02_our_app.md) of the Quickstart tutorial. Place the following in a file called `bb.yaml`:
+You already wrote a basic Kubernetes YAML file in [Enable and verify Kubernetes](orchestration-kubernetes-setup.md). Now, you can write a slightly more sophisticated YAML file to run and manage your Todo app, the container `getting-started` image created in [Part 2](/get-started/workshop/02_our_app.md) of the Quickstart tutorial. Place the following in a file called `bb.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -72,14 +72,9 @@ In this Kubernetes YAML file, there are two objects, separated by the `---`:
 - A `Deployment`, describing a scalable group of identical pods. In this case, you'll get just one `replica`, or copy of your pod, and that pod (which is described under the `template:` key) has just one container in it, based off of your `getting-started` image from the previous step in this tutorial.
 - A `NodePort` service, which will route traffic from port 30001 on your host to port 3000 inside the pods it routes to, allowing you to reach your Todo app from the network.
 
-Also, notice that while Kubernetes YAML can appear long and complicated at first, it almost always follows the same pattern:
-
-- The `apiVersion`, which indicates the Kubernetes API that parses this object
-- The `kind` indicating what sort of object this is
-- Some `metadata` applying things like names to your objects
-- The `spec` specifying all the parameters and configurations of your object.
-
 ## Deploy and check your application
+
+Follow the [local Kubernetes deployment cycle](/guides/kubernetes-deployment-cycle.md) with the Todo manifest, commands, and expected output below.
 
 1. In a terminal, navigate to where you created `bb.yaml` and deploy your application to Kubernetes:
 
@@ -119,7 +114,7 @@ Also, notice that while Kubernetes YAML can appear long and complicated at first
 
    In addition to the default `kubernetes` service, we see our `bb-entrypoint` service, accepting traffic on port 30001/TCP.
 
-3. Open a browser and visit your Todo app at `localhost:30001`. You should see your Todo application, the same as when you ran it as a stand-alone container in [Part 2](02_our_app.md) of the tutorial.
+3. Open a browser and visit your Todo app at `localhost:30001`. You should see your Todo application, the same as when you ran it as a stand-alone container in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial.
 
 4. Once satisfied, tear down your application:
 

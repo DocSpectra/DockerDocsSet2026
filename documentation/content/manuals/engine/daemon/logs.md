@@ -6,6 +6,9 @@ aliases:
   - /config/daemon/logs/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 The daemon logs may help you diagnose problems. The logs may be saved in one of
 a few locations, depending on the operating system configuration and the logging
 subsystem used:

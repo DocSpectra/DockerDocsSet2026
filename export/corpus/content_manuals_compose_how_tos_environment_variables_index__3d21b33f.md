@@ -23,3 +23,7 @@ This section covers:
 It also covers: 
 - How [interpolation](variable-interpolation.md) can be used to set variables within your Compose file and how it relates to a container's environment.
 - Some [best practices](best-practices.md).
+
+## Syntax reference
+
+- [Interpolation expressions and environment file syntax](interpolation-syntax.md)

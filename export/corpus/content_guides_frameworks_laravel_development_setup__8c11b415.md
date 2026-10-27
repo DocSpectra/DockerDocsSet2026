@@ -4,12 +4,17 @@ description: Set up a Laravel development environment using Docker Compose.
 weight: 30
 ---
 
+## Prerequisites and context
+
+See [Laravel prerequisites](prerequisites.md), [Laravel Compose configuration choices](common-questions.md), and [Multi-stage builds](/manuals/build/building/multi-stage.md).
+
+For the production image extended below, see [Laravel production setup](production-setup.md).
+
 This guide demonstrates how to configure a **development** environment for a Laravel application using Docker and Docker Compose. It builds **on top of** the production image for PHP-FPM and then adds developer-focused features—like Xdebug—to streamline debugging. By basing the development container on a known production image, you keep both environments closely aligned.
 
 This setup includes PHP-FPM, Nginx, and PostgreSQL services (although you can easily swap PostgreSQL for another database, like MySQL or MariaDB). Everything runs in containers, so you can develop in isolation without altering your host system.
 
-> [!NOTE]
-> To experiment with a ready-to-run configuration, download the [Laravel Docker Examples](https://github.com/dockersamples/laravel-docker-examples) repository. It contains pre-configured setups for both development and production.
+For a ready-to-run configuration, see [Example configurations](common-questions.md#example-configurations).
 
 ## Project structure
 
@@ -41,7 +46,7 @@ my-laravel-app/
 ├── ...
 ```
 
-This layout represents a typical Laravel project, with Docker configurations stored in a unified `docker` directory. You’ll find **two** Compose files — `compose.dev.yaml` (for development) and `compose.prod.yaml` (for production) — to keep your environments separate and manageable.
+For the directory and Compose file conventions, see [Project layout](common-questions.md#project-layout).
 
 The environment includes a `workspace` service, a sidecar container for tasks like building front-end assets, running Artisan commands, and other CLI tools your project may require. While this extra container may seem unusual, it’s a familiar pattern in solutions like **Laravel Sail** and **Laradock**. It also includes **Xdebug** to aid in debugging.
 

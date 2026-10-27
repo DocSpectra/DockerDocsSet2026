@@ -13,15 +13,16 @@ aliases:
 
 Work through the steps to containerize your application in [Containerize your app](containerize.md).
 
+For persistent storage and container connections, see [Volumes](/manuals/engine/storage/volumes.md) and [Networking in Compose](/manuals/compose/how-tos/networking.md).
+
 ## Overview
 
 In this section, you’ll walk through setting up a local development environment
 for the application you containerized in the previous section. This includes:
 
-- Adding a local database and persisting data
-- Creating a development container to connect a debugger
-- Configuring Compose to automatically update your running Compose services as
-  you edit and save your code
+- [Adding a local database and persisting data](#add-a-local-database-and-persist-data)
+- [Creating a development container to connect a debugger](#dockerfile-for-development)
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
 
 ## Add a local database and persist data
 
@@ -318,9 +319,7 @@ Press `ctrl+c` in the terminal to stop your application.
 
 ## Automatically update services
 
-Use Compose Watch to automatically update your running Compose services as you
-edit and save your code. For more details about Compose Watch, see
-[Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
+For watch behavior, configuration, and prerequisites, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 
 Open your `docker-compose.yaml` file in an IDE or text editor and then add the
 Compose Watch instructions. The following is the updated `docker-compose.yaml`

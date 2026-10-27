@@ -13,13 +13,15 @@ aliases:
 
 Complete [Containerize a .NET application](containerize.md).
 
+For persistent storage and container connections, see [Volumes](/manuals/engine/storage/volumes.md) and [Networking in Compose](/manuals/compose/how-tos/networking.md).
+
 ## Overview
 
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 
-- Adding a local database and persisting data
-- Configuring Compose to automatically update your running Compose services as you edit and save your code
-- Creating a development container that contains the .NET Core SDK tools and dependencies
+- [Adding a local database and persisting data](#add-a-local-database-and-persist-data)
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
+- [Creating a development container that contains the .NET Core SDK tools and dependencies](#create-a-development-container)
 
 ## Update the application
 
@@ -230,7 +232,7 @@ Press `ctrl+c` in the terminal to stop your application.
 
 ## Automatically update services
 
-Use Compose Watch to automatically update your running Compose services as you edit and save your code. For more details about Compose Watch, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
+For watch behavior, configuration, and prerequisites, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 
 Open your `compose.yaml` file in an IDE or text editor and then add the Compose Watch instructions. The following is the updated `compose.yaml` file.
 

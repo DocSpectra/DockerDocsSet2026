@@ -31,14 +31,10 @@ In this guide, you'll learn how to:
 Before you start, make sure you have:
 
 - [Docker Desktop](../get-started/get-docker.md) or Docker Engine installed
-- [Docker Model Runner enabled](../manuals/ai/model-runner/get-started.md#enable-docker-model-runner)
+- [Docker Model Runner enabled](../manuals/ai/model-runner/setup.md#enable-docker-model-runner)
 - [Claude Code installed](https://code.claude.com/docs/en/quickstart)
 
-If you use Docker Desktop, turn on TCP access in **Settings** > **AI**, or run:
-
-```console
-$ docker desktop enable model-runner --tcp 12434
-```
+[Enable TCP host access](../manuals/ai/model-runner/api-reference.md#enable-host-tcp-access).
 
 ## Step 1: Pull a coding model
 
@@ -152,6 +148,37 @@ Then run Claude Code with the packaged model:
 ```console
 $ ANTHROPIC_BASE_URL=http://localhost:12434 claude --model gpt-oss:32k
 ```
+
+## Additional configuration examples
+
+[Claude Code](https://claude.com/product/claude-code) is [Anthropic's](https://www.anthropic.com/) command-line tool for agentic coding. It lives in your terminal, understands your codebase, and executes routine tasks, explains complex code, and handles Git workflows through natural language commands.
+
+### Configuration
+
+1. Install Claude Code (see [docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code))
+2. Use the `ANTHROPIC_BASE_URL` environment variable to point Claude Code at DMR. On Mac or Linux, you can do this, for example if you want to use the `gpt-oss:32k` model:
+    ```bash
+    ANTHROPIC_BASE_URL=http://localhost:12434 claude --model qwen2.5-coder
+    ```
+    On Windows (PowerShell) you can do it like this:
+    ```powershell
+    $env:ANTHROPIC_BASE_URL="http://localhost:12434"
+    claude --model gpt-oss:32k
+    ```
+
+> [!TIP]
+>
+> To avoid setting the variable each time, add it to your shell profile (`~/.bashrc`, `~/.zshrc`, or equivalent):
+>
+> ```shell
+> export ANTHROPIC_BASE_URL=http://localhost:12434
+> ```
+
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/)
+
+> [!NOTE]
+>
+> While the other [IDE and tool integrations](../manuals/ai/model-runner/ide-integrations.md) use the [OpenAI-compatible API](/manuals/ai/model-runner/api-reference.md#openai-compatible-api), DMR also exposes a [Anthropic-compatible API](/manuals/ai/model-runner/api-reference.md#anthropic-compatible-api) used here.
 
 ## Learn more
 

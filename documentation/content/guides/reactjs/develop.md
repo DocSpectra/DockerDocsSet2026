@@ -9,7 +9,9 @@ description: Learn how to develop your React.js application locally using contai
 
 ## Prerequisites
 
-Complete [Containerize React.js application](containerize.md).
+Complete [sample setup](containerize.md), [image building](build-images.md), and [startup verification](run.md).
+
+For shared requirements and file-update behavior, see [Compose Watch prerequisites](/manuals/compose/how-tos/file-watch.md#prerequisites) and [configuration](/manuals/compose/how-tos/file-watch.md#configuration).
 
 ---
 
@@ -28,7 +30,7 @@ You’ll learn how to:
 
 Use Compose Watch to automatically sync source file changes into your containerized development environment. This provides a seamless, efficient development experience without needing to restart or rebuild containers manually.
 
-## Step 1: Create a development Dockerfile
+### Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content:
 
@@ -63,7 +65,7 @@ CMD ["npm", "run", "dev"]
 This file sets up a lightweight development environment for your React app using the dev server.
 
 
-### Step 2: Update your `compose.yaml` file
+### Update your `compose.yaml` file
 
 Open your `compose.yaml` file and define two services: one for production (`react-prod`) and one for development (`react-dev`).
 
@@ -99,7 +101,7 @@ services:
 > [!NOTE]
 > For more details, see the official guide: [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 
-### Step 3: Update vite.config.ts to ensure it works properly inside Docker
+### Update vite.config.ts to ensure it works properly inside Docker
 
 To make Vite’s development server work reliably inside Docker, you need to update your vite.config.ts with the correct settings.
 
@@ -143,7 +145,7 @@ After completing the previous steps, your project directory should now contain t
 │ └── README.Docker.md
 ```
 
-### Step 4: Start Compose Watch
+### Start Compose Watch
 
 Run the following command from your project root to start your container in watch mode:
 
@@ -151,7 +153,7 @@ Run the following command from your project root to start your container in watc
 $ docker compose watch react-dev
 ```
 
-### Step 5: Test Compose Watch with React
+### Test Compose Watch with React
 
 To verify that Compose Watch is working correctly:
 
@@ -204,3 +206,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your React.js application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+[Run tests](run-tests.md).

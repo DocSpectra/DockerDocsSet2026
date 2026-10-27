@@ -32,7 +32,14 @@ Docker's powerful ecosystem for collaborative development and deployment.
 
 ## What you'll learn
 
-- Set up Docker Desktop
-- Run your first container
-- Build your first image
-- Publish your image on Docker Hub
+- [Set up Docker Desktop](get-docker-desktop.md)
+- [Run your first container](get-docker-desktop.md#run-your-first-container)
+- [Build your first image](build-and-push-first-image.md#build-and-push-the-image)
+- [Publish your image on Docker Hub](build-and-push-first-image.md#build-and-push-the-image)
+
+## Follow the introduction
+
+1. [Get Docker Desktop](get-docker-desktop.md)
+2. [Develop with containers](develop-with-containers.md)
+3. [Build and push your first image](build-and-push-first-image.md)
+4. [What’s next](whats-next.md)

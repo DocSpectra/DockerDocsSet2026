@@ -5,6 +5,11 @@ description: Discover how to validate your build configuration and identify best
 keywords: github actions, gha, build, checks
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 [Build checks](/manuals/build/checks.md) let you validate your `docker build`
 configuration without actually running the build.
 

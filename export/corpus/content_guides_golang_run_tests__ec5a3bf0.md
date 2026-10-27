@@ -12,14 +12,15 @@ aliases:
 
 ## Prerequisites
 
+See [Go guide prerequisites](prerequisites.md).
+
 Complete the [Build your Go image](build-images.md) section of this guide.
 
 ## Overview
 
-Testing is an essential part of modern software development. Testing can mean a
-lot of things to different development teams. There are unit tests, integration
-tests and end-to-end testing. In this guide you take a look at running your unit
-tests in Docker when building.
+For testing context and build-stage selection, see [Test stages in Docker builds](/guides/container-test-stages.md).
+
+In this guide you take a look at running your unit tests in Docker when building.
 
 For this section, use the `docker-gs-ping` project that you cloned in [Build
 your Go image](build-images.md).

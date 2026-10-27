@@ -12,6 +12,8 @@ image to the repository automatically triggers image analysis. You can view
 image insights using the Docker Scout Dashboard, or the `docker scout` CLI
 commands.
 
+For registry context, see [Container registry integrations](/manuals/scout/deep-dive/integration-types.md#container-registries).
+
 ## How it works
 
 To help you integrate Docker Scout with ECR, you can use a CloudFormation stack
@@ -59,10 +61,12 @@ The following table describes the configuration resources.
 Create the CloudFormation stack in your AWS account to enable the Docker Scout
 integration.
 
-Prerequisites:
+### Prerequisites
 
 - You must have access to an AWS account with permission to create resources.
 - You have be an owner of the Docker organization.
+
+### Create the stack
 
 To create the stack:
 
@@ -94,7 +98,7 @@ To create the stack:
 
 The ECR integration is now active. For Docker Scout to start analyzing images
 in the registry, you need to activate it for each repository in
-[Repository settings](https://scout.docker.com/settings/repos/).
+[Repository settings](https://scout.docker.com/settings/repos/) (see [activation prerequisites and steps](/manuals/scout/how-tos/enable-repositories.md)).
 
 After activating repositories, images that you push are analyzed by Docker
 Scout. The analysis results appear in the Docker Scout Dashboard.
@@ -117,7 +121,7 @@ To add additional registries:
    is **Connected**.
 
 Next, activate Docker Scout for the repositories that you want to analyze in
-[Repository settings](https://scout.docker.com/settings/repos/).
+[Repository settings](https://scout.docker.com/settings/repos/) (see [activation prerequisites and steps](/manuals/scout/how-tos/enable-repositories.md)).
 
 ## Remove integration
 
@@ -165,7 +169,7 @@ If image analysis results for your ECR images aren't showing up in the Docker
 Scout Dashboard:
 
 - Ensure that you've activated Docker Scout for the repository. View and manage
-  active repositories in [Repository settings](https://scout.docker.com/settings/repos/).
+  active repositories in [Repository settings](https://scout.docker.com/settings/repos/) (see [activation prerequisites and steps](/manuals/scout/how-tos/enable-repositories.md)).
 
 - Ensure that the AWS account ID and region for your registry is listed on the
   ECR integrations page.

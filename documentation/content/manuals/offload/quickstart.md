@@ -15,39 +15,13 @@ experience.
 
 This quickstart covers the steps developers need to get started with Docker Offload.
 
-> [!NOTE]
->
-> If you're an organization owner, to get started you must [contact
-> sales](https://www.docker.com/pricing/contact-sales/) and subscribe your
-> organization to use Docker Offload. After subscribing, see [Manage Docker
-> products](../admin/organization/manage/manage-products.md) to learn how to manage
-> access for the developers in your organization.
-
-
 ## Prerequisites
 
-- You must have [Docker Desktop](/desktop/) installed. Docker recommends using
-  the latest version of Docker Desktop to access the newest features and
-  improvements in Docker Offload.
-- You must have a Docker Business subscription and a Docker Offload subscription.
+See [Docker Offload prerequisites and access requirements](requirements.md).
 
 ## Step 1: Verify access to Docker Offload
 
-To access Docker Offload, you must be part of an organization that has
-subscribed to Docker Offload. As a developer, you can verify this by checking if
-the Docker Offload toggle appears in the Docker Desktop Dashboard header.
-
-1. Start Docker Desktop and sign in.
-2. In the Docker Desktop Dashboard header, look for the Docker Offload toggle.
-
-![Offload toggle](./images/offload-toggle.png)
-
-If you see the Docker Offload toggle, you have access to Docker Offload and can
-proceed to the next step. If you don't see the Docker Offload toggle, check if
-Docker Offload is disabled in your [Docker Desktop
-settings](./configuration.md), and then contact your administrator to verify
-that your organization has subscribed to Docker Offload and that they have
-enabled access for your organization.
+Follow [Verify access to Docker Offload](access.md).
 
 ## Step 2: Start Docker Offload
 
@@ -93,29 +67,24 @@ If Docker Offload is working, you'll see `Hello from Docker!` in the terminal ou
 
 ## Step 4: Monitor your Offload session
 
-When Docker Offload is started and you have started session (for example, you've
-ran a container), then you can see current session duration estimate in the
-Docker Desktop Dashboard footer next to the hourglass icon ({{< inline-image
-src="./images/hourglass-icon.png" alt="Offload session duration" >}}).
-
-Also, when Docker Offload is started, you can view detailed session information
-by selecting **Docker Offload** > **Insights** in the left navigation of the
-Docker Desktop Dashboard.
+Follow [Monitor the current Docker Offload session](session-monitoring.md).
 
 ## Step 5: Stop Docker Offload
 
 Docker Offload automatically
 [idles](./about.md#session-management-and-idle-state) if you do not respond to
 periodic prompts that appear in the Docker Desktop Dashboard. You can stop your
-Docker Offload session at any time. To stop Docker Offload:
-
-```console
-$ docker offload stop
-```
+Docker Offload session at any time.
 
 When you stop Docker Offload, the cloud environment is terminated and all
 running containers and images are removed. When Docker Offload has been idle for
 5 minutes, the environment is also terminated and all running containers and
 images are removed.
+
+To stop Docker Offload:
+
+```console
+$ docker offload stop
+```
 
 To start Docker Offload again, run the `docker offload start` command.

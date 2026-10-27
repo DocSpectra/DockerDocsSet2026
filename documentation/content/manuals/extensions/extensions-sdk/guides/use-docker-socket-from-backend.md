@@ -27,3 +27,5 @@ services:
     volumes:
       - /var/run/docker.sock.raw:/var/run/docker.sock
 ```
+
+For the backend configuration, see the [VM metadata section](../architecture/metadata.md#vm-section). For access rights, see [Extension security](../architecture/security.md).

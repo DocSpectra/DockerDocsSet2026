@@ -16,7 +16,7 @@ reported far outnumber those that have. Luckily, since Docker's approach to
 secure by default through apparmor, seccomp, and dropping capabilities, it
 likely mitigates unknown bugs just as well as it does known ones.
 
-Bugs mitigated:
+## Bugs mitigated
 
 * [CVE-2013-1956](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1956),
 [1957](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1957),
@@ -76,7 +76,7 @@ These arguments are blocked by `CAP_NET_ADMIN`, which Docker does not allow by
 default.
 
 
-Bugs not mitigated:
+## Bugs not mitigated
 
 * [CVE-2015-3290](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3290),
 [5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5157): Bugs in
@@ -90,3 +90,6 @@ which allowed unprivileged local users to gain write access to read-only memory.
 Also known as "dirty COW."
 *Partial mitigations:* on some operating systems this vulnerability is mitigated
 by the combination of seccomp filtering of `ptrace` and the fact that `/proc/self/mem` is read-only.
+
+
+For isolation context, see [Container isolation and kernel security](kernel-security.md).

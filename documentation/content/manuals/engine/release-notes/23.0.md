@@ -10,32 +10,28 @@ toc_max: 2
 
 > [!NOTE]
 >
-> From Docker Engine version 23.0.0, Buildx is distributed in a separate package: `docker-buildx-plugin`.
-> In earlier versions, Buildx was included in the `docker-ce-cli` package.
-> When you upgrade to this version of Docker Engine, make sure you update all
-> packages. For example, on Ubuntu:
->
-> ```console
-> $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-> ```
->
-> Refer to the [Docker Engine installation instructions][1] for your operating system
-> for more details on upgrading Docker Engine.
-
-[1]: ../install/_index.md
+> Before upgrading to Docker Engine 23.0, follow the [Buildx package upgrade requirements](upgrade.md#docker-engine-230-packages).
 
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 23.0.
-
-For more information about:
-
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
 
 Starting with the 23.0.0 release, Docker Engine moves away from using CalVer versioning,
 and starts using the [SemVer versioning format](https://semver.org/).
 Changing the version format is a stepping-stone towards Go module compatibility,
 but the repository doesn't yet use Go modules, and still requires using a "+incompatible" version.
 Work continues towards Go module compatibility in a future release.
+
+## Related guidance
+
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Known issues: [23.0.0](#2300)
+- Security notes: [23.0.4](#2304), [23.0.3](#2303), [23.0.2](#2302), [23.0.0](#2300)
+- Deprecations, removals, and breaking changes: [23.0.0](#2300)
+- Notes and warnings: [23.0.3](#2303)
 
 ## 23.0.6
 

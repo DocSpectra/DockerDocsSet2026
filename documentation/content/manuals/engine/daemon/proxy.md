@@ -12,6 +12,9 @@ aliases:
   - /config/daemon/proxy/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 <a name="httphttps-proxy"><!-- included for deep-links to old section --></a>
 
 If your organization uses a proxy server to connect to the internet, you may
@@ -19,9 +22,8 @@ need to configure the Docker daemon to use the proxy server. The daemon uses
 a proxy server to access images stored on Docker Hub and other registries,
 and to reach other nodes in a Docker swarm.
 
-This page describes how to configure a proxy for the Docker daemon. For
-instructions on configuring proxy settings for the Docker CLI, see [Configure
-Docker CLI to use a proxy server](/manuals/engine/cli/proxy.md).
+For the distinction between container, build, daemon, and Desktop settings,
+see [Docker proxy configuration scope](../cli/proxy-context.md).
 
 > [!IMPORTANT]
 > Proxy configurations specified in the `daemon.json` are ignored by Docker
@@ -77,7 +79,7 @@ systemd drop-in file that sets the variables for the `docker` service.
 > **Note for rootless mode**
 >
 > The location of systemd configuration files are different when running Docker
-> in [rootless mode](/manuals/engine/security/rootless.md). When running in
+> in [rootless mode](/manuals/engine/security/rootless/_index.md). When running in
 > rootless mode, Docker is started as a user-mode systemd service, and uses
 > files stored in each users' home directory in
 > `~/.config/systemd/<user>/docker.service.d/`. In addition, `systemctl` must
@@ -94,65 +96,10 @@ systemd drop-in file that sets the variables for the `docker` service.
    ```
 
 2. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`
-   that adds the `HTTP_PROXY` environment variable:
+   and [set HTTP and HTTPS proxy variables](proxy-environment.md#set-http-and-https-proxy-variables).
 
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   ```
-
-   To proxy HTTPS requests, set the `HTTPS_PROXY` environment
-   variable:
-
-   ```systemd
-   [Service]
-   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
-   ```
-
-   Multiple environment variables can be set; to set both an HTTP and an
-   HTTPS proxy;
-
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
-   ```
-
-   > [!NOTE]
-   >
-   > Special characters in the proxy value, such as `#?!()[]{}`, must be double
-   > escaped using `%%`. For example:
-   >
-   > ```systemd
-   > [Service]
-   > Environment="HTTP_PROXY=http://domain%%5Cuser:complex%%23pass@proxy.example.com:3128/"
-   > ```
-
-3. If you have internal Docker registries that you need to contact without
-   proxying, you can specify them via the `NO_PROXY` environment variable.
-
-   The `NO_PROXY` variable specifies a string that contains comma-separated
-   values for hosts that should be excluded from proxying. These are the options
-   you can specify to exclude hosts:
-   - IP address prefix (`1.2.3.4`)
-   - Domain name, or a special DNS label (`*`)
-   - A domain name matches that name and all subdomains. A domain name with a
-     leading "." matches subdomains only. For example, given the domains
-     `foo.example.com` and `example.com`:
-     - `example.com` matches `example.com` and `foo.example.com`, and
-     - `.example.com` matches only `foo.example.com`
-   - A single asterisk (`*`) indicates that no proxying should be done
-   - Literal port numbers are accepted by IP address prefixes (`1.2.3.4:80`) and
-     domain names (`foo.example.com:80`)
-
-   Example:
-
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
-   Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
-   ```
+3. For internal registries that you need to contact without proxying,
+   [exclude hosts using `NO_PROXY`](proxy-environment.md#exclude-hosts-from-proxying).
 
 4. Flush changes and restart Docker
 
@@ -180,65 +127,10 @@ systemd drop-in file that sets the variables for the `docker` service.
    ```
 
 2. Create a file named `~/.config/systemd/user/docker.service.d/http-proxy.conf`
-   that adds the `HTTP_PROXY` environment variable:
+   and [set HTTP and HTTPS proxy variables](proxy-environment.md#set-http-and-https-proxy-variables).
 
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   ```
-
-   To proxy HTTPS requests, set the `HTTPS_PROXY` environment
-   variable:
-
-   ```systemd
-   [Service]
-   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
-   ```
-
-   Multiple environment variables can be set; to set both an HTTP and an
-   HTTPS proxy;
-
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
-   ```
-
-   > [!NOTE]
-   >
-   > Special characters in the proxy value, such as `#?!()[]{}`, must be double
-   > escaped using `%%`. For example:
-   >
-   > ```systemd
-   > [Service]
-   > Environment="HTTP_PROXY=http://domain%%5Cuser:complex%%23pass@proxy.example.com:3128/"
-   > ```
-
-3. If you have internal Docker registries that you need to contact without
-   proxying, you can specify them via the `NO_PROXY` environment variable.
-
-   The `NO_PROXY` variable specifies a string that contains comma-separated
-   values for hosts that should be excluded from proxying. These are the options
-   you can specify to exclude hosts:
-   - IP address prefix (`1.2.3.4`)
-   - Domain name, or a special DNS label (`*`)
-   - A domain name matches that name and all subdomains. A domain name with a
-     leading "." matches subdomains only. For example, given the domains
-     `foo.example.com` and `example.com`:
-     - `example.com` matches `example.com` and `foo.example.com`, and
-     - `.example.com` matches only `foo.example.com`
-   - A single asterisk (`*`) indicates that no proxying should be done
-   - Literal port numbers are accepted by IP address prefixes (`1.2.3.4:80`) and
-     domain names (`foo.example.com:80`)
-
-   Example:
-
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
-   Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
-   ```
+3. For internal registries that you need to contact without proxying,
+   [exclude hosts using `NO_PROXY`](proxy-environment.md#exclude-hosts-from-proxying).
 
 4. Flush changes and restart Docker
 

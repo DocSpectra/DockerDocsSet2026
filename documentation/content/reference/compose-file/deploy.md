@@ -9,6 +9,14 @@ weight: 140
 
 {{% include "compose/deploy.md" %}}
 
+## Find deployment rules by task
+
+- Service discovery and metadata: [endpoint_mode](#endpoint_mode), [labels](#labels).
+- Replication and placement: [mode](#mode), [replicas](#replicas), [placement](#placement).
+- Resource limits and device reservations: [resources](#resources).
+- Restart, update, and rollback behavior: [restart_policy](#restart_policy), [update_config](#update_config), [rollback_config](#rollback_config).
+- Shared syntax: [byte values and durations](value-formats.md).
+
 ## Attributes
 
 ### `endpoint_mode`
@@ -156,7 +164,7 @@ services:
 
 #### `memory`
 
-`memory` configures a limit or reservation on the amount of memory a container can allocate, set as a string expressing a [byte value](extension.md#specifying-byte-values).
+`memory` configures a limit or reservation on the amount of memory a container can allocate, set as a string expressing a [byte value](value-formats.md#specifying-byte-values).
 
 #### `pids`
 
@@ -253,11 +261,11 @@ deploy:
   - `none`, containers are not automatically restarted regardless of the exit status.
   - `on-failure`, the container is restarted if it exits due to an error, which manifests as a non-zero exit code.
   - `any` (default), containers are restarted regardless of the exit status. 
-- `delay`: How long to wait between restart attempts, specified as a [duration](extension.md#specifying-durations). The default is 0, meaning restart attempts can occur immediately.
+- `delay`: How long to wait between restart attempts, specified as a [duration](value-formats.md#specifying-durations). The default is 0, meaning restart attempts can occur immediately.
 - `max_attempts`: The maximum number of failed restart attempts allowed before giving up. (Default: unlimited retries.)
 A failed attempt only counts toward `max_attempts` if the container does not successfully restart within the time defined by `window`.
 For example, if `max_attempts` is set to `2` and the container fails to restart within the window on the first try, Compose continues retrying until two such failed attempts occur, even if that means trying more than twice.
-- `window`: The amount of time to wait after a restart to determine whether it was successful, specified as a [duration](extension.md#specifying-durations) (default: the result is evaluated immediately after the restart).
+- `window`: The amount of time to wait after a restart to determine whether it was successful, specified as a [duration](value-formats.md#specifying-durations) (default: the result is evaluated immediately after the restart).
 
 ```yml
 deploy:

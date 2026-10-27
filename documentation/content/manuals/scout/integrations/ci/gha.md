@@ -103,16 +103,7 @@ This creates workflow steps to:
 3. Extract metadata from Git reference and GitHub events.
 4. Build and push the Docker image to the registry.
 
-> [!NOTE]
->
-> This CI workflow runs a local analysis and evaluation of your image. To
-> evaluate the image locally, you must ensure that the image is loaded the
-> local image store of your runner.
->
-> This comparison doesn't work if you push the image to a registry, or if you
-> build an image that can't be loaded to the runner's local image store. For
-> example, multi-platform images or images with SBOM or provenance attestation
-> can't be loaded to the local image store.
+For runner image-store requirements and local-analysis limitations, see [Local analysis and evaluation](/manuals/scout/deep-dive/ci-comparison.md#local-analysis-and-evaluation).
 
 With this setup out of the way, you can add the following steps to run the
 image comparison:

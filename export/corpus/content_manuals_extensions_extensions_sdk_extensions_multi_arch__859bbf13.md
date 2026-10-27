@@ -13,6 +13,8 @@ It is highly recommended that, at a minimum, your extension is supported for the
 
 Docker Desktop retrieves the extension image according to the user’s system architecture. If the extension does not provide an image that matches the user’s system architecture, Docker Desktop is not able to install the extension. As a result, users can’t run the extension in Docker Desktop.
 
+For packaging and release requirements, see [Package and release your extension](DISTRIBUTION.md).
+
 ## Build and push for multiple architectures
 
 If you created an extension from the `docker extension init` command, the

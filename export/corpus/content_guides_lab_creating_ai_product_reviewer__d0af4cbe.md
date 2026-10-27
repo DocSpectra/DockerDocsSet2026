@@ -53,3 +53,8 @@ By the end of this Labspace, you will have completed the following:
 | 5   | Embeddings & Semantic Clustering    | Group related reviews using vector embeddings and cosine similarity                |
 | 6   | Features & Responses                | Extract actionable features and generate context-aware review responses            |
 | 7   | Wrap-up                             | Summary of techniques and ideas for extending the pipeline                         |
+
+## Reference pages
+
+- [Model Runner API reference](/manuals/ai/model-runner/api-reference.md)
+- [Compose model binding](/manuals/ai/compose/model-binding.md)

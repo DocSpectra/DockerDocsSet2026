@@ -21,29 +21,9 @@ Docker Desktop is the all-in-one package to build images, run containers, and so
 This guide will walk you through the installation process, enabling you to experience Docker Desktop firsthand.
 
 
-> **Docker Desktop terms**
->
-> Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsGetDockerDesktop).
+## Install Docker Desktop
 
-<div class="not-prose">
-{{< card
-  title="Docker Desktop for Mac"
-  description="[Download (Apple Silicon)](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64) | [Download (Intel)](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64) | [Install instructions](/desktop/setup/install/mac-install)"
-  icon="/icons/AppleMac.svg" >}}
-
-{{< card
-  title="Docker Desktop for Windows"
-  description="[Download](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows) | [Install instructions](/desktop/setup/install/windows-install)"
-  icon="/icons/Windows.svg" >}}
-
-{{< card
-  title="Docker Desktop for Linux"
-  description="[Install instructions](/desktop/setup/install/linux/)"
-  icon="/icons/Linux.svg" >}}
-</div>
-
-Once it's installed, complete the setup process and you're all set to run a Docker container.
+[Choose your platform, review the Docker Desktop terms, and complete setup](/get-started/get-docker.md).
 
 ## Try it out
 
@@ -53,6 +33,8 @@ Follow the instructions to run a container using the CLI.
 
 
 ## Run your first container
+
+[Review port publishing and its network-interface caveat](/get-started/docker-concepts/running-containers/publishing-ports.md#publishing-ports).
 
 Open your CLI terminal and start a container by running the `docker run` command:
 

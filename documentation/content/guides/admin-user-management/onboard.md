@@ -11,7 +11,7 @@ This page guides you through onboarding owners and members, and using tools like
 
 When you create a Docker organization, you automatically become its sole owner. While optional, adding additional owners can significantly ease the process of onboarding and managing your organization by distributing administrative responsibilities. It also ensures continuity and prevents blockers if the primary owner is unavailable.
 
-For detailed information on owners, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+For detailed information on owners, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ## Invite members and assign roles
 

@@ -22,6 +22,8 @@ This page contains instructions on how to install Docker Compose standalone on L
 > For example, you must type `docker-compose up` when using Docker Compose standalone, instead of `docker compose up`.
 > Use it only for backward compatibility.
 
+See [Installation options and prerequisites](_index.md) to compare installation methods.
+
 ## On Linux
 
 1. To download and install the Docker Compose standalone, run:
@@ -87,4 +89,3 @@ on Microsoft Windows Server](/manuals/engine/install/binaries.md#install-server-
 ## What's next?
 
 - [Understand how Compose works](/manuals/compose/intro/compose-application-model.md)
-- [Try the Quickstart guide](/manuals/compose/gettingstarted.md)

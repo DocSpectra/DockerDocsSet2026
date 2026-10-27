@@ -11,7 +11,7 @@ weight: 10
 
 To start creating your extension, you first need a directory with files which range from the extension’s source code to the required extension-specific files. This page provides information on how to set up a minimal frontend extension based on plain HTML.
 
-Before you start, make sure you have installed the latest version of [Docker Desktop](/manuals/desktop/release-notes.md).
+Before you start, follow the [development prerequisites](../prerequisites.md).
 
 > Tip
 >
@@ -78,20 +78,7 @@ For more information on the `metadata.json`, see [Metadata](../architecture/meta
 
 ## Build the extension and install it
 
-Now that you have configured the extension, you need to build the extension image that Docker Desktop will use to
-install it.
-
-```console
-$ docker build --tag=awesome-inc/my-extension:latest .
-```
-
-This built an image tagged `awesome-inc/my-extension:latest`, you can run `docker inspect awesome-inc/my-extension:latest` to see more details about it.
-
-Finally, you can install the extension and see it appearing in the Docker Desktop Dashboard.
-
-```console
-$ docker extension install awesome-inc/my-extension:latest
-```
+Follow [Build and install](build-install.md#build-and-install) to build, inspect, and install `awesome-inc/my-extension:latest`.
 
 ## Preview the extension
 
@@ -101,9 +88,7 @@ The left-hand menu displays a new tab with the name of your extension.
 
 ![Minimal frontend extension](images/ui-minimal-extension.png)
 
-## What's next?
+## Shared guidance
 
-- Build a more [advanced frontend](frontend-extension-tutorial.md) extension.
-- Learn how to [test and debug](../dev/test-debug.md) your extension.
-- Learn how to [setup CI for your extension](../dev/continuous-integration.md).
-- Learn more about extensions [architecture](../architecture/_index.md).
+- [Extension architecture](../architecture/_index.md).
+- [Extension security](../architecture/security.md).

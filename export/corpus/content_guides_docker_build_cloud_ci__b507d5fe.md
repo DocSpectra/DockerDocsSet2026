@@ -4,6 +4,10 @@ description: Learn how to use Docker Build Cloud to build your app faster in CI.
 weight: 30
 ---
 
+For shared credentials and limits, see [Build Cloud CI requirements](/manuals/build-cloud/ci-requirements.md).
+For platform-specific steps, see [Build Cloud in CI](/manuals/build-cloud/ci.md).
+
+
 Docker Build Cloud can significantly decrease the time it takes for your CI builds
 take to run, saving you time and money. 
 

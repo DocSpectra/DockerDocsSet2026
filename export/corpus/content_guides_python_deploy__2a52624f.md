@@ -14,9 +14,9 @@ aliases:
 - Complete all the previous sections of this guide, starting with [Use containers for Python development](develop.md).
 - [Turn on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 
-## Overview
+## Deployment context
 
-In this section, you'll learn how to use Docker Desktop to deploy your application to a fully-featured Kubernetes environment on your development machine. This allows you to test and debug your workloads on Kubernetes locally before deploying.
+See [Local Kubernetes deployment context](/guides/local-kubernetes.md) for prerequisites, local testing, and Deployment concepts.
 
 ## Create a Kubernetes YAML file
 
@@ -154,7 +154,7 @@ spec:
 
 In these Kubernetes YAML file, there are various objects, separated by the `---`:
 
-- A Deployment, describing a scalable group of identical pods. In this case,
+- A Deployment. In this case,
   you'll get just one replica, or copy of your pod. That pod, which is
   described under `template`, has just one container in it. The
   container is created from the image built by GitHub Actions in [Configure CI/CD for

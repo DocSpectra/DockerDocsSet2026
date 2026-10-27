@@ -15,9 +15,14 @@ This guide provides steps to address a recent issue affecting some macOS users o
 
 ## Available solutions
 
-There are a few options available depending on your situation:
+Choose the steps for your situation:
 
-### Upgrade to Docker Desktop version 4.37.2 (recommended)
+- [Upgrade to version 4.37.2](#upgrade-to-docker-desktop-version-4372-recommended).
+- [Patch versions 4.32–4.36](#install-a-patch-if-you-have-version-432---436).
+- [Use the MDM script](#mdm-script).
+- [Reinstall a Homebrew cask](#homebrew-casks).
+
+### Upgrade to Docker Desktop version 4.37.2 (recommended) {#upgrade-to-docker-desktop-version-4372-recommended}
 
 The recommended way is to upgrade to the latest Docker Desktop version which is version 4.37.2. 
 
@@ -38,17 +43,9 @@ If possible, update directly through the app. If not, and you’re still seeing 
 
 3. [Download and install version 4.37.2](/manuals/desktop/release-notes.md#4372).
 
-4. Launch Docker Desktop. A privileged pop-up message displays after 5 to 10 seconds.
+4. Follow [Complete Docker Desktop macOS incident recovery](cert-revoke-restart.md) to launch Docker Desktop, respond to the privileged pop-up, and enter your password.
 
-5. Enter your password.
-
-You should now see the Docker Desktop Dashboard.
-
-> [!TIP]
->
-> If the malware pop-up persists after completing these steps and Docker is in the Trash, try emptying the Trash and rerunning the steps.
-
-### Install a patch if you have version 4.32 - 4.36
+### Install a patch if you have version 4.32 - 4.36 {#install-a-patch-if-you-have-version-432---436}
 
 If you can’t upgrade to the latest version and you’re seeing the malware pop-up, follow the steps below:
 
@@ -67,15 +64,13 @@ If you can’t upgrade to the latest version and you’re seeing the malware pop
 
 3. [Download and install the patched installer](/manuals/desktop/release-notes.md) that matches your current base version. For example if you have version 4.36.0, install 4.36.1.
 
-4. Launch Docker Desktop. A privileged pop-up message displays after 5 to 10 seconds.
+4. Follow [Complete Docker Desktop macOS incident recovery](cert-revoke-restart.md) to launch Docker Desktop, respond to the privileged pop-up, and enter your password.
 
-5. Enter your password.
-
-You should now see the Docker Desktop Dashboard.
+## If the malware pop-up persists
 
 > [!TIP]
 >
-> If the malware pop-up persists after completing these steps and Docker is in the Trash, try emptying the Trash and rerunning the steps.
+> If the malware pop-up persists after completing the upgrade or patch steps and Docker is in the Trash, try emptying the Trash and rerunning those steps.
 
 ## MDM script
 

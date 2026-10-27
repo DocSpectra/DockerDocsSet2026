@@ -14,9 +14,8 @@ environment variables in containers.
 This page doesn't describe how to configure proxies for Docker Desktop.
 For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](/manuals/desktop/settings-and-maintenance/settings.md#proxies).
 
-If you're running Docker Engine without Docker Desktop, refer to
-[Configure the Docker daemon to use a proxy](/manuals/engine/daemon/proxy.md)
-to learn how to configure a proxy server for the Docker daemon (`dockerd`) itself.
+For the distinction between container, build, daemon, and Desktop settings,
+see [Docker proxy configuration scope](proxy-context.md).
 
 If your container needs to use an HTTP, HTTPS, or FTP proxy server, you can
 configure it in different ways:
@@ -24,14 +23,8 @@ configure it in different ways:
 - [Configure the Docker client](#configure-the-docker-client)
 - [Set proxy using the CLI](#set-proxy-using-the-cli)
 
-> [!NOTE]
->
-> Unfortunately, there's no standard that defines how web clients should handle proxy 
-> environment variables, or the format for defining them.
->
-> If you're interested in the history of these variables, check out this blog
-> post on the subject, by the GitLab team:
-> [We need to talk: Can we standardize NO_PROXY?](https://about.gitlab.com/blog/2021/01/27/we-need-to-talk-no-proxy/).
+For proxy environment variable conventions, see
+[the shared proxy context](proxy-context.md#proxy-environment-variable-conventions).
 
 ## Configure the Docker client
 
@@ -79,7 +72,7 @@ These settings are used to configure proxy environment variables for containers
 only, and not used as proxy settings for the Docker CLI or the Docker Engine
 itself.
 Refer to the [environment variables](/reference/cli/docker/#environment-variables)
-and [configure the Docker daemon to use a proxy server](/manuals/engine/daemon/proxy.md)
+and [daemon proxy scope](proxy-context.md#daemon-proxy-settings)
 sections for configuring proxy settings for the CLI and daemon.
 
 ### Run containers with a proxy configuration

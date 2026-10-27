@@ -105,7 +105,7 @@ add additional owners.
 
 To add an owner, invite a user and assign them the owner role. For more
 details, see [Invite members](/manuals/admin/organization/manage/members.md) and
-[Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+[Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ### Step three: Invite members
 
@@ -116,7 +116,7 @@ they are signed in.
 
 To add a member, invite a user and assign them the member role.
 For more details, see [Invite members](/manuals/admin/organization/manage/members.md) and
-[Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+[Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ### Step four: Manage user access with SSO and SCIM
 

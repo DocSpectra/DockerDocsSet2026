@@ -10,11 +10,15 @@ weight: 50
 
 {{% include "compose/configs.md" %}}
 
+## Access and defaults
+
 Services can only access configs when explicitly granted by a [`configs`](services.md#configs) attribute within the `services` top-level element.
 
 By default, the config:
 - Is owned by the user running the container command but can be overridden by service configuration.
 - Has world-readable permissions (mode 0444), unless the service is configured to override this.
+
+## Declaration sources and lookup
 
 The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file`, `environment`, `content`, or `external`.
 
@@ -26,6 +30,17 @@ The top-level `configs` declaration defines or references configuration data tha
 - `name`: The name of the config object in the container engine to look up. This field can be used to
   reference configs that contain special characters. The name is used as is
   and will **not** be scoped with the project name.
+
+If `external` is set to `true`, all other attributes apart from `name` are irrelevant. If Compose detects any other attribute, it rejects the Compose file as invalid.
+
+## Find a configuration example
+
+- [Create a config from a file or use an external config](#example-1).
+- [Parameterize an external config name](#example-2).
+- [Create a config from inline content](#example-3).
+- [Create a config from an environment variable](#example-4).
+
+For mounting syntax, see [service configs](services.md#configs).
 
 ## Example 1
 
@@ -87,4 +102,3 @@ configs:
     environment: "SIMPLE_CONFIG_VALUE"
 ```
 
-If `external` is set to `true`, all other attributes apart from `name` are irrelevant. If Compose detects any other attribute, it rejects the Compose file as invalid.

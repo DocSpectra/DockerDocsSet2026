@@ -164,7 +164,7 @@ A Docker Desktop user export file contains the following data points:
 - Username: User's Docker ID
 - Email: User's email address associated with their Docker ID
 - Type: User type
-- Role: User [role](/manuals/enterprise/security/roles-and-permissions.md)
+- Role: User [role](/manuals/enterprise/security/roles-and-permissions/_index.md)
 - Teams: Team(s) within your organization the user is a
   member of
 - Date Joined: The date the user joined your organization

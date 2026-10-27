@@ -6,6 +6,8 @@ weight: 70
 notoc: true
 ---
 
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [rolling update policy](../service-updates.md).
+
 In a previous step of the tutorial, you [scaled](scale-service.md) the number of
 instances of a service. In this part of the tutorial, you deploy a service based
 on the Redis 7.4.0 container tag. Then you upgrade the service to use the

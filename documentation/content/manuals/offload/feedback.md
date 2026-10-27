@@ -5,6 +5,8 @@ title: Give feedback
 weight: 900
 ---
 
+For Docker Offload context, see [About Docker Offload](about.md).
+
 There are several ways you can provide feedback on Docker Offload.
 
 ## Quick survey

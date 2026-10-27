@@ -5,6 +5,11 @@ description: Push to multiple registries with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, registry
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 The following workflow will connect you to Docker Hub and GitHub Container
 Registry, and push the image to both registries:
 

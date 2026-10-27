@@ -17,6 +17,8 @@ Learn how to deploy Docker Desktop on Windows and macOS devices using Microsoft 
 {{< tabs >}}
 {{< tab name="Windows" >}}
 
+For MSI properties and reboot behavior, see the [MSI reference](msi-reference.md).
+
 1. Sign in to your Intune admin center.
 2. Add a new app. Select **Apps**, then **Windows**, then **Add**.
 3. For the app type, select **Windows app (Win32)**
@@ -36,6 +38,8 @@ Learn how to deploy Docker Desktop on Windows and macOS devices using Microsoft 
 
 {{< /tab >}}
 {{< tab name="Mac" >}}
+
+For the package download steps, see [Download the macOS PKG installer](download-installers.md#macos-pkg).
 
 First, upload the package:
 

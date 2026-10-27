@@ -1,15 +1,26 @@
 ---
 description: Docker Desktop for Windows Release notes for older versions
 keywords: Docker Desktop for Windows, release notes
-title: Release notes for previous versions
+title: Docker Desktop for Windows stable releases, 2016-2018
 toc_min: 1
-toc_max: 2
+toc_max: 3
 aliases:
 - /desktop/windows/release-notes/archive/
 sitemap: false
 ---
 
 This page contains release notes for older versions of Docker Desktop for Windows. 
+
+## Related guidance
+
+- [Release availability and update prerequisites](/manuals/desktop/release-availability.md)
+- [Historical upgrade and update procedures](upgrade-guidance.md)
+
+## Find release notes
+
+- [Stable releases of 2018](#stable-releases-of-2018)
+- [Stable releases of 2017](#stable-releases-of-2017)
+- [Stable releases of 2016](#stable-releases-of-2016)
 
 ## Stable Releases of 2018
 
@@ -50,7 +61,7 @@ This page contains release notes for older versions of Docker Desktop for Window
   - Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as Docker commands. See [the Kubernetes section](/manuals/desktop/use-desktop/kubernetes.md)
 
 * Bug fixes and minor changes
-  - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset the disk image (in Settings > Reset menu) before updating to the next major update. You can check documentation to [save images](/reference/cli/docker/image/save/#examples) and [backup volumes](/manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes)
+  - Before updating from Desktop 18.06.x to the next major update, see [AUFS disk reset requirements](upgrade-guidance.md#aufs-disk-reset-after-desktop-1806).
   - Fix bug which would in some cases cause virtual machine logs to be written to RAM rather than disk, and the virtual machine to hang.
   - Fix security issue with named pipe connection to docker service.
   - Fix VPNKit memory leak. Fixes [docker/for-win#2087](https://github.com/docker/for-win/issues/2087), [moby/vpnkit#371](https://github.com/moby/vpnkit/issues/371)

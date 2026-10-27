@@ -9,7 +9,9 @@ description: Learn how to develop your Vue.js application locally using containe
 
 ## Prerequisites
 
-Complete [Containerize Vue.js application](containerize.md).
+Complete [sample setup](containerize.md), [image building](build-images.md), and [startup verification](run.md).
+
+For shared requirements and file-update behavior, see [Compose Watch prerequisites](/manuals/compose/how-tos/file-watch.md#prerequisites) and [configuration](/manuals/compose/how-tos/file-watch.md#configuration).
 
 ---
 
@@ -30,7 +32,7 @@ Leverage Compose Watch to enable real-time file synchronization between your loc
 
 With Compose Watch, your code updates are instantly reflected inside the container—perfect for rapid testing, debugging, and live previewing changes.
 
-## Step 1: Create a development Dockerfile
+### Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content:
 
@@ -74,7 +76,7 @@ CMD [ "npm", "run", "dev", "--", "--host" ]
 
 This file sets up a lightweight development environment for your Vue.js application using the dev server.
 
-### Step 2: Update your `compose.yaml` file
+### Update your `compose.yaml` file
 
 Open your `compose.yaml` file and define two services: one for production (`vuejs-prod`) and one for development (`vuejs-dev`).
 
@@ -127,7 +129,7 @@ After completing the previous steps, your project directory should now contain t
 │ └── README.Docker.md
 ```
 
-### Step 4: Start Compose Watch
+### Start Compose Watch
 
 Run the following command from the project root to start the container in watch mode
 
@@ -135,7 +137,7 @@ Run the following command from the project root to start the container in watch 
 $ docker compose watch vuejs-dev
 ```
 
-### Step 5: Test Compose Watch with Vue.js
+### Test Compose Watch with Vue.js
 
 To confirm that Compose Watch is functioning correctly:
 
@@ -188,3 +190,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your Vue.js application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+[Run tests](run-tests.md).

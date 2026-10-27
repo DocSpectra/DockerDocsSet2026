@@ -14,7 +14,9 @@ aliases:
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
-- You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
+
+For context, see [Dockerfile reference](/reference/dockerfile.md).
 
 ## Overview
 
@@ -31,6 +33,8 @@ $ git clone https://github.com/estebanx64/python-docker-example && cd python-doc
 ```
 
 ## Initialize Docker assets
+
+For the shared procedure and generated file references, see [Initialize Docker assets](/guides/docker-init.md).
 
 Now that you have an application, you can create the necessary Docker assets to
 containerize your application. You can use Docker Desktop's built-in Docker Init
@@ -526,18 +530,13 @@ directory.
 To learn more about the files, see the following:
 
 - [Dockerfile](/reference/dockerfile.md)
-- [.dockerignore](/reference/dockerfile.md#dockerignore-file)
+- [.dockerignore](/manuals/build/concepts/context.md#dockerignore-files)
 - [.gitignore](https://git-scm.com/docs/gitignore)
 - [compose.yaml](/reference/compose-file/_index.md)
 
 ## Run the application
 
-Inside the `python-docker-example` directory, run the following command in a
-terminal.
-
-```console
-$ docker compose up --build
-```
+Inside the `python-docker-example` directory, follow [Run in the foreground](/guides/run-compose-application.md#run-in-the-foreground).
 
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000). You should see a simple FastAPI application.
 
@@ -545,13 +544,7 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 ### Run the application in the background
 
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `python-docker-example` directory, run the following command
-in a terminal.
-
-```console
-$ docker compose up --build -d
-```
+Inside the `python-docker-example` directory, follow [Run in the background](/guides/run-compose-application.md#run-in-the-background).
 
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000).
 
@@ -559,11 +552,7 @@ To see the OpenAPI docs you can go to [http://localhost:8000/docs](http://localh
 
 You should see a simple FastAPI application.
 
-In the terminal, run the following command to stop the application.
-
-```console
-$ docker compose down
-```
+Follow [Stop the background application](/guides/run-compose-application.md#stop-the-background-application).
 
 For more information about Compose commands, see the [Compose CLI
 reference](/reference/cli/docker/compose/).

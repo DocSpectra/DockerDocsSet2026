@@ -19,3 +19,9 @@ The Extensions CLI is an extension development tool that is used to manage Docke
 - `docker extension rm` removes a Docker extension.
 - `docker extension update` removes and re-installs a Docker extension.
 - `docker extension validate` validates the extension metadata file against the JSON schema.
+
+## Shared procedures
+
+- [Build, install, and update an extension](../build/build-install.md).
+- [List, update, and uninstall installed extensions](/manuals/extensions/manage-extensions.md).
+- [Extension development prerequisites](../prerequisites.md).

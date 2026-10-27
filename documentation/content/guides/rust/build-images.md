@@ -12,7 +12,9 @@ aliases:
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
-- You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
+
+For context, see [Multi-stage builds](/manuals/build/building/multi-stage.md).
 
 ## Overview
 
@@ -29,6 +31,8 @@ $ git clone https://github.com/docker/docker-rust-hello && cd docker-rust-hello
 ```
 
 ## Create a Dockerfile for Rust
+
+For the shared procedure and generated file references, see [Initialize Docker assets](/guides/docker-init.md).
 
 Now that you have an application, you can use `docker init` to create a
 Dockerfile for it. Inside the `docker-rust-hello` directory, run the `docker
@@ -215,7 +219,7 @@ about Dockerfiles, see the [Dockerfile reference](/reference/dockerfile.md).
 
 ## .dockerignore file
 
-When you run `docker init`, it also creates a [`.dockerignore`](/reference/dockerfile.md#dockerignore-file) file. Use the `.dockerignore` file to specify patterns and paths that you don't want copied into the image in order to keep the image as small as possible. Open up the `.dockerignore` file in your favorite IDE or text editor and see what's inside already.
+When you run `docker init`, it also creates a [`.dockerignore`](/manuals/build/concepts/context.md#dockerignore-files) file. Use the `.dockerignore` file to specify patterns and paths that you don't want copied into the image in order to keep the image as small as possible. Open up the `.dockerignore` file in your favorite IDE or text editor and see what's inside already.
 
 ## Build an image
 
@@ -284,9 +288,9 @@ You should see at least one image listed, including the image you just built `do
 
 ## Tag images
 
-As mentioned earlier, an image name is made up of slash-separated name components. Name components may contain lowercase letters, digits, and separators. A separator can include a period, one or two underscores, or one or more dashes. A name component may not start or end with a separator.
+For name syntax and tag concepts, see [Image names and tags](/guides/image-tags.md).
 
-An image is made up of a manifest and a list of layers. Don't worry too much about manifests and layers at this point other than a "tag" points to a combination of these artifacts. You can have multiple tags for an image. Create a second tag for the image you built and take a look at its layers.
+Create a second tag for the image you built and take a look at its layers.
 
 To create a new tag for the image you built, run the following command.
 
@@ -294,7 +298,7 @@ To create a new tag for the image you built, run the following command.
 $ docker tag docker-rust-image-dhi:latest docker-rust-image-dhi:v1.0.0
 ```
 
-The `docker tag` command creates a new tag for an image. It doesn't create a new image. The tag points to the same image and is just another way to reference the image.
+See [Tags and image identity](/guides/image-tags.md#tags-and-image-identity).
 
 Now, run the `docker images` command to see a list of the local images.
 
@@ -331,7 +335,7 @@ This section showed how you can use `docker init` to create a Dockerfile and .do
 Related information:
 
 - [Dockerfile reference](/reference/dockerfile.md)
-- [.dockerignore file](/reference/dockerfile.md#dockerignore-file)
+- [.dockerignore file](/manuals/build/concepts/context.md#dockerignore-files)
 - [docker init CLI reference](/reference/cli/docker/init/)
 - [docker build CLI reference](/reference/cli/docker/buildx/build/)
 - [Docker Hardened Images](/dhi/)

@@ -33,11 +33,13 @@ vulnerability status and policy compliance for an environment.
 
 Only images analyzed by Docker Scout can be assigned to an environment. The
 Sysdig runtime integration doesn't trigger image analysis by itself. To analyze
-images automatically, enable a [registry integration](../_index.md#container-registries).
+images automatically, enable a [registry integration](/manuals/scout/deep-dive/integration-types.md#container-registries).
 
 Image analysis must not necessarily precede the runtime integration, but the
 environment assignment only takes place once Docker Scout has analyzed the
 image.
+
+For shared environment behavior and permissions, see [Assign to environments](./_index.md#assign-to-environments).
 
 ## Prerequisites
 
@@ -93,7 +95,7 @@ monitoring](./_index.md).
 > [!NOTE]
 >
 > Docker Scout only detects images that have been analyzed. To trigger an image
-> analysis, enable a [registry integration](../_index.md#container-registries)
+> analysis, enable a [registry integration](/manuals/scout/deep-dive/integration-types.md#container-registries)
 > and push an image to your registry.
 >
 > If you created a new environment for this integration, the environment

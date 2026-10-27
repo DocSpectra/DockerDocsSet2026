@@ -27,7 +27,7 @@ the image repository:
 
 Delegation keys are optional, and not generated as part of the normal `docker`
 workflow. They need to be
-[manually generated and added to the repository](trust_delegation.md#creating-delegation-keys).
+[manually generated and added to the repository](delegation-keys.md#creating-delegation-keys).
 
 ## Choose a passphrase
 
@@ -87,7 +87,7 @@ the new key.
 
 ## Related information
 
-* [Content trust in Docker](index.md)
+* [Content trust in Docker](context.md)
 * [Automation with content trust](trust_automation.md)
 * [Delegations for content trust](trust_delegation.md)
 * [Play in a content trust sandbox](trust_sandbox.md)

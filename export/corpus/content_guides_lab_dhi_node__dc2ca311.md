@@ -52,3 +52,10 @@ By the end of this Labspace, you will have completed the following:
 | 3   | Analyzing the Starting Image             | Build the app, scan it with Docker Scout, and review failing policies           |
 | 4   | Migrating to DHI                         | Rewrite the Dockerfile with multi-stage DHI build and compare results           |
 | 5   | DHI Attestations and Scanner Integration | Inspect SBOMs, FIPS attestations, STIG scans, and export VEX for external tools |
+
+## Shared procedures
+
+- [Update Dockerfile build and runtime stages](/dhi/migration/dockerfile/)
+- [Compare images](/dhi/how-to/compare-images/)
+- [Retrieve and verify attestations](/dhi/how-to/verify-attestations/)
+- [Export VEX attestations](/dhi/how-to/export-vex/)

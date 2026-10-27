@@ -17,6 +17,9 @@ object, Docker provides a `prune` command. In addition, you can use `docker
 system prune` to clean up multiple types of objects at once. This topic shows
 how to use these `prune` commands.
 
+For shared command behavior, see [prune confirmation](prune-options.md)
+and [filter syntax](../cli/filter.md).
+
 ## Prune images
 
 The `docker image prune` command allows you to clean up unused images. By
@@ -40,9 +43,6 @@ $ docker image prune -a
 WARNING! This will remove all images without at least one container associated to them.
 Are you sure you want to continue? [y/N] y
 ```
-
-By default, you are prompted to continue. To bypass the prompt, use the `-f` or
-`--force` flag.
 
 You can limit which images are pruned using filtering expressions with the
 `--filter` flag. For example, to only consider images created more than 24
@@ -72,9 +72,6 @@ WARNING! This will remove all stopped containers.
 Are you sure you want to continue? [y/N] y
 ```
 
-By default, you're prompted to continue. To bypass the prompt, use the `-f` or
-`--force` flag.
-
 By default, all stopped containers are removed. You can limit the scope using
 the `--filter` flag. For instance, the following command only removes
 stopped containers older than 24 hours:
@@ -99,9 +96,6 @@ $ docker volume prune
 WARNING! This will remove all volumes not used by at least one container.
 Are you sure you want to continue? [y/N] y
 ```
-
-By default, you are prompted to continue. To bypass the prompt, use the `-f` or
-`--force` flag.
 
 By default, all unused volumes are removed. You can limit the scope using
 the `--filter` flag. For instance, the following command only removes
@@ -129,9 +123,6 @@ WARNING! This will remove all networks not used by at least one container.
 Are you sure you want to continue? [y/N] y
 ```
 
-By default, you're prompted to continue. To bypass the prompt, use the `-f` or
-`--force` flag.
-
 By default, all unused networks are removed. You can limit the scope using
 the `--filter` flag. For instance, the following command only removes
 networks older than 24 hours:
@@ -156,9 +147,6 @@ $ docker buildx prune
 WARNING! This will remove all dangling build cache.
 Are you sure you want to continue? [y/N] y
 ```
-
-By default, you're prompted to continue. To bypass the prompt, use the `-f` or
-`--force` flag.
 
 See the [`docker buildx prune` reference](/reference/cli/docker/buildx/prune/)
 for all options, including `--all` to also remove internal and frontend images.
@@ -195,9 +183,6 @@ WARNING! This will remove:
 
 Are you sure you want to continue? [y/N] y
 ```
-
-By default, you're prompted to continue. To bypass the prompt, use the `-f` or
-`--force` flag.
 
 By default, all unused containers, networks, and images are removed. You can
 limit the scope using the `--filter` flag. For instance, the following command

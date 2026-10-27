@@ -15,7 +15,7 @@ weight: 10
 
 Enhanced Container Isolation (ECI) prevents malicious containers from compromising Docker Desktop or the host system. It applies advanced security techniques automatically while maintaining full developer productivity and workflow compatibility.
 
-- ECI strengthens container isolation and locks in security configurations created by administrators, such as [Registry Access Management policies](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) and [Settings Management](../settings-management/_index.md) controls. 
+- ECI strengthens container isolation and locks in security configurations created by administrators, such as [Registry Access Management policies](/manuals/enterprise/security/hardened-desktop/image-registry-controls.md#registry-controls) and [Settings Management](../settings-management/policy-model.md) controls. 
 - ECI works alongside other Docker security features like reduced Linux capabilities, seccomp, and AppArmor.
 
 If you are using WSL2 backend, ensure you’re running WSL version 2.6 or later. This is required because ECI depends on a Linux kernel version of at least 6.3.0, and WSL 2.6+ includes kernel version 6.6.

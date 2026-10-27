@@ -5,6 +5,11 @@ description: Get an overview of your Docker Builds with GitHub Actions
 keywords: github actions, gha, build, summary, annotation
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 Docker's GitHub Actions for building and pushing images generate a job summary
 for your build that outlines the execution and materials used:
 

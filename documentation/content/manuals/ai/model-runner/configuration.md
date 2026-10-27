@@ -285,7 +285,7 @@ You can also configure models via environment variables in containers:
 | `LLM_URL` | Auto-injected URL of the model endpoint |
 | `LLM_MODEL` | Auto-injected model identifier |
 
-See [Models and Compose](/manuals/ai/compose/models-and-compose.md) for details on how these are populated.
+See [Compose model binding](/manuals/ai/compose/model-binding.md#service-model-binding) for details on how these are populated.
 
 ## Reset configuration
 

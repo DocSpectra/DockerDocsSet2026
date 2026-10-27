@@ -82,6 +82,12 @@ open-source projects that have been deprecated, retired, or transitioned.
 > For a detailed list of deprecated Docker Engine features, refer to the
 > [Docker Engine Deprecated Features documentation](/manuals/engine/deprecated.md).
 
+## Find retirement guidance
+
+- [Product and feature status and alternatives](#products-and-features)
+- [Open source project status and maintainers](#open-source-projects)
+- [Docker product lifecycle and retirement process](/manuals/release-lifecycle.md)
+
 ## Products and features
 
 Support for these deprecated or retired features is no longer provided by

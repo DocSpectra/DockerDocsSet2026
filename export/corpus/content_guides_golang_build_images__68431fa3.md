@@ -19,6 +19,8 @@ application.
 
 ## Required software
 
+See [Go guide prerequisites](prerequisites.md).
+
 To complete this tutorial, you need the following:
 
 - Docker running locally. Follow the [instructions to download and install Docker](/manuals/desktop/_index.md).
@@ -329,15 +331,9 @@ image, Docker assumed that the tag would be `latest`, which is a special value.
 
 ## Tag images
 
-An image name is made up of slash-separated name components. Name components may
-contain lowercase letters, digits, and separators. A separator is defined as a
-period, one or two underscores, or one or more dashes. A name component may not
-start or end with a separator.
+For name syntax and tag concepts, see [Image names and tags](/guides/image-tags.md).
 
-An image is made up of a manifest and a list of layers. In simple terms, a tag
-points to a combination of these artifacts. You can have multiple tags for the
-image and, in fact, most images have multiple tags. Create a second tag
-for the image you built and take a look at its layers.
+Create a second tag for the image you built and take a look at its layers.
 
 Use the `docker image tag` (or `docker tag` shorthand) command to create a new
 tag for your image. This command takes two arguments; the first argument is the
@@ -349,9 +345,7 @@ built:
 $ docker image tag docker-gs-ping:latest docker-gs-ping:v1.0
 ```
 
-The Docker `tag` command creates a new tag for the image. It doesn't create a
-new image. The tag points to the same image and is just another way to reference
-the image.
+See [Tags and image identity](/guides/image-tags.md#tags-and-image-identity).
 
 Now run the `docker image ls` command again to see the updated list of local
 images:
@@ -412,8 +406,7 @@ present a security risk when the container is deployed.
 
 These two issues can be solved by using [multi-stage builds](/manuals/build/building/multi-stage.md).
 
-In a nutshell, a multi-stage build can carry over the artifacts from one build stage into another,
-and every build stage can be instantiated from a different base image.
+For transferring artifacts between build stages, see [Use multi-stage builds](/manuals/build/building/multi-stage.md#use-multi-stage-builds).
 
 Thus, in the following example, you are going to use a full-scale official Go
 image to build your application. Then you'll copy the application binary into

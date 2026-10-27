@@ -24,6 +24,10 @@ References to other services (by `links`, `extends` or shared resource syntax `s
 automatically enable a component that would otherwise have been ignored by active profiles. Instead
 Compose returns an error.
 
+## Profile syntax and workflow
+
+See [service profile names](services.md#profiles) and [using profiles](/manuals/compose/how-tos/profiles.md).
+
 ## Illustrative example
 
 ```yaml

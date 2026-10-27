@@ -6,6 +6,10 @@ aliases:
 - /build/building/opentelemetry/
 ---
 
+For shared builder procedures, see [Manage builders](../builders/manage.md) and
+[Docker container driver](../builders/drivers/docker-container.md).
+
+
 Both Buildx and BuildKit support [OpenTelemetry](https://opentelemetry.io/).
 
 To capture the trace to [Jaeger](https://github.com/jaegertracing/jaeger),

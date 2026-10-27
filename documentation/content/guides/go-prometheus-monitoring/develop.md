@@ -8,6 +8,16 @@ description: Learn how to develop the Golang application with Docker.
 
 In the last section, you saw how using Docker Compose, you can connect your services together. In this section, you will learn how to develop the Golang application with Docker. You will also see how to use Docker Compose Watch to rebuild the image whenever you make changes to the code. Lastly, you will test the application and visualize the metrics in Grafana using Prometheus as the data source.
 
+## Setup and context
+
+[Prepare the Go monitoring sample](setup.md).
+
+[Service configuration](configuration.md).
+
+[Go application metrics and middleware](metrics.md).
+
+[Compose Watch](/manuals/compose/how-tos/file-watch.md).
+
 ## Developing the application
 
 Now, if you make any changes to your Golang application locally, it needs to reflect in the container, right? To do that, one approach is use the `--build` flag in Docker Compose after making changes in the code. This will rebuild all the services which have the `build` instruction in the `compose.yml` file, in your case, the `api` service (Golang application).

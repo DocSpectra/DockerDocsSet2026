@@ -10,37 +10,23 @@ aliases:
  - /guides/workshop/06_bind_mounts/
 ---
 
+## Before you begin
+
+- [Workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Workshop sequence](/get-started/workshop/_index.md#workshop-steps)
+- [Bind mounts and permissions](/get-started/docker-concepts/running-containers/sharing-local-files.md)
+
+
 In [part 4](./05_persisting_data.md), you used a volume mount to persist the
 data in your database. A volume mount is a great choice when you need somewhere
 persistent to store your application data.
 
-A bind mount is another type of mount, which lets you share a directory from the
-host's filesystem into the container. When working on an application, you can
-use a bind mount to mount source code into the container. The container sees the
-changes you make to the code immediately, as soon as you save a file. This means
-that you can run processes in the container that watch for filesystem changes
-and respond to them.
+[Review bind mounts and the volume comparison](/get-started/docker-concepts/running-containers/sharing-local-files.md#quick-volume-type-comparisons).
 
 In this chapter, you'll see how you can use bind mounts and a tool called
 [nodemon](https://npmjs.com/package/nodemon) to watch for file changes, and then restart the application
 automatically. There are equivalent tools in most other languages and
 frameworks.
-
-## Quick volume type comparisons
-
-The following are examples of a named volume and a bind mount using `--mount`:
-
-- Named volume: `type=volume,src=my-volume,target=/usr/local/data`
-- Bind mount: `type=bind,src=/path/to/data,target=/usr/local/data`
-
-The following table outlines the main differences between volume mounts and bind
-mounts.
-
-|                                              | Named volumes                                      | Bind mounts                                          |
-| -------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------- |
-| Host location                                | Docker chooses                                     | You decide                                           |
-| Populates new volume with container contents | Yes                                                | No                                                   |
-| Supports Volume Drivers                      | Yes                                                | No                                                   |
 
 ## Trying out bind mounts
 
@@ -158,7 +144,7 @@ bind mounts to develop software.
 
 ## Development containers
 
-Using bind mounts is common for local development setups. The advantage is that the development machine doesn’t need to have all of the build tools and environments installed. With a single docker run command, Docker pulls dependencies and tools.
+[Review bind mounts for local development](/get-started/docker-concepts/running-containers/sharing-local-files.md#bind-mounts-for-local-development).
 
 ### Run your app in a development container
 

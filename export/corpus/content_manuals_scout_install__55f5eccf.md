@@ -141,4 +141,4 @@ The Docker Scout CLI plugin is also available as a [GitHub action](https://githu
 You can use it in your GitHub workflows to automatically analyze images and evaluate policy compliance with each push.
 
 Docker Scout also integrates with many more CI/CD tools, such as Jenkins, GitLab, and Azure DevOps.
-Learn more about the [integrations](./integrations/_index.md) available for Docker Scout.
+For integration categories, see [Docker Scout integration categories](/manuals/scout/deep-dive/integration-types.md).

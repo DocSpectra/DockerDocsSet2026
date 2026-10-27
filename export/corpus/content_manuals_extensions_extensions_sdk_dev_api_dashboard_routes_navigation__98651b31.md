@@ -8,6 +8,8 @@ aliases:
 
 `ddClient.desktopUI.navigate` enables navigation to specific screens of Docker Desktop such as the containers tab, the images tab, or a specific container's logs.
 
+## Navigate to container logs
+
 For example, navigate to a given container logs:
 
 ```typescript
@@ -22,19 +24,21 @@ try {
 }
 ```
 
-#### Parameters
+### Parameters
 
 | Name | Type     | Description                                                                                                                                                                                            |
 | :--- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id` | `string` | The full container id, e.g. `46b57e400d801762e9e115734bf902a2450d89669d85881058a46136520aca28`. You can use the `--no-trunc` flag as part of the `docker ps` command to display the full container id. |
 
-#### Returns
+### Returns
 
 `Promise`<`void`\>
 
 A promise that fails if the container doesn't exist.
 
 For more details about all navigation methods, see the [Navigation API reference](/reference/api/extensions-sdk/NavigationIntents.md).
+
+## Deprecated navigation methods
 
 > Deprecated navigation methods
 >

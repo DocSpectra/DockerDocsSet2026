@@ -1,15 +1,26 @@
 ---
 description: Docker Desktop for Mac Release notes for older versions
 keywords: Docker Desktop for Mac, release notes
-title: Release notes for previous versions
+title: Docker Desktop for Mac stable releases, 2016-2018
 toc_min: 1
-toc_max: 2
+toc_max: 3
 aliases:
 - /desktop/mac/release-notes/archive/
 sitemap: false
 ---
 
 This page contains release notes for older versions of Docker Desktop for Mac.
+
+## Related guidance
+
+- [Release availability and update prerequisites](/manuals/desktop/release-availability.md)
+- [Historical upgrade and update procedures](upgrade-guidance.md)
+
+## Find release notes
+
+- [Stable releases of 2018](#stable-releases-of-2018)
+- [Stable releases of 2017](#stable-releases-of-2017)
+- [Stable releases of 2016](#stable-releases-of-2016)
 
 ## Stable Releases of 2018
 
@@ -36,7 +47,7 @@ This page contains release notes for older versions of Docker Desktop for Mac.
   - Re-enable raw as the default disk format for users running macOS 10.13.4 and higher. Note this change only takes effect after a "reset to factory defaults" or "remove all data" (from the Whale menu -> Preferences -> Reset). Related to [docker/for-mac#2625](https://github.com/docker/for-mac/issues/2625)
 
 * Bug fixes and minor changes
-  - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Preferences > Reset menu) before updating to the next major update. You can check documentation to [save images](/reference/cli/docker/image/save/#examples) and [back up volumes](/manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes)
+  - Before updating from Desktop 18.06.x to the next major update, see [AUFS disk reset requirements](upgrade-guidance.md#aufs-disk-reset-after-desktop-1806).
   - OS X El Captain 10.11 is deprecated in Docker Desktop. You will not be able to install updates after Docker Desktop 18.06.x. We recommend upgrading to the latest version of macOS.
   - Fix bug which would cause VM logs to be written to RAM rather than disk in some cases, and the VM to hang. See [docker/for-mac#2984](https://github.com/docker/for-mac/issues/2984)
   - Fix network connection leak triggered by haproxy TCP health-checks [docker/for-mac#1132](https://github.com/docker/for-mac/issues/1132)

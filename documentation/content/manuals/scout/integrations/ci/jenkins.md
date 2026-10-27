@@ -5,10 +5,16 @@ title: Integrate Docker Scout with Jenkins
 linkTitle: Jenkins
 ---
 
+For CLI installation and script caveats, see [Install Docker Scout](/manuals/scout/install.md). For CLI settings, see [Environment variables](/manuals/scout/how-tos/configure-cli.md).
+
+## Prerequisites
+
 You can add the following stage and steps definition to a `Jenkinsfile` to run
 Docker Scout as part of a Jenkins pipeline. The pipeline needs a `DOCKER_HUB`
 credential containing the username and password for authenticating to Docker
 Hub. It also needs an environment variable defined for the image and tag.
+
+## Analyze an image
 
 ```groovy
 pipeline {
@@ -41,6 +47,8 @@ pipeline {
 This installs Docker Scout, logs into Docker Hub, and then runs Docker Scout to
 generate a CVE report for an image and tag. It only shows critical or
 high-severity vulnerabilities.
+
+## Image-cache permissions
 
 > [!NOTE]
 >

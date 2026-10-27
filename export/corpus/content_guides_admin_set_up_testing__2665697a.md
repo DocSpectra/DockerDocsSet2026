@@ -4,6 +4,8 @@ description: Test your Docker setup.
 weight: 30
 ---
 
+Review [SSO authentication and user access](/manuals/enterprise/security/single-sign-on/sso-context.md) and [image and registry control scope](/manuals/enterprise/security/hardened-desktop/image-registry-controls.md) alongside the checks below.
+
 ## SSO and SCIM testing
 
 Test SSO and SCIM by signing in to Docker Desktop or Docker Hub with the email

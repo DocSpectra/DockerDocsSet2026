@@ -1,0 +1,35 @@
+---
+title: Use Docker Build Cloud with BitBucket Pipelines
+---
+
+Before using this example, follow [Docker Build Cloud CI requirements](ci-requirements.md).
+
+## BitBucket Pipelines 
+
+```yaml
+# Prerequisites: $DOCKER_ACCOUNT, $CLOUD_BUILDER_NAME, $DOCKER_ACCESS_TOKEN setup as deployment variables
+# This pipeline assumes $BITBUCKET_REPO_SLUG as the image name
+
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - step:
+        name: Build multi-platform image
+        script:
+          - mkdir -vp ~/.docker/cli-plugins/
+          - ARCH=amd64
+          - BUILDX_URL=$(curl -s https://raw.githubusercontent.com/docker/actions-toolkit/main/.github/buildx-lab-releases.json | jq -r ".latest.assets[] | select(endswith(\"linux-$ARCH\"))")
+          - curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
+          - chmod a+x ~/.docker/cli-plugins/docker-buildx
+          - echo "$DOCKER_ACCESS_TOKEN" | docker login --username $DOCKER_ACCOUNT --password-stdin
+          - docker buildx create --use --driver cloud "${DOCKER_ACCOUNT}/${CLOUD_BUILDER_NAME}"
+          - IMAGE_NAME=$BITBUCKET_REPO_SLUG
+          - docker buildx build
+            --platform linux/amd64,linux/arm64
+            --push
+            --tag "$IMAGE_NAME" .
+        services:
+          - docker
+```
+

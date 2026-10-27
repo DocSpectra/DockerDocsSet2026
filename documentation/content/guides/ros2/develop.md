@@ -6,6 +6,12 @@ keywords: ros2, robotics, docker, dockerfile, devcontainer, vscode, workspace
 description: Learn how to develop ROS 2 applications using a Docker based workspace and development containers.
 ---
 
+## Prerequisites and context
+
+[ROS 2 concepts and prerequisites](concepts.md).
+
+[Networking in Compose](/manuals/compose/how-tos/networking.md).
+
 ## Overview
 
 In this section, you will set up a ROS 2 workspace using Docker and development containers, review the workspace layout, open the workspace in Visual Studio Code, and edit and build ROS 2 projects inside the container.

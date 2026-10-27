@@ -23,7 +23,7 @@ params:
     - title: Control startup and shutdown order with Compose
       url: /compose/how-tos/startup-order/
     - title: Compose Build Specification
-      url: /compose/compose-file/build/
+      url: /reference/compose-file/build/
 ---
 
 Developers face challenges with multi-container Docker applications, including
@@ -54,6 +54,13 @@ orchestrated.
   multi-container Docker applications efficiently across multiple environments.
 - Development teams that want to increase productivity by streamlining
   development workflows and reducing setup time.
+
+## Shared procedures and context
+
+- [Compose benefits and use cases](/manuals/compose/intro/features-uses.md)
+- [Compose application model](/manuals/compose/intro/compose-application-model.md)
+- [Compose CLI procedures](/manuals/compose/intro/compose-cli.md)
+- [Installation options and prerequisites](/manuals/compose/install/_index.md)
 
 ## Tools integration
 

@@ -14,6 +14,16 @@ grid:
   icon: rocket_launch
   link: /offload/quickstart/
 
+- title: Prerequisites
+  description: Docker Offload prerequisites and access requirements.
+  icon: info
+  link: /offload/requirements/
+
+- title: Verify access
+  description: Verify access to Docker Offload.
+  icon: info
+  link: /offload/access/
+
 - title: About
   description: Learn about Docker Offload and how it works.
   icon: info
@@ -28,6 +38,11 @@ grid:
   description: Learn about Docker Offload usage and how to monitor your cloud resources.
   icon: monitor_heart
   link: /offload/usage/
+
+- title: Monitor the current session
+  description: Monitor the current Docker Offload session.
+  icon: monitor_heart
+  link: /offload/session-monitoring/
 
 - title: Optimize
   description: Improve performance and cost efficiency in Docker Offload.

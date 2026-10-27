@@ -11,10 +11,9 @@ description: Learn how to deploy locally to test and debug your Kubernetes deplo
 
 Before you begin, make sure you’ve completed the following:
 - Complete all the previous sections of this guide, starting with [Containerize Vue.js application](containerize.md).
-- [Enable Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
+- Complete the [Kubernetes prerequisite](/guides/local-kubernetes.md#prerequisites).
 
-> **New to Kubernetes?**  
-> Visit the [Kubernetes basics tutorial](https://kubernetes.io/docs/tutorials/kubernetes-basics/) to get familiar with how clusters, pods, deployments, and services work.
+For the Kubernetes basics tutorial, see [Prerequisites and context](/guides/kubernetes-deployment-cycle.md#prerequisites-and-context).
 
 ---
 
@@ -99,6 +98,8 @@ This manifest defines two key Kubernetes resources, separated by `---`:
 
 ## Deploy and check your application
 
+Follow the [local Kubernetes deployment cycle](/guides/kubernetes-deployment-cycle.md) with the commands and expected output below.
+
 Follow these steps to deploy your containerized Vue.js app into a local Kubernetes cluster and verify that it’s running correctly.
 
 ### Step 1. Apply the Kubernetes configuration
@@ -122,9 +123,7 @@ This confirms that both the Deployment and the Service were successfully created
 
 Run the following command to check the status of your deployment:
    
-```console
-  $ kubectl get deployments
-```
+See [Check deployments](/guides/kubernetes-deployment-cycle.md#check-deployments) for the command.
 
 You should see output similar to the following:
 
@@ -139,9 +138,7 @@ This confirms that your pod is up and running with one replica available.
 
 Check if the NodePort service is exposing your app to your local machine:
 
-```console
-$ kubectl get services
-```
+See [Check services](/guides/kubernetes-deployment-cycle.md#check-services) for the command.
 
 You should see something like:
 
@@ -195,7 +192,7 @@ What you accomplished:
 Explore official references and best practices to sharpen your Kubernetes deployment workflow:
 
 - [Kubernetes documentation](https://kubernetes.io/docs/home/) – Learn about core concepts, workloads, services, and more.  
-- [Deploy on Kubernetes with Docker Desktop](/manuals) – Use Docker Desktop’s built-in Kubernetes support for local testing and development.
+- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md) – Use Docker Desktop’s built-in Kubernetes support for local testing and development.
 - [`kubectl` CLI reference](https://kubernetes.io/docs/reference/kubectl/) – Manage Kubernetes clusters from the command line.  
 - [Kubernetes Deployment resource](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) – Understand how to manage and scale applications using Deployments.  
 - [Kubernetes Service resource](https://kubernetes.io/docs/concepts/services-networking/service/) – Learn how to expose your application to internal and external traffic.

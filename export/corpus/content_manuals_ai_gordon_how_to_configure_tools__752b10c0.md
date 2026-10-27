@@ -79,3 +79,9 @@ Administrators can:
 
 See [Settings Management](/enterprise/security/hardened-desktop/settings-management/)
 for details.
+
+## Related context
+
+- [Access requirements](../requirements.md)
+- [Gordon capabilities](../concepts/capabilities.md)
+- [Data privacy](../concepts/data-privacy.md)

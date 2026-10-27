@@ -5,6 +5,11 @@ description: Load the build results to the image store with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, docker, export, load
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 You may want your build result to be available in the Docker client through
 `docker images` to be able to use it in another step of your workflow:
 

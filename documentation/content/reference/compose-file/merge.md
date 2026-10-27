@@ -10,6 +10,14 @@ weight: 100
 
 {{% include "compose/merge.md" %}}
 
+## Find merge rules by task
+
+- Combine YAML structures: [Mapping](#mapping), [Sequence](#sequence).
+- Check exceptions: [Shell commands](#shell-commands), [Unique resources](#unique-resources).
+- Remove or replace values: [Reset value](#reset-value), [Replace value](#replace-value).
+- Reuse a service with extends: [service definition merge rules](services.md#merging-service-definitions).
+- Resolve variables: [Interpolation](interpolation.md).
+
 These rules are outlined below. 
 
 ## Mapping

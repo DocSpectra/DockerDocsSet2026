@@ -10,6 +10,20 @@ sitemap: false
 
 This page contains release notes for Docker Desktop for Windows 2.x. 
 
+## Related guidance
+
+- [Release availability and update prerequisites](/manuals/desktop/release-availability.md)
+- [Historical upgrade and update procedures](upgrade-guidance.md)
+
+## Check known issues
+
+- [Docker Desktop Community 2.4.0.0](#docker-desktop-community-2400)
+- [Docker Desktop Community 2.3.0.5](#docker-desktop-community-2305)
+- [Docker Desktop Community 2.3.0.2](#docker-desktop-community-2302)
+- [Docker Desktop Community 2.2.0.4](#docker-desktop-community-2204)
+- [Docker Desktop Community 2.2.0.3](#docker-desktop-community-2203)
+- [Docker Desktop Community 2.2.0.0](#docker-desktop-community-2200)
+
 ## Docker Desktop Community 2.5.0.1
 2020-11-10
 

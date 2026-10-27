@@ -55,3 +55,9 @@ file, and configuring your app to use those models and tools
 | 5 | The Docker MCP Gateway | Set up and configure the MCP Gateway |
 | 6 | Putting It All Together | Build a complete agentic application |
 | 7 | Conclusion | Summary and next steps |
+
+## Reference pages
+
+- [Model Runner API reference](/manuals/ai/model-runner/api-reference.md)
+- [Compose model binding](/manuals/ai/compose/model-binding.md)
+- [Agentic application components](/manuals/ai/compose/agentic-application-components.md)

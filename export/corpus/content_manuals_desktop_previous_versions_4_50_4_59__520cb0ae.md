@@ -1,0 +1,341 @@
+---
+title: Docker Desktop 4.50-4.59 release notes
+linkTitle: Desktop 4.50-4.59
+description: Docker Desktop release notes for versions 4.50-4.59.
+toc_max: 2
+sitemap: false
+---
+<!-- vale off -->
+
+Before updating, see [release availability and update prerequisites](/manuals/desktop/release-availability.md).
+
+## Find a release
+
+- [4.59.1](#4591)
+- [4.59.0](#4590)
+- [4.58.1](#4581)
+- [4.58.0](#4580)
+- [4.57.0](#4570)
+- [4.56.0](#4560)
+- [4.55.0](#4550)
+- [4.54.0](#4540)
+- [4.53.0](#4530)
+- [4.52.0](#4520)
+- [4.51.0](#4510)
+- [4.50.0](#4500)
+
+## 4.59.1
+
+{{< release-date date="2026-02-03" >}}
+
+{{< desktop-install-v2 mac=true version="4.59.1" build_path="/217750/" >}}
+
+### Bug fixes and enhancements
+
+#### For Mac
+
+- Fixed an issue where CPU usage could spike at regular intervals. Fixes [docker/for-mac#7839](https://github.com/docker/for-mac/issues/7839).
+
+## 4.59.0
+
+{{< release-date date="2026-02-02" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.59.0" build_path="/217644/" >}}
+
+### Updates
+
+- Linux kernel `v6.12.67`
+- [Docker Compose v5.0.2](https://github.com/docker/compose/releases/tag/v5.0.2)
+- Docker Sandbox `v0.10.1`
+- [Docker Buildx v0.31.1](https://github.com/docker/buildx/releases/tag/v0.31.1)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Added Neo4j as a known publisher to the Docker MCP Catalog.
+- Fixed an issue where the **Models** tab would crash when displaying requests made via the Anthropic Messages API.
+
+#### For Mac
+
+- Fixed an issue where shared file permissions could be unintentionally modified when using DockerVMM. Fixes [docker/for-mac#7830](https://github.com/docker/for-mac/issues/7830).
+
+#### For Windows
+
+- Fixed an issue where container secrets injection could fail with `docker-pass`.
+- Temporarily disabled VHDX compaction for the WSL data disk to improve stability.
+
+### Security
+
+- Fixed a security issue in enhanced container isolation where Docker socket mount permissions could be bypassed when using the `--use-api-socket` flag.
+
+## 4.58.1
+
+{{< release-date date="2026-01-29" >}}
+
+{{< desktop-install-v2 mac=true version="4.58.1" build_path="/217134/" >}}
+
+### Bug fixes and enhancements
+
+#### For Mac
+
+- Fixed an issue where CPU usage could spike at regular intervals. Fixes [docker/for-mac#7839](https://github.com/docker/for-mac/issues/7839).
+
+## 4.58.0
+
+{{< release-date date="2026-01-26" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.58.0" build_path="/216728/" >}}
+
+### New
+
+- A new version of [Docker Sandboxes](/manuals/ai/sandboxes/_index.md) is now available on Docker Desktop. It provides a secure, isolated, microVM-based environment for running coding agents.
+
+### Updates
+
+- Linux kernel `v6.12.65`
+- [Credential helpers v0.9.5](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.5)
+- [Docker Engine v29.1.5](https://docs.docker.com/engine/release-notes/29/#2915)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Docker Model Runner now exposes an [Anthropic-compatible API](/manuals/ai/model-runner/api-reference.md#anthropic-compatible-api).
+- Docker Desktop now supports UTF-8 BOM for `admin-settings.json` and `registry.json`.
+- Fixed an issue where admin settings incorrectly changed user proxy settings after a restart.
+
+> [!IMPORTANT]
+>
+> Starting with Docker Desktop version 4.59, installing an update from the tray menu will proceed without opening the Docker Desktop Dashboard.
+
+#### For Mac
+
+- Fixed a bug where shared file permissions could be modified inadvertently while using DockerVMM on macOS. Fixes [docker/for-mac#7830](https://github.com/docker/for-mac/issues/7830).
+
+#### For Windows
+
+- Fixed an issue where the installer failed because of special ACLs set on `ProgramData`.
+
+
+### Security
+
+- Updated Kubernetes images to address CVEs.
+   - Kind:
+      - `docker/desktop-containerd-registry-mirror:v0.0.3`
+      - `docker/desktop-cloud-provider-kind:v0.5.0`
+   - Kubeadm:
+      - `docker/desktop-vpnkit-controller:v4.0`
+      - `docker/desktop-storage-provisioner:v3.0`
+- The `kind` dependency image `envoyproxy/envoy` was upgraded from v1.32.6 to v1.36.4. If you mirror `kind` images, ensure your mirrors are updated.
+
+## 4.57.0
+
+{{< release-date date="2026-01-19" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.57.0" build_path="/215387/" >}}
+
+### Security
+
+- Fixed [CVE-2025-14740](https://www.cve.org/cverecord?id=CVE-2025-14740) where the Docker Desktop for Windows installer contained multiple incorrect permission assignment vulnerabilities in the handling of the `C:\ProgramData\DockerDesktop` directory.
+
+### New
+
+- Docker Desktop now has a new issue tracker for all platforms at https://github.com/docker/desktop-feedback. Relevant, actively discussed issues from the previous platform-specific trackers will be migrated.
+
+### Updates
+
+- [Docker Compose v5.0.1](https://github.com/docker/compose/releases/tag/v5.0.1)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Improved alignment of the Ask Gordon streaming indicator so it stays in sync with content on large screens.
+- Fixed a bug where `docker debug` failed on containers started with environment variables but no '='. For example, `docker run -e NONEXISTENT_ENV_VAR`.
+
+## 4.56.0
+
+{{< release-date date="2026-01-12" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.56.0" build_path="/214940/" >}}
+
+### New
+
+- Docker Desktop now includes Docker Compose v5 which introduces a new official Go SDK. This SDK provides a comprehensive API that lets you integrate Compose functionality directly into your applications, allowing you to load, validate, and manage multi-container environments without relying on the Compose CLI. For more information, see the [Compose SDK docs](/manuals/compose/compose-sdk.md).
+
+### Updates
+
+- [containerd v2.2.1](https://github.com/containerd/containerd/releases/tag/v2.2.1)
+- [Docker Compose v5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0)
+- [Docker Agent v1.18.6](https://github.com/docker/docker-agent/releases/tag/v1.18.6)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed a panic in filesharing tests when containers don't have an IP address immediately after starting.
+- Added support for custom DNS entries in the LinuxKit VM with the `ExtraDNSEntries` configuration field.
+
+#### For Windows
+
+- Fixed a bug on Windows where removing the state directory would fail because log files were still open.
+- Fixed installations from the Microsoft Store wrongly advertizing a new update.
+- Fixed a crash when running `/sbin/ldconfig` in `ubuntu:22.04` ARM64 containers by upgrading QEMU from 8.1.5 to 10.0.4. This resolves a known issue reported in [docker/for-win#15004](https://github.com/docker/for-win/issues/15004).
+
+  > [!NOTE]
+  >
+  > When running under ARM64 emulation, some `amd64` Go binaries built with older Go versions may still segfault. To avoid this, rebuild affected binaries using Go 1.25.4 or later. For details, see [golang/go#69255](https://github.com/golang/go/issues/69255) and the corresponding [Go commit](https://github.com/golang/go/commit/bf95b767394eb5643265f44c7b98bdbb85b897ce).
+
+#### For Linux
+
+- Fixed Kubernetes `hostPath` volume mounts failing on Linux hosts. Fixes [docker/desktop-linux#12](https://github.com/docker/desktop-linux/issues/12).
+
+## 4.55.0
+
+{{< release-date date="2025-12-16" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.55.0" build_path="/213807/" >}}
+
+### Updates
+
+- [Docker Engine v29.1.3](https://docs.docker.com/engine/release-notes/29/#2913)
+- [Docker Agent v1.15.1](https://github.com/docker/docker-agent/releases/tag/v1.15.1)
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue that caused Docker Desktop to get stuck during startup.
+- Improved the error message when the `daemon.json` is invalid.
+- Fixed performance issues on every keystroke within a long Ask Gordon session.
+- Fixed an issue that prevented Kubernetes in kubeadm mode from starting up when an organization has configured Registry Access Management to block Docker Hub.
+
+> [!IMPORTANT]
+>
+> Wasm workloads will be deprecated and removed in a future Docker Desktop release.
+
+## 4.54.0
+
+{{< release-date date="2025-12-04" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.54.0" build_path="/212467/" >}}
+
+### New
+
+- Added support for vLLM in Docker Model Runner on Windows with WSL2 and NVIDIA GPUs.
+
+### Bug fixes and enhancements
+
+#### For Mac
+
+- Fixed a bug where `/dev/shm` did not have enough permission for containers to write into. Fixes [docker/for-mac#7804](https://github.com/docker/for-mac/issues/7804). 
+
+### Upgrades
+
+- [Docker Buildx v0.30.1](https://github.com/docker/buildx/releases/tag/v0.30.1)
+- [Docker Engine v29.1.2](https://docs.docker.com/engine/release-notes/29/#2912)
+- [Runc v1.3.4](https://github.com/opencontainers/runc/releases/tag/v1.3.4)
+- [Docker Model Runner CLI v1.0.2](https://github.com/docker/model-runner/releases/tag/cmd%2Fcli%2Fv1.0.2)
+
+### Security 
+
+- Added a security patch to address [CVE-2025-13743](https://www.cve.org/cverecord?id=CVE-2025-13743) where Docker Desktop diagnostics bundles were found to include expired Hub PATs in log output due to error object serialization. 
+
+## 4.53.0
+
+{{< release-date date="2025-11-27" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.53.0" build_path="/211793/" >}}
+
+### Bug fixes and enhancements
+
+#### For all platforms
+
+- Fixed an issue where the Support Diagnostics tooling inadvertently captured expired Docker Hub authorization bearer tokens.
+
+### Security 
+
+- Added security patches to address CVEs [2025-52565](https://github.com/opencontainers/runc/security/advisories/GHSA-9493-h29p-rfm2), [2025-52881](https://github.com/opencontainers/runc/security/advisories/GHSA-cgrx-mc8f-2prm), and [2025-31133](https://github.com/opencontainers/runc/security/advisories/GHSA-qw9x-cqr3-wc7r) when using [Enhanced Container Isolation](https://docs.docker.com/enterprise/security/hardened-desktop/enhanced-container-isolation). 
+
+## 4.52.0
+
+{{< release-date date="2025-11-20" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.52.0" build_path="/210994/" >}}
+
+### New
+
+- Added new port binding settings to Docker Desktop. This can also be controlled by administrators via Settings Management using the `admin-settings.json` file.
+- Added a new Docker Model Runner command. With `docker model purge` you can remove all your models.
+
+### Upgrades
+
+- [Docker Engine v29.0.0](/manuals/engine/release-notes/29.md#2900)
+- [Docker Model Runner v1.0.3](https://github.com/docker/model-runner/releases/tag/v1.0.3)
+- [Docker Model Runner CLI v1.0.0](https://github.com/docker/model-runner/releases/tag/cmd%2Fcli%2Fv1.0.0)
+- Docker MCP plugin `v0.28.0`
+
+### Bug fixes and enhancements
+
+#### For all platforms 
+
+- Docker MCP Toolkit improvements:
+   - Amazon Q client support
+   - OAuth DCR (Dynamic Client Registration) with Docker Engine
+   - Create MCP profiles using the CLI
+- Docker Model Runner improvements:
+   - You can now skip the `/engines` prefix for [Docker Model Runner's OpenAI API endpoint](/manuals/ai/model-runner/api-reference.md#rest-api-examples) `curl http://localhost:12434/v1/models`.
+   - You can now skip the `ai/` prefix for the models [published on Docker Hub with](https://hub.docker.com/u/ai) `docker model pull`.
+   - Downloads are now resumed when they get interrupted.
+
+#### For Windows
+
+- Fixed an issue with Kerberos/NTLM proxy sign in.
+
+## 4.51.0
+
+{{< release-date date="2025-11-13" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.51.0" build_path="/210443/" >}}
+
+### New
+
+- You can now set up your Kubernetes resources from the **Kubernetes** view. This new view also provides a real-time display of your pods, services, and deployments. 
+
+### Upgrades
+
+- [Docker Engine v28.5.2](/manuals/engine/release-notes/28.md#2852)
+- Linux kernel `v6.12.54`
+
+### Bug fixes and enhancements
+
+#### For all platforms 
+
+- Kind now only pulls required dependency images if they are not available locally.
+
+## 4.50.0
+
+{{< release-date date="2025-11-06" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.50.0" build_path="/209931/" >}}
+
+### New
+
+- [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md)(Experimental) is now available in Docker Desktop .
+- Introduced a new Welcome Survey to improve onboarding. New users can now provide information to help tailor their Docker Desktop experience.
+
+### Upgrades
+
+- [Docker Compose v2.40.3](https://github.com/docker/compose/releases/tag/v2.40.3)
+- [NVIDIA Container Toolkit v1.18.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.18.0)
+
+### Bug fixes and enhancements
+
+#### For all platforms 
+
+- Docker Desktop now detects and attempts to avoid clashes between the "Docker subnet" and physical networks using RFC1918 addresses. For example if the host has a non-default route which overlaps with `192.168.65.0/24` then an alternative network will be chosen automatically. You can still override the choice as before via Docker Desktop settings and admin settings.
+- Docker Desktop no longer treats Stargz Snapshotter failures as fatal. If a failure occurs, Docker Desktop continues to run without the Stargz Snapshotter.
+- Ask Gordon no longer displays images with user provided URLs.
+- Ask Gordon now asks for confirmation before running all built-in and all user added MCP tools.
+

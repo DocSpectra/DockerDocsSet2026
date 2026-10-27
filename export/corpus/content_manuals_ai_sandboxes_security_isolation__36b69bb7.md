@@ -39,7 +39,7 @@ All HTTP and HTTPS traffic leaving a sandbox passes through a proxy on your
 host that enforces the [network policy](policy.md). The sandbox routes
 traffic through either a forward proxy or a transparent proxy depending on the
 client's configuration. Both enforce the network policy; only the forward proxy
-[injects credentials](credentials.md) for AI services.
+injects credentials for AI services.
 
 Raw TCP connections, UDP, and ICMP are blocked at the network layer. DNS
 resolution is handled by the proxy; the sandbox cannot make raw DNS queries.
@@ -76,12 +76,12 @@ Host system
 ## Credential isolation
 
 Most agents need API keys for their model provider. Rather than passing keys
-into the sandbox, the host-side proxy intercepts outbound API requests and
-injects authentication headers before forwarding each request.
+into the sandbox, an HTTP/HTTPS proxy on the host intercepts outbound API requests and
+injects the appropriate authentication headers before forwarding each request.
+Your credentials stay on the host.
 
 Credential values are never stored inside the VM. They are not available as
 environment variables or files inside the sandbox unless you explicitly set
 them. This means a compromised sandbox cannot read API keys from the local
 environment.
 
-For how to store and manage credentials, see [Credentials](credentials.md).

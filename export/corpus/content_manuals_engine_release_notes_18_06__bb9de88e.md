@@ -5,6 +5,17 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Related guidance
+
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Security notes: [18.06.3-ce](#18063-ce), [18.06.2](#18062), [18.06.0-ce](#18060-ce)
+- Deprecations, removals, and breaking changes: [18.06.0-ce](#18060-ce)
+
 ## 18.06.3-ce
 
 2019-02-19

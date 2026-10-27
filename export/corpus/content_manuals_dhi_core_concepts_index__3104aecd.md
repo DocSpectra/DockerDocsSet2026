@@ -110,3 +110,22 @@ transparency, and security.
 ## Verification and traceability
 
 {{< grid items="grid_concepts_verification" >}}
+
+## Shared procedure context
+
+- [DHI image definitions and catalog layout](definitions.md)
+- [Helm charts](charts.md)
+- [Hardened packages and subscription access](packages.md)
+- [Mirroring requirements](mirroring.md)
+- [Image and chart customizations](customizations.md)
+- [CI/CD pipelines](ci.md)
+- [Verification tools and public keys](verification.md)
+- [Native Node.js addons](node-native-addons.md)
+- [Socket Firewall variants](socket-firewall.md)
+- [OpenShift security constraints](openshift.md)
+
+## Shared security concepts
+
+- [Software bills of materials](/manuals/security/sbom.md)
+- [Image attestations and provenance](/manuals/security/image-attestations.md)
+- [VEX statuses and document structure](/manuals/security/vex.md)

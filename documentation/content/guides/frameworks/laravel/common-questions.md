@@ -1,5 +1,5 @@
 ---
-title: Common Questions on Using Laravel with Docker
+title: Laravel Compose configuration choices
 description: Find answers to common questions about setting up and managing Laravel environments with Docker Compose, including troubleshooting and best practices.
 weight: 40
 ---
@@ -35,3 +35,14 @@ It’s recommended to use `alpine`-based images in production for smaller image 
 Additionally, consider using [Docker Scout](/manuals/scout/_index.md) to detect and analyze vulnerabilities, especially in production environments.
 
 For additional information about using Docker Compose in production, see [this guide](/compose/how-tos/production/).
+
+## Project layout
+
+This layout represents a typical Laravel project, with Docker configurations stored in a unified `docker` directory. You’ll find **two** Compose files — `compose.dev.yaml` (for development) and `compose.prod.yaml` (for production) — to keep your environments separate and manageable.
+
+## Example configurations
+
+> [!NOTE]
+> To experiment with a ready-to-run configuration, download the [Laravel Docker Examples](https://github.com/dockersamples/laravel-docker-examples) repository. It contains pre-configured setups for both development and production.
+
+For shared storage context, see [Volumes](/manuals/engine/storage/volumes.md).

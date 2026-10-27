@@ -12,6 +12,19 @@ tags: [Release notes, admin]
 
 This page provides details on new features, enhancements, known issues, and bug fixes across Docker Home, the Admin Console, billing, security, and subscription functionalities.
 
+## Find releases by task
+
+| Task | Release entries |
+| --- | --- |
+| Review access controls | [2026-02-13](#2026-02-13), [2026-01-27](#2026-01-27), [2024-11-18](#2024-11-18) |
+| Deploy Desktop or enforce sign-in | [2025-01-30](#2025-01-30), [2024-11-18](#2024-11-18), [2024-08-29](#2024-08-29) |
+| Review subscriptions | [2024-12-10](#2024-12-10) |
+| Manage access tokens | [2024-11-11](#2024-11-11), [2024-10-15](#2024-10-15) |
+| View organization Insights | [2024-08-24](#2024-08-24) |
+| Access Docker Home | [2024-07-17](#2024-07-17) |
+
+For Beta, Early Access, and General Availability definitions, see the [release lifecycle](/manuals/release-lifecycle.md).
+
 ## 2026-02-13
 
 ### New

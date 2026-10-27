@@ -10,14 +10,19 @@ aliases:
  - /guides/workshop/05_persisting_data/
 ---
 
+## Before you begin
+
+- [Workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Workshop sequence](/get-started/workshop/_index.md#workshop-steps)
+- [Volume lifecycle](/get-started/docker-concepts/running-containers/persisting-container-data.md)
+
+
 In case you didn't notice, your todo list is empty every single time
 you launch the container. Why is this? In this part, you'll dive into how the container is working.
 
 ## The container's filesystem
 
-When a container runs, it uses the various layers from an image for its filesystem.
-Each container also gets its own "scratch space" to create/update/remove files. Any
-changes won't be seen in another container, even if they're using the same image.
+[Review the container filesystem and volume context](/get-started/docker-concepts/running-containers/persisting-container-data.md#container-filesystems-and-volume-mounts).
 
 ### See this in practice
 
@@ -53,17 +58,6 @@ second container. That is because the writeable "top layer" of each container
 is isolated. Even though both containers shared the same underlying layers that
 make up the base image, the writable layer is unique to each container.
 
-## Container volumes
-
-With the previous experiment, you saw that each container starts from the image definition each time it starts. 
-While containers can create, update, and delete files, those changes are lost when you remove the container 
-and Docker isolates all changes to that container. With volumes, you can change all of this.
-
-[Volumes](/manuals/engine/storage/volumes.md) provide the ability to connect specific filesystem paths of 
-the container back to the host machine. If you mount a directory in the container, changes in that
-directory are also seen on the host machine. If you mount that same directory across container restarts, you'd see
-the same files.
-
 There are two main types of volumes. You'll eventually use both, but you'll start with volume mounts.
 
 ## Persist the todo data
@@ -77,9 +71,7 @@ next container, it should be able to pick up where the last one left off. By cre
 (often called "mounting") it to the directory where you stored the data, you can persist the data. As your container 
 writes to the `todo.db` file, it will persist the data to the host in the volume.
 
-As mentioned, you're going to use a volume mount. Think of a volume mount as an opaque bucket of data. 
-Docker fully manages the volume, including the storage location on disk. You only need to remember the
-name of the volume.
+[Review how Docker manages volume storage](/get-started/docker-concepts/running-containers/persisting-container-data.md#docker-managed-storage).
 
 ### Create a volume and start the container
 

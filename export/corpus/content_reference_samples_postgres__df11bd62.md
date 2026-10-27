@@ -7,3 +7,7 @@ aliases:
 - /samples/postgresql_service/
 - /samples/postgres/
 ---
+
+## Setup and configuration
+
+[Set up and configure sample services](/guides/sample-service-setup.md).

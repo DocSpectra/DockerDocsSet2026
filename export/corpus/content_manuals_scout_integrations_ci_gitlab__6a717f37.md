@@ -5,6 +5,8 @@ title: Integrate Docker Scout with GitLab CI/CD
 linkTitle: GitLab CI/CD
 ---
 
+For CLI installation and script caveats, see [Install Docker Scout](/manuals/scout/install.md). For CLI settings, see [Environment variables](/manuals/scout/how-tos/configure-cli.md).
+
 The following examples runs in GitLab CI in a repository containing a Docker
 image's definition and contents. Triggered by a commit, the pipeline builds the
 image. If the commit was to the default branch, it uses Docker Scout to get a
@@ -43,6 +45,8 @@ running Docker inside a container.
 It then downloads `curl` and the Docker Scout CLI plugin, logs into the Docker
 registry using environment variables defined in your repository's settings.
 
+## Build, compare, and publish
+
 Add the following to the YAML file:
 
 ```yaml
@@ -73,6 +77,8 @@ branch, Docker Scout generates a CVE report. If the commit was to a different
 branch, Docker Scout compares the new version to the current published version.
 It only shows critical or high-severity vulnerabilities and ignores
 vulnerabilities that haven't changed since the last analysis.
+
+## Restrict pipeline runs
 
 Add the following to the YAML file:
 

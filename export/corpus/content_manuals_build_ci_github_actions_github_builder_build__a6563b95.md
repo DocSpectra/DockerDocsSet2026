@@ -147,4 +147,4 @@ Buildx setup, [BuildKit](../../../buildkit/_index.md) configuration,
 [GitHub Actions cache backend](../../../cache/backends/gha.md) wiring, signing,
 and manifest creation. If you need more background on metadata or platform
 distribution, see [Manage tags and labels](../manage-tags-labels.md) and
-[Multi-platform image](../multi-platform.md).
+[Multi-platform builds](../../../building/multi-platform.md).

@@ -46,7 +46,7 @@ a vulnerable Node.js application that you can use to follow along.
 Docker Scout analyzes all local images by default. To analyze images in
 remote repositories, you need to enable it first.
 You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
-[Find out how in the overview guide](/scout).
+See [Enable image analysis for repositories](/manuals/scout/how-tos/enable-repositories.md) for prerequisites and Dashboard steps.
 
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.
@@ -200,16 +200,7 @@ your image should have SBOM and provenance attestations attached to it.
 Docker Scout uses the provenance attestations to determine how the image was
 built so that it can provide a better evaluation result.
 
-Before you can build an image with attestations,
-you must enable the [containerd image store](/manuals/desktop/features/containerd.md)
-(or create a custom builder using the `docker-container` driver).
-The classic image store doesn't support manifest lists,
-which is how the provenance attestations are attached to an image.
-
-Open **Settings** in Docker Desktop. Under the **General** section, make sure
-that the **Use containerd for pulling and storing images** option is checked, then select **Apply**.
-Note that changing image stores temporarily hides images and containers of the
-inactive image store until you switch back.
+Before building with attestations, follow [Set up builds with attestations](/manuals/scout/how-tos/build-with-attestations.md).
 
 With the containerd image store enabled, rebuild the image with a new `v3` tag.
 This time, add the `--provenance=true` and `--sbom=true` flags.
@@ -279,4 +270,4 @@ Check out the following sections:
 - [Data sources](/scout/advisory-db-sources)
 - [Docker Scout Dashboard](/scout/dashboard)
 - [Integrations](./integrations/_index.md)
-- [Policy evaluation](./policy/_index.md)
+- [Policy evaluation](./deep-dive/policy-evaluation.md)

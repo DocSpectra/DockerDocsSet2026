@@ -20,103 +20,57 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 2. Define the GitHub Actions workflow.
 3. Run the workflow.
 
-## Step one: Create the repository
+## Prepare the repository
 
-Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
+Follow [Username variable and token secret](/guides/github-actions-repository.md#username-variable-and-token-secret). At the commit step, run:
 
-1. [Create a new repository](https://github.com/new) on GitHub.
+```console
+$ git commit -m "my commit"
+```
 
-2. Open the repository **Settings**, and go to **Secrets and variables** >
-   **Actions**.
-
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
-
-4. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token)for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
-
-5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
-   `DOCKERHUB_TOKEN`.
-
-6. In your local repository on your machine, run the following command to change
-   the origin to the repository you just created. Make sure you change
-   `your-username` to your GitHub username and `your-repository` to the name of
-   the repository you created.
-
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-
-7. Run the following commands to stage, commit, and push your local repository to GitHub.
-
-   ```console
-   $ git add -A
-   $ git commit -m "my commit"
-   $ git push -u origin main
-   ```
-
-## Step two: Set up the workflow
+## Set up the workflow
 
 Set up your GitHub Actions workflow for building and pushing the image
 to Docker Hub.
 
-1. Go to your repository on GitHub and then select the **Actions** tab.
+Follow [Create the workflow file](/guides/github-actions-run.md#create-the-workflow-file), using the configuration below.
 
-2. Select **set up a workflow yourself**.
+```yaml
+name: ci
 
-   This takes you to a page for creating a new GitHub actions workflow file in
-   your repository, under `.github/workflows/main.yml` by default.
+on:
+  push:
+    branches:
+      - main
 
-3. In the editor window, copy and paste the following YAML configuration and commit the changes.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@{{% param "login_action_version" %}}
+        with:
+          username: ${{ vars.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}
+      -
+        name: Build and push
+        uses: docker/build-push-action@{{% param "build_push_action_version" %}}
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+```
 
-   ```yaml
-   name: ci
-   
-   on:
-     push:
-       branches:
-         - main
-   
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@{{% param "login_action_version" %}}
-           with:
-             username: ${{ vars.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}
-         -
-           name: Build and push
-           uses: docker/build-push-action@{{% param "build_push_action_version" %}}
-           with:
-             platforms: linux/amd64,linux/arm64
-             push: true
-             tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
+For more information about the YAML syntax for `docker/build-push-action`,
+refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
 
-   For more information about the YAML syntax for `docker/build-push-action`,
-   refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
+## Run the workflow
 
-## Step three: Run the workflow
-
-Save the workflow file and run the job.
-
-1. Select **Commit changes...** and push the changes to the `main` branch.
-
-   After pushing the commit, the workflow starts automatically.
-
-2. Go to the **Actions** tab. It displays the workflow.
-
-   Selecting the workflow shows you the breakdown of all the steps.
-
-3. When the workflow is complete, go to your
-   [repositories on Docker Hub](https://hub.docker.com/repositories).
-
-   If you see the new repository in that list, it means the GitHub Actions
-   successfully pushed the image to Docker Hub.
+Follow [Verify repository publication](/guides/github-actions-run.md#verify-repository-publication).
 
 ## Summary
 
@@ -129,3 +83,5 @@ Related information:
 ## Next steps
 
 Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
+
+[Test the Kubernetes deployment](deploy.md).

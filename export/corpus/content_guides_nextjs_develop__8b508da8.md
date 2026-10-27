@@ -9,7 +9,9 @@ description: Learn how to develop your Next.js application locally using contain
 
 ## Prerequisites
 
-Complete [Containerize Next.js application](containerize.md).
+Complete [sample setup](containerize.md), [image building](build-images.md), and [startup verification](run.md).
+
+For shared requirements and file-update behavior, see [Compose Watch prerequisites](/manuals/compose/how-tos/file-watch.md#prerequisites) and [configuration](/manuals/compose/how-tos/file-watch.md#configuration).
 
 ---
 
@@ -30,7 +32,7 @@ Use Compose Watch to automatically sync source file changes into your
 containerized development environment. This automatically syncs file changes
 without needing to restart or rebuild containers manually.
 
-## Step 1: Create a development Dockerfile
+### Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content (matching the [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample)):
 
@@ -75,7 +77,7 @@ CMD ["sh", "-c", "if [ -f package-lock.json ]; then npm run dev; elif [ -f yarn.
 This file sets up a development environment for your Next.js app with hot module replacement and supports npm, yarn, and pnpm.
 
 
-### Step 2: Update your `compose.yaml` file
+### Update your `compose.yaml` file
 
 Open your `compose.yaml` file and define two services: one for production (`nextjs-prod-standalone`) and one for development (`nextjs-dev`). This matches the [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) structure.
 
@@ -123,7 +125,7 @@ services:
 > [!NOTE]
 > For more details, see the official guide: [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 
-### Step 3: Configure Next.js for Docker development
+### Configure Next.js for Docker development
 
 Next.js works well inside Docker containers out of the box, but there are a few configurations that can improve the development experience.
 
@@ -150,7 +152,7 @@ After completing the previous steps, your project directory should now contain t
 │ └── README.Docker.md
 ```
 
-### Step 4: Start Compose Watch
+### Start Compose Watch
 
 Run the following command from your project root to start your container in watch mode:
 
@@ -158,7 +160,7 @@ Run the following command from your project root to start your container in watc
 $ docker compose watch nextjs-dev
 ```
 
-### Step 5: Test Compose Watch with Next.js
+### Test Compose Watch with Next.js
 
 To verify that Compose Watch is working correctly:
 
@@ -208,3 +210,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your Next.js application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+[Run tests](run-tests.md).

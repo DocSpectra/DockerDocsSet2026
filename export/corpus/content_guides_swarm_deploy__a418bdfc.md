@@ -23,6 +23,8 @@ params:
 
   If Swarm isn't running, simply type `docker swarm init` in a shell prompt to set it up.
 
+For setup and validation, see [Enable and verify Swarm](orchestration-swarm-setup.md).
+
 ## Introduction
 
 Now that you've demonstrated that the individual components of your application run as stand-alone containers and shown how to deploy it using Kubernetes, you can look at how to arrange for them to be managed by Docker Swarm. Swarm provides many tools for scaling, networking, securing and maintaining your containerized applications, above and beyond the abilities of containers themselves.
@@ -31,9 +33,9 @@ In order to validate that your containerized application works well on Swarm, yo
 
 ## Describe apps using stack files
 
-Swarm never creates individual containers like you did in the previous step of this tutorial. Instead, all Swarm workloads are scheduled as services, which are scalable groups of containers with added networking features maintained automatically by Swarm. Furthermore, all Swarm objects can and should be described in manifests called stack files. These YAML files describe all the components and configurations of your Swarm app, and can be used to create and destroy your app in any Swarm environment.
+See [Swarm stack files](orchestration-manifests.md#swarm-stack-files) and [Kubernetes and Swarm services](orchestration-manifests.md#kubernetes-and-swarm-services).
 
-Now you can write a simple stack file to run and manage your Todo app, the container `getting-started` image created in [Part 2](02_our_app.md) of the tutorial. Place the following in a file called `bb-stack.yaml`:
+Now you can write a simple stack file to run and manage your Todo app, the container `getting-started` image created in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial. Place the following in a file called `bb-stack.yaml`:
 
 {{% include "swarm-compose-compat.md" %}}
 
@@ -47,17 +49,7 @@ services:
       - "8000:3000"
 ```
 
-In this Swarm YAML file, there is one object, a `service`, describing a scalable group of identical containers. In this case, you'll get just one container (the default), and that container will be based on your `getting-started` image created in [Part 2](02_our_app.md) of the tutorial. In addition, you've asked Swarm to forward all traffic arriving at port 8000 on your development machine to port 3000 inside our getting-started container.
-
-> **Kubernetes Services and Swarm Services are very different**
->
-> Despite the similar name, the two orchestrators mean very different things by
-> the term 'service'. In Swarm, a service provides both scheduling and
-> networking facilities, creating containers and providing tools for routing
-> traffic to them. In Kubernetes, scheduling and networking are handled
-> separately, deployments (or other controllers) handle the scheduling of
-> containers as pods, while services are responsible only for adding
-> networking features to those pods.
+In this Swarm YAML file, there is one object, a `service`, describing a scalable group of identical containers. In this case, you'll get just one container (the default), and that container will be based on your `getting-started` image created in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial. In addition, you've asked Swarm to forward all traffic arriving at port 8000 on your development machine to port 3000 inside our getting-started container.
 
 ## Deploy and check your application
 
@@ -91,7 +83,7 @@ In this Swarm YAML file, there is one object, a `service`, describing a scalable
 
    This indicates 1/1 containers you asked for as part of your services are up and running. Also, you see that port 8000 on your development machine is getting forwarded to port 3000 in your getting-started container.
 
-3. Open a browser and visit your Todo app at `localhost:8000`; you should see your Todo application, the same as when you ran it as a stand-alone container in [Part 2](02_our_app.md) of the tutorial.
+3. Open a browser and visit your Todo app at `localhost:8000`; you should see your Todo application, the same as when you ran it as a stand-alone container in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial.
 
 4. Once satisfied, tear down your application:
 

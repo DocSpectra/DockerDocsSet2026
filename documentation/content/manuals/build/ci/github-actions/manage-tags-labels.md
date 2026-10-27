@@ -5,6 +5,11 @@ description: Assign tags and labels to images automatically with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, tags, labels
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 If you want an "automatic" tag management and [OCI Image Format Specification](https://github.com/opencontainers/image-spec/blob/master/annotations.md)
 for labels, you can do it in a dedicated setup step. The following workflow
 will use the [Docker Metadata Action](https://github.com/docker/metadata-action)

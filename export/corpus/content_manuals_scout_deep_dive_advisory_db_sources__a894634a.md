@@ -56,8 +56,6 @@ The database stores the Software Bill of Materials (SBOM) and other metadata abo
 When a security advisory has new information about a vulnerability,
 your SBOM is cross-referenced with the CVE information to detect how it affects you.
 
-For more details on how image analysis works, see the [image analysis page](/manuals/scout/explore/analysis.md).
-
 ## Severity and scoring priority
 
 Docker Scout uses two main principles when determining severity and scoring for
@@ -104,3 +102,42 @@ Docker Scout supports the following package ecosystems:
 - `alpm` (Arch Linux)
 - `apk` (Alpine Linux)
 - `deb` (Debian Linux and derivatives)
+
+## Vulnerability severity assessment
+
+Docker Scout assigns a severity rating to vulnerabilities based on
+vulnerability data from [advisory sources](/manuals/scout/deep-dive/advisory-db-sources.md).
+Advisories are ranked and prioritized depending on the type of package that's
+affected by a vulnerability. For example, if a vulnerability affects an OS
+package, the severity level assigned by the distribution maintainer is
+prioritized.
+
+If the preferred advisory source has assigned a severity rating to a CVE, but
+not a CVSS score, Docker Scout falls back to displaying a CVSS score from
+another source. The severity rating from the preferred advisory and the CVSS
+score from the fallback advisory are displayed together. This means a
+vulnerability can have a severity rating of `LOW` with a CVSS score of 9.8, if
+the preferred advisory assigns a `LOW` rating but no CVSS score, and a fallback
+advisory assigns a CVSS score of 9.8.
+
+Vulnerabilities that haven't been assigned a CVSS score in any source are
+categorized as **Unspecified** (U).
+
+Docker Scout doesn't implement a proprietary vulnerability metrics system. All
+metrics are inherited from security advisories that Docker Scout integrates
+with. Advisories may use different thresholds for classifying vulnerabilities,
+but most of them adhere to the CVSS v3.0 specification, which maps CVSS scores
+to severity ratings according to the following table:
+
+| CVSS score | Severity rating  |
+| ---------- | ---------------- |
+| 0.1 – 3.9  | **Low** (L)      |
+| 4.0 – 6.9  | **Medium** (M)   |
+| 7.0 – 8.9  | **High** (H)     |
+| 9.0 – 10.0 | **Critical** (C) |
+
+For more information, see [Vulnerability Metrics (NIST)](https://nvd.nist.gov/vuln-metrics/cvss).
+
+Note that, given the advisory prioritization and fallback mechanism described
+earlier, severity ratings displayed in Docker Scout may deviate from this
+rating system.

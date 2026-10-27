@@ -48,11 +48,7 @@ You should now have the following files in your `winy` directory.
 
 ## Containerizing your application: Essentials
 
-Containerizing an application involves packaging it along with its dependencies into a container, which ensures consistency across different environments. Here’s what you need to containerize an app like Winy :
-
-1. Dockerfile: A Dockerfile that contains instructions on how to build a Docker image for your application. It specifies the base image, dependencies, configuration files, and the command to run your application.
-
-2. Docker Compose File: Docker Compose is a tool for defining and running multi-container Docker applications. A Compose file allows you to configure your application's services, networks, and volumes in a single file.
+See [containerization assets](../genai-container-assets.md).
 
 ## Run the application
 

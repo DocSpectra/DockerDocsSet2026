@@ -12,7 +12,9 @@ aliases:
 
 ## Prerequisites
 
-Complete [Containerize a Node.js application](containerize.md).
+Complete [sample setup](containerize.md), [image building](build-images.md), and [startup verification](run.md).
+
+For shared file-update requirements and behavior, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 
 ## Overview
 
@@ -24,192 +26,7 @@ In this section, you'll learn how to set up a development environment for your c
 
 ## Add a local database and persist data
 
-The application uses PostgreSQL for data persistence. Add a database service to your Docker Compose configuration.
-
-### Add database service to Docker Compose
-
-If you haven't already created a `compose.yml` file in the previous section, or if you need to add the database service, update your `compose.yml` file to include the PostgreSQL database service:
-
-```yaml
-services:
-  # ... existing app services ...
-
-  # ========================================
-  # PostgreSQL Database Service
-  # ========================================
-  db:
-    image: postgres:18-alpine
-    container_name: todoapp-db
-    environment:
-      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
-      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-    volumes:
-      - postgres_data:/var/lib/postgresql
-    ports:
-      - '${DB_PORT:-5432}:5432'
-    restart: unless-stopped
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    networks:
-      - todoapp-network
-
-# ========================================
-# Volume Configuration
-# ========================================
-volumes:
-  postgres_data:
-    name: todoapp-postgres-data
-    driver: local
-
-# ========================================
-# Network Configuration
-# ========================================
-networks:
-  todoapp-network:
-    name: todoapp-network
-    driver: bridge
-```
-
-### Update your application service
-
-Make sure your application service in `compose.yml` is configured to connect to the database:
-
-```yaml {hl_lines="18-20,42-44",collapse=true,title=compose.yml}
-services:
-  app-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: development
-    container_name: todoapp-dev
-    ports:
-      - '${APP_PORT:-3000}:3000' # API server
-      - '${VITE_PORT:-5173}:5173' # Vite dev server
-      - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
-    environment:
-      NODE_ENV: development
-      DOCKER_ENV: 'true'
-      POSTGRES_HOST: db
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: todoapp
-      POSTGRES_USER: todoapp
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
-    volumes:
-      - ./src:/app/src:ro
-      - ./package.json:/app/package.json
-      - ./vite.config.ts:/app/vite.config.ts:ro
-      - ./tailwind.config.js:/app/tailwind.config.js:ro
-      - ./postcss.config.js:/app/postcss.config.js:ro
-    depends_on:
-      db:
-        condition: service_healthy
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app/src
-          ignore:
-            - '**/*.test.*'
-            - '**/__tests__/**'
-        - action: rebuild
-          path: ./package.json
-        - action: sync
-          path: ./vite.config.ts
-          target: /app/vite.config.ts
-        - action: sync
-          path: ./tailwind.config.js
-          target: /app/tailwind.config.js
-        - action: sync
-          path: ./postcss.config.js
-          target: /app/postcss.config.js
-    restart: unless-stopped
-    networks:
-      - todoapp-network
-
-  db:
-    image: postgres:18-alpine
-    container_name: todoapp-db
-    environment:
-      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
-      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-    volumes:
-      - postgres_data:/var/lib/postgresql
-    ports:
-      - '${DB_PORT:-5432}:5432'
-    restart: unless-stopped
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    networks:
-      - todoapp-network
-
-volumes:
-  postgres_data:
-    name: todoapp-postgres-data
-    driver: local
-
-networks:
-  todoapp-network:
-    name: todoapp-network
-    driver: bridge
-```
-
-1. The PostgreSQL database configuration is handled automatically by the application. The database is created and initialized when the application starts, with data persisted using the `postgres_data` volume.
-
-1. Configure your environment by copying the example file:
-
-   ```console
-   $ cp .env.example .env
-   ```
-
-   Update the `.env` file with your preferred settings:
-
-   ```env
-   # Application Configuration
-   NODE_ENV=development
-   APP_PORT=3000
-   VITE_PORT=5173
-   DEBUG_PORT=9230
-
-   # Database Configuration
-   POSTGRES_HOST=db
-   POSTGRES_PORT=5432
-   POSTGRES_DB=todoapp
-   POSTGRES_USER=todoapp
-   POSTGRES_PASSWORD=todoapp_password
-
-   # Security Configuration
-   ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
-   ```
-
-1. Run the following command to start your application in development mode:
-
-   ```console
-   $ docker compose up app-dev --build
-   ```
-
-1. Open a browser and verify that the application is running at [http://localhost:5173](http://localhost:5173) for the frontend or [http://localhost:3000](http://localhost:3000) for the API. The React frontend is served by Vite dev server on port 5173, with API calls proxied to the Express server on port 3000.
-
-1. Add some items to the todo list to test data persistence.
-
-1. After adding some items to the todo list, press `CTRL + C` in the terminal to stop your application.
-
-1. Run the application again:
-   ```console
-   $ docker compose up app-dev
-   ```
-
-1. Refresh [http://localhost:5173](http://localhost:5173) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
+Follow [Add PostgreSQL and verify Todo data persistence](persist-data.md).
 
 ## Configure and run a development container
 
@@ -354,37 +171,6 @@ $ npm run db:start    # Start PostgreSQL container
 $ npm run dev         # Start both server and client
 ```
 
-### Using Task Runner (alternative)
-
-The project includes a Taskfile.yml for advanced workflows:
-
-```console
-# Development
-$ task dev              # Start development environment
-$ task dev:build        # Build development image
-$ task dev:run          # Run development container
-
-# Production
-$ task build            # Build production image
-$ task run              # Run production container
-$ task build-run        # Build and run in one step
-
-# Testing
-$ task test             # Run all tests
-$ task test:unit        # Run unit tests with coverage
-$ task test:lint        # Run linting
-
-# Kubernetes
-$ task k8s:deploy       # Deploy to Kubernetes
-$ task k8s:status       # Check deployment status
-$ task k8s:logs         # View pod logs
-
-# Utilities
-$ task clean            # Clean up containers and images
-$ task health           # Check application health
-$ task logs             # View container logs
-```
-
 The application will start with both the Express API server and Vite development server:
 
 - **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
@@ -409,107 +195,13 @@ Try making a change to test hot reloading:
 
 1. Save the file and the Vite dev server will automatically reload the page with your changes.
 
-**Debugging support:**
+## Debug the application
 
-You can connect a debugger to your application on port 9229. The Node.js inspector is enabled with `--inspect=0.0.0.0:9230` in the development script (`dev:server`).
+Follow [Debug the Node.js development container](debug.md) for VS Code, Chrome DevTools, port settings, and connection troubleshooting.
 
-### VS Code debugger setup
+## Task Runner alternative
 
-1. Create a launch configuration in `.vscode/launch.json`:
-
-    ```json
-    {
-      "version": "0.2.0",
-      "configurations": [
-        {
-          "name": "Attach to Docker Container",
-          "type": "node",
-          "request": "attach",
-          "port": 9229,
-          "address": "localhost",
-          "localRoot": "${workspaceFolder}",
-          "remoteRoot": "/app",
-          "protocol": "inspector",
-          "restart": true,
-          "sourceMaps": true,
-          "skipFiles": ["<node_internals>/**"]
-        }
-      ]
-    }
-    ```
-
-1. Start your development container:
-
-    ```console
-    docker compose up app-dev --build
-    ```
-
-1. Attach the debugger:
-   - Open VS Code
-   - From the Debug panel (Ctrl/Cmd + Shift + D), select **Attach to Docker Container** from the drop-down
-   - Select the green play button or press F5
-
-### Chrome DevTools (alternative)
-
-You can also use Chrome DevTools for debugging:
-
-1. Start your container (if not already running):
-
-    ```console
-    docker compose up app-dev --build
-    ```
-
-1. Open Chrome and go to `chrome://inspect`.
-
-1. From the **Configure** option, add:
-
-    ```text
-    localhost:9229
-    ```
-
-1. When your Node.js target appears, select **inspect**.
-
-### Debugging configuration details
-
-The debugger configuration:
-
-- **Container port**: 9230 (internal debugger port)
-- **Host port**: 9229 (mapped external port)
-- **Script**: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
-
-The debugger listens on all interfaces (`0.0.0.0`) inside the container on port 9230 and is accessible on port 9229 from your host machine.
-
-### Troubleshooting debugger connection
-
-If the debugger doesn't connect:
-
-1. Check if the container is running:
-
-    ```console
-    docker ps
-    ```
-
-1. Check if the port is exposed:
-
-    ```console
-    docker port todoapp-dev
-    ```
-
-1. Check container logs:
-
-    ```console
-    docker compose logs app-dev
-    ```
-
-    You should see a message like:
-
-    ```text
-    Debugger listening on ws://0.0.0.0:9230/...
-    ```
-
-Now you can set breakpoints in your TypeScript source files and debug your containerized Node.js application.
-
-For more details about Node.js debugging, see the [Node.js documentation](https://nodejs.org/en/docs/guides/debugging-getting-started).
+See [Run Node.js sample tasks with Task Runner](tasks.md).
 
 ## Summary
 
@@ -524,3 +216,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll learn how to run unit tests using Docker.
+
+[Run tests](run-tests.md).

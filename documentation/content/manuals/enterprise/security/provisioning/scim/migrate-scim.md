@@ -97,11 +97,7 @@ Keep this CSV list of JIT-provisioned users as a rollback reference if needed.
 > organization. Do not disable JIT until you have verified SCIM is working
 > correctly.
 
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **SSO and SCIM**.
-3. In the SSO connections table, select the **Actions** menu for your connection.
-4. Select **Disable JIT provisioning**.
-5. Select **Disable** to confirm.
+Follow [Disable JIT provisioning](/manuals/enterprise/security/provisioning/disable-jit.md).
 
 Disabling JIT prevents new users from being automatically added through SSO
 during the migration.
@@ -177,4 +173,4 @@ For more troubleshooting guidance, see
 
 - Set up [Group mapping](/manuals/enterprise/security/provisioning/scim/group-mapping.md).
 - [Assign roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md) to members of your org.
-- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in.md), if needed.
+- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in/_index.md), if needed.

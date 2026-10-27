@@ -11,7 +11,7 @@ aliases:
 ## Prerequisites
 
 - Complete all the previous sections of this guide, starting with [Containerize a Deno application](containerize.md).
-- [Turn on Kubernetes](/manuals//desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
+- Complete the [Kubernetes prerequisite](/guides/local-kubernetes.md#prerequisites).
 
 ## Overview
 
@@ -76,6 +76,8 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 
 ## Deploy and check your application
 
+Follow the [local Kubernetes deployment cycle](/guides/kubernetes-deployment-cycle.md) with the commands and expected output below.
+
 1. In a terminal, navigate to `deno-docker` and deploy your application to
    Kubernetes.
 
@@ -92,9 +94,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 
 2. Make sure everything worked by listing your deployments.
 
-   ```console
-   $ kubectl get deployments
-   ```
+   See [Check deployments](/guides/kubernetes-deployment-cycle.md#check-deployments) for the command.
 
    Your deployment should be listed as follows:
 
@@ -105,9 +105,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
 
-   ```console
-   $ kubectl get services
-   ```
+   See [Check services](/guides/kubernetes-deployment-cycle.md#check-services) for the command.
 
    You should get output like the following.
 

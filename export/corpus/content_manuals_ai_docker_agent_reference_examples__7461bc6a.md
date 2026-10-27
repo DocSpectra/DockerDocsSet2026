@@ -31,3 +31,8 @@ See more examples in the [Docker Agent GitHub repository](https://github.com/doc
 ## Technical blog writer
 
 {{% cagent-example.inline "blog.yaml" /%}}
+
+## Reference pages
+
+- [Configuration file](config.md)
+- [Toolsets](toolsets.md)

@@ -14,15 +14,7 @@ aliases:
  - /desktop/setup/install/
 ---
 
-Docker is an open platform for developing, shipping, and running applications.
-
-Docker allows you to separate your applications from your infrastructure so you
-can deliver software quickly. With Docker, you can manage your infrastructure in
-the same ways you manage your applications. 
-
-By taking advantage of Docker’s
-methodologies for shipping, testing, and deploying code quickly, you can
-significantly reduce the delay between writing code and running it in production.
+For Docker platform context, see [What is Docker?](/get-started/docker-overview.md).
 
 You can download and install Docker on multiple platforms. Refer to the following
 section and choose the best installation path for you.
@@ -32,6 +24,10 @@ section and choose the best installation path for you.
 > Commercial use of Docker Desktop in larger enterprises (more than 250
 > employees OR more than $10 million USD in annual revenue) requires a [paid
 > subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsGetDocker).
+
+[Docker Desktop licensing](/manuals/subscription/desktop-license.md).
+
+## Platform installation guides
 
 <div class="not-prose">
 {{< card
@@ -56,3 +52,24 @@ section and choose the best installation path for you.
 > [!NOTE]
 >
 > If you're looking for information on how to install Docker Engine, see [Docker Engine installation overview](/engine/install/).
+
+## Docker Desktop downloads
+
+<div class="not-prose">
+{{< card
+  title="Docker Desktop for Mac"
+  description="[Download (Apple Silicon)](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64) | [Download (Intel)](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64) | [Install instructions](/desktop/setup/install/mac-install)"
+  icon="/icons/AppleMac.svg" >}}
+
+{{< card
+  title="Docker Desktop for Windows"
+  description="[Download](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows) | [Install instructions](/desktop/setup/install/windows-install)"
+  icon="/icons/Windows.svg" >}}
+
+{{< card
+  title="Docker Desktop for Linux"
+  description="[Install instructions](/desktop/setup/install/linux/)"
+  icon="/icons/Linux.svg" >}}
+</div>
+
+Once it's installed, complete the setup process and you're all set to run a Docker container.

@@ -66,11 +66,8 @@ s390x, and ppc64le (ppc64el) architectures.
 
 ### Uninstall old versions
 
-Before you can install Docker Engine, you need to uninstall any conflicting packages.
-
-Your Linux distribution may provide unofficial Docker packages, which may conflict
-with the official packages provided by Docker. You must uninstall these packages
-before you install the official version of Docker Engine.
+Before installing, follow the [conflicting-package guidance](common-installation-steps.md#remove-conflicting-packages),
+then remove the distribution-specific packages below.
 
 The unofficial packages to uninstall are:
 
@@ -93,8 +90,7 @@ $ sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compos
 
 `apt` might report that you have none of these packages installed.
 
-Images, containers, volumes, and networks stored in `/var/lib/docker/` aren't
-automatically removed when you uninstall Docker. If you want to start with a
+See [data retained when uninstalling Docker](common-installation-steps.md#remove-conflicting-packages). If you want to start with a
 clean installation, and prefer to clean up any existing data, read the
 [uninstall Docker Engine](#uninstall-docker-engine) section.
 
@@ -194,18 +190,8 @@ Docker from the repository.
     > $ sudo systemctl start docker
     > ```
 
-3. Verify that the installation is successful by running the `hello-world` image:
+3. [Verify the installation with `hello-world`](common-installation-steps.md#verify-the-installation).
 
-   ```console
-   $ sudo docker run hello-world
-   ```
-
-   This command downloads a test image and runs it in a container. When the
-   container runs, it prints a confirmation message and exits.
-
-You have now successfully installed and started Docker Engine.
-
-{{% include "root-errors.md" %}}
 
 #### Upgrade Docker Engine
 
@@ -261,18 +247,8 @@ download a new file each time you want to upgrade Docker Engine.
     > $ sudo systemctl start docker
     > ```
 
-6. Verify that the installation is successful by running the `hello-world` image:
+6. [Verify the installation with `hello-world`](common-installation-steps.md#verify-the-installation).
 
-   ```console
-   $ sudo docker run hello-world
-   ```
-
-   This command downloads a test image and runs it in a container. When the
-   container runs, it prints a confirmation message and exits.
-
-You have now successfully installed and started Docker Engine.
-
-{{% include "root-errors.md" %}}
 
 #### Upgrade Docker Engine
 
@@ -289,13 +265,7 @@ To upgrade Docker Engine, download the newer package files and repeat the
    $ sudo apt purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
    ```
 
-2. Images, containers, volumes, or custom configuration files on your host
-   aren't automatically removed. To delete all images, containers, and volumes:
-
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
+2. [Remove data after uninstalling packages](common-installation-steps.md#remove-data-after-uninstalling-packages).
 
 3. Remove source list and keyrings
 
@@ -304,7 +274,6 @@ To upgrade Docker Engine, download the newer package files and repeat the
    $ sudo rm /etc/apt/keyrings/docker.asc
    ```
 
-You have to delete any edited configuration files manually.
 
 ## Next steps
 

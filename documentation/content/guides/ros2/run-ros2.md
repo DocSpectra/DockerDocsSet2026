@@ -6,6 +6,12 @@ keywords: ros2, robotics, docker, dockerfile, devcontainer, vscode, workspace
 description: Run ROS 2 in an isolated Docker container using official ROS 2 images and install additional ROS 2 packages.
 ---
 
+## Prerequisites and context
+
+[ROS 2 concepts and prerequisites](concepts.md).
+
+[Volumes](/manuals/engine/storage/volumes.md).
+
 ## Overview
 
 In this section, you will run ROS 2 in an isolated Docker container using official ROS 2 images, verify that ROS 2 is working, and install additional ROS 2 packages for development and testing.

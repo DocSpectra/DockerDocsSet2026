@@ -10,6 +10,12 @@ weight: 110
 
 {{< summary-bar feature_name="Composefile include" >}}
 
+## Find include rules by task
+
+- Resolve included files: [Short syntax](#short-syntax), [path](#path), [project_directory](#project_directory).
+- Configure interpolation defaults: [env_file](#env_file) and [interpolation](interpolation.md).
+- Merge multiple files for an included application: [path lists](#path) and [merge rules](merge.md).
+
 You can reuse and modularize Docker Compose configurations by including other Compose files. This is useful if:
 - You want to reuse other Compose files.
 - You need to factor out parts of your application model into separate Compose files so they can be managed separately or shared with others.

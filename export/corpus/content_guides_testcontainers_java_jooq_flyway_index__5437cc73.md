@@ -28,7 +28,7 @@ In this guide, you will learn how to:
 
 - Java 17+
 - Maven
-- A Docker environment supported by Testcontainers
+- A [Docker environment supported by Testcontainers](/manuals/testcontainers.md#prerequisites)
 
 > [!NOTE]
 > If you're new to Testcontainers, visit the

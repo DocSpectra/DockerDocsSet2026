@@ -5,10 +5,14 @@ title: Integrate Docker Scout with Microsoft Azure DevOps Pipelines
 linkTitle: Azure DevOps Pipelines
 ---
 
+For CLI installation and script caveats, see [Install Docker Scout](/manuals/scout/install.md). For CLI settings, see [Environment variables](/manuals/scout/how-tos/configure-cli.md).
+
 The following examples runs in an Azure DevOps-connected repository containing
 a Docker image's definition and contents. Triggered by a commit to the main
 branch, the pipeline builds the image and uses Docker Scout to create a CVE
 report.
+
+## Configure the pipeline
 
 First, set up the rest of the workflow and set up the variables available to all
 pipeline steps. Add the following to an _azure-pipelines.yml_ file:
@@ -27,6 +31,8 @@ variables:
 
 This sets up the workflow to use a particular container image for the
 application and tag each new image build with the build ID.
+
+## Build and analyze the image
 
 Add the following to the YAML file:
 

@@ -75,13 +75,9 @@ Choose one of the following options for your LLM service.
 {{< tabs >}}
 {{< tab name="Run Ollama in a container" >}}
 
-When running Ollama in a container, you should have a CUDA-supported GPU. While you can run Ollama in a container without a supported GPU, the performance may not be acceptable. Only Linux and Windows 11 support GPU access to containers.
-
 To run Ollama in a container and provide GPU access:
 
-1. Install the prerequisites.
-   - For Docker Engine on Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
-   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](/manuals/desktop/features/wsl/_index.md#turn-on-docker-desktop-wsl-2)
+1. [Install the GPU prerequisites](../ollama-container-requirements.md).
 2. The `docker-compose.yaml` file already contains the necessary instructions. In your own apps, you'll need to add the Ollama service in your `docker-compose.yaml`. The following is
    the updated `docker-compose.yaml`:
 

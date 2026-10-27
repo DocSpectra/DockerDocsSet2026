@@ -22,7 +22,7 @@ params:
     icon: rocket
   - title: Docker concepts
     description: Gain a better understanding of foundational Docker concepts.
-    link: /get-started/docker-concepts/the-basics/what-is-a-container/
+    link: /get-started/docker-concepts/
     icon: foundation
   - title: Docker workshop
     description: Get guided through a 45-minute workshop to learn about Docker.
@@ -49,3 +49,9 @@ Install Docker and jump into discovering what Docker is.
 Learn the foundational concepts and workflows of Docker.
 
 {{< grid items="get-started2" >}}
+
+## Find a task or explanation
+
+- [Hands-on Docker tasks](/get-started/tasks/_index.md)
+- [Shared concepts by topic](/get-started/docker-concepts/_index.md)
+- [Educational resources](/get-started/resources.md)

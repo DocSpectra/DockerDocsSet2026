@@ -12,6 +12,13 @@ aliases:
   - /guides/getting-started/develop-with-containers/
 ---
 
+## Before you begin
+
+- [Docker Desktop installation](/get-started/get-docker.md)
+- [Docker Compose context](/get-started/docker-concepts/the-basics/what-is-docker-compose.md)
+- [Compose Watch](/manuals/compose/how-tos/file-watch.md)
+
+
 {{< youtube-embed D0SDBrS3t9I >}}
 
 ## Explanation

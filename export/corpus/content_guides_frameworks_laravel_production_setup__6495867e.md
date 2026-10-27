@@ -4,10 +4,13 @@ description: Set up a production-ready environment for Laravel using Docker Comp
 weight: 20
 ---
 
+## Prerequisites and context
+
+See [Laravel prerequisites](prerequisites.md), [Laravel Compose configuration choices](common-questions.md), and [Multi-stage builds](/manuals/build/building/multi-stage.md).
+
 This guide demonstrates how to set up a production-ready Laravel environment using Docker and Docker Compose. This configuration is designed for streamlined, scalable, and secure Laravel application deployments.
 
-> [!NOTE]
-> To experiment with a ready-to-run configuration, download the [Laravel Docker Examples](https://github.com/dockersamples/laravel-docker-examples) repository. It contains pre-configured setups for both development and production.
+For a ready-to-run configuration, see [Example configurations](common-questions.md#example-configurations).
 
 ## Project structure
 
@@ -39,7 +42,7 @@ my-laravel-app/
 ├── ...
 ```
 
-This layout represents a typical Laravel project, with Docker configurations stored in a unified `docker` directory. You’ll find **two** Compose files — `compose.dev.yaml` (for development) and `compose.prod.yaml` (for production) — to keep your environments separate and manageable.
+For the directory and Compose file conventions, see [Project layout](common-questions.md#project-layout).
 
 ## Create a Dockerfile for PHP-FPM (production)
 

@@ -10,11 +10,11 @@ aliases:
 
 There are many ways you can provide feedback on Docker Desktop or Docker Desktop features.
 
-### In-product feedback
+## In-product feedback
 
 On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker Team.
 
-### Feedback via Docker Community forums
+## Feedback via Docker Community forums
 
 To get help from the community, review current user topics, join or start a
 discussion, sign in to the appropriate Docker forums:
@@ -23,13 +23,16 @@ discussion, sign in to the appropriate Docker forums:
 - [Docker Desktop for Windows forum](https://forums.docker.com/c/docker-for-windows)
 - [Docker Desktop for Linux forum](https://forums.docker.com/c/docker-desktop-for-linux/60)
 
-### Report bugs or problems on GitHub
+## Report bugs or problems on GitHub
+
+Before reporting a Docker Desktop issue, see [Collect Docker Desktop diagnostics](troubleshoot/diagnostics.md).
 
 To report bugs or problems, visit:
+
 - [Docker Desktop issues on GitHub](https://github.com/docker/desktop-feedback)
 - [Docker Extensions issues on GitHub](https://github.com/docker/extensions-sdk/issues)
 
-### Feedback via Community Slack channels
+## Feedback via Community Slack channels
 
 You can also provide feedback through the following [Docker Community Slack](https://dockr.ly/comm-slack) channels:
 

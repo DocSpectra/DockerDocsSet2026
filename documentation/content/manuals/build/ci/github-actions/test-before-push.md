@@ -5,6 +5,11 @@ description: Here's how you can validate an image, before pushing it to a regist
 keywords: ci, github actions, gha, buildkit, buildx, test
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 In some cases, you might want to validate that the image works as expected
 before pushing it. The following workflow implements several steps to achieve
 this:

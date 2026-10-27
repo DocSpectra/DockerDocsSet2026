@@ -9,9 +9,20 @@ weight: 70
 
 {{% include "compose/fragments.md" %}}
 
+## Anchor syntax and resolution
+
 Anchors are created using the `&` sign. The sign is followed by an alias name. You can use this alias with the `*` sign later to reference the value following the anchor. Make sure there is no space between the `&` and the `*` characters and the following alias name. 
 
 You can use more than one anchor and alias in a single Compose file.
+
+## Find a reuse pattern
+
+- [Reuse a volume declaration](#example-1).
+- [Reuse an environment list](#example-2).
+- [Override an anchored value](#example-3).
+- [Add values to an anchored mapping](#example-4).
+
+For custom extension fields, see [Extensions](extension.md).
 
 ## Example 1
 

@@ -8,7 +8,7 @@ aliases:
  - /security/for-admins/hardened-desktop/settings-management/settings-reference/
 ---
 
-This reference documents Docker Desktop settings that administrators can configure using [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md). Use this page to understand which settings are available, their accepted values, platform compatibility, and which configuration methods apply.
+This reference documents Docker Desktop settings that administrators can configure using [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/policy-model.md). Use this page to understand which settings are available, their accepted values, platform compatibility, and which configuration methods apply.
  
 > [!NOTE]
 >
@@ -411,7 +411,7 @@ Configures an HTTP/HTTPS proxy for containers in air-gapped environments, provid
 }
 ```
 
-For more information, see [Air-gapped containers](/manuals/enterprise/security/hardened-desktop/air-gapped-containers.md).
+For more information, see [Air-gapped containers](/manuals/enterprise/security/hardened-desktop/container-proxy-reference.md).
 
 ## LinuxVM
 
@@ -591,7 +591,7 @@ Defines specific images and commands allowed to use the Docker socket when Enhan
 |---|---|
 | Accepted values | JSON object |
 | Format | JSON object |
-| JSON key | ``dockerSocketMount` |
+| JSON key | `dockerSocketMount` |
 | Admin Console | **Image list**, **Command list** |
 
 ```json

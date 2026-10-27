@@ -14,6 +14,8 @@ images from Artifactory. This integration is powered by a long-running
 pushes image data to Docker Scout. View results in the Docker Scout Dashboard or
 with `docker scout` CLI.
 
+For image-data handling, see [Data collection and storage](/manuals/scout/deep-dive/data-handling.md).
+
 ## How it works
 
 You run [`docker scout watch`](/reference/cli/docker/scout/watch/) on a host you
@@ -68,7 +70,7 @@ Scout.
    $ docker scout version
    ```
 
-   If necessary, [install the latest version of Scout](https://docs.docker.com/scout/install/).
+   If necessary, [install the latest version of Scout](/manuals/scout/install.md).
 
 3. Set up your Artifactory credentials.
 
@@ -92,7 +94,7 @@ Scout.
 
    ```console
    $ export DOCKER_SCOUT_ARTIFACTORY_WEBHOOK_SECRET=<random-64-128-character-secret>
-   ````
+   ```
 
    > [!TIP]
    >

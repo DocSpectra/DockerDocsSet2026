@@ -9,6 +9,9 @@ aliases:
   - /engine/containers/live-restore/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 By default, when the Docker daemon terminates, it shuts down running containers.
 You can configure the daemon so that containers remain running if the daemon
 becomes unavailable. This functionality is called _live restore_. The live restore

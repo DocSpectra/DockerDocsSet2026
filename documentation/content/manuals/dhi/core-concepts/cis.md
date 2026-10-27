@@ -43,12 +43,6 @@ from the benchmark more quickly and confidently.
 > 4). Overall compliance still depends on how you configure and operate the
 > broader environment.
 
-## Identify CIS-compliant images
-
-CIS-compliant images are labeled as **CIS** in the Docker Hardened Images catalog.
-To find them, [search the catalog](../how-to/explore.md) and look for the **CIS**
-designation on individual listings.
-
 ## Get the benchmark
 
 Download the latest CIS Docker Benchmark directly from CIS:

@@ -16,18 +16,11 @@ Complete all the previous sections of this guide, starting with [Containerize a 
 
 If you didn't create a [GitHub repository](https://github.com/new) for your project yet, it is time to do it. After creating the repository, don't forget to [add a remote](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories) and ensure you can commit and [push your code](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push) to GitHub.
 
-1. In your project's GitHub repository, open **Settings**, and go to **Secrets and variables** > **Actions**.
-
-2. Under the **Variables** tab, create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
-
-3. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
-
-4. Add the PAT as a **Repository secret** in your GitHub repository, with the name
-   `DOCKERHUB_TOKEN`.
+Follow [Username variable and token secret](/guides/github-actions-repository.md#username-variable-and-token-secret), steps 2–5.
 
 ## Overview
 
-GitHub Actions is a CI/CD (Continuous Integration and Continuous Deployment) automation tool built into GitHub. It allows you to define custom workflows for building, testing, and deploying your code when specific events occur (e.g., pushing code, creating a pull request, etc.). A workflow is a YAML-based automation script that defines a sequence of steps to be executed when triggered. Workflows are stored in the `.github/workflows/` directory of a repository.
+For workflow context, see [Workflow context](/guides/github-actions-setup.md#workflow-context).
 
 In this section, you'll learn how to set up and use GitHub Actions to build your Docker image as well as push it to Docker Hub. You will complete the following steps:
 
@@ -79,21 +72,13 @@ jobs:
           tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
 ```
 
-Each GitHub Actions workflow includes one or several jobs. Each job consists of steps. Each step can either run a set of commands or use already [existing actions](https://github.com/marketplace?type=actions). The action above has three steps:
-
-1. [**Login to Docker Hub**](https://github.com/docker/login-action): Action logs in to Docker Hub using the Docker ID and Personal Access Token (PAT) you created earlier.
-
-2. [**Set up Docker Buildx**](https://github.com/docker/setup-buildx-action): Action sets up Docker [Buildx](https://github.com/docker/buildx), a CLI plugin that extends the capabilities of the Docker CLI.
-
-3. [**Build and push**](https://github.com/docker/build-push-action): Action builds and pushes the Docker image to Docker Hub. The `tags` parameter specifies the image name and tag. The `latest` tag is used in this example.
+For the workflow steps, see [Build and push actions](/guides/github-actions-setup.md#build-and-push-actions). The `latest` tag is used in this example.
 
 ## 2. Run the workflow
 
 Commit the changes and push them to the `main` branch. This workflow is runs every time you push changes to the `main` branch. You can find more information about workflow triggers [in the GitHub documentation](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows).
 
-Go to the **Actions** tab of you GitHub repository. It displays the workflow. Selecting the workflow shows you the breakdown of all the steps.
-
-When the workflow is complete, go to your [repositories on Docker Hub](https://hub.docker.com/repositories). If you see the new repository in that list, it means the GitHub Actions workflow successfully pushed the image to Docker Hub.
+Follow [Verify repository publication](/guides/github-actions-run.md#verify-repository-publication), steps 2–3.
 
 ## Summary
 

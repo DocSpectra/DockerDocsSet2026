@@ -9,6 +9,8 @@ keywords: scout, policy, status, vulnerabilities, supply chain, cves, licenses
 You can track policy status for your artifacts from the [Docker Scout
 Dashboard](#dashboard), or using the [CLI](#cli).
 
+For evaluation behavior, see [How Policy Evaluation works](/manuals/scout/deep-dive/policy-evaluation.md).
+
 ## Dashboard
 
 The **Overview** tab of the [Docker Scout Dashboard](https://scout.docker.com/)

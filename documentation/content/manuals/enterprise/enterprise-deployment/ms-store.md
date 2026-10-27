@@ -17,21 +17,7 @@ Choose the installation method that best aligns with your environment's requirem
 
 ## Update behavior
 
-### Developer-managed installations
-
-For developers who install Docker Desktop directly:
-
-- The Microsoft Store does not automatically update Win32 apps like Docker Desktop for most users.
-- Only a subset of users (approximately 20%) may receive update notifications on the Microsoft Store page.
-- Most users must manually check for and apply updates within the Store.
-
-### Intune-managed installations
-
-In environments managed with Intune:
-- Intune checks for updates approximately every 8 hours.
-- When a new version is detected, Intune triggers a `winget` upgrade.  
-- If appropriate policies are configured, updates can occur automatically without user intervention. 
-- Updates are handled by Intune's management infrastructure rather than the Microsoft Store itself.
+Review [Microsoft Store update behavior](installer-updates.md#microsoft-store-installations) for developer-managed and Intune-managed installations.
 
 ## WSL considerations
 

@@ -12,15 +12,17 @@ aliases:
 
 ## Prerequisites
 
+See [Go guide prerequisites](prerequisites.md).
+
 Work through the steps to containerize a Go application in [Build your Go image](build-images.md).
 
 ## Overview
 
 In the previous module you created a `Dockerfile` for your example application and then you created your Docker image using the command `docker build`. Now that you have the image, you can run that image and see if your application is running correctly.
 
-A container is a normal operating system process except that this process is isolated and has its own file system, its own networking, and its own isolated process tree separate from the host.
+For isolation and the `docker run` command, see [Container isolation](/guides/container-lifecycle.md#container-isolation).
 
-To run an image inside of a container, you use the `docker run` command. It requires one parameter and that's the image name. Start your image and make sure it's running correctly. Run the following command in your terminal.
+Start your image and make sure it's running correctly. Run the following command in your terminal.
 
 ```console
 $ docker run docker-gs-ping
@@ -76,12 +78,7 @@ Press `ctrl-c` to stop the container.
 
 ## Run in detached mode
 
-This is great so far, but your sample application is a web server and you
-shouldn't have to have your terminal connected to the container. Docker can run
-your container in detached mode in the background. To do this, you can use the
-`--detach` or `-d` for short. Docker will start your container the same as
-before but this time will detach from the container and return you to the
-terminal prompt.
+See [Detached mode](/guides/container-lifecycle.md#detached-mode).
 
 ```console
 $ docker run -d -p 8080:8080 docker-gs-ping

@@ -9,10 +9,16 @@ toc_max: 2
 
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 26.0.
 
-For more information about:
+## Related guidance
 
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Security notes: [26.0.2](#2602), [26.0.0](#2600)
+- Deprecations, removals, and breaking changes: [26.0.0](#2600)
 
 ## 26.0.2
 

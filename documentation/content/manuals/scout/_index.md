@@ -56,3 +56,21 @@ using Docker Desktop, Docker Hub, the Docker CLI, and the Docker Scout Dashboard
 Docker Scout also facilitates integrations with third-party systems, such as container registries and CI platforms.
 
 {{< grid >}}
+
+## Find a task
+
+- [Install Docker Scout](./install.md)
+- [Follow the quickstart](./quickstart.md)
+- [Image analysis and exception tasks](./how-tos/_index.md)
+- [Dashboard, image details, and metrics](./explore/_index.md)
+- [Policy tasks](./policy/_index.md)
+- [Integration setup](./integrations/_index.md)
+
+## Shared context and references
+
+- [Analysis, policy, and integration context](./deep-dive/_index.md)
+- [Software bills of materials](/manuals/security/sbom.md)
+- [Image attestations and provenance](/manuals/security/image-attestations.md)
+- [VEX](/manuals/security/vex.md)
+- [Platform release notes](./release-notes/platform.md)
+- [CLI release notes](https://github.com/docker/scout-cli/releases)

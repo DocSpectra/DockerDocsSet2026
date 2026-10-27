@@ -18,4 +18,6 @@ The Retrieval Augmented Generation (RAG) guide teaches you how to containerize a
 - Containerize and run a RAG application
 - Set up a local environment to run the complete RAG stack locally for development
 
-Start by containerizing an existing RAG application.
+Start by [containerizing an existing RAG application](containerize.md), then [configure the local services](develop.md).
+
+For retrieval background, see [RAG concepts](../rag-concepts.md).

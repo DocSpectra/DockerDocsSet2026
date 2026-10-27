@@ -35,14 +35,10 @@ In this guide, you'll learn how to:
 Before you start, make sure you have:
 
 - [Docker Desktop](../get-started/get-docker.md) or Docker Engine installed
-- [Docker Model Runner enabled](../manuals/ai/model-runner/get-started.md#enable-docker-model-runner)
+- [Docker Model Runner enabled](../manuals/ai/model-runner/setup.md#enable-docker-model-runner)
 - [OpenCode installed](https://opencode.ai/docs)
 
-If you use Docker Desktop, turn on TCP access in **Settings** > **AI**, or run:
-
-```console
-$ docker desktop enable model-runner --tcp 12434
-```
+[Enable TCP host access](../manuals/ai/model-runner/api-reference.md#enable-host-tcp-access).
 
 ## Step 1: Pull a coding model
 
@@ -181,6 +177,40 @@ $ docker model ls
 
 If the model is missing, pull it first and confirm the model name in
 `opencode.json` matches the local model you want to use.
+
+## Additional configuration examples
+
+[OpenCode](https://opencode.ai/) is an open-source coding assistant designed to integrate directly into developer workflows. It supports multiple model providers and exposes a flexible configuration system that makes it easy to switch between them.
+
+### Configuration
+
+1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
+2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+   ```json
+   {
+     "$schema": "https://opencode.ai/config.json",
+     "provider": {
+       "dmr": {
+         "npm": "@ai-sdk/openai-compatible",
+         "name": "Docker Model Runner",
+         "options": {
+           "baseURL": "http://localhost:12434/v1"
+         },
+         "models": {
+           "ai/qwen2.5-coder": {
+             "name": "ai/qwen2.5-coder"
+           },
+           "ai/llama3.2": {
+             "name": "ai/llama3.2"
+           }
+         }
+       }
+     }
+   }
+   ```
+3. Select the model you want in OpenCode
+
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
 
 ## Learn more
 

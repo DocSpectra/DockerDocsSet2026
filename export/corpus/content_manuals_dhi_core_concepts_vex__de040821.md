@@ -17,9 +17,7 @@ indicating whether a vulnerability is exploitable in the product as shipped.
 This helps organizations prioritize remediation efforts by identifying
 vulnerabilities that do not affect their specific product configurations.
 
-For how VEX affects vulnerability counts and scanner selection, see [Scanner
-integrations](/manuals/dhi/explore/scanner-integrations.md). To scan a DHI with
-VEX support, see [Scan Docker Hardened Images](/manuals/dhi/how-to/scan.md).
+See [VEX statuses and document structure](/manuals/security/vex.md) for shared VEX context.
 
 ## VEX status reference
 
@@ -33,8 +31,7 @@ OpenVEX status values.
 | `under_investigation` | Docker is aware of the CVE and is actively evaluating whether it affects the image |
 | `affected` | Docker has confirmed the CVE is exploitable in the image and a fix is not yet available |
 
-You can view the VEX statements for any DHI using Docker Scout. See [Scan Docker
-Hardened Images](/manuals/dhi/how-to/scan.md).
+You can view the VEX statements for any DHI using Docker Scout.
 
 ### `not_affected` justification codes
 

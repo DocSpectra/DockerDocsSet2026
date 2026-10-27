@@ -20,3 +20,9 @@ Docker Compose provides two other options to manage this complexity when working
 - [Extend a Compose file](extends.md) by referring to another Compose file and selecting the bits you want to use in your own application, with the ability to override some attributes.
 - [Include other Compose files](include.md) directly in your Compose file.
 
+
+## Shared context
+
+- [Merging rules and path limitations](merge-rules.md)
+- [Compose application model](../../intro/compose-application-model.md)
+- [Trust model](../../trust-model.md)

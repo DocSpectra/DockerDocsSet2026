@@ -32,11 +32,11 @@ production.
 
 In this guide, you will learn how to:
 
-- Containerize and run a Next.js application using Docker.
-- Set up a local development environment for Next.js inside a container. 
-- Run tests for your Next.js application within a Docker container.
-- Configure a CI/CD pipeline using GitHub Actions for your containerized app.
-- Deploy the containerized Next.js application to a local Kubernetes cluster for testing and debugging.
+- [Containerize and run a Next.js application using Docker.](containerize.md)
+- [Set up a local development environment for Next.js inside a container. ](develop.md)
+- [Run tests for your Next.js application within a Docker container.](run-tests.md)
+- [Configure a CI/CD pipeline using GitHub Actions for your containerized app.](configure-github-actions.md)
+- [Deploy the containerized Next.js application to a local Kubernetes cluster for testing and debugging.](deploy.md)
 
 To begin, you'll start by containerizing an existing Next.js application.
 
@@ -52,3 +52,10 @@ Before you begin, make sure you're familiar with the following:
 - Understanding of Docker concepts such as images, containers, and Dockerfiles. If you're new to Docker, start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
 
 Once you've completed the Next.js getting started modules, you'll be ready to containerize your own Next.js application using the examples and instructions provided in this guide.
+
+## Containerization tasks
+
+- [Get the sample and initialize Docker assets](containerize.md).
+- [Configure standalone output](standalone.md) or [static export](export.md).
+- [Configure and build the image](build-images.md).
+- [Run, verify, and stop the application](run.md).

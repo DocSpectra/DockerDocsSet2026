@@ -21,6 +21,18 @@ it is resolved from the directory containing your Compose file. If it is
 absolute, the path prevents the Compose file from being portable so
 Compose displays a warning.
 
+## Find build rules by task
+
+| Task | Reference |
+| --- | --- |
+| Choose source paths | [context](#context), [dockerfile](#dockerfile), [dockerfile_inline](#dockerfile_inline), [additional_contexts](#additional_contexts) |
+| Choose between pulling and building | [build and image](#using-build-and-image), [pull_policy](services.md#pull_policy), [pull](#pull) |
+| Publish images | [Publishing built images](#publishing-built-images), [tags](#tags) |
+| Configure caching | [cache_from](#cache_from), [cache_to](#cache_to), [no_cache](#no_cache) |
+| Pass build inputs and credentials | [args](#args), [secrets](#secrets), [ssh](#ssh) |
+| Configure platforms and build resources | [platforms](#platforms), [isolation](#isolation), [network](#network), [extra_hosts](#extra_hosts), [entitlements](#entitlements), [privileged](#privileged), [shm_size](#shm_size), [ulimits](#ulimits) |
+| Configure image metadata and stages | [labels](#labels), [provenance](#provenance), [sbom](#sbom), [target](#target) |
+
 ## Using `build` and `image`
 
 When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute.
@@ -597,7 +609,7 @@ RUN --mount=type=ssh,id=myproject git clone ...
 ### `shm_size`
 
 `shm_size` sets the size of the shared memory (`/dev/shm` partition on Linux) allocated for building Docker images. Specify
-as an integer value representing the number of bytes or as a string expressing a [byte value](extension.md#specifying-byte-values).
+as an integer value representing the number of bytes or as a string expressing a [byte value](value-formats.md#specifying-byte-values).
 
 ```yml
 build:

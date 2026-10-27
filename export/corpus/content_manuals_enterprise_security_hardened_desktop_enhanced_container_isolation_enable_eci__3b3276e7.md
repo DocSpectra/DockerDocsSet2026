@@ -12,6 +12,8 @@ ECI prevents malicious containers from compromising Docker Desktop while maintai
 
 This page shows you how to turn on Enhanced Container Isolation (ECI) and verify it's working correctly.
 
+Review [how ECI works](_index.md#how-enhanced-container-isolation-works) and its [limitations](limitations.md), including platform and build protection scope.
+
 ## Prerequisites
 
 Before you begin, you must have:
@@ -79,14 +81,7 @@ Configure Enhanced Container Isolation organization-wide using Settings Manageme
 
 ### Apply the configuration
 
-For ECI settings to take effect:
-
-- New installations: Users launch Docker Desktop and sign in
-- Existing installations: Users must fully quit Docker Desktop and relaunch
-
-> [!IMPORTANT]
->
-> Restarting from the Docker Desktop menu isn't sufficient. Users must completely quit and reopen Docker Desktop.
+Follow [Apply and inspect managed settings](/manuals/enterprise/security/hardened-desktop/settings-management/apply-settings.md#apply-settings), including the requirement to quit and reopen Docker Desktop completely.
 
 You can also configure [Docker socket mount permissions](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md) for trusted images that need Docker API access.
 

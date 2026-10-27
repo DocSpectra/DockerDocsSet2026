@@ -1,21 +1,20 @@
-# DockerDocsSet2026: original documentation (`docs-original`)
+# DockerDocsSet2026: LT experimental refinement (`docs-lt`)
 
 This branch of [DocSpectra/DockerDocsSet2026](https://github.com/DocSpectra/DockerDocsSet2026) holds one documentation version from the Docker application in the ICSC 2027 submission *Measuring Directed Documentation Structure with Normalized Magnetic Spectra*. The [`main` branch](https://github.com/DocSpectra/DockerDocsSet2026/tree/main) has the dataset documentation, question sets, support judgments, manifests and the offline verifier.
 
-The original Docker documentation pages of the experiment corpus (`docs_scope_v1`, 1,218 pages), byte-identical to docker/docs at the pinned commit. The study's sham control S used this same tree and export, so S has no separate branch.
+An experimental refinement of the original pages, produced area by area by an automated editing agent instructed to build toward specific leaf pages that link one way to shared procedure and context pages, then reconciled across the whole corpus. It is not a Docker release, and its inclusion here does not imply that it improves the documentation.
 
 | Field | Value |
 | --- | --- |
-| Variant | O, original Docker documentation (also served as the S sham control) |
+| Variant | LT, leaf-and-trunk refinement (experimental) |
 | Upstream source | [docker/docs](https://github.com/docker/docs) at commit [`274681c`](https://github.com/docker/docs/tree/274681c49355bd951ae60c9208e854ff70f12474) (May 1, 2026) |
-| Documentation files | 1,218 |
-| Documentation tree identity | `4c5e0499392bb25dd9641ea191ed3e2fff075bbee27ad798fba6deeff731c43c` |
-| Experiment corpus export | 1,218 pages, 2,494 directed links |
-| Export corpus tree identity | `ebce0bcead737137cce154bf6415413cc60d58e371432ac6c046a312cc1bcadc` |
-| Export graph file SHA-256 | `ff89ed48d6318c00c6b2bf5adf5dc0f2fc43ec56f3d11b5a45cf356fa98c3945` |
-| Study variant IDs | `v-5d89a3217d52`, `v-9a7d7f0e7b47` |
-| Upstream page snapshot | `upstream-pages/`, 1,487 files, identity `7b54d187fa99f9acc09353f6ae114aa9bfa2579d645df3168c9bc0d2043a9445` |
-| Historical export | `historical-export/`, 1,263 pages, corpus identity `093304d8ad4e88bfb16dcdee225e8d0587a031f9180574080b7a29e8477eb674` |
+| Documentation files | 1,823 |
+| Documentation tree identity | `d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74` |
+| Experiment corpus export | 1,823 pages, 5,203 directed links |
+| Export corpus tree identity | `d4496be66c10e9050ed2467bab12d95277064b62464284d17d448a1c4c79171f` |
+| Export graph file SHA-256 | `83d6bcd62df873e1ea7257f5f468f90fa0d50093425c54a719ff8b9fc68a5d0c` |
+| Study variant IDs | `v-6337600cdc97` |
+| Final checkpoint | session LT-r30, identity `d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74` |
 
 Tree identities are content hashes, not Git commit SHAs: the SHA-256 of the compact, key-sorted JSON object that maps each POSIX relative path to the SHA-256 of its bytes. [`VARIANT.json`](VARIANT.json) records the same values in machine-readable form.
 
@@ -24,8 +23,6 @@ Tree identities are content hashes, not Git commit SHAs: the SHA-256 of the comp
 - `documentation/`: the documentation tree, byte for byte. Only this directory is covered by the documentation tree identity.
 - `export/corpus/`: the retrieval corpus used for searching and answering, one Markdown file per page, named by document ID. The exporter writes CRLF line endings.
 - `export/graph_edges.csv`: the directed page-to-page link graph extracted from the same pages (`source,target` document IDs).
-- `upstream-pages/`: every page-suffix file (`.md`, `.html`, `.txt`) of docker/docs at the pinned commit, as read by the exporter, including the 26 FAQ pages that supply the tier-2 questions. `CLAUDE.md` is a Git symlink upstream and is stored here as a file containing its target, `AGENTS.md`.
-- `historical-export/`: the earlier repository-wide export (1,263 pages and its link graph) from which the 144 FAQ questions were extracted.
 - `VARIANT.json`: identities, counts and lineage of this branch.
 - `LICENSE`, `NOTICE.md`: upstream license and attribution, including the modification notice.
 
@@ -42,11 +39,11 @@ files = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdiges
 print(hashlib.sha256(json.dumps(files, sort_keys=True, separators=(",", ":")).encode()).hexdigest())
 ```
 
-The result should equal `4c5e0499392bb25dd9641ea191ed3e2fff075bbee27ad798fba6deeff731c43c`. `python tools/verify.py` on `main` checks every branch, archive and manifest.
+The result should equal `d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74`. `python tools/verify.py` on `main` checks every branch, archive and manifest.
 
 ## Commits on this branch
 
-A single packaging commit holds this snapshot. It is not a commit of docker/docs.
+The parent commit is the `docs-original` snapshot, so `git diff docs-original docs-lt -- documentation/` shows every change. Both commits are packaging commits created from the frozen trees; they do not reproduce the editing history, which is described in `protocol/` on `main`.
 
 ## Citation
 

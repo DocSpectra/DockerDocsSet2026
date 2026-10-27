@@ -10,10 +10,17 @@ toc_max: 2
 
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 24.0.
 
-For more information about:
+## Related guidance
 
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Security notes: [24.0.9](#2409), [24.0.7](#2407)
+- Deprecations, removals, and breaking changes: [24.0.1](#2401), [24.0.0](#2400)
+- Notes and warnings: [24.0.9](#2409)
 
 ## 24.0.9
 
@@ -24,7 +31,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - [docker/cli, 24.0.9 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
 - [moby/moby, 24.0.9 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
 
-## Security
+### Security
 
 This release contains security fixes for the following CVEs
 affecting Docker Engine and its components.

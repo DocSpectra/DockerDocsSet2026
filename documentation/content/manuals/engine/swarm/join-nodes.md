@@ -21,7 +21,9 @@ also run tasks.
 Docker Engine joins the swarm depending on the **join-token** you provide to
 the `docker swarm join` command. The node only uses the token at join time. If
 you subsequently rotate the token, it doesn't affect existing swarm nodes. Refer
-to [Run Docker Engine in swarm mode](swarm-mode.md#view-the-join-command-or-update-a-swarm-join-token).
+to [Run Docker Engine in swarm mode](join-tokens.md).
+
+For host and network setup, see [Swarm prerequisites](prerequisites.md). For token handling and rotation, see [View and rotate join tokens](join-tokens.md).
 
 ## Join as a worker node
 

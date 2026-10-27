@@ -5,6 +5,11 @@ description: Create and use a local OCI registry with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, registry
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 For testing purposes you may need to create a [local registry](https://hub.docker.com/_/registry)
 to push images into:
 

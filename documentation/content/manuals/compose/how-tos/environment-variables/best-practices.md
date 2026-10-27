@@ -10,23 +10,23 @@ aliases:
 - /compose/environment-variables/best-practices/
 ---
 
-#### Handle sensitive information securely
+## Handle sensitive information securely
 
 Be cautious about including sensitive data in environment variables. Consider using [Secrets](../use-secrets.md) for managing sensitive information.
 
-#### Understand environment variable precedence
+## Understand environment variable precedence
 
 Be aware of how Docker Compose handles the [precedence of environment variables](envvars-precedence.md) from different sources (`.env` files, shell variables, Dockerfiles).
 
-#### Use specific environment files
+## Use specific environment files
 
 Consider how your application adapts to different environments. For example development, testing, production, and use different `.env` files as needed.
 
-#### Know interpolation
+## Know interpolation
    
 Understand how [interpolation](variable-interpolation.md) works within compose files for dynamic configurations.
 
-#### Command line overrides
+## Command line overrides
     
-Be aware that you can [override environment variables](set-environment-variables.md#cli) from the command line when starting containers. This is useful for testing or when you have temporary changes.
+Be aware that you can [override environment variables](set-environment-variables.md#set-environment-variables-with-docker-compose-run---env) from the command line when starting containers. This is useful for testing or when you have temporary changes.
 

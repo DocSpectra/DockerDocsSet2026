@@ -23,7 +23,9 @@ To enable WSL 2 GPU Paravirtualization, you need:
 - Up to date Windows 10 or Windows 11 installation
 - [Up to date drivers](https://developer.nvidia.com/cuda/wsl) from NVIDIA supporting WSL 2 GPU Paravirtualization
 - The latest version of the WSL 2 Linux kernel. Use `wsl --update` on the command line
-- To make sure the [WSL 2 backend is turned on](wsl/_index.md#turn-on-docker-desktop-wsl-2) in Docker Desktop
+- To make sure the [WSL 2 backend is turned on](wsl/enable-wsl.md#turn-on-docker-desktop-wsl-2) in Docker Desktop
+
+For WSL version requirements, see [WSL 2 requirements](wsl/requirements.md).
 
 ## Validate GPU support
 

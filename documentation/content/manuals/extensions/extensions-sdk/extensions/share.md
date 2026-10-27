@@ -13,6 +13,8 @@ People can install your extension by typing `docker extension install my/awesome
 
 However, this option doesn't provide a preview of the extension before it's installed.
 
+For release and API compatibility requirements, see [Package and release your extension](DISTRIBUTION.md).
+
 ## Create a share URL
 
 Docker lets you share your extensions using a URL.

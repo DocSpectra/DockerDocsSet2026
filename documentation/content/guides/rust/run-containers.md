@@ -15,9 +15,7 @@ You have completed [Build your Rust image](build-images.md) and you have built a
 
 ## Overview
 
-A container is a normal operating system process except that Docker isolates this process so that it has its own file system, its own networking, and its own isolated process tree separate from the host.
-
-To run an image inside of a container, you use the `docker run` command. The `docker run` command requires one parameter which is the name of the image.
+For isolation and the `docker run` command, see [Container isolation](/guides/container-lifecycle.md#container-isolation).
 
 ## Run an image
 
@@ -71,7 +69,7 @@ Press ctrl-c to stop the container.
 
 ## Run in detached mode
 
-This is great so far, but your sample application is a web server and you don't have to be connected to the container. Docker can run your container in detached mode or in the background. To do this, you can use the `--detach` or `-d` for short. Docker starts your container the same as before but this time will "detach" from the container and return you to the terminal prompt.
+See [Detached mode](/guides/container-lifecycle.md#detached-mode).
 
 ```console
 $ docker run -d -p 3001:8000 docker-rust-image-dhi

@@ -4,7 +4,7 @@ linkTitle: Engine v27
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
-toc_max: 2
+toc_max: 3
 tags:
   - Release notes
 aliases:
@@ -17,10 +17,17 @@ aliases:
 
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 27.
 
-For more information about:
+## Related guidance
 
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Known issues: [27.2.0](#2720)
+- Security notes: [27.5.1](#2751), [27.2.1](#2721), [27.1.1](#2711), [27.1.0](#2710)
+- Deprecations, removals, and breaking changes: [27.4.0](#2740), [27.1.0](#2710), [27.0.2](#2702), [27.0.1](#2701)
 
 ## 27.5
 

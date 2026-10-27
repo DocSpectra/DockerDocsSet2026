@@ -11,6 +11,8 @@ As part of the swarm management lifecycle, you may need to:
 * [Update a node](#update-a-node)
 * [Leave the swarm](#leave-the-swarm)
 
+For manager roles and quorum, read [Plan managers and maintain quorum](manager-quorum.md).
+
 ## List nodes
 
 To view a list of nodes in the swarm run `docker node ls` from a manager node:
@@ -26,15 +28,7 @@ e7p8btxeu3ioshyuj6lxiv6g0    node-2    Ready   Active
 ehkv3bcimagdese79dn78otj5 *  node-1    Ready   Active        Leader
 ```
 
-The `AVAILABILITY` column shows whether or not the scheduler can assign tasks to
-the node:
-
-* `Active` means that the scheduler can assign tasks to the node.
-* `Pause` means the scheduler doesn't assign new tasks to the node, but existing
-  tasks remain running.
-* `Drain` means the scheduler doesn't assign new tasks to the node. The
-   scheduler shuts down any existing tasks and schedules them on an available
-   node.
+For the `AVAILABILITY` column, see [Swarm node availability and drain behavior](node-availability.md).
 
 The `MANAGER STATUS` column shows node participation in the Raft consensus:
 

@@ -24,7 +24,7 @@ With Docker Desktop version 4.51 and later, you can manage Kubernetes directly f
 3. Choose your cluster type:
    - **Kubeadm** creates a single-node cluster and the version is set by Docker Desktop.
    - **kind** creates a multi-node cluster and you can set the version and number of nodes.
-   For more detailed information on each cluster type, see [Cluster provisioning method](#cluster-provisioning-method).
+   For more detailed information on each cluster type, see [Cluster provisioning method](kubernetes-provisioning.md#cluster-provisioning-method).
 4. Optional: Select **Show system containers (advanced)** to view internal containers when using Docker commands.
 5. Select **Create**. 
 
@@ -51,27 +51,7 @@ $ kubectl version
 
 ### Cluster provisioning method
 
-Docker Desktop Kubernetes can be provisioned with either the `kubeadm` or `kind`
-provisioners.
-
-`kubeadm` is the older provisioner. It supports a single-node cluster, you can't select the kubernetes
-version, it's slower to provision than `kind`, and it's not supported by [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/index.md) (ECI),
-meaning that if ECI is enabled the cluster works but it's not protected by ECI.
-
-`kind` is the newer provisioner. It supports multi-node clusters (for
-a more realistic Kubernetes setup), you can choose the Kubernetes version, it's
-faster to provision than `kubeadm`, and it's supported by ECI - when ECI is
-enabled, the Kubernetes cluster runs in unprivileged Docker containers, thus
-making it more secure. 
-
-| Feature | `kubeadm` | `kind` |
-| :------ | :-----: | :--: |
-| Multi-node cluster support | No | Yes |
-| Kubernetes version selector | No | Yes |
-| Speed to provision | ~1 min | ~30 seconds |
-| Supported by ECI | No | Yes |
-| Works with containerd image store | Yes | Yes |
-| Works with Docker image store | Yes | No |
+See [Kubernetes cluster provisioning methods](kubernetes-provisioning.md).
 
 ## Dashboard view
 
@@ -121,90 +101,7 @@ Kubernetes clusters are not automatically upgraded with Docker Desktop updates. 
 
 ## Configuring a custom image registry for Kubernetes control plane images
 
-Docker Desktop uses containers to run the Kubernetes control plane. By default, Docker Desktop pulls
-the associated container images from Docker Hub. The images pulled depend on the [cluster provisioning mode](#cluster-provisioning-method).
-
-For example, in `kind` mode it requires the following images:
-
-```console
-docker.io/kindest/node:<tag>
-docker.io/envoyproxy/envoy:<tag>
-docker.io/docker/desktop-cloud-provider-kind:<tag>
-docker.io/docker/desktop-containerd-registry-mirror:<tag>
-```
-
-In `kubeadm` mode it requires the following images:
-
-```console
-docker.io/docker/desktop-kubernetes:<tag>
-docker.io/docker/desktop-storage-provisioner:<tag>
-docker.io/docker/desktop-vpnkit-controller:<tag>
-docker.io/docker/desktop-kubernetes-etcd:<tag>
-docker.io/docker/desktop-kubernetes-coredns:<tag>
-docker.io/docker/desktop-kubernetes-pause:<tag>
-docker.io/docker/desktop-kubernetes-apiserver:<tag>
-docker.io/docker/desktop-kubernetes-controller-manager:<tag>
-docker.io/docker/desktop-kubernetes-scheduler:<tag>
-docker.io/docker/desktop-kubernetes-proxy:<tag>
-```
-
-The image tags are automatically selected by Docker Desktop based on several
-factors, including the version of Kubernetes being used. The tags vary for each image and may change between Docker Desktop releases. To stay informed, monitor the Docker Desktop release notes.
-
-> [!NOTE]
->
-> In Docker Desktop versions 4.44 or later you can run `docker desktop kubernetes images list` to list Kubernetes images used by the currently installed version of Docker Desktop.
-> For more information, see the [Docker Desktop CLI](/reference/cli/docker/desktop/kubernetes/images).
-
-To accommodate scenarios where access to Docker Hub is not allowed, admins can
-configure Docker Desktop to pull the above listed images from a different registry (e.g., a mirror)
-using the [KubernetesImagesRepository](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#kubernetes) setting as follows.
-
-An image name can be broken into `[registry[:port]/][namespace/]repository[:tag]` components.
-The `KubernetesImagesRepository` setting allows users to override the `[registry[:port]/][namespace]`
-portion of the image's name.
-
-For example, if Docker Desktop Kubernetes is configured in `kind` mode and
-`KubernetesImagesRepository` is set to `my-registry:5000/kind-images`, then
-Docker Desktop will pull the images from:
-
-```console
-my-registry:5000/kind-images/node:<tag>
-my-registry:5000/kind-images/envoy:<tag>
-my-registry:5000/kind-images/desktop-cloud-provider-kind:<tag>
-my-registry:5000/kind-images/desktop-containerd-registry-mirror:<tag>
-```
-
-These images should be cloned/mirrored from their respective images in Docker Hub. The tags must
-also match what Docker Desktop expects.
-
-The recommended approach to set this up is the following:
-
-1. Start Kubernetes using the desired cluster provisioning method: `kubeadm` or `kind`.
-2. After Kubernetes has started, use either:
-   - (Docker Desktop version 4.44 or later) `docker desktop kubernetes images list` to list the image tags that will be pulled by the current Docker Desktop installation
-   - `docker ps` to view the container images used by Docker Desktop for the Kubernetes control plane
-3. Clone or mirror those images (with matching tags) to your custom registry.
-4. Stop the Kubernetes cluster.
-5. Configure the `KubernetesImagesRepository` setting to point to your custom registry.
-6. Restart Docker Desktop.
-7. Verify that the Kubernetes cluster is using the custom registry images using the `docker ps` command.
-
-> [!NOTE]
->
-> The `KubernetesImagesRepository` setting only applies to control plane images used by Docker Desktop
-> to set up the Kubernetes cluster. It has no effect on other Kubernetes pods.
-
-> [!NOTE]
->
-> In Docker Desktop versions 4.43 or earlier, when using `KubernetesImagesRepository` and [Enhanced Container Isolation (ECI)](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md)
-> is enabled, add the following images to the [ECI Docker socket mount image list](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#enhanced-container-isolation):
->
-> `[imagesRepository]/desktop-cloud-provider-kind:`
-> `[imagesRepository]/desktop-containerd-registry-mirror:`
->
-> These containers mount the Docker socket, so you must add the images to the ECI images list. If not,
-> ECI will block the mount and Kubernetes won't start.
+See [Use a custom registry for Kubernetes control plane images](kubernetes-custom-registry.md).
 
 ## Troubleshooting
 

@@ -11,6 +11,8 @@ description: Learn how to run your Angular tests in a container.
 
 Complete all the previous sections of this guide, starting with [Containerize Angular application](containerize.md).
 
+For test-service reuse and cleanup, see [Use a development image for Compose tests](/guides/compose-test-services.md).
+
 ## Overview
 
 Testing is a critical part of the development process. In this section, you'll learn how to:
@@ -136,3 +138,5 @@ Explore official references and best practices to sharpen your Docker testing wo
 ## Next steps
 
 Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions to automatically build and test your Angular application in a containerized environment. This ensures your code is validated on every push or pull request, maintaining consistency and reliability across your development workflow.
+
+[Automate builds](configure-github-actions.md).

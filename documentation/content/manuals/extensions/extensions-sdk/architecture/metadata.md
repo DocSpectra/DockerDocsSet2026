@@ -112,4 +112,4 @@ The `host` section defines executables that Docker Desktop copies on the host.
 
 `path` specifies the binary path in the image filesystem. Docker Desktop is responsible for copying these files in its own location, and the JavaScript API allows invokes these binaries.
 
-Learn how to [invoke executables](../guides/invoke-host-binaries.md).
+

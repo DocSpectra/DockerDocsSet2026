@@ -6,6 +6,8 @@ weight: 20
 notoc: true
 ---
 
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [join token handling and rotation](../join-tokens.md).
+
 Once you've [created a swarm](create-swarm.md) with a manager node, you're ready
 to add worker nodes.
 

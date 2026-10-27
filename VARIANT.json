@@ -1,21 +1,21 @@
 {
-  "branch": "docs-original",
+  "branch": "docs-lt",
   "documentation": {
-    "bytes": 8064589,
-    "files": 1218,
+    "bytes": 8347301,
+    "files": 1823,
     "path": "documentation/",
     "status_vs_original": {
-      "added": 0,
-      "modified": 0,
-      "unchanged": 1218
+      "added": 605,
+      "modified": 773,
+      "unchanged": 445
     },
-    "tree_sha256": "4c5e0499392bb25dd9641ea191ed3e2fff075bbee27ad798fba6deeff731c43c"
+    "tree_sha256": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74"
   },
-  "experimental": false,
+  "experimental": true,
   "export": {
     "corpus_path": "export/corpus/",
-    "corpus_tree_sha256": "ebce0bcead737137cce154bf6415413cc60d58e371432ac6c046a312cc1bcadc",
-    "edges": 2494,
+    "corpus_tree_sha256": "d4496be66c10e9050ed2467bab12d95277064b62464284d17d448a1c4c79171f",
+    "edges": 5203,
     "exporter": {
       "document_id_rule": "lowercased repository-relative path; stem with non-alphanumerics as _; '__' + first 8 hex of sha1(path)",
       "function": "docker_corpus_variants.py export-agent (study code, DocSpectraICSC2027)",
@@ -24,37 +24,33 @@
       "page_discovery_and_ids": "historical DocSpectra importer retrieval_arena_export.py, sha256 1a0f16ae1d7450ed2b4613de74d090899a7bdc3dc26335d60ca0a701d70c4d7c"
     },
     "graph_path": "export/graph_edges.csv",
-    "graph_sha256": "ff89ed48d6318c00c6b2bf5adf5dc0f2fc43ec56f3d11b5a45cf356fa98c3945",
-    "pages": 1218
+    "graph_sha256": "83d6bcd62df873e1ea7257f5f468f90fa0d50093425c54a719ff8b9fc68a5d0c",
+    "pages": 1823
   },
-  "historical_export": {
-    "corpus_files": 1263,
-    "corpus_tree_sha256": "093304d8ad4e88bfb16dcdee225e8d0587a031f9180574080b7a29e8477eb674",
-    "dataset_inventory_sha256": "bd84233a1a5073ccf77293f8bbd5ee8b3e7cec80319f26f11e6ebb5784fe57c4",
-    "graph_sha256": "699f55e14b44b6b156b8a09c95d4e7e1c4c81df4ad627ee535f91dc66340ceca",
-    "path": "historical-export/",
-    "scope": "repository_root: all 1,263 non-FAQ pages the historical exporter discovered"
+  "final_checkpoint": {
+    "note": "content-tree identity of the admitted final checkpoint, not a Git commit",
+    "session": "LT-r30",
+    "tree_sha256": "d4cdf7f7d3f9ddc27696ae397487cd335b70e8ab8687f1e7086bfb1b0d115f74"
+  },
+  "mapping_receipt": {
+    "file": "protocol/refinement/receipts/LT-r30/mapping.json (main)",
+    "rule": {
+      "min_share": 0.5,
+      "tie_break": "smallest variant doc id",
+      "unit": "normalized non-blank line, link targets stripped, lines without alphanumerics dropped",
+      "version": "moved_content_majority_v1"
+    },
+    "sha256": "33e3588b7ffe2a3f432c04303b48dcb89a69e92c5dde2fde56235770214108dc"
   },
   "package": "DocSpectra/DockerDocsSet2026",
   "package_version": "1.0.0",
-  "sham_control_S": "S used this exact tree (identity above) and export; its study variant ID is v-9a7d7f0e7b47",
   "study_variant_ids": [
-    "v-5d89a3217d52",
-    "v-9a7d7f0e7b47"
+    "v-6337600cdc97"
   ],
   "tree_identity_rule": "sha256 of compact key-sorted JSON {posix relpath: sha256(bytes)}",
   "upstream": {
     "commit": "274681c49355bd951ae60c9208e854ff70f12474",
     "repository": "https://github.com/docker/docs"
   },
-  "upstream_pages": {
-    "files": 1487,
-    "git_symlinks_stored_as_target_text": [
-      "CLAUDE.md"
-    ],
-    "path": "upstream-pages/",
-    "tree_sha256": "7b54d187fa99f9acc09353f6ae114aa9bfa2579d645df3168c9bc0d2043a9445",
-    "verified_against_git_objects": true
-  },
-  "variant": "O"
+  "variant": "LT"
 }

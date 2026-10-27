@@ -57,7 +57,7 @@ selects the `linux/amd64` variant (if you're using Linux containers).
 
 Multi-platform images require an image store that supports manifest lists.
 Docker Desktop and Docker Engine 29.0+ use the
-[containerd image store](/manuals/desktop/features/containerd.md) by default,
+[containerd image store](/manuals/engine/storage/image-store-capabilities.md#what-is-the-containerd-image-store) by default,
 which supports multi-platform images out of the box. If you're using one of
 these versions, no additional setup is needed.
 
@@ -67,6 +67,8 @@ older version that still uses classic storage drivers, you have two options:
 - Enable the containerd image store using the
   [daemon configuration file](/manuals/engine/storage/containerd.md).
 - Create a custom builder using the `docker-container` driver (see the following section).
+
+For Docker Desktop image-store settings, see [Switch image stores](/manuals/desktop/features/containerd.md#switch-image-stores).
 
 ### Custom builder
 

@@ -15,7 +15,7 @@ aliases:
 > GenAI applications can often benefit from GPU acceleration. Currently Docker Desktop supports GPU acceleration only on [Windows with the WSL2 backend](/manuals/desktop/features/gpu.md#using-nvidia-gpus-with-wsl2). Linux users can also access GPU acceleration using a native installation of the [Docker Engine](/manuals/engine/install/_index.md).
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md) or, if you are a Linux user and are planning to use GPU acceleration, [Docker Engine](/manuals/engine/install/_index.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
-- You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
+- Review the [Git client prerequisite](../prerequisites.md#git-client).
 
 ## Overview
 
@@ -52,6 +52,8 @@ You should now have the following files in your `docker-genai-sample` directory.
 ```
 
 ## Initialize Docker assets
+
+See [containerization assets](../genai-container-assets.md) for Dockerfile and Compose context.
 
 Now that you have an application, you can use `docker init` to create the necessary Docker assets to containerize your application. Inside the `docker-genai-sample` directory, run the `docker init` command. `docker init` provides some default configuration, but you'll need to answer a few questions about your application. For example, this application uses Streamlit to run. Refer to the following `docker init` example and use the same answers for your prompts.
 
@@ -95,7 +97,7 @@ directory.
 To learn more about the files that `docker init` added, see the following:
 
 - [Dockerfile](../../../reference/dockerfile.md)
-- [.dockerignore](../../../reference/dockerfile.md#dockerignore-file)
+- [.dockerignore](/manuals/build/concepts/context.md#dockerignore-files)
 - [compose.yaml](/reference/compose-file/_index.md)
 
 ## Run the application

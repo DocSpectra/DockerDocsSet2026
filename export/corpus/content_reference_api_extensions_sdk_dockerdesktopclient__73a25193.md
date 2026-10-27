@@ -11,6 +11,10 @@ An amalgam of the v0 and v1 interfaces of the Docker Desktop API client,
 provided for backwards compatibility reasons. Unless you're working with
 a legacy extension, use the v1 type instead.
 
+## Shared execution guidance
+
+For command contexts, results, streaming, and command chaining limits, see [Extension service and command execution](/manuals/extensions/extensions-sdk/dev/api/backend.md). See the V0 signatures and deprecation warnings below.
+
 ## Properties
 
 ### backend

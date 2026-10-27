@@ -5,13 +5,13 @@ keywords: Docker, Docker Scout, Docker Desktop, vulnerability, exception, create
 ---
 
 The Docker Scout Dashboard and Docker Desktop provide a user-friendly interface
-for creating [exceptions](/manuals/scout/explore/exceptions.md) for
+for creating [exceptions](/manuals/scout/deep-dive/exceptions.md) for
 vulnerabilities found in container images. Exceptions let you acknowledge
 accepted risks or address false positives in image analysis.
 
 ## Prerequisites
 
-To create an in the Docker Scout Dashboard or Docker Desktop, you need a Docker
+To create an exception in the Docker Scout Dashboard or Docker Desktop, you need a Docker
 account with **Editor** or **Owner** permissions for the Docker organization
 that owns the image.
 

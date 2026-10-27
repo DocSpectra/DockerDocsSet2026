@@ -31,3 +31,13 @@ production environments.
 - Build, tag and publish an image
 - Using the build cache
 - Multi-stage builds
+
+## Choose a task or shared explanation
+
+| Task | Shared explanation |
+| --- | --- |
+| [Create layers with container commit](/get-started/tasks/create-image-layers.md) | [Image layers](understanding-image-layers.md) |
+| [Write the Node.js Dockerfile](/get-started/tasks/write-node-dockerfile.md) | [Dockerfile instructions](writing-a-dockerfile.md) |
+| [Build and push the to-do image](/get-started/tasks/build-and-push-todo-image.md) | [Build, tag, and publish](build-tag-and-publish-an-image.md) |
+| [Cache Node.js dependencies](/get-started/tasks/cache-node-builds.md) | [Build cache](using-the-build-cache.md) |
+| [Build Spring Boot in stages](/get-started/tasks/build-java-in-stages.md) | [Multi-stage builds](multi-stage-builds.md) |

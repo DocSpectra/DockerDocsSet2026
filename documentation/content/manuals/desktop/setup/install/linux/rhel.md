@@ -20,9 +20,11 @@ This page contains information on how to install, launch and upgrade Docker Desk
 
 ## Prerequisites
 
+Review the [Docker Desktop license agreement](/manuals/subscription/desktop-license.md) and [Docker Desktop/Engine coexistence and contexts](engine-context.md).
+
 To install Docker Desktop successfully, you must:
 
-- Meet the [general system requirements](_index.md#general-system-requirements).
+- Meet the [general system requirements](requirements.md#general-system-requirements).
 - Have a 64-bit version of either RHEL 8, RHEL 9, or RHEL 10.
 
 - If `pass` is not installed, or it can't be installed, you must enable [CodeReady Linux Builder (CRB) repository](https://access.redhat.com/articles/4348511) and [Extra Packages for Enterprise Linux (EPEL)](https://docs.fedoraproject.org/en-US/epel/).
@@ -108,19 +110,13 @@ To install Docker Desktop on RHEL:
    $ sudo dnf install ./docker-desktop-x86_64-rhel.rpm
    ```
 
-The RPM package includes a post-install script that completes additional setup steps automatically.
+See [Linux DEB and RPM post-install setup](package-installation.md) for the automatic capability, DNS, and Docker CLI symlink changes.
 
-The post-install script:
-
-- Sets the capability on the Docker Desktop binary to map privileged ports and set resource limits.
-- Adds a DNS name for Kubernetes to `/etc/hosts`.
-- Creates a symlink from `/usr/local/bin/com.docker.cli` to `/usr/bin/docker`.
-  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at `/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
-- Creates a symlink from `/usr/libexec/qemu-kvm` to `/usr/local/bin/qemu-system-x86_64`.
+The RHEL RPM post-install script also creates a symlink from `/usr/libexec/qemu-kvm` to `/usr/local/bin/qemu-system-x86_64`.
 
 ## Launch Docker Desktop
 
-{{% include "desktop-linux-launch.md" %}}
+Follow [Start, verify, and stop Docker Desktop on Linux](/manuals/desktop/setup/linux-start.md) for launch and agreement acceptance, binary version checks, starting on sign in, and stopping Docker Desktop.
 
 > [!TIP]
 >

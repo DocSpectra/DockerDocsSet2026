@@ -12,7 +12,7 @@ aliases:
 - /samples/
 ---
 
-Learn how to containerize different types of services by walking through Official Docker samples.
+[Set up and configure sample services](/guides/sample-service-setup.md).
 
 ## Databases
 

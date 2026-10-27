@@ -22,6 +22,15 @@ Docker organizations have three core roles:
 
 A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](/manuals/admin/company/_index.md).
 
+## How roles work together
+
+You can assign users and teams either a core role or a custom role, but not both. However, roles work in combination with team permissions:
+
+1. **Role permissions**: Applied organization-wide (core or custom role). Custom roles can grant permissions to both organization-wide settings and repository access.
+2. **Team permissions**: Additional repository-specific permissions when users are added to teams. This is a separate permission system from role-based permissions.
+
+This layered approach gives you flexibility to provide broad organizational access through roles and specific repository access through team memberships.
+
 ### Content and registry permissions
 
 These permissions apply organization-wide.

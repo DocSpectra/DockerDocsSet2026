@@ -50,18 +50,12 @@ The workflow in this guide pushes the image you build to Docker Hub. To do
 that, you must authenticate with your Docker credentials (username and access
 token) as part of the GitHub Actions workflow.
 
-For instructions on how to create a Docker access token, see
-[Create and manage access tokens](/manuals/security/access-tokens.md).
+Follow [Configure Docker Hub credentials](/manuals/build/ci/github-actions/registry-credentials.md#configure-your-github-repository) with these names from the workflow:
 
-Once you have your Docker credentials ready, add the credentials to your GitHub
-repository so you can use them in GitHub Actions:
-
-1. Open your repository's **Settings**.
-2. Under **Security**, go to **Secrets and variables > Actions**.
-3. Under **Secrets**, create a new repository secret named `DOCKER_PASSWORD`,
-   containing your Docker access token.
-4. Next, under **Variables**, create a `DOCKER_USERNAME` repository variable
-   containing your Docker Hub username.
+| Repository setting | Name | Value |
+| --- | --- | --- |
+| Secret | `DOCKER_PASSWORD` | Your Docker access token |
+| Variable | `DOCKER_USERNAME` | Your Docker Hub username |
 
 ## Set up your GitHub Actions workflow
 
@@ -197,7 +191,9 @@ Here's the updated snippet:
 For more details about attestations, refer to
 [the documentation](/manuals/build/metadata/attestations/_index.md).
 
-## Conclusion
+<a id="conclusion"></a>
+
+## Complete workflow
 
 With all the steps outlined in the previous section, here's the full workflow
 configuration:
@@ -253,3 +249,4 @@ additional features based on your project's needs, such as
 - Learn more about advanced configurations and examples in the [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md) section.
 - For more complex build setups, you may want to consider [Bake](/manuals/build/bake/_index.md). (See also the [Mastering Buildx Bake guide](/guides/bake/index.md).)
 - Learn about Docker's managed build service, designed for faster, multi-platform builds, see [Docker Build Cloud](/guides/docker-build-cloud/_index.md).
+

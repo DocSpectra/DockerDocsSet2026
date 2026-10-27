@@ -9,6 +9,9 @@ aliases:
   - /config/daemon/prometheus/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 [Prometheus](https://prometheus.io/) is an open-source systems monitoring and
 alerting toolkit. You can configure Docker as a Prometheus target.
 

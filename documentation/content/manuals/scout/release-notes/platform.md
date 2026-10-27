@@ -15,6 +15,14 @@ issues, and bug fixes in Docker Scout releases. These release notes cover the
 Docker Scout platform, including the Dashboard. For CLI release notes, refer to
 [Docker Scout CLI release notes](./cli.md).
 
+## Find a release
+
+- [Q4 2024](#q4-2024)
+- [Q3 2024](#q3-2024)
+- [Q2 2024](#q2-2024)
+- [Q1 2024](#q1-2024)
+- [Q4 2023](#q4-2023)
+
 ## Q4 2024
 
 New features and enhancements released in the fourth quarter of 2024.
@@ -43,7 +51,7 @@ customize policies either by editing the default policy from a **policy type**
 which acts as a template. The default policies in Docker Scout are also
 implemented based on these types.
 
-For more information, refer to [policy types](/manuals/scout/policy/_index.md#policy-types).
+For more information, refer to [policy types](/manuals/scout/policy/types.md#policy-types).
 
 ### 2024-09-09
 
@@ -132,7 +140,7 @@ making the now-removed **All critical vulnerabilities** policy redundant.
 
 **Azure Container Registry** integration graduated from
 [Early Access](../../release-lifecycle.md#early-access-ea) to
-[General Availability](../../release-lifecycle.md#genera-availability-ga).
+[General Availability](../../release-lifecycle.md#general-availability-ga).
 
 For more information and setup instructions, see
 [Integrate Azure Container Registry](../integrations/registry/acr.md).

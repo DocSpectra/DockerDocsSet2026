@@ -33,3 +33,5 @@ in a terminal.
 its version is properly reflected in the corresponding kernel config
 (`CONFIG_PAHOLE_VERSION`).
 
+
+For WSL version requirements, see [WSL 2 requirements](requirements.md).

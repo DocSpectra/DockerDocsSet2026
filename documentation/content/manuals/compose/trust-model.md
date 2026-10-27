@@ -123,8 +123,7 @@ Treat any update to a pinned digest as a code change. Make sure you review the n
 
 ## Further reading
 
-- [OCI artifact applications](/manuals/compose/how-tos/oci-artifact.md)
-- [Use Compose in production](/manuals/compose/how-tos/production.md)
+- [OCI artifacts in Docker Hub](/manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md)
 - [`include` reference](/reference/compose-file/include.md)
 - [`extends` reference](/reference/compose-file/services.md#extends)
-- [Manage secrets in Compose](/manuals/compose/how-tos/use-secrets.md)
+- [Secrets in Compose](/manuals/compose/intro/secrets.md)

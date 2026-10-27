@@ -12,6 +12,14 @@ aliases:
  - /guides/workshop/04_sharing_app/
 ---
 
+## Before you begin
+
+- [Workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Workshop sequence](/get-started/workshop/_index.md#workshop-steps)
+- [Registry and repository context](/get-started/docker-concepts/the-basics/what-is-a-registry.md)
+- [Account and repository procedure](/get-started/shared/docker-hub-access.md)
+
+
 Now that you've built an image, you can share it. To share Docker images, you have to use a Docker
 registry. The default registry is Docker Hub and is where all of the images you've used have come from.
 

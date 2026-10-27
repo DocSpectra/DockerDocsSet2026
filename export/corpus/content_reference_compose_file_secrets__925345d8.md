@@ -11,11 +11,20 @@ Secrets are a flavor of [Configs](configs.md) focusing on sensitive data, with s
 
 Services can only access secrets when explicitly granted by a [`secrets` attribute](services.md#secrets) within the `services` top-level element.
 
+## Declaration sources
+
 The top-level `secrets` declaration defines or references sensitive data that is granted to the services in your Compose
 application. The source of the secret is either `file` or `environment`.
 
 - `file`: The secret is created with the contents of the file at the specified path.
 - `environment`: The secret is created with the value of an environment variable on the host.
+
+## Find a secret source
+
+- [Create a secret from a file](#example-1).
+- [Create a secret from a host environment variable](#example-2).
+
+For access grants and mount limitations, see [service secrets](services.md#secrets). For build access, see [build secrets](build.md#secrets).
 
 ## Example 1
 

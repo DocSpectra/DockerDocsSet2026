@@ -23,7 +23,11 @@ This page contains information on how to install, launch and upgrade Docker Desk
 
 ## Prerequisites
 
-To install Docker Desktop successfully, you must meet the [general system requirements](_index.md#general-system-requirements).
+An experimental package is available for Arch-based distributions. Docker has not tested or verified the installation.
+
+Review the [Docker Desktop license agreement](/manuals/subscription/desktop-license.md) and [Docker Desktop/Engine coexistence and contexts](engine-context.md).
+
+To install Docker Desktop successfully, you must meet the [general system requirements](requirements.md#general-system-requirements).
 
 ## Install Docker Desktop
 
@@ -46,7 +50,7 @@ To install Docker Desktop successfully, you must meet the [general system requir
 
 ## Launch Docker Desktop
 
-{{% include "desktop-linux-launch.md" %}}
+Follow [Start, verify, and stop Docker Desktop on Linux](/manuals/desktop/setup/linux-start.md) for launch and agreement acceptance, binary version checks, starting on sign in, and stopping Docker Desktop.
 
 ## Next steps
 

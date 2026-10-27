@@ -7,80 +7,11 @@ weight: 30
 
 ### Distribution-specific hint
 
-{{< tabs >}}
-{{< tab name="Ubuntu" >}}
-- Ubuntu 24.04 and later enables restricted unprivileged user namespaces by
-  default, which prevents unprivileged processes in creating user namespaces
-  unless an AppArmor profile is configured to allow programs to use
-  unprivileged user namespaces.
-
-  If you install `docker-ce-rootless-extras` using the deb package (`apt-get
-  install docker-ce-rootless-extras`), then the AppArmor profile for
-  `rootlesskit` is already bundled with the `apparmor` deb package. With this
-  installation method, you don't need to add any manual the AppArmor
-  configuration. If you install the rootless extras using the [installation
-  script](https://get.docker.com/rootless), however, you must add an AppArmor
-  profile for `rootlesskit` manually:
-
-  1. Create and install the currently logged-in user's AppArmor profile:
-
-     ```console
-     $ filename=$(echo $HOME/bin/rootlesskit | sed -e 's@^/@@' -e 's@/@.@g')
-     $ [ ! -z "${filename}" ] && sudo cat <<EOF > /etc/apparmor.d/${filename}
-     abi <abi/4.0>,
-     include <tunables/global>
-
-     "$HOME/bin/rootlesskit" flags=(unconfined) {
-       userns,
-
-       include if exists <local/${filename}>
-     }
-     EOF
-     ```
-  2. Restart AppArmor.
-
-     ```console
-     $ systemctl restart apparmor.service
-     ```
-
-{{< /tab >}}
-{{< tab name="Arch Linux" >}}
-- Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.conf` (or
-  `/etc/sysctl.d`) and run `sudo sysctl --system`
-{{< /tab >}}
-{{< tab name="openSUSE and SLES" >}}
-- `sudo modprobe ip_tables iptable_mangle iptable_nat iptable_filter` is required.
-  This might be required on other distributions as well depending on the configuration.
-
-- Known to work on openSUSE 15 and SLES 15.
-{{< /tab >}}
-{{< tab name="CentOS, RHEL, and Fedora" >}}
-- For RHEL 8 and similar distributions, installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
-  This step is not required on RHEL 9 and similar distributions.
-
-- You might need `sudo dnf install -y iptables`.
-{{< /tab >}}
-{{< /tabs >}}
+See [Distribution-specific setup](requirements.md#distribution-specific-hint).
 
 ## Known limitations
 
-- Only the following storage drivers are supported:
-  - `overlay2` (only if running with kernel 5.11 or later)
-  - `fuse-overlayfs` (only if running with kernel 4.18 or later, and `fuse-overlayfs` is installed)
-  - `btrfs` (only if running with kernel 4.18 or later, or `~/.local/share/docker` is mounted with `user_subvol_rm_allowed` mount option)
-  - `vfs`
-- cgroup is supported only when running with cgroup v2 and systemd. See [Limiting resources](./tips.md#limiting-resources).
-- Following features are not supported:
-  - AppArmor
-  - Checkpoint
-  - Overlay network
-  - Exposing SCTP ports
-- To use the `ping` command, see [Routing ping packets](./tips.md#routing-ping-packets).
-- To expose privileged TCP/UDP ports (< 1024), see [Exposing privileged ports](./tips.md#exposing-privileged-ports).
-- `IPAddress` shown in `docker inspect` is namespaced inside RootlessKit's network namespace.
-  This means the IP address is not reachable from the host without `nsenter`-ing into the network namespace.
-- Host network (`docker run --net=host`) is also namespaced inside RootlessKit.
-- NFS mounts as the docker "data-root" is not supported. This limitation is not specific to rootless mode.
+See [Rootless mode limitations](requirements.md#known-limitations).
 
 ## Troubleshooting
 
@@ -125,7 +56,7 @@ To fix this issue, add  `user.max_user_namespaces=28633` to
 
 **\[rootlesskit:parent\] error: failed to setup UID/GID map: failed to compute uid/gid map: No subuid ranges found for user 1001 ("testuser")**
 
-This error occurs when `/etc/subuid` and `/etc/subgid` are not configured. See [Prerequisites](./_index.md#prerequisites).
+This error occurs when `/etc/subuid` and `/etc/subgid` are not configured. See [Prerequisites](./requirements.md#prerequisites).
 
 **could not get XDG_RUNTIME_DIR**
 
@@ -166,7 +97,7 @@ Instead of `sudo -iu <USERNAME>`, you need to log in using `pam_systemd`. For ex
 **The daemon does not start up automatically**
 
 You need `sudo loginctl enable-linger $(whoami)` to enable the daemon to start
-up automatically. See [Advanced Usage](./tips.md/#advanced-usage).
+up automatically. See [Advanced Usage](./tips.md#advanced-usage).
 
 ### `docker pull` errors
 
@@ -175,7 +106,7 @@ up automatically. See [Advanced Usage](./tips.md/#advanced-usage).
 This error occurs when the number of available entries in `/etc/subuid` or
 `/etc/subgid` is not sufficient. The number of entries required vary across
 images. However, 65,536 entries are sufficient for most images. See
-[Prerequisites](./_index.md#prerequisites).
+[Prerequisites](./requirements.md#prerequisites).
 
 **docker: failed to register layer: ApplyLayer exit status 1 stdout:  stderr: lchown &lt;FILE&gt;: operation not permitted**
 
@@ -211,7 +142,7 @@ If the error still occurs, try running `systemctl --user enable --now dbus` (wit
 
 This is an expected behavior on cgroup v1 mode.
 To use these flags, the host needs to be configured for enabling cgroup v2.
-For more information, see [Limiting resources](./tips.md#limiting-resources).
+For more information, see [Limiting resources](./network-and-resources.md#limiting-resources).
 
 ### Networking errors
 
@@ -256,7 +187,7 @@ When you experience this error, consider using an unprivileged port instead. For
 $ docker run -p 8080:80 nginx:alpine
 ```
 
-To allow exposing privileged ports, see [Exposing privileged ports](./tips.md#exposing-privileged-ports).
+To allow exposing privileged ports, see [Exposing privileged ports](./network-and-resources.md#exposing-privileged-ports).
 
 #### Ping doesn't work
 
@@ -267,7 +198,7 @@ $ cat /proc/sys/net/ipv4/ping_group_range
 1       0
 ```
 
-For details, see [Routing ping packets](./tips.md#routing-ping-packets).
+For details, see [Routing ping packets](./network-and-resources.md#routing-ping-packets).
 
 #### `IPAddress` shown in `docker inspect` is unreachable
 
@@ -359,26 +290,4 @@ For debugging, you can enter the namespaces by running
 
 ## Uninstall
 
-To remove the systemd service of the Docker daemon, run `dockerd-rootless-setuptool.sh uninstall`:
-
-```console
-$ dockerd-rootless-setuptool.sh uninstall
-+ systemctl --user stop docker.service
-+ systemctl --user disable docker.service
-Removed /home/testuser/.config/systemd/user/default.target.wants/docker.service.
-[INFO] Uninstalled docker.service
-[INFO] This uninstallation tool does NOT remove Docker binaries and data.
-[INFO] To remove data, run: `/usr/bin/rootlesskit rm -rf /home/testuser/.local/share/docker`
-```
-
-Unset environment variables PATH and DOCKER_HOST if you have added them to `~/.bashrc`.
-
-To remove the data directory, run `rootlesskit rm -rf ~/.local/share/docker`.
-
-To remove the binaries, remove `docker-ce-rootless-extras` package if you installed Docker with package managers.
-If you installed Docker with https://get.docker.com/rootless ([Install without packages](./_index.md#install)),
-remove the binary files under `~/bin`:
-```console
-$ cd ~/bin
-$ rm -f containerd containerd-shim containerd-shim-runc-v2 ctr docker docker-init docker-proxy dockerd dockerd-rootless-setuptool.sh dockerd-rootless.sh rootlesskit rootlesskit-docker-proxy runc vpnkit
-```
+See [Uninstall rootless Docker](uninstall.md).

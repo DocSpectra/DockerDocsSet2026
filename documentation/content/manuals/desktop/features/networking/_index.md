@@ -67,7 +67,7 @@ Host firewalls can permit or deny inbound connections by filtering on `com.docke
 
 ## Using Docker Desktop with a proxy
 
-Docker Desktop can use your system’s default proxy settings or custom settings that you configure with [Docker Desktop's proxy setting](/manuals/desktop/settings-and-maintenance/settings.md#proxies). All proxy traffic passes through `com.docker.backend.exe`.
+Docker Desktop can use your system’s default proxy settings or custom settings that you configure with [Docker Desktop's proxy setting](/manuals/desktop/settings-and-maintenance/proxy-settings.md). All proxy traffic passes through `com.docker.backend.exe`.
 
 When a proxy is enabled:
 
@@ -94,3 +94,25 @@ Crowdstrike and similar tools can observe all traffic and file access that passe
 | Container reads host files | Yes | Access handled by `com.docker.backend` | 
 | Container writes host files | Yes | Same process performs the write | 
 | Container accesses its own filesystem layers | No | Exists only inside the VM |
+
+## Known limitations
+
+### Changing internal IP addresses
+
+The internal IP addresses used by Docker can be changed from **Settings**. After changing IPs, you need to reset the Kubernetes cluster and to leave any active Swarm.
+
+### There is no `docker0` bridge on the host
+
+Because of the way networking is implemented in Docker Desktop, you cannot
+see a `docker0` interface on the host. This interface is actually within the
+virtual machine.
+
+### I cannot ping my containers
+
+Docker Desktop can't route traffic to Linux containers. However if you're a Windows user, you can
+ping the Windows containers.
+
+### Per-container IP addressing is not possible
+
+This is because the Docker `bridge` network is not reachable from the host.
+However if you are a Windows user, per-container IP addressing is possible with Windows containers.

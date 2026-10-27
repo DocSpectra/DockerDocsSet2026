@@ -9,7 +9,9 @@ description: Learn how to develop your Angular application locally using contain
 
 ## Prerequisites
 
-Complete [Containerize Angular application](containerize.md).
+Complete [sample setup](containerize.md), [image building](build-images.md), and [startup verification](run.md).
+
+For shared requirements and file-update behavior, see [Compose Watch prerequisites](/manuals/compose/how-tos/file-watch.md#prerequisites) and [configuration](/manuals/compose/how-tos/file-watch.md#configuration).
 
 ---
 
@@ -28,7 +30,7 @@ You’ll learn how to:
 
 Use Compose Watch to automatically sync source file changes into your containerized development environment. This provides a seamless, efficient development experience without restarting or rebuilding containers manually.
 
-## Step 1: Create a development Dockerfile
+### Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content:
 
@@ -69,7 +71,7 @@ CMD ["npm", "start", "--", "--host=0.0.0.0"]
 This file sets up a lightweight development environment for your Angular application using the dev server.
 
 
-### Step 2: Update your `compose.yaml` file
+### Update your `compose.yaml` file
 
 Open your `compose.yaml` file and define two services: one for production (`angular-prod`) and one for development (`angular-dev`).
 
@@ -116,7 +118,7 @@ After completing the previous steps, your project directory should now contain t
 │ └── README.Docker.md
 ```
 
-### Step 4: Start Compose Watch
+### Start Compose Watch
 
 Run the following command from the project root to start the container in watch mode
 
@@ -124,7 +126,7 @@ Run the following command from the project root to start the container in watch 
 $ docker compose watch angular-dev
 ```
 
-### Step 5: Test Compose Watch with Angular
+### Test Compose Watch with Angular
 
 To verify that Compose Watch is working correctly:
 
@@ -177,3 +179,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your Angular application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+[Run tests](run-tests.md).

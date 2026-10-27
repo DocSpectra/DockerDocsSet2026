@@ -15,6 +15,13 @@ weight: 150
 
 This page defines how Compose behaves to efficiently assist you and defines the development constraints and workflows set by Compose. Only a subset of Compose file services may require a `develop` subsection.
 
+## Find development rules by task
+
+- Watch setup and prerequisites: [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
+- Select update behavior: [action](#action) and [exec](#exec).
+- Select source files: [path](#path), [ignore](#ignore), and [include](#include).
+- Configure synchronization: [initial_sync](#initial_sync) and [target](#target).
+
 ## Illustrative example
 
 ```yaml

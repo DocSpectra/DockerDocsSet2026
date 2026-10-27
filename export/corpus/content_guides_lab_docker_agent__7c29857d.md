@@ -52,3 +52,9 @@ Docker.
 | 5 | Sharing Agents | Package and share agents via Docker Registry |
 | 6 | Introduction to Sub-agents | Build multi-agent systems with sub-agent orchestration |
 | 7 | Conclusion | Summary and next steps |
+
+## Reference pages
+
+- [Install Docker Agent](/manuals/ai/docker-agent/installation.md)
+- [Agent teams and configuration](/manuals/ai/docker-agent/agent-teams.md)
+- [Configuration reference](/manuals/ai/docker-agent/reference/config.md)

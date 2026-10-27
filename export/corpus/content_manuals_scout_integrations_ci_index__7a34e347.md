@@ -11,6 +11,10 @@ aliases:
 You can analyze Docker images in continuous integration pipelines as you build
 them using a GitHub action or the Docker Scout CLI plugin.
 
+For shared comparison and evaluation requirements, see [Image comparison and policy evaluation in CI](/manuals/scout/deep-dive/ci-comparison.md).
+
+## Choose a CI setup
+
 Available integrations:
 
 - [GitHub Actions](gha.md)

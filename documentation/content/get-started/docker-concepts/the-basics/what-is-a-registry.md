@@ -2,7 +2,6 @@
 title: What is a registry?
 weight: 30
 keywords: concepts, build, images, container, docker desktop
-description: What is a registry? This Docker Concept will explain what a registry is, explore their interoperability, and have you interact with registries.
 aliases:
 - /guides/walkthroughs/run-hub-images/
 - /guides/walkthroughs/publish-your-image/
@@ -56,112 +55,47 @@ The following diagram shows the relationship between a registry, repositories, a
 >
 >A Docker Personal plan gives you one private repository and unlimited public repositories. To get unlimited private repositories, upgrade to the [Docker Team plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry).
 
-## Try it out
+## Images and Docker Hub
 
-In this hands-on, you will learn how to build and push a Docker image to the Docker Hub repository.
+### Container images
 
-### Sign up for a free Docker account
+If you’re new to container images, think of them as a standardized package that contains everything needed to run an application, including its files, configuration, and dependencies. These packages can then be distributed and shared with others.
 
-1. If you haven't created one yet, head over to the [Docker Hub](https://hub.docker.com) page to sign up for a new Docker account. Be sure to finish the verification steps sent to your email.
+### Docker Hub
 
-    ![Screenshot of the official Docker Hub page showing the Sign up page](images/dockerhub-signup.webp?border)
+To share your Docker images, you need a place to store them. This is where registries come in. While there are many registries, Docker Hub is the default and go-to registry for images. Docker Hub provides both a place for you to store your own images and to find images from others to either run or use as the bases for your own images.
 
-    You can use your Google or GitHub account to authenticate.
+When choosing base images, Docker Hub offers two categories of trusted, Docker-maintained images:
 
-### Create your first repository
+- [Docker Official Images (DOI)](/manuals/docker-hub/image-library/trusted-content.md#docker-official-images) – Curated images for popular software, following best practices and regularly updated.
+- [Docker Hardened Images (DHI)](/manuals/dhi/_index.md) – Minimal, secure, production-ready images with near-zero CVEs, designed to reduce attack surface and simplify compliance. DHI images are free and open source under Apache 2.0.
 
-1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select the **Create repository** button in the top-right corner.
-3. Select your namespace (most likely your username) and enter `docker-quickstart` as the repository name.
+Explore the full catalog of trusted content on Docker Hub:
 
-    ![Screenshot of the Docker Hub page that shows how to create a public repository](images/create-hub-repository.webp?border)
+- [Docker Official Images](https://hub.docker.com/search?badges=official) – Curated images for popular software
+- [Docker Hardened Images](https://hub.docker.com/hardened-images/catalog) – Security-hardened, minimal production images (also available at [dhi.io](https://dhi.io))
+- [Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher) – Images from verified software vendors
+- [Docker Sponsored Open Source](https://hub.docker.com/search?badges=open_source) – Images from sponsored OSS projects
 
-4. Set the visibility to **Public**. 
-5. Select the **Create** button to create the repository.
+## Distribution and access
 
-That's it. You've successfully created your first repository. 🎉
+- Docker Hub is the go-to registry for finding trusted content. Docker provides a collection of trusted content, composed of Docker Official Images, Docker Verified Publishers, and Docker Sponsored Open Source Software, to use directly or as bases for your own images.
 
-This repository is empty right now. You'll now fix this by pushing an image to it.
+- Docker Hub provides a marketplace to distribute your own applications. Anyone can create an account and distribute images. While you are publicly distributing the image you created, private repositories can ensure your images are accessible to only authorized users.
 
-### Sign in with Docker Desktop
+> **Usage of other registries**
+>
+> While Docker Hub is the default registry, registries are standardized and made 
+> interoperable through the [Open Container Initiative](https://opencontainers.org/). This allows companies and 
+> organizations to run their own private registries. Quite often, trusted content 
+> is mirrored (or copied) from Docker Hub into these private registries.
+>
 
-1. [Download and install](https://www.docker.com/products/docker-desktop/) Docker Desktop, if not already installed.
-2. In the Docker Desktop GUI, select the **Sign in** button in the top-right corner
+## Account and repository procedure
 
-### Clone sample Node.js code
-
-In order to create an image, you first need a project. To get you started quickly, you'll use a sample Node.js project found at [github.com/dockersamples/helloworld-demo-node](https://github.com/dockersamples/helloworld-demo-node). This repository contains a pre-built Dockerfile necessary for building a Docker image.
-
-Don't worry about the specifics of the Dockerfile, as you'll learn about that in later sections.
-
-1. Clone the GitHub repository using the following command:
-
-    ```console
-    git clone https://github.com/dockersamples/helloworld-demo-node
-    ```
-
-2. Navigate into the newly created directory.
-
-    ```console
-    cd helloworld-demo-node
-    ```
-
-3. Run the following command to build a Docker image, swapping out `YOUR_DOCKER_USERNAME` with your username.
-
-    ```console
-    docker build -t <YOUR_DOCKER_USERNAME>/docker-quickstart .
-    ```
-
-    > [!NOTE]
-    >
-    > Make sure you include the dot (.) at the end of the `docker build` command. This tells Docker where to find the Dockerfile.
-
-4. Run the following command to list the newly created Docker image:
-
-    ```console
-    docker images
-    ```
-
-    You will see output like the following:
-
-    ```console
-    REPOSITORY                                 TAG       IMAGE ID       CREATED         SIZE
-    <YOUR_DOCKER_USERNAME>/docker-quickstart   latest    476de364f70e   2 minutes ago   170MB
-    ```
-
-5. Start a container to test the image by running the following command (swap out the username with your own username):
-
-    ```console
-    docker run -d -p 8080:8080 <YOUR_DOCKER_USERNAME>/docker-quickstart 
-    ```
-
-    You can verify if the container is working by visiting [http://localhost:8080](http://localhost:8080) with your browser.
-
-6. Use the [`docker tag`](/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
-
-    ```console 
-    docker tag <YOUR_DOCKER_USERNAME>/docker-quickstart <YOUR_DOCKER_USERNAME>/docker-quickstart:1.0 
-    ```
-
-7. Finally, it's time to push the newly built image to your Docker Hub repository by using the [`docker push`](/reference/cli/docker/image/push/) command:
-
-    ```console 
-    docker push <YOUR_DOCKER_USERNAME>/docker-quickstart:1.0
-    ```
-
-8. Open [Docker Hub](https://hub.docker.com) and navigate to your repository. Navigate to the **Tags** section and see your newly pushed image.
-
-    ![Screenshot of the Docker Hub page that displays the newly added image tag](images/dockerhub-tags.webp?border=true) 
-
-In this walkthrough, you signed up for a Docker account, created your first Docker Hub repository, and built, tagged, and pushed a container image to your Docker Hub repository.
+[Sign in and create a Docker Hub repository](/get-started/shared/docker-hub-access.md).
 
 ## Additional resources
 
 - [Docker Hub Quickstart](/docker-hub/quickstart/)
 - [Manage Docker Hub Repositories](/docker-hub/repos/)
-
-## Next steps
-
-Now that you understand the basics of containers and images, you're ready to learn about Docker Compose.
-
-{{< button text="What is Docker Compose?" url="what-is-Docker-Compose" >}}

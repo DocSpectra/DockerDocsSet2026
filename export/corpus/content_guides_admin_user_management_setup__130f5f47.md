@@ -19,11 +19,7 @@ When you invite members to join your Docker organization, you assign them a role
 
 Docker's predefined roles offer flexibility for various organizational needs. Assigning roles effectively ensures a balance of accessibility and security.
 
-- Member: Non-administrative role. Members can view other members that are in the same organization.
-- Editor: Partial administrative access to the organization. Editors can create, edit, and delete repositories. They can also edit an existing team's access permissions.
-- Owner: Full organization administrative access. Owners can manage organization repositories, teams, members, settings, and billing.
-
-For more information, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+For the Member, Editor, and Owner definitions and their permissions, see [Core roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md#what-are-core-roles).
 
 ### Enhance with teams
 

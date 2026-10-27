@@ -6,6 +6,8 @@ weight: 50
 notoc: true
 ---
 
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [service lifecycle commands](../service-lifecycle.md).
+
 Once you have [deployed a service](deploy-service.md) to a swarm, you are ready
 to use the Docker CLI to scale the number of containers in
 the service. Containers running in a service are called tasks.

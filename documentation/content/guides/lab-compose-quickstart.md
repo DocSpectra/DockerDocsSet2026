@@ -53,3 +53,12 @@ By the end of this Labspace, you will have completed the following:
 | 6   | Using Multiple Compose Files     | Extract Redis into `infra.yaml` and compose files with `include`      |
 | 7   | Additional Commands              | Use `config`, `logs -f`, and `exec` to inspect the running stack      |
 | 8   | Recap                            | Review what was built and explore next steps                          |
+
+## Shared procedures and context
+
+- [Compose CLI procedures](/manuals/compose/intro/compose-cli.md)
+- [Startup order and health checks](/manuals/compose/how-tos/startup-order.md)
+- [Compose Watch](/manuals/compose/how-tos/file-watch.md)
+- [Volume lifecycle](/manuals/engine/storage/volumes.md)
+- [Include Compose files](/manuals/compose/how-tos/multiple-compose-files/include.md)
+- [Compose networking](/manuals/compose/how-tos/networking.md)

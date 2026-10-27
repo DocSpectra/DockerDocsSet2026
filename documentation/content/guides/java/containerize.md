@@ -17,8 +17,9 @@ aliases:
   Docker adds new features regularly and some parts of this guide may
   work only with the latest version of Docker Desktop.
 
-* You have a [Git client](https://git-scm.com/downloads). The examples in this
-  section use a command-line based Git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
+
+For context, see [Multi-stage builds](/manuals/build/building/multi-stage.md).
 
 ## Overview
 
@@ -36,6 +37,8 @@ $ git clone https://github.com/spring-projects/spring-petclinic.git
 The sample application is a Spring Boot application built using Maven. For more details, see `readme.md` in the repository.
 
 ## Initialize Docker assets
+
+For the shared procedure and generated file references, see [Initialize Docker assets](/guides/docker-init.md).
 
 Now that you have an application, you can create the necessary Docker assets to
 containerize your application. You can use Docker Desktop's built-in Docker Init
@@ -285,12 +288,7 @@ directory.
 
 ## Run the application
 
-Inside the `spring-petclinic` directory, run the following command in a
-terminal.
-
-```console
-$ docker compose up --build
-```
+Inside the `spring-petclinic` directory, follow [Run in the foreground](/guides/run-compose-application.md#run-in-the-foreground).
 
 The first time you build and run the app, Docker downloads dependencies and builds the app. It may take several minutes depending on your network connection.
 
@@ -300,21 +298,11 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 ### Run the application in the background
 
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `spring-petclinic` directory, run the following command
-in a terminal.
-
-```console
-$ docker compose up --build -d
-```
+Inside the `spring-petclinic` directory, follow [Run in the background](/guides/run-compose-application.md#run-in-the-background).
 
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple app for a pet clinic.
 
-In the terminal, run the following command to stop the application.
-
-```console
-$ docker compose down
-```
+Follow [Stop the background application](/guides/run-compose-application.md#stop-the-background-application).
 
 For more information about Compose commands, see the
 [Compose CLI reference](/reference/cli/docker/compose/).

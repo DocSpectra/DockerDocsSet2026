@@ -17,7 +17,7 @@ Complete [Containerize a C++ application](containerize.md).
 
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 
-- Configuring Compose to automatically update your running Compose services as you edit and save your code
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
 
 ## Get the sample application
 
@@ -29,9 +29,7 @@ $ git clone https://github.com/dockersamples/c-plus-plus-docker.git && cd c-plus
 
 ## Automatically update services
 
-Use Compose Watch to automatically update your running Compose services as you
-edit and save your code. For more details about Compose Watch, see [Use Compose
-Watch](/manuals/compose/how-tos/file-watch.md).
+For watch behavior, configuration, and prerequisites, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 
 Open your `compose.yml` file in an IDE or text editor and then add the Compose Watch instructions. The following example shows how to add Compose Watch to your `compose.yml` file.
 

@@ -17,10 +17,17 @@ aliases:
 
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 29.
 
-For more information about:
+## Related guidance
 
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Security notes: [29.4.2](#2942), [29.3.1](#2931), [29.1.2](#2912)
+- Deprecations, removals, and breaking changes: [29.4.0](#2940), [29.2.0](#2920), [29.0.0](#2900)
+- Notes and warnings: [29.0.0](#2900)
 
 ## 29.4.2
 

@@ -32,11 +32,7 @@ Docker provides two types of roles to meet different organizational needs:
 
 ### Core roles
 
-Core roles are Docker's built-in roles with predefined permission sets:
-
-- **Member**: Non-administrative role with basic access. Members can view other organization members and pull images from repositories they have access to.
-- **Editor**: Partial administrative access. Editors can create, edit, and delete repositories, and manage team permissions for repositories.
-- **Owner**: Full administrative access. Owners can manage all organization settings, including repositories, teams, members, billing, and security features.
+For the Member, Editor, and Owner definitions and permission tables, see [Core roles](core-roles.md).
 
 ### Custom roles
 
@@ -60,12 +56,7 @@ Use custom roles when:
 
 ## How roles work together
 
-You can assign users and teams either a core role or a custom role, but not both. However, roles work in combination with team permissions:
-
-1. **Role permissions**: Applied organization-wide (core or custom role). Custom roles can grant permissions to both organization-wide settings and repository access.
-2. **Team permissions**: Additional repository-specific permissions when users are added to teams. This is a separate permission system from role-based permissions.
-
-This layered approach gives you flexibility to provide broad organizational access through roles and specific repository access through team memberships.
+See [How roles work together](core-roles.md#how-roles-work-together) for role and team permission rules.
 
 ## Next steps
 

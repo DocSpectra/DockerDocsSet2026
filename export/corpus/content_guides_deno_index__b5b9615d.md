@@ -19,11 +19,11 @@ The Deno getting started guide teaches you how to create a containerized Deno ap
 
 ## What will you learn?
 
-* Containerize and run a Deno application using Docker
-* Set up a local environment to develop a Deno application using containers
-* Use Docker Compose to run the application.
-* Configure a CI/CD pipeline for a containerized Deno application using GitHub Actions
-* Deploy your containerized application locally to Kubernetes to test and debug your deployment
+* [Containerize and run a Deno application using Docker](containerize.md)
+* [Set up a local environment to develop a Deno application using containers](develop.md)
+* [Use Docker Compose to run the application.](containerize.md#run-the-application)
+* [Configure a CI/CD pipeline for a containerized Deno application using GitHub Actions](configure-ci-cd.md)
+* [Deploy your containerized application locally to Kubernetes to test and debug your deployment](deploy.md)
 
 ## Prerequisites
 

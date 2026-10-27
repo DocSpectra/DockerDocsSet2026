@@ -22,7 +22,7 @@ To set up a single sign-on (SSO), you need to establish a connection between Doc
 and your identity provider (IdP). While this guide
 uses Okta and Microsoft Entra ID as a working example, the general process remains the same for other IdPs.
 
-If you're unfamiliar with the SSO process, first review [SSO overview](/manuals/enterprise/security/single-sign-on/_index.md) to learn about how SSO works.
+If you're unfamiliar with the SSO process, first review [SSO authentication and user access](sso-context.md) to learn about how SSO works.
 
 ## Prerequisites
 
@@ -40,57 +40,11 @@ Docker supports any SAML 2.0 or OIDC-compatible identity provider. Before you be
 
 ### Step 1: Add a domain
 
-To add a domain:
-
-1. Sign in to [app.docker.com](https://app.docker.com), then choose your
-   organization. If your organization is part of a company, then select the company to manage
-   the domain at the company level.
-1. Select **Admin Console**, then **Domain management**.
-1. Select **Add a domain**.
-1. Enter your domain in the text box and select **Add domain**.
-1. In the modal, copy the **TXT Record Value** provided for domain verification.
+Follow [Add a domain](/manuals/enterprise/security/domain-management.md#add-a-domain).
 
 ### Step 2: Verify your domain
 
-To confirm domain ownership, add a TXT record to your Domain Name System (DNS)
-host using the TXT Record Value from Docker. DNS propagation can take up to
-72 hours. Docker automatically checks for the record during this time.
-
-> [!TIP]
->
-> When adding a record name, use `@` or leave it empty for root domains like `example.com`. Avoid common values like `docker`, `docker-verification`, `www`, or your domain name itself. Always check your DNS provider's documentation to verify their specific record name requirements.
-
-{{< tabs >}}
-{{< tab name="AWS Route 53" >}}
-
-1. To add your TXT record to AWS, see [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
-1. Wait up to 72 hours for TXT record verification.
-1. After the record is live, go to **Domain management** in the [Admin Console](https://app.docker.com/admin) and select **Verify**.
-
-{{< /tab >}}
-{{< tab name="Google Cloud DNS" >}}
-
-1. To add your TXT record to Google Cloud DNS, see [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
-1. Wait up to 72 hours for TXT record verification.
-1. After the record is live, go to **Domain management** in the [Admin Console](https://app.docker.com/admin) and select **Verify**.
-
-{{< /tab >}}
-{{< tab name="GoDaddy" >}}
-
-1. To add your TXT record to GoDaddy, see [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
-1. Wait up to 72 hours for TXT record verification.
-1. After the record is live, go to **Domain management** in the [Admin Console](https://app.docker.com/admin) and select **Verify**.
-
-{{< /tab >}}
-{{< tab name="Other providers" >}}
-
-1. Sign in to your domain host.
-1. Add a TXT record to your DNS settings and save the record.
-1. Wait up to 72 hours for TXT record verification.
-1. After the record is live, go to **Domain management** in the [Admin Console](https://app.docker.com/admin) and select **Verify**.
-
-{{< /tab >}}
-{{< /tabs >}}
+Follow [Verify a domain](/manuals/enterprise/security/domain-management.md#verify-a-domain), including the DNS record-name guidance and the steps for your DNS provider.
 
 ### Step 3: Create an SSO connection in Docker
 
@@ -124,7 +78,7 @@ You need [super admin permissions](https://help.okta.com/en-us/content/topics/se
    - For **Name ID format**, choose `EmailAddress`
    - For **Application username**, choose `Email`
    - For **Update application username on**, choose `Create and update`
-   - Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org.
+   - Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/sso-attributes.md#sso-attributes), if required by your org.
 1. For **Feedback**, choose **This is an internal app that we have created** checkbox before finishing.
 
 Keep your Okta window open for the next step.
@@ -140,7 +94,7 @@ To enable SSO with Microsoft Entra, you need [Cloud Application Administrator](h
 1. Select **Edit** on the **Basic SAML configuration** section. From **Basic SAML configuration**, choose **Edit** and paste the values you copied from creating an SSO connection in Docker:
    - For the **Identifier** value, paste the Docker Entity ID.
    - For the **Reply URL** value, paste Docker ACS URL.
-1. Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org.
+1. Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/sso-attributes.md#sso-attributes), if required by your org.
 1. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
 
 {{< /tab >}}
@@ -239,20 +193,7 @@ Because you must use the same domain for each IdP, you won't need to repeat step
 
 ## Enforce SSO
 
-If SSO is not enforced, users can still sign in using Docker usernames and passwords. Enforcing SSO requires users to use SSO when signing into Docker, which centralizes authentication and enforces policies set by the IdP.
-
-Before enforcing SSO, users accessing Docker through the CLI must [create a personal access token (PAT)](/manuals/security/access-tokens.md). The PAT replaces their username and password for authentication.
-
-1. Sign in to [Docker Home](https://app.docker.com/) and select
-   your organization or company.
-1. Select **Admin Console**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu, then **Enable enforcement**.
-1. Follow the on-screen instructions.
-1. Select **Turn on enforcement**.
-
-When you enforce SSO, your users cannot modify their email address and
-password, convert a user account to an organization, or set up 2FA through
-Docker Hub. If you want to use 2FA, you must enable 2FA through your IdP.
+Follow [Enforce SSO](enforce-sso.md), including the CLI PAT requirement and account-setting restrictions.
 
 ## Next steps
 

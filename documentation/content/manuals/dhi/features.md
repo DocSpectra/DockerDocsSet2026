@@ -53,7 +53,7 @@ image stack with hardened system packages:
 Hardened system packages are included in supported distributions of DHI images.
 Community users can also configure their package manager to use Docker's public
 hardened package repository in their own images for the same packages included
-in the base images. See [Use hardened system packages](./how-to/hardened-packages.md)
+in the base images. See [hardened system package access](./core-concepts/packages.md)
 for details.
 
 ### Total transparency
@@ -152,5 +152,5 @@ For complete details, see the [Support Service Level Agreement](https://docs.doc
 ## Learn more
 
 - [Explore how DHI images are built and more](/dhi/explore/)
-- [Get started using DHIs](/dhi/get-started/)
+- [Core concepts](/dhi/core-concepts/)
 - [Contact Docker for DHI Enterprise](https://www.docker.com/pricing/contact-sales/)

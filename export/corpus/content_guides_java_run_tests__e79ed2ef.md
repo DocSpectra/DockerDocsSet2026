@@ -15,7 +15,9 @@ Complete all the previous sections of this guide, starting with [Containerize a 
 
 ## Overview
 
-Testing is an essential part of modern software development. Testing can mean a lot of things to different development teams. There are unit tests, integration tests and end-to-end testing. In this guide you'll take a look at running your unit tests in Docker.
+For testing context and build-stage selection, see [Test stages in Docker builds](/guides/container-test-stages.md).
+
+In this guide you'll take a look at running your unit tests in Docker.
 
 ### Multi-stage Dockerfile for testing
 
@@ -87,10 +89,7 @@ First, you added a new base stage. In the base stage, you added common instructi
 
 Next, you added a new test stage labeled `test` based on the base stage. In this
 stage you copied in the necessary source files and then specified `RUN` to run
-`./mvnw test`. Instead of using `CMD`, you used `RUN` to run the tests. The
-reason is that the `CMD` instruction runs when the container runs, and the `RUN`
-instruction runs when the image is being built. When using `RUN`, the build will
-fail if the tests fail.
+`./mvnw test`. For `RUN` and `CMD`, see [Run tests during a build](/guides/container-test-stages.md#run-tests-during-a-build).
 
 Finally, you updated the deps stage to be based on the base stage and removed
 the instructions that are now in the base stage.

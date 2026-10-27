@@ -17,26 +17,13 @@ Desktop or Claude Code, see [MCP integration](./mcp.md) instead.
 
 ## How it works
 
-When you run Docker Agent with ACP, it becomes part of your editor's environment. You
-select code, highlight a function, or reference a file - the agent sees what you
-see. No copying file paths or switching to a terminal.
-
-Ask "explain this function" and the agent reads the file you're viewing. Ask it
-to "add error handling" and it edits the code right in your editor. The agent
-works with your editor's view of the project, not some external file system it
-has to navigate.
-
-The difference from running Docker Agent in a terminal: file operations go through
-your editor instead of the agent directly accessing your filesystem. When the
-agent needs to read or write a file, it requests it from your editor. This keeps
-the agent's view of your code synchronized with yours - same working directory,
-same files, same state.
+See [editor context with ACP](agent-context.md#editor-context-with-acp).
 
 ## Prerequisites
 
 Before configuring your editor, you need:
 
-- **Docker Agent installed** - See the [installation guide](../_index.md#installation)
+- **Docker Agent installed** - See the [installation guide](../installation.md)
 - **Agent configuration** - A YAML file defining your agent. See the
   [tutorial](../tutorial.md) or [example
   configurations](https://github.com/docker/docker-agent/tree/main/examples)

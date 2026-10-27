@@ -94,19 +94,7 @@ that connection.
 
 ## Manage users and provisioning
 
-Docker automatically provisions users through Just-in-Time (JIT) provisioning when they sign in via SSO. You can also manually manage users and configure different provisioning methods.
-
-### How provisioning works
-
-Docker supports the following provisioning methods:
-
-- JIT provisioning (default): Users are automatically added to your organization
-when they sign in via SSO
-- SCIM provisioning: Sync users and groups from your identity provider to Docker
-- Group mapping: Sync user groups from your identity provider with teams in your Docker organization
-- Manual provisioning: Turn off automatic provisioning and manually invite users
-
-For more information on provisioning methods, see [Provision users](/manuals/enterprise/security/provisioning/_index.md).
+For JIT defaults, SCIM, group mapping, and manual provisioning, see [Provisioning with SSO](/manuals/enterprise/security/provisioning/provisioning-methods.md#provisioning-with-sso).
 
 ### Add guest users
 

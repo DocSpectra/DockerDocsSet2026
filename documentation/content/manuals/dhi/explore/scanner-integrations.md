@@ -27,8 +27,6 @@ Hardened Images to deliver more accurate vulnerability assessments:
   statements with zero configuration. Combines VEX data with reachability
   analysis.
 
-For step-by-step instructions, see [Scan Docker Hardened Images](/manuals/dhi/how-to/scan.md).
-
 ## Choosing a scanner for Docker Hardened Images
 
 When selecting a scanner for use with Docker Hardened Images, whether it
@@ -166,9 +164,3 @@ exceptions. This requires:
 - Translating VEX justifications into your scanner's format
 - Maintaining these exclusions as new vulnerabilities are discovered
 - Repeating this process if you switch scanners or add additional scanning tools
-
-## What's next
-
-Learn how to [scan Docker Hardened Images](/manuals/dhi/how-to/scan.md) with
-VEX-compliant scanners.
-

@@ -71,7 +71,7 @@ your provider isn't listed, use the steps for "Other providers":
 {{< tab name="Other providers" >}}
 
 1. Sign in to your domain host.
-1. Add a TXT record to your DNS settings using the **TXT Record Value** from Docker.
+1. Add a TXT record to your DNS settings using the **TXT Record Value** from Docker, and save the record.
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    [Admin Console](https://app.docker.com/admin) and select **Verify** next to
@@ -116,10 +116,10 @@ CSV file. For more information on bulk inviting users, see
 
 ## Auto-provisioning
 
-[Auto-provisioning](/manuals/enterprise/security/provisioning/auto-provisioning.md) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
+[Auto-provisioning](/manuals/enterprise/security/provisioning/provisioning-methods.md#what-is-provisioning) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
 
-- [Just-in-Time (JIT)](/manuals/enterprise/security/provisioning/just-in-time.md) provisioning
-- [System for Cross-domain Identity Management (SCIM)](/manuals/enterprise/security/provisioning/scim/_index.md)
+- [Just-in-Time (JIT)](/manuals/enterprise/security/provisioning/jit-behavior.md) provisioning
+- [System for Cross-domain Identity Management (SCIM)](/manuals/enterprise/security/provisioning/scim/scim-context.md)
 
 ## Delete a domain
 

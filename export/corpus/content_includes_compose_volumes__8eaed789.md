@@ -1,1 +1,3 @@
-Volumes are persistent data stores implemented by the container engine. Compose offers a neutral way for services to mount volumes, and configuration parameters to allocate them to infrastructure. The top-level `volumes` declaration lets you configure named volumes that can be reused across multiple services. 
+Volumes are persistent data stores implemented by the container engine. Compose offers a neutral way for services to mount volumes, and configuration parameters to allocate them to infrastructure. The top-level `volumes` declaration lets you configure named volumes that can be reused across multiple services.
+
+See [persistent volumes and their lifecycle](/manuals/engine/storage/volumes.md).

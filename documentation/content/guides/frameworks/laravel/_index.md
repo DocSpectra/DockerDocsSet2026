@@ -44,3 +44,10 @@ This guide is intended for educational purposes, helping developers adapt and op
 
 - Developers who work with Laravel and want to streamline environment management.
 - DevOps engineers seeking efficient ways to manage and deploy Laravel applications.
+
+## Choose a task
+
+- [Review prerequisites](prerequisites.md)
+- [Set up production](production-setup.md)
+- [Set up development](development-setup.md)
+- [Review configuration choices](common-questions.md)

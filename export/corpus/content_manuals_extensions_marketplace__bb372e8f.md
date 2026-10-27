@@ -1,7 +1,7 @@
 ---
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace
-title: Marketplace extensions
+title: Install Marketplace extensions
 weight: 10
 aliases:
  - /desktop/extensions/marketplace/
@@ -37,22 +37,6 @@ To install an extension:
 
 From here, you can select **Open** to access the extension or install additional extensions. The extension also appears in the left-hand menu and in the **Manage** tab.
 
-## Update an extension
+## Manage installed extensions
 
-You can update any extension outside of Docker Desktop releases. To update an extension to the latest version, navigate to the Docker Desktop Dashboard and select the **Manage** tab.
-
-The **Manage** tab displays with all your installed extensions. If an extension has a new version available, it displays an **Update** button.
-
-
-## Uninstall an extension
-
-You can uninstall an extension at any time.
-
-> [!NOTE]
->
-> Any data used by the extension that's stored in a volume must be manually deleted.
-
-1. Navigate to the Docker Desktop Dashboard and select the **Manage** tab.
-   This displays a list of extensions you've installed.
-2. Select the ellipsis to the right of extension you want to uninstall.
-3. Select **Uninstall**.
+See [Update and uninstall from Docker Desktop](manage-extensions.md#update-and-uninstall-from-docker-desktop).

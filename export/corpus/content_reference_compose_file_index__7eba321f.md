@@ -58,4 +58,27 @@ Use the following links to navigate key sections of the Compose Specification.
 > Want a better editing experience for Compose files in VS Code?
 > Check out the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension for linting, code navigation, and vulnerability scanning.
 
+## Find an example for your task
+
+- [Build and publish service images](build-and-publish-images.md).
+- [Load environment variables into a service](load-service-environment.md).
+- [Wait for healthy service dependencies](wait-for-healthy-dependencies.md).
+- [Connect services to separate networks](connect-services-to-networks.md).
+- [Share a database volume with a backup service](share-volume-for-backups.md).
+- [Grant a service access to a secret](grant-service-secrets.md).
+- [Configure model endpoints for services](configure-model-endpoints.md).
+- [Reuse environment configuration across services](reuse-environment-configuration.md).
+- [Check dependencies across test and debug profiles](debug-profile-dependencies.md).
+- [Sync frontend files and rebuild a backend](sync-and-rebuild-services.md).
+
+## Shared reference
+
+Use the element references below, or go to:
+
+- [Build](build.md), [Deploy](deploy.md), and [Develop](develop.md).
+- [Models](models.md) and [profiles](profiles.md).
+- [Fragments](fragments.md), [extensions](extension.md), and [byte values and durations](value-formats.md).
+- [Interpolation](interpolation.md), [merge rules](merge.md), and [include](include.md).
+- [Legacy versions](legacy-versions.md).
+
 {{< grid >}}

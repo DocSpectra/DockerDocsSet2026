@@ -98,7 +98,7 @@ docker mcp gateway run --profile my_profile
 For example, if your client uses a JSON file to configure MCP servers, you may
 add an entry like:
 
-```json {title="Example configuration"
+```json {title="Example configuration"}
 {
   "servers": {
     "MCP_DOCKER": {

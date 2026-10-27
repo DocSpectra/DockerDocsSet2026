@@ -23,6 +23,8 @@ of classic storage drivers for storing image and container data.
 
 ## Why use the containerd image store
 
+For shared container-runtime and image-store context, see [Image store capabilities](image-store-capabilities.md).
+
 The containerd image store uses snapshotters to manage how image layers are
 stored and accessed on the filesystem. This differs from the classic graph
 drivers like overlay2.

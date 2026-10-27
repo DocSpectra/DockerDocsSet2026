@@ -16,6 +16,12 @@ in all services.
 For illustration, this page assumes you want all your services to be built with an `alpine` base
 image and install the system package `openssl`.
 
+## Shared procedures and context
+
+- [Multi-stage builds](/manuals/build/building/multi-stage.md)
+- [Compose image build procedure](../intro/compose-cli.md#build-images-with-compose)
+- [Compose Build Specification](/reference/compose-file/build.md)
+
 ## Multi-stage Dockerfile
 
 The recommended approach is to group the shared declaration in a single Dockerfile, and use multi-stage features

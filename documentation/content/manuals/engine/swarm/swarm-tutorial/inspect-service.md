@@ -6,6 +6,8 @@ weight: 40
 notoc: true
 ---
 
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [service lifecycle commands](../service-lifecycle.md).
+
 When you have [deployed a service](deploy-service.md) to your swarm, you can use
 the Docker CLI to see details about the service running in the swarm.
 

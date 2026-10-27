@@ -48,3 +48,8 @@ By the end of this Labspace, you will have completed the following:
 | 4   | Tool Calling                         | Tool definitions, the agentic loop, and executing tools in code   |
 | 5   | Retrieval Augmented Generation (RAG) | Retrieve, augment, and generate with your own knowledge base      |
 | 6   | Wrap-up                              | Summary of concepts and next steps                                |
+
+## Reference pages
+
+- [Model Runner API reference](/manuals/ai/model-runner/api-reference.md)
+- [RAG concepts](rag-concepts.md)

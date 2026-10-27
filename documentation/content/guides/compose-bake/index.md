@@ -9,6 +9,11 @@ params:
   time: 20 minutes
 ---
 
+For shared procedures and context, see [Bake from a Compose file](/manuals/build/bake/compose-file.md),
+[File overrides](/manuals/build/bake/overrides.md#file-overrides), and
+[Target inheritance](/manuals/build/bake/inheritance.md).
+
+
 This guide explores how you can use Bake to build images for Docker Compose
 projects with multiple services.
 

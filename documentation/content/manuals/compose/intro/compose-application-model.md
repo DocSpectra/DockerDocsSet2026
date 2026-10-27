@@ -55,37 +55,11 @@ If you want to reuse other Compose files, or factor out parts of your applicatio
 
 ## CLI
 
-The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command and its subcommands. If you're using Docker Desktop, the Docker Compose CLI is included by default.
+See [Manage a Compose application](compose-cli.md) for CLI commands.
 
-Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+### Key commands
 
-### Key commands 
-
-To start all the services defined in your `compose.yaml` file:
-
-```console
-$ docker compose up
-```
-
-To stop and remove the running services:
-
-```console
-$ docker compose down 
-```
-
-If you want to monitor the output of your running containers and debug issues, you can view the logs with: 
-
-```console
-$ docker compose logs
-```
-
-To list all the services along with their current status:
-
-```console
-$ docker compose ps
-```
-
-For a full list of all the Compose CLI commands, see the [reference documentation](/reference/cli/docker/compose/).
+See [Key commands](compose-cli.md#key-commands).
 
 ## Illustrative example
 
@@ -164,6 +138,5 @@ example-backend-1   example/database     "docker-entrypoint.s…"   backend     
 
 ## What's next 
 
-- [Try the Quickstart guide](/manuals/compose/gettingstarted.md)
 - [Explore some sample applications](https://github.com/docker/awesome-compose)
 - [Familiarize yourself with the Compose Specification](/reference/compose-file/_index.md)

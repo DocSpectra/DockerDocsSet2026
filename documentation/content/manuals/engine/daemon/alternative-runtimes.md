@@ -9,6 +9,9 @@ aliases:
   - /engine/alternative-runtimes/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 Docker Engine uses containerd for managing the container lifecycle,
 which includes creating, starting, and stopping containers.
 By default, containerd uses runc as its container runtime.

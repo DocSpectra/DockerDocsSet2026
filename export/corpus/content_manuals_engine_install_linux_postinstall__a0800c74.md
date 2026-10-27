@@ -39,7 +39,7 @@ manually create the group.
 > [!NOTE]
 >
 > To run Docker without root privileges, see
-> [Run the Docker daemon as a non-root user (Rootless mode)](../security/rootless.md).
+> [Run the Docker daemon as a non-root user (Rootless mode)](../security/rootless/_index.md).
 
 To create the `docker` group and add your user:
 

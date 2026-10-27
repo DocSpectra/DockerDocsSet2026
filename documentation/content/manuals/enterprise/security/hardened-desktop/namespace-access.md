@@ -25,7 +25,9 @@ push new images to their personal namespace.
 > any organization, that user cannot push to their personal namespace and cannot
 > create new repositories in their personal namespace.
 
-### Configure namespace access control
+For organization permissions, see [Core roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md).
+
+## Configure namespace access control
 
 To configure namespace access control:
 
@@ -39,7 +41,7 @@ Once namespace access control is enabled, organization members can still view th
 personal namespace and existing repositories but they are not able to create
 any new repositories or push any new images to existing repositories.
 
-### Verify access restrictions
+## Verify access restrictions
 
 After configuring namespace access control, test that restrictions work correctly.
 

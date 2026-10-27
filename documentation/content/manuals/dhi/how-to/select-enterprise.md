@@ -120,7 +120,7 @@ CLI](cli.md#configuration).
 {{< /tabs >}}
 
 Continue to the next step to customize the image. To dive deeper into mirroring
-images see [Mirror a repository](mirror.md).
+images see [Mirror a repository](mirror-hub.md).
 
 ## Step 3: Customize the image
 
@@ -199,7 +199,7 @@ It can take a few minutes for the customization to build. To check the build sta
 {{< /tabs >}}
 
 To dive deeper into customization, see [Customize a Docker Hardened
-Image](customize.md).
+Image](customize-image.md).
 
 ## Step 4: Pull and run your customized image
 
@@ -230,7 +230,7 @@ image from your organization namespace on Docker Hub.
 
 To dive deeper into using images, see:
 
-- [Use a Docker Hardened Image](use.md) for general usage
+- [Use a Docker Hardened Image](pull-run.md) for general usage
 - [Use a Helm chart](helm.md) for deploying with Helm
 
 ## Step 5: Remove customization and stop mirroring
@@ -256,7 +256,7 @@ You've mirrored, customized, and run a Docker Hardened Image. Here are a few way
 - [Migrate existing applications to DHIs](../migration/migrate-with-ai.md): Use
   Gordon to update your Dockerfiles to use Docker Hardened Images as the base.
 
-- [Verify DHIs](verify.md): Use tools like [Docker Scout](/scout/) or Cosign to
+- [Verify DHIs](verify-attestations.md): Use tools like [Docker Scout](/scout/) or Cosign to
   inspect and verify signed attestations, like SBOMs and provenance.
 
 - [Scan DHIs](scan.md): Analyze the image with Docker Scout or other scanners

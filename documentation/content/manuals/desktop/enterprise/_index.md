@@ -18,6 +18,10 @@ aliases:
 
 Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Please use [Docker Desktop](../_index.md) Community instead.
 
+## Transition an existing subscription
+
 If you are an existing DDE customer, use the [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of the new [subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopEnterprise).
+
+## Deploy at scale
 
 If you are looking to deploy Docker Desktop at scale, contact us on [pricingquestions@docker.com](mailto:pricingquestions@docker.com).

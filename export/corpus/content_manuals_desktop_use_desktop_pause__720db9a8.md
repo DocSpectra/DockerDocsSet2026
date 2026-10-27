@@ -5,7 +5,7 @@ title: Pause Docker Desktop
 weight: 80
 ---
 
-Pausing Docker Desktop temporarily suspends the Linux VM running Docker Engine. This saves the current state of all containers in memory and freezes all running processes, significantly reducing CPU and memory usage which is helpful for conserving battery on laptops.
+For the effects of pausing the VM, see [Manual Pause behavior](resource-saving-context.md#manual-pause).
 
 To pause Docker Desktop, select the **Pause** icon to the left of the footer in the Docker Dashboard. To manually resume Docker Desktop, select the **Resume** option in the Docker menu, or run any Docker CLI command.
 
@@ -13,4 +13,4 @@ When you manually pause Docker Desktop, a paused status displays on the Docker m
 
 > [!TIP]
 >
-> The Resource Saver feature is enabled by default and provides better CPU and memory savings than the manual Pause feature. See [Resource Saver mode](resource-saver.md) for more info.
+> The Resource Saver feature is enabled by default and provides better CPU and memory savings than the manual Pause feature. See [Resource Saver behavior](resource-saving-context.md#resource-saver) for more info.

@@ -17,7 +17,7 @@ Desktop settings reporting tracks user compliance with Docker Desktop settings p
 Before you can use Docker Desktop settings reporting, make sure you have:
 
 - [Docker Desktop](/manuals/desktop/release-notes.md) installed across your organization
-- [A verified domain](/manuals/enterprise/security/single-sign-on/connect.md)
+- [A verified domain](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain)
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 - At least one settings policy configured
@@ -86,6 +86,8 @@ From the **Desktop settings reporting** dashboard, you can:
 
 When you select a user's name, you'll see their detailed compliance information including current status, domain verification, assigned policy, last policy fetch time, and Docker Desktop version.
 
+For the settings file locations and GUI visibility limits, see [View applied settings](apply-settings.md#view-applied-settings).
+
 ## Resolve compliance issues
 
 You can select a non-compliant user's name in the dashboard for recommended status resolution steps. The following sections are general resolution steps for non-compliant statuses:
@@ -112,10 +114,4 @@ After users take corrective action, refresh the reporting dashboard to verify st
 
 ## Policy update timing
 
-Docker Desktop checks for policy updates:
-
-- At startup
-- Every 60 minutes while Docker Desktop is running
-- When users restart Docker Desktop
-
-Changes to policies in the Admin Console are available immediately, but users must restart Docker Desktop to apply them.
+See [Policy update timing](apply-settings.md#policy-update-timing).

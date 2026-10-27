@@ -6,6 +6,8 @@ weight: 60
 notoc: true
 ---
 
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [service lifecycle commands](../service-lifecycle.md).
+
 The remaining steps in the tutorial don't use the `helloworld` service, so now
 you can delete the service from the swarm.
 

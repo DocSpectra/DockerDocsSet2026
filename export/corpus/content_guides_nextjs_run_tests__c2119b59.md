@@ -11,6 +11,8 @@ description: Learn how to run your Next.js tests and lint in a container.
 
 Complete all the previous sections of this guide, starting with [Containerize Next.js application](containerize.md).
 
+For test-service reuse and cleanup, see [Use a development image for Compose tests](/guides/compose-test-services.md).
+
 ## Overview
 
 Testing is a critical part of the development process. In this section, you'll learn how to:
@@ -25,7 +27,7 @@ The [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) u
 
 ## Run tests during development
 
-The [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) already includes lint (ESLint) and sample tests (Vitest, `app/page.test.tsx`) in place. If you're using the sample app, you can skip to **Step 3: Update compose.yaml** and run tests or lint with the commands below. If you're using your own project, follow the install and configuration steps to add the packages and scripts.
+The [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) already includes lint (ESLint) and sample tests (Vitest, `app/page.test.tsx`) in place. If you're using the sample app, you can skip to **Update compose.yaml** and run tests or lint with the commands below. If you're using your own project, follow the [test setup](configure-tests.md) and [lint setup](configure-lint.md) steps to add the packages and scripts.
 
 The sample includes a test file at:
 
@@ -35,94 +37,11 @@ app/page.test.tsx
 
 This file uses Vitest and React Testing Library to verify the behavior of page components.
 
-### Step 1: Install Vitest and React Testing Library (custom projects)
+## Configure a custom project
 
-If you're using a custom project and haven't already added the necessary testing tools, install them by running:
+For a custom project, follow [Configure component tests](configure-tests.md) and [Configure lint scripts and ESLint](configure-lint.md).
 
-```console
-$ npm install --save-dev vitest @vitejs/plugin-react @testing-library/react @testing-library/dom jsdom
-```
-
-Then, update the scripts section of your `package.json` file to include:
-
-```json
-"scripts": {
-  "test": "vitest",
-  "test:run": "vitest run"
-}
-```
-
-For lint, add a `lint` script (and optionally `lint:fix`). For example, with [ESLint](https://eslint.org/):
-
-```json
-"scripts": {
-  "test": "vitest",
-  "test:run": "vitest run",
-  "lint": "eslint .",
-  "lint:fix": "eslint . --fix"
-}
-```
-
-The sample project uses `eslint` and `eslint-config-next` for Next.js. Install them in a custom project with:
-
-```console
-$ npm install --save-dev eslint eslint-config-next @eslint/eslintrc
-```
-
-Create an ESLint config file (e.g. `eslint.config.cjs`) in your project root with Next.js rules and global ignores:
-
-```js
-const { defineConfig, globalIgnores } = require("eslint/config");
-const { FlatCompat } = require("@eslint/eslintrc");
-
-const compat = new FlatCompat({ baseDirectory: __dirname });
-
-module.exports = defineConfig([
-  ...compat.extends(
-    "eslint-config-next/core-web-vitals",
-    "eslint-config-next/typescript"
-  ),
-  globalIgnores([
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-    "node_modules/**",
-    "eslint.config.cjs",
-  ]),
-]);
-```
-
----
-
-### Step 2: Configure Vitest (custom projects)
-
-If you're using a custom project, create a `vitest.config.ts` file in your project root (matching the [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample)):
-
-```ts
-import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react";
-
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: "jsdom",
-    setupFiles: "./vitest.setup.ts",
-    globals: true,
-  },
-});
-```
-
-Create a `vitest.setup.ts` file in your project root:
-
-```ts
-import "@testing-library/jest-dom/vitest";
-```
-
-> [!NOTE]
-> Vitest works well with Next.js and provides fast execution and ESM support. For more details, see the [Next.js testing documentation](https://nextjs.org/docs/app/building-your-application/testing) and [Vitest docs](https://vitest.dev/).
-
-### Step 3: Update compose.yaml
+## Update compose.yaml
 
 Add `nextjs-test` and `nextjs-lint` services to your `compose.yaml` file. In the sample project these services use the `tools` profile so they don't start with a normal `docker compose up`. Both reuse `Dockerfile.dev` and run the test or lint command:
 
@@ -205,7 +124,7 @@ After completing the previous steps, your project directory should contain:
 │ └── README.Docker.md
 ```
 
-### Step 4: Run the tests
+## Run the tests
 
 To execute your test suite inside the container, run from your project root:
 
@@ -221,7 +140,7 @@ This command will:
 > [!NOTE]
 > For more information about Compose commands and profiles, see the [Compose CLI reference](/reference/cli/docker/compose/).
 
-### Step 5: Run lint in the container
+## Run lint in the container
 
 To run your linter (e.g. ESLint) inside the container, use the `nextjs-lint` service with the same `tools` profile:
 
@@ -266,3 +185,5 @@ Explore official references and best practices to sharpen your Docker testing wo
 ## Next steps
 
 Next, you'll learn how to set up a CI/CD pipeline using GitHub Actions to automatically build and test your Next.js application in a containerized environment. This ensures your code is validated on every push or pull request, maintaining consistency and reliability across your development workflow.
+
+[Automate builds](configure-github-actions.md).

@@ -7,6 +7,8 @@ aliases:
  - /extensions/extensions-sdk/dev/api/reference/interfaces/SpawnOptions/
 ---
 
+For command contexts, results, streaming, and command chaining limits, see [Extension service and command execution](/manuals/extensions/extensions-sdk/dev/api/backend.md).
+
 **`Since`**
 
 0.3.0

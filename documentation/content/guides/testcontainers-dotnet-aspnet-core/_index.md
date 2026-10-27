@@ -27,7 +27,7 @@ In this guide, you'll learn how to:
 
 - .NET 8.0+ SDK
 - A code editor or IDE (Visual Studio, VS Code, Rider)
-- A Docker environment supported by Testcontainers. For details, see the
+- A [Docker environment supported by Testcontainers](/manuals/testcontainers.md#prerequisites). For details, see the
   [Testcontainers .NET system requirements](https://dotnet.testcontainers.org/supported_docker_environment/).
 
 > [!NOTE]

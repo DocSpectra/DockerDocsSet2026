@@ -11,13 +11,12 @@ aliases:
 
 ## Prerequisites
 
-- You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
 
 ## Overview
 
 This section walks you through creating a multi-stage Docker build for a C++ application.
-A multi-stage build is a Docker feature that allows you to use different base images for different stages of the build process,
-so you can optimize the size of your final image and separate build dependencies from runtime dependencies.
+For the build-stage concepts, see [Multi-stage builds](/manuals/build/building/multi-stage.md).
 
 The standard practice for compiled languages like C++ is to have a build stage that compiles the code and a runtime stage that runs the compiled binary,
 because the build dependencies are not needed at runtime.

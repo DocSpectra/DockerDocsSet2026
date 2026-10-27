@@ -5,6 +5,11 @@ description: Build for multiple architectures with GitHub Actions using QEMU emu
 keywords: ci, github actions, gha, buildkit, buildx, multi-platform
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 You can build [multi-platform images](../../building/multi-platform.md) using
 the `platforms` option, as shown in the following example:
 

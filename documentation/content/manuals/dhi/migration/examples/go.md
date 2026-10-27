@@ -16,17 +16,11 @@ Hardened Images. Each example includes five variations:
 - After (multi-stage): A sample Dockerfile after migrating to DHI with multi-stage builds (recommended for minimal, secure images)
 - After (single-stage): A sample Dockerfile after migrating to DHI with single-stage builds (simpler but results in a larger image with a broader attack surface)
 
-> [!NOTE]
->
-> Multi-stage builds are recommended for most use cases. Single-stage builds are
-> supported for simplicity, but come with tradeoffs in size and security.
->
-> You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
-> Use your Docker ID credentials (the same username and password you use for
-> Docker Hub). If you don't have a Docker account, [create
-> one](../../../accounts/create-account.md) for free.
->
-> Run `docker login dhi.io` to authenticate.
+## Before you begin
+
+[Authenticate to dhi.io](../../how-to/authenticate.md) before pulling images. Review the [Dockerfile migration procedure](../dockerfile.md), including the [multi-stage and single-stage tradeoffs](../dockerfile.md#update-the-runtime-image-in-your-dockerfile), and the [migration checklist](../checklist.md).
+
+## Dockerfile variations
 
 {{< tabs >}}
 {{< tab name="Before (Ubuntu)" >}}

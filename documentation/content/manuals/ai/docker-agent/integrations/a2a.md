@@ -18,7 +18,7 @@ tools in MCP clients, see [MCP integration](./mcp.md).
 
 Before starting an A2A server, you need:
 
-- Docker Agent installed - See the [installation guide](../_index.md#installation)
+- Docker Agent installed - See the [installation guide](../installation.md)
 - Agent configuration - A YAML file defining your agent. See the
   [tutorial](../tutorial.md)
 - API keys configured - If using cloud model providers (see [Model

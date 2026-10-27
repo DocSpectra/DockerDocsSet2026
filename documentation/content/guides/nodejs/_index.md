@@ -23,7 +23,6 @@ The sample application is a modern full-stack Todo application featuring:
 - **Backend**: Express.js with TypeScript, PostgreSQL database, and RESTful API
 - **Frontend**: React.js with Vite and Tailwind CSS 4
 
-
 > **Acknowledgment**
 >
 > Docker extends its sincere gratitude to [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) for authoring this guide. As a Docker Captain and experienced Full-stack engineer, his expertise in Docker, DevOps, and modern web development has made this resource invaluable for the community, helping developers navigate and optimize their Docker workflows.
@@ -34,11 +33,11 @@ The sample application is a modern full-stack Todo application featuring:
 
 In this guide, you will learn how to:
 
-- Containerize and run a Node.js application using Docker.
-- Run tests inside a Docker container.
-- Set up a development container environment.
-- Configure GitHub Actions for CI/CD with Docker.
-- Deploy your Dockerized Node.js app to Kubernetes.
+- [Containerize and run a Node.js application using Docker.](containerize.md)
+- [Run tests inside a Docker container.](run-tests.md)
+- [Set up a development container environment.](develop.md)
+- [Configure GitHub Actions for CI/CD with Docker.](configure-github-actions.md)
+- [Deploy your Dockerized Node.js app to Kubernetes.](deploy.md)
 
 To begin, you’ll start by containerizing an existing Node.js application.
 
@@ -54,3 +53,10 @@ Before you begin, make sure you're familiar with the following:
 - Familiarity with [Express.js](https://expressjs.com/) for backend API development.
 
 Once you've completed the Node.js getting started modules, you’ll be ready to containerize your own Node.js application using the examples and instructions provided in this guide.
+
+## Containerization tasks
+
+- [Get the sample and initialize Docker assets](containerize.md).
+- [Configure Compose and environment settings](configure-compose.md).
+- [Configure and build the image](build-images.md).
+- [Run, verify, and stop the application](run.md).

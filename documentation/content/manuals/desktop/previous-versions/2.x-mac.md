@@ -10,6 +10,17 @@ sitemap: false
 
 This page contains release notes for Docker Desktop for Mac 2.x.
 
+## Related guidance
+
+- [Release availability and update prerequisites](/manuals/desktop/release-availability.md)
+- [Historical upgrade and update procedures](upgrade-guidance.md)
+
+## Check known issues
+
+- [Docker Desktop Community 2.4.0.0](#docker-desktop-community-2400)
+- [Docker Desktop Community 2.3.0.5](#docker-desktop-community-2305)
+- [Docker Desktop Community 2.2.0.0](#docker-desktop-community-2200)
+
 ## Docker Desktop Community 2.5.0.1 
 2020-11-10
 

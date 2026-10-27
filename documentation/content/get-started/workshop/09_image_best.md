@@ -10,6 +10,14 @@ aliases:
  - /guides/workshop/09_image_best/
 ---
 
+## Before you begin
+
+- [Workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Workshop sequence](/get-started/workshop/_index.md#workshop-steps)
+- [Image layers](/get-started/docker-concepts/building-images/understanding-image-layers.md)
+- [Cache invalidation](/get-started/docker-concepts/building-images/using-the-build-cache.md)
+
+
 ## Image layering
 
 Using the `docker image history` command, you can see the command that was used
@@ -147,60 +155,12 @@ dependencies if there was a change to the `package.json`.
 
 ## Multi-stage builds
 
-Multi-stage builds are an incredibly powerful
-tool to help use multiple stages to create an image. There are several advantages for them:
+[Review multi-stage build context](/get-started/docker-concepts/building-images/multi-stage-builds.md) and the [shared multi-stage build procedure](/manuals/build/building/multi-stage.md).
 
-- Separate build-time dependencies from runtime dependencies
-- Reduce overall image size by shipping only what your app needs to run
+### Examples
 
-### Maven/Tomcat example
-
-When building Java-based applications, you need a JDK to compile the source code to Java bytecode. However,
-that JDK isn't needed in production. Also, you might be using tools like Maven or Gradle to help build the app.
-Those also aren't needed in your final image. Multi-stage builds help.
-
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM maven AS build
-WORKDIR /app
-COPY . .
-RUN mvn package
-
-FROM tomcat
-COPY --from=build /app/target/file.war /usr/local/tomcat/webapps 
-```
-
-In this example, you use one stage (called `build`) to perform the actual Java build using Maven. In the second
-stage (starting at `FROM tomcat`), you copy in files from the `build` stage. The final image is only the last stage
-being created, which can be overridden using the `--target` flag.
-
-### React example
-
-When building React applications, you need a Node environment to compile the JS code (typically JSX), SASS stylesheets,
-and more into static HTML, JS, and CSS. If you aren't doing server-side rendering, you don't even need a Node environment
-for your production build. You can ship the static resources in a static nginx container.
-
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node:24-alpine AS build
-WORKDIR /app
-COPY package* ./
-RUN npm install
-COPY public ./public
-COPY src ./src
-RUN npm run build
-
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-```
-
-In the previous Dockerfile example, it uses the `node:24-alpine` image to perform the build (maximizing layer caching) and then copies the output
-into an nginx container.
-
-
-  > [!Tips]
-  > This React example is for illustration purposes. The getting-started todo app is a `Node.js` backend application, not a React frontend.
-
+- [Maven/Tomcat example](/get-started/tasks/build-maven-tomcat-image.md)
+- [React example and its scope caveat](/get-started/tasks/build-static-react-image.md)
 
 ## Summary
 

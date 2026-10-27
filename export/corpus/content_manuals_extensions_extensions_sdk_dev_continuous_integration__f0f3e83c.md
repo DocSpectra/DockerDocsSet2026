@@ -79,8 +79,7 @@ afterAll(async () => {
 });
 ```
 
-## What's next
+## Shared guidance
 
-- Build an [advanced frontend](/manuals/extensions/extensions-sdk/build/frontend-extension-tutorial.md) extension.
-- Learn more about extensions [architecture](../architecture/_index.md).
-- Learn how to [publish your extension](../extensions/_index.md).
+- [Extension architecture](../architecture/_index.md).
+- [Extension security](../architecture/security.md).

@@ -12,6 +12,15 @@ weight: 30
 
 To use a network across multiple services, you must explicitly grant each service access by using the [networks](services.md) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
 
+## Find network rules by task
+
+- Networking context: [Compose networking](/manuals/compose/how-tos/networking.md).
+- Use an implicit network: [The default network](#the-default-network).
+- Configure network creation: [driver](#driver), [driver_opts](#driver_opts), [ipam](#ipam), [enable_ipv4](#enable_ipv4), [enable_ipv6](#enable_ipv6).
+- Configure connectivity and lifecycle: [attachable](#attachable), [internal](#internal), [external](#external).
+- Configure metadata and lookup: [labels](#labels), [name](#name).
+- Attach service containers: [service networks](services.md#networks).
+
 ## Examples
 
 ### Basic example

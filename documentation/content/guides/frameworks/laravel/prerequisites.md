@@ -23,3 +23,5 @@ This guide assumes you have a basic understanding of Laravel and PHP. Familiarit
 
 - Laravel CLI: You should be comfortable using Laravel’s command-line tool (`artisan`).
 - Laravel Project Structure: Familiarize yourself with Laravel’s folder structure (`app`, `config`, `routes`, `tests`, etc.).
+
+For shared Compose context, see [Docker Compose overview](/manuals/compose/_index.md).

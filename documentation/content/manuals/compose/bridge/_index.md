@@ -21,13 +21,7 @@ It's a flexible tool that lets you either take advantage of the [default transfo
 
 ## How it works
 
-Compose Bridge uses transformations to convert a Compose model into another form. 
-
-A transformation is packaged as a Docker image that receives the fully resolved Compose model as `/in/compose.yaml` and can produce any target format file under `/out`.
-
-Compose Bridge provides its own transformation for Kubernetes using Go templates, so that it is easy to extend for customization by replacing or appending your own templates.
-
-For more detailed information on how these transformations work and how you can customize them for your projects, see [Customize](customize.md).
+See [Compose Bridge transformations](transformations.md) for the transformation contract, default Kubernetes templates, and template reference.
 
 Compose Bridge also supports applications that use LLMs via Docker Model Runner.
 

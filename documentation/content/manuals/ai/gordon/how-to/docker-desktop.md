@@ -10,6 +10,10 @@ weight: 10
 Gordon is integrated into Docker Desktop. Access it from the sidebar to open
 the Gordon view.
 
+## Prerequisites
+
+Review the [Gordon access requirements](../requirements.md). For approvals and session behavior, see the [permission model](permissions.md).
+
 ## Basic usage
 
 To access Gordon:
@@ -32,12 +36,7 @@ to change it during a conversation:
 
 ## Disabling Gordon
 
-To disable Gordon:
-
-1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
-3. Clear the **Enable Gordon** option.
-4. Select **Apply**.
+See [Disable Gordon](disable.md).
 
 ## Configure tools
 

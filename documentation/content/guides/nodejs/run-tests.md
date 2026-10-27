@@ -1,7 +1,7 @@
 ---
 title: Run Node.js tests in a container
 linkTitle: Run your tests
-weight: 30
+weight: 40
 keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
 aliases:
@@ -12,6 +12,8 @@ aliases:
 ## Prerequisites
 
 Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md).
+
+For test-service reuse and cleanup, see [Use a development image for Compose tests](/guides/compose-test-services.md).
 
 ## Overview
 
@@ -226,3 +228,5 @@ Related information:
 ## Next steps
 
 Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions.
+
+[Automate builds](configure-github-actions.md).

@@ -5,6 +5,16 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Related guidance
+
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Known issues: [17.12.1-ce](#17121-ce), [17.12.0-ce](#17120-ce)
+
 ## 17.12.1-ce
 2018-02-27
 

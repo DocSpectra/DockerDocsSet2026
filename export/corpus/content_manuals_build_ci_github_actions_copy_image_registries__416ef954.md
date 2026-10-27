@@ -5,6 +5,11 @@ description: Build multi-platform images and copy them between registries with G
 keywords: ci, github actions, gha, buildkit, buildx, registry
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 [Multi-platform images](../../building/multi-platform.md) built using Buildx can
 be copied from one registry to another using the [`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create/):
 

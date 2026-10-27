@@ -115,7 +115,7 @@ description: Description of the server
 ```
 
 If the server requires OAuth authentication, authorize it in Docker Desktop
-after adding. See [OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication).
+after adding. See [OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/oauth.md#oauth-authentication).
 
 ### List servers
 

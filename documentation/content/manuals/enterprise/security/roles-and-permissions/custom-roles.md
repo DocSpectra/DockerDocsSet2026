@@ -14,7 +14,7 @@ to create and manage them.
 
 Custom roles let you create tailored permission sets for your organization. You
 can assign custom roles to individual users or teams.
-Users and teams get either a core role or custom role, but not both.
+For the core/custom role and team permission rules, see [How roles work together](core-roles.md#how-roles-work-together).
 
 Use custom roles when Docker's core roles don't fit your needs.
 
@@ -37,7 +37,7 @@ Admin Console:
    - Add an optional **Description**
 5. Set permissions for the role by expanding permission categories and selecting
    the checkboxes for permissions. For a full list of available permissions, see
-   the [custom roles permissions reference](#custom-roles-permissions-reference).
+   the [custom roles permissions reference](custom-role-permissions.md).
 6. Select **Review** to review your custom roles configuration and see a summary
    of selected permissions.
 7. Select **Create**.
@@ -161,38 +161,4 @@ Before deleting a custom role, you must reassign all users and teams to differen
 
 ## Custom roles permissions reference
 
-Custom roles are built by selecting specific permissions across different categories. The following tables list all available permissions you can assign to a custom role.
-
-### Organization management
-
-| Permission                        | Description                                                                                     |
-| :-------------------------------- | :---------------------------------------------------------------------------------------------- |
-| View teams                        | View teams and team members                                                                     |
-| Manage teams                      | Create, update, and delete teams and team members                                               |
-| Manage registry access            | Control which registries members can access                                                     |
-| Manage image access               | Set policies for which images members can pull and use                                          |
-| Update organization information   | Update organization information such as name and location                                       |
-| Member management                 | Manage organization members, invites, and roles                                                 |
-| View custom roles                 | View existing custom roles and their permissions                                                |
-| Manage custom roles               | Full access to custom role management and assignment                                            |
-| Manage organization access tokens | Create, update, and delete repositories in this org. Push/pull or registry actions not included |
-| View activity logs                | Access organization audit logs and activity history                                             |
-| View domains                      | View domains and domain audit settings                                                          |
-| Manage domains                    | Manage verified domains and domain audit settings                                               |
-| View SSO and SCIM                 | View single sign-on and user provisioning configurations                                        |
-| Manage SSO and SCIM               | Full access to SSO and SCIM management                                                          |
-| Manage Desktop settings           | Configure Docker Desktop settings policies and view usage reports                               |
-
-### Docker Hub
-
-| Permission          | Description                                                |
-| :------------------ | :--------------------------------------------------------- |
-| View repositories   | View repository details and contents                       |
-| Manage repositories | Create, update, and delete repositories and their contents |
-
-### Billing
-
-| Permission     | Description                                      |
-| :------------- | :----------------------------------------------- |
-| View billing   | View organization billing information            |
-| Manage billing | Complete access to managing organization billing |
+See the [Custom role permissions reference](custom-role-permissions.md).

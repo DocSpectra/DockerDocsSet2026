@@ -11,7 +11,7 @@ aliases:
 
 Your extension can ship a backend part with which the frontend can interact with. This page provides information on why and how to add a backend.
 
-Before you start, make sure you have installed the latest version of [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+Before you start, follow the [development prerequisites](../prerequisites.md).
 
 > Tip
 >
@@ -329,17 +329,7 @@ export function App() {
 
 ## Re-build the extension and update it
 
-Since you have modified the configuration of the extension and added a stage in the Dockerfile, you must re-build the extension.
-
-```bash
-docker build --tag=awesome-inc/my-extension:latest .
-```
-
-Once built, you need to update it, or install it if you haven't already done so.
-
-```bash
-docker extension update awesome-inc/my-extension:latest
-```
+After modifying the configuration and adding a Dockerfile stage, follow [Rebuild and update](build-install.md#rebuild-and-update).
 
 Now you can see the backend service running in the **Containers** view of the Docker Desktop Dashboard and watch the logs when you need to debug it.
 
@@ -351,7 +341,7 @@ Now you can see the backend service running in the **Containers** view of the Do
 Open the Docker Desktop Dashboard and select the **Containers** tab. You should see the response from the backend service
 call displayed.
 
-## What's next?
+## Shared guidance
 
-- Learn how to [share and publish your extension](../extensions/_index.md).
-- Learn more about extensions [architecture](../architecture/_index.md).
+- [Extension architecture](../architecture/_index.md).
+- [Extension security](../architecture/security.md).

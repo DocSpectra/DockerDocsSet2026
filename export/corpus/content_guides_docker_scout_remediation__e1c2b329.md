@@ -7,6 +7,8 @@ weight: 60
 
 {{< youtube-embed jM9zLBf8M-8 >}}
 
+## Policy recommendations
+
 Docker Scout's [remediation feature](/manuals/scout/policy/remediation.md)
 helps you address supply chain and security issues by offering tailored
 recommendations based on policy evaluations. These recommendations guide you in
@@ -23,5 +25,9 @@ In the Docker Scout Dashboard, you can view and act on these recommendations by
 reviewing violations or compliance uncertainties. With integrations like
 GitHub, you can even automate updates, directly fixing issues from the
 dashboard.
+
+## Remediation requirements
+
+See [Policy remediation requirements and recommendations](/manuals/scout/deep-dive/remediation.md).
 
 <div id="scout-lp-survey-anchor"></div>

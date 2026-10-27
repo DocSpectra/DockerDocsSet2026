@@ -5,6 +5,11 @@ description: Share an image between runners without pushing to a registry
 keywords: ci, github actions, gha, buildkit, buildx
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 As each job is isolated in its own runner, you can't use your built image
 between jobs, except if you're using [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners)
 or [Docker Build Cloud](/build-cloud).

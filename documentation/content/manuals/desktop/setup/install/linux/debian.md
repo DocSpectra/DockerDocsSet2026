@@ -22,9 +22,11 @@ This page contains information on how to install, launch, and upgrade Docker Des
 
 ## Prerequisites
 
+Review the [Docker Desktop license agreement](/manuals/subscription/desktop-license.md) and [Docker Desktop/Engine coexistence and contexts](engine-context.md).
+
 To install Docker Desktop successfully, you must:
 
-- Meet the [general system requirements](_index.md#general-system-requirements).
+- Meet the [general system requirements](requirements.md#general-system-requirements).
 - Have a 64-bit version of Debian 12.
 - For a Gnome Desktop environment, you must also install AppIndicator and KStatusNotifierItem [Gnome extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
@@ -60,18 +62,11 @@ Recommended approach to install Docker Desktop on Debian:
 
    By default, Docker Desktop is installed at `/opt/docker-desktop`.
 
-The DEB package includes a post-install script that completes additional setup steps automatically.
-
-The post-install script:
-
-- Sets the capability on the Docker Desktop binary to map privileged ports and set resource limits.
-- Adds a DNS name for Kubernetes to `/etc/hosts`.
-- Creates a symlink from `/usr/local/bin/com.docker.cli` to `/usr/bin/docker`.
-  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at`/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
+See [Linux DEB and RPM post-install setup](package-installation.md) for the automatic capability, DNS, and Docker CLI symlink changes.
 
 ## Launch Docker Desktop
 
-{{% include "desktop-linux-launch.md" %}}
+Follow [Start, verify, and stop Docker Desktop on Linux](/manuals/desktop/setup/linux-start.md) for launch and agreement acceptance, binary version checks, starting on sign in, and stopping Docker Desktop.
 
 ## Upgrade Docker Desktop
 

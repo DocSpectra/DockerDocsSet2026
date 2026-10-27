@@ -93,24 +93,7 @@ are invoked, enforced through resource and access limitations.
 
 ### OAuth authentication
 
-Some MCP servers require authentication to access external services like
-GitHub, Notion, and Linear. The MCP Toolkit handles OAuth authentication
-automatically. You authorize access through your browser, and the Toolkit
-manages credentials securely. You don't need to manually create API tokens or
-configure authentication for each service.
-
-#### Authorize a server with OAuth
-
-1. In Docker Desktop, go to **MCP Toolkit** and select the **Catalog** tab.
-2. Find and add an MCP server that requires OAuth.
-3. In the server's **Configuration** tab, select the **OAuth** authentication
-   method. Follow the link to begin the OAuth authorization.
-4. Your browser opens the authorization page for the service. Follow the
-   on-screen instructions to complete authentication.
-5. Return to Docker Desktop when authentication is complete.
-
-View all authorized services in the **OAuth** tab. To revoke access, select
-**Revoke** next to the service you want to disconnect.
+See [Authorize MCP servers with OAuth](oauth.md) for authorization, revocation, and credential sharing across profiles.
 
 ## Usage examples
 

@@ -5,6 +5,11 @@ description: How to update the repository README in Docker Hub using with GitHub
 keywords: ci, github actions, gha, buildkit, buildx, docker hub
 ---
 
+For prerequisites, see [GitHub Actions guide](/guides/gha.md#prerequisites).
+For Docker Hub setup, see [Configure registry credentials](registry-credentials.md).
+Follow the variable and secret names in the workflow below.
+
+
 You can update the Docker Hub repository description using a third party action
 called [Docker Hub Description](https://github.com/peter-evans/dockerhub-description)
 with this action:

@@ -17,7 +17,7 @@ Use the Docker Admin Console to create and manage settings policies for Docker D
 Before you begin, make sure you have:
 
 - [Docker Desktop](/manuals/desktop/release-notes.md) installed
-- [A verified domain](/enterprise/security/single-sign-on/connect/#step-1-add-a-domain)
+- [A verified domain](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain)
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 
@@ -63,33 +63,11 @@ To create a new settings policy:
 
 ## Apply the policy
 
-Settings policies take effect after Docker Desktop restarts and users sign in.
-
-For new installations:
-
-1. Launch Docker Desktop.
-1. Sign in with your Docker account.
-
-For existing installations:
-
-1. Quit Docker Desktop completely.
-1. Relaunch Docker Desktop.
-
-> [!IMPORTANT]
->
-> Users must fully quit and reopen Docker Desktop. Restarting from the Docker Desktop menu isn't sufficient.
-
-Docker Desktop checks for policy updates when it launches and every 60 minutes while running.
+Follow [Apply and inspect managed settings](apply-settings.md#apply-settings), including the full-quit requirement and [policy update timing](apply-settings.md#policy-update-timing).
 
 ## Verify applied settings
 
-After you apply policies:
-
-- Docker Desktop displays most settings as greyed out
-- Some settings, particularly Enhanced Container Isolation configurations,
-  may not appear in the GUI
-- You can verify all applied settings by checking the [`settings-store.json`
-  file](/manuals/desktop/settings-and-maintenance/settings.md) on your system
+Follow [Verify policy application](apply-settings.md#verify-policy-application).
 
 ## Manage existing policies
 

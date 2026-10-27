@@ -7,6 +7,8 @@ aliases:
   - /scout/env-vars/
 ---
 
+## CLI and container image settings
+
 The following environment variables are available to configure the Docker Scout
 CLI commands, and the corresponding `docker/scout-cli` container image:
 

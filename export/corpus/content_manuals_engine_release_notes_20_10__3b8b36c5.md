@@ -11,6 +11,19 @@ toc_max: 2
 This document describes the latest changes, additions, known issues, and fixes
 for Docker Engine version 20.10.
 
+## Related guidance
+
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Known issues: [20.10.15](#201015)
+- Security notes: [20.10.24](#201024), [20.10.22](#201022), [20.10.20](#201020), [20.10.19](#201019), [20.10.18](#201018), [20.10.17](#201017), [20.10.16](#201016), [20.10.14](#201014), [20.10.12](#201012), [20.10.11](#201011), [20.10.9](#20109), [20.10.7](#20107), [20.10.6](#20106), [20.10.4](#20104), [20.10.3](#20103), [20.10.0](#20100)
+- Deprecations, removals, and breaking changes: [20.10.8](#20108), [20.10.0](#20100)
+- Notes and warnings: [20.10.12](#201012), [20.10.11](#201011), [20.10.10](#201010), [20.10.9](#20109), [20.10.8](#20108)
+
 ## 20.10.24
 {{< release-date date="2023-04-04" >}}
 
@@ -401,7 +414,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 
 > [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to [Configure the daemon to use a proxy](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
+> Review the [HTTPS proxy configuration requirement](upgrade.md#docker-2010-https-proxies) for this release.
 
 
 ### Distribution
@@ -424,7 +437,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 
 > [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
+> Review the [HTTPS proxy configuration requirement](upgrade.md#docker-2010-https-proxies) for this release.
 
 
 ### Builder
@@ -458,7 +471,7 @@ well as updated versions of the containerd.io package.
 
 > [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
+> Review the [HTTPS proxy configuration requirement](upgrade.md#docker-2010-https-proxies) for this release.
 
 ### Client
 
@@ -496,7 +509,7 @@ well as updated versions of the containerd.io package.
 
 > [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
+> Review the [HTTPS proxy configuration requirement](upgrade.md#docker-2010-https-proxies) for this release.
 
 ### Deprecation
 

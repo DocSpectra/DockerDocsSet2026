@@ -17,8 +17,8 @@ This page explains how Docker Compose determines the final value of an environme
 The order of precedence (highest to lowest) is as follows:
 1. Set using [`docker compose run -e` in the CLI](set-environment-variables.md#set-environment-variables-with-docker-compose-run---env).
 2. Set with either the `environment` or `env_file` attribute but with the value interpolated from your [shell](variable-interpolation.md#substitute-from-the-shell) or an environment file. (either your default [`.env` file](variable-interpolation.md#env-file), or with the [`--env-file` argument](variable-interpolation.md#substitute-with---env-file) in the CLI).
-3. Set using just the [`environment` attribute](set-environment-variables.md#use-the-environment-attribute) in the Compose file.
-4. Use of the [`env_file` attribute](set-environment-variables.md#use-the-env_file-attribute) in the Compose file.
+3. Set using just the [`environment` attribute](/reference/compose-file/services.md#environment) in the Compose file.
+4. Use of the [`env_file` attribute](/reference/compose-file/services.md#env_file) in the Compose file.
 5. Set in a container image in the [ENV directive](/reference/dockerfile.md#env).
    Having any `ARG` or `ENV` setting in a `Dockerfile` evaluates only if there is no Docker Compose entry for `environment`, `env_file` or `run --env`.
 
@@ -107,5 +107,5 @@ Results 13 to 15: The `--env` flag has higher precedence than the `environment` 
 
 ## Next steps
 
-- [Set environment variables in Compose](set-environment-variables.md)
+- [Interpolation and environment file syntax](interpolation-syntax.md)
 - [Use variable interpolation in Compose files](variable-interpolation.md)

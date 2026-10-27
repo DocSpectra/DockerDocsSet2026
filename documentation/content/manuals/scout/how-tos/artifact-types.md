@@ -30,6 +30,8 @@ you can force Docker Scout to analyze the registry version of the image:
 $ docker scout cves registry://<image>
 ```
 
+For CLI installation, see [Install Docker Scout](/manuals/scout/install.md).
+
 ## Supported prefixes
 
 The supported prefixes are:

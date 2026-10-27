@@ -11,6 +11,12 @@ The top-level `models` section declares AI models that are used by your Compose 
 
 Services can only access models when explicitly granted by a [`models` attribute](services.md#models) within the `services` top-level element.
 
+## Find model rules by task
+
+- Declare models: [Attributes](#attributes).
+- Grant service access and set environment variable names: [service models](services.md#models).
+- Follow the model workflow: [Use AI models in Compose](/manuals/ai/compose/models-and-compose.md).
+
 ## Examples
 
 ### Example 1

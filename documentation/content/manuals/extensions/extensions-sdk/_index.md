@@ -50,3 +50,21 @@ the extension to Docker Hub. See [Extensions distribution](extensions/DISTRIBUTI
 {{% include "extensions-form.md" %}}
 
 {{< grid >}}
+
+## Find a task
+
+- [Build an extension](build/_index.md).
+- [Test, debug, and use SDK tools](dev/_index.md).
+- [Use extension APIs](dev/api/_index.md).
+- [Use host tools, Kubernetes, OAuth, or the Docker socket](guides/_index.md).
+- [Design and style the UI](design/_index.md).
+- [Package, release, share, and publish](extensions/_index.md).
+
+## Shared procedures and context
+
+- [Development prerequisites](prerequisites.md).
+- [Build, install, and update](build/build-install.md).
+- [Command execution](dev/api/backend.md).
+- [Architecture](architecture/_index.md).
+- [Metadata](architecture/metadata.md).
+- [Security and UI runtime policies](architecture/security.md).

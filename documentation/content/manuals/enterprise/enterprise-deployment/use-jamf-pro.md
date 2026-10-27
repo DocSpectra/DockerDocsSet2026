@@ -12,13 +12,15 @@ aliases:
 
 Learn how to deploy Docker Desktop for Mac using Jamf Pro, including uploading the installer and creating a deployment policy.
 
-First, upload the package:
+For the package download steps, see [Download the macOS PKG installer](download-installers.md#macos-pkg).
+
+## Upload the package
 
 1. From the Jamf Pro console, navigate to **Computers** > **Management Settings** > **Computer Management** > **Packages**.
 2. Select **New** to add a new package.
 3. Upload the `Docker.pkg` file.
 
-Next, create a policy for deployment:
+## Create a deployment policy
 
 1. Navigate to **Computers** > **Policies**.
 2. Select **New** to create a new policy.

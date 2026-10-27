@@ -79,3 +79,7 @@ Craft optimized container images with Dockerfiles, build cache, and multi-stage 
 Master essential techniques for exposing ports, overriding defaults, persisting data, sharing files, and managing multi-container applications.
 
 {{< grid items="running-containers" >}}
+
+## Find task-specific steps
+
+[Browse the hands-on Docker tasks](/get-started/tasks/_index.md).

@@ -7,12 +7,7 @@ keywords: docker sandboxes, credentials, api keys, authentication, proxy, ssh ag
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 
-Most agents need an API key for their model provider. An HTTP/HTTPS proxy on
-your host intercepts outbound API requests from the sandbox and injects the
-appropriate authentication headers before forwarding each request. Your
-credentials stay on the host and are never stored inside the sandbox VM. For
-how this works as a security layer, see
-[Credential isolation](isolation.md#credential-isolation).
+For how the host-side proxy handles credentials, see [Credential isolation](isolation.md#credential-isolation).
 
 There are two ways to provide credentials:
 
@@ -24,8 +19,7 @@ There are two ways to provide credentials:
 
 If both are set for the same service, the stored secret takes precedence. For
 multi-provider agents (OpenCode, Docker Agent), the proxy automatically selects the
-correct credentials based on the API endpoint being called. See individual
-[agent pages](../agents/) for provider-specific details.
+correct credentials based on the API endpoint being called. Use the provider-specific details in your agent guide.
 
 ## Stored secrets
 
@@ -138,8 +132,7 @@ $ export ANTHROPIC_API_KEY=sk-ant-api03-xxxxx
 $ sbx run claude
 ```
 
-The proxy reads the variable from your terminal session. See individual
-[agent pages](../agents/) for the variable names each agent expects.
+The proxy reads the variable from your terminal session. Use the variable names from your agent guide.
 
 > [!NOTE]
 > These environment variables are set on your host, not inside the sandbox.

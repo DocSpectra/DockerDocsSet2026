@@ -6,7 +6,9 @@ weight: 10
 notoc: true
 ---
 
-After you complete the [tutorial setup](index.md) steps, you're ready
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [manager advertise addresses](../advertise-address.md).
+
+After you complete the [tutorial setup](../prerequisites.md) steps, you're ready
 to create a swarm. Make sure the Docker Engine daemon is started on the host
 machines.
 

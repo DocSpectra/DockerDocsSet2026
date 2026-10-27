@@ -21,6 +21,8 @@ Microsoft Dev Box provides cloud-based, pre-configured developer workstations th
 - Session state persists between uses
 - Works with your existing Docker subscription
 
+For subscription context, see [Docker Desktop licensing](/manuals/subscription/desktop-license.md).
+
 ## Setup
 
 ### Prerequisites

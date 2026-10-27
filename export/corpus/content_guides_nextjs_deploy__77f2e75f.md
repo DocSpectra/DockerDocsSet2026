@@ -11,10 +11,9 @@ description: Learn how to deploy locally to test and debug your Kubernetes deplo
 
 Before you begin, make sure you've completed the following:
 - Complete all the previous sections of this guide, starting with [Containerize Next.js application](containerize.md).
-- [Enable Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
+- Complete the [Kubernetes prerequisite](/guides/local-kubernetes.md#prerequisites).
 
-> **New to Kubernetes?**  
-> Visit the [Kubernetes basics tutorial](https://kubernetes.io/docs/tutorials/kubernetes-basics/) to get familiar with how clusters, pods, deployments, and services work.
+For the Kubernetes basics tutorial, see [Prerequisites and context](/guides/kubernetes-deployment-cycle.md#prerequisites-and-context).
 
 ---
 
@@ -97,6 +96,8 @@ This manifest defines two key Kubernetes resources, separated by `---`:
 
 ## Deploy and check your application
 
+Follow the [local Kubernetes deployment cycle](/guides/kubernetes-deployment-cycle.md) with the commands and expected output below.
+
 Follow these steps to deploy your containerized Next.js app into a local Kubernetes cluster and verify that it's running correctly.
 
 ### Step 1. Apply the Kubernetes configuration
@@ -120,9 +121,7 @@ This output means that both the Deployment and the Service were successfully cre
 
 Run the following command to check the status of your deployment:
    
-```console
-  $ kubectl get deployments
-```
+See [Check deployments](/guides/kubernetes-deployment-cycle.md#check-deployments) for the command.
 
 You should see an output similar to:
 
@@ -137,9 +136,7 @@ This confirms that your pod is up and running with one replica available.
 
 Check if the NodePort service is exposing your app to your local machine:
 
-```console
-$ kubectl get services
-```
+See [Check services](/guides/kubernetes-deployment-cycle.md#check-services) for the command.
 
 You should see something like:
 

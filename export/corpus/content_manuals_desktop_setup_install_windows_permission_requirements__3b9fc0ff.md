@@ -30,6 +30,21 @@ When Docker Desktop launches, all non-privileged named pipes are created so that
 - Members of the local `Administrators` group.
 - The `LOCALSYSTEM` account.
 
+### Add a user to docker-users
+
+If your administrator account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers:
+
+1. Run **Computer Management** as an **administrator**.
+2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
+3. Right-click to add the user to the group.
+4. Sign out and sign back in for the changes to take effect.
+
+From the command line, run:
+
+```console
+$ net localgroup docker-users <user> /add
+```
+
 ## Privileged helper
 
 Docker Desktop needs to perform a limited set of privileged operations which are conducted by the privileged helper process `com.docker.service`. This approach allows, following the principle of least privilege, `Administrator` access to be used only for the operations for which it is absolutely necessary, while still being able to use Docker Desktop as an unprivileged user.
@@ -67,16 +82,7 @@ into Docker containers still retain their original permissions.  Containers don'
 
 ## Enhanced Container Isolation
 
-In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
-available to Business customers only, which further secures containers without
-impacting developer workflows.
-
-ECI automatically runs all containers within a Linux user-namespace, such that
-root in the container is mapped to an unprivileged user inside the Docker
-Desktop VM. ECI uses this and other advanced techniques to further secure
-containers within the Docker Desktop Linux VM, such that they are further
-isolated from the Docker daemon and other services running inside the VM.
+See [Enhanced Container Isolation in Docker Desktop](container-isolation.md) for Business availability, user-namespace mapping, and isolation within the Linux VM.
 
 ## Windows containers
 

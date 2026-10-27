@@ -12,6 +12,8 @@ aliases:
 
 Complete [Develop your app](develop.md).
 
+For context, see [Ruff installation and environment](#linting-and-formatting-with-ruff), [Pyright configuration](#type-checking-with-pyright), and [Pre-commit hooks](#setting-up-pre-commit-hooks).
+
 ## Overview
 
 In this section, you'll learn how to set up code quality tools for your Python application. This includes:
@@ -22,7 +24,7 @@ In this section, you'll learn how to set up code quality tools for your Python a
 
 ## Linting and formatting with Ruff
 
-Ruff is an extremely fast Python linter and formatter written in Rust. It replaces multiple tools like flake8, isort, and black with a single unified tool.
+For tool context, see [Python code checking tools](code-checks.md).
 
 Before using Ruff, install it in your Python environment:
 
@@ -74,7 +76,7 @@ ruff format .
 
 ## Type checking with Pyright
 
-Pyright is a fast static type checker for Python that works well with modern Python features.
+For tool context, see [Python code checking tools](code-checks.md).
 
 Add `Pyright` configuration in `pyproject.toml`:
 
@@ -95,7 +97,7 @@ pyright
 
 ## Setting up pre-commit hooks
 
-Pre-commit hooks automatically run checks before each commit. The following `.pre-commit-config.yaml` snippet sets up Ruff:
+The following `.pre-commit-config.yaml` snippet sets up Ruff:
 
 ```yaml
   https: https://github.com/charliermarsh/ruff-pre-commit

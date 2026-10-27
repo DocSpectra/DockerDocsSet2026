@@ -18,6 +18,14 @@ To use a volume across multiple services, you must explicitly grant each service
 > Compose now takes advantage of [Synchronized file shares](/manuals/desktop/features/synchronized-file-sharing.md) and automatically creates file shares for bind mounts. 
 > Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
 
+## Find volume rules by task
+
+- Persistent data context: [Volumes](/manuals/engine/storage/volumes.md).
+- Configure volume creation: [driver](#driver), [driver_opts](#driver_opts).
+- Use an existing volume: [external](#external), [name](#name).
+- Configure metadata: [labels](#labels).
+- Configure mounts and path handling: [service volumes](services.md#volumes).
+
 ## Example
 
 The following example shows a two-service setup where a database's data directory is shared with another service as a volume, named

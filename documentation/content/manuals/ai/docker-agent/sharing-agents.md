@@ -12,6 +12,9 @@ around or asking you where your agent configuration lives.
 When you update the agent in the registry, everyone gets the new version
 the next time they pull or restart their client.
 
+Agent configurations are packaged as OCI artifacts. Push and pull them like
+container images.
+
 ## Prerequisites
 
 To push agents to a registry, authenticate first:

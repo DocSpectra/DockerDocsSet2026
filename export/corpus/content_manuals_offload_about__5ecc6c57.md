@@ -101,4 +101,4 @@ at Docker's discretion.
 
 ## What's next
 
-Get hands-on with Docker Offload by following the [Docker Offload quickstart](/offload/quickstart/).
+See [Docker Offload prerequisites and access requirements](requirements.md).

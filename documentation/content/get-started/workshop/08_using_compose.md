@@ -10,14 +10,13 @@ aliases:
  - /guides/workshop/08_using_compose/
 ---
 
-[Docker Compose](/manuals/compose/_index.md) is a tool that helps you define and
-share multi-container applications. With Compose, you can create a YAML file to define the services
-and with a single command, you can spin everything up or tear it all down.
+## Before you begin
 
-The big advantage of using Compose is you can define your application stack in a file, keep it at the root of
-your project repository (it's now version controlled), and easily enable someone else to contribute to your project.
-Someone would only need to clone your repository and start the app using Compose. In fact, you might see quite a few projects
-on GitHub/GitLab doing exactly this now.
+- [Workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Workshop sequence](/get-started/workshop/_index.md#workshop-steps)
+- [Docker Compose context](/get-started/docker-concepts/the-basics/what-is-docker-compose.md)
+- [Compose networking](/manuals/compose/how-tos/networking.md)
+
 
 ## Create the Compose file
 

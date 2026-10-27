@@ -21,7 +21,7 @@ params:
 > [Shakirth Anisha](https://www.linkedin.com/in/shakirth-anisha/) for her contribution
 > to this guide.
 
-[ROS 2](https://www.ros.org/) is a set of software libraries and tools for building robot applications. It uses Data Distribution Service (DDS) for real-time, secure communication between distributed nodes, making it ideal for robotics and autonomous systems.
+[ROS 2 concepts and prerequisites](concepts.md).
 
 ---
 
@@ -37,12 +37,14 @@ In this guide, you'll learn how to:
 
 ## Prerequisites
 
-Before you begin, make sure you're familiar with the following:
-
-- [Docker Desktop](https://docs.docker.com/desktop/): You must have Docker Desktop installed and running.
-- [Docker concepts](/get-started/docker-concepts/the-basics/what-is-a-container.md): You must understand core Docker concepts, such as images and containers.
-- [ROS 2 concepts](https://www.ros.org): Basic understanding of concepts like nodes, packages, topics, and services.
+[ROS 2 concepts and prerequisites](concepts.md#prerequisites).
 
 ## What's next?
 
 Start by setting up your ROS 2 development environment using Docker and dev containers.
+
+## Tasks
+
+- [Run ROS 2 and install packages](run-ros2.md)
+- [Build and develop a workspace](develop.md)
+- [Run the Turtlesim example](turtlesim-example.md)

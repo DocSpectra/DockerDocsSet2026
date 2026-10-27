@@ -24,6 +24,13 @@ Start from zero and learn Docker's core building blocks. You'll run pre-built
 containers, write a `Dockerfile` to package a Node.js app, build your own
 image, and see container immutability and isolation in action.
 
+## Shared context and procedures
+
+- [Containers](/get-started/docker-concepts/the-basics/what-is-a-container.md)
+- [Dockerfiles](/get-started/docker-concepts/building-images/writing-a-dockerfile.md)
+- [Build cache](/manuals/build/cache/_index.md)
+- [Images and registries](/get-started/docker-concepts/the-basics/what-is-a-registry.md)
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-container-getting-started" >}}

@@ -11,7 +11,7 @@ aliases:
 
 ## Prerequisites
 
-- You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
 - You have a Docker Desktop installed, with containerd enabled for pulling and storing images (it's a checkbox in **Settings** > **General**). Otherwise, if you use Docker Engine:
   - You have the [Docker SBOM CLI plugin](https://github.com/docker/sbom-cli-plugin) installed. To install it on Docker Engine, use the following command:
 
@@ -26,6 +26,8 @@ aliases:
     ```
     
   - You have [containerd enabled](https://docs.docker.com/engine/storage/containerd/) for Docker Engine.
+
+For context, see [SBOM attestations](/manuals/build/metadata/attestations/sbom.md).
 
 ## Overview
 

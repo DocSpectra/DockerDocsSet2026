@@ -16,15 +16,18 @@ aliases:
   - /guides/walkthroughs/containerize-your-app/
 ---
 
+## Before you begin
+
+- [Workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Workshop sequence](/get-started/workshop/_index.md#workshop-steps)
+- [Dockerfile instructions](/get-started/docker-concepts/building-images/writing-a-dockerfile.md)
+- [Build and tag images](/get-started/docker-concepts/building-images/build-tag-and-publish-an-image.md)
+- [Port publishing and network-interface caveat](/get-started/docker-concepts/running-containers/publishing-ports.md#publishing-ports)
+
+
 For the rest of this guide, you'll be working with a simple todo
 list manager that runs on Node.js. If you're not familiar with Node.js,
 don't worry. This guide doesn't require any prior experience with JavaScript.
-
-## Prerequisites
-
-- You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
-- You have installed a [Git client](https://git-scm.com/downloads).
-- You have an IDE or a text editor to edit files. Docker recommends using [Visual Studio Code](https://code.visualstudio.com/).
 
 ## Get the app
 

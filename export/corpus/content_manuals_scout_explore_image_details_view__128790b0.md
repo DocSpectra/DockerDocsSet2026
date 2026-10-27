@@ -8,6 +8,8 @@ aliases:
   - /scout/image-details-view
 ---
 
+## Open image details
+
 The image details view shows a breakdown of the Docker Scout analysis. You can
 access the image view from the Docker Scout Dashboard, the Docker Desktop
 **Images** view, and from the image tag page on Docker Hub. The image details
@@ -16,9 +18,7 @@ and vulnerabilities.
 
 ![The image details view in Docker Desktop](../images/dd-image-view.png)
 
-Docker Desktop first analyzes images locally, where it generates a software bill of materials (SBOM).
-Docker Desktop, Docker Hub, and the Docker Scout Dashboard and CLI all use the [package URL (PURL) links](https://github.com/package-url/purl-spec)
-in this SBOM to query for matching Common Vulnerabilities and Exposures (CVEs) in [Docker Scout's advisory database](/manuals/scout/deep-dive/advisory-db-sources.md).
+For local indexing and vulnerability matching, see [Docker Desktop analysis and vulnerability matching](/manuals/scout/deep-dive/sboms.md#docker-desktop-analysis-and-vulnerability-matching).
 
 ## Image hierarchy
 

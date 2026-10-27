@@ -38,10 +38,10 @@ grid:
   description: Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
   icon: move_down
   link: /compose/bridge
-- title: Browse common FAQs
-  description: Explore general FAQs and find out how to give feedback.
+- title: Give feedback
+  description: Find ways to give feedback on Docker Compose.
   icon: help
-  link: /compose/faq
+  link: /manuals/compose/support-and-feedback/feedback.md
 aliases:
 - /compose/cli-command/
 - /compose/networking/swarm/
@@ -64,5 +64,12 @@ well as CI workflows. It also has commands for managing the whole lifecycle of y
  - View the status of running services
  - Stream the log output of running services
  - Run a one-off command on a service
+
+## Find a task or shared context
+
+- [Task procedures](how-tos/_index.md)
+- [Compose concepts and shared context](intro/_index.md)
+- [CLI procedures](intro/compose-cli.md)
+- [Trust model](trust-model.md)
 
 {{< grid >}}

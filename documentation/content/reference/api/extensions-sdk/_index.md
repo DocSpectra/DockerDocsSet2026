@@ -8,34 +8,48 @@ aliases:
  - /extensions/extensions-sdk/dev/api/reference/README/
 ---
 
-## Dashboard interfaces
+## Client and extension interfaces
 
-- [Host](Host.md)
-- [NavigationIntents](NavigationIntents.md)
-- [Toast](Toast.md)
+- [DockerDesktopClient](DockerDesktopClient.md)
+- [Extension](Extension.md)
+- [ExtensionVM](ExtensionVM.md)
+- [ExtensionHost](ExtensionHost.md)
+- [ExtensionCli](ExtensionCli.md)
 
-## Other interfaces
+## Docker objects and commands
 
-- [ExecResultV0](ExecResultV0.md)
-- [RequestConfigV0](RequestConfigV0.md)
-- [BackendV0](BackendV0.md)
-- [OpenDialogResult](OpenDialogResult.md)
-- [Dialog](Dialog.md)
 - [Docker](Docker.md)
 - [DockerCommand](DockerCommand.md)
+
+## Command execution, results, and options
+
+- [Exec](Exec.md)
 - [ExecOptions](ExecOptions.md)
 - [SpawnOptions](SpawnOptions.md)
-- [Exec](Exec.md)
 - [ExecProcess](ExecProcess.md)
 - [ExecStreamOptions](ExecStreamOptions.md)
 - [ExecResult](ExecResult.md)
 - [RawExecResult](RawExecResult.md)
-- [Extension](Extension.md)
-- [DesktopUI](DesktopUI.md)
-- [ExtensionVM](ExtensionVM.md)
-- [ExtensionHost](ExtensionHost.md)
-- [ExtensionCli](ExtensionCli.md)
+
+For shared behavior, see [Extension service and command execution](/manuals/extensions/extensions-sdk/dev/api/backend.md).
+
+## Backend HTTP requests
+
 - [HttpService](HttpService.md)
 - [RequestConfig](RequestConfig.md)
 - [ServiceError](ServiceError.md)
-- [DockerDesktopClient](DockerDesktopClient.md)
+
+## Dashboard and host interactions
+
+- [DesktopUI](DesktopUI.md)
+- [Host](Host.md)
+- [NavigationIntents](NavigationIntents.md)
+- [Toast](Toast.md)
+- [Dialog](Dialog.md)
+- [OpenDialogResult](OpenDialogResult.md)
+
+## V0 interfaces
+
+- [BackendV0](BackendV0.md)
+- [ExecResultV0](ExecResultV0.md)
+- [RequestConfigV0](RequestConfigV0.md)

@@ -15,8 +15,9 @@ aliases:
 
 * You have installed the latest version of [Docker
   Desktop](/get-started/get-docker.md).
-* You have a [git client](https://git-scm.com/downloads). The examples in this
-  section use a command-line based git client, but you can use any client.
+- See the [Git client prerequisite](/guides/prerequisites.md#git-client).
+
+For context, see [Multi-stage builds](/manuals/build/building/multi-stage.md).
 
 ## Overview
 
@@ -38,6 +39,8 @@ $ git clone https://github.com/docker/docker-dotnet-sample
 ```
 
 ## Initialize Docker assets
+
+For the shared procedure and generated file references, see [Initialize Docker assets](/guides/docker-init.md).
 
 Now that you have an application, you can create the necessary Docker assets to containerize it. You can choose between using the official .NET images or Docker Hardened Images (DHI).
 
@@ -175,17 +178,12 @@ directory.
 
 To learn more about the files, see the following:
  - [Dockerfile](/reference/dockerfile.md)
- - [.dockerignore](/reference/dockerfile.md#dockerignore-file)
+ - [.dockerignore](/manuals/build/concepts/context.md#dockerignore-files)
  - [compose.yaml](/reference/compose-file/_index.md)
 
 ## Run the application
 
-Inside the `docker-dotnet-sample` directory, run the following command in a
-terminal.
-
-```console
-$ docker compose up --build
-```
+Inside the `docker-dotnet-sample` directory, follow [Run in the foreground](/guides/run-compose-application.md#run-in-the-foreground).
 
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple web application.
 
@@ -193,21 +191,11 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 ### Run the application in the background
 
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `docker-dotnet-sample` directory, run the following command
-in a terminal.
-
-```console
-$ docker compose up --build -d
-```
+Inside the `docker-dotnet-sample` directory, follow [Run in the background](/guides/run-compose-application.md#run-in-the-background).
 
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple web application.
 
-In the terminal, run the following command to stop the application.
-
-```console
-$ docker compose down
-```
+Follow [Stop the background application](/guides/run-compose-application.md#stop-the-background-application).
 
 For more information about Compose commands, see the [Compose CLI
 reference](/reference/cli/docker/compose/).
@@ -219,7 +207,7 @@ application using Docker.
 
 Related information:
  - [Dockerfile reference](/reference/dockerfile.md)
- - [.dockerignore file reference](/reference/dockerfile.md#dockerignore-file)
+ - [.dockerignore file reference](/manuals/build/concepts/context.md#dockerignore-files)
  - [Docker Compose overview](/manuals/compose/_index.md)
  - [Docker Hardened Images](/dhi/)
 

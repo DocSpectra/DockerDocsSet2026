@@ -123,7 +123,7 @@ From within a profile:
 3. Search for and select servers to add.
 
 If a server requires OAuth authentication, you're prompted to authorize it. See
-[OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
+[OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/oauth.md#oauth-authentication)
 for details.
 
 ### List servers in a profile
@@ -149,16 +149,7 @@ settings within your profile.
 
 ### OAuth credentials
 
-OAuth credentials are shared across all profiles. When you authorize access to
-a service like GitHub or Notion, that authorization is available to any server
-in any profile that needs it.
-
-This means all profiles use the same OAuth credentials for a given service. If
-you need to use different accounts for different projects, you'll need to
-revoke and re-authorize between switching profiles.
-
-See [OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
-for details on authorizing servers.
+See [Credentials across profiles](oauth.md#credentials-across-profiles) for shared authorization and switching service accounts, and [Authorize a server with OAuth](oauth.md#authorize-a-server-with-oauth) for authorization steps.
 
 ### Configuration persistence
 

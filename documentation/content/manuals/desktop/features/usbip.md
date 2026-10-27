@@ -17,6 +17,8 @@ USB/IP enables you to share USB devices over the network, which can then be acce
 >
 > Docker Desktop includes built-in drivers for many common USB devices but Docker can't guarantee every possible USB device works with this setup.
 
+For host networking context, see [Networking on Docker Desktop](networking/_index.md).
+
 ## Setup and use
 
 ### Step one: Run a USB/IP server

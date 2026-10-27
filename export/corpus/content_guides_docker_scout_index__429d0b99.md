@@ -61,4 +61,14 @@ other CI solutions.
   vulnerability assessments, and ensure the overall security of containerized
   applications.
 
+## Choose a lesson
+
+- [Why Docker Scout?](./why.md)
+- [Docker Scout demo](./demo.md)
+- [Software supply chain security](./s3c.md)
+- [Software bills of materials](./sbom.md)
+- [Attestations](./attestations.md)
+- [Remediation](./remediation.md)
+- [Common challenges and questions](./common-questions.md)
+
 <div id="scout-lp-survey-anchor"></div>

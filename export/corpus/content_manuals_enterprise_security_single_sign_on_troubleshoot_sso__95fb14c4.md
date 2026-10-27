@@ -16,25 +16,7 @@ This page describes common single sign-on (SSO) errors and their solutions. Issu
 
 ## Check for errors
 
-If you experience SSO issues, check both Docker and your identity provider for errors first.
-
-### Check Docker error logs
-
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **View error logs**.
-1. For more details on specific errors, select **View error details** next to an error message.
-1. Note any errors you see on this page for further troubleshooting.
-
-### Check identity provider errors
-
-1. Review your IdP’s logs or audit trails for any failed authentication or provisioning attempts.
-2. Confirm that your IdP’s SSO settings match the values provided in Docker.
-3. If applicable, confirm that you have configured user provisioning correctly and that it is enabled in your IdP.
-4. If applicable, verify that your IdP correctly maps Docker's required user attributes.
-5. Try provisioning a test user from your IdP and verify if they appear in Docker.
-
-For further troubleshooting, check your IdP's documentation or contact their support team.
+Follow [Inspect Docker and identity-provider errors](diagnostics.md).
 
 ## Groups are not formatted correctly
 
@@ -111,13 +93,11 @@ To manually invite users, see [Invite members](/manuals/admin/organization/manag
 
 If you have SCIM enabled, troubleshoot your SCIM connection using the following steps:
 
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **View error logs**. For more details on specific errors, select **View error details** next to an error message. Note any errors you see on this page.
+1. Follow [Check Docker error logs](diagnostics.md#check-docker-error-logs).
 1. Navigate back to the **SSO and SCIM** page of the Admin Console and verify your SCIM configuration:
    - Ensure that the SCIM Base URL and API Token in your IdP match those provided in the Docker Admin Console.
    - Verify that SCIM is enabled in both Docker and your IdP.
-1. Ensure that the attributes being synced from your IdP match Docker's [supported attributes](/manuals/enterprise/security/provisioning/scim/provision-scim.md#supported-attributes) for SCIM.
+1. Ensure that the attributes being synced from your IdP match Docker's [supported attributes](/manuals/enterprise/security/provisioning/scim/scim-attributes.md#supported-attributes) for SCIM.
 1. Test user provisioning by trying to provision a test user through your IdP and verify if they appear in Docker.
 
 ## IdP-initiated sign in is not enabled for connection

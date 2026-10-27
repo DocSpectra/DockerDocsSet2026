@@ -1,12 +1,12 @@
 ---
+title: Manually test the daemon TLS examples
 build:
   list: never
   publishResources: false
   render: never
 ---
 
-This is an initial attempt to make it easier to test the TLS (HTTPS) examples in the protect-access.md
-doc.
+This is an initial attempt to make it easier to test the TLS (HTTPS) examples in [Protect Docker daemon connections with TLS](../connect-tls.md).
 
 At this point, it is a manual thing, and I've been running it in boot2docker.
 

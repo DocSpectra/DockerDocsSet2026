@@ -41,7 +41,7 @@ command restrictions.
 {{< /tab >}}
 {{< tab name="JSON file" >}}
 
-Create an [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md) and add:
+Create an [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/settings-file-deployment.md) and add:
 
 ```json
 {
@@ -190,65 +190,6 @@ When a blocked command is executed:
 ```console
 / # docker push myimage
 Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings.
-```
-
-## Common configuration examples
-
-### Testcontainers setup
-
-For Java/Python testing with Testcontainers:
-
-```json
-"dockerSocketMount": {
-  "imageList": {
-    "images": [
-      "docker.io/testcontainers/ryuk:*",
-      "testcontainers/*:*"
-    ]
-  },
-  "commandList": {
-    "type": "deny",
-    "commands": ["push", "build"]
-  }
-}
-```
-
-### CI/CD pipeline tools
-
-For controlled CI/CD container management:
-
-```json
-"dockerSocketMount": {
-  "imageList": {
-    "images": [
-      "docker:cli",
-      "your-registry.com/ci-tools/*:*"
-    ]
-  },
-  "commandList": {
-    "type": "allow",
-    "commands": ["ps", "container*", "image*"]
-  }
-}
-```
-
-### Development environments
-
-For local development with Docker-in-Docker:
-
-```json
-"dockerSocketMount": {
-  "imageList": {
-    "images": [
-      "docker:dind",
-      "docker:cli"
-    ]
-  },
-  "commandList": {
-    "type": "deny",
-    "commands": ["system*"]
-  }
-}
 ```
 
 ## Security recommendations

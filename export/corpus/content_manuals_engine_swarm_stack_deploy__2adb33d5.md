@@ -10,6 +10,10 @@ a stack description in the form of a [Compose file](/reference/compose-file/lega
 
 {{% include "swarm-compose-compat.md" %}}
 
+## Prerequisites
+
+Read [Swarm host and network prerequisites](prerequisites.md).
+
 To run through this tutorial, you need:
 
 1.  A Docker Engine running in [Swarm mode](swarm-mode.md).

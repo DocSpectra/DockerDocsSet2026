@@ -6,6 +6,8 @@ weight: 30
 notoc: true
 ---
 
+For setup, read [Swarm prerequisites](../prerequisites.md). For shared procedures, see [service lifecycle commands](../service-lifecycle.md).
+
 After you [create a swarm](create-swarm.md), you can deploy a service to the
 swarm. For this tutorial, you also [added worker nodes](add-nodes.md), but that
 is not a requirement to deploy a service.

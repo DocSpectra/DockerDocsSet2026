@@ -24,21 +24,23 @@ This 45-minute workshop contains step-by-step instructions on how to get started
 > For a quick introduction to Docker and the benefits of containerizing your
 > applications, see [Getting started](/get-started/introduction/_index.md).
 
-## What is a container?
+## Before you begin
 
-A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. That isolation leverages [kernel namespaces and cgroups](https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504),
-features that have been in Linux for a long time. Docker makes these capabilities approachable and easy to use. To summarize, a container:
+- [Docker workshop prerequisites](/get-started/shared/workshop-prerequisites.md)
+- [Containers: isolation and lifecycle](/get-started/docker-concepts/the-basics/what-is-a-container.md#container-isolation-and-lifecycle)
+- [Images: filesystem and configuration](/get-started/docker-concepts/the-basics/what-is-an-image.md#filesystem-and-container-configuration)
 
-- Is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI.
-- Can be run on local machines, virtual machines, or deployed to the cloud.
-- Is portable (and can be run on any OS).
-- Is isolated from other containers and runs its own software, binaries, configurations, etc.
+## Workshop steps
 
-If you're familiar with `chroot`, then think of a container as an extended version of `chroot`. The filesystem comes from the image. However, a container adds additional isolation not available when using chroot.
-
-## What is an image?
-
-A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
+1. [Containerize an application](02_our_app.md)
+2. [Update the application](03_updating_app.md)
+3. [Share the application](04_sharing_app.md)
+4. [Persist the DB](05_persisting_data.md)
+5. [Use bind mounts](06_bind_mounts.md)
+6. [Run multiple containers](07_multi_container.md)
+7. [Use Docker Compose](08_using_compose.md)
+8. [Apply image-building best practices](09_image_best.md)
+9. [What next](10_what_next.md)
 
 ## Next steps
 

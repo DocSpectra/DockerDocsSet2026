@@ -25,6 +25,21 @@ The solution for detecting the ready state of a service is  to use the `conditio
 - `service_healthy`. This specifies that a dependency is expected to be “healthy”, which is defined with `healthcheck`, before starting a dependent service.
 - `service_completed_successfully`. This specifies that a dependency is expected to run to successful completion before starting a dependent service.
 
+## Database readiness
+
+Docker Compose ensures services start in a specific order by using the
+`depends_on` property. This tells Compose to start the database service before
+even attempting to launch the frontend service. This is crucial since
+applications often rely on databases being ready for connections.
+
+However, `depends_on` only guarantees the order, not that the database is fully
+initialized. For a more robust approach, especially if your application relies
+on a prepared database (e.g., after migrations), consider [health
+checks](/reference/compose-file/services.md#healthcheck). Here, you can
+configure the frontend to wait until the database passes its health check
+before starting. This ensures the database is not only up but also ready to
+handle requests.
+
 ## Example
 
 ```yaml

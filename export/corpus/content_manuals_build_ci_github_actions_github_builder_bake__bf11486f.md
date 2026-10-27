@@ -141,6 +141,5 @@ jobs:
 
 With `output: local`, the workflow injects the matching local output override
 into the Bake run and merges the uploaded artifacts after the per-platform
-builds finish. If you need a manual Bake pattern that stays in a normal job,
-see [Multi-platform image](../multi-platform.md). If your build does not need a
+builds finish. If your build does not need a
 Bake definition, use [build.yml](build.md) instead.

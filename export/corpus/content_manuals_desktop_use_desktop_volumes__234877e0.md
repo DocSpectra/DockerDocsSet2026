@@ -32,17 +32,7 @@ doing the following:
 
 ## Create a volume
 
-You use the following steps to create an empty volume. Alternatively, if you
-[start a container with a volume](/manuals/engine/storage/volumes.md#start-a-container-with-a-volume)
-that doesn't yet exist, Docker creates the volume for you.
-
-To create a volume:
-
-1. In the **Volumes** view, select the **Create** button.
-2. In the **New Volume** modal, specify a volume name, and then select
-   **Create**.
-
-To use the volume with a container, see [Use volumes](/manuals/engine/storage/volumes.md#start-a-container-with-a-volume).
+See [Create a volume in Docker Desktop](volume-create.md).
 
 ## Inspect a volume
 
@@ -63,22 +53,11 @@ To delete a file or a folder from the volume, right-click on the file or folder
 to display the options menu, select **Delete**, and then select **Delete** again
 to confirm.
 
-The **Exports** tab lets you [export the volume](#export-a-volume).
+The **Exports** tab lets you [export the volume](volume-export.md).
 
 ## Clone a volume
 
-Cloning a volume creates a new volume with a copy of all of the data from the
-cloned volume. When cloning a volume used by one or more running containers, the
-containers are temporarily stopped while Docker clones the data, and then
-restarted when the cloning process is completed.
-
-To clone a volume:
-
-1. Sign in to Docker Desktop. You must be signed in to clone a volume.
-2. In the **Volumes** view, select the **Clone** icon in the **Actions** column
-   for the volume you want to clone.
-3. In the **Clone a volume** modal, specify a **Volume name**, and then select
-   **Clone**.
+See [Clone a volume](volume-data.md#clone-a-volume).
 
 ## Delete one or more volumes
 
@@ -102,134 +81,23 @@ To delete multiple volumes:
 
 ## Empty a volume
 
-Emptying a volume deletes all a volume's data, but doesn't delete the volume.
-When emptying a volume used by one or more running containers, the containers
-are temporarily stopped while Docker empties the data, and then restarted when
-the emptying process is completed.
-
-To empty a volume:
-
-1. Sign in to Docker Desktop. You must be signed in to empty a volume.
-2. In the **Volumes** view, select the volume you want to empty.
-3. Next to **Import**, select the **More volume actions** icon, and then select **Empty volume**.
-4. In the **Empty a volume?** modal, select **Empty**.
+See [Empty a volume](volume-data.md#empty-a-volume).
 
 ## Export a volume
 
-You can export the content of a volume to a local file, a local image, and to an
-image in Docker Hub, or to a supported cloud provider. When exporting content
-from a volume used by one or more running containers, the containers are
-temporarily stopped while Docker exports the content, and then restarted when
-the export process is completed.
-
-You can either [export a volume now](#export-a-volume-now) or [schedule a recurring export](#schedule-a-volume-export).
+See [Export or schedule exports](volume-export.md).
 
 ### Export a volume now
 
-1. Sign in to Docker Desktop. You must be signed in to export a volume.
-2. In the **Volumes** view, select the volume you want to export.
-3. Select the **Exports** tab.
-4. Select **Quick export**.
-5. Select whether to export the volume to **Local or Hub storage** or **External
-   cloud storage**, then specify the following additional details depending on
-   your selection.
-
-   {{< tabs >}}
-   {{< tab name="Local or Hub storage" >}}
-   
-   - **Local file**: Specify a file name and select a folder.
-   - **Local image**: Select a local image to export the content to. Any
-    existing data in the image will be replaced by the exported content.
-   - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository.
-
-   {{< /tab >}}
-   {{< tab name="External cloud storage" >}}
-
-   You must have a [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to export to an external cloud provider.
-
-   Select your cloud provider and then specify the URL to upload to the storage.
-   Refer to the following documentation for your cloud provider to learn how to
-   obtain a URL.
-
-   - Amazon Web Services: [Create a presigned URL of Amazon S3 using an AWS SDK](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example_s3_Scenario_PresignedUrl_section.html)
-   - Microsoft Azure: [Generate a SAS token and URL](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/generate-sas-token)
-   - Google Cloud: [Create a signed URL to upload an object](https://cloud.google.com/storage/docs/access-control/signing-urls-with-helpers#upload-object)
-
-   {{< /tab >}}
-   {{< /tabs >}}
-
-6. Select **Save**.
+See [Export a volume now](volume-export.md#export-a-volume-now).
 
 ### Schedule a volume export
 
-1. Sign in to Docker Desktop. You must be signed in and have a paid [Docker subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to schedule a volume export.
-2. In the **Volumes** view, select the volume you want to export.
-3. Select the **Exports** tab.
-4. Select **Schedule export**.
-5. In **Recurrence**, select how often the export occurs, and then specify the
-   following additional details based on your selection.
-
-   - **Daily**: Specify the time that the backup occurs each day.
-   - **Weekly**: Specify one or more days, and the time that the backup occurs
-     each week.
-   - **Monthly**: Specify which day of the month and the time that the backup
-     occurs each month.
-
-6. Select whether to export the volume to **Local or Hub storage** or **External
-   cloud storage**, then specify the following additional details depending on
-   your selection.
-   
-   {{< tabs >}}
-   {{< tab name="Local or Hub storage" >}}
-   
-   - **Local file**: Specify a file name and select a folder.
-   - **Local image**: Select a local image to export the content to. Any
-    existing data in the image will be replaced by the exported content.
-   - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository.
-
-   {{< /tab >}}
-   {{< tab name="External cloud storage" >}}
-
-   You must have a [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to export to an external cloud provider.
-
-   Select your cloud provider and then specify the URL to upload to the storage.
-   Refer to the following documentation for your cloud provider to learn how to
-   obtain a URL.
-
-   - Amazon Web Services: [Create a presigned URL of Amazon S3 using an AWS SDK](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example_s3_Scenario_PresignedUrl_section.html)
-   - Microsoft Azure: [Generate a SAS token and URL](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/generate-sas-token)
-   - Google Cloud: [Create a signed URL to upload an object](https://cloud.google.com/storage/docs/access-control/signing-urls-with-helpers#upload-object)
-
-   {{< /tab >}}
-   {{< /tabs >}}
-
-7. Select **Save**.
+See [Schedule a volume export](volume-export.md#schedule-a-volume-export).
 
 ## Import a volume
 
-You can import a local file, a local image, or an image from Docker Hub. Any
-existing data in the volume is replaced by the imported content. When importing
-content to a volume used by one or more running containers, the containers are
-temporarily stopped while Docker imports the content, and then restarted when
-the import process is completed.
-
-To import a volume:
-
-1. Sign in to Docker Desktop. You must be signed in to import a volume.
-2. Optionally, [create](#create-a-volume) a new volume to import the content
-   into.
-3. Select the volume you want to import content in to.
-4. Select **Import**.
-5. Select where the content is coming from and then specify the following
-   additional details depending on your selection:
-
-   - **Local file**: Select the file that contains the content.
-   - **Local image**: Select the local image that contains the content.
-   - **Registry**: Specify the image from Docker Hub that contains the content.
-
-6. Select **Import**.
+See [Import a volume](volume-data.md#import-a-volume).
 
 ## Additional resources
 

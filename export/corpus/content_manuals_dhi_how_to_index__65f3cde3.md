@@ -96,3 +96,82 @@ Enforce policies to maintain security and compliance.
 {{< grid
   items="grid_govern"
 >}}
+
+## Task directory
+
+### Image use and comparison
+
+- [Authenticate to dhi.io](authenticate.md)
+- [Pull, run, and reference images](pull-run.md)
+- [Build application images with dev and static variants](build-app-images.md)
+- [Compare images](compare-images.md)
+- [Use compliance and ELS variants](compliance-variants.md)
+- [Create and test Kubernetes pull secrets](kubernetes.md)
+- [View and pull images by digest](use-digests.md)
+
+### Definitions and local builds
+
+- [Build the Alpine catalog and minimal examples](build.md)
+- [Definition field reference](definition-reference.md)
+- [Build, inspect, and publish a definition](build-definition.md)
+- [Build Debian Redis with third-party repositories](build-debian.md)
+- [Build Nginx with shell pipeline stages](build-nginx.md)
+- [Create dev and compatibility variants](build-variants.md)
+- [Contribute definitions to the catalog](contribute-definitions.md)
+
+### Mirroring and customization
+
+- [Mirror to a Docker Hub organization](mirror-hub.md)
+- [Mirror images, charts, and attestations to another registry](mirror-registry.md)
+- [Customize an image](customize-image.md)
+- [Customize a Helm chart](customize-chart.md)
+- [Create OCI artifact images](create-oci-artifacts.md)
+- [Monitor customization builds](monitor-customizations.md)
+- [Edit or delete customizations](manage-customizations.md)
+
+### Packages and compliance
+
+- [Configure the public package repository](packages-public.md)
+- [Configure the enterprise package repository](packages-enterprise.md)
+- [Inspect and verify packages and package attestations](verify-packages.md)
+- [Find CIS-compliant images](find-cis.md)
+- [Use FIPS images and inspect attestations](use-fips.md)
+- [Use STIG images and extract reports](use-stig.md)
+
+### Attestation tasks
+
+- [Discover attestations with ORAS](discover-attestations.md)
+- [Retrieve and verify image attestations](verify-attestations.md)
+- [Verify chart attestations](verify-charts.md)
+- [View and verify SBOMs](verify-sbom.md)
+- [Get and verify SLSA provenance](verify-slsa.md)
+- [View and verify code signatures](verify-signatures.md)
+- [Sign application images](sign-images.md)
+- [View and verify test results](verify-tests.md)
+- [View and verify malware reports](verify-malware.md)
+
+### Scanner tasks
+
+- [Scan with Docker Scout](scan-docker-scout.md)
+- [Scan with Grype](scan-grype.md)
+- [Scan with Trivy](scan-trivy.md)
+- [Scan with Wiz](scan-wiz.md)
+- [Scan with Mend.io](scan-mend.md)
+- [Export VEX attestations](export-vex.md)
+- [Build child images and apply VEX](scan-child-images.md)
+- [Scan in GitHub Actions](scan-ci.md)
+
+### Debugging and OpenShift
+
+- [Debug locally](debug.md)
+- [Resolve runtime and build issues](runtime-issues.md)
+- [OpenShift prerequisites and task guide](/guides/dhi-openshift/)
+- [Configure OpenShift image pulls](openshift-pull.md)
+- [Prepare OpenShift file permissions](openshift-permissions.md)
+- [Deploy Nginx on OpenShift](openshift-nginx.md)
+- [Deploy Node.js on OpenShift](openshift-node.md)
+- [Handle arbitrary and fixed OpenShift UIDs](openshift-users.md)
+- [Use and debug dev variants on OpenShift](openshift-debug.md)
+- [Deploy Helm charts on OpenShift](openshift-helm.md)
+- [Verify an OpenShift deployment](openshift-verify.md)
+- [Troubleshoot OpenShift](openshift-troubleshoot.md)

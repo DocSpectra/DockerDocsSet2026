@@ -12,6 +12,8 @@ aliases:
 
 This page helps troubleshoot common user provisioning issues including user roles, attributes, and unexpected account behavior with SCIM and Just-in-Time (JIT) provisioning.
 
+For attribute and authentication context, review [SCIM attributes and JIT precedence](scim/scim-attributes.md) and [JIT authentication behavior](jit-behavior.md).
+
 ## SCIM attribute values are overwritten or ignored
 
 ### Error message

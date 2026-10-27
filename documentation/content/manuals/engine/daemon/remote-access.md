@@ -9,6 +9,9 @@ aliases:
   - /config/daemon/remote-access/
 ---
 
+For configuration-file locations and startup options, see
+[Docker daemon configuration](configuration.md).
+
 By default, the Docker daemon listens for connections on a Unix socket to accept
 requests from local clients. You can configure Docker to accept requests
 from remote clients by configuring it to listen on an IP address and port as well

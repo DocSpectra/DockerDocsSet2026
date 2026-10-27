@@ -13,7 +13,7 @@ weight: 20
 
 To start creating your extension, you first need a directory with files which range from the extension’s source code to the required extension-specific files. This page provides information on how to set up an extension with a more advanced frontend.
 
-Before you start, make sure you have installed the latest version of [Docker Desktop](/manuals/desktop/release-notes.md).
+Before you start, follow the [development prerequisites](../prerequisites.md).
 
 ## Extension folder structure
 
@@ -155,47 +155,11 @@ For more information on the `ui` section of the `metadata.json`, see [Metadata](
 
 ## Build the extension and install it
 
-Now that you have configured the extension, you need to build the extension image that Docker Desktop will use to
-install it.
-
-```bash
-docker build --tag=awesome-inc/my-extension:latest .
-```
-
-This built an image tagged `awesome-inc/my-extension:latest`, you can run `docker inspect
-awesome-inc/my-extension:latest` to see more details about it.
-
-Finally, you can install the extension and see it appearing in the Docker Desktop Dashboard.
-
-```bash
-docker extension install awesome-inc/my-extension:latest
-```
+Follow [Build and install](build-install.md#build-and-install) to build, inspect, and install `awesome-inc/my-extension:latest`.
 
 ## Use the Extension APIs client
 
-To use the Extension APIs and perform actions with Docker Desktop, the extension must first import the
-`@docker/extension-api-client` library. To install it, run the command below:
-
-```bash
-npm install @docker/extension-api-client
-```
-
-Then call the `createDockerDesktopClient` function to create a client object to call the extension APIs.
-
-```js
-import { createDockerDesktopClient } from '@docker/extension-api-client';
-
-const ddClient = createDockerDesktopClient();
-```
-
-When using Typescript, you can also install `@docker/extension-api-client-types` as a dev dependency. This will
-provide you with type definitions for the extension APIs and auto-completion in your IDE.
-
-```bash
-npm install @docker/extension-api-client-types --save-dev
-```
-
-![Auto completion in an IDE](images/types-autocomplete.png)
+Follow [Set up the API client](../dev/api/client.md#set-up-the-api-client), then use the following example.
 
 For example, you can use the `docker.cli.exec` function to get the list of all the containers via the `docker ps --all`
 command and display the result in a table.
@@ -313,32 +277,11 @@ export function App() {
 
 ## Policies enforced for the front-end code
 
-Extension UI code is rendered in a separate electron session and doesn't have a node.js environment initialized, nor direct access to the electron APIs. 
-
-This is to limit the possible unexpected side effects to the overall Docker Dashboard.
-
-The extension UI code can't perform privileged tasks, such as making changes to the system, or spawning sub-processes, except by using the SDK APIs provided with the extension framework.
-The Extension UI code can also perform interactions with Docker Desktop, such as navigating to various places in the Dashboard, only through the extension SDK APIs.
-
-Extensions UI parts are isolated from each other and extension UI code is running in its own session for each extension. Extensions can't access other extensions’ session data.
-
-`localStorage` is one of the mechanisms of a browser’s web storage. It allows users to save data as key-value pairs in the browser for later use. `localStorage` doesn't clear data when the browser (the extension pane) closes. This makes it ideal for persisting data when navigating out of the extension to other parts of Docker Desktop.
-
-If your extension uses `localStorage` to store data, other extensions running in Docker Desktop can't access the local storage of your extension. The extension’s local storage is persisted even after Docker Desktop is stopped or restarted. When an extension is upgraded, its local storage is persisted, whereas when it is uninstalled, its local storage is completely removed.
+See [UI isolation and persistent storage](../architecture/security.md#policies-enforced-for-the-front-end-code).
 
 ## Re-build the extension and update it
 
-Since you have modified the code of the extension, you must build again the extension.
-
-```console
-$ docker build --tag=awesome-inc/my-extension:latest .
-```
-
-Once built, you need to update it.
-
-```console
-$ docker extension update awesome-inc/my-extension:latest
-```
+Follow [Rebuild and update](build-install.md#rebuild-and-update) after modifying the extension code.
 
 Now you can see the backend service running in the containers tab of the Docker Desktop Dashboard and watch the logs
 when you need to debug it.
@@ -348,11 +291,7 @@ when you need to debug it.
 > You can turn on [hot reloading](../dev/test-debug.md#hot-reloading-whilst-developing-the-ui) to avoid the need to
 > rebuild the extension every time you make a change.
 
-## What's next?
+## Shared guidance
 
-- Add a [backend](backend-extension-tutorial.md) to your extension.
-- Learn how to [test and debug](../dev/test-debug.md) your extension.
-- Learn how to [setup CI for your extension](../dev/continuous-integration.md).
-- Learn more about extensions [architecture](../architecture/_index.md).
-- For more information and guidelines on building the UI, see the [Design and UI styling section](../design/design-guidelines.md).
-- If you want to set up user authentication for the extension, see [Authentication](../guides/oauth2-flow.md).
+- [Extension architecture](../architecture/_index.md).
+- [Extension security](../architecture/security.md).

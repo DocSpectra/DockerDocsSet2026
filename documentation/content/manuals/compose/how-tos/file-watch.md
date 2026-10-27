@@ -11,6 +11,34 @@ aliases:
 
 {{% include "compose/watch.md" %}}
 
+## Prerequisites
+
+In order to work properly, `watch` relies on common executables. Make sure your service image contains the following binaries:
+* stat
+* mkdir
+* rmdir
+
+`watch` also requires that the container's `USER` can write to the target path so it can update files. A common pattern is for 
+initial content to be copied into the container using the `COPY` instruction in a Dockerfile. To ensure such files are owned 
+by the configured user, use the `COPY --chown` flag:
+
+```dockerfile
+# Run as a non-privileged user
+FROM node:18
+RUN useradd -ms /bin/sh -u 1001 app
+USER app
+
+# Install dependencies
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy source files into application directory
+COPY --chown=app:app . /app
+```
+
+## File path rules
+
 `watch` adheres to the following file path rules:
 * All paths are relative to the project directory, apart from ignore file patterns
 * Directories are watched recursively
@@ -45,32 +73,6 @@ the `action`, additional fields might be accepted or required.
 
 Watch mode can be used with many different languages and frameworks.
 The specific paths and rules will vary from project to project, but the concepts remain the same. 
-
-### Prerequisites
-
-In order to work properly, `watch` relies on common executables. Make sure your service image contains the following binaries:
-* stat
-* mkdir
-* rmdir
-
-`watch` also requires that the container's `USER` can write to the target path so it can update files. A common pattern is for 
-initial content to be copied into the container using the `COPY` instruction in a Dockerfile. To ensure such files are owned 
-by the configured user, use the `COPY --chown` flag:
-
-```dockerfile
-# Run as a non-privileged user
-FROM node:18
-RUN useradd -ms /bin/sh -u 1001 app
-USER app
-
-# Install dependencies
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-
-# Copy source files into application directory
-COPY --chown=app:app . /app
-```
 
 ### `action`
 
@@ -121,6 +123,21 @@ The `ignore` patterns are relative to the `path` defined in the current `watch` 
 ### `initial_sync`
 
 When using a `sync+x` action, the `initial_sync` attribute tells Compose to ensure files that are part of the defined `path` are up to date before starting a new watch session.
+
+## Use `watch`
+
+{{% include "compose/configure-watch.md" %}}
+
+> [!NOTE]
+>
+> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
+> get the application logs mixed with the (re)build logs and filesystem sync events.
+
+> [!TIP]
+>
+> Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
+> or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
+> for a demonstration of Compose `watch`.
 
 ## Example 1
 
@@ -196,21 +213,6 @@ services:
 ```
 
 This setup demonstrates how to use the `sync+restart` action in Docker Compose to efficiently develop and test a Node.js application with a frontend web server and backend service. The configuration ensures that changes to the application code and configuration files are quickly synchronized and applied, with the `web` service restarting as needed to reflect the changes.
-
-## Use `watch`
-
-{{% include "compose/configure-watch.md" %}}
-
-> [!NOTE]
->
-> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
-> get the application logs mixed with the (re)build logs and filesystem sync events.
-
-> [!TIP]
->
-> Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
-> or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
-> for a demonstration of Compose `watch`.
 
 ## Reference
 

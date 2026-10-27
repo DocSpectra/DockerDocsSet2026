@@ -75,6 +75,12 @@ Docker Desktop integrates with your preferred development tools and languages, a
 - [Docker Scout](../scout/_index.md)
 - [Kubernetes](https://github.com/kubernetes/kubernetes/)
 
+## Setup, maintenance, and troubleshooting
+
+- [Set up Docker Desktop](setup/_index.md).
+- [Find troubleshooting steps or collect diagnostics](troubleshoot-and-support/_index.md).
+- [Uninstall Docker Desktop](uninstall.md).
+
 ## Next steps
 
 {{< grid >}}

@@ -5,18 +5,21 @@ toc_min: 1
 toc_max: 2
 ---
 
-> **Note:**
+> [!NOTE]
 >
-> With this release, the daemon, client and container runtime are now all shipped
-> in separate packages. When updating, you need to update all packages at the same
-> time to get the latest patch releases for each. For example, on Ubuntu:
-> 
-> ```console
-> $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-> ```
-> 
-> See the [installation instructions](../install/_index.md) for the corresponding
-> Linux distribution for details.
+> For the separate daemon, client, and container runtime packages in this release, follow [Update all Engine packages](upgrade.md#docker-1809-packages).
+
+## Related guidance
+
+- [Engine installation instructions](/manuals/engine/install/_index.md)
+- [Deprecated and removed Engine features](/manuals/engine/deprecated.md)
+- [Engine API version history](/reference/api/engine/version-history/)
+
+## Find changes
+
+- Known issues: [18.09.8](#18098), [18.09.7](#18097), [18.09.6](#18096), [18.09.5](#18095), [18.09.4](#18094), [18.09.3](#18093), [18.09.2](#18092), [18.09.1](#18091), [18.09.0](#18090)
+- Security notes: [18.09.8](#18098), [18.09.7](#18097), [18.09.4](#18094), [18.09.2](#18092), [18.09.1](#18091)
+- Deprecations, removals, and breaking changes: [18.09.0](#18090)
 
 ## 18.09.9
 2019-09-03
@@ -197,16 +200,7 @@ For additional information, [refer to the Docker blog post](https://blog.docker.
 
 #### Important notes about this release
 
-In Docker versions prior to 18.09, containerd was managed by the Docker engine daemon. In Docker Engine 18.09, containerd is managed by systemd. Since containerd is managed by systemd, any custom configuration to the `docker.service` systemd configuration which changes mount settings (for example, `MountFlags=slave`) breaks interactions between the Docker Engine daemon and containerd, and you will not be able to start containers.
-
-Run the following command to get the current value of the `MountFlags` property for the `docker.service`:
-
-```console
-$ sudo systemctl show --property=MountFlags docker.service
-MountFlags=
-```
-
-Update your configuration if this command prints a non-empty value for `MountFlags`, and restart the docker service.
+See [Check systemd mount settings for Docker Engine 18.09](upgrade.md#docker-1809-systemd-mount-settings) before upgrading.
 
 ### Security fixes
 * Upgraded Go language to 1.10.6 to resolve [CVE-2018-16873](https://nvd.nist.gov/vuln/detail/CVE-2018-16873), [CVE-2018-16874](https://nvd.nist.gov/vuln/detail/CVE-2018-16874), and [CVE-2018-16875](https://nvd.nist.gov/vuln/detail/CVE-2018-16875).
@@ -253,18 +247,7 @@ Update your configuration if this command prints a non-empty value for `MountFla
 
 ### Important notes about this release
 
-In Docker versions prior to 18.09, containerd was managed by the Docker engine daemon. In Docker Engine 18.09, containerd is managed by systemd. Since containerd is managed by systemd, any custom configuration to the `docker.service` systemd
-configuration which changes mount settings (for example, `MountFlags=slave`) breaks interactions between the Docker Engine daemon and containerd, and you will not be able to start containers.
-
-Run the following command to get the current value of the `MountFlags` property for the `docker.service`:
-
-```console
-$ sudo systemctl show --property=MountFlags docker.service
-MountFlags=
-```
-
-Update your configuration if this command prints a non-empty value for `MountFlags`, and restart the docker service.
-
+See [Check systemd mount settings for Docker Engine 18.09](upgrade.md#docker-1809-systemd-mount-settings) before upgrading.
 
 ### New features
 

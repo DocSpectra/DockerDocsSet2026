@@ -35,7 +35,7 @@ A coding agent that can:
 
 Before starting, you need:
 
-- **Docker Agent installed** - See the [installation guide](_index.md#installation)
+- **Docker Agent installed** - See the [installation guide](installation.md)
 - **API key configured** - Set `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` in your
   environment. Get keys from [Anthropic](https://console.anthropic.com/) or
   [OpenAI](https://platform.openai.com/api-keys)

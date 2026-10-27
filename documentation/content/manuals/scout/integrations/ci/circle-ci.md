@@ -5,9 +5,13 @@ title: Integrate Docker Scout with Circle CI
 linkTitle: Circle CI
 ---
 
+For CLI installation and script caveats, see [Install Docker Scout](/manuals/scout/install.md). For CLI settings, see [Environment variables](/manuals/scout/how-tos/configure-cli.md).
+
 The following examples runs when triggered in CircleCI. When triggered, it
 checks out the "docker/scout-demo-service:latest" image and tag and then uses
 Docker Scout to create a CVE report.
+
+## Configure the workflow
 
 Add the following to a _.circleci/config.yml_ file.
 
@@ -26,6 +30,8 @@ jobs:
 
 This defines the container image the workflow uses and an environment variable
 for the image.
+
+## Build and analyze the image
 
 Add the following to the YAML file to define the steps for the workflow:
 
@@ -64,6 +70,8 @@ environment to run commands in.
 It installs Docker Scout, logs into Docker Hub, builds the Docker image, and
 then runs Docker Scout to generate a CVE report. It only shows critical or
 high-severity vulnerabilities.
+
+## Select the workflow job
 
 Finally, add a name for the workflow and the workflow's jobs:
 

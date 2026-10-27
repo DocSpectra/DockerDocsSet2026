@@ -7,6 +7,8 @@ aliases:
  - /extensions/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
 ---
 
+For command contexts, results, streaming, and command chaining limits, see [Extension service and command execution](/manuals/extensions/extensions-sdk/dev/api/backend.md).
+
 **`Since`**
 
 0.2.0
@@ -15,7 +17,7 @@ aliases:
 
 - **`RawExecResult`**
 
-  ↳ [`ExecResult`](ExecResult.md)
+  ↳ `ExecResult`
 
 ## Properties
 

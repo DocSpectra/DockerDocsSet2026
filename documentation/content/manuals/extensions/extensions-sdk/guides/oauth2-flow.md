@@ -41,7 +41,7 @@ Once the user enters the username and password, they're successfully authenticat
 
 From the extension UI, you can provide a button that, when selected, opens a new window in a browser to authenticate the user.
 
-Use the [ddClient.host.openExternal](../dev/api/dashboard.md#open-a-url) API to open a browser to the auth URL. For
+Use the [ddClient.host.openExternal](../dev/api/open-url.md#open-a-url) API to open a browser to the auth URL. For
 example:
 
 ```typescript
@@ -59,11 +59,11 @@ You can get the authorization code from the extension UI by listing `docker-desk
 >
 > Using this feature requires the extension SDK 0.3.3 in Docker Desktop. You need to ensure that the required SDK version for your extension set with `com.docker.desktop.extension.api.version` in [image labels](../extensions/labels.md) is higher than 0.3.3.
 
-#### Authorization
+### Authorization
 
 This step is where the user enters their credentials in the browser. After the authorization is complete, the user is redirected back to your extension user interface, and the extension UI code can consume the authorization code that's part of the query parameters in the URL.
 
-#### Exchange the Authorization Code
+### Exchange the Authorization Code
 
 Next, you exchange the authorization code for an access token.
 
@@ -91,6 +91,6 @@ It's highly recommended that you use an external source of storage to store the 
 >
 > The user interface Local Storage is isolated between extensions (an extension can't access another extension's local storage), and each extension's local storage gets deleted when users uninstall an extension.
 
-## What's next
+## Shared guidance
 
-Learn how to [publish and distribute your extension](../extensions/_index.md)
+See [UI isolation and storage](../architecture/security.md#policies-enforced-for-the-front-end-code) and [Extension API dependencies](../extensions/DISTRIBUTION.md#extension-api-dependencies).

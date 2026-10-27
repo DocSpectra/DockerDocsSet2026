@@ -23,36 +23,9 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 
 ## Step one: Create the repository
 
-Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
+Follow [Create the repository and configure credentials](/guides/github-actions-setup.md#create-the-repository-and-configure-credentials).
 
-1. [Create a new repository](https://github.com/new) on GitHub.
-
-2. Open the repository **Settings**, and go to **Secrets and variables** >
-   **Actions**.
-
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
-
-4. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
-
-5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
-   `DOCKERHUB_TOKEN`.
-
-6. In your local repository on your machine, run the following command to change
-   the origin to the repository you just created. Make sure you change
-   `your-username` to your GitHub username and `your-repository` to the name of
-   the repository you created.
-
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-
-7. Run the following commands to stage, commit, and push your local repository to GitHub.
-
-   ```console
-   $ git add -A
-   $ git commit -m "my commit"
-   $ git push -u origin main
-   ```
+Then follow [Push source code](/guides/github-actions-setup.md#push-source-code).
 
 ## Step two: Set up the workflow
 
@@ -102,21 +75,7 @@ to Docker Hub.
 
 ## Step three: Run the workflow
 
-Save the workflow file and run the job.
-
-1. Select **Commit changes...** and push the changes to the `main` branch.
-
-   After pushing the commit, the workflow starts automatically.
-
-2. Go to the **Actions** tab. It displays the workflow.
-
-   Selecting the workflow shows you the breakdown of all the steps.
-
-3. When the workflow is complete, go to your
-   [repositories on Docker Hub](https://hub.docker.com/repositories).
-
-   If you see the new repository in that list, it means the GitHub Actions
-   successfully pushed the image to Docker Hub.
+Follow [Run the workflow and check publication](/guides/github-actions-setup.md#run-the-workflow-and-check-publication).
 
 ## Summary
 
