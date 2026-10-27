@@ -13,6 +13,15 @@ The `docker dhi` command-line interface (CLI) is a tool for managing Docker Hard
 - Generate authentication for enterprise package repositories
 - Monitor customization builds
 
+Choose a task:
+
+- [Install the CLI](#installation) and [configure authentication and organization defaults](#configuration)
+- [Browse the catalog](#browse-the-dhi-catalog)
+- [Mirror images](#mirror-dhi-images)
+- [Customize images](#customize-dhi-images) and [monitor builds](#monitor-customization-builds)
+- [Generate enterprise package credentials](#enterprise-package-authentication)
+- [Use JSON output](#json-output)
+
 ## Installation
 
 The `docker dhi` CLI is available in [Docker Desktop](https://docs.docker.com/desktop/) version 4.65 and later.
@@ -29,6 +38,23 @@ The `docker dhi` command is included in Docker Desktop 4.65 and later. No additi
 2. Move it to a directory in your `PATH`:
     - `mv dhictl /usr/local/bin/` on _Linux_ and _macOS_
     - Move `dhictl.exe` to a directory in your `PATH` on _Windows_
+
+## Configuration
+
+The `docker dhi` CLI can be configured with a YAML file located at:
+- `$HOME/.config/dhictl/config.yaml` on _Linux_ and _macOS_
+- `%USERPROFILE%\.config\dhictl\config.yaml` on _Windows_
+
+If `$XDG_CONFIG_HOME` is set, the configuration file is located at `$XDG_CONFIG_HOME/dhictl/config.yaml` (see the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir/spec/latest/)).
+
+Available configuration options:
+
+| Option      | Environment Variable | Description                                                                                                               |
+|-------------|----------------------|---------------------------------------------------------------------------------------------------------------------------|
+| `org`       | `DHI_ORG`            | Default Docker Hub organization for mirror and customization commands.                                                    |
+| `api_token` | `DHI_API_TOKEN`      | Docker token for authentication. You can generate a token in your [Docker Hub account settings](https://hub.docker.com/). |
+
+Environment variables take precedence over configuration file values.
 
 ## Usage
 
@@ -206,19 +232,3 @@ docker dhi customization list --org my-org --json
 docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
 ```
 
-## Configuration
-
-The `docker dhi` CLI can be configured with a YAML file located at:
-- `$HOME/.config/dhictl/config.yaml` on _Linux_ and _macOS_
-- `%USERPROFILE%\.config\dhictl\config.yaml` on _Windows_
-
-If `$XDG_CONFIG_HOME` is set, the configuration file is located at `$XDG_CONFIG_HOME/dhictl/config.yaml` (see the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir/spec/latest/)).
-
-Available configuration options:
-
-| Option      | Environment Variable | Description                                                                                                               |
-|-------------|----------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `org`       | `DHI_ORG`            | Default Docker Hub organization for mirror and customization commands.                                                    |
-| `api_token` | `DHI_API_TOKEN`      | Docker token for authentication. You can generate a token in your [Docker Hub account settings](https://hub.docker.com/). |
-
-Environment variables take precedence over configuration file values.

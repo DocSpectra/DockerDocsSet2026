@@ -19,10 +19,10 @@ When users don't sign in as organization members, they miss out on subscription 
 
 You can enforce sign-in using several methods, depending on your setup:
 
-- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only)
-- [Configuration profiles method (Mac only)](methods.md#configuration-profiles-method-mac-only)
-- [`.plist` method (Mac only)](methods.md#plist-method-mac-only)
-- [`registry.json` method (All)](methods.md#registryjson-method-all)
+- [Registry key method (Windows only)](methods.md#windows-registry-key-method)
+- [Configuration profiles method (Mac only)](methods.md#mac-configuration-profiles-method-recommended)
+- [`.plist` method (Mac only)](methods.md#mac-plist-file-method)
+- [`registry.json` method (All)](methods.md#all-platforms-registryjson-method)
 
 This page provides an overview of how sign-in enforcement works.
 
@@ -47,7 +47,7 @@ When Docker Desktop detects a registry key, `.plist` file, or
 
 ## Enforcing sign-in versus enforcing single sign-on (SSO)
 
-Enforcing Docker Desktop sign-in and [enforcing SSO](/manuals/enterprise/security/single-sign-on/connect.md#optional-enforce-sso) are different features that serve different purposes:
+Enforcing Docker Desktop sign-in and [enforcing SSO](/manuals/enterprise/security/single-sign-on/connect.md#enforce-sso) are different features that serve different purposes:
 
 
 | Enforcement                       | Description                                                     | Benefits                                                                                                                                                                                                                                                   |

@@ -56,3 +56,9 @@ Choose Alpine-based (`musl`) images if:
 
 If you're unsure, start with a Debian-based image to ensure compatibility, and
 evaluate Alpine once you're confident in your application's dependencies.
+
+## Related tasks
+
+- [Explore distributions and variants](../explore/available.md)
+- [Search the catalog](../how-to/explore.md#search-the-catalog)
+- [Choose a migration path](../migration/_index.md)

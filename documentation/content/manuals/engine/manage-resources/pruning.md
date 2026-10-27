@@ -17,6 +17,18 @@ object, Docker provides a `prune` command. In addition, you can use `docker
 system prune` to clean up multiple types of objects at once. This topic shows
 how to use these `prune` commands.
 
+## Choose what to prune
+
+- [Images](#prune-images)
+- [Containers](#prune-containers)
+- [Volumes](#prune-volumes)
+- [Networks](#prune-networks)
+- [Build cache](#prune-build-cache)
+- [Multiple object types](#prune-everything)
+
+For filtering syntax and negated label filters, see
+[Filter commands](../cli/filter.md).
+
 ## Prune images
 
 The `docker image prune` command allows you to clean up unused images. By
@@ -162,6 +174,11 @@ By default, you're prompted to continue. To bypass the prompt, use the `-f` or
 
 See the [`docker buildx prune` reference](/reference/cli/docker/buildx/prune/)
 for all options, including `--all` to also remove internal and frontend images.
+
+For automatic build-cache cleanup, see
+[Build garbage collection](/manuals/build/cache/garbage-collection.md).
+For selecting or inspecting builders, see
+[Manage builders](/manuals/build/builders/manage.md).
 
 ## Prune everything
 

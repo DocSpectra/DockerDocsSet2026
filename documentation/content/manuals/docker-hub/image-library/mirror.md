@@ -11,6 +11,11 @@ aliases:
 - /docker-hub/mirror/
 ---
 
+- [Review limitations and access restrictions](#limitations-and-access-restrictions)
+- [Read about cache behavior and storage](#how-does-it-work)
+- [Configure the cache](#configure-the-cache)
+- [Configure the Docker daemon](#configure-the-docker-daemon)
+
 ## Use-case
 
 If you have multiple instances of Docker running in your environment, such as
@@ -23,6 +28,11 @@ there, to avoid this extra internet traffic.
 >
 > Docker Official Images are an intellectual property of Docker.
 
+### Solution
+
+The Registry can be configured as a pull through cache. In this mode a Registry
+responds to all normal docker pull requests but stores all content locally.
+
 ### Alternatives
 
 Alternatively, if the set of images you are using is well delimited, you can
@@ -30,6 +40,8 @@ simply pull them manually and push them to a simple, local, private registry.
 
 Furthermore, if your images are all built in-house, not using the Hub at all and
 relying entirely on your local registry is the simplest scenario.
+
+## Limitations and access restrictions
 
 ### Gotcha
 
@@ -39,11 +51,6 @@ Hub can be mirrored.
 > [!NOTE]
 >
 > Mirrors of Docker Hub are still subject to Docker's [fair use policy](/manuals/docker-hub/usage/_index.md#fair-use).
-
-### Solution
-
-The Registry can be configured as a pull through cache. In this mode a Registry
-responds to all normal docker pull requests but stores all content locally.
 
 ### Using Registry Access Management (RAM) with a registry mirror
 

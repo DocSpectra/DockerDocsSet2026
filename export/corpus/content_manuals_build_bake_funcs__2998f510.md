@@ -11,6 +11,10 @@ aliases:
 HCL functions are great for when you need to manipulate values in your build
 configuration in more complex ways than just concatenation or interpolation.
 
+Choose between [standard library functions](#standard-library) and
+[user-defined functions](#user-defined-functions), or see
+[variables in functions](#variables-in-functions).
+
 ## Standard library
 
 Bake ships with built-in support for the [standard library functions](/manuals/build/bake/stdlib.md).
@@ -106,7 +110,7 @@ $ docker buildx bake --print webapp
 
 ## Variables in functions
 
-You can make references to [variables](./variables) and standard library
+You can make references to [variables](./variables.md) and standard library
 functions inside your functions.
 
 The following example uses a global variable (`REPO`) in a custom function.

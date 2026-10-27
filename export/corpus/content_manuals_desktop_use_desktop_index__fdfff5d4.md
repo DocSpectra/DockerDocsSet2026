@@ -14,11 +14,26 @@ When you open Docker Desktop, the Docker Desktop Dashboard displays.
 
 It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), [Kubernetes resources](kubernetes.md), and [logs](logs.md).
 
+## Find a task
+
+| Task | Go to |
+| --- | --- |
+| Manage or inspect containers | [Container actions](container.md#container-actions) and [inspection tabs](container.md#inspect-a-container) |
+| Run, pull, push, or remove images | [Images](images.md#manage-your-images) |
+| Create, copy, back up, or restore volumes | [Volumes](volumes.md) |
+| Inspect builds or manage builders | [Builds](builds.md) |
+| Set up or manage a Kubernetes cluster | [Kubernetes](kubernetes.md) |
+| Search logs across containers and Kubernetes nodes | [Logs](logs.md) |
+| Reduce resource usage | [Resource Saver](resource-saver.md) and [Pause](pause.md) |
+| Build and run in the cloud | [Docker Offload quickstart](/manuals/offload/quickstart.md) |
+
+## Dashboard tools and navigation
+
 In addition, the Docker Desktop Dashboard lets you:
 
 - Use [Gordon](/manuals/ai/gordon/_index.md), a personal AI assistant embedded in Docker Desktop and the Docker CLI. It's designed to streamline your workflow and help you make the most of the Docker ecosystem.
-- Navigate to the **Settings** menu to configure your Docker Desktop settings. Select the **Settings** icon in the Dashboard header.
-- Access the **Troubleshoot** menu to debug and perform restart operations. Select the **Troubleshoot** icon in the Dashboard header.
+- Navigate to the [**Settings** menu](../settings-and-maintenance/settings.md) to configure your Docker Desktop settings. Select the **Settings** icon in the Dashboard header.
+- Access the [**Troubleshoot** menu](../troubleshoot-and-support/troubleshoot/_index.md) to debug and perform restart operations. Select the **Troubleshoot** icon in the Dashboard header.
 - Be notified of new releases, installation progress updates, and more in the **Notifications center**. Select the bell icon in the bottom-right corner of the Docker Desktop Dashboard to access the notification center.
 - Access the **Learning center** from the Dashboard header. It helps you get started with quick in-app walkthroughs and provides other resources for learning about Docker. 
 
@@ -42,7 +57,7 @@ The integrated terminal:
   part of the Docker Desktop Dashboard and then return.
 - Supports copy, paste, search, and clearing your session.
 
-#### Open the integrated terminal
+### Open the integrated terminal
 
 To open the integrated terminal, either:
 

@@ -78,3 +78,9 @@ Because Docker Hardened Images strip out many common tools, they may not work ou
 - Use [Docker Debug](/reference/cli/docker/debug/) to temporarily inspect or troubleshoot containers without altering the base image
 
 These trade-offs are intentional and help support best practices for building secure, reproducible, and production-ready containers.
+
+## Related tasks
+
+- [Review the migration checklist](../migration/checklist.md)
+- [Use dev variants for builds](../how-to/use.md#use-dev-variants-for-framework-based-applications)
+- [Troubleshoot a minimal container](../troubleshoot.md)

@@ -58,6 +58,14 @@ organizations.
 
 ![Diagram showing how companies relate to Docker organizations](/admin/images/docker-admin-structure.webp)
 
+## Find a company task
+
+- [Review prerequisites and create a company](new-company.md)
+- [Add organizations to a company](manage/organizations.md#add-organizations-to-a-company)
+- [Add seats to an organization](manage/organizations.md#add-seats-to-an-organization)
+- [Add or remove company owners](manage/owners.md)
+- [Invite members](manage/users.md#invite-members-via-docker-id-or-email-address), [upload a CSV](manage/users.md#invite-members-via-csv-file), or [resend invitations](manage/users.md#resend-invitations-to-users)
+
 ## Key features
 
 With a company, administrators can:

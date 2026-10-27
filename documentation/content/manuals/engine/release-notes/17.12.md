@@ -5,6 +5,15 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| Known issue and limitation sections | [17.12.1-ce](#17121-ce), [17.12.0-ce](#17120-ce) |
+| Initial release entry | [17.12.0-ce](#17120-ce) |
+
 ## 17.12.1-ce
 2018-02-27
 

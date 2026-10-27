@@ -12,6 +12,51 @@ your billing renewal date. All monthly and annual subscriptions are
 automatically renewed at the end of the subscription term using your default
 payment method.
 
+## On this page
+
+- [View billing history and download invoices](#view-billing-history)
+- [View your renewal date](#view-renewal-date)
+- [Read invoice details](#view-an-invoice)
+- [Pay an invoice](#pay-an-invoice)
+- [Include your VAT number](#include-your-vat-number-on-your-invoice)
+
+## View billing history
+
+You can view your billing history and download past invoices for a personal
+account or organization.
+
+### Personal account
+
+To view billing history:
+
+1. Sign in to [Docker Home](https://app.docker.com/) and choose your
+   organization.
+1. Select **Billing**.
+1. Select **Invoices** from the left-hand menu.
+1. Optional. Select the **Invoice number** to open invoice details.
+1. Optional. Select the **Download** button to download an invoice.
+
+### Organization
+
+You must be an owner of the organization to view the billing history.
+
+To view billing history:
+
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization.
+1. Select **Billing**.
+1. Select **Invoices** from the left-hand menu.
+1. Optional. Select the **invoice number** to open invoice details.
+1. Optional. Select the **download** button to download an invoice.
+
+## View renewal date
+
+You receive your invoice when the subscription renews. To verify your renewal
+date:
+
+1. Sign in to [Docker Home Billing](https://app.docker.com/billing).
+1. Find your renewal date and amount on your subscription plan card.
+
 ## View an invoice
 
 Your invoice includes the following:
@@ -71,14 +116,6 @@ When your payment has processed, the invoice's **Status** column will update to
 If you choose to pay using a US bank account, you must verify the account. For
 more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 
-### View renewal date
-
-You receive your invoice when the subscription renews. To verify your renewal
-date:
-
-1. Sign in to [Docker Home Billing](https://app.docker.com/billing).
-1. Find your renewal date and amount on your subscription plan card.
-
 ## Include your VAT number on your invoice
 
 > [!NOTE]
@@ -106,31 +143,3 @@ To add or update your VAT number:
 
 Your VAT number will be included on your next invoice.
 
-## View billing history
-
-You can view your billing history and download past invoices for a personal
-account or organization.
-
-### Personal account
-
-To view billing history:
-
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your
-   organization.
-1. Select **Billing**.
-1. Select **Invoices** from the left-hand menu.
-1. Optional. Select the **Invoice number** to open invoice details.
-1. Optional. Select the **Download** button to download an invoice.
-
-### Organization
-
-You must be an owner of the organization to view the billing history.
-
-To view billing history:
-
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Billing**.
-1. Select **Invoices** from the left-hand menu.
-1. Optional. Select the **invoice number** to open invoice details.
-1. Optional. Select the **download** button to download an invoice.

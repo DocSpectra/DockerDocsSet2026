@@ -9,9 +9,13 @@ aliases:
 - /guides/docker-concepts/the-basics/what-is-a-registry/
 ---
 
+On this page: [Registries and repositories](#explanation) · [Create an account](#sign-up-for-a-free-docker-account) · [Create a repository](#create-your-first-repository) · [Sign in](#sign-in-with-docker-desktop) · [Get the sample](#clone-sample-nodejs-code) · [Build and test](#build-and-test-the-image) · [Tag and publish](#tag-and-publish-the-image).
+
 {{< youtube-embed 2WDl10Wv5rs >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Registries and repositories
 
 Now that you know what a container image is and how it works, you might wonder - where do you store these images? 
 
@@ -56,7 +60,9 @@ The following diagram shows the relationship between a registry, repositories, a
 >
 >A Docker Personal plan gives you one private repository and unlimited public repositories. To get unlimited private repositories, upgrade to the [Docker Team plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry).
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Build and publish an image to Docker Hub
 
 In this hands-on, you will learn how to build and push a Docker image to the Docker Hub repository.
 
@@ -106,6 +112,8 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
     cd helloworld-demo-node
     ```
 
+### Build and test the image
+
 3. Run the following command to build a Docker image, swapping out `YOUR_DOCKER_USERNAME` with your username.
 
     ```console
@@ -137,6 +145,8 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 
     You can verify if the container is working by visiting [http://localhost:8080](http://localhost:8080) with your browser.
 
+### Tag and publish the image
+
 6. Use the [`docker tag`](/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
 
     ```console 
@@ -164,4 +174,4 @@ In this walkthrough, you signed up for a Docker account, created your first Dock
 
 Now that you understand the basics of containers and images, you're ready to learn about Docker Compose.
 
-{{< button text="What is Docker Compose?" url="what-is-Docker-Compose" >}}
+{{< button text="What is Docker Compose?" url="what-is-docker-compose.md" >}}

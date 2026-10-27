@@ -14,6 +14,8 @@ params:
   time: 30 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-securing-spring-boot-microservice-using-keycloak-and-testcontainers -->
 
 In this guide, you'll learn how to:
@@ -33,3 +35,14 @@ In this guide, you'll learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-keycloak-spring-boot/create-project/)
+2. [Write tests](/guides/testcontainers-java-keycloak-spring-boot/write-tests/)
+3. [Run tests](/guides/testcontainers-java-keycloak-spring-boot/run-tests/)
+
+## Find a specific task
+
+- [Export the Keycloak realm configuration](/guides/testcontainers-java-keycloak-spring-boot/create-project/#export-the-keycloak-realm-configuration)
+- [Use Testcontainers for local development](/guides/testcontainers-java-keycloak-spring-boot/write-tests/#use-testcontainers-for-local-development)

@@ -8,9 +8,18 @@ aliases:
 - /language/bun/configure-ci-cd/
 ---
 
+[Bun guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create the repository and configure credentials](#step-one-create-the-repository)
+- [Set up the workflow](#step-two-set-up-the-workflow)
+- [Run and verify the workflow](#step-three-run-the-workflow)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize a Bun application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize a Bun application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
 
 ## Overview
 
@@ -121,7 +130,7 @@ Save the workflow file and run the job.
 
 In this section, you learned how to set up a GitHub Actions workflow for your Bun application.
 
-Related information:
+## Related resources
 
 - [Introduction to GitHub Actions](/guides/gha.md)
 - [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md)
@@ -130,3 +139,5 @@ Related information:
 ## Next steps
 
 Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
+
+Continue to [deployment](deploy.md).

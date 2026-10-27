@@ -15,6 +15,13 @@ This guide shows you how to configure Neovim, or Zed to run agents with Docker A
 you're looking to expose agents as tools to MCP clients like Claude
 Desktop or Claude Code, see [MCP integration](./mcp.md) instead.
 
+## Find an editor task
+
+- [Check prerequisites](#prerequisites)
+- Configure [Zed](#zed) or [Neovim](#neovim)
+- [Use local or registry agent references](#agent-references)
+- [Test your setup](#testing-your-setup)
+
 ## How it works
 
 When you run Docker Agent with ACP, it becomes part of your editor's environment. You

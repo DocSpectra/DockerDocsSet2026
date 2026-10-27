@@ -9,6 +9,8 @@ aliases:
   - /guides/language/java/develop/
 ---
 
+[Java guide overview](_index.md)
+
 ## Prerequisites
 
 Work through the steps to containerize your application in [Containerize your app](containerize.md).
@@ -18,14 +20,16 @@ Work through the steps to containerize your application in [Containerize your ap
 In this section, you’ll walk through setting up a local development environment
 for the application you containerized in the previous section. This includes:
 
-- Adding a local database and persisting data
-- Creating a development container to connect a debugger
-- Configuring Compose to automatically update your running Compose services as
-  you edit and save your code
+- [Adding a local database and persisting data](#add-a-local-database-and-persist-data)
+- [Creating a development container to connect a debugger](#dockerfile-for-development)
+- [Configuring Compose to automatically update your running Compose services as
+  you edit and save your code](#automatically-update-services)
 
 ## Add a local database and persist data
 
 You can use containers to set up local services, like a database. In this section, you'll update the `docker-compose.yaml` file to define a database service and a volume to persist data. Also, this particular application uses a system property to define the database type, so you'll need to update the `Dockerfile` to pass in the system property when starting the app.
+
+### Update the Compose file
 
 In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
 
@@ -81,6 +85,8 @@ volumes:
   db-data:
 ```
 
+### Select the database profile
+
 Open the `Dockerfile` in an IDE or text editor. In the `ENTRYPOINT` instruction,
 update the instruction to pass in the system property as specified in the
 `spring-petclinic/src/resources/db/postgres/petclinic_db_setup_postgres.txt`
@@ -92,6 +98,8 @@ file.
 ```
 
 Save and close all the files.
+
+### Start and check the database connection
 
 Now, run the following `docker compose up` command to start your application.
 
@@ -401,3 +409,5 @@ Related information:
 ## Next steps
 
 In the next section, you’ll take a look at how to run unit tests in Docker.
+
+Continue: [Run tests](run-tests.md).

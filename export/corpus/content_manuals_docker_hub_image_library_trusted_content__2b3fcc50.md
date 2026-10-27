@@ -16,6 +16,15 @@ building and deploying applications. Docker Hub's trusted content includes
 Docker Official Images, Docker Hardened Images and charts, Verified Publisher
 images, and Docker-Sponsored Open Source Software images.
 
+## Find trusted content
+
+- [Docker Official Images](#docker-official-images)
+- [Docker Hardened Images](#docker-hardened-images)
+- [Verified Publisher images](#verified-publisher-images)
+- [Docker-Sponsored Open Source Software images](#docker-sponsored-open-source-software-images)
+- [Choose a Docker Official Image variant](#choose-a-docker-official-image-variant)
+- [Troubleshoot failed pulls](#troubleshooting-failed-pulls)
+
 ## Docker Official Images
 
 The Docker Official Images are a curated set of Docker repositories hosted on
@@ -55,6 +64,57 @@ Images that are part of this program have a special badge on Docker Hub making
 it easier for you to identify projects that are part of Docker Official Images.
 
 ![Docker official image badge](../images/official-image-badge-iso.png)
+
+## Docker Hardened Images
+
+Docker Hardened Images (DHI) are minimal, secure, and production-ready
+container base and application images maintained by Docker. DHI also includes
+Docker-provided hardened Helm charts built from upstream sources and published
+as OCI artifacts in Docker Hub.
+
+DHI is designed to reduce vulnerabilities and simplify compliance while fitting
+into existing Docker workflows with little to no retooling required. Docker
+maintains near-zero CVEs in DHI images, and DHI images and charts include
+signed security metadata such as SBOMs and provenance attestations.
+
+Image and chart repositories have special badges
+on Docker Hub, making it easier to identify trusted DHI content.
+
+![Docker Hardened Image badge](../images/dhi-image-label.png)
+
+![Docker Hardened Chart badge](../images/dhi-chart-label.png)
+
+To browse available repositories, see the [Docker Hardened Images
+catalog](https://hub.docker.com/hardened-images/catalog). For implementation
+guidance, see [Docker Hardened Images](/dhi/).
+
+## Verified Publisher images
+
+The Docker Verified Publisher program provides high-quality images from
+commercial publishers verified by Docker.
+
+These images help development teams build secure software supply chains,
+minimizing exposure to malicious content early in the process to save time and
+money later.
+
+Images that are part of this program have a special badge on Docker Hub making
+it easier for users to identify projects that Docker has verified as
+high-quality commercial publishers.
+
+![Docker-Verified Publisher badge](../images/verified-publisher-badge-iso.png)
+
+## Docker-Sponsored Open Source Software images
+
+The Docker-Sponsored Open Source Software (OSS) program provides images that are
+published and maintained by open-source projects sponsored by Docker.
+
+Images that are part of this program have a special badge on Docker Hub making
+it easier for users to identify projects that Docker has verified as trusted,
+secure, and active open-source projects.
+
+![Docker-Sponsored Open Source badge](../images/sponsored-badge-iso.png)
+
+## Choose a Docker Official Image variant
 
 ### Supported tags and respective Dockerfile links
 
@@ -165,51 +225,6 @@ Images began expiring. To resolve pull failures, unset the `DOCKER_CONTENT_TRUST
 environment variable. For more details, see the
 [DCT retirement blog post](https://www.docker.com/blog/retiring-docker-content-trust/).
 
-## Docker Hardened Images
+## Publishing tasks
 
-Docker Hardened Images (DHI) are minimal, secure, and production-ready
-container base and application images maintained by Docker. DHI also includes
-Docker-provided hardened Helm charts built from upstream sources and published
-as OCI artifacts in Docker Hub.
-
-DHI is designed to reduce vulnerabilities and simplify compliance while fitting
-into existing Docker workflows with little to no retooling required. Docker
-maintains near-zero CVEs in DHI images, and DHI images and charts include
-signed security metadata such as SBOMs and provenance attestations.
-
-Image and chart repositories have special badges
-on Docker Hub, making it easier to identify trusted DHI content.
-
-![Docker Hardened Image badge](../images/dhi-image-label.png)
-
-![Docker Hardened Chart badge](../images/dhi-chart-label.png)
-
-To browse available repositories, see the [Docker Hardened Images
-catalog](https://hub.docker.com/hardened-images/catalog). For implementation
-guidance, see [Docker Hardened Images](/dhi/).
-
-## Verified Publisher images
-
-The Docker Verified Publisher program provides high-quality images from
-commercial publishers verified by Docker.
-
-These images help development teams build secure software supply chains,
-minimizing exposure to malicious content early in the process to save time and
-money later.
-
-Images that are part of this program have a special badge on Docker Hub making
-it easier for users to identify projects that Docker has verified as
-high-quality commercial publishers.
-
-![Docker-Verified Publisher badge](../images/verified-publisher-badge-iso.png)
-
-## Docker-Sponsored Open Source Software images
-
-The Docker-Sponsored Open Source Software (OSS) program provides images that are
-published and maintained by open-source projects sponsored by Docker.
-
-Images that are part of this program have a special badge on Docker Hub making
-it easier for users to identify projects that Docker has verified as trusted,
-secure, and active open-source projects.
-
-![Docker-Sponsored Open Source badge](../images/sponsored-badge-iso.png)
+See [Trusted content programs](../repos/manage/trusted-content/_index.md).

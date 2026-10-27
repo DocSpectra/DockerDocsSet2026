@@ -23,6 +23,12 @@ For example, activity logs display activities such as the date when a repository
 
 Owners can also see the activity logs for their repository if the repository is part of the organization subscribed to a Docker Business or Team subscription.
 
+## Find an activity log task
+
+- [Access logs through Docker Home or the API](#access-activity-logs)
+- [Filter logs and review Docker Home retention](#filter-and-customize-activity-logs)
+- Review [organization](#organization-events), [repository](#repository-events), [billing](#billing-events), or [Offload](#offload-events) event descriptions
+
 ## Access activity logs
 
 {{< tabs >}}

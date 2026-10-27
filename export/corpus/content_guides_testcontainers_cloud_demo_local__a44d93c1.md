@@ -4,6 +4,12 @@ description: Set up Testcontainers Cloud by Docker in a local development enviro
 weight: 20
 ---
 
+[Guide overview](/guides/testcontainers-cloud/)
+
+For setup details, see [project integration](/guides/testcontainers-cloud/common-questions/#how-do-i-integrate-testcontainers-cloud-into-my-project).
+
+## Watch the local setup demo
+
 {{< youtube-embed "7c3xLAG560U" >}}
 
 This demo shows the process of setting up Testcontainers Cloud by Docker to
@@ -17,3 +23,7 @@ machine to the cloud for more efficient testing.
 - Create and run integration tests using Testcontainers that leverage cloud-based container resources.
 - Monitor and manage containers efficiently, understanding how Testcontainers Cloud automates cleanup and ensures consistent testing environments.
 - Review options for monitoring and troubleshooting in the Testcontainers Cloud Dashboard.
+
+## Continue
+
+[Next: Configure a CI pipeline](/guides/testcontainers-cloud/demo-ci/)

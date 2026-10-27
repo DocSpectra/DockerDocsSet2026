@@ -30,6 +30,8 @@ aliases:
 - /desktop/get-started/
 ---
 
+On this page: [Benefits](#benefits-of-signing-in) · [Linux credential setup](#signing-in-with-docker-desktop-for-linux) · [Next steps](#whats-next).
+
 Docker recommends signing in with the **Sign in** option in the top-right corner of the Docker Dashboard. 
 
 In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). 

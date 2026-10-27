@@ -13,21 +13,21 @@ Docker Compose includes several pre-defined environment variables. It also inher
 
 This page explains how to set or change the following pre-defined environment variables:
 
-- `COMPOSE_PROJECT_NAME`
-- `COMPOSE_FILE`
-- `COMPOSE_PROFILES`
-- `COMPOSE_CONVERT_WINDOWS_PATHS`
-- `COMPOSE_PATH_SEPARATOR`
-- `COMPOSE_IGNORE_ORPHANS`
-- `COMPOSE_REMOVE_ORPHANS`
-- `COMPOSE_PARALLEL_LIMIT`
-- `COMPOSE_ANSI`
-- `COMPOSE_STATUS_STDOUT`
-- `COMPOSE_ENV_FILES`
-- `COMPOSE_DISABLE_ENV_FILE`
-- `COMPOSE_MENU`
-- `COMPOSE_EXPERIMENTAL`
-- `COMPOSE_PROGRESS`
+- [`COMPOSE_PROJECT_NAME`](#compose_project_name)
+- [`COMPOSE_FILE`](#compose_file)
+- [`COMPOSE_PROFILES`](#compose_profiles)
+- [`COMPOSE_CONVERT_WINDOWS_PATHS`](#compose_convert_windows_paths)
+- [`COMPOSE_PATH_SEPARATOR`](#compose_path_separator)
+- [`COMPOSE_IGNORE_ORPHANS`](#compose_ignore_orphans)
+- [`COMPOSE_REMOVE_ORPHANS`](#compose_remove_orphans)
+- [`COMPOSE_PARALLEL_LIMIT`](#compose_parallel_limit)
+- [`COMPOSE_ANSI`](#compose_ansi)
+- [`COMPOSE_STATUS_STDOUT`](#compose_status_stdout)
+- [`COMPOSE_ENV_FILES`](#compose_env_files)
+- [`COMPOSE_DISABLE_ENV_FILE`](#compose_disable_env_file)
+- [`COMPOSE_MENU`](#compose_menu)
+- [`COMPOSE_EXPERIMENTAL`](#compose_experimental)
+- [`COMPOSE_PROGRESS`](#compose_progress)
 
 ## Methods to override 
 
@@ -225,13 +225,13 @@ This is an opt-out variable. When turned off it deactivates the experimental fea
 
 The following environment variables have no effect in Compose V2.
 
-- `COMPOSE_API_VERSION`
+- [`COMPOSE_API_VERSION`](#compose_api_version)
     By default the API version is negotiated with the server. Use `DOCKER_API_VERSION`.  
     See the [Docker CLI environment variable reference](/reference/cli/docker/#environment-variables) page.
-- `COMPOSE_HTTP_TIMEOUT`
-- `COMPOSE_TLS_VERSION`
-- `COMPOSE_FORCE_WINDOWS_HOST`
-- `COMPOSE_INTERACTIVE_NO_CLI`
-- `COMPOSE_DOCKER_CLI_BUILD`
+- [`COMPOSE_HTTP_TIMEOUT`](#compose_http_timeout)
+- [`COMPOSE_TLS_VERSION`](#compose_tls_version)
+- [`COMPOSE_FORCE_WINDOWS_HOST`](#compose_force_windows_host)
+- [`COMPOSE_INTERACTIVE_NO_CLI`](#compose_interactive_no_cli)
+- [`COMPOSE_DOCKER_CLI_BUILD`](#compose_docker_cli_build)
     Use `DOCKER_BUILDKIT` to select between BuildKit and the classic builder. If `DOCKER_BUILDKIT=0` then `docker compose build` uses the classic builder to build images.
 

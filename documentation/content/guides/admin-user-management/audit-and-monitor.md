@@ -44,6 +44,14 @@ Insights provide data-driven views of Docker usage to improve team productivity 
 
 For more information, see [Insights](/manuals/admin/insights.md).
 
+## Find monitoring steps and requirements
+
+- [Access activity logs](/manuals/admin/activity-logs.md#access-activity-logs)
+- [Filter logs and review Docker Home retention](/manuals/admin/activity-logs.md#filter-and-customize-activity-logs)
+- [Review Insights prerequisites](/manuals/admin/insights.md#prerequisites)
+- [Export Docker Desktop user data](/manuals/admin/insights.md#export-docker-desktop-user-data)
+- [Troubleshoot missing Insights data](/manuals/admin/insights.md#troubleshoot-insights)
+
 ## Next steps
 
 Now that you've mastered user and access management in Docker, you can:

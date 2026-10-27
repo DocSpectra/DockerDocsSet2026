@@ -9,6 +9,8 @@ aliases:
   - /guides/language/r/deploy/
 ---
 
+[R guide overview](_index.md)
+
 ## Prerequisites
 
 - Complete all the previous sections of this guide, starting with [Containerize a R application](containerize.md).
@@ -145,3 +147,5 @@ Related information:
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
 - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md)
 - [Swarm mode overview](/manuals/engine/swarm/_index.md)
+
+Return to the [R guide overview](_index.md).

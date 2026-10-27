@@ -11,6 +11,8 @@ accept connections on published ports for any service running in the swarm, even
 if there's no task running on the node. The routing mesh routes all
 incoming requests to published ports on available nodes to an active container.
 
+## Prerequisites
+
 To use the ingress network in the swarm, you need to have the following
 ports open between the swarm nodes before you enable Swarm mode:
 
@@ -26,6 +28,15 @@ resources, such as an external load balancer, that require access to the port.
 
 You can also [bypass the routing mesh](#bypass-the-routing-mesh) for a given
 service.
+
+## Choose a publishing task
+
+- [Publish, update, and inspect a service port](#publish-a-port-for-a-service).
+- [Publish TCP or UDP ports](#publish-a-port-for-tcp-only-or-udp-only).
+- [Bypass the routing mesh and review host-mode caveats](#bypass-the-routing-mesh).
+- [Configure an external load balancer](#configure-an-external-load-balancer).
+
+For network encryption and customization, see [Manage swarm service networks](networking.md).
 
 ## Publish a port for a service
 

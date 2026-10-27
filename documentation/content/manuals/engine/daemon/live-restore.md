@@ -20,6 +20,13 @@ or upgrades.
 > Live restore isn't supported for Windows containers, but it does work for
 > Linux containers running on Docker Desktop for Windows.
 
+Before enabling live restore, review its behavior
+[during upgrades](#live-restore-during-upgrades),
+[upon restart](#live-restore-upon-restart),
+[for container logging](#impact-of-live-restore-on-running-containers), and
+[in Swarm mode](#live-restore-and-swarm-mode).
+For restart policies, see [Start containers automatically](../containers/start-containers-automatically.md).
+
 ## Enable live restore
 
 There are two ways to enable the live restore setting to keep containers alive

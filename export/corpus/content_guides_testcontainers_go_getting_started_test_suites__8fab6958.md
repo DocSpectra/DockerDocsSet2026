@@ -5,12 +5,27 @@ description: Share a single Postgres container across multiple tests using testi
 weight: 30
 ---
 
-In the previous section, you saw how to spin up a Postgres Docker container
+[Guide overview and prerequisites](/guides/testcontainers-go-getting-started/#prerequisites) · [Previous: Write tests](/guides/testcontainers-go-getting-started/write-tests/)
+
+In [Write tests](/guides/testcontainers-go-getting-started/write-tests/), you saw how to spin up a Postgres Docker container
 for a single test. But often you have multiple tests in a single file, and you
 may want to reuse the same Postgres Docker container for all of them.
 
 You can use the [testify suite](https://pkg.go.dev/github.com/stretchr/testify/suite)
 package to implement common test setup and teardown actions.
+
+## In this step
+
+- [Test data caveat](#test-data-caveat)
+- [Extract container setup](#extract-container-setup)
+- [Write the test suite](#write-the-test-suite)
+
+## Test data caveat
+
+> [!TIP]
+> For the purpose of this guide, the tests don't reset data in the database.
+> In practice, it's a good idea to reset the database to a known state before
+> running each test.
 
 ## Extract container setup
 
@@ -138,7 +153,6 @@ Here's what the code does:
 - `TestCustomerRepoTestSuite(t *testing.T)` runs the test suite when you
   execute `go test`.
 
-> [!TIP]
-> For the purpose of this guide, the tests don't reset data in the database.
-> In practice, it's a good idea to reset the database to a known state before
-> running each test.
+## Continue
+
+[Next: Run tests](/guides/testcontainers-go-getting-started/run-tests/)

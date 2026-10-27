@@ -10,6 +10,15 @@ aliases:
 Docker supports different payment methods for your paid personal
 account or organization. This page describes supported payment types, how to make payments from [Docker Home](https://app.docker.com/), and how to set up pay by invoice.
 
+## Find a payment task
+
+- [Review supported payment types](#supported-payment-types) and [prerequisites](#prerequisites)
+- [Add a payment method](#add-payment-method), [set the default](#set-default-payment-method), or [remove a payment method](#remove-payment-method)
+- [Enable or disable pay by invoice](#enable-and-disable-pay-by-invoice) or [pay an invoice](history.md#pay-an-invoice)
+- [Verify a bank account instantly or manually](#verify-a-bank-account)
+- [Retry a failed payment and review the grace period](#failed-payments)
+- [Troubleshoot 3D Secure authentication](3d-secure.md#troubleshooting-payment-verification)
+
 ## Supported payment types
 
 You can add a payment method or update your account's existing payment method

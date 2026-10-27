@@ -5,6 +5,8 @@ description: Write integration tests using testcontainers-python and pytest with
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-python-getting-started/#prerequisites) · [Previous: Create the project](/guides/testcontainers-python-getting-started/create-project/)
+
 You'll create a PostgreSQL container using Testcontainers and use it for all
 the tests. Before each test, you'll delete all customer records so that tests
 run with a clean database.
@@ -67,6 +69,8 @@ def setup_data():
     customers.delete_all_customers()
 ```
 
+### How the test works
+
 Here's what the fixtures do:
 
 - The `setup` fixture has `scope="module"`, so it runs once for all tests in
@@ -102,3 +106,7 @@ def test_get_customer_by_email():
 
 Because `setup_data` deletes all records before each test, the tests can run in
 any order.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-python-getting-started/run-tests/)

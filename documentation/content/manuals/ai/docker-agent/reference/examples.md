@@ -8,6 +8,14 @@ weight: 40
 Get inspiration from the following agent examples.
 See more examples in the [Docker Agent GitHub repository](https://github.com/docker/docker-agent/tree/main/examples).
 
+## Choose an example
+
+- [Development team](#development-team)
+- [Go developer](#go-developer)
+- [Technical blog writer](#technical-blog-writer)
+
+For setup, see the [coding-agent tutorial](../tutorial.md) and [configuration reference](config.md).
+
 ## Development team
 
 {{% cagent-example.inline "dev-team.yaml" %}}

@@ -5,6 +5,17 @@ description: Test jOOQ repositories using Testcontainers with the @JooqTest slic
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-jooq-flyway/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-jooq-flyway/create-project/)
+
+## In this step
+
+- [Seed the test data](#seed-the-test-data)
+- [Test with the @JooqTest slice](#test-with-the-jooqtest-slice)
+- [Integration test with @SpringBootTest](#integration-test-with-springboottest)
+- [Test PostRepository](#test-postrepository)
+
+## Seed the test data
+
 Before writing the tests, create an SQL script to seed test data at
 `src/test/resources/test-data.sql`:
 
@@ -88,6 +99,8 @@ class UserRepositoryJooqTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@JooqTest` loads only the persistence layer and auto-configures
@@ -158,6 +171,8 @@ class UserRepositoryTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@SpringBootTest` loads the entire application context, so
@@ -214,3 +229,7 @@ class PostRepositoryTest {
 
 This test verifies that `getPostById` loads the post along with its creator
 and comments in a single query using jOOQ's MULTISET feature.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-jooq-flyway/run-tests/)

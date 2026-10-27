@@ -11,6 +11,12 @@ aliases:
 
 0.2.0
 
+## Find a request method
+
+[GET](#get) · [POST](#post) · [PUT](#put) · [PATCH](#patch) · [DELETE](#delete) · [HEAD](#head) · [Request configuration](#request)
+
+See also [backend communication examples](/manuals/extensions/extensions-sdk/dev/api/backend.md#get), [request configuration](RequestConfig.md), and [service errors](ServiceError.md).
+
 ## Methods
 
 ### get

@@ -15,4 +15,11 @@ In this demo, you'll see:
 
 {{< youtube-embed "oPGq2AP5OtQ" >}}
 
+## Follow the steps
+
+- [Setup prerequisites and builder connection](/manuals/build-cloud/setup.md)
+- [Build with Docker Compose](/manuals/build-cloud/usage.md#use-with-docker-compose)
+- [Manage build cache](/manuals/build-cloud/usage.md#managing-build-cache)
+- [Continue to the CI demo](ci.md)
+
 <div id="dbc-lp-survey-anchor"></div>

@@ -25,6 +25,8 @@ Get hands-on with the four core pillars of AI application development: models,
 prompt engineering, tool calling, and RAG. This lab runs entirely on your
 machine using Docker Model Runner — no API key or cloud account required.
 
+Review [what you'll learn](#what-youll-learn) and the [modules](#modules), or [launch the lab](#launch-the-lab).
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-ai-fundamentals" model-download="true" >}}
@@ -48,3 +50,9 @@ By the end of this Labspace, you will have completed the following:
 | 4   | Tool Calling                         | Tool definitions, the agentic loop, and executing tools in code   |
 | 5   | Retrieval Augmented Generation (RAG) | Retrieve, augment, and generate with your own knowledge base      |
 | 6   | Wrap-up                              | Summary of concepts and next steps                                |
+
+## Related documentation
+
+- [Model Runner setup](../manuals/ai/model-runner/get-started.md)
+- [Model Runner API reference](../manuals/ai/model-runner/api-reference.md)
+- [AI task guides](ai-task-guides.md)

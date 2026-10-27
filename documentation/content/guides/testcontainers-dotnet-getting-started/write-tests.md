@@ -5,6 +5,8 @@ description: Write integration tests using Testcontainers for .NET and xUnit wit
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-dotnet-getting-started/#prerequisites) · [Previous: Create the project](/guides/testcontainers-dotnet-getting-started/create-project/)
+
 ## Add Testcontainers dependencies
 
 Add the Testcontainers PostgreSQL module to the test project:
@@ -55,6 +57,8 @@ public sealed class CustomerServiceTest : IAsyncLifetime
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - Declares a `PostgreSqlContainer` using the `PostgreSqlBuilder` with the
@@ -65,3 +69,7 @@ Here's what the test does:
 - `ShouldReturnTwoCustomers()` creates a `CustomerService` with connection
   details from the container, inserts two customers, fetches all customers, and
   asserts the count.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-dotnet-getting-started/run-tests/)

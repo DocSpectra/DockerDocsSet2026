@@ -12,12 +12,19 @@ aliases:
 
 Use the Docker Admin Console to create and manage settings policies for Docker Desktop across your organization. Settings policies let you standardize configurations, enforce security requirements, and maintain consistent Docker Desktop environments.
 
+## Choose a policy task
+
+- [Check prerequisites](#prerequisites).
+- [Create a settings policy](#create-a-settings-policy).
+- [Apply the policy](#apply-the-policy) and [verify settings](#verify-applied-settings).
+- [Manage existing policies](#manage-existing-policies) or [roll back settings](#roll-back-policies).
+
 ## Prerequisites
 
 Before you begin, make sure you have:
 
 - [Docker Desktop](/manuals/desktop/release-notes.md) installed
-- [A verified domain](/enterprise/security/single-sign-on/connect/#step-1-add-a-domain)
+- [A verified domain](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain)
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 
@@ -89,7 +96,7 @@ After you apply policies:
 - Some settings, particularly Enhanced Container Isolation configurations,
   may not appear in the GUI
 - You can verify all applied settings by checking the [`settings-store.json`
-  file](/manuals/desktop/settings-and-maintenance/settings.md) on your system
+  file](_index.md#view-applied-settings) on your system
 
 ## Manage existing policies
 

@@ -22,6 +22,16 @@ user type, subject to fair use:
 
 For more details, see [Pull usage and limits](./pulls.md).
 
+## Usage tasks
+
+- [Understand pull counting](./pulls.md#pull-definition)
+- [Understand pull attribution](./pulls.md#pull-attribution)
+- [Authenticate pulls](./pulls.md#authentication)
+- [View monthly pulls and included usage](./pulls.md#view-monthly-pulls-and-included-usage)
+- [View pull rate and limit](./pulls.md#view-pull-rate-and-limit)
+- [Optimize Docker Hub usage](./manage.md)
+- [Troubleshoot rate-limit errors](../troubleshoot.md)
+
 ## Fair use
 
 When utilizing the Docker Platform, users should be aware that excessive data

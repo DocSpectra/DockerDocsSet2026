@@ -26,8 +26,8 @@ production environments.
 
 ## What you'll learn
 
-- Understanding image layers
-- Writing a Dockerfile
-- Build, tag and publish an image
-- Using the build cache
-- Multi-stage builds
+- [Understanding image layers](understanding-image-layers.md)
+- [Writing a Dockerfile](writing-a-dockerfile.md)
+- [Build, tag and publish an image](build-tag-and-publish-an-image.md)
+- [Using the build cache](using-the-build-cache.md)
+- [Multi-stage builds](multi-stage-builds.md)

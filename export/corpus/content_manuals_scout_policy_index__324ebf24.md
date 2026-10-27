@@ -18,6 +18,16 @@ perform, relative to your rules and thresholds, over time.
 Learn how you can use Policy Evaluation to ensure that your artifacts align
 with established best practices.
 
+## Choose a policy task
+
+- [View policy status](./view.md)
+- [Add, edit, disable, delete, or recover a policy](./configure.md)
+- [Evaluate compliance in CI](./ci.md)
+- [View remediation recommendations](./remediation.md)
+- [View and interpret health scores](./scores.md)
+- [Review policy types and their requirements](#policy-types)
+- [Resolve missing base image data](#no-base-image-data)
+
 ## How Policy Evaluation works
 
 When you activate Docker Scout for a repository, images that you push are

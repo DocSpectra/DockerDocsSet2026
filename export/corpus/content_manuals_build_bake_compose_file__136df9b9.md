@@ -9,6 +9,16 @@ aliases:
 Bake supports the [Compose file format](/reference/compose-file/_index.md)
 to parse a Compose file and translate each service to a [target](reference.md#target).
 
+## Compose format limitations
+
+The compose format has some limitations compared to the HCL format:
+
+- Specifying variables or global scope attributes is not supported
+- `inherits` service field is not supported, but you can use [YAML anchors](/reference/compose-file/fragments.md)
+  to reference other services, as demonstrated in the example below with `&build-dev`.
+
+## Build and inspect Compose services
+
 ```yaml
 # compose.yaml
 services:
@@ -91,12 +101,6 @@ $ docker buildx bake --print
   }
 }
 ```
-
-The compose format has some limitations compared to the HCL format:
-
-- Specifying variables or global scope attributes is not supported
-- `inherits` service field is not supported, but you can use [YAML anchors](/reference/compose-file/fragments.md)
-  to reference other services, as demonstrated in the previous example with `&build-dev`.
 
 ## `.env` file
 
@@ -261,6 +265,8 @@ $ docker buildx bake --print
 }
 ```
 
+### Supported extension fields
+
 Complete list of valid fields for `x-bake`:
 
 - `cache-from`
@@ -274,3 +280,8 @@ Complete list of valid fields for `x-bake`:
 - `secret`
 - `ssh`
 - `tags`
+
+## Related tasks
+
+- [Extend a Compose project for release builds](/guides/compose-bake/index.md)
+- [Review file lookup and merge order](overrides.md#default-file-lookup)

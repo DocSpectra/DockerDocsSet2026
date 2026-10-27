@@ -16,6 +16,14 @@ Docker Build supports two forms of secrets:
 This page shows how to use secrets with GitHub Actions.
 For an introduction to secrets in general, see [Build secrets](/manuals/build/building/secrets.md).
 
+## Choose a secret task
+
+- [Pass a secret value](#secret-mounts)
+- [Mount a secret file](#using-secret-files)
+- [Pass multi-line secrets](#multi-line-secrets)
+- [Authenticate with SSH mounts](#ssh-mounts)
+- [Review provenance and secret exposure warnings](attestations.md#default-provenance)
+
 ## Secret mounts
 
 In the following example uses and exposes the [`GITHUB_TOKEN` secret](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)

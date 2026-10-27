@@ -12,6 +12,13 @@ container image or other artifacts.
 You can create and manage builders, inspect them, and even connect to builders
 running remotely. You interact with builders using the Docker CLI.
 
+## Find a builder task
+
+- [Create, inspect, or remove a builder](manage.md)
+- [Compare build drivers](drivers/_index.md)
+- [Select a builder](#selected-builder)
+- [Choose between `docker build` and `docker buildx build`](#difference-between-docker-build-and-docker-buildx-build)
+
 ## Default builder
 
 Docker Engine automatically creates a builder that becomes the default backend

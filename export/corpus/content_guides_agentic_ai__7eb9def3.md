@@ -16,6 +16,14 @@ params:
 > [Docker Agent](../manuals/ai/docker-agent/_index.md), a purpose-built agent runtime that
 > simplifies running and managing AI agents.
 
+## Follow the guide
+
+- [Check prerequisites](#prerequisites)
+- [Clone the sample](#step-1-clone-the-sample-application)
+- [Run and stop the application](#step-2-run-the-application-locally)
+- [Review Compose and the Dockerfile](#step-3-review-the-application-environment)
+- [Review the agent implementation](#step-4-review-the-application)
+
 ## Introduction
 
 Agentic applications are transforming how software gets built. These apps don't
@@ -66,7 +74,7 @@ all works together.
 To follow this guide, you need to:
 
 - [Install Docker Desktop 4.43 or later](../get-started/get-docker.md)
-- [Enable Docker Model Runner](/manuals/ai/model-runner.md#enable-dmr-in-docker-desktop)
+- [Enable Docker Model Runner](/manuals/ai/model-runner/get-started.md#docker-desktop)
 - At least the following hardware specifications:
   - VRAM: 3.5 GB
   - Storage: 2.31 GB
@@ -197,6 +205,8 @@ searches.
 
 With only a few lines of instructions in a Compose file, you're able to run and
 connect all the necessary services of an agentic AI application.
+
+### Dockerfile and entrypoint
 
 In addition to the Compose file, the Dockerfile and the
 `entrypoint.sh` script it creates, play a role in wiring up the AI stack at build and

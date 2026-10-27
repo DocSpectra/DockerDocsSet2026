@@ -8,6 +8,8 @@ weight: 3
 
 This page provides an overview of endpoints that are deprecated in Docker Verified Publisher API.
 
+See also the [API reference](./latest.md) and [changelog](./changelog.md).
+
 ## Endpoint deprecation policy
 
 As changes are made to Docker there may be times when existing endpoints need to be removed or replaced with newer endpoints. Before an existing endpoint is removed it is labeled as "deprecated" within the documentation. After some time it may be removed.

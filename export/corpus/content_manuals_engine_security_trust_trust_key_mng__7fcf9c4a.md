@@ -4,6 +4,16 @@ keywords: trust, security, root,  keys, repository
 title: Manage keys for content trust
 ---
 
+## Choose a key management task
+
+- [Review key types and storage](#key-types-and-storage)
+- [Choose a passphrase](#choose-a-passphrase)
+- [Back up keys](#back-up-your-keys)
+- [Use hardware storage and signing](#hardware-storage-and-signing)
+- [Handle key loss](#key-loss)
+
+## Key types and storage
+
 Trust for an image tag is managed through the use of keys. Docker's content
 trust makes use of five different types of keys:
 
@@ -87,7 +97,7 @@ the new key.
 
 ## Related information
 
-* [Content trust in Docker](index.md)
+* [Content trust in Docker](_index.md)
 * [Automation with content trust](trust_automation.md)
 * [Delegations for content trust](trust_delegation.md)
 * [Play in a content trust sandbox](trust_sandbox.md)

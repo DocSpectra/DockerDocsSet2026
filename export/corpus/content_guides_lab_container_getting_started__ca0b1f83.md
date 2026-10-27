@@ -24,9 +24,7 @@ Start from zero and learn Docker's core building blocks. You'll run pre-built
 containers, write a `Dockerfile` to package a Node.js app, build your own
 image, and see container immutability and isolation in action.
 
-## Launch the lab
-
-{{< labspace-launch image="dockersamples/labspace-container-getting-started" >}}
+Jump to: [learning objectives](#what-youll-learn), [modules](#modules), or [launch the lab](#launch-the-lab).
 
 ## What you'll learn
 
@@ -47,3 +45,13 @@ By the end of this Labspace, you will have completed the following:
 | 3   | Building Your First Image | Write a `Dockerfile` and build a custom image from a Node.js app               |
 | 4   | Running Your App          | Run your image, explore container isolation, and optionally push to Docker Hub |
 | 5   | Wrap-up                   | Summary of key concepts and next steps                                         |
+
+## Launch the lab
+
+{{< labspace-launch image="dockersamples/labspace-container-getting-started" >}}
+
+## Related learning paths
+
+- [Container-Supported Development](lab-container-supported-development.md)
+- [The Containerized SDLC](lab-containerized-sdlc.md)
+- [Container-supported development videos](container-supported-development.md)

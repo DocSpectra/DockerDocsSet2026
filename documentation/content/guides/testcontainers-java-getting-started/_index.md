@@ -14,6 +14,8 @@ params:
   time: 20 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-getting-started-with-testcontainers-for-java -->
 
 In this guide, you will learn how to:
@@ -33,3 +35,9 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-getting-started/create-project/)
+2. [Write tests](/guides/testcontainers-java-getting-started/write-tests/)
+3. [Run tests](/guides/testcontainers-java-getting-started/run-tests/)

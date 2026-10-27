@@ -10,6 +10,14 @@ enable full SCIM lifecycle management, you need to migrate them. Users
 originally created by JIT cannot be automatically de-provisioned through SCIM,
 even after SCIM is enabled.
 
+## Migration tasks
+
+1. Check [prerequisites](#prerequisites).
+2. [Prepare ownership, IdP configuration, and user records](#prepare-for-migration).
+3. [Disable JIT, remove JIT-origin users, and validate SCIM provisioning](#complete-the-migration).
+
+For failures after removal, see [Troubleshoot migration issues](#troubleshoot-migration-issues).
+
 ## Why migrate
 
 Organizations using JIT provisioning may encounter limitations with user
@@ -177,4 +185,4 @@ For more troubleshooting guidance, see
 
 - Set up [Group mapping](/manuals/enterprise/security/provisioning/scim/group-mapping.md).
 - [Assign roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md) to members of your org.
-- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in.md), if needed.
+- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in/_index.md), if needed.

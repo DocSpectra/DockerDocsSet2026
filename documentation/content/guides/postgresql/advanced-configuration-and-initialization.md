@@ -9,15 +9,19 @@ keywords:
   - PostgreSQL performance tuning
 ---
 
-With persistent storage configured in the previous section, you're ready to customize PostgreSQL for real-world use. This guide covers advanced configuration techniques for running PostgreSQL in Docker containers, including automated database initialization, performance tuning, and timezone configuration.
+[PostgreSQL guide](_index.md) / [Setup and persistence](immediate-setup-and-data-persistence.md) / [Configuration](advanced-configuration-and-initialization.md) / [Networking](networking-and-connectivity.md) / [Companions](companions-for-postgresql.md)
+
+With persistent storage configured in [Immediate setup and data persistence](immediate-setup-and-data-persistence.md), you're ready to customize PostgreSQL for real-world use. This guide covers advanced configuration techniques for running PostgreSQL in Docker containers, including automated database initialization, performance tuning, and timezone configuration.
 
 ## Overview
 
 While PostgreSQL containers can be started quickly with default settings, production environments require customized configurations. This guide explains how to:
 
-- Automate database, schema, and user creation during container startup
-- Tune PostgreSQL performance parameters for containerized workloads
-- Configure timezone and locale settings
+- [Automate database, schema, and user creation during container startup](#initialization-scripts)
+- [Mount initialization scripts](#mounting-initialization-scripts) and [create an example schema](#initialization-script-example)
+- [Tune PostgreSQL performance parameters for containerized workloads](#performance-tuning)
+- [Configure timezone and locale settings](#timezone-and-locale-configuration)
+- [Open an interactive database shell](#connecting-to-the-database)
 
 ## Initialization scripts
 
@@ -39,7 +43,7 @@ When the container starts, it checks whether the PostgreSQL data directory is em
 >
 > Initialization scripts only run when the PostgreSQL data directory (`/var/lib/postgresql/data`) is empty. If you mount a volume containing existing data, initialization is skipped. This behavior prevents overwriting existing databases.
 
-## Mounting initialization scripts
+### Mounting initialization scripts
 
 Use Docker Compose to mount initialization scripts into the container. First, create a project directory:
 
@@ -66,7 +70,7 @@ volumes:
 
 All scripts in the `./init-db` directory execute when the container starts for the first time. This is great for bootstrapping databases.
 
-## Initialization script example
+### Initialization script example
 
 Create a file named `init.sql` in your `init-db` directory:
 
@@ -115,11 +119,11 @@ volumes:
   postgres_data:
 ```
 
-## Key configuration parameters
+### Key configuration parameters
 
 The following tables list important `postgresql.conf` parameters for containerized PostgreSQL deployments.
 
-### Connection settings
+#### Connection settings
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
@@ -127,7 +131,7 @@ The following tables list important `postgresql.conf` parameters for containeriz
 | `port` | TCP port number | `5432` |
 | `max_connections` | Maximum concurrent connections | `100` |
 
-### Memory settings
+#### Memory settings
 
 | Parameter | Description | Recommended starting value |
 |-----------|-------------|---------------------------|
@@ -136,17 +140,21 @@ The following tables list important `postgresql.conf` parameters for containeriz
 | `maintenance_work_mem` | Memory for VACUUM, CREATE INDEX | 64MB - 256MB |
 | `effective_cache_size` | Planner's cache size estimate | 50-75% of container memory |
 
-#### Docker memory limits
+> [!NOTE]
+>
+> Setting `shared_buffers` too high in a container can exceed kernel shared memory limits. Use no more than 25-30% of the container's memory limit.
+
+##### Docker memory limits
 
 When tuning memory parameters, set explicit memory limits on your container using `deploy.resources.limits.memory` in Compose or `--memory` with `docker run`. Without limits, PostgreSQL sees the host's total RAM and may allocate more than intended. For example, if your container should use 4GB maximum, set `shared_buffers` to approximately 1GB (25%).
 
-### I/O settings
+#### I/O settings
 
 | Parameter | Description | Recommended starting value |
 |-----------|-------------|---------------------------|
 | `effective_io_concurrency` | Concurrent disk I/O operations | `200` for SSDs, `2` for HDDs |
 
-### Timeout settings
+#### Timeout settings
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
@@ -154,10 +162,6 @@ When tuning memory parameters, set explicit memory limits on your container usin
 | `lock_timeout` | Max time to wait for a lock | `0` (disabled) |
 | `deadlock_timeout` | Time before checking for deadlock | `1s` |
 | `transaction_timeout` | Max time for a transaction | `0` (disabled) |
-
-> [!NOTE]
->
-> Setting `shared_buffers` too high in a container can exceed kernel shared memory limits. Use no more than 25-30% of the container's memory limit.
 
 ## Timezone and locale configuration
 
@@ -227,3 +231,5 @@ Connect to a specific database:
 ```console
 $ docker exec -it postgres-container psql -U postgres -d mydb
 ```
+
+For container and host connection steps, continue to [Networking and connectivity](networking-and-connectivity.md).

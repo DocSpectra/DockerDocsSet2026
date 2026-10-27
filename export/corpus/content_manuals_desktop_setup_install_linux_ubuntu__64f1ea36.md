@@ -25,6 +25,10 @@ aliases:
 
 This page contains information on how to install, launch and upgrade Docker Desktop on an Ubuntu distribution.
 
+Choose a task: [Check prerequisites](#prerequisites) · [Install](#install-docker-desktop) · [Launch](#launch-docker-desktop) · [Upgrade](#upgrade-docker-desktop) · [Uninstall](/manuals/desktop/uninstall.md#ubuntu).
+
+For shared requirements and caveats, see [Docker Desktop on Linux](_index.md).
+
 ## Prerequisites
 
 To install Docker Desktop successfully, you must:
@@ -62,6 +66,8 @@ Recommended approach to install Docker Desktop on Ubuntu:
    > ```
 
    By default, Docker Desktop is installed at `/opt/docker-desktop`.
+
+### Post-install setup
 
 The DEB package includes a post-install script that completes additional setup steps automatically.
 

@@ -19,4 +19,10 @@ In this demo, you will see:
 
 {{< youtube-embed "wvLdInoVBGg" >}}
 
+## Follow the steps
+
+- [Set up CI credentials](/manuals/build-cloud/ci.md#setting-up-credentials-for-cicd)
+- [Choose a CI platform example](/manuals/build-cloud/ci.md#ci-platform-examples)
+- [Review common challenges and questions](common-questions.md)
+
 <div id="dbc-lp-survey-anchor"></div>

@@ -16,6 +16,22 @@ options, or a dry-run mode for builds.
 You can find the list of checks available, and a description of each, in the
 [Build checks reference](/reference/build-checks/).
 
+## Requirements
+
+Build checks are supported in:
+
+- Buildx version 0.15.0 and later
+- [docker/build-push-action](https://github.com/docker/build-push-action) version 6.6.0 and later
+- [docker/bake-action](https://github.com/docker/bake-action) version 5.6.0 and later
+
+## Choose a check task
+
+- [Build with checks](#build-with-checks) and [expand warning details](#more-verbose-output).
+- [Check without building](#check-a-build-without-building).
+- [Fail builds on violations](#fail-build-on-check-violations).
+- [Skip checks](#skip-checks) or [combine skip and error settings](#combine-error-and-skip-parameters-for-check-directives).
+- [Enable experimental checks and review precedence](#experimental-checks).
+
 ## How build checks work
 
 Typically, when you run a build, Docker executes the build steps in your
@@ -37,12 +53,6 @@ Build checks are useful for:
 > see the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension.
 
 ## Build with checks
-
-Build checks are supported in:
-
-- Buildx version 0.15.0 and later
-- [docker/build-push-action](https://github.com/docker/build-push-action) version 6.6.0 and later
-- [docker/bake-action](https://github.com/docker/bake-action) version 5.6.0 and later
 
 Invoking a build runs the checks by default, and displays any violations in the
 build output. For example, the following command both builds the image and runs

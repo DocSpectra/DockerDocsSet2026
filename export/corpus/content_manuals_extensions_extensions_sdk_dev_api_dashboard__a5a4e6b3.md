@@ -43,16 +43,6 @@ ddClient.desktopUI.toast.error("message");
 
 For more details about method parameters and the return types available, see [Toast API reference](/reference/api/extensions-sdk/Toast.md).
 
-> Deprecated user notifications
->
-> These methods are deprecated and will be removed in a future version. Use the methods specified above.
-
-```typescript
-window.ddClient.toastSuccess("message");
-window.ddClient.toastWarning("message");
-window.ddClient.toastError("message");
-```
-
 ## Open a file selection dialog
 
 This function opens a file selector dialog that asks the user to select a file or folder.
@@ -84,14 +74,30 @@ ddClient.host.openExternal("https://docker.com");
 
 For more details about method parameters and the return types available, see [Desktop host API reference](/reference/api/extensions-sdk/Host.md).
 
+## Navigation to Dashboard routes
+
+From your extension, you can also [navigate](dashboard-routes-navigation.md) to other parts of the Docker Desktop Dashboard.
+
+## Deprecated APIs
+
+### User notifications
+
 > Deprecated user notifications
 >
-> This method is deprecated and will be removed in a future version. Use the methods specified above.
+> These methods are deprecated and will be removed in a future version. Use the [notification methods above](#user-notifications).
+
+```typescript
+window.ddClient.toastSuccess("message");
+window.ddClient.toastWarning("message");
+window.ddClient.toastError("message");
+```
+
+### Open an external URL
+
+> Deprecated user notifications
+>
+> This method is deprecated and will be removed in a future version. Use the [URL method above](#open-a-url).
 
 ```typescript
 window.ddClient.openExternal("https://docker.com");
 ```
-
-## Navigation to Dashboard routes
-
-From your extension, you can also [navigate](dashboard-routes-navigation.md) to other parts of the Docker Desktop Dashboard.

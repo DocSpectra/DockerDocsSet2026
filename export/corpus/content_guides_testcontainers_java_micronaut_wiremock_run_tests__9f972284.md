@@ -5,6 +5,8 @@ description: Run your Testcontainers WireMock integration tests and explore next
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-micronaut-wiremock/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-micronaut-wiremock/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -41,3 +43,7 @@ To learn more about Testcontainers, visit the
 - [WireMock documentation](https://wiremock.org/docs/)
 - [Testcontainers JUnit 5 quickstart](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
 - [Testing REST API integrations in Spring Boot using WireMock](/guides/testcontainers-java-wiremock/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-micronaut-wiremock/)

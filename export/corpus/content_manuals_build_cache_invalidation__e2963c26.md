@@ -9,6 +9,14 @@ Dockerfile, executing each in the order specified. For each instruction, the
 [builder](/manuals/build/builders/_index.md) checks whether it can reuse the
 instruction from the build cache.
 
+## Find invalidation rules
+
+- [General rules and file metadata](#general-rules).
+- [WORKDIR and SOURCE_DATE_EPOCH](#workdir-and-source_date_epoch).
+- [Force RUN instructions to run again](#run-instructions).
+- [Changing build secrets](#build-secrets).
+- For base image refreshes, see [Rebuild your images often](../building/best-practices.md#rebuild-your-images-often).
+
 ## General rules
 
 The basic rules of build cache invalidation are as follows:

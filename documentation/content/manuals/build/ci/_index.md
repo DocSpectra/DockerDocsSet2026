@@ -18,6 +18,13 @@ don't cause any unwanted or unexpected behaviors.
 There are several uses for Docker at this stage of development, even if you
 don't end up packaging your application as a container image.
 
+## Find a CI task
+
+- [Build and push with GitHub Actions](/guides/gha.md)
+- [Choose a Docker GitHub Actions example](github-actions/_index.md#examples)
+- [Build and push with Azure Pipelines](/guides/azure-pipelines.md)
+- [Set up Docker Build Cloud in CI](/manuals/build-cloud/ci.md)
+
 ## Docker as a build environment
 
 Containers are reproducible, isolated environments that yield predictable

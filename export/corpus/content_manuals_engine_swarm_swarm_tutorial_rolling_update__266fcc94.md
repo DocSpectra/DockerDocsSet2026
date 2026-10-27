@@ -6,6 +6,8 @@ weight: 70
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 In a previous step of the tutorial, you [scaled](scale-service.md) the number of
 instances of a service. In this part of the tutorial, you deploy a service based
 on the Redis 7.4.0 container tag. Then you upgrade the service to use the

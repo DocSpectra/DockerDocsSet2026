@@ -26,6 +26,20 @@ paths, and dev variants.
 >
 > Run `docker login dhi.io` to authenticate.
 
+## Choose a task
+
+- [Review the syntax directive and supported distributions](#how-dhi-builds-differ-from-dockerfiles)
+- [Build an existing catalog image](#try-it-build-a-catalog-image)
+- [Create a minimal image](#create-a-minimal-image) or [use a Debian base with third-party repositories](#use-a-debian-base-with-third-party-repositories)
+- [Create paths](#create-paths), [add build stages](#add-build-stages), or [use OCI artifacts as package sources](#use-oci-artifacts-as-package-sources)
+- [Create a dev variant](#create-a-dev-variant) or [a compatibility variant](#create-a-compatibility-variant)
+- [Set ports and volumes](#set-ports-and-volumes) or [annotations](#set-annotations)
+- [Build and verify](#build-and-verify), [push](#push-to-a-registry), or [contribute to the catalog](#contribute-to-the-catalog)
+- [Look up YAML fields](#yaml-schema-reference)
+
+For Dockerfile usage, see [Use an image](./use.md). For the mirrored-image
+customization workflow, see [Customize an image or chart](./customize.md).
+
 ## How DHI builds differ from Dockerfiles
 
 A Dockerfile is a sequence of imperative instructions: `RUN`, `COPY`, `FROM`.
@@ -144,63 +158,9 @@ $ git clone https://github.com/docker-hardened-images/catalog.git
 $ cd catalog
 ```
 
-## YAML schema reference
+## Write an image definition
 
-The following sections describe the fields available in a DHI definition file.
-
-### Required fields
-
-Every definition must include these top-level fields:
-
-| Field       | Description                                                         |
-|-------------|---------------------------------------------------------------------|
-| `name`      | Human-readable name for the image.                                  |
-| `image`     | Full registry path, such as `dhi.io/my-image`.                      |
-| `variant`   | Image variant type: `runtime` or `dev`.                             |
-| `tags`      | List of image tags.                                                 |
-| `platforms`  | Target architectures, such as `linux/amd64` and `linux/arm64`.     |
-| `contents`  | Package repositories and packages to install.                       |
-
-### Image metadata
-
-These fields add metadata to the image:
-
-| Field         | Description                                                       |
-|---------------|-------------------------------------------------------------------|
-| `os-release`  | Defines the `/etc/os-release` contents inside the image.          |
-| `annotations` | OCI image annotations such as description and license.            |
-| `dates`       | Release date and end-of-life date.                                |
-| `vars`        | Build-time variables for templating.                              |
-| `flavor`      | Image flavor modifier, such as `compat` for compatibility images.|
-
-### Container configuration
-
-These fields control how the container runs:
-
-| Field         | Description                                                       |
-|---------------|-------------------------------------------------------------------|
-| `accounts`    | Users, groups, and the `run-as` user.                             |
-| `environment` | Environment variables.                                            |
-| `entrypoint`  | Container entrypoint command.                                     |
-| `cmd`         | Default command arguments.                                        |
-| `work-dir`    | Working directory inside the container.                           |
-| `volumes`     | Volume mount points.                                              |
-| `ports`       | Exposed network ports.                                            |
-| `paths`       | Directories, files, and symlinks to create.                       |
-
-### Advanced fields
-
-These fields support more complex build patterns:
-
-| Field                | Description                                                  |
-|----------------------|--------------------------------------------------------------|
-| `contents.builds`    | Build stages with shell pipelines.                           |
-| `contents.keyring`   | Signing keys for third-party package repositories.           |
-| `contents.artifacts` | Pre-built OCI artifacts to include.                          |
-| `contents.mappings`  | Package URL (purl) mappings for SBOM accuracy.               |
-| `contents.files`     | Source files fetched from Git URLs with checksums.            |
-
-## Create a minimal image
+### Create a minimal image
 
 Start with the simplest possible definition: an Alpine base image with a
 non-root user.
@@ -287,7 +247,7 @@ $ docker buildx build . -f base.yaml \
 > different purposes - the spec file tags describe *what the image is*, while
 > the CLI tag determines *where it's stored*.
 
-## Use a Debian base with third-party repositories
+### Use a Debian base with third-party repositories
 
 For applications that require Debian packages or third-party APT repositories,
 use the Debian syntax directive. The following example builds a Redis image
@@ -390,7 +350,7 @@ This example introduces several patterns:
 - **Config includes**: The `cmd` uses `--include /etc/redis/conf.d/*.conf` so
   that configuration files created in the `paths` section are loaded at startup.
 
-## Create paths
+### Create paths
 
 Use the `paths` field to create directories, files with inline content, and
 symlinks inside the image. The following example extends the Redis definition
@@ -447,7 +407,7 @@ such as `"0755"` for read-write-execute by owner or `"0555"` for read-execute
 by all. Note that the `file` type supports inline `content` using a YAML
 multi-line string.
 
-## Add build stages
+### Add build stages
 
 For images that need to run shell commands during the build, such as
 configuring files, creating symlinks, or adjusting permissions, use the
@@ -573,7 +533,7 @@ Key patterns in this definition:
 | `accounts`  | Nginx uses a dedicated `nginx` user (UID 65532) instead of `nonroot`. The `www-data` group (GID 82) is also created for web server compatibility. |
 | `musl-utils` | Required in both the main and build packages for Alpine-based Nginx images. |
 
-## Use OCI artifacts as package sources
+### Use OCI artifacts as package sources
 
 Instead of installing packages from Alpine or Debian repositories, you can pull
 pre-built binaries from DHI package artifacts. This is how the catalog builds
@@ -621,7 +581,7 @@ Available DHI packages are in the
 [`package/`](https://github.com/docker-hardened-images/catalog/tree/main/package)
 directory of the catalog repository.
 
-## Create a dev variant
+### Create a dev variant
 
 A dev variant of an image adds a shell, package manager, and development tools.
 This is useful for debugging and for use as a build stage in multi-stage
@@ -694,7 +654,7 @@ The key differences from a runtime variant:
 For Debian-based dev variants, add `apt` instead of `apk-tools` and include the
 `DEBIAN_FRONTEND: noninteractive` environment variable.
 
-## Create a compatibility variant
+### Create a compatibility variant
 
 A compatibility variant includes common shell utilities for use with
 scripts and automation tools that expect a standard Linux userland. Compatibility
@@ -718,7 +678,7 @@ flavor: compat
 Refer to the Redis compatibility images in the catalog for a complete example of
 the compatibility pattern.
 
-## Set ports and volumes
+### Set ports and volumes
 
 Use the `ports` field to declare which ports the container exposes. Always use
 unprivileged ports (higher than 1024) when the container runs as a non-root
@@ -736,7 +696,7 @@ volumes:
   - /data
 ```
 
-## Set annotations
+### Set annotations
 
 OCI annotations add machine-readable metadata to the image. Use the
 `annotations` field:
@@ -818,6 +778,62 @@ $ docker push <your-namespace>/my-image:latest
 
 Replace `<your-namespace>` with your Docker Hub username or organization
 namespace.
+
+## YAML schema reference
+
+The following sections describe the fields available in a DHI definition file.
+
+### Required fields
+
+Every definition must include these top-level fields:
+
+| Field       | Description                                                         |
+|-------------|---------------------------------------------------------------------|
+| `name`      | Human-readable name for the image.                                  |
+| `image`     | Full registry path, such as `dhi.io/my-image`.                      |
+| `variant`   | Image variant type: `runtime` or `dev`.                             |
+| `tags`      | List of image tags.                                                 |
+| `platforms`  | Target architectures, such as `linux/amd64` and `linux/arm64`.     |
+| `contents`  | Package repositories and packages to install.                       |
+
+### Image metadata
+
+These fields add metadata to the image:
+
+| Field         | Description                                                       |
+|---------------|-------------------------------------------------------------------|
+| `os-release`  | Defines the `/etc/os-release` contents inside the image.          |
+| `annotations` | OCI image annotations such as description and license.            |
+| `dates`       | Release date and end-of-life date.                                |
+| `vars`        | Build-time variables for templating.                              |
+| `flavor`      | Image flavor modifier, such as `compat` for compatibility images.|
+
+### Container configuration
+
+These fields control how the container runs:
+
+| Field         | Description                                                       |
+|---------------|-------------------------------------------------------------------|
+| `accounts`    | Users, groups, and the `run-as` user.                             |
+| `environment` | Environment variables.                                            |
+| `entrypoint`  | Container entrypoint command.                                     |
+| `cmd`         | Default command arguments.                                        |
+| `work-dir`    | Working directory inside the container.                           |
+| `volumes`     | Volume mount points.                                              |
+| `ports`       | Exposed network ports.                                            |
+| `paths`       | Directories, files, and symlinks to create.                       |
+
+### Advanced fields
+
+These fields support more complex build patterns:
+
+| Field                | Description                                                  |
+|----------------------|--------------------------------------------------------------|
+| `contents.builds`    | Build stages with shell pipelines.                           |
+| `contents.keyring`   | Signing keys for third-party package repositories.           |
+| `contents.artifacts` | Pre-built OCI artifacts to include.                          |
+| `contents.mappings`  | Package URL (purl) mappings for SBOM accuracy.               |
+| `contents.files`     | Source files fetched from Git URLs with checksums.            |
 
 ## Contribute to the catalog
 

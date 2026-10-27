@@ -71,3 +71,8 @@ By adopting minimal or distroless images through Docker Hardened Images, you
 gain a more secure, predictable, and production-ready container environment
 that's designed for automation, clarity, and reduced risk.
 
+## Related tasks
+
+- [Use dev variants in build stages](../how-to/use.md#use-dev-variants-for-framework-based-applications)
+- [Review the migration checklist](../migration/checklist.md)
+- [Debug a minimal container](../troubleshoot.md#general-debugging)

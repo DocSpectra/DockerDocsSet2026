@@ -56,7 +56,7 @@ known issues for each Docker Hub release.
 
 ## 2023-08-28
 
-- Organizations with SSO enabled can assign members to roles, organizations, and teams with [SCIM role mapping](scim.md#set-up-role-mapping).
+- Organizations with SSO enabled can assign members to roles, organizations, and teams with [SCIM role mapping](../enterprise/security/provisioning/scim/provision-scim.md#set-up-role-mapping).
 
 ## 2023-07-26
 
@@ -68,13 +68,13 @@ known issues for each Docker Hub release.
 
 ### New
 
-- Docker Business subscribers can now [create a company](new-company.md) in Docker Hub to manage organizations and settings.
+- Docker Business subscribers can now [create a company](../admin/company/new-company.md) in Docker Hub to manage organizations and settings.
 
 ## 2023-03-07
 
 ### New
 
-- You can now automatically sync user updates with your Docker organizations and teams with [Group Mapping](group-mapping.md) for SSO and SCIM provisioning.
+- You can now automatically sync user updates with your Docker organizations and teams with [Group Mapping](../enterprise/security/provisioning/scim/group-mapping.md) for SSO and SCIM provisioning.
 
 ## 2022-12-12
 
@@ -116,7 +116,7 @@ known issues for each Docker Hub release.
 
 ### New
 
-- With [SCIM](scim.md), you can manage users within your Okta identity provider (IdP). In addition, you can enable SCIM on organizations that are part of the Docker Business subscription.
+- With [SCIM](../enterprise/security/provisioning/scim/_index.md), you can manage users within your Okta identity provider (IdP). In addition, you can enable SCIM on organizations that are part of the Docker Business subscription.
 
 ## 2022-05-24
 
@@ -128,13 +128,13 @@ known issues for each Docker Hub release.
 
 ### New
 
-- Organization owners can [invite new members](members.md#invite-members) to an organization via Docker ID or email address.
+- Organization owners can [invite new members](../admin/organization/manage/members.md#invite-members) to an organization via Docker ID or email address.
 
 ## 2021-11-15
 
 ### New
 
-- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription//change.md).
+- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription/change.md).
 
 ## 2021-08-31
 
@@ -197,13 +197,13 @@ For more information about this feature and for instructions on how to use it, s
 
 ### New feature
 
-The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/manage/access/_index.md#view-repository-tags).
+The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](./repos/manage/hub-images/tags.md#view-repository-tags).
 
 ## 2020-10-07
 
 ### New feature
 
-Docker introduces Hub Vulnerability Scanning which enables you to automatically scan Docker images for vulnerabilities using Snyk. For more information, see [Hub Vulnerability Scanning](vulnerability-scanning.md).
+Docker introduces Hub Vulnerability Scanning which enables you to automatically scan Docker images for vulnerabilities using Snyk. For more information, see [Hub Vulnerability Scanning](./repos/manage/vulnerability-scanning.md).
 
 ## 2020-05-14
 

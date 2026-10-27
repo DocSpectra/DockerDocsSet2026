@@ -5,6 +5,15 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [18.03.1-ce](#18031-ce) |
+| Initial release entry | [18.03.0-ce](#18030-ce) |
+
 ## 18.03.1-ce
 2018-04-26
 

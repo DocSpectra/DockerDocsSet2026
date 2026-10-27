@@ -12,11 +12,15 @@ aliases:
  - /guides/docker-concepts/building-images/understanding-image-layers/
 ---
 
+On this page: [Layers and filesystems](#explanation) · [Create a base image](#create-a-base-image) · [Build an app image](#build-an-app-image) · [Additional resources](#additional-resources).
+
 {{< youtube-embed wJwqtAkmtQA >}}
 
-## Explanation
+<a id="explanation"></a>
 
-As you learned in [What is an image?](../the-basics/what-is-an-image/), container images are composed of layers. And each of these layers, once created, are immutable. But, what does that actually mean? And how are those layers used to create the filesystem a container can use?
+## How image layers form a filesystem
+
+As you learned in [What is an image?](../the-basics/what-is-an-image.md), container images are composed of layers. And each of these layers, once created, are immutable. But, what does that actually mean? And how are those layers used to create the filesystem a container can use?
 
 ### Image layers
 
@@ -48,7 +52,9 @@ Layering is made possible by content-addressable storage and union filesystems. 
 
 When the union filesystem is created, in addition to the image layers, a directory is created specifically for the running container. This allows the container to make filesystem changes while allowing the original image layers to remain untouched. This enables you to run multiple containers from the same underlying image.
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Create image layers manually
 
 In this hands-on guide, you will create new image layers manually using the [`docker container commit`](https://docs.docker.com/reference/cli/docker/container/commit/) command. Note that you’ll rarely create images this way, as you’ll normally [use a Dockerfile](./writing-a-dockerfile.md). But, it makes it easier to understand how it’s all working.
 

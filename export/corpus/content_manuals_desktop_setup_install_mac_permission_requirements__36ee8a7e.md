@@ -18,6 +18,15 @@ It also provides clarity on running containers as `root` as opposed to having `r
 
 Docker Desktop on Mac is designed with security in mind. Administrative rights are only required when absolutely necessary.
 
+## Choose a permissions task
+
+- [Review permission requirements](#permission-requirements).
+- Configure [CLI and socket symlinks](#installing-symlinks), [privileged ports](#binding-privileged-ports), or [host name resolution](#ensuring-localhost-and-kubernetesdockerinternal-are-defined).
+- [Apply privileged configuration from the command line](#installing-from-the-command-line).
+- [Review or remove the privileged helper](#privileged-helper).
+- Review [container root access](#containers-running-as-root-within-the-linux-vm) and [Enhanced Container Isolation](#enhanced-container-isolation).
+- [Return to Mac installation](mac-install.md).
+
 ## Permission requirements
 
 Docker Desktop for Mac is run as an unprivileged user. However, Docker Desktop requires certain functionalities to perform a limited set of privileged configurations such as:

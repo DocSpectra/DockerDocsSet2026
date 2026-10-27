@@ -25,12 +25,27 @@ directly speeds up your builds and avoids unnecessary file transfers.
 If you just want to build and discard the output, export the results to the
 build cache or build without tagging the image. When you use Docker Build Cloud,
 Buildx automatically loads the build result if you build a tagged image.
-See [Loading build results](./usage/#loading-build-results) for details.
+See [Loading build results](usage.md#loading-build-results) for details.
 
 > [!NOTE]
 >
 > Builds on Docker Build Cloud have a timeout limit of 90 minutes. Builds that
 > run for longer than 90 minutes are automatically cancelled.
+
+## Find your CI setup
+
+Start with [credentials](#setting-up-credentials-for-cicd) and the
+[variables and secrets for all examples](#ci-platform-examples), then choose an example:
+
+- [GitHub Actions](#github-actions)
+- [GitLab](#gitlab)
+- [Circle CI](#circle-ci)
+- [Buildkite](#buildkite)
+- [Jenkins](#jenkins)
+- [Travis CI](#travis-ci)
+- [BitBucket Pipelines](#bitbucket-pipelines)
+- [Shell script](#shell-script)
+- [Docker Compose](#docker-compose)
 
 ## Setting up credentials for CI/CD
 

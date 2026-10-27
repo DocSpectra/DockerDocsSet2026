@@ -15,6 +15,20 @@ tags: [Troubleshooting]
 This page describes how to troubleshoot and debug the daemon if you run into
 issues.
 
+## Find a symptom
+
+- [Unable to connect to the Docker daemon](#unable-to-connect-to-the-docker-daemon)
+- [Conflicting configuration file and startup options](#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts)
+- [Out of memory](#out-of-memory-issues)
+- [Kernel compatibility](#kernel-compatibility)
+- [Swap limit warnings](#kernel-cgroup-swap-limit-capabilities)
+- [IP forwarding problems](#ip-forwarding-problems)
+- [DNS resolver issues](#dns-resolver-issues)
+- [Disappearing Docker networks](#docker-networks-disappearing)
+- [Unable to remove a filesystem](#unable-to-remove-filesystem)
+
+For logs and debugging, see [Read the daemon logs](logs.md).
+
 You can turn on debugging on the daemon to learn about the runtime activity of
 the daemon and to aid in troubleshooting. If the daemon is unresponsive, you can
 also [force a full stack trace](logs.md#force-a-stack-trace-to-be-logged) of all
@@ -36,7 +50,7 @@ This error may indicate:
 - Your Docker client is attempting to connect to a Docker daemon on a different
   host, and that host is unreachable.
 
-### Check whether Docker is running
+#### Check whether Docker is running
 
 The operating-system independent way to check whether Docker is running is to
 ask Docker, using the `docker info` command.
@@ -267,7 +281,7 @@ public nameservers aren't adequate. You have two choices:
 
 You only need to use one of these methods.
 
-### Specify DNS servers for Docker
+#### Specify DNS servers for Docker
 
 The default location of the configuration file is `/etc/docker/daemon.json`. You
 can change the location of the configuration file using the `--config-file`
@@ -323,7 +337,7 @@ configuration file is `/etc/docker/daemon.json`.
    64 bytes from 192.168.1.2: seq=3 ttl=41 time=7.677 ms
    ```
 
-### Turn off `dnsmasq`
+#### Turn off `dnsmasq`
 
 {{< tabs >}}
 {{< tab name="Ubuntu" >}}
@@ -468,7 +482,7 @@ files under `/etc/systemd/network`:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Prevent Netplan from overriding network configuration
+#### Prevent Netplan from overriding network configuration
 
 On systems that use [Netplan](https://netplan.io/) through
 [`cloud-init`](https://cloudinit.readthedocs.io/en/latest/index.html), you may

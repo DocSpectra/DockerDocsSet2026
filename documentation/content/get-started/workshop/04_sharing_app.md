@@ -12,8 +12,14 @@ aliases:
  - /guides/workshop/04_sharing_app/
 ---
 
+On this page: [Docker ID](#docker-id) · [Create a repository](#create-a-repository) · [Image tag error](#push-the-image) · [Sign in, tag, and push](#sign-in-tag-and-push) · [Run on another machine](#run-the-image-on-a-new-instance).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](03_updating_app.md) · [All tasks](_index.md#workshop-tasks).
+
 Now that you've built an image, you can share it. To share Docker images, you have to use a Docker
 registry. The default registry is Docker Hub and is where all of the images you've used have come from.
+
+<a id="docker-id"></a>
 
 > **Docker ID**
 >
@@ -63,6 +69,8 @@ Let's try to push the image to Docker Hub.
    ```console
    docker image ls
    ```
+
+### Sign in, tag, and push
 
 2. To fix this, first sign in to Docker Hub using your Docker ID: `docker login YOUR-USER-NAME`.
 3. Use the `docker tag` command to give the `getting-started` image a new name. Replace `YOUR-USER-NAME` with your Docker ID.

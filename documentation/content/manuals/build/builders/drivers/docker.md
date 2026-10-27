@@ -27,6 +27,8 @@ store.
 docker buildx build .
 ```
 
+## Configuration limits
+
 It's not possible to configure which BuildKit version to use, or to pass any
 additional BuildKit parameters to a builder using the Docker driver. The
 BuildKit version and parameters are preset by the Docker Engine internally.

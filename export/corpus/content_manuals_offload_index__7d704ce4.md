@@ -58,4 +58,12 @@ environments or systems that don't support nested virtualization.
 In the following topics, learn about Docker Offload, how to set it up, use it
 for your workflows, and troubleshoot common issues.
 
+## Find a task
+
+- [Check prerequisites](quickstart.md#prerequisites) and [verify organization access](quickstart.md#step-1-verify-access-to-docker-offload)
+- [Configure organization or developer settings](configuration.md)
+- [Start a session](quickstart.md#step-2-start-docker-offload), [run a container](quickstart.md#step-3-run-a-container-with-docker-offload), or [stop a session](quickstart.md#step-5-stop-docker-offload)
+- [Review session management](about.md#session-management-and-idle-state) and [fair use](about.md#fair-use)
+- [Monitor usage](usage.md), [optimize builds](optimize.md), or [troubleshoot errors](troubleshoot.md)
+
 {{< grid >}}

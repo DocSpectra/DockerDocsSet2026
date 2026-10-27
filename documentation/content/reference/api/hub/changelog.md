@@ -13,6 +13,8 @@ aliases:
 Here you can learn about the latest changes, new features, bug fixes, and known
 issues for Docker Service APIs.
 
+See also the [API reference](./latest.md) and [deprecated endpoints and replacements](./deprecated.md).
+
 ---
 
 ## 2025-11-21
@@ -39,10 +41,10 @@ issues for Docker Service APIs.
 
 ### Deprecations
 
-- [Deprecate POST /v2/repositories](/reference/api/hub/deprecated/#deprecate-legacy-createrepository)
-- [Deprecate POST /v2/repositories/{namespace}](/reference/api/hub/deprecated/#deprecate-legacy-createrepository)
-- [Deprecate GET /v2/repositories/{namespace}/{repository}](/reference/api/hub/deprecated/#deprecate-legacy-getrepository)
-- [Deprecate HEAD /v2/repositories/{namespace}/{repository}](/reference/api/hub/deprecated/#deprecate-legacy-getrepository)
+- [Deprecate POST /v2/repositories](/reference/api/hub/deprecated/#deprecate-legacy-createrepository-and-getrepository)
+- [Deprecate POST /v2/repositories/{namespace}](/reference/api/hub/deprecated/#deprecate-legacy-createrepository-and-getrepository)
+- [Deprecate GET /v2/repositories/{namespace}/{repository}](/reference/api/hub/deprecated/#deprecate-legacy-createrepository-and-getrepository)
+- [Deprecate HEAD /v2/repositories/{namespace}/{repository}](/reference/api/hub/deprecated/#deprecate-legacy-createrepository-and-getrepository)
 
 ---
 

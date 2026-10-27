@@ -14,6 +14,8 @@ aliases:
  - /desktop/setup/install/
 ---
 
+On this page: [Choose a platform and review terms](#choose-an-installation) · [Install Docker Engine](#docker-engine).
+
 Docker is an open platform for developing, shipping, and running applications.
 
 Docker allows you to separate your applications from your infrastructure so you
@@ -26,6 +28,8 @@ significantly reduce the delay between writing code and running it in production
 
 You can download and install Docker on multiple platforms. Refer to the following
 section and choose the best installation path for you.
+
+## Choose an installation
 
 > **Docker Desktop terms**
 >
@@ -53,6 +57,12 @@ section and choose the best installation path for you.
   icon="/icons/Linux.svg" >}}
 </div>
 
+## Docker Engine
+
 > [!NOTE]
 >
 > If you're looking for information on how to install Docker Engine, see [Docker Engine installation overview](/engine/install/).
+
+## Next steps
+
+- [Run your first container](introduction/get-docker-desktop.md#run-your-first-container)

@@ -16,6 +16,8 @@ aliases:
  - /guides/docker-overview/
 ---
 
+On this page: [Platform](#the-docker-platform) · [Uses](#what-can-i-use-docker-for) · [Architecture](#docker-architecture) · [Images and containers](#docker-objects) · [Run an Ubuntu container](#example-docker-run-command) · [Underlying technology](#the-underlying-technology).
+
 Docker is an open platform for developing, shipping, and running applications.
 Docker enables you to separate your applications from your infrastructure so
 you can deliver software quickly. With Docker, you can manage your infrastructure
@@ -156,7 +158,9 @@ A container is defined by its image as well as any configuration options you
 provide to it when you create or start it. When a container is removed, any changes to
 its state that aren't stored in persistent storage disappear.
 
-##### Example `docker run` command
+<a id="example-docker-run-command"></a>
+
+### Example: run an Ubuntu container
 
 The following command runs an `ubuntu` container, attaches interactively to your
 local command-line session, and runs `/bin/bash`.

@@ -13,9 +13,13 @@ aliases:
  - /guides/docker-concepts/building-images/writing-a-dockerfile/
 ---
 
+On this page: [Instruction reference](#common-instructions) · [Get the sample project](#set-up) · [Create the Dockerfile](#creating-the-dockerfile) · [Production caveat](#production-caveat) · [Docker Init](#docker-init).
+
 {{< youtube-embed Jx8zoIhiP4c >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Dockerfile instructions
 
 A Dockerfile is a text-based document that's used to create a container image. It provides instructions to the image builder on the commands to run, files to copy, startup command, and more.
 
@@ -56,7 +60,9 @@ Some of the most common instructions in a `Dockerfile` include:
 
 To read through all of the instructions or go into greater detail, check out the [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Write a Dockerfile for a Node.js app
 
 Just as you saw with the previous example, a Dockerfile typically follows these steps:
 
@@ -76,6 +82,17 @@ If you'd rather not download a ZIP file, clone the https://github.com/docker/get
 ### Creating the Dockerfile
 
 Now that you have the project, you’re ready to create the `Dockerfile`.
+
+<a id="production-caveat"></a>
+
+> **This Dockerfile isn't production-ready yet**
+>
+> It's important to note that this Dockerfile is _not_ following all
+> of the best practices yet (by design). It will build the app, but the
+> builds won't be as fast, or the images as secure, as they could be.
+>
+> Keep reading to learn more about how to make the image maximize the
+> build cache, run as a non-root user, and multi-stage builds.
 
 1. [Download and install](https://www.docker.com/products/docker-desktop/) Docker Desktop.
 
@@ -137,15 +154,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     CMD ["node", "./src/index.js"]
     ```
 
-> **This Dockerfile isn't production-ready yet**
->
-> It's important to note that this Dockerfile is _not_ following all
-> of the best practices yet (by design). It will build the app, but the
-> builds won't be as fast, or the images as secure, as they could be.
->
-> Keep reading to learn more about how to make the image maximize the
-> build cache, run as a non-root user, and multi-stage builds.
-
+<a id="docker-init"></a>
 
 > **Containerize new projects quickly with `docker init`**
 >

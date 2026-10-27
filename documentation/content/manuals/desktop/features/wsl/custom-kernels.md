@@ -33,3 +33,8 @@ in a terminal.
 its version is properly reflected in the corresponding kernel config
 (`CONFIG_PAHOLE_VERSION`).
 
+
+## Related guidance
+
+- [WSL version and kernel requirements](best-practices.md#keep-wsl-up-to-date)
+- [Docker Desktop WSL 2 setup](_index.md#prerequisites)

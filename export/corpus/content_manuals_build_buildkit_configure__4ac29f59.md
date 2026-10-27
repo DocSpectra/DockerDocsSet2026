@@ -9,6 +9,16 @@ apply a custom [BuildKit configuration](toml-configuration.md) by passing the
 [`--buildkitd-config` flag](/reference/cli/docker/buildx/create/#buildkitd-config)
 to the `docker buildx create` command.
 
+## Choose a configuration task
+
+- [Use a registry mirror](#registry-mirror)
+- [Set registry certificates](#setting-registry-certificates)
+- [Configure CNI networking](#cni-networking)
+- [Limit solver parallelism](#max-parallelism)
+- [Review TCP connection limits](#tcp-connection-limit)
+
+For CI configuration, see [Configuring your GitHub Actions builder](../ci/github-actions/configure-builder.md).
+
 ## Registry mirror
 
 You can define a registry mirror to use for your builds. Doing so redirects

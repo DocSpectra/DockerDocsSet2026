@@ -14,21 +14,15 @@ reference material for everyday development and operations tasks.
 - [Get started](/get-started/): Learn Docker basics and core concepts.
 - [Guides](/guides/): Follow task-focused walkthroughs for common workflows.
 - [Manuals](/manuals/): Install, configure, and use Docker products.
-- [Reference](/reference/): Browse CLI, API, and file format documentation.
+- [Reference](/reference/): Browse CLI, API, and file format documentation, or find terms in the [glossary](/reference/glossary.md).
 
-## Featured topics
+## Find a task or topic
 
-- [Docker Hardened Images](/dhi/)
-- [Get started with Docker Sandboxes](/ai/sandboxes/get-started/)
-- [Docker Desktop overview](/desktop/)
-- [Install Docker Engine](/engine/install/)
-- [Dockerfile reference](/reference/dockerfile/)
-- [Docker Build overview](/build/)
-
-## Common questions
-
-- [How do I get started with Docker?](/get-started/docker-overview/)
-- [Can I run my AI agent in a sandbox?](/ai/sandboxes/get-started/)
-- [What is a container?](/get-started/docker-concepts/the-basics/what-is-a-container/)
-- [What are Docker Hardened Images?](/dhi/)
-- [Why should I use Docker Compose?](/compose/)
+| Task or topic | Start here |
+| --- | --- |
+| Learn Docker basics | [Docker overview](/get-started/docker-overview/), [What is a container?](/get-started/docker-concepts/the-basics/what-is-a-container/) |
+| Set up Docker | [Get Docker](/get-started/get-docker.md), [Docker Desktop overview](/desktop/), [Install Docker Engine](/engine/install/) |
+| Build images | [Docker Build overview](/build/), [Dockerfile reference](/reference/dockerfile/) |
+| Run a multi-container application | [Docker Compose](/compose/) |
+| Use Docker Hardened Images | [Docker Hardened Images](/dhi/) |
+| Run an AI agent in a sandbox | [Get started with Docker Sandboxes](/ai/sandboxes/get-started/) |

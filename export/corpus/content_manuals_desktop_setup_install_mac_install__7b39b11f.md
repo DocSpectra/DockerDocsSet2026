@@ -27,6 +27,8 @@ aliases:
 
 This page provides download links, system requirements, and step-by-step installation instructions for Docker Desktop on Mac.
 
+Choose a task: [Check requirements](#system-requirements) · [Prepare to install or update](#before-you-install-or-update) · [Install interactively](#install-interactively) · [Install from the command line](#install-from-the-command-line) · [Installer flags](#installer-flags) · [Review permissions](mac-permission-requirements.md).
+
 {{< button text="Docker Desktop for Mac with Apple silicon" url="https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64" >}}
 {{< button text="Docker Desktop for Mac with Intel chip" url="https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64" >}}
 
@@ -63,8 +65,8 @@ This page provides download links, system requirements, and step-by-step install
 {{< /tab >}}
 {{< /tabs >}}
 
-> **Before you install or update**
->
+## Before you install or update
+
 > - Quit tools that might call Docker in the background (Visual Studio Code, terminals, agent apps).
 >
 > - If you manage fleets or install via MDM, use the [**PKG installer**](/manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md).
@@ -118,24 +120,23 @@ $ sudo hdiutil detach /Volumes/Docker
 
 By default, Docker Desktop is installed at `/Applications/Docker.app`. As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
 
-#### Installer flags
+### Installer flags
 
 The `install` command accepts the following flags:
 
-##### Installation behavior
+#### Installation behavior
 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run.
 - `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
 
-##### Security and access
+#### Security and access
 
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example: `--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 
-##### Proxy configuration
+#### Proxy configuration
 
 - `--proxy-http-mode=<mode>`: Sets the HTTP Proxy mode. The two modes are `system` (default) or `manual`.
 - `--override-proxy-http=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests. It requires `--proxy-http-mode` to be `manual`.
@@ -144,13 +145,13 @@ The `install` command accepts the following flags:
 - `--override-proxy-pac=<PAC file URL>`: Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode.
 - `--override-proxy-embedded-pac=<PAC script>`: Specifies an embedded PAC (Proxy Auto-Config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `--override-proxy-pac` flag.
 
-###### Example of specifying PAC file
+##### Example of specifying PAC file
 
 ```console
 $ sudo /Applications/Docker.app/Contents/MacOS/install --user testuser --proxy-http-mode="manual" --override-proxy-pac="http://localhost:8080/myproxy.pac"
 ```
 
-###### Example of specifying PAC script
+##### Example of specifying PAC script
 
 ```console
 $ sudo /Applications/Docker.app/Contents/MacOS/install --user testuser --proxy-http-mode="manual" --override-proxy-embedded-pac="function FindProxyForURL(url, host) { return \"DIRECT\"; }"

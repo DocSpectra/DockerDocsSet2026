@@ -14,6 +14,16 @@ Use A2A when you want to make your agent callable by other systems over HTTP.
 For editor integration, see [ACP integration](./acp.md). For using agents as
 tools in MCP clients, see [MCP integration](./mcp.md).
 
+## Find an A2A task
+
+- [Check prerequisites](#prerequisites)
+- [Start an A2A server](#starting-an-a2a-server)
+- [Discover and invoke an agent through HTTP endpoints](#http-endpoints)
+- [Follow a multi-agent example](#example-multi-agent-workflow)
+- [Call another A2A agent and configure headers](#calling-other-a2a-agents)
+
+For experimental-support caveats, see the [A2A CLI reference](../reference/cli.md#a2a).
+
 ## Prerequisites
 
 Before starting an A2A server, you need:

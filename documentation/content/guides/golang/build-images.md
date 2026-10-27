@@ -10,6 +10,8 @@ aliases:
   - /guides/language/golang/build-images/
 ---
 
+[Go guide overview](_index.md)
+
 ## Overview
 
 In this section you're going to build a container image. The image includes
@@ -487,3 +489,5 @@ In this module, you met your example application and built and container image
 for it.
 
 In the next module, you’ll take a look at how to run your image as a container.
+
+Continue: [Run containers](run-containers.md).

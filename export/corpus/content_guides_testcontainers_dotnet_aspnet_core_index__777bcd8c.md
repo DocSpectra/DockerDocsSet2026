@@ -14,6 +14,8 @@ params:
   time: 25 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-testing-aspnet-core -->
 
 In this guide, you'll learn how to:
@@ -25,6 +27,8 @@ In this guide, you'll learn how to:
 
 ## Prerequisites
 
+See [SQL Server compatibility](/guides/testcontainers-dotnet-aspnet-core/write-tests/#check-sql-server-compatibility) before writing the tests.
+
 - .NET 8.0+ SDK
 - A code editor or IDE (Visual Studio, VS Code, Rider)
 - A Docker environment supported by Testcontainers. For details, see the
@@ -34,3 +38,9 @@ In this guide, you'll learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-dotnet-aspnet-core/create-project/)
+2. [Write tests](/guides/testcontainers-dotnet-aspnet-core/write-tests/)
+3. [Run tests](/guides/testcontainers-dotnet-aspnet-core/run-tests/)

@@ -9,17 +9,15 @@ tags: [Troubleshooting]
 
 {{< summary-bar feature_name="Docker Offload" >}}
 
-Docker Offload requires:
+## Check prerequisites
 
-- Authentication
-- An active internet connection
-- No restrictive proxy or firewall blocking traffic to Docker Cloud
-- Access to Docker Offload
-- Docker Desktop 4.68 or later
+Review the [Docker Offload prerequisites](quickstart.md#prerequisites) and [verify access](quickstart.md#step-1-verify-access-to-docker-offload).
 
 Docker Desktop uses Offload to run both builds and containers in the cloud.
 If builds or containers are failing to run, falling back to local, or reporting
 session errors, use the following steps to help resolve the issue.
+
+## Diagnose builds, containers, and sessions
 
 1. Ensure Docker Offload is enabled in Docker Desktop:
 
@@ -55,3 +53,9 @@ session errors, use the following steps to help resolve the issue.
    ```
 
 7. Verify your usage. For more information, see [Docker Offload usage](/offload/usage/).
+
+## Related tasks
+
+- [Review session management and idle state](about.md#session-management-and-idle-state)
+- [Optimize slow file transfers and builds](optimize.md)
+- [Report a bug or problem](feedback.md#report-bugs-or-problems-on-github)

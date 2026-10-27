@@ -5,12 +5,26 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+Browse component and caveat sections:
+
+- [Builder](#builder)
+- [Client](#client)
+- [Networking](#networking)
+- [Runtime](#runtime)
+- [Swarm mode](#swarm-mode)
+
 ## 17.10.0-ce
 2017-10-17
 
-> [!IMPORTANT]: Starting with this release, `docker service create`, `docker service update`,
-`docker service scale` and `docker service rollback` use non-detached mode as default,
-use `--detach` to keep the old behaviour.
+> [!IMPORTANT]
+>
+> Starting with this release, `docker service create`, `docker service update`,
+> `docker service scale` and `docker service rollback` use non-detached mode as default,
+> use `--detach` to keep the old behaviour.
 
 ### Builder
 

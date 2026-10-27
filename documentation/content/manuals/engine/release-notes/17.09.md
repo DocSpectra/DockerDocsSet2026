@@ -5,6 +5,16 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [17.09.1-ce](#17091-ce) |
+| Deprecation and removal sections | [17.09.0-ce](#17090-ce) |
+| Initial release entry | [17.09.0-ce](#17090-ce) |
+
 ## 17.09.1-ce
 2017-12-07
 

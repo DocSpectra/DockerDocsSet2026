@@ -10,7 +10,9 @@ weight: 120
 
 With profiles you can define a set of active profiles so your Compose application model is adjusted for various usages and environments.
 
-The [services](services.md) top-level element supports a `profiles` attribute to define a list of named profiles. 
+## Select active services
+
+The [services](services.md#profiles) top-level element supports a `profiles` attribute to define a list of named profiles. 
 Services without a `profiles` attribute are always enabled. 
 
 A service is ignored by Compose when none of the listed `profiles` match the active ones, unless the service is
@@ -20,9 +22,13 @@ explicitly targeted by a command. In that case its profile is added to the set o
 >
 > All other top-level elements are not affected by `profiles` and are always active.
 
+## References and dependencies
+
 References to other services (by `links`, `extends` or shared resource syntax `service:xxx`) do not
 automatically enable a component that would otherwise have been ignored by active profiles. Instead
 Compose returns an error.
+
+See the [dependency examples](#illustrative-example) below, the [service profiles attribute](services.md#profiles), or [steps for activating profiles](/manuals/compose/how-tos/profiles.md).
 
 ## Illustrative example
 

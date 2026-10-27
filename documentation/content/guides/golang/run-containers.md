@@ -10,6 +10,8 @@ aliases:
   - /guides/language/golang/run-containers/
 ---
 
+[Go guide overview](_index.md)
+
 ## Prerequisites
 
 Work through the steps to containerize a Go application in [Build your Go image](build-images.md).
@@ -19,6 +21,8 @@ Work through the steps to containerize a Go application in [Build your Go image]
 In the previous module you created a `Dockerfile` for your example application and then you created your Docker image using the command `docker build`. Now that you have the image, you can run that image and see if your application is running correctly.
 
 A container is a normal operating system process except that this process is isolated and has its own file system, its own networking, and its own isolated process tree separate from the host.
+
+## Run the image
 
 To run an image inside of a container, you use the `docker run` command. It requires one parameter and that's the image name. Start your image and make sure it's running correctly. Run the following command in your terminal.
 
@@ -54,6 +58,8 @@ networking. Stop the container and restart with port 8080 published on your
 local network.
 
 To stop the container, press ctrl-c. This will return you to the terminal prompt.
+
+## Publish a port and check the application
 
 To publish a port for your container, you’ll use the `--publish` flag (`-p` for short) on the `docker run` command. The format of the `--publish` command is `[host_port]:[container_port]`. So if you wanted to expose port `8080` inside the container to port `3000` outside the container, you would pass `3000:8080` to the `--publish` flag.
 
@@ -141,6 +147,8 @@ aade1bf3d330   docker-gs-ping   "/docker-gs-ping"        3 minutes ago        Ex
 
 If you’ve been following along, you should see several containers listed. These are containers that you started and stopped but haven't removed yet.
 
+### Restart a stopped container
+
 Restart the container that you have just stopped. Locate the name of the container and replace the name of the container in the following `restart` command:
 
 ```console
@@ -170,6 +178,8 @@ $ docker stop inspiring_ishizaka
 inspiring_ishizaka
 ```
 
+### Remove stopped containers
+
 Now that all of your containers are stopped, remove them. When a container is removed, it's no longer running nor is it in the stopped state. Instead, the process inside the container is terminated and the metadata for the container is removed.
 
 To remove a container, run the `docker rm` command passing the container name. You can pass multiple container names to the command in one command.
@@ -186,6 +196,8 @@ gifted_mestorf
 ```
 
 Run the `docker ps --all` command again to verify that all containers are gone.
+
+### Assign a container name
 
 Now, address the pesky random name issue. Standard practice is to name your containers for the simple reason that it's easier to identify what's running in the container and what application or service it's associated with. Just like good naming conventions for variables in your code makes it simpler to read. So goes naming your containers.
 
@@ -208,3 +220,5 @@ Now, you can easily identify your container based on the name.
 ## Next steps
 
 In this module, you learned how to run containers and publish ports. You also learned to manage the lifecycle of containers. You then learned the importance of naming your containers so that they're more easily identifiable. In the next module, you’ll learn how to run a database in a container and connect it to your application.
+
+Continue: [Develop locally](develop.md).

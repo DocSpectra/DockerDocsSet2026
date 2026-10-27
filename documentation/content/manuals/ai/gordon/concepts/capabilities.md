@@ -10,6 +10,15 @@ weight: 10
 Gordon combines multiple capabilities to handle Docker workflows. This page
 explains what Gordon can do and the tools it uses.
 
+## Find a capability
+
+- [Core capabilities](#core-capabilities) and [internal architecture](#internal-architecture)
+- [Shell access](#shell-access) and [filesystem access](#filesystem-access)
+- [Knowledge base](#knowledge-base) and [web access](#web-access)
+- [Working with other tools](#working-with-other-tools)
+
+For controls, see [Permissions](../how-to/permissions.md) and [Configure tools](../how-to/configure-tools.md).
+
 ## Core capabilities
 
 Gordon uses five capabilities to take action on your behalf:

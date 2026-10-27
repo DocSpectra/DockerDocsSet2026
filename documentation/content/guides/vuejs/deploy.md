@@ -1,16 +1,28 @@
 ---
 title: Test your Vue.js deployment
 linkTitle: Test your deployment
-weight: 60
+weight: 70
 keywords: deploy, kubernetes, vue, vue.js
 description: Learn how to deploy locally to test and debug your Kubernetes deployment
 
 ---
 
+[Vue.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create the Kubernetes manifest](#create-a-kubernetes-yaml-file)
+- [Apply the configuration](#step-1-apply-the-kubernetes-configuration)
+- [Check the deployment](#step-2-check-the-deployment-status)
+- [Check the service](#step-3-verify-the-service-exposure)
+- [Open the application](#step-4-access-your-app-in-the-browser)
+- [Clean up](#step-5-clean-up-kubernetes-resources)
+
 ## Prerequisites
 
 Before you begin, make sure you’ve completed the following:
-- Complete all the previous sections of this guide, starting with [Containerize Vue.js application](containerize.md).
+- Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize Vue.js application](containerize.md).
 - [Enable Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 
 > **New to Kubernetes?**  
@@ -195,7 +207,7 @@ What you accomplished:
 Explore official references and best practices to sharpen your Kubernetes deployment workflow:
 
 - [Kubernetes documentation](https://kubernetes.io/docs/home/) – Learn about core concepts, workloads, services, and more.  
-- [Deploy on Kubernetes with Docker Desktop](/manuals) – Use Docker Desktop’s built-in Kubernetes support for local testing and development.
+- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md) – Use Docker Desktop’s built-in Kubernetes support for local testing and development.
 - [`kubectl` CLI reference](https://kubernetes.io/docs/reference/kubectl/) – Manage Kubernetes clusters from the command line.  
 - [Kubernetes Deployment resource](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) – Understand how to manage and scale applications using Deployments.  
 - [Kubernetes Service resource](https://kubernetes.io/docs/concepts/services-networking/service/) – Learn how to expose your application to internal and external traffic.

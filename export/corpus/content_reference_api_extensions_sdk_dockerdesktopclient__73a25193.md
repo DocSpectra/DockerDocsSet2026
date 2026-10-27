@@ -11,6 +11,17 @@ An amalgam of the v0 and v1 interfaces of the Docker Desktop API client,
 provided for backwards compatibility reasons. Unless you're working with
 a legacy extension, use the v1 type instead.
 
+## Find a client member
+
+- [Properties](#properties)
+- [Container methods](#container-methods)
+- [Image methods](#image-methods)
+- [Navigation methods](#navigation-methods)
+- [Other methods](#other-methods)
+- [Toast methods](#toast-methods)
+
+See also the [API task index](_index.md) and [UI API setup](/manuals/extensions/extensions-sdk/dev/api/overview.md).
+
 ## Properties
 
 ### backend
@@ -598,7 +609,7 @@ Display a toast message of type success.
 window.ddClient.toastSuccess("message");
 ```
 
->**Warning`**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [success](Toast.md#success) instead.
 

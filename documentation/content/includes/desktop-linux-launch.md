@@ -1,3 +1,5 @@
+### Start from the desktop
+
 To start Docker Desktop for Linux:
 
 1. Navigate to the Docker Desktop application in your Gnome/KDE Desktop.
@@ -12,13 +14,17 @@ To start Docker Desktop for Linux:
 
    For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). It is recommended that you also read the [FAQs](https://www.docker.com/pricing/faq).
 
+### Start from the terminal
+
 Alternatively, open a terminal and run:
 
 ```console
 $ systemctl --user start docker-desktop
 ```
 
-When Docker Desktop starts, it creates a dedicated [context](/engine/context/working-with-contexts) that the Docker CLI
+### Docker CLI context and installed binaries
+
+When Docker Desktop starts, it creates a dedicated [context](/manuals/engine/manage-resources/contexts.md) that the Docker CLI
 can use as a target and sets it as the current context in use. This is to avoid
 a clash with a local Docker Engine that may be running on the Linux host and
 using the default context. On shutdown, Docker Desktop resets the current
@@ -29,6 +35,8 @@ on the host. It installs Docker Compose V2 and gives users the choice to
 link it as docker-compose from the Settings panel. Docker Desktop installs
 the new Docker CLI binary that includes cloud-integration capabilities in `/usr/local/bin/com.docker.cli`
 and creates a symlink to the classic Docker CLI at `/usr/local/bin`.
+
+### Check installed versions
 
 After you’ve successfully installed Docker Desktop, you can check the versions
 of these binaries by running the following commands:
@@ -48,6 +56,8 @@ Client:
 <...>
 ```
 
+### Start Docker Desktop on sign in
+
 To enable Docker Desktop to start on sign in, from the Docker menu, select
 **Settings** > **General** > **Start Docker Desktop when you sign in to your computer**.
 
@@ -56,6 +66,8 @@ Alternatively, open a terminal and run:
 ```console
 $ systemctl --user enable docker-desktop
 ```
+
+### Stop Docker Desktop
 
 To stop Docker Desktop, select the Docker menu icon to open the Docker menu and select **Quit Docker Desktop**.
 

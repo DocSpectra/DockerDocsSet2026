@@ -18,6 +18,13 @@ both base and customized images is backed by [SLA commitments](https://docs.dock
 SLA for critical and high severity vulnerabilities. DHI Community offers a secure baseline
 but no guaranteed remediation timelines.
 
+For a task, see [create and build a definition](../how-to/build.md),
+[customize a mirrored image](../how-to/customize.md), or [verify
+attestations](../how-to/verify.md).
+
+On this page, go to [build triggers](#build-triggers), the [base image
+pipeline](#base-image-pipeline), or the [customized image pipeline](#customized-image-pipeline).
+
 ## Build transparency
 
 Docker Hardened Images provide transparency into how images are built through

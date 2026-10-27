@@ -6,6 +6,18 @@ keywords: build, cloud build, optimize, remote, local, cloud, registry, package 
 
 The **Builder settings** page in Docker Build Cloud lets you configure disk allocation, private resource access, and firewall settings for your cloud builders in your organization. These configurations help optimize storage, enable access to private registries, and secure outbound network traffic.
 
+## Choose a setting
+
+- [Adjust disk allocation](#disk-allocation)
+- [Review cache space by subscription](#build-cache-space)
+- [Review storage allocation across architectures](#multi-architecture-storage-allocation)
+- [Configure private resource access](#private-resource-access)
+- [Authenticate to private resources](#authentication)
+- [Restrict builder egress](#firewall)
+
+For client firewall requirements, see [Firewall configuration](setup.md#firewall-configuration).
+For cache inspection and pruning, see [Managing build cache](usage.md#managing-build-cache).
+
 ## Storage and cache management
 
 ### Disk allocation

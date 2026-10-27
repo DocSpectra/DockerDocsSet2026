@@ -27,6 +27,11 @@ To get started with Docker Engine on Ubuntu, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).
 
+For upgrades, see [repository upgrades](#upgrade-docker-engine),
+[manual package upgrades](#upgrade-docker-engine-1), or
+[upgrades after using the convenience script](#upgrade-docker-after-using-the-convenience-script).
+For removal, see [Uninstall Docker Engine](#uninstall-docker-engine).
+
 ## Prerequisites
 
 ### Firewall limitations
@@ -207,7 +212,7 @@ You have now successfully installed and started Docker Engine.
 
 {{% include "root-errors.md" %}}
 
-#### Upgrade Docker Engine
+#### Upgrade from the repository {#upgrade-docker-engine}
 
 To upgrade Docker Engine, follow step 2 of the
 [installation instructions](#install-using-the-repository),
@@ -274,7 +279,7 @@ You have now successfully installed and started Docker Engine.
 
 {{% include "root-errors.md" %}}
 
-#### Upgrade Docker Engine
+#### Upgrade manually installed packages {#upgrade-docker-engine-1}
 
 To upgrade Docker Engine, download the newer package files and repeat the
 [installation procedure](#install-from-a-package), pointing to the new files.

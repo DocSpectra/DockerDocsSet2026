@@ -15,6 +15,14 @@ params:
 
 {{% include "swarm-mode.md" %}}
 
+## Follow the deployment tasks
+
+1. [Check prerequisites](#prerequisites).
+2. [Describe the app in a stack file](#describe-apps-using-stack-files).
+3. [Review Kubernetes and Swarm service differences](#kubernetes-and-swarm-service-differences).
+4. [Deploy and verify the app](#deploy-and-check-your-application).
+5. [Remove the app](#clean-up).
+
 ## Prerequisites
 
 - Download and install Docker Desktop as described in [Get Docker](/get-started/get-docker.md).
@@ -22,6 +30,8 @@ params:
 - Make sure that Swarm is enabled on your Docker Desktop by typing `docker system info`, and looking for a message `Swarm: active` (you might have to scroll up a little).
 
   If Swarm isn't running, simply type `docker swarm init` in a shell prompt to set it up.
+
+For setup and validation steps, see [Enable Docker Swarm](orchestration.md#enable-docker-swarm).
 
 ## Introduction
 
@@ -33,7 +43,7 @@ In order to validate that your containerized application works well on Swarm, yo
 
 Swarm never creates individual containers like you did in the previous step of this tutorial. Instead, all Swarm workloads are scheduled as services, which are scalable groups of containers with added networking features maintained automatically by Swarm. Furthermore, all Swarm objects can and should be described in manifests called stack files. These YAML files describe all the components and configurations of your Swarm app, and can be used to create and destroy your app in any Swarm environment.
 
-Now you can write a simple stack file to run and manage your Todo app, the container `getting-started` image created in [Part 2](02_our_app.md) of the tutorial. Place the following in a file called `bb-stack.yaml`:
+Now you can write a simple stack file to run and manage your Todo app, the container `getting-started` image created in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial. Place the following in a file called `bb-stack.yaml`:
 
 {{% include "swarm-compose-compat.md" %}}
 
@@ -47,7 +57,9 @@ services:
       - "8000:3000"
 ```
 
-In this Swarm YAML file, there is one object, a `service`, describing a scalable group of identical containers. In this case, you'll get just one container (the default), and that container will be based on your `getting-started` image created in [Part 2](02_our_app.md) of the tutorial. In addition, you've asked Swarm to forward all traffic arriving at port 8000 on your development machine to port 3000 inside our getting-started container.
+In this Swarm YAML file, there is one object, a `service`, describing a scalable group of identical containers. In this case, you'll get just one container (the default), and that container will be based on your `getting-started` image created in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial. In addition, you've asked Swarm to forward all traffic arriving at port 8000 on your development machine to port 3000 inside our getting-started container.
+
+### Kubernetes and Swarm service differences
 
 > **Kubernetes Services and Swarm Services are very different**
 >
@@ -91,9 +103,11 @@ In this Swarm YAML file, there is one object, a `service`, describing a scalable
 
    This indicates 1/1 containers you asked for as part of your services are up and running. Also, you see that port 8000 on your development machine is getting forwarded to port 3000 in your getting-started container.
 
-3. Open a browser and visit your Todo app at `localhost:8000`; you should see your Todo application, the same as when you ran it as a stand-alone container in [Part 2](02_our_app.md) of the tutorial.
+3. Open a browser and visit your Todo app at `localhost:8000`; you should see your Todo application, the same as when you ran it as a stand-alone container in [Part 2](/get-started/workshop/02_our_app.md) of the tutorial.
 
-4. Once satisfied, tear down your application:
+## Clean up
+
+1. Once satisfied, tear down your application:
 
    ```console
    $ docker stack rm demo

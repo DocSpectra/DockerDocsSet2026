@@ -8,6 +8,13 @@ aliases:
   - /guides/use-case/rag-ollama/develop/
 ---
 
+## Follow this page
+
+- [Check prerequisites](#prerequisites)
+- [Add a local database](#add-a-local-database)
+- [Choose and configure an LLM service](#add-a-local-or-remote-llm-service)
+- [Run the application](#run-your-rag-application)
+
 ## Prerequisites
 
 Complete [Containerize a RAG application](containerize.md).

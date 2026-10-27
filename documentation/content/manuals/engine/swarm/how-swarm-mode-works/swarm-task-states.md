@@ -16,6 +16,8 @@ swarm nodes in this sequence:
 4.  Each service can start multiple tasks.
 5.  Each task has a life cycle, with states like `NEW`, `PENDING`, and `COMPLETE`.
 
+## Task lifecycle
+
 Tasks are execution units that run once to completion. When a task stops, it
 isn't executed again, but a new task may take its place.
 
@@ -23,6 +25,8 @@ Tasks advance through a number of states until they complete or fail. Tasks are
 initialized in the `NEW` state. The task progresses forward through a number of
 states, and its state doesn't go backward. For example, a task never goes from
 `COMPLETE` to `RUNNING`.
+
+## Task state reference
 
 Tasks go through the states in the following order:
 
@@ -60,3 +64,5 @@ j91iahr8s74p    \_ webserver.1   nginx    UbuntuVM    Shutdown       Failed 50 s
 ## Where to go next
 
 - [Learn about swarm tasks](https://github.com/moby/swarmkit/blob/master/design/task_model.md)
+- [Inspect a service on the swarm](../swarm-tutorial/inspect-service.md)
+- [Troubleshoot pending services](services.md#pending-services)

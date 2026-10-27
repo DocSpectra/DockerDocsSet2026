@@ -9,6 +9,7 @@ As part of the swarm management lifecycle, you may need to:
 * [List nodes in the swarm](#list-nodes)
 * [Inspect an individual node](#inspect-an-individual-node)
 * [Update a node](#update-a-node)
+* [Install plugins on swarm nodes](#install-plugins-on-swarm-nodes)
 * [Leave the swarm](#leave-the-swarm)
 
 ## List nodes

@@ -5,6 +5,15 @@ description: Test the Quarkus REST API using Dev Services with Testcontainers, a
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-quarkus/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-quarkus/create-project/)
+
+## In this step
+
+- [Quarkus Dev Services](#quarkus-dev-services)
+- [Customize test configuration](#customize-test-configuration)
+- [Write tests for the API endpoints](#write-tests-for-the-api-endpoints)
+- [Test with services not supported by Dev Services](#test-with-services-not-supported-by-dev-services)
+
 ## Quarkus Dev Services
 
 Quarkus Dev Services automatically provisions unconfigured services in
@@ -20,6 +29,21 @@ the application to use that service.
 Quarkus Dev Services supports most commonly used services like SQL databases,
 Kafka, RabbitMQ, Redis, and MongoDB. For more information, see the
 [Quarkus Dev Services guide](https://quarkus.io/guides/dev-services).
+
+## Customize test configuration
+
+By default, the Quarkus test instance starts on port 8081 and uses a
+`postgres:14` Docker image. Customize both by adding these properties to
+`src/main/resources/application.properties`:
+
+```properties
+quarkus.http.test-port=0
+quarkus.datasource.devservices.image-name=postgres:15.2-alpine
+```
+
+Setting `quarkus.http.test-port=0` starts the application on a random available
+port, avoiding port conflicts. The `devservices.image-name` property lets you
+pin the PostgreSQL image to a specific version that matches production.
 
 ## Write tests for the API endpoints
 
@@ -74,6 +98,8 @@ class CustomerResourceTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@QuarkusTest` starts the full Quarkus application with Dev Services enabled.
@@ -83,21 +109,6 @@ Here's what the test does:
   data from the Flyway migration is returned.
 - `shouldCreateCustomerSuccessfully()` sends a `POST /api/customers` request and
   verifies the response contains the created customer data.
-
-## Customize test configuration
-
-By default, the Quarkus test instance starts on port 8081 and uses a
-`postgres:14` Docker image. Customize both by adding these properties to
-`src/main/resources/application.properties`:
-
-```properties
-quarkus.http.test-port=0
-quarkus.datasource.devservices.image-name=postgres:15.2-alpine
-```
-
-Setting `quarkus.http.test-port=0` starts the application on a random available
-port, avoiding port conflicts. The `devservices.image-name` property lets you
-pin the PostgreSQL image to a specific version that matches production.
 
 ## Test with services not supported by Dev Services
 
@@ -183,3 +194,7 @@ class CockroachDBTest {
 The `restrictToAnnotatedClass = true` attribute ensures the CockroachDB
 container only starts when running this specific test class, rather than being
 activated for all tests.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-quarkus/run-tests/)

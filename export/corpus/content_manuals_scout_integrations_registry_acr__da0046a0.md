@@ -11,6 +11,12 @@ Scout with ACR and activating Docker Scout for a repository, pushing an image
 to the repository automatically triggers image analysis. You can view image
 insights using the Docker Scout Dashboard, or the `docker scout` CLI commands.
 
+## Choose a task
+
+- [Review Azure resources and costs](#arm-template)
+- [Integrate a registry](#integrate-a-registry)
+- [Remove an integration and its Azure resources](#remove-an-integration)
+
 ## How it works
 
 To help you integrate your Azure Container Registry with Docker Scout, you can

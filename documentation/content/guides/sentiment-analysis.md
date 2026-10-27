@@ -24,6 +24,14 @@ The application analyzes user input text for sentiment using NLTK's
 SentimentIntensityAnalyzer and outputs whether the sentiment is positive,
 negative, or neutral.
 
+## Find a task
+
+- [Check prerequisites](#prerequisites)
+- [Get the sample](#get-the-sample-application)
+- [Build, run, and test the application](#run-the-application), including the Windows line-ending note
+- [Explore the Dockerfile and entrypoint](#explore-the-application-environment)
+- [Explore application code and dependencies](#explore-the-application-code)
+
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
@@ -54,106 +62,91 @@ negative, or neutral.
    README.md
    ```
 
-## Explore the application code
+## Run the application
 
-The source code for the sentiment analysis application is in the `Docker-NLP/01_sentiment_analysis.py` file. Open `01_sentiment_analysis.py` in a text or code editor to explore its contents in the following steps.
+To run the application using Docker:
 
-1. Import the required libraries.
+1. Build the image.
 
-   ```python
-   import nltk
-   from nltk.sentiment import SentimentIntensityAnalyzer
-   import ssl
+   In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
+
+   ```console
+   $ docker build -t basic-nlp .
    ```
 
-   - `nltk`: This is the Natural Language Toolkit library used for working with
-     human language data in Python.
-   - `SentimentIntensityAnalyzer`: This is a specific tool from NLTK used for
-     determining the sentiment of a piece of text.
-   - `ssl`: This module provides access to Transport Layer Security (encryption)
-     functions used for secure web connections.
+   The following is a break down of the command:
 
-2. Handle SSL certificate verification.
+   - `docker build`: This is the primary command used to build a Docker image
+     from a Dockerfile and a context. The context is typically a set of files at
+     a specified location, often the directory containing the Dockerfile.
+   - `-t basic-nlp`: This is an option for tagging the image. The `-t` flag
+     stands for tag. It assigns a name to the image, which in this case is
+     `basic-nlp`. Tags are a convenient way to reference images later,
+     especially when pushing them to a registry or running containers.
+   - `.`: This is the last part of the command and specifies the build context.
+     The period (`.`) denotes the current directory. Docker will look for a
+     Dockerfile in this directory. The build context (the current directory, in
+     this case) is sent to the Docker daemon to enable the build. It includes
+     all the files and subdirectories in the specified directory.
 
-   ```python
-   try:
-       _create_unverified_https_context = ssl._create_unverified_context
-   except AttributeError:
-       pass
-   else:
-       ssl._create_default_https_context = _create_unverified_https_context
+   Docker outputs several logs to your console as it builds the image. You'll
+   see it download and install the dependencies. Depending on your network
+   connection, this may take several minutes. Docker does have a caching
+   feature, so subsequent builds can be faster. The console will
+   return to the prompt when it's complete.
+
+   For more details, see the [docker build CLI reference](/reference/cli/docker/buildx/build/).
+
+2. Run the image as a container.
+
+   In a terminal, run the following command.
+
+   ```console
+   $ docker run -it basic-nlp 01_sentiment_analysis.py
    ```
 
-   This block is a workaround for certain environments where downloading data through NLTK might fail due to SSL certificate verification issues. It's telling Python to ignore SSL certificate verification for HTTPS requests.
+   The following is a break down of the command:
 
-3. Download NLTK resources.
+   - `docker run`: This is the primary command used to run a new container from
+     a Docker image.
+   - `-it`: This is a combination of two options:
+     - `-i` or `--interactive`: This keeps the standard input (STDIN) open even
+       if not attached. It lets the container remain running in the
+       foreground and be interactive.
+     - `-t` or `--tty`: This allocates a pseudo-TTY, essentially simulating a
+       terminal, like a command prompt or a shell. It's what lets you
+       interact with the application inside the container.
+   - `basic-nlp`: This specifies the name of the Docker image to use for
+     creating the container. In this case, it's the image named `basic-nlp` that
+     you created with the `docker build` command.
+   - `01_sentiment_analysis.py`: This is the script you want to run inside the
+     Docker container. It gets passed to the `entrypoint.sh` script, which runs
+     it when the container starts.
 
-   ```python
-   nltk.download('vader_lexicon')
-   nltk.download('punkt')
+   For more details, see the [docker run CLI reference](/reference/cli/docker/container/run/).
+
+   > [!NOTE]
+   >
+   > For Windows users, you may get an error when running the container. Verify
+   > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),
+   > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](/desktop/troubleshoot-and-support/troubleshoot/topics/#Unexpected-syntax-errors-use-Unix-style-line endings-for-files-in-containers).
+
+   You will see the following in your console after the container starts.
+
+   ```console
+   Enter the text for semantic analysis (type 'exit' to end):
    ```
 
-   - `vader_lexicon`: This is a lexicon used by the `SentimentIntensityAnalyzer`
-     for sentiment analysis.
-   - `punkt`: This is used by NLTK for tokenizing sentences. It's necessary for
-     the `SentimentIntensityAnalyzer` to function correctly.
+3. Test the application.
 
-4. Create a sentiment analysis function.
+   Enter a comment to get the sentiment analysis.
 
-   ```python
-   def perform_semantic_analysis(text):
-       sid = SentimentIntensityAnalyzer()
-       sentiment_score = sid.polarity_scores(text)
-
-       if sentiment_score['compound'] >= 0.05:
-           return "Positive"
-       elif sentiment_score['compound'] <= -0.05:
-           return "Negative"
-       else:
-           return "Neutral"
+   ```console
+   Enter the text for semantic analysis (type 'exit' to end): I love containers!
+   Sentiment: Positive
+   Enter the text for semantic analysis (type 'exit' to end): I'm still learning about containers.
+   Sentiment: Neutral
    ```
-
-   - `SentimentIntensityAnalyzer()` creates an instance of the
-     analyzer.
-   - `polarity_scores(text)` generates a sentiment score for the input text.
-
-   The function returns **Positive**, **Negative**, or **Neutral** based on the
-   compound score.
-
-5. Create the main loop.
-
-   ```python
-   if __name__ == "__main__":
-       while True:
-           input_text = input("Enter the text for semantic analysis (type 'exit' to end): ")
-
-           if input_text.lower() == 'exit':
-               print("Exiting...")
-               break
-
-           result = perform_semantic_analysis(input_text)
-           print(f"Sentiment: {result}")
-   ```
-
-   This part of the script runs an infinite loop to accept user input for
-   analysis. If the user types `exit`, the program terminates. Otherwise, it
-   prints out the sentiment of the provided text.
-
-6. Create `requirements.txt`.
-
-   The sample application already contains the
-   `requirements.txt` file to specify the necessary packages that the
-   application imports. Open `requirements.txt` in a code or text editor to
-   explore its contents.
-
-   ```text
-   # 01 sentiment_analysis
-   nltk==3.6.5
-
-   ...
-   ```
-
-   Only the `nltk` package is required for the sentiment analysis application.
 
 ## Explore the application environment
 
@@ -264,91 +257,106 @@ The following steps explain each part of the `Dockerfile`. For more details, see
    editor. As the sample contains several applications, the script lets you
    specify which application to run when the container starts.
 
-## Run the application
+## Explore the application code
 
-To run the application using Docker:
+The source code for the sentiment analysis application is in the `Docker-NLP/01_sentiment_analysis.py` file. Open `01_sentiment_analysis.py` in a text or code editor to explore its contents in the following steps.
 
-1. Build the image.
+1. Import the required libraries.
 
-   In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
-
-   ```console
-   $ docker build -t basic-nlp .
+   ```python
+   import nltk
+   from nltk.sentiment import SentimentIntensityAnalyzer
+   import ssl
    ```
 
-   The following is a break down of the command:
+   - `nltk`: This is the Natural Language Toolkit library used for working with
+     human language data in Python.
+   - `SentimentIntensityAnalyzer`: This is a specific tool from NLTK used for
+     determining the sentiment of a piece of text.
+   - `ssl`: This module provides access to Transport Layer Security (encryption)
+     functions used for secure web connections.
 
-   - `docker build`: This is the primary command used to build a Docker image
-     from a Dockerfile and a context. The context is typically a set of files at
-     a specified location, often the directory containing the Dockerfile.
-   - `-t basic-nlp`: This is an option for tagging the image. The `-t` flag
-     stands for tag. It assigns a name to the image, which in this case is
-     `basic-nlp`. Tags are a convenient way to reference images later,
-     especially when pushing them to a registry or running containers.
-   - `.`: This is the last part of the command and specifies the build context.
-     The period (`.`) denotes the current directory. Docker will look for a
-     Dockerfile in this directory. The build context (the current directory, in
-     this case) is sent to the Docker daemon to enable the build. It includes
-     all the files and subdirectories in the specified directory.
+2. Handle SSL certificate verification.
 
-   Docker outputs several logs to your console as it builds the image. You'll
-   see it download and install the dependencies. Depending on your network
-   connection, this may take several minutes. Docker does have a caching
-   feature, so subsequent builds can be faster. The console will
-   return to the prompt when it's complete.
-
-   For more details, see the [docker build CLI reference](/reference/cli/docker/buildx/build/).
-
-2. Run the image as a container.
-
-   In a terminal, run the following command.
-
-   ```console
-   $ docker run -it basic-nlp 01_sentiment_analysis.py
+   ```python
+   try:
+       _create_unverified_https_context = ssl._create_unverified_context
+   except AttributeError:
+       pass
+   else:
+       ssl._create_default_https_context = _create_unverified_https_context
    ```
 
-   The following is a break down of the command:
+   This block is a workaround for certain environments where downloading data through NLTK might fail due to SSL certificate verification issues. It's telling Python to ignore SSL certificate verification for HTTPS requests.
 
-   - `docker run`: This is the primary command used to run a new container from
-     a Docker image.
-   - `-it`: This is a combination of two options:
-     - `-i` or `--interactive`: This keeps the standard input (STDIN) open even
-       if not attached. It lets the container remain running in the
-       foreground and be interactive.
-     - `-t` or `--tty`: This allocates a pseudo-TTY, essentially simulating a
-       terminal, like a command prompt or a shell. It's what lets you
-       interact with the application inside the container.
-   - `basic-nlp`: This specifies the name of the Docker image to use for
-     creating the container. In this case, it's the image named `basic-nlp` that
-     you created with the `docker build` command.
-   - `01_sentiment_analysis.py`: This is the script you want to run inside the
-     Docker container. It gets passed to the `entrypoint.sh` script, which runs
-     it when the container starts.
+3. Download NLTK resources.
 
-   For more details, see the [docker run CLI reference](/reference/cli/docker/container/run/).
-
-   > [!NOTE]
-   >
-   > For Windows users, you may get an error when running the container. Verify
-   > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),
-   > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](/desktop/troubleshoot-and-support/troubleshoot/topics/#Unexpected-syntax-errors-use-Unix-style-line endings-for-files-in-containers).
-
-   You will see the following in your console after the container starts.
-
-   ```console
-   Enter the text for semantic analysis (type 'exit' to end):
+   ```python
+   nltk.download('vader_lexicon')
+   nltk.download('punkt')
    ```
 
-3. Test the application.
+   - `vader_lexicon`: This is a lexicon used by the `SentimentIntensityAnalyzer`
+     for sentiment analysis.
+   - `punkt`: This is used by NLTK for tokenizing sentences. It's necessary for
+     the `SentimentIntensityAnalyzer` to function correctly.
 
-   Enter a comment to get the sentiment analysis.
+4. Create a sentiment analysis function.
 
-   ```console
-   Enter the text for semantic analysis (type 'exit' to end): I love containers!
-   Sentiment: Positive
-   Enter the text for semantic analysis (type 'exit' to end): I'm still learning about containers.
-   Sentiment: Neutral
+   ```python
+   def perform_semantic_analysis(text):
+       sid = SentimentIntensityAnalyzer()
+       sentiment_score = sid.polarity_scores(text)
+
+       if sentiment_score['compound'] >= 0.05:
+           return "Positive"
+       elif sentiment_score['compound'] <= -0.05:
+           return "Negative"
+       else:
+           return "Neutral"
    ```
+
+   - `SentimentIntensityAnalyzer()` creates an instance of the
+     analyzer.
+   - `polarity_scores(text)` generates a sentiment score for the input text.
+
+   The function returns **Positive**, **Negative**, or **Neutral** based on the
+   compound score.
+
+5. Create the main loop.
+
+   ```python
+   if __name__ == "__main__":
+       while True:
+           input_text = input("Enter the text for semantic analysis (type 'exit' to end): ")
+
+           if input_text.lower() == 'exit':
+               print("Exiting...")
+               break
+
+           result = perform_semantic_analysis(input_text)
+           print(f"Sentiment: {result}")
+   ```
+
+   This part of the script runs an infinite loop to accept user input for
+   analysis. If the user types `exit`, the program terminates. Otherwise, it
+   prints out the sentiment of the provided text.
+
+6. Create `requirements.txt`.
+
+   The sample application already contains the
+   `requirements.txt` file to specify the necessary packages that the
+   application imports. Open `requirements.txt` in a code or text editor to
+   explore its contents.
+
+   ```text
+   # 01 sentiment_analysis
+   nltk==3.6.5
+
+   ...
+   ```
+
+   Only the `nltk` package is required for the sentiment analysis application.
 
 ## Summary
 
@@ -365,4 +373,4 @@ Related information:
 
 ## Next steps
 
-Explore more [natural language processing guides](./_index.md).
+Explore more [natural language processing guides](ai-task-guides.md#natural-language-processing) or browse [all guides](./_index.md).

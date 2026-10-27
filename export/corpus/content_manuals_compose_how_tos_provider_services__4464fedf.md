@@ -18,6 +18,39 @@ They allow you to declare dependencies on specific platform features that your a
 When you define a provider service in your Compose file, Compose works with the platform to provision and configure
 the requested capability, making it available to your application services.
 
+## Provider types
+
+The `type` field in a provider service references the name of either:
+
+1. A Docker CLI plugin (e.g., `docker-model`)
+2. A binary available in the user's PATH
+3. A path to the binary or script to execute
+
+When Compose encounters a provider service, it looks for a plugin or binary with the specified name to handle the provisioning of the requested capability.
+
+For example, if you specify `type: model`, Compose will look for a Docker CLI plugin named `docker-model` or a binary named `model` in the PATH.
+
+```yaml
+services:
+  ai-runner:
+    provider:
+      type: model  # Looks for docker-model plugin or model binary
+      options:
+        model: ai/example-model
+```
+
+The plugin or binary is responsible for:
+
+1. Interpreting the options provided in the provider service
+2. Provisioning the requested capability
+3. Returning information about how to access the provisioned resource
+
+This information is then passed to dependent services as environment variables.
+
+> [!TIP]
+>
+> If you're working with AI models in Compose, use the [`models` top-level element](/manuals/ai/compose/models-and-compose.md) instead.
+
 ## Using provider services
 
 To use a provider service in your Compose file, you need to:
@@ -70,39 +103,6 @@ For example, if your provider service is named `database`, your application serv
 
 Your application can then use these environment variables to interact with the provisioned resource.
 
-## Provider types
-
-The `type` field in a provider service references the name of either:
-
-1. A Docker CLI plugin (e.g., `docker-model`)
-2. A binary available in the user's PATH
-3. A path to the binary or script to execute
-
-When Compose encounters a provider service, it looks for a plugin or binary with the specified name to handle the provisioning of the requested capability.
-
-For example, if you specify `type: model`, Compose will look for a Docker CLI plugin named `docker-model` or a binary named `model` in the PATH.
-
-```yaml
-services:
-  ai-runner:
-    provider:
-      type: model  # Looks for docker-model plugin or model binary
-      options:
-        model: ai/example-model
-```
-
-The plugin or binary is responsible for:
-
-1. Interpreting the options provided in the provider service
-2. Provisioning the requested capability
-3. Returning information about how to access the provisioned resource
-
-This information is then passed to dependent services as environment variables.
-
-> [!TIP]
->
-> If you're working with AI models in Compose, use the [`models` top-level element](/manuals/ai/compose/models-and-compose.md) instead.
-
 ## Benefits of using provider services
 
 Using provider services in your Compose applications offers several benefits:
@@ -120,5 +120,5 @@ This guide explains the extension mechanism that allows you to add new provider 
 
 ## Reference
 
-- [Docker Model Runner documentation](/manuals/ai/model-runner.md)
+- [Docker Model Runner documentation](/manuals/ai/model-runner/_index.md)
 - [Compose Extensions documentation](https://github.com/docker/compose/blob/main/docs/extension.md)

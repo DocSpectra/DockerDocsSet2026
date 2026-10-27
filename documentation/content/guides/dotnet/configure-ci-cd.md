@@ -9,6 +9,8 @@ aliases:
   - /guides/language/dotnet/configure-ci-cd/
 ---
 
+[.NET guide overview](_index.md)
+
 ## Prerequisites
 
 Complete all the previous sections of this guide, starting with [Containerize a .NET application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
@@ -146,3 +148,5 @@ Related information:
 ## Next steps
 
 Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
+
+Continue: [Test the deployment on Kubernetes](deploy.md).

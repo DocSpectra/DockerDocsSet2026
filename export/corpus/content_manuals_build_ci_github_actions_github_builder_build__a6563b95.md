@@ -14,6 +14,14 @@ build artifacts without rebuilding the job structure in every repository.
 
 ## Build and push an image
 
+When you set `output: image`, `meta-images` is required because the workflow
+creates image names and [manifest tags](../manage-tags-labels.md) from that
+input. `runner: auto` and `distribute: true` are the defaults, so a
+multi-platform build can fan out across native GitHub-hosted runners instead
+of forcing the whole build onto one machine. `sign: auto` is also the default,
+which means the workflow signs [attestation manifests](../attestations.md)
+when the image is pushed.
+
 The following workflow builds from the repository Dockerfile, pushes on branch
 and tag events, and uses metadata inputs to generate tags:
 
@@ -52,14 +60,6 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 ```
-
-When you set `output: image`, `meta-images` is required because the workflow
-creates image names and [manifest tags](../manage-tags-labels.md) from that
-input. `runner: auto` and `distribute: true` are the defaults, so a
-multi-platform build can fan out across native GitHub-hosted runners instead
-of forcing the whole build onto one machine. `sign: auto` is also the default,
-which means the workflow signs [attestation manifests](../attestations.md)
-when the image is pushed.
 
 ## Export local output as an artifact
 

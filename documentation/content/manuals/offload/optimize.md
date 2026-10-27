@@ -68,7 +68,7 @@ You can do this using:
 - The Dockerfile [`ADD` instruction](/reference/dockerfile/#add)
 - `RUN` commands like `wget`, `curl`, or `rsync`
 
-### Multi-threaded tools
+## Multi-threaded tools
 
 Some build tools, such as `make`, are single-threaded by default. If the tool
 supports it, configure it to run in parallel. For example, use `make --jobs=4`
@@ -76,3 +76,9 @@ to run four jobs simultaneously.
 
 Taking advantage of available CPU resources in the cloud can significantly
 improve build time.
+
+## Related tasks
+
+- [Monitor usage and export session data](usage.md)
+- [Review cloud resources](about.md#cloud-resources)
+- [Troubleshoot builds, containers, and sessions](troubleshoot.md)

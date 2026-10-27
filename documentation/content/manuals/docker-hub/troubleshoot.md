@@ -10,6 +10,12 @@ toc_max: 2
 
 If you experience issues with Docker Hub, refer to the following solutions.
 
+## Find an error
+
+- [You have reached your pull rate limit (429)](#you-have-reached-your-pull-rate-limit-429-response-code)
+- [Too Many Requests (429)](#too-many-requests-429-response-code)
+- [Unexpected status code 500](#500-response-code)
+
 ## You have reached your pull rate limit (429 response code)
 
 ### Error message
@@ -35,7 +41,7 @@ You can use one of the following solutions:
 - [Authenticate](./usage/pulls.md#authentication) or
   [upgrade](../subscription/change.md#upgrade-your-subscription) your Docker
   account.
-- [View your pull rate limit](./usage/pulls.md#view-hourly-pull-rate-and-limit),
+- [View your pull rate limit](./usage/pulls.md#view-pull-rate-and-limit),
   wait until your pull rate limit decreases, and then try again.
 
 ## Too many requests (429 response code)
@@ -80,3 +86,9 @@ Unexpected status code 500
    verify that all services are operational.
 2. Try accessing Docker Hub again. It may be a temporary issue.
 3. [Contact Docker Support](https://www.docker.com/support/) to report the issue.
+
+## Related troubleshooting
+
+- [Autobuild failures and private submodules](./repos/manage/builds/troubleshoot.md)
+- [Docker Official Image pull failures](./image-library/trusted-content.md#troubleshooting-failed-pulls)
+- [Registry mirror access restrictions](./image-library/mirror.md#using-registry-access-management-ram-with-a-registry-mirror)

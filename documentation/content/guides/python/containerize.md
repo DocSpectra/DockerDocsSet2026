@@ -11,6 +11,8 @@ aliases:
   - /guides/language/python/containerize/
 ---
 
+[Python guide overview](_index.md)
+
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
@@ -36,6 +38,12 @@ Now that you have an application, you can create the necessary Docker assets to
 containerize your application. You can use Docker Desktop's built-in Docker Init
 feature to help streamline the process, or you can manually create the assets.
 
+Before editing your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),  
+or a [Docker Hardened Image (DHI)](https://hub.docker.com/hardened-images/catalog/dhi/python).
+
+Docker Hardened Images (DHIs) are minimal, secure, and production-ready base images maintained by Docker.  
+They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](/dhi/).
+
 {{< tabs >}}
 {{< tab name="Use Docker Init" >}}
 
@@ -44,12 +52,6 @@ init` provides some default configuration, but you'll need to answer a few
 questions about your application. For example, this application uses FastAPI to
 run. Refer to the following example to answer the prompts from `docker init` and
 use the same answers for your prompts.
-
-Before editing your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),  
-or a [Docker Hardened Image (DHI)](https://hub.docker.com/hardened-images/catalog/dhi/python).
-
-Docker Hardened Images (DHIs) are minimal, secure, and production-ready base images maintained by Docker.  
-They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](/dhi/).
 
 ```console
 $ docker init
@@ -67,66 +69,6 @@ Let's get started!
 ? What version of Python do you want to use? 3.12
 ? What port do you want your app to listen on? 8000
 ? What is the command to run your app? python3 -m uvicorn app:app --host=0.0.0.0 --port=8000
-```
-
-
-Create a file named `.gitignore` with the following contents.
-
-```text {collapse=true,title=".gitignore"}
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 ```
 
 {{< /tab >}}
@@ -249,65 +191,6 @@ Create a file named `.dockerignore` with the following contents.
 **/values.dev.yaml
 LICENSE
 README.md
-```
-
-Create a file named `.gitignore` with the following contents.
-
-```text {collapse=true,title=".gitignore"}
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 ```
 
 {{< /tab >}}
@@ -447,6 +330,11 @@ LICENSE
 README.md
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
+### Create the Git ignore file
+
 Create a file named `.gitignore` with the following contents.
 
 ```text {collapse=true,title=".gitignore"}
@@ -505,9 +393,6 @@ ENV/
 env.bak/
 venv.bak/
 ```
-
-{{< /tab >}}
-{{< /tabs >}}
 
 You should now have the following contents in your `python-docker-example`
 directory.
@@ -580,3 +465,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll take a look at how to set up a local development environment using Docker containers.
+
+Continue: [Develop locally](develop.md).

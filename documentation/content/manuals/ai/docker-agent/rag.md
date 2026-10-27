@@ -18,6 +18,17 @@ configure it effectively for your content.
 > work well for getting started, but tailoring the configuration to your specific
 > content and use case significantly improves results.
 
+## Find a RAG task
+
+- [Decide when to use RAG and choose strategies](#making-decisions-about-rag)
+- [Configure a source and understand indexing](#how-rag-works-in-docker-agent)
+- [Configure retrieval strategies](#retrieval-strategies)
+- [Combine strategies with hybrid retrieval](#combining-strategies-with-hybrid-retrieval)
+- [Configure reranking and chunking](#improving-retrieval-quality)
+- [Tune retrieval and indexing](#tuning-for-your-project)
+- [Use local embeddings and reranking](local-models.md#using-dmr-for-rag)
+- [Look up RAG fields and defaults](reference/config.md#rag)
+
 ## The problem: too much context
 
 Your agent can work with your entire codebase, but it can't fit everything in
@@ -36,6 +47,75 @@ just matches strings anywhere they appear.
 RAG indexes your content ahead of time and enables semantic search. The agent
 searches pre-indexed content by meaning, not exact words. It retrieves only
 relevant chunks that respect code structure. No wasted context on exploration.
+
+## Making decisions about RAG
+
+### When to use RAG
+
+Use RAG when:
+
+- Your content is too large for the context window
+- You want targeted retrieval, not everything at once
+- Content changes and needs to stay current
+- Agent needs to search across many files
+
+Don't use RAG when:
+
+- Content is small enough to include in agent instructions
+- Information rarely changes (consider prompt engineering instead)
+- You need real-time data (RAG uses pre-indexed snapshots)
+- Content is already in a searchable format the agent can query directly
+
+### Choosing retrieval strategies
+
+Use semantic search (chunked-embeddings) for user-facing documentation, content
+with varied terminology, and conceptual searches where users phrase questions
+differently than your docs.
+
+Use keyword search (BM25) for code identifiers, function names, API endpoints,
+error messages, and any content where exact term matching matters. Essential
+for technical jargon and proper nouns.
+
+Use LLM-enhanced semantic (semantic-embeddings) for code search by
+functionality, finding implementations by behavior rather than name, or complex
+technical content requiring deep understanding. Choose this when accuracy
+matters more than indexing speed.
+
+Use hybrid (multiple strategies) for general-purpose search across mixed
+content, when you're unsure which approach works best, or for production
+systems where quality matters most. Maximum coverage at the cost of complexity.
+
+### Tuning for your project
+
+Start with defaults, then adjust based on results.
+
+If retrieval misses relevant content:
+
+- Increase `limit` in strategies to retrieve more candidates
+- Adjust `threshold` to be less strict
+- Increase chunk `size` to capture more context
+- Add more retrieval strategies
+
+If retrieval returns irrelevant content:
+
+- Decrease `limit` to fewer candidates
+- Increase `threshold` to be more strict
+- Add reranking with specific criteria
+- Decrease chunk `size` for more focused results
+
+If indexing is too slow:
+
+- Increase `batch_size` for fewer API calls
+- Increase `max_embedding_concurrency` for parallelism
+- Consider BM25 instead of embeddings (local, no API)
+- Use smaller embedding models
+
+If results lack context:
+
+- Increase chunk `overlap`
+- Increase chunk `size`
+- Use `return_full_content: true` to return entire documents
+- Add neighboring chunks to results
 
 ## How RAG works in Docker Agent
 
@@ -357,75 +437,6 @@ Brief sections need less overlap since they're naturally self-contained.
 
 Experiment with these values. If retrieval misses context, increase chunk size
 or overlap. If results are too broad, decrease chunk size.
-
-## Making decisions about RAG
-
-### When to use RAG
-
-Use RAG when:
-
-- Your content is too large for the context window
-- You want targeted retrieval, not everything at once
-- Content changes and needs to stay current
-- Agent needs to search across many files
-
-Don't use RAG when:
-
-- Content is small enough to include in agent instructions
-- Information rarely changes (consider prompt engineering instead)
-- You need real-time data (RAG uses pre-indexed snapshots)
-- Content is already in a searchable format the agent can query directly
-
-### Choosing retrieval strategies
-
-Use semantic search (chunked-embeddings) for user-facing documentation, content
-with varied terminology, and conceptual searches where users phrase questions
-differently than your docs.
-
-Use keyword search (BM25) for code identifiers, function names, API endpoints,
-error messages, and any content where exact term matching matters. Essential
-for technical jargon and proper nouns.
-
-Use LLM-enhanced semantic (semantic-embeddings) for code search by
-functionality, finding implementations by behavior rather than name, or complex
-technical content requiring deep understanding. Choose this when accuracy
-matters more than indexing speed.
-
-Use hybrid (multiple strategies) for general-purpose search across mixed
-content, when you're unsure which approach works best, or for production
-systems where quality matters most. Maximum coverage at the cost of complexity.
-
-### Tuning for your project
-
-Start with defaults, then adjust based on results.
-
-If retrieval misses relevant content:
-
-- Increase `limit` in strategies to retrieve more candidates
-- Adjust `threshold` to be less strict
-- Increase chunk `size` to capture more context
-- Add more retrieval strategies
-
-If retrieval returns irrelevant content:
-
-- Decrease `limit` to fewer candidates
-- Increase `threshold` to be more strict
-- Add reranking with specific criteria
-- Decrease chunk `size` for more focused results
-
-If indexing is too slow:
-
-- Increase `batch_size` for fewer API calls
-- Increase `max_embedding_concurrency` for parallelism
-- Consider BM25 instead of embeddings (local, no API)
-- Use smaller embedding models
-
-If results lack context:
-
-- Increase chunk `overlap`
-- Increase chunk `size`
-- Use `return_full_content: true` to return entire documents
-- Add neighboring chunks to results
 
 ## Further reading
 

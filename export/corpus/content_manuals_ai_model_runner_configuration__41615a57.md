@@ -9,6 +9,15 @@ Docker Model Runner provides several configuration options to tune model behavio
 memory usage, and inference performance. This guide covers the key settings and
 how to apply them.
 
+## Find a configuration task
+
+- [Set context size](#configure-context-size) and [check the model maximum](#check-a-models-maximum-context)
+- Review [context size guidelines and memory caveats](#context-size-guidelines)
+- [Pass runtime flags](#using-runtime-flags)
+- [Choose a configuration preset](#configuration-presets)
+- [Configure container environment variables](#environment-based-configuration)
+- [Reset configuration](#reset-configuration)
+
 ## Context size (context length)
 
 The context size determines the maximum number of tokens a model can process in

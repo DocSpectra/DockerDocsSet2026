@@ -7,14 +7,7 @@ keywords: nodejs, node, migration, dhi
 
 This example shows how to migrate a Node.js application to Docker Hardened Images.
 
-The following examples show Dockerfiles before and after migration to Docker
-Hardened Images. Each example includes five variations:
-
-- Before (Ubuntu): A sample Dockerfile using Ubuntu-based images, before migrating to DHI
-- Before (Wolfi): A sample Dockerfile using Wolfi distribution images, before migrating to DHI
-- Before (DOI): A sample Dockerfile using Docker Official Images, before migrating to DHI
-- After (multi-stage): A sample Dockerfile after migrating to DHI with multi-stage builds (recommended for minimal, secure images)
-- After (single-stage): A sample Dockerfile after migrating to DHI with single-stage builds (simpler but results in a larger image with a broader attack surface)
+## Before you begin
 
 > [!NOTE]
 >
@@ -27,6 +20,19 @@ Hardened Images. Each example includes five variations:
 > one](../../../accounts/create-account.md) for free.
 >
 > Run `docker login dhi.io` to authenticate.
+
+For migration considerations, see the [migration checklist](../checklist.md).
+
+## Compare Dockerfile variations
+
+The following examples show Dockerfiles before and after migration to Docker
+Hardened Images. Each example includes five variations:
+
+- Before (Ubuntu): A sample Dockerfile using Ubuntu-based images, before migrating to DHI
+- Before (Wolfi): A sample Dockerfile using Wolfi distribution images, before migrating to DHI
+- Before (DOI): A sample Dockerfile using Docker Official Images, before migrating to DHI
+- After (multi-stage): A sample Dockerfile after migrating to DHI with multi-stage builds (recommended for minimal, secure images)
+- After (single-stage): A sample Dockerfile after migrating to DHI with single-stage builds (simpler but results in a larger image with a broader attack surface)
 
 {{< tabs >}}
 {{< tab name="Before (Ubuntu)" >}}

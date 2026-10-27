@@ -5,6 +5,8 @@ description: Test the Spring Boot Kafka listener using Testcontainers Kafka and 
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-spring-boot-kafka/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-spring-boot-kafka/create-project/)
+
 To test the Kafka listener, you need a running Kafka broker and a MySQL
 database, plus a started Spring context. Testcontainers spins up both services
 in Docker containers and `@DynamicPropertySource` connects them to Spring.
@@ -91,6 +93,8 @@ class ProductPriceChangedEventHandlerTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@SpringBootTest` starts the full Spring application context.
@@ -111,3 +115,7 @@ Here's what the test does:
 - The property `spring.kafka.consumer.auto-offset-reset` is set to `earliest`
   so that the listener consumes messages even if they're sent to the topic
   before the listener is ready. This setting is helpful when running tests.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-spring-boot-kafka/run-tests/)

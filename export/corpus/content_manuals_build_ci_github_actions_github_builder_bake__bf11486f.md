@@ -14,6 +14,13 @@ is already the source of truth for your build.
 
 ## Build and push a Bake target
 
+Bake workflows build one target per workflow call. Groups and multi-target
+builds aren't supported because [SLSA provenance](../attestations.md), digest
+handling, and manifest creation are scoped to a single target.
+
+The workflow validates the definition before the build starts and resolves
+the target from the files you pass in `files`.
+
 The following workflow builds the `image` target from `docker-bake.hcl` and
 publishes the result with tags generated from [metadata inputs](../manage-tags-labels.md):
 
@@ -52,13 +59,6 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 ```
-
-Bake workflows build one target per workflow call. Groups and multi-target
-builds aren't supported because [SLSA provenance](../attestations.md), digest
-handling, and manifest creation are scoped to a single target.
-
-The workflow validates the definition before the build starts and resolves
-the target from the files you pass in `files`.
 
 ## Override target values and variables
 

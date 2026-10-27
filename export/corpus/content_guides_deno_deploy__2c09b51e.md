@@ -8,10 +8,21 @@ aliases:
 - /language/deno/deploy/
 ---
 
+[Deno guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create the Kubernetes manifest](#create-a-kubernetes-yaml-file)
+- [Apply the configuration](#apply-the-kubernetes-configuration)
+- [Verify deployments and services](#verify-deployments-and-services)
+- [Open the application](#open-the-application)
+- [Clean up](#clean-up)
+
 ## Prerequisites
 
-- Complete all the previous sections of this guide, starting with [Containerize a Deno application](containerize.md).
-- [Turn on Kubernetes](/manuals//desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
+- Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize a Deno application](containerize.md).
+- [Turn on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 
 ## Overview
 
@@ -76,66 +87,75 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 
 ## Deploy and check your application
 
-1. In a terminal, navigate to `deno-docker` and deploy your application to
-   Kubernetes.
+### Apply the Kubernetes configuration
 
-   ```console
-   $ kubectl apply -f docker-kubernetes.yml
-   ```
+In a terminal, navigate to `deno-docker` and deploy your application to
+Kubernetes.
 
-   You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
+```console
+$ kubectl apply -f docker-kubernetes.yml
+```
 
-   ```text
-   deployment.apps/docker-deno-demo created
-   service/service-entrypoint created
-   ```
+You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
 
-2. Make sure everything worked by listing your deployments.
+```text
+deployment.apps/docker-deno-demo created
+service/service-entrypoint created
+```
 
-   ```console
-   $ kubectl get deployments
-   ```
+### Verify deployments and services
 
-   Your deployment should be listed as follows:
+Make sure everything worked by listing your deployments.
 
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE    AGE
-   docker-deno-demo       1/1     1            1           10s
-   ```
+```console
+$ kubectl get deployments
+```
 
-   This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
+Your deployment should be listed as follows:
 
-   ```console
-   $ kubectl get services
-   ```
+```shell
+NAME                 READY   UP-TO-DATE   AVAILABLE    AGE
+docker-deno-demo       1/1     1            1           10s
+```
 
-   You should get output like the following.
+This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
 
-   ```shell
-   NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-   kubernetes           ClusterIP   10.96.0.1        <none>        443/TCP          88m
-   service-entrypoint   NodePort    10.105.145.223   <none>        8000:30001/TCP   83s
-   ```
+```console
+$ kubectl get services
+```
 
-   In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP.
+You should get output like the following.
 
-3. In a browser, visit the following address. You should see the message `{"Status" : "OK"}`.
+```shell
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1        <none>        443/TCP          88m
+service-entrypoint   NodePort    10.105.145.223   <none>        8000:30001/TCP   83s
+```
 
-   ```console
-   http://localhost:30001/
-   ```
+In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP.
 
-4. Run the following command to tear down your application.
+### Open the application
 
-   ```console
-   $ kubectl delete -f docker-kubernetes.yml
-   ```
+In a browser, visit the following address. You should see the message `{"Status" : "OK"}`.
+
+```console
+http://localhost:30001/
+```
+
+### Clean up
+
+Run the following command to tear down your application.
+
+```console
+$ kubectl delete -f docker-kubernetes.yml
+```
 
 ## Summary
 
 In this section, you learned how to use Docker Desktop to deploy your Deno application to a fully-featured Kubernetes environment on your development machine. 
 
-Related information:
+## Related resources
+
    - [Kubernetes documentation](https://kubernetes.io/docs/home/)
    - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md)
    - [Swarm mode overview](/manuals/engine/swarm/_index.md)

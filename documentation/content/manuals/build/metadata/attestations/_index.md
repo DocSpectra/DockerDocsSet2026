@@ -26,6 +26,17 @@ Two types of build attestations are available:
   contains, or that were used to build the image.
 - Provenance: how an image was built.
 
+## Find an attestation task
+
+| Task | Steps and reference |
+| --- | --- |
+| Enable or disable attestations | [Creating attestations](#creating-attestations) |
+| Create and verify software records | [SBOM attestations](./sbom.md) |
+| Configure build provenance | [Provenance modes](./slsa-provenance.md#mode), [schema versions](./slsa-provenance.md#version) |
+| Inspect attestations | [SBOM inspection](./sbom.md#inspecting-sboms), [provenance inspection](./slsa-provenance.md#inspecting-provenance) |
+| Review output storage | [Storage](#storage), [manifest format](#attestation-manifest-format), [OCI artifacts](#attestations-as-oci-artifacts) |
+| Follow a hands-on lab | [Container Image Attestations](/guides/lab-attestation-basics.md) |
+
 ## Purpose of attestations
 
 The use of open source and third-party packages is more widespread than ever

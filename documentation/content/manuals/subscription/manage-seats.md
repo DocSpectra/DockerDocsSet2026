@@ -19,19 +19,30 @@ You can add or remove seats from your Docker Team or Business subscription at an
 > If you have a sales-assisted Docker Business subscription,
 > contact your account manager to add seats to your subscription.
 
+## Find a seat task
+
+- [Add seats](#add-seats-to-your-subscription)
+- [Review volume pricing](#volume-pricing)
+- [Remove seats or cancel a scheduled removal](#remove-seats-from-your-subscription)
+- [Invite organization members](../admin/organization/manage/members.md#invite-members)
+
 ## Add seats to your subscription
+
+### Payment requirements
+
+- You can't use pay by invoice for purchasing additional seats.
+- You must use a card or US bank account.
+- If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
+
+### Add seats steps
 
 To add seats:
 
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
    organization.
 1. Select **Billing**.
-   - If you choose to pay using a US bank account, you must verify the account.
-   - For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add seats** and follow the on-screen instructions to complete
    adding seats.
-   - You can't use pay by invoice for purchasing additional seats.
-   - You must use a card or US bank account.
 
 You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
 

@@ -18,6 +18,16 @@ Docker Scout supports VEX documents to create
 > create exceptions for multiple images, or your entire organization, all at
 > once. For more information, see [Create an exception using the GUI](/manuals/scout/how-tos/create-exceptions-gui.md).
 
+## Follow the VEX workflow
+
+1. [Review prerequisites](#prerequisites)
+2. [Review VEX concepts](#introduction-to-vex)
+3. [Create a document with vexctl](#vexctl-example) and review the [JSON example](#example-json-document)
+4. [Verify the document locally](#verifying-vex-documents)
+5. [Attach the document to an image](#attach-vex-documents-to-images)
+
+For viewing exceptions after creation, see [View exceptions](../explore/exceptions.md#view-exceptions).
+
 ## Prerequisites
 
 To create exceptions using OpenVEX documents, you need:

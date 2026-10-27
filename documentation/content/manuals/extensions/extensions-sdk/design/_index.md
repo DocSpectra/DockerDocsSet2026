@@ -49,6 +49,11 @@ With minor exceptions, displaying your logo for example, you should only use col
 
 Our colors have been chosen so that the counterpart colors in each variant of the palette should have the same essential characteristics. Anywhere you use `red-300` in light mode, you should use `red-300` in dark mode too.
 
+## Related design guidance
+
+- [Design guidelines](design-guidelines.md)
+- [Design principles](design-principles.md)
+
 ## What's next?
 
 - Take a look at our [MUI best practices](mui-best-practices.md).

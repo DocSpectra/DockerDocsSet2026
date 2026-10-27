@@ -12,9 +12,13 @@ aliases:
  - /guides/docker-concepts/building-images/build-tag-and-publish-an-image/
 ---
 
+On this page: [Build commands](#building-images) · [Image naming and tags](#tagging-images) · [Push and authenticate](#publishing-images) · [Set up the sample and account](#set-up) · [Build the sample](#build-an-image) · [Push the sample](#push-the-image).
+
 {{< youtube-embed chiiGLlYRlY >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Build, tag, and publish commands
 
 In this guide, you will learn the following:
 
@@ -99,6 +103,12 @@ docker image tag my-username/my-image another-username/another-image:v1
 
 ### Publishing images
 
+> **Requiring authentication**
+>
+> Before you're able to push an image to a repository, you will need to be authenticated.
+> To do so, simply use the [docker login](https://docs.docker.com/engine/reference/commandline/login/) command.
+{ .information }
+
 Once you have an image built and tagged, you're ready to push it to a registry. To do so, use the [`docker push`](https://docs.docker.com/engine/reference/commandline/image_push/) command:
 
 ```console
@@ -107,13 +117,9 @@ docker push my-username/my-image
 
 Within a few seconds, all of the layers for your image will be pushed to the registry.
 
-> **Requiring authentication**
->
-> Before you're able to push an image to a repository, you will need to be authenticated.
-> To do so, simply use the [docker login](https://docs.docker.com/engine/reference/commandline/login/) command.
-{ .information }
+<a id="try-it-out"></a>
 
-## Try it out
+## Exercise: Build and push the sample image
 
 In this hands-on guide, you will build a simple image using a provided Dockerfile and push it to Docker Hub.
 

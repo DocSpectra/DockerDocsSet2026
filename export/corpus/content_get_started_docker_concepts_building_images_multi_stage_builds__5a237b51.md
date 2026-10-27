@@ -13,9 +13,13 @@ aliases:
  - /guides/docker-concepts/building-images/multi-stage-builds/
 ---
 
+On this page: [Build stages](#explanation) · [Set up the Java project](#set-up-the-java-project) · [Create a Dockerfile](#create-the-dockerfile) · [Build the image](#build-the-container-image) · [Run Spring Boot](#run-the-spring-boot-application) · [Use multi-stage builds and review runtime guidance](#use-multi-stage-builds).
+
 {{< youtube-embed vR185cjwxZ8 >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Build stages and runtime stages
 
 In a traditional build, all build instructions are executed in sequence, and in a single build container: downloading dependencies, compiling code, and packaging the application. All those layers end up in your final image. This approach works, but it leads to bulky images carrying unnecessary weight and increasing your security risks. This is where multi-stage builds come in.
 
@@ -51,9 +55,13 @@ This Dockerfile uses two stages:
 - The final stage uses a smaller base image suitable for running your application. It copies the compiled artifacts (a JAR file, for example) from the build stage. Finally, it defines the runtime configuration (using `CMD` or `ENTRYPOINT`) for starting your application.
 
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Compare single-stage and multi-stage Java images
 
 In this hands-on guide, you'll unlock the power of multi-stage builds to create lean and efficient Docker images for a sample Java application. You'll use a simple “Hello World” Spring Boot-based application built with Maven as your example.
+
+### Set up the Java project
 
 1. [Download and install](https://www.docker.com/products/docker-desktop/) Docker Desktop.
 

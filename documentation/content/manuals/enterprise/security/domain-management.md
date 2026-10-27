@@ -15,6 +15,14 @@ Domain management lets you add and verify domains for your organization, then en
 
 This page provides steps to add and delete domains, configure auto-provisioning, and audit uncaptured users.
 
+## Choose a domain task
+
+- [Add and verify a domain](#add-and-verify-a-domain).
+- [Audit and invite uncaptured users](#audit-domains-for-uncaptured-users).
+- [Configure auto-provisioning](provisioning/auto-provisioning.md#enable-auto-provisioning).
+- [Delete a domain](#delete-a-domain).
+- [Manage domains on an existing SSO connection](single-sign-on/manage.md#manage-domains).
+
 ## Add and verify a domain
 
 Adding a domain requires verification to confirm ownership. The verification process uses DNS records to prove you control the domain.

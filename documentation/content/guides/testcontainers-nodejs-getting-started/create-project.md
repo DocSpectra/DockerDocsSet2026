@@ -5,6 +5,8 @@ description: Set up a Node.js project with a PostgreSQL-backed customer reposito
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-nodejs-getting-started/#prerequisites)
+
 ## Initialize the project
 
 Create a new Node.js project:
@@ -51,3 +53,7 @@ The module provides three functions:
 - `createCustomerTable()` creates the `customers` table if it doesn't exist.
 - `createCustomer()` inserts a customer record.
 - `getCustomers()` fetches all customer records.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-nodejs-getting-started/write-tests/)

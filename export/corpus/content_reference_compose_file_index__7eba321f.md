@@ -51,6 +51,36 @@ Legacy versions 2.x and 3.x of the Compose file format were merged into the Comp
 
 The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the [Compose Specification repository](https://github.com/compose-spec/compose-spec).
 
+## Find a task
+
+| Task | Reference |
+| --- | --- |
+| Define services and their runtime settings | [Services](services.md#find-a-service-setting) |
+| Set a project name or check the obsolete version field | [Version and name](version-and-name.md) |
+| Build and publish service images | [Build](build.md#find-a-build-setting) |
+| Configure deployment, resources, and updates | [Deploy](deploy.md#find-a-deployment-setting) |
+| Update services while developing | [Develop and Watch](develop.md#find-a-watch-setting) |
+| Connect services and configure networks | [Networks](networks.md) and [service network attachments](services.md#networks) |
+| Declare persistent volumes and configure mounts | [Volumes](volumes.md) and [service mounts](services.md#volumes) |
+| Provide configuration files to services | [Configs](configs.md) and [service access](services.md#configs) |
+| Provide sensitive data to services or builds | [Secrets](secrets.md), [service access](services.md#secrets), and [build access](build.md#secrets) |
+| Declare AI models and connect services to them | [Models](models.md) and [service model references](services.md#models) |
+| Reuse configuration within a file | [Fragments](fragments.md) and [extensions](extension.md) |
+| Substitute variables | [Interpolation](interpolation.md) |
+| Combine or override Compose files | [Merge](merge.md) and [include](include.md) |
+| Select services for different uses | [Profiles](profiles.md) |
+| Find the older file formats | [Legacy versions](legacy-versions.md) |
+
+## Find prerequisites and caveats
+
+- Images: [build and pull precedence](build.md#using-build-and-image), [publishing requirements](build.md#publishing-built-images), and [target platforms](build.md#platforms).
+- Startup: [dependency conditions](services.md#depends_on), [healthchecks](services.md#healthcheck), and [profile dependencies](profiles.md#references-and-dependencies).
+- Networks and ports: [network mode conflicts](services.md#network_mode), [port publishing warnings](services.md#ports), and [external networks](networks.md#external).
+- Files and data: [external configs](configs.md#external-config-restrictions), [secret permissions and file-source limitations](services.md#secrets), and [mount path caveats](services.md#volumes).
+- Development: [Develop availability](develop.md), [Watch actions and their version requirements](develop.md#action), and [watch pattern quoting](develop.md#include).
+
+## Browse top-level elements
+
 Use the following links to navigate key sections of the Compose Specification.
 
 > [!TIP]

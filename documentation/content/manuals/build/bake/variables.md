@@ -11,6 +11,15 @@ interpolate them into other values, and perform arithmetic operations.
 Variables can be defined with default values, and can be overridden with
 environment variables.
 
+## Find a variable task
+
+- [Set attribute values](#using-variables-as-attribute-values)
+- [Interpolate values](#interpolate-variables-into-values)
+- [Validate values and dependencies](#validating-variables)
+- [Escape interpolation](#escape-variable-interpolation)
+- [Reference variables across files](#using-variables-in-variables-across-files)
+- [Override variables with environment variables](overrides.md#environment-variables)
+
 ## Using variables as attribute values
 
 Use the `variable` block to define a variable.

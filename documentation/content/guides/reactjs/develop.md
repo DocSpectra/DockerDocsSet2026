@@ -7,6 +7,17 @@ description: Learn how to develop your React.js application locally using contai
 
 ---
 
+[React.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create Dockerfile.dev](#step-1-create-a-development-dockerfile)
+- [Configure Compose services](#step-2-update-your-composeyaml-file)
+- [Configure the Vite server](#step-3-update-viteconfigts-to-ensure-it-works-properly-inside-docker)
+- [Start Compose Watch](#step-4-start-compose-watch)
+- [Verify live updates](#step-5-test-compose-watch-with-react)
+
 ## Prerequisites
 
 Complete [Containerize React.js application](containerize.md).
@@ -28,7 +39,7 @@ You’ll learn how to:
 
 Use Compose Watch to automatically sync source file changes into your containerized development environment. This provides a seamless, efficient development experience without needing to restart or rebuild containers manually.
 
-## Step 1: Create a development Dockerfile
+### Step 1: Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content:
 
@@ -204,3 +215,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your React.js application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+Continue to [tests](run-tests.md).

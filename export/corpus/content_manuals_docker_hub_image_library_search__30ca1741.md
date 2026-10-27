@@ -11,6 +11,16 @@ explore millions of resources. To help you find exactly what you need, it offers
 a variety of filters that let you narrow your results or discover different
 types of content.
 
+## Find a filter
+
+- [Products](#products)
+- [Trusted content](#trusted-content) and [publishers](#publishers)
+- [Categories](#categories)
+- [Operating systems](#operating-systems) and [architectures](#architectures)
+- [Reviewed by Docker](#reviewed-by-docker)
+
+For a search walkthrough, see [Find an image in Docker Hub's library](../quickstart.md#step-1-find-an-image-in-docker-hubs-library).
+
 ## Filters
 
 The search functionality includes filters to narrow down
@@ -30,128 +40,7 @@ specific needs of developers and organizations. These products include:
 - AI models
 - Docker Engine plugins
 
-#### Images
-
-Docker Hub hosts millions of container images, making it the go-to repository
-for containerized applications and solutions. These images include:
-
-- Operating system images: Foundational images for Linux distributions like
-  Ubuntu, Debian, and Alpine, or Windows Server images.
-- Database and storage images: Pre-configured databases such as MySQL,
-  PostgreSQL, and MongoDB to simplify application development.
-- Languages and frameworks-based images: Popular images for Java, Python,
-  Node.js, Ruby, .NET, and more, offering pre-built environments for faster
-  development.
-
-Images in Docker Hub simplify the development process by providing pre-built,
-reusable building blocks, reducing the need to start from scratch. Whether
-you're a beginner building your first container or an enterprise managing
-complex architectures, Docker Hub images provide a reliable foundation.
-
-#### Extensions
-
-Docker Hub offers extensions for Docker Desktop, which enhance its core
-functionality. These extensions are purpose-built to streamline the software
-development lifecycle. Extensions provide tools for:
-
-- System optimization and monitoring: Manage resources and optimize Docker
-  Desktop’s performance.
-- Container management: Simplify container deployment and monitoring.
-- Database management: Facilitate efficient database operations within
-  containers.
-- Kubernetes and cloud integration: Bridge local environments with cloud-native
-  and Kubernetes workflows.
-- Visualization tools: Gain insights into container resource usage through
-  graphical representations.
-
-Extensions help developers and teams create a more efficient and unified
-workflow by reducing context switching and bringing essential tools into Docker
-Desktop's interface.
-
-To learn more about extensions, see [Docker
-Extensions](/manuals/extensions/_index.md).
-
-#### Helm charts
-
-Helm charts in Docker Hub provide a streamlined way to package, configure, and
-deploy Kubernetes applications. Helm is the package manager for Kubernetes, and
-charts are pre-configured templates that define the resources needed to run an
-application in a Kubernetes cluster. Docker Hub hosts a variety of Helm charts
-that provide:
-
-- Application packaging: Bundle Kubernetes manifests, configurations, and
-  dependencies into a single, reusable chart.
-- Version management: Track and manage different versions of your application
-  deployments.
-- Configuration templating: Customize deployments with values files, making it
-  easy to deploy the same application across different environments.
-- Dependency management: Automatically handle chart dependencies, ensuring all
-  required components are deployed together.
-
-Helm charts reduce the complexity of Kubernetes deployments, making it easier
-for teams to deploy, upgrade, and manage applications in production
-environments.
-
-#### Compose
-
-Docker Compose files in Docker Hub enable multi-container application
-orchestration through simple YAML configuration files. Compose is a tool for
-defining and running multi-container Docker applications, and Docker Hub hosts
-Compose files that help you:
-
-- Multi-container orchestration: Define and run applications consisting of
-  multiple interconnected containers with a single command.
-- Service configuration: Specify container images, environment variables,
-  networks, volumes, and dependencies in a declarative format.
-- Development and testing: Quickly spin up complete application stacks for local
-  development, testing, or demonstration purposes.
-- Environment consistency: Ensure consistent application behavior across
-  development, staging, and production environments.
-
-Compose files simplify the process of managing complex applications by
-providing a clear, version-controlled definition of your entire application
-stack.
-
-#### AI models
-
-Docker Hub hosts AI and machine learning models in containerized formats,
-making it easier to deploy, share, and run AI applications across different
-environments. These containerized AI models provide:
-
-- Pre-trained models: Access ready-to-use machine learning models for common
-  tasks such as image recognition, natural language processing, and predictive
-  analytics.
-- Model serving: Deploy models as containerized services that can be easily
-  integrated into applications and scaled as needed.
-- Reproducible environments: Package models with their dependencies, ensuring
-  consistent behavior across development and production environments.
-- Framework support: Find models built with popular frameworks like TensorFlow,
-  PyTorch, scikit-learn, and others.
-
-Containerized AI models remove the need to manage infrastructure dependencies,
-let you deploy models across different environments, and enable scaling as
-application demands change.
-
-#### Plugins
-
-Plugins in Docker Hub let you extend and customize Docker Engine to suit
-specialized requirements. Plugins integrate directly with the Docker Engine and
-provide capabilities such as:
-
-- Network plugins: Enhance networking functionality, enabling integration with
-  complex network infrastructures.
-- Volume plugins: Provide advanced storage options, supporting persistent and
-  distributed storage across various backends.
-- Authorization plugins: Offer fine-grained access control to secure Docker
-  environments.
-
-By leveraging Docker plugins, teams can tailor Docker Engine to meet their
-specific operational needs, ensuring compatibility with existing infrastructures
-and workflows.
-
-To learn more about plugins, see [Docker Engine managed plugin
-system](/manuals/engine/extend/_index.md).
-
+For product descriptions, see [Product descriptions](#product-descriptions).
 
 ### Trusted content
 
@@ -241,3 +130,127 @@ extension has been reviewed by Docker for quality and reliability.
 >
 > The **Reviewed by Docker** filter is only available for extensions. To make
 > the filter available, you must select only the **Extensions** filter in **Products**.
+
+## Product descriptions
+
+### Images
+
+Docker Hub hosts millions of container images, making it the go-to repository
+for containerized applications and solutions. These images include:
+
+- Operating system images: Foundational images for Linux distributions like
+  Ubuntu, Debian, and Alpine, or Windows Server images.
+- Database and storage images: Pre-configured databases such as MySQL,
+  PostgreSQL, and MongoDB to simplify application development.
+- Languages and frameworks-based images: Popular images for Java, Python,
+  Node.js, Ruby, .NET, and more, offering pre-built environments for faster
+  development.
+
+Images in Docker Hub simplify the development process by providing pre-built,
+reusable building blocks, reducing the need to start from scratch. Whether
+you're a beginner building your first container or an enterprise managing
+complex architectures, Docker Hub images provide a reliable foundation.
+
+### Extensions
+
+Docker Hub offers extensions for Docker Desktop, which enhance its core
+functionality. These extensions are purpose-built to streamline the software
+development lifecycle. Extensions provide tools for:
+
+- System optimization and monitoring: Manage resources and optimize Docker
+  Desktop’s performance.
+- Container management: Simplify container deployment and monitoring.
+- Database management: Facilitate efficient database operations within
+  containers.
+- Kubernetes and cloud integration: Bridge local environments with cloud-native
+  and Kubernetes workflows.
+- Visualization tools: Gain insights into container resource usage through
+  graphical representations.
+
+Extensions help developers and teams create a more efficient and unified
+workflow by reducing context switching and bringing essential tools into Docker
+Desktop's interface.
+
+To learn more about extensions, see [Docker
+Extensions](/manuals/extensions/_index.md).
+
+### Helm charts
+
+Helm charts in Docker Hub provide a streamlined way to package, configure, and
+deploy Kubernetes applications. Helm is the package manager for Kubernetes, and
+charts are pre-configured templates that define the resources needed to run an
+application in a Kubernetes cluster. Docker Hub hosts a variety of Helm charts
+that provide:
+
+- Application packaging: Bundle Kubernetes manifests, configurations, and
+  dependencies into a single, reusable chart.
+- Version management: Track and manage different versions of your application
+  deployments.
+- Configuration templating: Customize deployments with values files, making it
+  easy to deploy the same application across different environments.
+- Dependency management: Automatically handle chart dependencies, ensuring all
+  required components are deployed together.
+
+Helm charts reduce the complexity of Kubernetes deployments, making it easier
+for teams to deploy, upgrade, and manage applications in production
+environments.
+
+### Compose
+
+Docker Compose files in Docker Hub enable multi-container application
+orchestration through simple YAML configuration files. Compose is a tool for
+defining and running multi-container Docker applications, and Docker Hub hosts
+Compose files that help you:
+
+- Multi-container orchestration: Define and run applications consisting of
+  multiple interconnected containers with a single command.
+- Service configuration: Specify container images, environment variables,
+  networks, volumes, and dependencies in a declarative format.
+- Development and testing: Quickly spin up complete application stacks for local
+  development, testing, or demonstration purposes.
+- Environment consistency: Ensure consistent application behavior across
+  development, staging, and production environments.
+
+Compose files simplify the process of managing complex applications by
+providing a clear, version-controlled definition of your entire application
+stack.
+
+### AI models
+
+Docker Hub hosts AI and machine learning models in containerized formats,
+making it easier to deploy, share, and run AI applications across different
+environments. These containerized AI models provide:
+
+- Pre-trained models: Access ready-to-use machine learning models for common
+  tasks such as image recognition, natural language processing, and predictive
+  analytics.
+- Model serving: Deploy models as containerized services that can be easily
+  integrated into applications and scaled as needed.
+- Reproducible environments: Package models with their dependencies, ensuring
+  consistent behavior across development and production environments.
+- Framework support: Find models built with popular frameworks like TensorFlow,
+  PyTorch, scikit-learn, and others.
+
+Containerized AI models remove the need to manage infrastructure dependencies,
+let you deploy models across different environments, and enable scaling as
+application demands change.
+
+### Plugins
+
+Plugins in Docker Hub let you extend and customize Docker Engine to suit
+specialized requirements. Plugins integrate directly with the Docker Engine and
+provide capabilities such as:
+
+- Network plugins: Enhance networking functionality, enabling integration with
+  complex network infrastructures.
+- Volume plugins: Provide advanced storage options, supporting persistent and
+  distributed storage across various backends.
+- Authorization plugins: Offer fine-grained access control to secure Docker
+  environments.
+
+By leveraging Docker plugins, teams can tailor Docker Engine to meet their
+specific operational needs, ensuring compatibility with existing infrastructures
+and workflows.
+
+To learn more about plugins, see [Docker Engine managed plugin
+system](/manuals/engine/extend/_index.md).

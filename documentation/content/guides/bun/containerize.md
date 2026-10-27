@@ -8,6 +8,17 @@ aliases:
   - /language/bun/containerize/
 ---
 
+[Bun guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Get the sample application](#get-the-sample-application)
+- [Choose a base image and create a Dockerfile](#create-a-dockerfile)
+- [Run in the foreground](#run-the-application)
+- [Run in the background](#run-the-application-in-the-background)
+- [Stop the application](#stop-the-application)
+
 ## Prerequisites
 
 * You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
@@ -150,6 +161,8 @@ $ docker compose up --build -d
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000).
 
 
+### Stop the application
+
 In the terminal, run the following command to stop the application.
 
 ```console
@@ -161,7 +174,7 @@ $ docker compose down
 In this section, you learned how you can containerize and run your Bun
 application using Docker.
 
-Related information:
+## Related resources
 
  - [Dockerfile reference](/reference/dockerfile.md)
  - [.dockerignore file](/reference/dockerfile.md#dockerignore-file)
@@ -173,3 +186,5 @@ Related information:
 
 In the next section, you'll learn how you can develop your application using
 containers.
+
+Continue to [development](develop.md).

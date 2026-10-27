@@ -11,6 +11,8 @@ aliases:
 The `azblob` cache store uploads your resulting build cache to
 [Azure's blob storage service](https://azure.microsoft.com/en-us/services/storage/blobs/).
 
+## Driver requirements
+
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
 [Build drivers](/manuals/build/builders/drivers/_index.md) for more information.
@@ -22,6 +24,8 @@ $ docker buildx build --push -t <registry>/<image> \
   --cache-to type=azblob,name=<cache-image>[,parameters...] \
   --cache-from type=azblob,name=<cache-image>[,parameters...] .
 ```
+
+### Parameters
 
 The following table describes the available CSV parameters that you can pass to
 `--cache-to` and `--cache-from`.

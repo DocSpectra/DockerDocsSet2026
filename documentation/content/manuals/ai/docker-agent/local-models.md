@@ -9,6 +9,14 @@ weight: 20
 Docker Model Runner lets you run AI models locally on your machine. No API
 keys, no recurring costs, and your data stays private.
 
+## Find a local-model task
+
+- [Check prerequisites](#prerequisites) and [available model sources](#using-models-with-dmr)
+- [Configure the DMR provider](#configuration)
+- [Set model parameters](#advanced-configuration), [speculative decoding](#faster-inference-with-speculative-decoding), or [runtime flags](#runtime-flags)
+- [Use local embeddings and reranking for RAG](#using-dmr-for-rag)
+- [Troubleshoot DMR discovery](#troubleshooting)
+
 ## Why use local models
 
 Docker Model Runner lets you run models locally without API keys or recurring

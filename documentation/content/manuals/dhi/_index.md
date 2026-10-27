@@ -45,6 +45,22 @@ Designed to reduce vulnerabilities and simplify compliance, DHI integrates
 easily into your existing Docker-based workflows with little to no retooling
 required.
 
+## Choose a task
+
+| Task | Start here |
+|---|---|
+| Pull and run a Community image | [Quickstart](./get-started.md) |
+| Set up Select or Enterprise | [Subscription prerequisites and walkthrough](./how-to/select-enterprise.md) |
+| Choose an image or variant | [Search and evaluate](./how-to/explore.md), [image types](./explore/available.md) |
+| Migrate an application | [Migration checklist](./migration/checklist.md), [migration paths](./migration/_index.md) |
+| Build from a YAML definition | [Create and build an image](./how-to/build.md) |
+| Customize a mirrored image or chart | [Customize](./how-to/customize.md) |
+| Deploy to Kubernetes or OpenShift | [Kubernetes](./how-to/kubernetes.md), [Helm](./how-to/helm.md), [OpenShift](/guides/dhi-openshift/) |
+| Inspect security evidence or vulnerabilities | [Verify](./how-to/verify.md), [scan](./how-to/scan.md), [scan child images and CI builds](./how-to/scan-child-images.md) |
+| Resolve a build or runtime issue | [Troubleshoot](./troubleshoot.md) |
+
+## Compare subscriptions
+
 DHI is available in the following three subscriptions.
 
 | Feature | Community | Select | Enterprise |
@@ -66,6 +82,8 @@ DHI is available in the following three subscriptions.
 
 For pricing and more details, see the [Docker Hardened Images subscription
 comparison](https://www.docker.com/products/hardened-images/#compare).
+
+## Browse the documentation
 
 Explore the sections below to get started with Docker Hardened Images, integrate
 them into your workflow, and learn what makes them secure and enterprise-ready.

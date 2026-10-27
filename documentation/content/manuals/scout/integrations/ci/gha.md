@@ -23,7 +23,20 @@ stack up against the image you run in production.
   the image built in the pull request with a different version of the same image
   in an environment called `production`.
 
+> [!NOTE]
+>
+> This CI workflow runs a local analysis and evaluation of your image. To
+> evaluate the image locally, you must ensure that the image is loaded the
+> local image store of your runner.
+>
+> This comparison doesn't work if you push the image to a registry, or if you
+> build an image that can't be loaded to the runner's local image store. For
+> example, multi-platform images or images with SBOM or provenance attestation
+> can't be loaded to the local image store.
+
 ## Steps
+
+### Build the image
 
 First, set up the GitHub Action workflow to build an image. This isn't specific
 to Docker Scout here, but you'll need to build an image to have
@@ -103,16 +116,7 @@ This creates workflow steps to:
 3. Extract metadata from Git reference and GitHub events.
 4. Build and push the Docker image to the registry.
 
-> [!NOTE]
->
-> This CI workflow runs a local analysis and evaluation of your image. To
-> evaluate the image locally, you must ensure that the image is loaded the
-> local image store of your runner.
->
-> This comparison doesn't work if you push the image to a registry, or if you
-> build an image that can't be loaded to the runner's local image store. For
-> example, multi-platform images or images with SBOM or provenance attestation
-> can't be loaded to the local image store.
+### Compare with production
 
 With this setup out of the way, you can add the following steps to run the
 image comparison:
@@ -145,6 +149,8 @@ cross-references the results with the corresponding image in the `production`
 environment. This example only includes critical and high-severity
 vulnerabilities, and excludes vulnerabilities that exist in both images,
 showing only what's changed.
+
+### Review comparison results
 
 The GitHub Action outputs the comparison results in a pull request comment by
 default.

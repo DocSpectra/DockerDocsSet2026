@@ -8,6 +8,17 @@ aliases:
 - /language/bun/develop/
 ---
 
+[Bun guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Get the sample application](#get-the-sample-application)
+- [Configure Compose Watch](#configure-compose-watch)
+- [Start Compose Watch](#start-compose-watch)
+- [Verify live updates](#verify-live-updates)
+- [Stop the application](#stop-the-application)
+
 ## Prerequisites
 
 Complete [Containerize a Bun application](containerize.md).
@@ -32,6 +43,8 @@ Use Compose Watch to automatically update your running Compose services as you
 edit and save your code. For more details about Compose Watch, see [Use Compose
 Watch](/manuals/compose/how-tos/file-watch.md).
 
+### Configure Compose Watch
+
 Open your `compose.yml` file in an IDE or text editor and then add the Compose Watch instructions. The following example shows how to add Compose Watch to your `compose.yml` file.
 
 ```yaml {hl_lines="9-12",linenos=true}
@@ -49,15 +62,21 @@ services:
           path: .
 ```
 
+### Start Compose Watch
+
 Run the following command to run your application with Compose Watch.
 
 ```console
 $ docker compose watch
 ```
 
+### Verify live updates
+
 Now, if you modify your `server.js` you will see the changes in real time without re-building the image.
 
 To test it out, open the `server.js` file in your favorite text editor and change the message from `{"Status" : "OK"}` to `{"Status" : "Updated"}`. Save the file and refresh your browser at `http://localhost:3000`. You should see the updated message.
+
+### Stop the application
 
 Press `ctrl+c` in the terminal to stop your application.
 
@@ -65,7 +84,8 @@ Press `ctrl+c` in the terminal to stop your application.
 
 In this section, you also learned how to use Compose Watch to automatically rebuild and run your container when you update your code.
 
-Related information:
+## Related resources
+
  - [Compose file reference](/reference/compose-file/)
  - [Compose file watch](/manuals/compose/how-tos/file-watch.md)
  - [Multi-stage builds](/manuals/build/building/multi-stage.md)
@@ -73,3 +93,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue to [CI/CD](configure-ci-cd.md).

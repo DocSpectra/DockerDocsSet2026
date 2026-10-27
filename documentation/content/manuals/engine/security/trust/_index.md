@@ -23,6 +23,16 @@ public or private registry. Content trust gives you the ability to verify both
 the integrity and the publisher of all the data received from a registry over
 any channel.
 
+## Choose a content trust task
+
+- [Review tags, keys, and the DCT retirement notice](#about-docker-content-trust-dct)
+- [Sign, push, inspect, or revoke signatures](#signing-images-with-docker-content-trust)
+- [Require trusted images in the client](#client-enforcement-with-docker-content-trust)
+- [Manage signing keys and backups](trust_key_mng.md)
+- [Configure clients and delegations](trust_delegation.md)
+- [Automate signing and builds](trust_automation.md)
+- [Deploy a Notary server](deploying_notary.md) or [try the sandbox](trust_sandbox.md)
+
 ## About Docker Content Trust (DCT)
 
 Docker Content Trust (DCT) provides the ability to use digital signatures for
@@ -121,19 +131,14 @@ Within the Docker CLI we can sign and push a container image with the
 `$ docker trust` command syntax. This is built on top of the Notary feature
 set. For more information, see the [Notary GitHub repository](https://github.com/theupdateframework/notary).
 
+### Signing prerequisites
+
 A prerequisite for signing an image is a Docker Registry with a Notary server (such as Docker Hub) attached.
-Refer to [Deploying Notary](/engine/security/trust/deploying_notary/) for instructions.
+Refer to [Deploying Notary](deploying_notary.md) for instructions.
 
-> [!NOTE]
->
-> Docker is retiring DCT for Docker Official Images
-> (DOI). You should start planning to transition to a different image signing
-> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
-> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
-> complete deprecation of DCT are being finalized and will be published soon.
->
-> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
+See the [DCT retirement notice](#about-docker-content-trust-dct).
 
+### Generate or load a delegation key
 
 To sign a Docker Image you will need a delegation key pair. These keys
 can be generated locally using `$ docker trust key generate` or generated
@@ -164,6 +169,8 @@ Repeat passphrase for new jeff key with ID 8ae710e:
 Successfully imported key from key.pem
 ```
 
+### Add the signer to the repository
+
 Next we will need to add the delegation public key to the Notary server;
 this is specific to a particular image repository in Notary known as a Global
 Unique Name (GUN). If this is the first time you are adding a delegation to that
@@ -177,6 +184,8 @@ $ docker trust signer add --key cert.pem jeff registry.example.com/admin/demo
 Adding signer "jeff" to registry.example.com/admin/demo...
 Enter passphrase for new repository key with ID 10b5e94:
 ```
+
+### Sign and push the image
 
 Finally, we will use the delegation private key to sign a particular tag and
 push it up to the registry.
@@ -206,6 +215,8 @@ Signing and pushing trust metadata
 Enter passphrase for signer key with ID 8ae710e:
 Successfully signed registry.example.com/admin/demo:1
 ```
+
+### Inspect and revoke signatures
 
 Remote trust data for a tag or a repository can be viewed by the
 `$ docker trust inspect` command:

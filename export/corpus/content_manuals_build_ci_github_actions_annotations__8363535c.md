@@ -13,9 +13,14 @@ To add annotations when building images with GitHub Actions, use the
 metadata action creates an `annotations` output that you can reference, both
 with [build-push-action] and [bake-action].
 
+See [Configure annotation level](#configure-annotation-level) for component
+requirements and failure conditions.
+
 [metadata-action]: https://github.com/docker/metadata-action#overwrite-labels-and-annotations
 [build-push-action]: https://github.com/docker/build-push-action/
 [bake-action]: https://github.com/docker/bake-action/
+
+## Add annotations
 
 {{< tabs >}}
 {{< tab name="build-push-action" >}}

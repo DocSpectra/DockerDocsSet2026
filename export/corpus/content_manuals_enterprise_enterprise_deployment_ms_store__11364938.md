@@ -15,6 +15,12 @@ The Microsoft Store version of Docker Desktop provides the same functionality as
 
 Choose the installation method that best aligns with your environment's requirements and management practices.
 
+## Choose a task
+
+- Review updates for [developer-managed](#developer-managed-installations) or [Intune-managed](#intune-managed-installations) installations.
+- Check [WSL considerations](#wsl-considerations).
+- Review [Intune management recommendations](#recommendations-for-intune-management).
+
 ## Update behavior
 
 ### Developer-managed installations

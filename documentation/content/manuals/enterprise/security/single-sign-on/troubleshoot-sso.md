@@ -14,6 +14,17 @@ aliases:
 
 This page describes common single sign-on (SSO) errors and their solutions. Issues can stem from your identity provider (IdP) configuration or Docker settings.
 
+## Find an issue
+
+- Start with [Docker and IdP error checks](#check-for-errors).
+- [Groups are not formatted correctly](#groups-are-not-formatted-correctly).
+- [User is not assigned to the organization](#user-is-not-assigned-to-the-organization).
+- [IdP-initiated sign in is not enabled](#idp-initiated-sign-in-is-not-enabled-for-connection).
+- [Not enough seats](#not-enough-seats-in-organization).
+- [Domain is not verified](#domain-is-not-verified-for-sso-connection).
+- [Unable to find session](#unable-to-find-session).
+- [Name ID is not an email address](#name-id-is-not-an-email-address).
+
 ## Check for errors
 
 If you experience SSO issues, check both Docker and your identity provider for errors first.

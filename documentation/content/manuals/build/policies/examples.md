@@ -15,6 +15,21 @@ If you're new to policies, start with the tutorials:
 validation](./validate-git.md). Those pages teach individual techniques. This
 page shows complete policies combining those techniques.
 
+## Choose a policy example
+
+| Task | Example |
+| --- | --- |
+| Start with development rules | [Development-friendly baseline](#development-friendly-baseline) |
+| Restrict image registries | [Registry allowlist](#registry-allowlist) |
+| Require image digests | [Pin base images to digests](#pin-base-images-to-digests) |
+| Restrict Git and HTTP dependencies | [Control external dependencies](#control-external-dependencies) |
+| Require build provenance | [Image attestation and provenance](#image-attestation-and-provenance) |
+| Verify release tags | [Signed Git releases](#signed-git-releases) |
+| Vary checks by registry | [Multi-registry policy](#multi-registry-policy) |
+| Vary checks by target | [Multi-environment policy](#multi-environment-policy) |
+| Pin all external inputs | [Complete dependency pinning](#complete-dependency-pinning) |
+| Check image signature metadata | [Manual signature verification](#manual-signature-verification) |
+
 ## How to use these examples
 
 1. Copy the policy code into a `Dockerfile.rego` file next to your

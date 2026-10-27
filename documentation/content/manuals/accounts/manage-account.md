@@ -15,6 +15,15 @@ administrative and security settings.
 > sign-on (SSO), you may not have permissions to update your account settings.
 > You must contact your administrator to update your settings.
 
+## Find a settings task
+
+- [Update profile information or avatar](#update-account-information)
+- [Update your email address](#update-email-address)
+- [Change your password](#change-your-password) or [reset a forgotten password](create-account.md#reset-your-password)
+- [Manage 2FA](#manage-two-factor-authentication) or [personal access tokens](#manage-personal-access-tokens)
+- [Disconnect Google or GitHub](#manage-connected-accounts)
+- [Convert](#convert-your-account) or [deactivate](#deactivate-your-account) your account
+
 ## Update account information
 
 Account information is visible on your **Account settings** page. You can

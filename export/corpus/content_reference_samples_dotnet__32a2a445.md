@@ -8,3 +8,7 @@ aliases:
 - /samples/aspnet-mssql-compose/
 - /samples/dotnet/
 ---
+
+## Browse samples
+
+[All samples](_index.md) / [Frameworks](_index.md#frameworks)

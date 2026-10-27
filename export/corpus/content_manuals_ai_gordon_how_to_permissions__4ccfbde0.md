@@ -10,6 +10,17 @@ weight: 30
 Before Gordon uses a tool or action that can modify your system, it proposes
 the action and waits for your approval before executing.
 
+## Find a permission task
+
+- Review [actions requiring approval](#what-requires-approval) and [exceptions](#what-doesnt-require-approval)
+- Review [working directory and destructive-operation caveats](#security-considerations)
+- [Change default permission settings](#configuring-permission-settings)
+- [Approve tools for a session](#session-level-permissions)
+- [Stop or revert actions](#stopping-and-reverting)
+- [Review organizational controls](#organizational-controls)
+
+For tool availability and command rules, see [Configure tools](configure-tools.md).
+
 ## What requires approval
 
 By default, the following actions require approval before Gordon can use them:
@@ -23,6 +34,29 @@ By default, the following actions require approval before Gordon can use them:
 - Reading files, listing directories (even outside Gordon's working directory)
 - Searching the Docker documentation
 - Analyzing code or explaining errors
+
+## Security considerations
+
+Working directory
+: The working directory sets the default context for file operations. It does
+  not constrain Gordon's access to files or directories; Gordon can read files
+  outside this directory.
+
+Verify before approving
+: Gordon can make mistakes. Before approving:
+
+  - Confirm commands match your intent
+  - Check container names and image tags are correct
+  - Verify volume mounts and port mappings
+  - Review file changes for important logic
+
+  If you don't understand an operation, ask Gordon to explain it or reject and
+  request a different approach.
+
+Destructive operations
+: Gordon warns about destructive operations but won't prevent them. Operations
+  like `docker container rm`, `docker system prune`, and `docker volume rm` can
+  cause permanent data loss. Back up important data first.
 
 ## Configuring permission settings
 
@@ -69,29 +103,6 @@ Session permissions reset when:
 - You close the Gordon view (Desktop)
 - You exit `docker ai` (CLI)
 - You start a new conversation
-
-## Security considerations
-
-Working directory
-: The working directory sets the default context for file operations. It does
-  not constrain Gordon's access to files or directories; Gordon can read files
-  outside this directory.
-
-Verify before approving
-: Gordon can make mistakes. Before approving:
-
-  - Confirm commands match your intent
-  - Check container names and image tags are correct
-  - Verify volume mounts and port mappings
-  - Review file changes for important logic
-
-  If you don't understand an operation, ask Gordon to explain it or reject and
-  request a different approach.
-
-Destructive operations
-: Gordon warns about destructive operations but won't prevent them. Operations
-  like `docker container rm`, `docker system prune`, and `docker volume rm` can
-  cause permanent data loss. Back up important data first.
 
 ## Stopping and reverting
 

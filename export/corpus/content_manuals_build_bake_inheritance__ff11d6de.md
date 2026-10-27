@@ -6,6 +6,11 @@ description: Learn how to inherit attributes from other targets in Bake
 keywords: buildx, buildkit, bake, inheritance, targets, attributes
 ---
 
+Use the sections below to [share common configuration](#common-reusable-targets),
+[override inherited attributes](#overriding-inherited-attributes),
+[inherit multiple targets and review precedence](#inherit-from-multiple-targets),
+or [reuse a single attribute](#reusing-single-attributes-from-targets).
+
 Targets can inherit attributes from other targets, using the `inherits`
 attribute. For example, imagine that you have a target that builds a Docker
 image for a development environment:

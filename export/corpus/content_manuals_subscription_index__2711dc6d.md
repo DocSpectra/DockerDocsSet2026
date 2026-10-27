@@ -44,4 +44,15 @@ Docker subscriptions provide licensing for commercial use of Docker products inc
 
 Use these resources to choose the right subscription for your needs or manage your existing subscription.
 
+## Find a subscription task
+
+- [Set up a personal or organization subscription](setup.md)
+- [Upgrade a subscription](change.md#upgrade-your-subscription) or [review downgrade considerations](change.md#downgrade-considerations)
+- [Add seats](manage-seats.md#add-seats-to-your-subscription), [remove seats or cancel a scheduled removal](manage-seats.md#remove-seats-from-your-subscription), or [review volume pricing](manage-seats.md#volume-pricing)
+- [Add Build Cloud or Testcontainers Cloud minutes](scale.md)
+- [Change the billing cycle](../billing/cycle.md) or [manage billing and payments](../billing/_index.md)
+- [Review Docker Desktop licensing](desktop-license.md)
+
+## Subscription resources
+
 {{< grid items="grid_subscriptions" >}}

@@ -4,6 +4,21 @@ This guide explains how to use components, shortcodes, and special features
 when writing Docker documentation. For writing style and grammar, see
 [STYLE.md](STYLE.md).
 
+## Find a component by task
+
+| Task | Component or syntax |
+| --- | --- |
+| Set page metadata | [Front matter](#front-matter), [series pages](#series-guide-pages) |
+| Separate content variations | [Tabs](#tabs), [accordion](#accordion) |
+| Reuse content | [Include](#include) |
+| Show requirements or feature status | [Summary bars](#summary-bars), [badges](#badges) |
+| Highlight caveats and warnings | [Callouts](#callouts) |
+| Add navigation | [Links](#links), [buttons](#buttons), [cards](#cards) |
+| Format examples and data | [Code blocks](#code-blocks), [lists](#lists), [tables](#tables) |
+| Add media | [Images](#images), [videos](#videos), [icons](#icons) |
+
+For file structure and common patterns, see the [quick reference](#quick-reference).
+
 ## Front matter
 
 Every documentation page requires front matter at the top of the file.

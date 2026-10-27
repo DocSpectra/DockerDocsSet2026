@@ -49,3 +49,9 @@ INFO[0000] Listening for HTTP on unix (/var/run/docker.sock)
 
 To stop Docker when you have started it manually, issue a `Ctrl+C` in your
 terminal.
+
+## Related tasks
+
+- [Configure the Docker daemon](_index.md#configure-the-docker-daemon)
+- [Read the daemon logs](logs.md)
+- [Troubleshoot daemon startup and connections](troubleshoot.md)

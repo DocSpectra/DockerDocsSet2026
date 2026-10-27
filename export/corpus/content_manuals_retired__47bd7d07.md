@@ -82,6 +82,19 @@ open-source projects that have been deprecated, retired, or transitioned.
 > For a detailed list of deprecated Docker Engine features, refer to the
 > [Docker Engine Deprecated Features documentation](/manuals/engine/deprecated.md).
 
+## Find status, alternatives, or archived documentation
+
+| Task | Sections |
+| --- | --- |
+| Replace host provisioning or older desktop tools | [Docker Machine](#docker-machine), [Docker Toolbox](#docker-toolbox) |
+| Find cloud integration documentation | [Docker Cloud integrations](#docker-cloud-integrations) |
+| Review enterprise product transitions | [Docker Enterprise Edition](#docker-enterprise-edition), [Docker Data Center and Docker Trusted Registry](#docker-data-center-and-docker-trusted-registry) |
+| Review Desktop feature and extension alternatives | [Dev Environments](#dev-environments), [Docker Desktop sandboxes](#docker-desktop-sandboxes), [GitHub Copilot extension](#github-copilot-extension) |
+| Replace service account add-ons | [Enhanced Service Account add-ons](#enhanced-service-account-add-ons) |
+| Find open source project status and links | [Open source projects](#open-source-projects) |
+
+For the retirement policy, see [Docker's product release lifecycle](release-lifecycle.md#retirement-process).
+
 ## Products and features
 
 Support for these deprecated or retired features is no longer provided by

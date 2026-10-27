@@ -22,12 +22,18 @@ GitHub Actions:
 - `docker/build-push-action@{{% param "build_push_action_version" %}}`
 - `docker/bake-action@{{% param "bake_action_version" %}}`
 
+## View a job summary
+
 To view the job summary, open the details page for the job in GitHub after the
 job has finished. The summary is available for both failed and successful
 builds. In the case of a failed build, the summary also displays the error
 message that caused the build to fail:
 
 ![Builds summary error message](../images/build_summary_error.png)
+
+For supported environments, see [Limitations](#limitations).
+For controls, see [Disable job summary](#disable-job-summary) and
+[Disable build record upload](#disable-build-record-upload).
 
 ## Import build records to Docker Desktop
 

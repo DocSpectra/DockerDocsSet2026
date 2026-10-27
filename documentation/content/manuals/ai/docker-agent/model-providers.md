@@ -12,6 +12,14 @@ Runner](local-models.md).
 This guide covers cloud providers. For the local alternative, see [Local
 models with Docker Model Runner](local-models.md).
 
+## Choose a provider
+
+- [Anthropic: API key and agent configuration](#anthropic)
+- [OpenAI: API key and agent configuration](#openai)
+- [Google Gemini: API key and agent configuration](#google-gemini)
+- [OpenAI-compatible endpoints and authentication](#openai-compatible-providers)
+- [Local models with Docker Model Runner](local-models.md)
+
 ## Supported providers
 
 Docker Agent supports these cloud model providers:

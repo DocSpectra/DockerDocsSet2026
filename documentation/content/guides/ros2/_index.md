@@ -43,6 +43,12 @@ Before you begin, make sure you're familiar with the following:
 - [Docker concepts](/get-started/docker-concepts/the-basics/what-is-a-container.md): You must understand core Docker concepts, such as images and containers.
 - [ROS 2 concepts](https://www.ros.org): Basic understanding of concepts like nodes, packages, topics, and services.
 
+## Choose a ROS 2 task
+
+1. [Run an official ROS 2 image, verify the distribution, and install packages](run-ros2.md)
+2. [Get and build the sample workspace, or switch distributions](develop.md)
+3. [Configure display forwarding and run the Turtlesim example](turtlesim-example.md)
+
 ## What's next?
 
-Start by setting up your ROS 2 development environment using Docker and dev containers.
+Start by [setting up your ROS 2 development environment using Docker and dev containers](develop.md).

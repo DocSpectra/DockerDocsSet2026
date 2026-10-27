@@ -26,10 +26,16 @@ This quickstart covers the steps developers need to get started with Docker Offl
 
 ## Prerequisites
 
-- You must have [Docker Desktop](/desktop/) installed. Docker recommends using
+- You must have [Docker Desktop](/desktop/) 4.68 or later installed. Docker recommends using
   the latest version of Docker Desktop to access the newest features and
   improvements in Docker Offload.
 - You must have a Docker Business subscription and a Docker Offload subscription.
+- Authentication
+- An active internet connection
+- No restrictive proxy or firewall blocking traffic to Docker Cloud
+- Access to Docker Offload. See [Step 1](#step-1-verify-access-to-docker-offload).
+
+Before starting a session, review [Session management and idle state](about.md#session-management-and-idle-state), [Fair use](about.md#fair-use), and [Step 5: Stop Docker Offload](#step-5-stop-docker-offload).
 
 ## Step 1: Verify access to Docker Offload
 
@@ -102,6 +108,8 @@ Also, when Docker Offload is started, you can view detailed session information
 by selecting **Docker Offload** > **Insights** in the left navigation of the
 Docker Desktop Dashboard.
 
+For activity metrics, filters, and CSV export, see [Docker Offload usage](usage.md).
+
 ## Step 5: Stop Docker Offload
 
 Docker Offload automatically
@@ -119,3 +127,9 @@ running containers and images are removed. When Docker Offload has been idle for
 images are removed.
 
 To start Docker Offload again, run the `docker offload start` command.
+
+## Related tasks
+
+- [Configure Docker Offload](configuration.md)
+- [Optimize file transfers and builds](optimize.md)
+- [Troubleshoot connection or session errors](troubleshoot.md)

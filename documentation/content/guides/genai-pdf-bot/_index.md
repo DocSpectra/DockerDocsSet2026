@@ -17,4 +17,11 @@ The generative AI (GenAI) guide teaches you how to containerize an existing GenA
 - Containerize and run a Python-based GenAI application
 - Set up a local environment to run the complete GenAI stack locally for development
 
-Start by containerizing an existing GenAI application.
+Start by [containerizing an existing GenAI application](containerize.md).
+
+## Follow the guide
+
+1. [Containerize and run the sample](containerize.md)
+2. [Configure local services and choose an LLM](develop.md)
+
+Browse [AI task guides](../ai-task-guides.md) for related guides.

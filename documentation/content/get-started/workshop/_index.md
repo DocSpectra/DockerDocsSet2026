@@ -24,6 +24,20 @@ This 45-minute workshop contains step-by-step instructions on how to get started
 > For a quick introduction to Docker and the benefits of containerizing your
 > applications, see [Getting started](/get-started/introduction/_index.md).
 
+## Workshop tasks
+
+Start with [prerequisites and application setup](02_our_app.md#prerequisites), or select a task:
+
+1. [Containerize an application](02_our_app.md)
+2. [Update the application](03_updating_app.md)
+3. [Share the application](04_sharing_app.md)
+4. [Persist the database](05_persisting_data.md)
+5. [Use bind mounts for development](06_bind_mounts.md)
+6. [Connect the app to MySQL](07_multi_container.md)
+7. [Use Docker Compose](08_using_compose.md)
+8. [Apply image-building best practices](09_image_best.md)
+9. [Choose what to do next](10_what_next.md)
+
 ## What is a container?
 
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. That isolation leverages [kernel namespaces and cgroups](https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504),

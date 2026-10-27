@@ -5,6 +5,8 @@ description: Run your Testcontainers-based Spring Boot Kafka integration tests a
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-spring-boot-kafka/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-spring-boot-kafka/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -32,8 +34,12 @@ To learn more about Testcontainers, visit the
 
 ## Further reading
 
-- [Getting started with Testcontainers in a Java Spring Boot project](https://testcontainers.com/guides/testing-spring-boot-rest-api-using-testcontainers/)
-- [The simplest way to replace H2 with a real database for testing](https://testcontainers.com/guides/replace-h2-with-real-database-for-testing/)
+- [Getting started with Testcontainers in a Java Spring Boot project](/guides/testcontainers-java-spring-boot-rest-api/)
+- [The simplest way to replace H2 with a real database for testing](/guides/testcontainers-java-replace-h2/)
 - [Awaitility](http://www.awaitility.org/)
 - [Testcontainers Kafka module](https://java.testcontainers.org/modules/kafka/)
 - [Testcontainers MySQL module](https://java.testcontainers.org/modules/databases/mysql/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-spring-boot-kafka/)

@@ -12,6 +12,16 @@ toc_max: 2
 
 [Subscribe to security RSS feed](/security/security-announcements/index.xml)
 
+**Find an announcement or response**
+
+- Review Docker Desktop security updates in the announcements below and the [Desktop release notes](/manuals/desktop/release-notes.md).
+- For runc, BuildKit, and Moby, review [affected versions](#docker-security-advisory-multiple-vulnerabilities-in-runc-buildkit-and-moby), [updates and mitigations](#what-should-i-do-if-im-on-an-affected-version), or [Docker product impact and update prerequisites](#how-are-docker-products-affected).
+- Review [Text4Shell updates and image scanning](#text4shell-cve-2022-42889).
+- Review [Log4j updates and image scanning](#log4j-2-cve-2021-44228), or the [Docker Official Images table and exceptions](#docker-official-images-impacted-by-log4j-2-cve).
+- Review [CLI password login deprecation when SSO is enforced](#deprecation-of-password-logins-on-cli-when-sso-enforced).
+- Review [SOC 2 Type 2 attestation and ISO 27001 certification](#soc-2-type-2-attestation-and-iso-27001-certification).
+- Find [Docker Engine release notes](/manuals/engine/release-notes/overview.md).
+
 ## Docker Desktop 4.67.0 security update: CVE-2026-33990
 
 A vulnerability in Docker Desktop was fixed on March 30 in the [4.67.0](/manuals/desktop/release-notes.md#4670) release:

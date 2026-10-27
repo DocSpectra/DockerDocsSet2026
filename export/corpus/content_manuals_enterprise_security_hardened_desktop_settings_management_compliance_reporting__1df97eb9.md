@@ -12,12 +12,19 @@ aliases:
 
 Desktop settings reporting tracks user compliance with Docker Desktop settings policies. Use this feature to monitor policy application across your organization and identify users who need assistance with compliance.
 
+## Choose a reporting task
+
+- Check [prerequisites](#prerequisites) and [open the dashboard](#access-the-reporting-dashboard).
+- [Interpret compliance, domain, and settings statuses](#user-compliance-statuses).
+- [Monitor compliance](#monitor-compliance).
+- [Resolve compliance issues](#resolve-compliance-issues) and review [policy update timing](#policy-update-timing).
+
 ## Prerequisites
 
 Before you can use Docker Desktop settings reporting, make sure you have:
 
 - [Docker Desktop](/manuals/desktop/release-notes.md) installed across your organization
-- [A verified domain](/manuals/enterprise/security/single-sign-on/connect.md)
+- [A verified domain](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain)
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 - At least one settings policy configured

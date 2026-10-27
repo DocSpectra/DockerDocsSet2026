@@ -15,6 +15,8 @@ params:
   time: 20 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-testcontainers-lifecycle -->
 
 In this guide, you will learn how to:
@@ -34,3 +36,15 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-lifecycle/create-project/)
+2. [Lifecycle callbacks](/guides/testcontainers-java-lifecycle/lifecycle-callbacks/)
+3. [Extension annotations](/guides/testcontainers-java-lifecycle/extension-annotations/)
+4. [Singleton containers](/guides/testcontainers-java-lifecycle/singleton-containers/)
+
+## Find a specific task
+
+- [Container scope and cleanup](/guides/testcontainers-java-lifecycle/lifecycle-callbacks/#container-scope-and-cleanup)
+- [Avoid mixing singleton containers with extension annotations](/guides/testcontainers-java-lifecycle/singleton-containers/#avoid-a-common-misconfiguration)

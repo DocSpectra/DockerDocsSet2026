@@ -3,3 +3,5 @@
 > Dev Environments is no longer under active development. 
 >
 > While the current functionality remains available, it may take us longer to respond to support requests.
+>
+> See [Dev Environments](/manuals/retired.md#dev-environments) for retirement details and alternatives.

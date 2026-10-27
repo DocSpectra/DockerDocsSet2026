@@ -22,17 +22,24 @@ In this guide, you'll learn how to:
 - Use mock data in the local development without relying on an external API
 - Use a Live API in production to fetch real-time weather data from AccuWeather. 
 
+## Find a task
+
+- [Prerequisites](#prerequisites)
+- [Launch WireMock](#launching-wiremock)
+- [Use mock data in local development](#use-mock-data-in-local-development)
+- [Use the live AccuWeather API](#use-a-live-api-in-production-to-fetch-real-time-weather-data-from-accuweather)
+
 ## Using WireMock with Docker
 
 The official [Docker image for WireMock](https://hub.docker.com/r/wiremock/wiremock) provides a convenient way to deploy and manage WireMock instances. WireMock is available for various CPU architectures, including amd64, armv7, and armv8, ensuring compatibility with different devices and platforms. You can learn more about WireMock standalone on the [WireMock docs site](https://wiremock.org/docs/standalone/docker/).
 
-### Prerequisites
+## Prerequisites
 
 The following prerequisites are required to follow along with this how-to guide:
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-### Launching WireMock
+## Launching WireMock
 
 Launch a quick demo of WireMock by using the following steps:
 
@@ -106,7 +113,7 @@ Let’s set up a Node app to send requests to the WireMock container instead of 
 ### Prerequisite
 
 - Install [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- Ensure that WireMock container is up and running (see [Launching Wiremock](#launching-wiremock)
+- Ensure that WireMock container is up and running (see [Launching WireMock](#launching-wiremock))
 
 
 Follow the steps to setup a non-containerized Node application:
@@ -295,3 +302,8 @@ Follow the steps to setup a non-containerized Node application:
 
 This guide has walked you through setting up WireMock using Docker. You’ve learned how to create stubs to simulate API endpoints, allowing you to develop and test your application without relying on external services. By using WireMock, you can create reliable and consistent test environments, reproduce edge cases, and speed up your development workflow.
 
+
+## Related guides
+
+- [Test Spring Boot REST API integrations using WireMock](/guides/testcontainers-java-wiremock/)
+- [Test Micronaut REST API integrations using WireMock](/guides/testcontainers-java-micronaut-wiremock/)

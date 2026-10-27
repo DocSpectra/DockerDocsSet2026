@@ -36,6 +36,8 @@ For secret mounts and SSH mounts, using build secrets is a two-step process.
 First you need to pass the secret into the `docker build` command, and then you
 need to consume the secret in your Dockerfile.
 
+### Pass a secret to the build
+
 To pass a secret to a build, use the [`docker build --secret`
 flag](/reference/cli/docker/buildx/build/#secret), or the
 equivalent options for [Bake](../bake/reference.md#targetsecret).
@@ -64,6 +66,8 @@ target "default" {
 
 {{< /tab >}}
 {{< /tabs >}}
+
+### Consume a secret in the Dockerfile
 
 To consume a secret in a build and make it accessible to the `RUN` instruction,
 use the [`--mount=type=secret`](/reference/dockerfile.md#run---mounttypesecret)

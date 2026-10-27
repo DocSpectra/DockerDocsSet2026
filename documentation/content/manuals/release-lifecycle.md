@@ -15,6 +15,13 @@ This page details Docker's product release lifecycle and how Docker defines each
 >
 >Our [Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) governs your use of Docker and covers details of eligibility, content, use, payments and billing, and warranties. This document is not a contract and all use of Docker’s services are subject to Docker’s [Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement).
 
+## Find lifecycle and release information
+
+- [Compare lifecycle stages](#lifecycle-stage), including availability, support, limitations, and retirement.
+- [Review the retirement process and its exceptions](#retirement-process).
+- [Find deprecated and retired products and alternatives](retired.md).
+- Find release notes for [Docker Engine](engine/release-notes/overview.md), [Docker Desktop](desktop/release-notes.md), or [Docker Home, the Admin Console, billing, security, and subscriptions](platform-release-notes.md).
+
 ## Lifecycle stage
 
 | Lifecycle stage  | Customer availability | Support availability | Limitations | Retirement |

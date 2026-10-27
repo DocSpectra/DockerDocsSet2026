@@ -12,6 +12,13 @@ your image, and how it was built.
 Attestations are supported with version 4 and later of the
 `docker/build-push-action`.
 
+## Choose an attestation task
+
+- [Review default provenance and secret exposure warnings](#default-provenance)
+- [Enable max-level provenance](#max-level-provenance)
+- [Enable SBOM attestations](#sbom)
+- [Pass secrets using secret mounts](secrets.md#secret-mounts)
+
 ## Default provenance
 
 The `docker/build-push-action` GitHub Action automatically adds provenance

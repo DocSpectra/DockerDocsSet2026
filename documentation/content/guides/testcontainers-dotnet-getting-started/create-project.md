@@ -5,6 +5,8 @@ description: Set up a .NET solution with a PostgreSQL-backed customer service.
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-dotnet-getting-started/#prerequisites)
+
 ## Set up the solution
 
 Create a .NET solution with source and test projects:
@@ -130,3 +132,7 @@ Here's what `CustomerService` does:
 - The constructor calls `CreateCustomersTable()` to ensure the table exists.
 - `GetCustomers()` fetches all rows from the `customers` table and returns them as `Customer` objects.
 - `Create()` inserts a customer record into the database.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-dotnet-getting-started/write-tests/)

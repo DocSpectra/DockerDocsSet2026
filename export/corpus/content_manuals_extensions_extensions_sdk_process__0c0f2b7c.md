@@ -48,7 +48,7 @@ If you want your extension published in the Marketplace, read the [publish docum
 
 If you want to get up and running with creating a Docker Extension, see the [Quickstart guide](quickstart.md).
 
-Alternatively, get started with reading the "Part one: Build" section for more in-depth information about each step of the extension creation process.
+Alternatively, get started with reading the ["Part one: Build" section](build/_index.md) for more in-depth information about each step of the extension creation process.
 
 For an in-depth tutorial of the entire build process, we recommend the following video walkthrough from DockerCon 2022.
 

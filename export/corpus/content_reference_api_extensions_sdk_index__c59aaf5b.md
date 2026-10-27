@@ -8,34 +8,25 @@ aliases:
  - /extensions/extensions-sdk/dev/api/reference/README/
 ---
 
-## Dashboard interfaces
+## Find an API by task
 
-- [Host](Host.md)
-- [NavigationIntents](NavigationIntents.md)
-- [Toast](Toast.md)
+For client setup and examples, start with [Extension UI API](/manuals/extensions/extensions-sdk/dev/api/overview.md).
 
-## Other interfaces
+| Task | Interfaces |
+| --- | --- |
+| Access extension components | [Extension](Extension.md), [ExtensionVM](ExtensionVM.md), [ExtensionHost](ExtensionHost.md) |
+| List containers and images or run Docker commands | [Docker](Docker.md), [DockerCommand](DockerCommand.md) |
+| Run extension commands | [ExtensionCli](ExtensionCli.md), [Exec](Exec.md) |
+| Configure command execution | [ExecOptions](ExecOptions.md), [SpawnOptions](SpawnOptions.md), [ExecStreamOptions](ExecStreamOptions.md) |
+| Read command output or close a streaming process | [ExecResult](ExecResult.md), [RawExecResult](RawExecResult.md), [ExecProcess](ExecProcess.md) |
+| Send backend HTTP requests | [HttpService](HttpService.md), [RequestConfig](RequestConfig.md), [ServiceError](ServiceError.md) |
+| Use Dashboard UI APIs | [DesktopUI](DesktopUI.md), [Toast](Toast.md), [Dialog](Dialog.md), [OpenDialogResult](OpenDialogResult.md) |
+| Navigate within Docker Desktop | [NavigationIntents](NavigationIntents.md) |
+| Open URLs or read host information | [Host](Host.md) |
 
+## Compatibility interfaces
+
+- [DockerDesktopClient](DockerDesktopClient.md)
+- [BackendV0](BackendV0.md)
 - [ExecResultV0](ExecResultV0.md)
 - [RequestConfigV0](RequestConfigV0.md)
-- [BackendV0](BackendV0.md)
-- [OpenDialogResult](OpenDialogResult.md)
-- [Dialog](Dialog.md)
-- [Docker](Docker.md)
-- [DockerCommand](DockerCommand.md)
-- [ExecOptions](ExecOptions.md)
-- [SpawnOptions](SpawnOptions.md)
-- [Exec](Exec.md)
-- [ExecProcess](ExecProcess.md)
-- [ExecStreamOptions](ExecStreamOptions.md)
-- [ExecResult](ExecResult.md)
-- [RawExecResult](RawExecResult.md)
-- [Extension](Extension.md)
-- [DesktopUI](DesktopUI.md)
-- [ExtensionVM](ExtensionVM.md)
-- [ExtensionHost](ExtensionHost.md)
-- [ExtensionCli](ExtensionCli.md)
-- [HttpService](HttpService.md)
-- [RequestConfig](RequestConfig.md)
-- [ServiceError](ServiceError.md)
-- [DockerDesktopClient](DockerDesktopClient.md)

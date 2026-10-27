@@ -4,6 +4,16 @@ description: Build with Bake using a remote file definition using Git or HTTP
 keywords: build, buildx, bake, file, remote, git, http
 ---
 
+## On this page
+
+- [Load a remote definition](#load-a-remote-definition)
+- [Use local files and review path restrictions](#use-the-local-context-with-a-remote-definition)
+- [Choose a definition file](#specify-the-bake-definition-to-use)
+- [Combine local and remote definitions](#combine-local-and-remote-bake-definitions)
+- [Authenticate to a private repository](#remote-definition-in-a-private-repository)
+
+## Load a remote definition
+
 You can build Bake files directly from a remote Git repository or HTTPS URL:
 
 ```console

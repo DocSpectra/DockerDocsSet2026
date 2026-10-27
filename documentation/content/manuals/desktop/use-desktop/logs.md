@@ -15,6 +15,13 @@ params:
 
 The **Logs** view provides a unified, real-time log stream from all running containers and Kubernetes nodes in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output across your entire environment from a single interface.
 
+## Choose a log view
+
+- [Search and filter this log stream](#search-and-filter-logs)
+- [Change display options](#display-options)
+- [View one container's logs](container.md#logs)
+- [Inspect a build's logs](builds.md#build-logs)
+
 ## Log entries
 
 Each log entry in the table view shows:

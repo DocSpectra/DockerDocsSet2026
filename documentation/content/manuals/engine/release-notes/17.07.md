@@ -5,6 +5,18 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+Browse component and caveat sections:
+
+- [API & Client](#17070-ce)
+- [Builder](#builder)
+- [Logging](#logging)
+- [Runtime](#runtime)
+- [Swarm mode](#swarm-mode)
+
 ## 17.07.0-ce
 2017-08-29
 

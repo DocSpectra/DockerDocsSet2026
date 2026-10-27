@@ -6,6 +6,16 @@ keywords: docker stig, stig-ready images, stig guidance, openscap docker, secure
 
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 
+Choose a task:
+
+- [Find images with STIG scan results](#identify-images-that-include-stig-scan-results)
+- [Use a STIG variant](#use-a-stig-variant)
+- [View and verify scan results](#view-and-verify-stig-scan-results)
+- [Extract HTML](#extract-html-report), [extract XCCDF](#extract-xccdf-report), or [view the scan summary](#view-stig-scan-summary)
+
+For authentication and verification caveats, see [Verify an image or
+chart](../how-to/verify.md).
+
 ## What is STIG?
 
 [Security Technical Implementation Guides

@@ -7,6 +7,20 @@ toc_max: 3
 
 This page describes networking for swarm services.
 
+## Choose a networking task
+
+- [Check firewall requirements](#firewall-considerations) and
+  [network trust and encryption caveats](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts).
+- [Create an overlay network](#create-an-overlay-network) and
+  [customize subnet allocation and size](#customize-an-overlay-network).
+- [Encrypt application data](#encryption).
+- [Attach a service](#attach-a-service-to-an-overlay-network) and
+  [configure service discovery](#configure-service-discovery).
+- Customize [ingress](#customize-ingress) or [docker_gwbridge](#customize-the-docker_gwbridge).
+- [Separate control and data traffic](#use-a-separate-interface-for-control-and-data-traffic).
+- [Publish ports](#publish-ports-on-an-overlay-network) or
+  [configure routing mesh and external load balancing](ingress.md).
+
 ## Swarm and types of traffic
 
 A Docker swarm generates two different kinds of traffic:

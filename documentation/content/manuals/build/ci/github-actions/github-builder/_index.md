@@ -17,6 +17,24 @@ This section explains what the workflows solve, how they differ from wiring
 together individual GitHub Actions in each repository, and when to use
 [`build.yml`](build.md) or [`bake.yml`](bake.md).
 
+## Choose a workflow
+
+Use [`build.yml`](build.md) when your repository builds from a Dockerfile and
+the familiar `build-push-action` inputs map cleanly to your workflow. Use
+[`bake.yml`](bake.md) when your repository already describes builds in a
+[Bake definition](../../../bake/_index.md), or when you want Bake targets,
+overrides, and variables to stay as the source of truth.
+
+Both workflows support image output, local output, cache export to the
+[GitHub Actions cache backend](../../../cache/backends/gha.md),
+[SBOM generation](../../../metadata/attestations/sbom.md), and signing. The
+Bake workflow adds Bake definition validation and builds one target per workflow
+call.
+
+For the execution model and outputs, see [Architecture](architecture.md).
+
+## Compare reusable workflows with individual actions
+
 If you compose a build job from `docker/login-action`, `docker/setup-buildx-action`,
 `docker/metadata-action`, and either `docker/build-push-action` or
 `docker/bake-action`, your repository owns every detail of how the build runs.
@@ -91,17 +109,5 @@ that records both the source commit and the builder identity.
 That tradeoff is intentional. You keep control of when the build runs and which
 inputs it uses, but the build implementation itself lives in the
 Docker-maintained workflow rather than in per-repository job steps.
-
-Use [`build.yml`](build.md) when your repository builds from a Dockerfile and
-the familiar `build-push-action` inputs map cleanly to your workflow. Use
-[`bake.yml`](bake.md) when your repository already describes builds in a
-[Bake definition](../../../bake/_index.md), or when you want Bake targets,
-overrides, and variables to stay as the source of truth.
-
-Both workflows support image output, local output, cache export to the
-[GitHub Actions cache backend](../../../cache/backends/gha.md),
-[SBOM generation](../../../metadata/attestations/sbom.md), and signing. The
-Bake workflow adds Bake definition validation and builds one target per workflow
-call.
 
 {{% sectionlinks %}}

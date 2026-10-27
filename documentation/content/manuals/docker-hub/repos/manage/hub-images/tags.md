@@ -12,6 +12,8 @@ repository. By adding a specific `:<tag>` to each image, such as
 various use cases. If no tag is specified, the image defaults to the `latest`
 tag.
 
+For tag mutability settings, see [Immutable tags](./immutable-tags.md).
+
 ## Tag a local image
 
 To tag a local image, use one of the following methods:
@@ -46,6 +48,8 @@ You can view the available tags and the size of the associated image.
 You can select a tag's digest to see more details.
 
 ## Delete repository tags
+
+Before deleting tags, review [immutable tags](./immutable-tags.md#what-are-immutable-tags).
 
 Only the repository owner or other team members with granted permissions can
 delete tags.

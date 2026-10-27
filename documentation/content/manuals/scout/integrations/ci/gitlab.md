@@ -13,6 +13,8 @@ compare the new version to the current published version.
 
 ## Steps
 
+### Configure the build environment
+
 First, set up the rest of the workflow. There's a lot that's not specific to
 Docker Scout but needed to create the images to compare.
 
@@ -42,6 +44,8 @@ running Docker inside a container.
 
 It then downloads `curl` and the Docker Scout CLI plugin, logs into the Docker
 registry using environment variables defined in your repository's settings.
+
+### Build, analyze, and push the image
 
 Add the following to the YAML file:
 
@@ -73,6 +77,8 @@ branch, Docker Scout generates a CVE report. If the commit was to a different
 branch, Docker Scout compares the new version to the current published version.
 It only shows critical or high-severity vulnerabilities and ignores
 vulnerabilities that haven't changed since the last analysis.
+
+### Set pipeline rules
 
 Add the following to the YAML file:
 

@@ -10,6 +10,17 @@ weight: 10
 Gordon is integrated into Docker Desktop. Access it from the sidebar to open
 the Gordon view.
 
+Before starting, review the [prerequisites and subscription setup](../_index.md#prerequisites).
+
+## On this page
+
+- [Start a conversation](#basic-usage)
+- [Set the working directory](#working-directory)
+- [Disable Gordon](#disabling-gordon)
+- [Configure tools](#configure-tools)
+
+For approval settings and access caveats, see [Permissions](permissions.md).
+
 ## Basic usage
 
 To access Gordon:

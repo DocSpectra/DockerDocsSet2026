@@ -14,6 +14,14 @@ aliases:
 
 This page summarizes the different ways you can install Docker Compose, depending on your platform and needs.
 
+## Choose an installation method
+
+- [Docker Desktop](#docker-desktop-recommended)
+- [Plugin for Linux](#plugin-linux-only)
+- [Standalone for backward compatibility](#standalone-legacy)
+- [Update a repository-installed plugin](linux.md#update-docker-compose)
+- [Uninstall Compose](uninstall.md)
+
 ## Installation scenarios 
 
 ### Docker Desktop (Recommended)
@@ -49,3 +57,8 @@ If you already have Docker Engine and Docker CLI installed, you can install the 
 
 You can [install the Docker Compose standalone](standalone.md) on Linux or on Windows Server.
 
+
+## After installation
+
+- [Follow the Quickstart](../gettingstarted.md)
+- [Find task-specific how-tos](../how-tos/_index.md)

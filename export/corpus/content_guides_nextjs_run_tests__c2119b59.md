@@ -7,9 +7,20 @@ description: Learn how to run your Next.js tests and lint in a container.
 
 ---
 
+[Next.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Install testing and lint tools for custom projects](#step-1-install-vitest-and-react-testing-library-custom-projects)
+- [Configure Vitest for custom projects](#step-2-configure-vitest-custom-projects)
+- [Configure the test service](#step-3-update-composeyaml)
+- [Run tests](#step-4-run-the-tests)
+- [Run lint](#step-5-run-lint-in-the-container)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize Next.js application](containerize.md).
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize Next.js application](containerize.md).
 
 ## Overview
 
@@ -25,7 +36,7 @@ The [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) u
 
 ## Run tests during development
 
-The [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) already includes lint (ESLint) and sample tests (Vitest, `app/page.test.tsx`) in place. If you're using the sample app, you can skip to **Step 3: Update compose.yaml** and run tests or lint with the commands below. If you're using your own project, follow the install and configuration steps to add the packages and scripts.
+The [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample) already includes lint (ESLint) and sample tests (Vitest, `app/page.test.tsx`) in place. If you're using the sample app, you can skip to **[Step 3: Update compose.yaml](#step-3-update-composeyaml)** and run tests or lint with the commands below. If you're using your own project, follow the install and configuration steps to add the packages and scripts.
 
 The sample includes a test file at:
 
@@ -266,3 +277,5 @@ Explore official references and best practices to sharpen your Docker testing wo
 ## Next steps
 
 Next, you'll learn how to set up a CI/CD pipeline using GitHub Actions to automatically build and test your Next.js application in a containerized environment. This ensures your code is validated on every push or pull request, maintaining consistency and reliability across your development workflow.
+
+Continue to [CI/CD](configure-github-actions.md).

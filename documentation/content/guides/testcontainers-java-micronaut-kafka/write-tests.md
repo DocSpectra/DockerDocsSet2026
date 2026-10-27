@@ -5,6 +5,8 @@ description: Test the Micronaut Kafka listener using Testcontainers Kafka and My
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-micronaut-kafka/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-micronaut-kafka/create-project/)
+
 To test the Kafka listener, you need a running Kafka broker and a MySQL
 database, plus a started Micronaut application context. Testcontainers spins up
 both services in Docker containers and the `TestPropertyProvider` interface
@@ -102,6 +104,8 @@ class ProductPriceChangedEventHandlerTest implements TestPropertyProvider {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@MicronautTest` initializes the Micronaut application context and the
@@ -124,3 +128,7 @@ Here's what the test does:
   [Awaitility](http://www.awaitility.org/) to poll every 3 seconds (up to a
   maximum of 10 seconds) until the product price in the database matches the
   expected value.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-micronaut-kafka/run-tests/)

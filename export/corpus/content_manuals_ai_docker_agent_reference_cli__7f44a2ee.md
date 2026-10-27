@@ -12,6 +12,20 @@ For agent configuration file syntax, see the [Configuration file
 reference](./config.md). For toolset capabilities, see the [Toolsets
 reference](./toolsets.md).
 
+## Find a command
+
+| Task | Commands |
+| --- | --- |
+| Create an agent | [new](#new) |
+| Run an agent | [run](#run), [exec](#exec), [model overrides](#model-overrides) |
+| Manage aliases | [alias add](#alias-add), [alias list](#alias-list), [alias remove](#alias-remove) |
+| Serve an agent | [a2a](#a2a), [acp](#acp), [mcp](#mcp), [api](#api) |
+| Share or package an agent | [pull](#pull), [push](#push), [build](#build), [catalog list](#catalog-list) |
+| Inspect or test an agent | [debug config](#debug-config), [debug toolsets](#debug-toolsets), [eval](#eval) |
+| Check version or send feedback | [version](#version), [feedback](#feedback) |
+
+See [global flags](#global-flags), [runtime flags](#runtime-flags), and [environment variables](#environment-variables).
+
 ## Synopsis
 
 ```console

@@ -3,3 +3,5 @@ The `volumes` attribute define mount host paths or named volumes that are access
 If the mount is a host path and is only used by a single service, it can be declared as part of the service
 definition. To reuse a volume across multiple services, a named
 volume must be declared in the `volumes` top-level element.
+
+See [mount syntax and host path caveats](/reference/compose-file/services.md#volumes), and [named volume declarations](/reference/compose-file/volumes.md).

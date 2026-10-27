@@ -5,6 +5,8 @@ description: Run commands inside running containers to initialize services for t
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-service-configuration/#prerequisites) · [Previous: Copy files](/guides/testcontainers-java-service-configuration/copy-files/)
+
 Some Docker containers provide CLI tools for performing actions. You can use
 `container.execInContainer(String...)` to run any available command inside a
 running container.
@@ -90,6 +92,8 @@ class LocalStackTest {
 The `execInContainer("awslocal", "s3", "mb", "s3://mybucket")` call runs the
 `awslocal` CLI tool (provided by the LocalStack image) to create an S3 bucket.
 
+## Capture command output and exit status
+
 You can capture the output and exit code from any command:
 
 ```java
@@ -115,3 +119,7 @@ int exitCode = execResult.getExitCode();
 - [Getting started with Testcontainers for Java](/guides/testcontainers-java-getting-started/)
 - [Testcontainers Postgres module](https://java.testcontainers.org/modules/databases/postgres/)
 - [Testcontainers LocalStack module](https://java.testcontainers.org/modules/localstack/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-service-configuration/)

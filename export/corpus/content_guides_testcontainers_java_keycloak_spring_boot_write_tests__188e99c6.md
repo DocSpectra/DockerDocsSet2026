@@ -5,10 +5,18 @@ description: Test the secured Spring Boot API endpoints using Testcontainers Key
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-keycloak-spring-boot/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-keycloak-spring-boot/create-project/)
+
 To test the secured API endpoints, you need a running Keycloak instance and a
 PostgreSQL database, plus a started Spring context. Testcontainers spins up both
 services in Docker containers and connects them to Spring through dynamic
 property registration.
+
+## In this step
+
+- [Configure the test containers](#configure-the-test-containers)
+- [Write the test](#write-the-test)
+- [Use Testcontainers for local development](#use-testcontainers-for-local-development)
 
 ## Configure the test containers
 
@@ -184,6 +192,8 @@ class ProductControllerTests {
 }
 ```
 
+### How the test works
+
 Here's what the tests cover:
 
 - `shouldGetProductsWithoutAuthToken()` invokes `GET /api/products` without an
@@ -226,3 +236,7 @@ Run `TestApplication.java` from your IDE instead of the main `Application.java`.
 It starts the containers defined in `ContainersConfig` and configures the
 application to use the dynamically registered properties, so you don't have to
 install or configure PostgreSQL and Keycloak manually.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-keycloak-spring-boot/run-tests/)

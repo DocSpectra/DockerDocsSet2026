@@ -17,15 +17,17 @@ traditional database installations. Docker simplifies this process, enabling you
 to deploy, manage, and scale databases in isolated containers with just a few
 commands.
 
+## Choose a database task
+
 In this guide, you'll learn how to:
 
-- Run a local containerized database
-- Access the shell of a containerized database
-- Connect to a containerized database from your host
-- Connect to a containerized database from another container
-- Persist database data in a volume
-- Build a customized database image
-- Use Docker Compose to run a database
+- [Run a local containerized database](#run-a-local-containerized-database)
+- [Access the shell of a containerized database](#access-the-shell-of-a-containerized-database)
+- [Connect to a containerized database from your host](#connect-to-a-containerized-database-from-your-host)
+- [Connect to a containerized database from another container](#connect-to-a-containerized-database-from-another-container)
+- [Persist database data in a volume](#persist-database-data-in-a-volume)
+- [Build a customized database image](#build-a-customized-database-image)
+- [Use Docker Compose to run a database](#use-docker-compose-to-run-a-database)
 
 This guide uses the MySQL image for examples, but the concepts can be applied to other database images.
 
@@ -178,6 +180,8 @@ network. For MySQL, the default port is 3306. By exposing this port, you can use
 various database management tools or applications on your host machine to
 interact with your MySQL database.
 
+### Before connecting from your host
+
 Before you begin, you must remove any containers you previously ran for this
 guide. To stop and remove a container, either:
 
@@ -185,6 +189,8 @@ guide. To stop and remove a container, either:
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
+
+### Run with a published port
 
 Next, you can use either the Docker Desktop GUI or CLI to run the container with
 the port mapped.
@@ -253,6 +259,8 @@ without having to expose the database to the host network. This is achieved by
 placing both the database container and the container that needs to access it on
 the same Docker network.
 
+### Before connecting from another container
+
 Before you begin, you must remove any containers you previously ran for this
 guide. To stop and remove a container, either:
 
@@ -260,6 +268,8 @@ guide. To stop and remove a container, either:
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
+
+### Run on a shared network
 
 To create a network and run containers on it:
 
@@ -308,6 +318,8 @@ upgrade the container, switch bases, and share data without losing it. Here’s
 how you can attach a volume to your database container using either the Docker
 CLI or the Docker Desktop GUI.
 
+### Before configuring persistence
+
 Before you begin, you must remove any containers you previously ran for this
 guide. To stop and remove a container, either:
 
@@ -315,6 +327,8 @@ guide. To stop and remove a container, either:
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
+
+### Attach and verify the volume
 
 Next, you can use either the Docker Desktop GUI or CLI to run the container with a volume.
 
@@ -483,6 +497,8 @@ useful for creating a Docker image that matches your specific development or
 production environment needs. The following example outlines how to build and
 run a custom MySQL image that includes a table initialization script.
 
+### Before building a custom image
+
 Before you begin, you must remove any containers you previously ran for this
 guide. To stop and remove a container, either:
 
@@ -490,6 +506,8 @@ guide. To stop and remove a container, either:
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
+
+### Build and verify the custom image
 
 To build and run your custom image:
 
@@ -695,4 +713,10 @@ Related information:
 - [Dockerfile reference](/reference/dockerfile/)
 - [Compose file reference](/reference/compose-file/)
 - [CLI reference](/reference/cli/docker/)
-- [Database samples](../../reference/samples/_index.md#databases)
+- [Database samples](../reference/samples/_index.md#databases)
+
+## Related database tasks
+
+- [PostgreSQL setup, configuration, connectivity, and companions](postgresql/_index.md)
+- [Add pgAdmin to a development stack](pgadmin.md)
+- [Pre-seed database schema and data](pre-seeding.md)

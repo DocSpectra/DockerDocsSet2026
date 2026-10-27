@@ -15,42 +15,49 @@ particular application, microservice, or project. Content in repositories is
 organized by tags, which represent different versions of the same application,
 allowing users to pull the right version when needed.
 
-In this section, learn how to:
+## Create a repository
 
-- [Create](./create.md) a repository.
-- Manage a repository, including how to manage:
+[Create](./create.md) a repository.
 
-   - [Repository information](./manage/information.md): Add descriptions,
-     overviews, and categories to help users understand the purpose and usage of
-     your repository. Clear repository information aids discoverability and
-     usability.
+## Manage a repository
 
-   - [Access](./manage/access.md): Control who can access your repositories with
-     flexible options. Make repositories public or private, add collaborators,
-     and, for organizations, manage roles and teams to maintain security and
-     control.
+- [Repository information](./manage/information.md): Add descriptions,
+  overviews, and categories to help users understand the purpose and usage of
+  your repository. Clear repository information aids discoverability and
+  usability.
 
-   - [Images](./manage/hub-images/_index.md): Repositories support diverse
-     content types, including OCI artifacts, and allow version control through
-     tagging. Push new images and manage existing content across repositories
-     for flexibility.
+- [Access](./manage/access.md): Control who can access your repositories with
+  flexible options. Make repositories public or private, add collaborators,
+  and, for organizations, manage roles and teams to maintain security and
+  control.
 
-   - [Image security insights](./manage/vulnerability-scanning.md): Utilize
-     continuous Docker Scout analysis and static vulnerability scanning to
-     detect, understand, and address security issues within container images.
+- [Images](./manage/hub-images/_index.md): Repositories support diverse
+  content types, including OCI artifacts, and allow version control through
+  tagging. Push new images and manage existing content across repositories
+  for flexibility.
 
-   - [Webhooks](./manage/webhooks.md): Automate responses to repository events
-     like image pushes or updates by setting up webhooks, which can trigger
-     notifications or actions in external systems, streamlining workflows.
+- [Image security insights](./manage/vulnerability-scanning.md): Utilize
+  continuous Docker Scout analysis and static vulnerability scanning to
+  detect, understand, and address security issues within container images.
 
-   - [Automated builds](./manage/builds/_index.md): Integrate with GitHub or
-     Bitbucket for automated builds. Every code change triggers an image
-     rebuild, supporting continuous integration and delivery.
+- [Webhooks](./manage/webhooks.md): Automate responses to repository events
+  like image pushes or updates by setting up webhooks, which can trigger
+  notifications or actions in external systems, streamlining workflows.
 
-   - [Trusted content](./manage/trusted-content/_index.md): Contribute to Docker
-     Official Images or manage repositories in the Verified Publisher and
-     Sponsored Open Source programs, including tasks like setting logos,
-     accessing analytics, and enabling vulnerability scanning.
+- [Automated builds](./manage/builds/_index.md): Integrate with GitHub or
+  Bitbucket for automated builds. Every code change triggers an image
+  rebuild, supporting continuous integration and delivery.
+
+- [Trusted content](./manage/trusted-content/_index.md): Contribute to Docker
+  Official Images or manage repositories in the Verified Publisher and
+  Sponsored Open Source programs, including tasks like setting logos,
+  accessing analytics, and enabling vulnerability scanning.
+
+## Export repository details
+
+- [Export organization repositories to CSV](./manage/export.md).
+
+## Archive or delete a repository
 
 - [Archive](./archive.md) an outdated or unsupported repository.
 - [Delete](./delete.md) a repository.

@@ -24,6 +24,12 @@ with the DHI team for:
 - Show and tell your implementations
 - Community announcements
 
+## Responsible security disclosure
+
+It is forbidden to post details of vulnerabilities before coordinated disclosure and resolution.
+
+If you discover a security vulnerability, report it responsibly by following Docker’s [security disclosure](https://www.docker.com/trust/vulnerability-disclosure-policy/).
+
 ## Reporting bugs or issues
 
 You can [open a new issue](https://github.com/docker-hardened-images/catalog/issues) for topics such as:
@@ -31,13 +37,8 @@ You can [open a new issue](https://github.com/docker-hardened-images/catalog/iss
 - Bug reports
 - Feature requests
 - Documentation improvements
-- Security vulnerabilities (see security policy)
+- Security vulnerabilities (see [security policy](#responsible-security-disclosure))
 
 It's encouraged to first search existing issues to see if it’s already been reported.
 The DHI team reviews reports regularly and appreciates clear, actionable feedback.
 
-## Responsible security disclosure
-
-It is forbidden to post details of vulnerabilities before coordinated disclosure and resolution.
-
-If you discover a security vulnerability, report it responsibly by following Docker’s [security disclosure](https://www.docker.com/trust/vulnerability-disclosure-policy/).

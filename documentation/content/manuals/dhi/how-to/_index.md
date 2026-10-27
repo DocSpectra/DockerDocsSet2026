@@ -27,6 +27,14 @@ params:
       description: Learn how to customize Docker Hardened Images and charts.
       icon: settings
       link: /dhi/how-to/customize/
+    - title: Prepare OCI artifacts for customization
+      description: Find the artifact image example, platform requirements, and build and push steps.
+      icon: inventory_2
+      link: /dhi/how-to/oci-artifacts/
+    - title: Create and build a Docker Hardened Image
+      description: Find YAML definition examples, the schema reference, and local build steps.
+      icon: build
+      link: /dhi/how-to/build/
     - title: Use hardened system packages
       description: Learn how to use Docker's hardened system packages in your images.
       icon: inventory_2
@@ -39,6 +47,10 @@ params:
       description: Learn how to use a Docker Hardened Image chart.
       icon: leaderboard
       link: /dhi/how-to/helm/
+    - title: Use Docker Hardened Images with Kubernetes
+      description: Find image pull secret setup, a test pod, and cleanup steps.
+      icon: cloud
+      link: /dhi/how-to/kubernetes/
   grid_verify:
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
@@ -48,6 +60,10 @@ params:
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
       icon: bug_report
       link: /dhi/how-to/scan/
+    - title: Scan child images and CI builds
+      description: Find provenance requirements, child VEX examples, and the GitHub Actions workflow.
+      icon: bug_report
+      link: /dhi/how-to/scan-child-images/
   grid_govern:
     - title: Enforce Docker Hardened Image usage with policies
       description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
@@ -64,6 +80,11 @@ The topics are organized around the typical lifecycle of working with DHIs, but
 you can use them as needed based on your specific workflow.
 
 Explore the topics below that match your current needs.
+
+For a first Community image, see the [quickstart](../get-started.md). For an
+existing application, start with the [migration checklist](../migration/checklist.md)
+and [migration paths](../migration/_index.md). For OpenShift, see the
+[deployment guide](/guides/dhi-openshift/).
 
 ## Discover
 

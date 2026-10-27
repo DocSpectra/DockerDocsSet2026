@@ -13,6 +13,16 @@ weight: 10
 
 Compose lets you define AI models as core components of your application, so you can declare model dependencies alongside services and run the application on any platform that supports the Compose Specification.
 
+## Find a Compose task
+
+- [Check prerequisites](#prerequisites)
+- [Define a model](#basic-model-definition)
+- [Configure context size and runtime flags](#model-configuration-options)
+- [Bind models to services and name environment variables](#service-model-binding)
+- [Review platform portability](#platform-portability)
+- [Choose runtime configuration examples](#common-runtime-configurations)
+- [Configure embeddings and the required runtime flag](#embeddings)
+
 ## Prerequisites
 
 - Docker Compose v2.38 or later
@@ -139,7 +149,7 @@ One of the key benefits of using Compose models is portability across different 
 
 ### Docker Model Runner
 
-When [Docker Model Runner is enabled](/manuals/ai/model-runner/_index.md):
+When [Docker Model Runner is enabled](/manuals/ai/model-runner/get-started.md#enable-docker-model-runner):
 
 ```yaml
 services:

@@ -52,6 +52,14 @@ PING docker.com (23.185.0.4): 56 data bytes
 round-trip min/avg/max = 6.564/6.564/6.564 ms
 ```
 
+## Find networking steps
+
+- [Choose a network driver](drivers/_index.md).
+- [Publish ports or configure direct routing](port-publishing.md).
+- [Configure packet filtering and firewalls](packet-filtering-firewalls.md).
+- [Configure networking in Compose](../../compose/how-tos/networking.md).
+- [Connect containers and host services in Docker Desktop](../../desktop/features/networking/networking-how-tos.md) or [review Desktop networking limitations](../../desktop/features/networking/networking-how-tos.md#known-limitations).
+
 ## User-defined networks
 
 With the default configuration, containers attached to the default

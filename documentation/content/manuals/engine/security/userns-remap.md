@@ -22,6 +22,14 @@ UIDs from 0 to 65536, but have no privileges on the host machine itself.
 > daemon and containers without root privileges, see [Rootless mode](rootless/_index.md)
 > instead.
 
+## Choose a remapping task
+
+- [Understand subordinate UID and GID mappings](#about-remapping-and-subordinate-user-and-group-ids)
+- [Check prerequisites and storage effects](#prerequisites)
+- [Review known limitations](#user-namespace-known-limitations)
+- [Enable remapping on the daemon](#enable-userns-remap-on-the-daemon)
+- [Disable remapping for one container and review side effects](#disable-namespace-remapping-for-a-container)
+
 ## About remapping and subordinate user and group IDs
 
 The remapping itself is handled by two files: `/etc/subuid` and `/etc/subgid`.

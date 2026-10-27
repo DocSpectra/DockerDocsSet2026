@@ -44,6 +44,14 @@ with.
 For a comprehensive checklist of migration considerations and detailed guidance,
 see [Migrate to Docker Hardened Images](../migration/_index.md).
 
+Choose a task:
+
+- [Pull, run, and reference an image](#pull-run-and-reference-dhis)
+- [Use an image in CI/CD](#use-a-dhi-in-cicd-pipelines) or [discover attestations with ORAS](#discover-attestations-with-oras)
+- [Run compiled executables](#use-a-static-image-for-compiled-executables) or [build framework-based applications](#use-dev-variants-for-framework-based-applications)
+- [Use compliance and ELS variants](#use-compliance-and-els-variants)
+- [Deploy to Kubernetes](./kubernetes.md) or [use Helm](./helm.md)
+
 ## Pull, run, and reference DHIs
 
 Docker Hardened Images use different image references depending on your
@@ -101,6 +109,9 @@ using tools like Docker Scout.
 
 To learn how to attach attestations during the build process, see [Docker Build
 Attestations](/manuals/build/metadata/attestations.md).
+
+For Docker Scout's provenance requirements when scanning images built from a
+DHI, see [Scan child images and CI builds](./scan-child-images.md).
 
 ### Discover attestations with ORAS
 
@@ -223,105 +234,25 @@ tag.
 
 ## Use with Kubernetes
 
-When deploying Docker Hardened Images to Kubernetes, the process is similar to
-using any other container image with one key difference: you must configure
-image pull secrets to authenticate to the DHI registry. This applies whether
-you're pulling directly from `dhi.io`, from a mirror on Docker Hub, or from
-your own third-party registry.
+For image pull secrets, registry selection, a test pod, and cleanup steps, see
+[Use Docker Hardened Images with Kubernetes](./kubernetes.md). For
+OpenShift-specific steps, see [Use Docker Hardened Images with Red Hat
+OpenShift](/guides/dhi-openshift/).
 
 ### Create an image pull secret
 
-You can create an image pull secret using either an access token or Docker Desktop credentials.
-
-For the `--docker-server` value:
-- Use `dhi.io` for community images pulled directly from Docker Hardened Images
-- Use `docker.io` for mirrored repositories on Docker Hub
-- Use your registry's hostname for third-party registries
+See [Create an image pull secret](./kubernetes.md#create-an-image-pull-secret)
+for registry selection and authentication options.
 
 #### Using an access token
 
-Create a secret using a [Personal Access Token
-(PAT)](../../security/access-tokens.md) or [Organization Access Token
-(OAT)](../../enterprise/security/access-tokens.md). Ensure the token has at
-least read-only access to the repositories.
-
-```console
-$ kubectl create -n <kubernetes namespace> secret docker-registry <secret name> --docker-server=<registry server> \
-        --docker-username=<registry user> --docker-password=<access token> \
-        --docker-email=<registry email>
-```
+See [Using an access token](./kubernetes.md#using-an-access-token).
 
 #### Using Docker Desktop credentials
 
-If you're already authenticated with Docker Desktop, you can create a secret
-using your stored credentials. This method works for registries you've
-authenticated to via Docker Desktop (using `docker login <registry>`).
-
-```console
-$ NS=<namespace>
-$ kubectl create -n ${NS} secret docker-registry dhi-pull-secret \
-    --docker-server=<registry server> \
-    --docker-username=<registry user> \
-    --docker-password="$(echo https://<registry server> | docker-credential-desktop get | jq -r .Secret)" \
-    --docker-email=<registry email>
-```
-
-This method extracts credentials from Docker Desktop's credential store, avoiding the need to create a separate access token for local development.
+See [Using Docker Desktop credentials](./kubernetes.md#using-docker-desktop-credentials).
 
 ### Test the image pull secret
 
-After creating the secret, verify it works by deploying a test pod that
-references the secret in its `imagePullSecrets` configuration.
-
-Create a test pod:
-
-```console
-kubectl apply --wait -f - <<EOF
-apiVersion: v1
-kind: Pod
-metadata:
-  name: dhi-test
-  namespace: <kubernetes namespace>
-spec:
-  containers:
-  - name: test
-    image: bash:5
-    command: [ "sh", "-c", "echo 'Hello from DHI in Kubernetes!'" ]
-  imagePullSecrets:
-  - name: <secret name>
-EOF
-```
-
-Check the pod status to ensure it completed successfully:
-
-```console
-$ kubectl get -n <kubernetes namespace> pods/dhi-test
-```
-
-A successful test shows `Completed` status:
-
-```console
-NAME       READY   STATUS      RESTARTS     AGE
-dhi-test   0/1     Completed   ...          ...
-```
-
-If you see `ErrImagePull` status instead, there's an issue with your secret
-configuration:
-
-```console
-NAME       READY   STATUS         RESTARTS   AGE
-dhi-test   0/1     ErrImagePull   0          ...
-```
-
-Verify the pod output matches the expected message:
-
-```console
-$ kubectl logs -n <kubernetes namespace> pods/dhi-test
-Hello from DHI in Kubernetes!
-```
-
-Clean up the test pod:
-
-```console
-$ kubectl delete -n <kubernetes namespace> pods/dhi-test
-```
+See [Test the image pull secret](./kubernetes.md#test-the-image-pull-secret)
+for the test pod, expected output, and cleanup.

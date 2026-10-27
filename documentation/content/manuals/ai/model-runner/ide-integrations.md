@@ -9,6 +9,17 @@ Docker Model Runner can serve as a local backend for popular AI coding assistant
 and development tools. This guide shows how to configure common tools to use
 models running in DMR.
 
+## Choose an integration
+
+Complete the [prerequisites](#prerequisites), then choose your tool:
+
+- Editors: [Cline](#cline-vs-code), [Continue](#continue-vs-code--jetbrains), [Cursor](#cursor), or [Zed](#zed)
+- Terminal tools: [Aider](#aider), [OpenCode](#opencode), or [Claude Code](#claude-code)
+- Frameworks: [LangChain](#langchain) or [LlamaIndex](#llamaindex)
+- Web interface: [Open WebUI](#open-webui)
+
+See [recommended models](#recommended-models-by-use-case) and [common issues](#common-issues).
+
 ## Prerequisites
 
 Before configuring any tool:
@@ -278,6 +289,8 @@ You can find more details in [this Docker Blog post](https://www.docker.com/blog
 
 [Claude Code](https://claude.com/product/claude-code) is [Anthropic's](https://www.anthropic.com/) command-line tool for agentic coding. It lives in your terminal, understands your codebase, and executes routine tasks, explains complex code, and handles Git workflows through natural language commands.
 
+See [Use Claude Code with Docker Model Runner](../../../guides/claude-code-model-runner.md) for model setup, request inspection, and context-window packaging.
+
 ### Configuration
 
 1. Install Claude Code (see [docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code))
@@ -303,7 +316,7 @@ You can find more details in [this Docker Blog post](https://www.docker.com/blog
 
 > [!NOTE]
 >
-> While the other integrations on this page use the [OpenAI-compatible API](/ai/model-runner/api-reference/#openai-compatible-api), DMR also exposes a [Anthropic-compatible API](/ai/model-runner/api-reference/#anthropic-compatible-api) used here.
+> While the other integrations on this page use the [OpenAI-compatible API](api-reference.md#openai-compatible-api), DMR also exposes a [Anthropic-compatible API](api-reference.md#anthropic-compatible-api) used here.
 
 ## Common issues
 

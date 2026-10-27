@@ -19,6 +19,17 @@ build` and `docker buildx bake`.
 If you're using Docker Desktop, ensure you're on a version that includes these
 updates.
 
+## Find a policy workflow
+
+- [Develop a policy iteratively](#policy-development-workflow).
+- [Apply policies with docker build](#using-policies-with-docker-build).
+- [Apply policies with Bake](#using-policies-with-bake).
+- [Test in CI/CD](#testing-in-cicd).
+- [Require policies to load](#when-policies-dont-load).
+- [Configure policy loading and logging](#manual-policy-configuration).
+- [Inspect or test sources with policy eval](#exploring-sources-with-policy-eval).
+- [Reset automatic loading](#reset-automatic-loading) or [disable policies temporarily](#disable-policies-temporarily).
+
 ## Policy development workflow
 
 Buildx automatically loads policies that match your Dockerfile name. When you

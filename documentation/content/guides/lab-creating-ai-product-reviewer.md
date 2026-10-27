@@ -27,6 +27,8 @@ Jarvis. You'll write Node.js code that runs local LLMs and embedding models via
 Docker Model Runner — no API keys, no cloud subscriptions, no data leaving your
 machine.
 
+Review [what you'll learn](#what-youll-learn) and the [modules](#modules), or [launch the lab](#launch-the-lab).
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-creating-ai-product-reviewer" >}}
@@ -53,3 +55,9 @@ By the end of this Labspace, you will have completed the following:
 | 5   | Embeddings & Semantic Clustering    | Group related reviews using vector embeddings and cosine similarity                |
 | 6   | Features & Responses                | Extract actionable features and generate context-aware review responses            |
 | 7   | Wrap-up                             | Summary of techniques and ideas for extending the pipeline                         |
+
+## Related documentation
+
+- [Model Runner setup](../manuals/ai/model-runner/get-started.md)
+- [Models and Compose](../manuals/ai/compose/models-and-compose.md)
+- [Model Runner API reference](../manuals/ai/model-runner/api-reference.md)

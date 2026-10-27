@@ -5,6 +5,10 @@ description: Learn how Docker Hardened Images comply with SLSA Build Level 3 and
 keywords: slsa docker compliance, slsa build level 3, supply chain security, verified build provenance, secure container build
 ---
 
+For commands, go to [get and verify SLSA provenance](#get-and-verify-slsa-provenance-for-docker-hardened-images).
+For authentication and verification caveats, see [Verify an image or
+chart](../how-to/verify.md).
+
 ## What is SLSA?
 
 Supply-chain Levels for Software Artifacts (SLSA) is a security framework

@@ -7,6 +7,13 @@ aliases:
  - /extensions/extensions-sdk/dev/api/reference/interfaces/Exec/
 ---
 
+## Choose a call form
+
+- [Execute a command and wait for its result](#exec)
+- [Stream command output](#stream-command-output)
+
+See also [Docker command examples](/manuals/extensions/extensions-sdk/dev/api/docker.md#docker-commands), [backend and host command examples](/manuals/extensions/extensions-sdk/dev/api/backend.md), and the [API task index](_index.md).
+
 ## Callable
 
 ### Exec
@@ -32,6 +39,8 @@ Executes a command.
 `Promise`<[`ExecResult`](ExecResult.md)\>
 
 A promise that will resolve once the command finishes.
+
+## Stream command output
 
 ### Exec
 

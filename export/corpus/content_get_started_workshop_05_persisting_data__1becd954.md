@@ -10,6 +10,10 @@ aliases:
  - /guides/workshop/05_persisting_data/
 ---
 
+On this page: [Container filesystem experiment](#the-containers-filesystem) · [Volumes](#container-volumes) · [Persist SQLite data](#persist-the-todo-data) · [Create and mount a volume](#create-a-volume-and-start-the-container) · [Verify persistence](#verify-that-the-data-persists) · [Find the volume and review host access](#dive-into-the-volume).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](04_sharing_app.md) · [All tasks](_index.md#workshop-tasks).
+
 In case you didn't notice, your todo list is empty every single time
 you launch the container. Why is this? In this part, you'll dive into how the container is working.
 

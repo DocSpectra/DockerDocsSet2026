@@ -16,6 +16,19 @@ environment, you don't need to edit the Compose file each time, you can just set
 
 Interpolation can also be used to insert values into your Compose file at runtime, which is then used to pass variables into your container's environment
 
+## Find interpolation instructions
+
+- [Interpolation syntax](#interpolation-syntax)
+- [Sources and precedence](#ways-to-set-variables-with-interpolation)
+- [Use a .env file](#env-file)
+- [Environment file syntax](#env-file-syntax)
+- [Substitute with --env-file](#substitute-with---env-file)
+- [Working-directory and project-directory .env files](#working-directory-and-project-directory-env-files)
+- [Substitute from the shell](#substitute-from-the-shell)
+- [Set the container's environment](set-environment-variables.md)
+
+## Example: interpolate an image tag
+
 Below is a simple example: 
 
 ```console
@@ -221,6 +234,8 @@ $ docker compose --env-file ./config/.env.dev up
   ```console
   $ docker compose --env-file .env.dev up -e DATABASE_URL=mysql://new_user:new_password@new_db:3306/new_database
   ```
+
+<a id="working-directory-and-project-directory-env-files"></a>
 
 ### local `.env` file versus &lt;project directory&gt; `.env` file
 

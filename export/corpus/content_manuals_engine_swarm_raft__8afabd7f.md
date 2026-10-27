@@ -21,12 +21,16 @@ Systems using consensus algorithms to replicate logs in a distributed systems
 do require special care. They ensure that the cluster state stays consistent
 in the presence of failures by requiring a majority of nodes to agree on values.
 
+## Failure tolerance and quorum
+
 Raft tolerates up to `(N-1)/2` failures and requires a majority or quorum of
 `(N/2)+1` members to agree on values proposed to the cluster. This means that in
 a cluster of 5 Managers running Raft, if 3 nodes are unavailable, the system
 cannot process any more requests to schedule additional tasks. The existing
 tasks keep running but the scheduler cannot rebalance tasks to
 cope with failures if the manager set is not healthy.
+
+## Consensus properties
 
 The implementation of the consensus algorithm in Swarm mode means it features
 the properties inherent to distributed systems:
@@ -36,3 +40,8 @@ the properties inherent to distributed systems:
 - Mutual exclusion through the leader election process
 - Cluster membership management
 - Globally consistent object sequencing and CAS (compare-and-swap) primitives
+
+## Administration steps
+
+- [Maintain the quorum of managers](admin_guide.md#maintain-the-quorum-of-managers)
+- [Recover from losing the quorum](admin_guide.md#recover-from-losing-the-quorum)

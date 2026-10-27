@@ -22,27 +22,18 @@ tag or by digest, geolocation, cloud provider, client, and more.
 > your Docker sales representative or
 > [Docker](https://www.docker.com/partners/programs/) for more information.
 
-{{< tabs >}}
-{{< tab name="DVP program" >}}
+## Find analytics tasks
+
+- [DVP program settings and reports](#dvp-program)
+- [DSOS and Legacy DVP program charts, exports, and data definitions](#dsos-and-legacy-dvp-programs)
+- [Privacy](#privacy)
+
+## DVP program
 
 All members of an organization have access to the analytics data. Members can
 access analytics data in the [Docker Hub](https://hub.docker.com/) web interface.
 
-## Available reports
-
-The following reports may be available for download as CSV files:
-
-- [Summary](#summary-report)
-- [Trends](#trends-report)
-- [Technographic](#technographic-report)
-- [Technographic companies](#technographic-companies-report)
-- [Tracked companies](#tracked-companies-report)
-
-The reports available for download may vary based on your organization's
-subscription. Contact your Docker sales representative or
-[Docker](https://www.docker.com/partners/programs/) for more information.
-
-## Configure DVP analytics settings
+### Configure DVP analytics settings
 
 Organization owners and editors can configure DVP analytics settings through the
 Admin Console to control tracked companies and benchmark report allocations for
@@ -60,7 +51,21 @@ your verified publisher namespaces.
      report for each namespace listed.
 4. Select **Save** to apply your changes.
 
-### Summary report
+### Available reports
+
+The following reports may be available for download as CSV files:
+
+- [Summary](#summary-report)
+- [Trends](#trends-report)
+- [Technographic](#technographic-report)
+- [Technographic companies](#technographic-companies-report)
+- [Tracked companies](#tracked-companies-report)
+
+The reports available for download may vary based on your organization's
+subscription. Contact your Docker sales representative or
+[Docker](https://www.docker.com/partners/programs/) for more information.
+
+#### Summary report
 
 The summary report provides high-level usage metrics aggregated across all your
 Docker Hub content, organized by namespace and repository. This report gives you
@@ -102,7 +107,7 @@ The summary report is a CSV file that contains the following data points:
 | `VERSION_CHECKS`   | The number of version checks performed (HEAD requests to check for updates without downloading the full image).                                                       |
 | `EVENT_COUNT`      | The total number of events, calculated as the sum of data downloads and version checks.                                                                               |
 
-### Trends report
+#### Trends report
 
 The trends report helps you understand how adoption of your container images
 evolves over time. It provides visibility into pull activity across repositories
@@ -143,7 +148,7 @@ The trends report is a CSV file that contains the following data points:
 | `UNIQUE_AUTHENTICATED_USERS`   | The number of unique authenticated users who performed pulls.                                                           |
 | `UNIQUE_UNAUTHENTICATED_USERS` | The number of unique unauthenticated users who performed pulls.                                                         |
 
-### Technographic report
+#### Technographic report
 
 The technographic report provides insights into how your Docker Verified
 Publisher (DVP) images are used alongside other container images in real-world
@@ -192,7 +197,7 @@ The technographic report is a CSV file that contains the following data points:
 > Personal, disposable, and university email domains are excluded from the
 > company domain analysis.
 
-### Technographic companies report
+#### Technographic companies report
 
 The technographic companies report provides a detailed view of which specific
 companies (identified by their domains) are using your Docker Verified Publisher
@@ -241,7 +246,7 @@ and another image that were used together during the specified time period.
 > email domains, disposable email services, and university domains. Only
 > business and organizational domains are included in the analysis.
 
-### Tracked companies report
+#### Tracked companies report
 
 The tracked companies report provides detailed insights into how specific
 companies are using your Docker Verified Publisher (DVP) images. This report
@@ -291,8 +296,7 @@ points:
 > are reclassified as CI/CD, and CI/CD tools used on cloud infrastructure are
 > reclassified as production to better reflect actual deployment patterns.
 
-{{< /tab >}}
-{{< tab name="DSOS & Legacy DVP programs" >}}
+## DSOS and Legacy DVP programs
 
 > [!IMPORTANT]
 >
@@ -301,7 +305,14 @@ points:
 > your Docker sales representative or
 > [Docker](https://www.docker.com/partners/programs/) for more information.
 
-## View the image's analytics data
+- [View image analytics](#view-the-images-analytics-data)
+- [Share analytics data](#share-analytics-data)
+- [View extension analytics](#extension-analytics-data)
+- [Export analytics data](#exporting-analytics-data)
+- [Read data definitions](#data-points)
+- [Review changes in data over time](#changes-in-data-over-time)
+
+### View the image's analytics data
 
 You can find analytics data for your repositories on the **Insights and
 analytics** dashboard at the following URL:
@@ -322,7 +333,7 @@ To view data in the chart:
 > Hovering your cursor over the chart displays a tooltip, showing precise data
 > for points in time.
 
-### Share analytics data
+#### Share analytics data
 
 You can share the visualization with others using the **Share** icon at the top
 of the chart. This is a convenient way to share statistics with others in your
@@ -335,7 +346,7 @@ preserves the display selections you made. When someone follows the link, the
 **Insights and analytics** page opens and displays the chart with the same
 configuration as you had set up when creating the link.
 
-## Extension analytics data
+### Extension analytics data
 
 If you have published Docker Extensions in the Extension marketplace, you can
 also get analytics about your extension usage, available as CSV files. You can
@@ -345,7 +356,7 @@ the following URL:
 namespace contains extensions known in the marketplace, you will see an
 **Extensions** tab listing CSV files for your extension(s).
 
-## Exporting analytics data
+### Exporting analytics data
 
 You can export the analytics data either from the web dashboard, or using the
 [DVP Data API](/reference/api/dvp/latest.md). All members of an organization
@@ -356,7 +367,7 @@ Sunday) or monthly format. Monthly data is available from the first day of the
 following calendar month. You can import this data into your own systems, or you
 can analyze it manually as a spreadsheet.
 
-### Export data
+#### Export data
 
 Export usage data for your organization's images using the Docker Hub website by
 following these steps:
@@ -372,13 +383,13 @@ following these steps:
 
     ![Filtering options and download links for analytics data](../../../images/download-analytics-data.png)
 
-### Export data using the API
+#### Export data using the API
 
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
 using the API in the [DVP Data API documentation](/reference/api/dvp/latest.md).
 
-## Data points
+### Data points
 
 Export data in either raw or summary format. Each format contains different data
 points and with different structure.
@@ -386,7 +397,12 @@ points and with different structure.
 The following sections describe the available data points for each format. The
 **Date added** column shows when the field was first introduced.
 
-### Image pulls raw data
+- [Image pulls raw data](#image-pulls-raw-data)
+- [Image pulls summary data](#image-pulls-summary-data)
+- [Image pulls action classification rules](#image-pulls-action-classification-rules)
+- [Extension Summary data](#extension-summary-data)
+
+#### Image pulls raw data
 
 The raw data format contains the following data points. Each row in the CSV file
 represents an image pull.
@@ -415,7 +431,7 @@ represents an image pull.
 [3]: /admin/organization/setup/orgs/
 [4]: /docker-hub/repos/
 
-### Image pulls summary data
+#### Image pulls summary data
 
 There are two levels of summary data available:
 
@@ -434,7 +450,7 @@ span:
 | Version check     | HEAD by tag, not followed by a GET                      | January 1, 2022   |
 | Owner             | The name of the organization that owns the repository.  | December 19, 2022 |
 
-### Image pulls action classification rules
+#### Image pulls action classification rules
 
 An action represents the multiple request events associated with a
 `docker pull`. Pulls are grouped by category to make the data more meaningful
@@ -466,7 +482,7 @@ pulls. To provide feedback or ask questions about these rules,
 | HEAD           | digest    | GET by same digest                                              | Pull by digest   | Image is single-arch and/or image is multi-arch but some part of the image already exists on the local machine |                                                                                                                                                                                                                                                                                       |
 | HEAD           | digest    | GET by same digest, then a second GET by different digest       | Pull by Digest   | Image is multi-arch                                                                                            |                                                                                                                                                                                                                                                                                       |
 
-### Extension Summary data
+#### Extension Summary data
 
 There are two levels of extension summary data available:
 
@@ -499,7 +515,7 @@ span:
 | Usage            | Number of openings of the extension tab           | Feb 1, 2024 |
 | UniqueUsers      | Number of unique users openings the extension tab | Feb 1, 2024 |
 
-## Changes in data over time
+### Changes in data over time
 
 The insights and analytics service is continuously improved to increase the
 value it brings to publishers. Some changes might include adding new data
@@ -510,9 +526,6 @@ from the date of when the field was first introduced, and going forward.
 
 Refer to the tables in the [Data points](#data-points) section to see from which
 date a given data point is available.
-
-{{< /tab >}}
-{{< /tabs >}}
 
 ## Privacy
 

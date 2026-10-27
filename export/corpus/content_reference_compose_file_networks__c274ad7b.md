@@ -10,7 +10,19 @@ weight: 30
 
 {{% include "compose/networks.md" %}}
 
-To use a network across multiple services, you must explicitly grant each service access by using the [networks](services.md) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
+To use a network across multiple services, you must explicitly grant each service access by using the [networks](services.md#networks) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
+
+## Find a network task
+
+- [Connect services to named networks](#basic-example) or [separate services across networks](#advanced-example).
+- [Use or customize the default network](#the-default-network).
+- [Allow standalone containers to attach](#attachable).
+- [Choose a driver](#driver) and [driver options](#driver_opts).
+- [Configure IPv4](#enable_ipv4), [IPv6](#enable_ipv6), or [IP address management](#ipam).
+- [Use an existing network and check external attribute restrictions](#external).
+- [Create an externally isolated network](#internal).
+- [Set network labels](#labels) or [a custom network name](#name).
+- [Configure service network attachments](services.md#networks) or [check network mode conflicts](services.md#network_mode).
 
 ## Examples
 

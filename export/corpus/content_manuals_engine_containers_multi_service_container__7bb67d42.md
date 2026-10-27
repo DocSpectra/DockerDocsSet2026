@@ -20,6 +20,8 @@ avoid one container being responsible for multiple aspects of your overall
 application. You can connect multiple containers using user-defined networks and
 shared volumes.
 
+## Manage child processes
+
 The container's main process is responsible for managing all processes that it
 starts. In some cases, the main process isn't well-designed, and doesn't handle
 "reaping" (stopping) child processes gracefully when the container exits. If
@@ -32,6 +34,10 @@ lifecycle within your container.
 
 If you need to run more than one service within a container, you can achieve
 this in a few different ways.
+
+- [Use a wrapper script](#use-a-wrapper-script)
+- [Use Bash job controls](#use-bash-job-controls)
+- [Use a process manager](#use-a-process-manager)
 
 ## Use a wrapper script
 

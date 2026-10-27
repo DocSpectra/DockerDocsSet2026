@@ -23,6 +23,12 @@ Getting a secret into a container is a two-step process. First, define the secre
 
 Unlike the other methods, this permits granular access control within a service container via standard filesystem permissions.
 
+## Choose an example
+
+- [Single-service secret injection](#single-service-secret-injection)
+- [Multi-service secret sharing and password management](#multi-service-secret-sharing-and-password-management)
+- [Build secrets](#build-secrets)
+
 ## Examples
 
 ### Single-service secret injection

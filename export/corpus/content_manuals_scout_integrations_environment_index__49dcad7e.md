@@ -18,6 +18,13 @@ example staging and production.
 How you define and name your environments is up to you. You can use patterns
 that are meaningful to you and that matches how you ship your applications.
 
+## Choose an environment task
+
+- [Assign images to environments](#assign-to-environments)
+- [List environments and set the organization](#list-environments)
+- [Compare images between environments](#comparing-between-environments)
+- [View deployed images and tag warnings](#view-images-for-an-environment)
+
 ## Assign to environments
 
 Each environment contains references to a number of images. These references

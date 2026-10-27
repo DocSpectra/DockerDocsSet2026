@@ -10,6 +10,19 @@ aliases:
   - /guides/language/nodejs/develop/
 ---
 
+[Node.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Add a database and persist data](#add-a-local-database-and-persist-data)
+- [Configure the development container](#configure-and-run-a-development-container)
+- [Run the development container](#run-your-development-container-and-debug-your-application)
+- [Verify hot reloading](#verify-hot-reloading)
+- [Use the alternative Task Runner](#using-task-runner-alternative)
+- [Debug the application](#debug-your-application)
+- [Troubleshoot debugger connections](#troubleshooting-debugger-connection)
+
 ## Prerequisites
 
 Complete [Containerize a Node.js application](containerize.md).
@@ -163,6 +176,8 @@ networks:
     name: todoapp-network
     driver: bridge
 ```
+
+### Configure the environment and verify persistence
 
 1. The PostgreSQL database configuration is handled automatically by the application. The database is created and initialized when the application starts, with data persisted using the `postgres_data` volume.
 
@@ -354,6 +369,32 @@ $ npm run db:start    # Start PostgreSQL container
 $ npm run dev         # Start both server and client
 ```
 
+### Verify hot reloading
+
+The application will start with both the Express API server and Vite development server:
+
+- **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
+- **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
+- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
+
+Any changes to the application's source files on your local machine will now be immediately reflected in the running container thanks to the bind mounts.
+
+Try making a change to test hot reloading:
+
+1. Open `src/client/components/TodoApp.tsx` in an IDE or text editor.
+1. Update the main heading text:
+
+    ```diff
+    - <h1 className="text-3xl font-bold text-gray-900 mb-8">
+    -   Modern Todo App
+    - </h1>
+    + <h1 className="text-3xl font-bold text-gray-900 mb-8">
+    +   My Todo App
+    + </h1>
+    ```
+
+1. Save the file and the Vite dev server will automatically reload the page with your changes.
+
 ### Using Task Runner (alternative)
 
 The project includes a Taskfile.yml for advanced workflows:
@@ -385,29 +426,7 @@ $ task health           # Check application health
 $ task logs             # View container logs
 ```
 
-The application will start with both the Express API server and Vite development server:
-
-- **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
-- **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
-- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
-
-Any changes to the application's source files on your local machine will now be immediately reflected in the running container thanks to the bind mounts.
-
-Try making a change to test hot reloading:
-
-1. Open `src/client/components/TodoApp.tsx` in an IDE or text editor.
-1. Update the main heading text:
-
-    ```diff
-    - <h1 className="text-3xl font-bold text-gray-900 mb-8">
-    -   Modern Todo App
-    - </h1>
-    + <h1 className="text-3xl font-bold text-gray-900 mb-8">
-    +   My Todo App
-    + </h1>
-    ```
-
-1. Save the file and the Vite dev server will automatically reload the page with your changes.
+## Debug your application
 
 **Debugging support:**
 
@@ -515,7 +534,7 @@ For more details about Node.js debugging, see the [Node.js documentation](https:
 
 You've set up your Compose file with a PostgreSQL database and data persistence. You also created a multi-stage Dockerfile and configured bind mounts for development.
 
-Related information:
+## Related resources
 
 - [Volumes top-level element](/reference/compose-file/volumes/)
 - [Services top-level element](/reference/compose-file/services/)
@@ -524,3 +543,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll learn how to run unit tests using Docker.
+
+Continue to [tests](run-tests.md).

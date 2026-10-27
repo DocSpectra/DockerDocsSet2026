@@ -12,6 +12,15 @@ aliases:
 Core roles are Docker's built-in roles with predefined permission sets.
 This page provides an overview of Docker's core roles and permissions for each role.
 
+## Find permissions
+
+- [Content and registry](#content-and-registry-permissions).
+- [Organization management](#organization-management-permissions).
+- [Docker Scout](#docker-scout-permissions).
+- [Docker Build Cloud](#docker-build-cloud-permissions).
+
+For role selection and team permissions, see [Roles and permissions](_index.md).
+
 ## What are core roles?
 
 Docker organizations have three core roles:

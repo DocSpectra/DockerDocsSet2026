@@ -4,10 +4,27 @@ description: Collaborate with your MDM team to distribute configurations and set
 weight: 20
 ---
 
+Previous: [Communication and information gathering](comms-and-info-gathering.md). Next: [Test your setup](testing.md).
+
+## Ensure you're running a supported version of Docker Desktop
+
+> [!WARNING]
+>
+> This step could affect the experience for users on older versions of Docker
+> Desktop.
+
+Existing users may be running outdated or unsupported versions of
+Docker Desktop. All users should update to a supported version. Docker Desktop
+versions released within the past 6 months from the latest release are supported.
+
+Use an MDM solution to manage the version of Docker Desktop for users. Users
+may also get Docker Desktop directly from Docker or through a company software
+portal.
+
 ## Send finalized settings files to the MDM team
 
 After reaching an agreement with the relevant teams about your baseline and
-security configurations as outlined in the previous section, configure Settings Management using either the [Docker Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md) or an
+security configurations as outlined in [Gather requirements](comms-and-info-gathering.md#gather-requirements), configure Settings Management using either the [Docker Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md) or an
 [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
 
 Once the file is ready, collaborate with your MDM team to deploy your chosen
@@ -44,7 +61,7 @@ and shared cache. Powered by the cloud, developer time and local resources are
 freed up so your team can focus on more important things, like innovation.
 To get started, [set up a cloud builder](https://app.docker.com/build/).
 
-[Docker Scout](manuals/scout/_index.md) is a solution for proactively enhancing
+[Docker Scout](/manuals/scout/_index.md) is a solution for proactively enhancing
 your software supply chain security. By analyzing your images, Docker Scout
 compiles an inventory of components, also known as a Software Bill of Materials
 (SBOM). The SBOM is matched against a continuously updated vulnerability
@@ -60,17 +77,3 @@ Designed to reduce vulnerabilities and simplify compliance, DHIs integrate
 easily into your existing Docker-based workflows with little to no retooling
 required.
 
-### Ensure you're running a supported version of Docker Desktop
-
-> [!WARNING]
->
-> This step could affect the experience for users on older versions of Docker
-> Desktop.
-
-Existing users may be running outdated or unsupported versions of
-Docker Desktop. All users should update to a supported version. Docker Desktop
-versions released within the past 6 months from the latest release are supported.
-
-Use an MDM solution to manage the version of Docker Desktop for users. Users
-may also get Docker Desktop directly from Docker or through a company software
-portal.

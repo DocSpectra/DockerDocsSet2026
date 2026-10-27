@@ -5,6 +5,18 @@ description: Set up a Spring Boot OAuth 2.0 Resource Server with Keycloak, Postg
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-keycloak-spring-boot/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the domain model](#create-the-domain-model)
+- [Create the repository](#create-the-repository)
+- [Add a schema creation script](#add-a-schema-creation-script)
+- [Implement the API endpoints](#implement-the-api-endpoints)
+- [Configure OAuth 2.0 security](#configure-oauth-20-security)
+- [Export the Keycloak realm configuration](#export-the-keycloak-realm-configuration)
+
 ## Set up the project
 
 Create a Spring Boot project from [Spring Initializr](https://start.spring.io)
@@ -311,3 +323,7 @@ $ docker cp <container-id>:/opt/keycloak/data/import/keycloaktcdemo-realm.json k
 ```
 
 Copy the exported `keycloaktcdemo-realm.json` file into `src/test/resources`.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-keycloak-spring-boot/write-tests/)

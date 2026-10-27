@@ -12,6 +12,14 @@ ECI prevents malicious containers from compromising Docker Desktop while maintai
 
 This page shows you how to turn on Enhanced Container Isolation (ECI) and verify it's working correctly.
 
+## Choose an enablement task
+
+- Review [prerequisites](#prerequisites), the [WSL version requirement](_index.md), and [limitations](limitations.md).
+- Enable ECI [as a developer](#for-developers) or [as an administrator](#for-administrators).
+- [Apply the configuration](#apply-the-configuration).
+- [Verify ECI is active](#verify-enhanced-container-isolation-is-active).
+- Review [what users see with enforced ECI](#what-users-see-with-enforced-eci).
+
 ## Prerequisites
 
 Before you begin, you must have:

@@ -4,7 +4,11 @@ description: Find answers to common questions about setting up and managing Lara
 weight: 40
 ---
 
+[Laravel guide overview](_index.md)
+
 <!-- vale Docker.HeadingLength = NO -->
+
+Browse the [production setup](production-setup.md), [development setup](development-setup.md), or the topics below.
 
 ## 1. Why should I use Docker Compose for Laravel?
 
@@ -35,3 +39,8 @@ It’s recommended to use `alpine`-based images in production for smaller image 
 Additionally, consider using [Docker Scout](/manuals/scout/_index.md) to detect and analyze vulnerabilities, especially in production environments.
 
 For additional information about using Docker Compose in production, see [this guide](/compose/how-tos/production/).
+
+## Setup steps
+
+- [Production configuration](production-setup.md#create-a-docker-compose-configuration-for-production)
+- [Development configuration and Xdebug settings](development-setup.md#create-a-docker-compose-configuration-for-development)

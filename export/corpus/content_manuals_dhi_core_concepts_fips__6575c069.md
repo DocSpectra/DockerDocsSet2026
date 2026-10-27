@@ -6,6 +6,11 @@ keywords: docker fips, fips 140 images, fips docker images, docker compliance, s
 
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 
+For a task, go to [identify FIPS images](#identify-images-that-support-fips),
+[use a FIPS variant](#use-a-fips-variant), or [view its attestation](#view-the-fips-attestation).
+For subscription setup, see [Get started with DHI Select and
+Enterprise](../how-to/select-enterprise.md).
+
 ## What is FIPS 140?
 
 [FIPS 140](https://csrc.nist.gov/publications/detail/fips/140/3/final) is a U.S.

@@ -37,7 +37,9 @@ Docker blocks sign-in until you've verified your account.
 
 1. Go to the [Docker sign-up page](https://app.docker.com/signup/) and enter a unique, valid email address.
 1. Enter a username to use as your Docker ID. Once you create your Docker ID
-   you can't reuse it in the future if you deactivate this account. Your username: - Must be between 4 and 30 characters long - Can only contain numbers and lowercase letters
+   you can't reuse it in the future if you deactivate this account. Your username:
+   - Must be between 4 and 30 characters long
+   - Can only contain numbers and lowercase letters
 1. Choose a password that's at least 9 characters long, then select **Sign Up**.
 1. Verify your email address when you receive the Docker OTP verification email. This completes the registration process.
 

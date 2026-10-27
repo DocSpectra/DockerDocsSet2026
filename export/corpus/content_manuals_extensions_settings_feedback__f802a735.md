@@ -28,6 +28,12 @@ Docker Extensions is switched on by default. To change your settings:
 >
 > This can also be done with [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md)
 
+> [!NOTE]
+>
+> Enabling extensions doesn't use computer resources (CPU / Memory) by itself.
+>
+> Specific extensions might use computer resources, depending on the features and implementation of each extension, but there is no reserved resources or usage cost associated with enabling extensions.
+
 ### Turn on or turn off extensions not available in the Marketplace
 
 You can install extensions through the Marketplace or through the Extensions SDK tools. You can choose to only allow published extensions. These are extensions that have been reviewed and published in the Extensions Marketplace.
@@ -46,12 +52,6 @@ update your settings:
 2. Select the **Extensions** tab.
 3. Next to **Show Docker Extensions system containers**, select or clear the checkbox to set your desired state.
 4. In the bottom-right corner, select **Apply**.
-
-> [!NOTE]
->
-> Enabling extensions doesn't use computer resources (CPU / Memory) by itself.
->
-> Specific extensions might use computer resources, depending on the features and implementation of each extension, but there is no reserved resources or usage cost associated with enabling extensions.
 
 ## Submit feedback
 

@@ -30,20 +30,6 @@ The sample application is a modern full-stack Todo application featuring:
 
 ---
 
-## What will you learn?
-
-In this guide, you will learn how to:
-
-- Containerize and run a Node.js application using Docker.
-- Run tests inside a Docker container.
-- Set up a development container environment.
-- Configure GitHub Actions for CI/CD with Docker.
-- Deploy your Dockerized Node.js app to Kubernetes.
-
-To begin, you’ll start by containerizing an existing Node.js application.
-
----
-
 ## Prerequisites
 
 Before you begin, make sure you're familiar with the following:
@@ -54,3 +40,17 @@ Before you begin, make sure you're familiar with the following:
 - Familiarity with [Express.js](https://expressjs.com/) for backend API development.
 
 Once you've completed the Node.js getting started modules, you’ll be ready to containerize your own Node.js application using the examples and instructions provided in this guide.
+
+---
+
+## What will you learn?
+
+In this guide, you will learn how to:
+
+- [Containerize and run a Node.js application using Docker.](containerize.md)
+- [Set up a development container environment.](develop.md)
+- [Run tests inside a Docker container.](run-tests.md)
+- [Configure GitHub Actions for CI/CD with Docker.](configure-github-actions.md)
+- [Deploy your Dockerized Node.js app to Kubernetes.](deploy.md)
+
+To begin, you’ll start by containerizing an existing Node.js application.

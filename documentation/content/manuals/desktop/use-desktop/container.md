@@ -8,6 +8,13 @@ weight: 10
 
 The **Containers** view lists all running and stopped containers and applications. It provides a clean interface to manage the lifecycle of your containers, interact with running applications, and inspect Docker objects—including Docker Compose apps.
 
+## Find a container task
+
+- [Manage the container lifecycle](#container-actions)
+- [Monitor resource usage](#resource-usage)
+- [View logs](#logs), [inspect details](#inspect), [run commands or debug](#execdebug), or [work with files](#files)
+- [View logs across containers and Kubernetes nodes](logs.md)
+
 ## Container actions
 
 Use the **Search** field to find a specific container by name.
@@ -25,7 +32,7 @@ From the **Containers** view you can:
 
 From the **Containers** view you can monitor your containers' CPU and memory usage over time. This can help you understand if something is wrong with your containers or if you need to allocate additional resources. 
 
-When you [inspect a container](#inspect-a-container), the **Stats** tab displays further information about a container's resource utilization. You can see how much CPU, memory, network and disk space your container is using over time.
+See the [Stats tab](#stats) for further resource utilization information.
 
 ## Inspect a container
 
@@ -97,6 +104,10 @@ can also:
 - Drag and drop files and folders between the host and the container
 - Delete unnecessary files when you right-click on a file
 - Download files and folders from the container straight to the host
+
+### Stats
+
+When you [inspect a container](#inspect-a-container), the **Stats** tab displays further information about a container's resource utilization. You can see how much CPU, memory, network and disk space your container is using over time.
 
 ## Additional resources
 

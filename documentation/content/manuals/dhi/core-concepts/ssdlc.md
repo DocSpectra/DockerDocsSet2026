@@ -111,3 +111,11 @@ content (DHIs) with developer-friendly tooling (Docker Scout and Docker Debug).
 These integrations promote secure practices without introducing friction, making
 it easier to adopt compliance and supply chain security across your software
 delivery lifecycle.
+
+## Related tasks
+
+- [Use images in CI/CD](../how-to/use.md#use-a-dhi-in-cicd-pipelines)
+- [Scan child images and CI builds](../how-to/scan-child-images.md)
+- [Verify attestations](../how-to/verify.md)
+- [Enforce image policies](../how-to/policies.md)
+- [Debug containers](../troubleshoot.md)

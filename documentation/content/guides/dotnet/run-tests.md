@@ -9,6 +9,8 @@ aliases:
   - /guides/language/dotnet/run-tests/
 ---
 
+[.NET guide overview](_index.md)
+
 ## Prerequisites
 
 Complete all the previous sections of this guide, starting with [Containerize a .NET application](containerize.md).
@@ -147,3 +149,5 @@ Related information:
 ## Next steps
 
 Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue: [Configure CI/CD](configure-ci-cd.md).

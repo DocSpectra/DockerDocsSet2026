@@ -16,6 +16,14 @@ If you have a `models` top-level element in your `compose.yaml` file, Compose Br
 - Configures model endpoints differently for Docker Desktop vs Kubernetes.
 - Optionally deploys Docker Model Runner in Kubernetes when enabled in Helm values
 
+## Choose a task
+
+- [Configure settings in Helm values](#configure-model-runner-settings)
+- [Use the host instance on Docker Desktop](#docker-desktop)
+- [Deploy in Kubernetes](#kubernetes)
+- [Customize Model Runner templates](customize.md#model-runner-templates)
+- [Convert and deploy with the default transformation](usage.md)
+
 ## Configure model runner settings
 
 When deploying using generated Helm Charts, you can control the model runner configuration through Helm values.

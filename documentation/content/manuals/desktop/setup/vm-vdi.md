@@ -18,6 +18,14 @@ depending on whether nested virtualization is supported:
   with its default local Linux VM.
 - If nested virtualization is not supported, Docker recommends subscribing to and using Docker Offload.
 
+## Choose an environment task
+
+- [Use Docker Offload](#use-docker-offload).
+- [Review nested-virtualization support and caveats](#virtual-desktop-support-when-using-nested-virtualization).
+- [Turn on nested virtualization](#turn-on-nested-virtualization) on [VMware ESXi](#turn-on-nested-virtualization-on-vmware-esxi) or [Azure](#turn-on-nested-virtualization-on-an-azure-virtual-machine).
+- [Review Nutanix-powered VDI support](#docker-desktop-support-on-nutanix-powered-vdi).
+- [Install Docker Desktop on Windows](install/windows-install.md).
+
 ## Use Docker Offload
 
 [Docker Offload](/offload/) lets you offload container workloads to a high-performance, fully hosted cloud environment,

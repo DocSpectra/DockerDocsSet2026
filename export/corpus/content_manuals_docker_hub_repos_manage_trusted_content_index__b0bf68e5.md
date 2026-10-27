@@ -1,7 +1,8 @@
 ---
 description: Learn how to manage and contribute to trusted content.
 keywords: Docker Hub, Hub, trusted content
-title: Trusted content
+title: Publish trusted content
+linkTitle: Trusted content
 weight: 100
 aliases:
  - /trusted-content/
@@ -14,6 +15,8 @@ millions of developers worldwide while gaining valuable insights into their
 content's usage. By participating, you can enhance your content's visibility,
 build credibility, and access tools to optimize its impact within the container
 ecosystem.
+
+For finding and choosing images, see [Trusted content in the library](../../../image-library/trusted-content.md).
 
 In this section, learn about:
 

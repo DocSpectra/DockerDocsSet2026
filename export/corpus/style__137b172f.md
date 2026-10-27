@@ -5,6 +5,16 @@ standards for Docker documentation. Follow these guidelines to create
 clear, consistent, and helpful content. For instructions on how to use
 components, shortcodes, and other features, see [COMPONENTS.md](COMPONENTS.md).
 
+## Find a writing guideline
+
+| Task | Guidelines |
+| --- | --- |
+| Choose voice and tone | [Voice and tone](#voice-and-tone), [scope preservation](#scope-preservation) |
+| Plan a page | [Content types and detail](#content-types-and-detail-balance), [headings](#headings), [page structure and flow](#page-structure-and-flow) |
+| Check grammar and wording | [Grammar and style](#grammar-and-style), [word list](#word-list), [Docker terminology](#docker-terminology) |
+| Format instructions and examples | [Formatting](#formatting), [code and commands](#code-and-commands), [navigation instructions](#navigation-instructions), [optional steps](#optional-steps) |
+| Review a draft | [Quick reference](#quick-reference) |
+
 ## Voice and tone
 
 Write like a knowledgeable colleague explaining something useful. We're

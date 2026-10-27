@@ -24,20 +24,6 @@ The React.js language-specific guide shows you how to containerize a React.js ap
 
 ---
 
-## What will you learn?
-
-In this guide, you will learn how to:
-
-- Containerize and run a React.js application using Docker.
-- Set up a local development environment for React.js inside a container. 
-- Run tests for your React.js application within a Docker container.
-- Configure a CI/CD pipeline using GitHub Actions for your containerized app.
-- Deploy the containerized React.js application to a local Kubernetes cluster for testing and debugging.
-
-To begin, you’ll start by containerizing an existing React.js application.
-
----
-
 ## Prerequisites
 
 Before you begin, make sure you're familiar with the following:
@@ -48,3 +34,17 @@ Before you begin, make sure you're familiar with the following:
 - Understanding of Docker concepts such as images, containers, and Dockerfiles. If you're new to Docker, start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
 
 Once you've completed the React.js getting started modules, you’ll be ready to containerize your own React.js application using the examples and instructions provided in this guide.
+
+---
+
+## What will you learn?
+
+In this guide, you will learn how to:
+
+- [Containerize and run a React.js application using Docker.](containerize.md)
+- [Set up a local development environment for React.js inside a container.](develop.md)
+- [Run tests for your React.js application within a Docker container.](run-tests.md)
+- [Configure a CI/CD pipeline using GitHub Actions for your containerized app.](configure-github-actions.md)
+- [Deploy the containerized React.js application to a local Kubernetes cluster for testing and debugging.](deploy.md)
+
+To begin, you’ll start by containerizing an existing React.js application.

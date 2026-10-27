@@ -11,6 +11,14 @@ aliases:
 
 0.2.0
 
+## Choose a task
+
+- [Execute Docker commands](#cli)
+- [List containers](#listcontainers)
+- [List images](#listimages)
+
+See also [Docker API examples](/manuals/extensions/extensions-sdk/dev/api/docker.md).
+
 ## Properties
 
 ### cli

@@ -10,6 +10,17 @@ params:
   time: 35 minutes
 ---
 
+## Follow the guide
+
+- Review [RAG](#understanding-rag) and [graph databases](#introduction-to-graph-databases)
+- Set up the stack on Linux with [GPU](#gpu-powered) or [CPU](#cpu-powered), or see [other platforms](#setting-up-on-other-platforms)
+- [Monitor startup](#monitoring-progress)
+- [Ask without RAG](#ask-without-rag)
+- [Import information](#import-information) and [verify the data](#verify-the-imported-data-in-neo4j)
+- [Ask with RAG](#ask-with-rag)
+- [Start over with another tag](#start-over-with-another-tag)
+- Review [when to use RAG](#when-to-leverage-rag-for-optimal-results)
+
 ## Introduction
 
 Retrieval-Augmented Generation (RAG) is a powerful framework that enhances large language models (LLMs) by integrating information retrieval from external knowledge sources. This guide focuses on a specialized RAG implementation using graph databases like Neo4j, which excel in managing highly connected, relational data. Unlike traditional RAG setups with vector databases, combining RAG with graph databases offers better context-awareness and relationship-driven insights.
@@ -46,21 +57,6 @@ Graph databases stand out for their unique approach to data storage and querying
 SQL databases and graph databases differ significantly in their data models. SQL databases use a tabular structure with rows and columns, where relationships between entities are established using foreign keys. This approach works well for structured data and predefined relationships. In contrast, graph databases represent data as nodes (entities) and edges (relationships), making the representation of relationships more intuitive and flexible. This structure is particularly advantageous for complex, interconnected data.
 
 Another key difference lies in schema flexibility. SQL databases operate on a rigid schema, meaning any changes to the data structure, such as adding new columns or altering relationships, typically require careful planning and migration processes. Graph databases, however, are schema-optional, allowing for much greater flexibility. New nodes, edges, or properties can be introduced without disrupting existing data, enabling faster adaptation to changing requirements.
-
-## Practical implementation: testing RAG effectiveness
-
-To illustrate the power of RAG systems in practice, let's examine a real-world implementation using Apache NiFi as our subject matter. This case study demonstrates how RAG can enhance an AI's ability to provide accurate, contextual information about specialized technical topics.
-
-### Teaching AI about new technologies
-
-Apache NiFi serves as an excellent example of the limitations of traditional LLMs and how RAG can overcome them. As a relatively recent technology, many LLMs have limited or outdated knowledge about it, making it a perfect candidate for demonstrating RAG's capabilities.
-
-Without RAG, the LLM may provide broad responses or acknowledge its limited knowledge when asked about information that is beyond its cutoff date. The following example demonstrates this.
-```text
-Question: What important events happened in 2024?
-RAG: Disabled
-I'm happy to help! Unfortunately, I'm a large language model, I don't have access to real-time information or events that occurred after my training data cutoff in 2024. Therefore, I cannot provide you with any important events that happened in 2024. My apologize for any inconvenience this may cause. Is there anything else I can help you with?
-```
 
 ## Setting up GenAI stack with GPU acceleration on Linux
 
@@ -126,6 +122,23 @@ Wait for specific lines in the logs indicating that the download is complete and
     bot-1         |   You can now view your Streamlit app in your browser.
   ```
 
+## Practical implementation: testing RAG effectiveness
+
+To illustrate the power of RAG systems in practice, let's examine a real-world implementation using Apache NiFi as our subject matter. This case study demonstrates how RAG can enhance an AI's ability to provide accurate, contextual information about specialized technical topics.
+
+### Teaching AI about new technologies
+
+Apache NiFi serves as an excellent example of the limitations of traditional LLMs and how RAG can overcome them. As a relatively recent technology, many LLMs have limited or outdated knowledge about it, making it a perfect candidate for demonstrating RAG's capabilities.
+
+Without RAG, the LLM may provide broad responses or acknowledge its limited knowledge when asked about information that is beyond its cutoff date. The following example demonstrates this.
+```text
+Question: What important events happened in 2024?
+RAG: Disabled
+I'm happy to help! Unfortunately, I'm a large language model, I don't have access to real-time information or events that occurred after my training data cutoff in 2024. Therefore, I cannot provide you with any important events that happened in 2024. My apologize for any inconvenience this may cause. Is there anything else I can help you with?
+```
+
+## Ask without RAG
+
 You can now access the interface at [http://localhost:8501/](http://localhost:8501/) to ask questions. For example, you can try the sample question:
 
 When we see those lines in the logs, web apps are ready to be used.
@@ -142,9 +155,13 @@ Hello! I'm here to help you with your question about Apache NiFi. Unfortunately,
 
 As we can see, AI does not know anything about this subject because it did not exist during the time of its training, also known as the information cutoff point.
 
+## Import information
+
 Now it's time to teach the AI some new tricks. First, connect to [http://localhost:8502/](http://localhost:8502/). Instead of using the "neo4j" tag, change it to the "apache-nifi" tag, then select the **Import** button.
 
 ![alt text](image-1.png)
+
+## Verify the imported data in Neo4j
 
 After the import is successful, we can access Neo4j to verify the data.
 
@@ -176,6 +193,8 @@ To check the relationships in the database, run the following query:
 CALL db.relationshipTypes()
 ```
 
+## Ask with RAG
+
 Now, we are ready to enable our LLM to use this information. Go back to [http://localhost:8501/](http://localhost:8501/), enable the **RAG** checkbox, and ask the same question again. The LLM will now provide a more detailed answer.
 
 ![alt text](image-3.png)
@@ -198,6 +217,8 @@ Is a Neo4j UDF compatible with Apache POI?
 
 Keep in mind that new questions will be added to Stack Overflow, and due to the inherent randomness in most AI models, the answers may vary and won't be identical to those in this example.
 
+## Start over with another tag
+
 Feel free to start over with another [Stack Overflow tag](https://stackoverflow.com/tags). To drop all data in Neo4j, you can use the following command in the Neo4j Web UI:
 
 ```txt
@@ -207,11 +228,11 @@ DETACH DELETE n;
 
 For optimal results, choose a tag that the LLM is not familiar with.
 
-### When to leverage RAG for optimal results
+## When to leverage RAG for optimal results
 
 Retrieval-Augmented Generation (RAG) is particularly effective in scenarios where standard Large Language Models (LLMs) fall short. The three key areas where RAG excels are knowledge limitations, business requirements, and cost efficiency. Below, we explore these aspects in more detail.
 
-#### Overcoming knowledge limitations
+### Overcoming knowledge limitations
 
 LLMs are trained on a fixed dataset up until a certain point in time. This means they lack access to:
 
@@ -221,7 +242,7 @@ LLMs are trained on a fixed dataset up until a certain point in time. This means
 
 By incorporating RAG with a graph database such as Neo4j, AI models can access and retrieve the latest, relevant, and highly connected data before generating a response. This ensures that answers are up-to-date and grounded in factual information rather than inferred approximations.
 
-#### Addressing business and compliance needs
+### Addressing business and compliance needs
 
 Organizations in industries like healthcare, legal services, and financial analysis require their AI-driven solutions to be:
 
@@ -231,7 +252,7 @@ Organizations in industries like healthcare, legal services, and financial analy
 
 By using RAG, AI-generated answers can be sourced from trusted databases, ensuring higher accuracy and compliance with industry standards. This mitigates risks such as misinformation or regulatory violations.
 
-#### Enhancing cost efficiency and performance
+### Enhancing cost efficiency and performance
 
 Training and fine-tuning large AI models can be computationally expensive and time-consuming. However, integrating RAG provides:
 

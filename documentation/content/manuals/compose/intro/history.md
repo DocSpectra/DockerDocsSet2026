@@ -21,7 +21,7 @@ The diagram above highlights the key differences between Docker Compose v1, v2, 
 
 The diagram provides a high-level comparison of file formats, command-line syntax, and supported top-level elements. This is covered in more detail in the following sections.
 
-### Docker Compose CLI versioning
+## Docker Compose CLI versioning
 
 Compose v1 was first released in 2014. It was written in Python and invoked with `docker-compose`.
 Typically, Compose v1 projects include a top-level `version` element in the `compose.yaml` file, with values ranging from `2.0` to `3.8`, which refer to the specific [file formats](#compose-file-format-versioning).
@@ -31,7 +31,7 @@ Unlike v1, Compose v2 ignores the `version` top-level element in the `compose.ya
 
 Compose v5, released in 2025, is functionally identical to Compose v2. Its primary distinction is the introduction of an official [Go SDK](/manuals/compose/compose-sdk.md). This SDK provides a comprehensive API that lets you integrate Compose functionality directly into your applications, allowing you to load, validate, and manage multi-container environments without relying on the Compose CLI. To avoid confusion with the legacy Compose file formats labeled “v2” and “v3,” the versioning was advanced directly to v5.
 
-### Compose file format versioning
+## Compose file format versioning
 
 The Docker Compose CLIs are defined by specific file formats. 
 

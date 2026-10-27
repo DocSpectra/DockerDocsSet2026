@@ -29,6 +29,10 @@ To use this workflow, you need:
 Each step, when applicable, shows Docker Hub and command line instructions. You
 can use either interface.
 
+Go to [find an image](#step-1-find-an-image-to-use), [mirror](#step-2-mirror-the-repository),
+[customize](#step-3-customize-the-image), [pull and run](#step-4-pull-and-run-your-customized-image),
+or [remove the customization and stop mirroring](#step-5-remove-customization-and-stop-mirroring).
+
 ## Step 1: Find an image to use
 
 {{< tabs group="interface" >}}

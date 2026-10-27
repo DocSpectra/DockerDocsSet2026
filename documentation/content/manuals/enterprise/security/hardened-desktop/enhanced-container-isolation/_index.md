@@ -20,6 +20,13 @@ Enhanced Container Isolation (ECI) prevents malicious containers from compromisi
 
 If you are using WSL2 backend, ensure you’re running WSL version 2.6 or later. This is required because ECI depends on a Linux kernel version of at least 6.3.0, and WSL 2.6+ includes kernel version 6.6.
 
+## ECI tasks and reference
+
+- [Enable ECI and verify protection](enable-eci.md).
+- [Configure Docker socket exceptions](config.md).
+- [Check platform, build, and Kubernetes limitations](limitations.md).
+- Read [how ECI works](#how-enhanced-container-isolation-works) and its [security features](#key-security-features).
+
 ## Who should use Enhanced Container Isolation?
 
 ECI is designed for:

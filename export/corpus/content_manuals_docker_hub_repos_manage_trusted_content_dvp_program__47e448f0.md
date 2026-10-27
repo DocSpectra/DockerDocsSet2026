@@ -25,6 +25,14 @@ These images help development teams build secure software supply chains,
 minimizing exposure to malicious content early in the process to save time and
 money later.
 
+## Publishing tasks
+
+- [Check program eligibility](#whos-eligible-to-become-a-verified-publisher)
+- [Review program benefits](#program-benefits)
+- [Manage repository logos](#manage-repository-logo)
+- [Access insights and analytics](#insights-and-analytics)
+- [Review vulnerability analysis](#vulnerability-analysis)
+
 ## Who's eligible to become a verified publisher?
 
 Any independent software vendor who distributes software on Docker Hub can join

@@ -11,6 +11,20 @@ aliases:
 This page covers debugging techniques and common issues you may encounter while
 migrating to or using Docker Hardened Images (DHIs).
 
+## Find an issue or debugging task
+
+| Issue or task | Go to |
+|---|---|
+| Inspect a container locally or with Docker Debug's `--host` option | [General debugging](#general-debugging) |
+| Use a dev image or mount debugging tools | [Alternative debugging approaches](#alternative-debugging-approaches) |
+| Fix file access | [Permissions](#permissions) |
+| Fix binding to a low port | [Privileged ports](#privileged-ports) |
+| Run shell commands during a build | [No shell](#no-shell) |
+| Check startup commands | [Entry point differences](#entry-point-differences) |
+| Install build dependencies | [No package manager](#no-package-manager) |
+| Debug on OpenShift | [OpenShift debugging steps](/guides/dhi-openshift/#option-3-use-oc-debug-or-ephemeral-containers) |
+| Resolve a verification error | [Missing transparency log entries](./how-to/verify.md#handle-missing-transparency-log-entries) |
+
 ## General debugging
 
 Docker Hardened Images prioritize minimalism and security, which means

@@ -21,6 +21,15 @@ to user accounts. This self-service capability helps you understand Docker
 Desktop usage across your organization and streamline user onboarding without
 IT involvement.
 
+## Find a machine task
+
+- [Review prerequisites](#prerequisites) and [how machines are identified](#how-docker-identifies-unassociated-machines)
+- [View machines and export the list](#view-unassociated-machines)
+- [Enable sign-in enforcement and review its scope and restart requirement](#enable-sign-in-enforcement-for-unassociated-machines)
+- [Enable enforcement for all machines](#enable-sign-in-enforcement-for-all-unassociated-machines) or [individual machines](#enable-sign-in-enforcement-for-individual-unassociated-machines)
+- [Add users to the organization](#add-unassociated-machines-to-your-organization)
+- [Disable sign-in enforcement](#disable-sign-in-enforcement)
+
 ## Prerequisites
 
 - Docker Business or Team subscription

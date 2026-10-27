@@ -10,6 +10,10 @@ aliases:
  - /guides/workshop/08_using_compose/
 ---
 
+On this page: [Create the file](#create-the-compose-file) · [Define the app](#define-the-app-service) · [Define MySQL](#define-the-mysql-service) · [Complete Compose file](#complete-compose-file) · [Run and view logs](#run-the-application-stack) · [View in Docker Desktop](#see-the-app-stack-in-docker-desktop-dashboard) · [Tear down and review volume removal](#tear-it-all-down).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](07_multi_container.md) · [All tasks](_index.md#workshop-tasks).
+
 [Docker Compose](/manuals/compose/_index.md) is a tool that helps you define and
 share multi-container applications. With Compose, you can create a YAML file to define the services
 and with a single command, you can spin everything up or tear it all down.
@@ -117,7 +121,7 @@ You'll now define this service in the `compose.yaml` file.
          MYSQL_DB: todos
    ```
 
-### Define the MySQL service
+## Define the MySQL service
 
 Now, it's time to define the MySQL service. The command that you used for that container was the following:
 
@@ -178,6 +182,8 @@ $ docker run -d \
    volumes:
      todo-mysql-data:
    ```
+
+## Complete Compose file
 
 At this point, your complete `compose.yaml` should look like this:
 

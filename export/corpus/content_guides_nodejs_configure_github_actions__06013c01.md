@@ -9,9 +9,18 @@ aliases:
   - /guides/language/nodejs/configure-ci-cd/
 ---
 
+[Node.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Configure repositories and credentials](#connect-your-github-repository-to-docker-hub)
+- [Set up the workflow](#step-2-set-up-the-workflow)
+- [Run and verify the workflow](#step-3-run-the-workflow)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md).
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize a Node.js application](containerize.md).
 
 You must also have:
 
@@ -130,7 +139,7 @@ Once completed, your code will be available on GitHub, and any GitHub Actions wo
 
 ---
 
-### Step 2: Set up the workflow
+## Step 2: Set up the workflow
 
 Now you'll create a GitHub Actions workflow that builds your Docker image, runs tests, and pushes the image to Docker Hub.
 
@@ -274,7 +283,7 @@ This workflow performs the following tasks for your Node.js application:
 
 ---
 
-### Step 3: Run the workflow
+## Step 3: Run the workflow
 
 After adding your workflow file, trigger the CI/CD process.
 
@@ -342,3 +351,5 @@ Deepen your understanding of automation and best practices for containerized app
 ## Next steps
 
 Next, learn how you can deploy your containerized Node.js application to Kubernetes with production-ready configuration. This helps you ensure your application behaves as expected in a production-like environment, reducing surprises during deployment.
+
+Continue to [deployment](deploy.md).

@@ -14,6 +14,14 @@ weight: 10
 
 Settings Management lets administrators configure and enforce Docker Desktop settings across end-user machines. It helps maintain consistent configurations and enhances security within your organization.
 
+## Choose a settings task
+
+- Review [policy precedence](#policy-precedence) and [limitations](#limitations).
+- [Set up Settings Management](#set-up-settings-management).
+- Configure policies with the [Admin Console](configure-admin-console.md) or a [JSON file](configure-json-file.md).
+- [Look up settings](settings-reference.md).
+- [View applied settings](#view-applied-settings) or [monitor compliance](compliance-reporting.md).
+
 ## Who should use Settings Management?
 
 Settings Management is designed for organizations that:
@@ -56,7 +64,7 @@ When multiple policies exist, Docker Desktop applies them in this order:
 1. User-specific policies: Highest priority
 1. Organization default policy: Applied when no user-specific policy exists
 1. Local `admin-settings.json` file: Lowest priority, overridden by Admin Console policies
-1. [Configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only): Super-set of Docker Admin Console policies.
+1. [Configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#mac-configuration-profiles-method-recommended): Super-set of Docker Admin Console policies.
 
 ## Set up Settings Management
 

@@ -12,6 +12,15 @@ Actions.
 > See [Cache storage backends](../../cache/backends/_index.md) for more
 > details about cache storage backends.
 
+## Choose a cache example
+
+- [Inline cache and its cache-mode limit](#inline-cache)
+- [Registry cache](#registry-cache)
+- [GitHub cache backend API](#cache-backend-api)
+- [GitHub API v2 version requirements and migration](#api-v2-requirements)
+- [Cache mounts and the workaround](#cache-mounts)
+- [Local cache and the cache-growth workaround](#local-cache)
+
 ## Inline cache
 
 In most cases you want to use the [inline cache exporter](../../cache/backends/inline.md).
@@ -120,6 +129,8 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 ```
+
+#### API v2 requirements
 
 > [!IMPORTANT]
 >

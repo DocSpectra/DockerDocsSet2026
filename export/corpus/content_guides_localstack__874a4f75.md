@@ -20,6 +20,23 @@ In this guide, you'll learn how to:
 - Connect to LocalStack from a non-containerized application
 - Connect to LocalStack from a containerized application
 
+## Find a task
+
+- [Prerequisites](#prerequisites)
+- [Launch LocalStack and create an S3 bucket](#launching-localstack)
+- [Connect a non-containerized app](#connecting-to-localstack-from-a-non-containerized-app)
+- [Start the frontend](#start-the-frontend-service)
+- [Connect a containerized Node app](#connecting-to-localstack-from-containerized-node-app)
+
+## Prerequisites
+
+The following prerequisites are required to follow along with this how-to guide:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) 
+- [Node.js](https://nodejs.org/en/download/package-manager)
+- [Python and pip](https://www.python.org/downloads/)
+- Basic knowledge of Docker
+
 ## What is LocalStack?
 
 LocalStack is a cloud service emulator that runs in a single container on your laptop. It provides a powerful, flexible, and cost-effective way to test and develop AWS-based applications locally. 
@@ -36,14 +53,17 @@ This makes it easier to validate integrations and test cloud-based scenarios wit
 
 The [official Docker image for LocalStack](https://hub.docker.com/r/localstack/localstack) provides a convenient way to run LocalStack on your development machine. It’s free to use and doesn’t require any API key to run. You can even use [LocalStack Docker Extension](https://www.docker.com/blog/develop-your-cloud-app-locally-with-the-localstack-extension/) to use LocalStack with a graphical user interface.
 
-## Prerequisites
+## Using LocalStack in development
 
-The following prerequisites are required to follow along with this how-to guide:
+Now that you've familiarized yourself with LocalStack, it's time to see it in action. In this demonstration, you'll use a sample application featuring a React frontend and a Node.js backend. This application stack utilizes the following components:
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) 
-- [Node.js](https://nodejs.org/en/download/package-manager)
-- [Python and pip](https://www.python.org/downloads/)
-- Basic knowledge of Docker
+- React: A user-friendly frontend for accessing the todo-list application
+- Node: A backend responsible for handling the HTTP requests.
+- MongoDB: A database to store all the to-do list data
+- LocalStack: Emulates the Amazon S3 service and stores and retrieve images.
+
+![Diagram showing the tech stack of the sample todo-list application that includes LocalStack, frontend and backend services ](images/localstack-arch.webp)
+
 
 ## Launching LocalStack
 
@@ -93,18 +113,6 @@ Launch a quick demo of LocalStack by using the following steps:
     You can verify if the S3 bucket gets created or not by selecting the LocalStack container on the Docker Desktop Dashboard and viewing the logs. The logs indicates that your LocalStack environment is configured correctly and you can now use the `mysamplebucket` for storing and retrieving objects.
 
     ![Diagram showing the logs of LocalStack that highlights the S3 bucket being created successfully ](./images/localstack-s3put.webp)
-
-## Using LocalStack in development
-
-Now that you've familiarized yourself with LocalStack, it's time to see it in action. In this demonstration, you'll use a sample application featuring a React frontend and a Node.js backend. This application stack utilizes the following components:
-
-- React: A user-friendly frontend for accessing the todo-list application
-- Node: A backend responsible for handling the HTTP requests.
-- MongoDB: A database to store all the to-do list data
-- LocalStack: Emulates the Amazon S3 service and stores and retrieve images.
-
-![Diagram showing the tech stack of the sample todo-list application that includes LocalStack, frontend and backend services ](images/localstack-arch.webp)
-
 
 ## Connecting to LocalStack from a non-containerized app
 
@@ -168,7 +176,7 @@ Let’s see it in action. Start by launching the Node.js backend service.
 
     You will see the message that the backend service has successfully started at port 5000.
 
-## Start the frontend service
+### Start the frontend service
 
 To start the frontend service, open a new terminal and follow these steps:
 
@@ -317,3 +325,8 @@ Now that you have learnt how to connect a non-containerized Node.js application 
 ## Recap
 
 This guide has walked you through setting up a local development environment using LocalStack and Docker. You’ve learned how to test AWS-based applications locally, reducing costs and increasing the efficiency of your development workflow.
+
+## Related guides
+
+- [Test AWS service integrations using LocalStack and Testcontainers](/guides/testcontainers-java-aws-localstack/)
+- [Execute commands inside containers](/guides/testcontainers-java-service-configuration/exec-in-container/)

@@ -10,19 +10,47 @@ weight: 20
 
 {{% include "compose/services.md" %}}
 
+## Service definition requirements
+
 A Compose file must declare a `services` top-level element as a map whose keys are string representations of service names,
 and whose values are service definitions. A service definition contains the configuration that is applied to each
 service container.
 
+### Build support
+
 Each service may also include a `build` section, which defines how to create the Docker image for the service.
 Compose supports building Docker images using this service definition. If not used, the `build` section is ignored and the Compose file is still considered valid. Build support is an optional aspect of the Compose Specification, and is
 described in detail in the [Compose Build Specification](build.md) documentation.
+
+### Deploy support
 
 Each service defines runtime constraints and requirements to run its containers. The `deploy` section groups
 these constraints and lets the platform adjust the deployment strategy to best match containers' needs with
 available resources. Deploy support is an optional aspect of the Compose Specification, and is
 described in detail in the [Compose Deploy Specification](deploy.md) documentation.
 If not implemented the `deploy` section is ignored and the Compose file is still considered valid.
+
+## Find a service setting
+
+| Task | Attributes and related reference |
+| --- | --- |
+| Choose or build an image | [image](#image), [build](#build), [pull_policy](#pull_policy), [platform](#platform), [Build Specification](build.md) |
+| Set the container command and process | [command](#command), [entrypoint](#entrypoint), [init](#init), [working_dir](#working_dir), [stdin_open](#stdin_open), [tty](#tty) |
+| Set environment variables | [env_file](#env_file), [file format and interpolation](#env_file-format), [environment](#environment), [interpolation](interpolation.md) |
+| Order startup and shutdown | [depends_on](#depends_on), [healthcheck](#healthcheck), [links](#links) |
+| Configure lifecycle and scaling | [restart](#restart), [stop_signal](#stop_signal), [stop_grace_period](#stop_grace_period), [post_start](#post_start), [pre_stop](#pre_stop), [scale](#scale), [container_name](#container_name), [deploy](#deploy) |
+| Connect services | [networks](#networks), [network_mode](#network_mode), [hostname](#hostname), [domainname](#domainname), [dns](#dns), [dns_opt](#dns_opt), [dns_search](#dns_search), [extra_hosts](#extra_hosts), [external_links](#external_links) |
+| Publish or expose ports | [ports and publishing warnings](#ports), [expose](#expose) |
+| Mount data and configuration | [volumes and mount caveats](#volumes), [volumes_from](#volumes_from), [tmpfs](#tmpfs), [configs](#configs), [storage_opt](#storage_opt) |
+| Grant access to sensitive data | [secrets and file-source limitations](#secrets), [build secrets](build.md#secrets) |
+| Configure CPU, memory, and process limits | [CPU settings](#cpu_count), [cpus](#cpus), [cpuset](#cpuset), [mem_limit](#mem_limit), [mem_reservation](#mem_reservation), [mem_swappiness](#mem_swappiness), [memswap_limit](#memswap_limit), [oom_kill_disable](#oom_kill_disable), [oom_score_adj](#oom_score_adj), [pids_limit](#pids_limit), [shm_size](#shm_size), [ulimits](#ulimits), [deployment resources](deploy.md#resources) |
+| Configure devices and I/O | [devices](#devices), [device_cgroup_rules](#device_cgroup_rules), [gpus](#gpus), [blkio_config](#blkio_config) |
+| Configure users, privileges, and isolation | [user](#user), [group_add](#group_add), [credential_spec](#credential_spec), [cap_add](#cap_add), [cap_drop](#cap_drop), [privileged](#privileged), [security_opt](#security_opt), [read_only](#read_only), [isolation](#isolation), [userns_mode](#userns_mode), [ipc](#ipc), [pid](#pid), [uts](#uts), [cgroup](#cgroup), [cgroup_parent](#cgroup_parent), [sysctls](#sysctls), [runtime](#runtime), [use_api_socket](#use_api_socket) |
+| Set metadata and logging | [annotations](#annotations), [labels](#labels), [label_file](#label_file), [logging](#logging), [attach](#attach) |
+| Reuse or select service definitions | [extends and its restrictions](#extends), [profiles](#profiles), [profile dependency rules](profiles.md) |
+| Configure development, models, or providers | [develop](#develop), [Develop Specification](develop.md), [models](#models), [model declarations](models.md), [provider](#provider) |
+
+For the full attribute reference, continue to [Attributes](#attributes).
 
 ## Examples
 
@@ -1258,7 +1286,7 @@ are platform specific. Driver specific options can be set with `options` as key-
 `mac_address` sets a Mac address for the service container.
 
 > [!NOTE]
-> Container runtimes might reject this value, for example Docker Engine >= v25.0. In that case, you should use [networks.mac_address](#mac_address) instead.
+> Container runtimes might reject this value, for example Docker Engine >= v25.0. In that case, you should use [networks.mac_address](#networks) instead.
 
 ### `mem_limit`
 

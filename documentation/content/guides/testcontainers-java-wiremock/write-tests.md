@@ -5,9 +5,17 @@ description: Test external REST API integrations using WireMock with both the JU
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-wiremock/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-wiremock/create-project/)
+
 Mocking external API interactions at the HTTP protocol level, rather than
 mocking Java methods, lets you verify marshalling and unmarshalling behavior and
 simulate network issues.
+
+## In this step
+
+- [Test using WireMock JUnit 5 extension](#test-using-wiremock-junit-5-extension)
+- [Stub using JSON mapping files](#stub-using-json-mapping-files)
+- [Test using the Testcontainers WireMock module](#test-using-the-testcontainers-wiremock-module)
 
 ## Test using WireMock JUnit 5 extension
 
@@ -121,6 +129,8 @@ class AlbumControllerTest {
   }
 }
 ```
+
+### How the test works
 
 Here's what the test does:
 
@@ -483,6 +493,8 @@ class AlbumControllerTestcontainersTests {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - The `@Testcontainers` and `@Container` annotations start a
@@ -493,3 +505,7 @@ Here's what the test does:
   WireMock container's base URL.
 - The tests don't contain inline stub definitions because WireMock loads them
   from the JSON configuration files.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-wiremock/run-tests/)

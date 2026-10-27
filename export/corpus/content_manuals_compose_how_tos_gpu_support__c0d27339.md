@@ -8,7 +8,11 @@ aliases:
 - /compose/gpu-support/
 ---
 
-Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](/manuals/engine/containers/resource_constraints.md#gpu) if you haven't already done so.
+## Prerequisites
+
+Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](/manuals/engine/containers/gpu.md#prerequisites) if you haven't already done so.
+
+For Docker Desktop for Windows, review the [GPU prerequisites and validation steps](/manuals/desktop/features/gpu.md).
 
 The examples in the following sections focus specifically on providing service containers access to GPU devices with Docker Compose. 
 
@@ -80,6 +84,8 @@ test_1  | +---------------------------------------------------------------------
 gpu_test_1 exited with code 0
 
 ```
+
+## Choose GPUs on multi-GPU hosts
 
 On machines hosting multiple GPUs, the `device_ids` field can be set to target specific GPU devices and `count` can be used to limit the number of GPU devices assigned to a service container. 
 

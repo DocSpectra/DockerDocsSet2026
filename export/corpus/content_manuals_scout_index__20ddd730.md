@@ -55,4 +55,16 @@ Docker Scout is a standalone service and platform that you can interact with
 using Docker Desktop, Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
 Docker Scout also facilitates integrations with third-party systems, such as container registries and CI platforms.
 
+## Choose a task
+
+- [Install Docker Scout](./install.md) or [follow the quickstart](./quickstart.md)
+- [Enable repository analysis](./explore/analysis.md#activate-docker-scout-on-a-repository) or [analyze local images](./explore/analysis.md#analyze-images-locally)
+- [View and extract SBOMs](./how-tos/view-create-sboms.md)
+- [View policy status](./policy/view.md), [configure policies](./policy/configure.md), or [find remediation recommendations](./policy/remediation.md)
+- [Create and view vulnerability exceptions](./explore/exceptions.md)
+- [Connect registries, CI, and environments](./integrations/_index.md)
+- [Export metrics](./explore/metrics-exporter.md)
+- [Review data handling](./deep-dive/data-handling.md) and [release notes](./release-notes/_index.md)
+- [Read the software supply chain guide](/guides/docker-scout/)
+
 {{< grid >}}

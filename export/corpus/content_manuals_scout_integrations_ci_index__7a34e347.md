@@ -22,3 +22,5 @@ Available integrations:
 You can also add runtime integration as part of your CI/CD pipeline, which lets
 you assign an image to an environment, such as `production` or `staging`, when
 you deploy it. For more information, see [Environment monitoring](../environment/_index.md).
+
+For policy-based CI checks, see [Evaluate policy compliance in CI](../../policy/ci.md).

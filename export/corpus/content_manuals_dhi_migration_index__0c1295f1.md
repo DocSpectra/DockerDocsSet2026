@@ -40,6 +40,13 @@ Hardened Images (DHI). Migrating to DHI enhances the security posture of your
 containerized applications by leveraging hardened base images with built-in
 security features.
 
+## Before migrating
+
+Review the [migration checklist](./checklist.md) for package management,
+non-root users, certificates, ports, entry points, and shells. For Dockerfile
+examples, choose [Go](./examples/go.md), [Python](./examples/python.md), or
+[Node.js](./examples/node.md).
+
 ## Migration paths
 
 Choose the migration approach that best fits your needs:

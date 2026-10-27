@@ -18,6 +18,18 @@ faster, both locally and in CI. Builds run on cloud infrastructure optimally
 dimensioned for your workloads, no configuration required. The service uses a
 remote build cache, ensuring fast builds anywhere and for all team members.
 
+## Find a Build Cloud task
+
+- [Get access](#get-docker-build-cloud)
+- [Set up a builder and review prerequisites](setup.md)
+- [Build images and choose where results go](usage.md)
+- [Set up CI credentials and choose a platform example](ci.md)
+- [Configure storage, private resources, and egress](builder-settings.md)
+- [Optimize remote builds](optimization.md)
+- [Read release notes](release-notes.md)
+
+For demos, see the [Docker Build Cloud guide](/guides/docker-build-cloud/_index.md).
+
 ## How Docker Build Cloud works
 
 Using Docker Build Cloud is no different from running a regular build. You invoke a
@@ -64,4 +76,4 @@ Once you've signed up and created a builder, continue by
 [setting up the builder in your local environment](./setup.md).
 
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](/manuals/enterprise/security/roles-and-permissions.md#docker-build-cloud-permissions).
+[Roles and Permissions](/manuals/enterprise/security/roles-and-permissions/core-roles.md#docker-build-cloud-permissions).

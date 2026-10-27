@@ -4,7 +4,15 @@ description: Explore common challenges and questions related to Docker Build Clo
 weight: 40
 ---
 
-### Is Docker Build Cloud a standalone product or a part of Docker Desktop?
+## Find a topic
+
+- [Desktop and standalone setup](#is-docker-build-cloud-a-standalone-product-or-a-part-of-docker-desktop)
+- [Docker Compose](#how-does-docker-build-cloud-work-with-docker-compose)
+- [Team plan minutes](#how-many-minutes-are-included-in-docker-build-cloud-team-plans)
+- [Personal accounts and trials](#im-a-docker-personal-user-can-i-try-docker-build-cloud)
+- [CI platforms and GitHub Actions](#does-docker-build-cloud-support-ci-platforms-does-it-work-with-github-actions)
+
+## Is Docker Build Cloud a standalone product or a part of Docker Desktop?
 
 Docker Build Cloud is a service that can be used both with Docker Desktop and
 standalone. It lets you build your container images faster, both locally and in
@@ -23,16 +31,18 @@ If you plan on building with Docker Build Cloud using the `docker compose
 build` command, you also need a version of Docker Compose that supports Docker
 Build Cloud.
 
-### How does Docker Build Cloud work with Docker Compose?
+For written setup steps, see [Docker Build Cloud setup](/manuals/build-cloud/setup.md).
+
+## How does Docker Build Cloud work with Docker Compose?
 
 Docker Compose works out of the box with Docker Build Cloud. Install the Docker
 Build Cloud-compatible client (buildx) and it works with both commands.
 
-### How many minutes are included in Docker Build Cloud Team plans?
+## How many minutes are included in Docker Build Cloud Team plans?
 
 Pricing details for Docker Build Cloud can be found on the [pricing page](https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesBuildCloudFaq).
 
-### I’m a Docker personal user. Can I try Docker Build Cloud?
+## I’m a Docker personal user. Can I try Docker Build Cloud?
 
 Docker subscribers (Pro, Team, Business) receive a set number of minutes each
 month, shared across the account, to use Build Cloud.
@@ -44,7 +54,7 @@ single user.
 For teams to receive the shared cache benefit, they must either be on a Docker
 Team or Docker Business subscription.
 
-### Does Docker Build Cloud support CI platforms? Does it work with GitHub Actions?
+## Does Docker Build Cloud support CI platforms? Does it work with GitHub Actions?
 
 Yes, Docker Build Cloud can be used with various CI platforms including GitHub
 Actions, CircleCI, Jenkins, and others. It can speed up your build pipelines,

@@ -33,10 +33,10 @@ Provisioning helps manage users by automating tasks like account creation, updat
 
 | Provisioning method | Description | Default setting in Docker | Recommended for |
 | :--- | :--- | :------------- | :--- |
-| System for Cross-domain Identity Management (SCIM) | Continuously syncs user data between your IdP and Docker, ensuring user attributes remain updated without manual intervention | Disabled by default | Larger organizations or environments with frequent changes in user information or roles |
-| Group mapping | Maps user groups from your IdP to specific roles and permissions within Docker, enabling fine-grained access control based on group membership | Disabled by default | Organizations requiring strict access control and role-based user management |
-| Just-in-Time (JIT) | Automatically creates and provisions user accounts when they first sign in via SSO | Enabled by default | Organizations needing minimal setup, smaller teams, or low-security environments |
-| Auto-provision | Adds users when email addresses match a verified domain | Disabled by default | Orgs without SSO that need to add existing Docker users by domain |
+| [System for Cross-domain Identity Management (SCIM)](scim/provision-scim.md) | Continuously syncs user data between your IdP and Docker, ensuring user attributes remain updated without manual intervention | Disabled by default | Larger organizations or environments with frequent changes in user information or roles |
+| [Group mapping](scim/group-mapping.md) | Maps user groups from your IdP to specific roles and permissions within Docker, enabling fine-grained access control based on group membership | Disabled by default | Organizations requiring strict access control and role-based user management |
+| [Just-in-Time (JIT)](just-in-time.md) | Automatically creates and provisions user accounts when they first sign in via SSO | Enabled by default | Organizations needing minimal setup, smaller teams, or low-security environments |
+| [Auto-provision](auto-provisioning.md) | Adds users when email addresses match a verified domain | Disabled by default | Orgs without SSO that need to add existing Docker users by domain |
 
 ## Default provisioning setup
 

@@ -5,6 +5,8 @@ description: Manage Testcontainers container lifecycle using JUnit 5 @BeforeAll 
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-lifecycle/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-lifecycle/create-project/)
+
 When testing with Testcontainers, you want to start the required containers
 before executing any tests and remove them afterwards. You can use JUnit 5
 `@BeforeAll` and `@AfterAll` lifecycle callback methods for this:
@@ -81,7 +83,7 @@ Here's what the code does:
 - `@BeforeEach` initializes `CustomerService` with the container's JDBC
   parameters and deletes all rows to give each test a clean database.
 
-Key observations:
+## Container scope and cleanup
 
 - Because the container is a **static field**, it's shared across all test
   methods in the class. You can declare it as a non-static field and use
@@ -90,3 +92,7 @@ Key observations:
 - Even without explicitly stopping the container in `@AfterAll`, Testcontainers
   uses the [Ryuk container](https://github.com/testcontainers/moby-ryuk) to
   clean up containers automatically when the JVM exits.
+
+## Continue
+
+[Next: Extension annotations](/guides/testcontainers-java-lifecycle/extension-annotations/)

@@ -14,12 +14,12 @@ Environment variables and interpolation in Docker Compose help you create reusab
 >
 > Before using environment variables, read through all of the information first to get a full picture of environment variables in Docker Compose.
 
-This section covers:
+## Choose a task
 
-- [How to set environment variables within your container's environment](set-environment-variables.md).
-- [How environment variable precedence works within your container's environment](envvars-precedence.md).
-- [Pre-defined environment variables](envvars.md).
-
-It also covers: 
-- How [interpolation](variable-interpolation.md) can be used to set variables within your Compose file and how it relates to a container's environment.
-- Some [best practices](best-practices.md).
+| Task | Instructions |
+| --- | --- |
+| Set environment variables within your container's environment | [Set environment variables](set-environment-variables.md) |
+| Resolve precedence within your container's environment | [Environment variables precedence](envvars-precedence.md) |
+| Configure pre-defined environment variables | [Pre-defined environment variables](envvars.md) |
+| Set variables within your Compose file and understand their relationship to a container's environment | [Interpolation](variable-interpolation.md) |
+| Review best practices | [Best practices](best-practices.md) |

@@ -5,3 +5,5 @@ params:
   sidebar:
     goto: "https://github.com/docker/buildx/releases"
 ---
+
+[Read the release notes](https://github.com/docker/buildx/releases).

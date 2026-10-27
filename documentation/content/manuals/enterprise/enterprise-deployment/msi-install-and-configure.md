@@ -16,6 +16,32 @@ aliases:
 
 The MSI package supports various MDM (Mobile Device Management) solutions, making it ideal for bulk installations and eliminating the need for manual setups by individual users. With this package, IT administrators can ensure standardized, policy-driven installations of Docker Desktop, enhancing efficiency and software management across their organizations.
 
+## Choose a task
+
+- [Install interactively](#install-interactively).
+- [Install from the command line](#install-from-the-command-line).
+- [Review update behavior](#updates).
+- [Uninstall Docker Desktop](#common-uninstall-commands).
+- [Configure installer properties](#configuration-options).
+- [Control installer analytics](#analytics).
+
+## Reboot behavior
+
+Additionally, you can also use `/norestart` or `/forcerestart` to control reboot behaviour.
+
+By default, the installer reboots the machine after a successful installation. When run silently, the reboot is automatic and the user is not prompted.
+
+## Updates
+
+> [!NOTE]
+>
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates.
+> Starting with Docker Desktop version 4.60 and later, in-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
+>
+> Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the **Enterprise deployment** page.
+>
+> To keep up to date with new releases, check the [release notes](/manuals/desktop/release-notes.md) page.
+
 ## Install interactively
 
 1. In [Docker Home](http://app.docker.com), choose your organization.
@@ -41,15 +67,6 @@ If your administrator account is different from your user account, you must add 
 2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
 3. Right-click to add the user to the group.
 4. Sign out and sign back in for the changes to take effect.
-
-> [!NOTE]
->
-> When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates.
-> Starting with Docker Desktop version 4.60 and later, in-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](../security/hardened-desktop/settings-management/).
->
-> Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the **Enterprise deployment** page.
->
-> To keep up to date with new releases, check the [release notes](/manuals/desktop/release-notes.md) page.
 
 ## Install from the command line
 
@@ -144,7 +161,7 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
 > - The string shouldn't contain any whitespace
 > - Property names are expected to be in double quotes
 
-### Common uninstall commands
+## Common uninstall commands
 
 When uninstalling Docker Desktop, you need to use the same `.msi` file that was originally used to install the application.
 
@@ -172,31 +189,31 @@ IdentifyingNumber                      Name
 msiexec /x {10FC87E2-9145-4D7D-B493-2E99E8D8E103} /L*V ".\msi.log" /quiet
 ```
 
-#### Uninstall interactively with verbose logging
+### Uninstall interactively with verbose logging
 
 ```powershell
 msiexec /x "DockerDesktop.msi" /L*V ".\msi.log"
 ```
 
-#### Uninstall interactively without verbose logging
+### Uninstall interactively without verbose logging
 
 ```powershell
 msiexec /x "DockerDesktop.msi"
 ```
 
-#### Uninstall non-interactively with verbose logging
+### Uninstall non-interactively with verbose logging
 
 ```powershell
 msiexec /x "DockerDesktop.msi" /L*V ".\msi.log" /quiet
 ```
 
-#### Uninstall non-interactively without verbose logging
+### Uninstall non-interactively without verbose logging
 
 ```powershell
 msiexec /x "DockerDesktop.msi" /quiet
 ```
 
-### Configuration options
+## Configuration options
 
 In addition to the following custom properties, the Docker Desktop MSI installer also supports the standard [Windows Installer command line options](https://learn.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options).
 
@@ -221,10 +238,6 @@ In addition to the following custom properties, the Docker Desktop MSI installer
 | `WSLDEFAULTDATAROOT`               | Specifies the default location for the WSL distribution disk.                                                                                                                                                                                                                                 | None                    |
 | `DISABLEANALYTICS`                 | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics).                                                                                                                                                                          | 0                       |
 | `REMOVEEXISTINGINSTALL`            | When set to 1, any existing EXE installations are removed. Existing settings and content are preserved. Available with Docker Desktop version 4.61 and later.   | 1 |
-
-Additionally, you can also use `/norestart` or `/forcerestart` to control reboot behaviour.
-
-By default, the installer reboots the machine after a successful installation. When run silently, the reboot is automatic and the user is not prompted.
 
 ## Analytics
 

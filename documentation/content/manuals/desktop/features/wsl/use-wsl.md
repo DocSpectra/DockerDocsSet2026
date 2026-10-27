@@ -11,9 +11,13 @@ The following section describes how to start developing your applications using 
 
 For the best development experience, store your code inside your default Linux distribution. After you have turned on the WSL 2 feature on Docker Desktop, you can start working with your code inside the Linux distribution and ideally with your IDE still in Windows. This workflow is straightforward if you are using [VS Code](https://code.visualstudio.com/download).
 
-## Develop with Docker and WSL 2
+## Before you begin
 
-Before you begin, make sure you have enabled WSL 2 integration in Docker Desktop under **Settings** > **Resources** > **WSL Integration**.
+Make sure you have [enabled WSL 2 integration](_index.md#enable-docker-in-a-wsl-2-distribution) in Docker Desktop under **Settings** > **Resources** > **WSL Integration**.
+
+See [file system performance with bind mounts](best-practices.md#optimise-file-system-performance-with-bind-mounts) for source file placement and file change events.
+
+## Develop with Docker and WSL 2
 
 1. Open VS Code and install the [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension. This extension lets you work with a remote server in the Linux distribution and your IDE client still on Windows.
 2. Open your terminal and type:
@@ -31,4 +35,3 @@ Before you begin, make sure you have enabled WSL 2 integration in Docker Desktop
 
 
 Alternatively, you can open your default Linux distribution from the **Start** menu, navigate to your project directory, and then run `code .`
-

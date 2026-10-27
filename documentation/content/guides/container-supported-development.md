@@ -37,6 +37,14 @@ And best of all, you can have these benefits regardless of whether the main app 
 
 Works well with Docker Compose and Testcontainers.
 
+## Choose a module
+
+- [What is container-supported development?](#what-is-container-supported-development)
+- [Run databases locally](#demo-running-databases-locally)
+- [Mock API endpoints](#demo-mocking-api-endpoints)
+- [Develop the cloud locally](#demo-developing-the-cloud-locally)
+- [Add debug and troubleshooting tools](#demo-adding-additional-debug-and-troubleshooting-tools)
+
 ## Modules
 
 ### What is container-supported development?
@@ -84,5 +92,10 @@ With container-supported development, you can run local instances of these servi
 Once you start using containers in your development environment, it becomes much easier to add additional containers to visualize the contents of the databases or message queues, seed document stores, or event publishers. In this demo, you'll see a few of these examples, as well as how you can connect multiple containers together to make testing even easier.
 
 {{< youtube-embed TCZX15aKSu4 >}}
+
+## Related labs
+
+- [Container-Supported Development](lab-container-supported-development.md)
+- [The Containerized SDLC](lab-containerized-sdlc.md)
 
 <div id="lp-survey-anchor"></div>

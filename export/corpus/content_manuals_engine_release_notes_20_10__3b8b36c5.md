@@ -11,6 +11,19 @@ toc_max: 2
 This document describes the latest changes, additions, known issues, and fixes
 for Docker Engine version 20.10.
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [20.10.24](#201024), [20.10.22](#201022), [20.10.20](#201020), [20.10.19](#201019), [20.10.18](#201018), [20.10.17](#201017), [20.10.16](#201016), [20.10.14](#201014), [20.10.12](#201012), [20.10.11](#201011), [20.10.9](#20109), [20.10.7](#20107), [20.10.6](#20106), [20.10.3](#20103), [20.10.0](#20100) |
+| Known issue and limitation sections | [20.10.15](#201015) |
+| Security sections | [20.10.4](#20104), [20.10.3](#20103), [20.10.0](#20100) |
+| Deprecation and removal sections | [20.10.8](#20108), [20.10.0](#20100) |
+| Release notices | [20.10.12](#201012), [20.10.11](#201011), [20.10.10](#201010), [20.10.9](#20109), [20.10.8](#20108) |
+| Initial release entry | [20.10.0](#20100) |
+
 ## 20.10.24
 {{< release-date date="2023-04-04" >}}
 

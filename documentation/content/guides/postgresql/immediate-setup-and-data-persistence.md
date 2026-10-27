@@ -8,16 +8,20 @@ keywords:
 weight: 10
 ---
 
+[PostgreSQL guide](_index.md) / [Setup and persistence](immediate-setup-and-data-persistence.md) / [Configuration](advanced-configuration-and-initialization.md) / [Networking](networking-and-connectivity.md) / [Companions](companions-for-postgresql.md)
+
 This guide gets you from zero to a running PostgreSQL container in under five minutes, then explains how to keep your data safe across container restarts and removals.
 
 ## Overview
 
 Running PostgreSQL in Docker requires understanding one critical concept: containers are ephemeral, but your data shouldn't be. This guide covers:
 
-- Starting PostgreSQL with a single command
-- Understanding why containers lose data by default
-- Configuring volumes for persistent storage
-- Translating your setup to Docker Compose
+- [Starting PostgreSQL with a single command](#quick-start-minimal-viable-container)
+- [Understanding why containers lose data by default](#the-data-persistence-problem)
+- [Configuring named volumes for persistent storage](#named-volumes)
+- [Using bind mounts](#bind-mounts-alternative) and [handling permission issues](#common-bind-mount-issues)
+- [Translating your setup to Docker Compose](#docker-compose-configuration)
+- [Environment variables reference](#environment-variables-reference)
 
 ## Quick start (minimal viable container)
 
@@ -143,6 +147,10 @@ Your `testdb` database vanished because the new container started with a fresh f
 
 Named volumes are Docker-managed storage locations that persist independently of containers. Docker handles the filesystem location, permissions, and lifecycle.
 
+> [!NOTE]
+>
+> PostgreSQL 18+ stores data in a version-specific subdirectory under `/var/lib/postgresql`. Mounting at this level (rather than `/var/lib/postgresql/data`) allows for easier upgrades using `pg_upgrade --link`.
+
 Create a container with a named volume:
 
 {{< tabs >}}
@@ -175,10 +183,6 @@ $ docker run --rm --name postgres-dev \
 
 
 The `-v postgres_data:/var/lib/postgresql` flag mounts a named volume called `postgres_data` to PostgreSQL's data directory. If the volume doesn't exist, Docker creates it automatically.
-
-> [!NOTE]
->
-> PostgreSQL 18+ stores data in a version-specific subdirectory under `/var/lib/postgresql`. Mounting at this level (rather than `/var/lib/postgresql/data`) allows for easier upgrades using `pg_upgrade --link`.
 
 ### Verify persistence works
 
@@ -381,3 +385,5 @@ With persistent storage configured, you're ready to customize PostgreSQL further
 - Automated schema creation with initialization scripts
 - Performance tuning for containerized workloads
 - Timezone and locale configuration
+
+Continue to [Advanced configuration and initialization](advanced-configuration-and-initialization.md). For connection steps, see [Networking and connectivity](networking-and-connectivity.md).

@@ -14,6 +14,14 @@ aliases:
 Multi-stage builds are useful to anyone who has struggled to optimize
 Dockerfiles while keeping them easy to read and maintain.
 
+## Find a stage task
+
+- [Build with multiple stages](#use-multi-stage-builds).
+- [Name stages](#name-your-build-stages) or [select a target stage](#stop-at-a-specific-build-stage).
+- [Copy from an external image](#use-an-external-image-as-a-stage).
+- [Reuse a previous stage](#use-a-previous-stage-as-a-new-stage).
+- Check [legacy builder and BuildKit differences](#differences-between-legacy-builder-and-buildkit).
+
 ## Use multi-stage builds
 
 With multi-stage builds, you use multiple `FROM` statements in your Dockerfile.

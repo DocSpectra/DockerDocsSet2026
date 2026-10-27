@@ -81,3 +81,11 @@ Docker Hardened Images give you a secure foundation, complete with signed
 metadata and upstream transparency. Your role is to make informed use of these
 images, apply updates promptly, and validate that your configurations and
 applications meet your internal requirements.
+
+## Related tasks
+
+- [Pull and use updated images](../how-to/use.md#pull-run-and-reference-dhis)
+- [Customize an image or chart](../how-to/customize.md)
+- [Verify attestations](../how-to/verify.md)
+- [Scan images](../how-to/scan.md)
+- [Find feedback and security disclosure channels](./feedback.md)

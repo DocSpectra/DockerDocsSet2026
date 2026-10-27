@@ -24,4 +24,11 @@ reviewing violations or compliance uncertainties. With integrations like
 GitHub, you can even automate updates, directly fixing issues from the
 dashboard.
 
+For task instructions, see [View remediation recommendations](/manuals/scout/policy/remediation.md#view-recommendations).
+
+## Continue
+
+- [Common challenges and questions](./common-questions.md)
+- [Guide contents](./_index.md)
+
 <div id="scout-lp-survey-anchor"></div>

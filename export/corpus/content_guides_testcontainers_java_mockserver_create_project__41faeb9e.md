@@ -5,6 +5,16 @@ description: Set up a Spring Boot project with an external REST API integration 
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-mockserver/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the Album and Photo models](#create-the-album-and-photo-models)
+- [Create the PhotoServiceClient interface](#create-the-photoserviceclient-interface)
+- [Register PhotoServiceClient as a bean](#register-photoserviceclient-as-a-bean)
+- [Create the REST API endpoint](#create-the-rest-api-endpoint)
+
 ## Set up the project
 
 Create a Spring Boot project from [Spring Initializr](https://start.spring.io)
@@ -214,3 +224,7 @@ response like:
   ]
 }
 ```
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-mockserver/write-tests/)

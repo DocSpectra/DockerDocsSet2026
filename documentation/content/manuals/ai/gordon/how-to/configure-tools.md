@@ -18,6 +18,15 @@ Tool configuration provides an additional layer of control:
 - Disabled tools: Gordon cannot use these tools, and will not request
   permission to use them
 
+## Find a tool setting
+
+- [Open tool settings](#accessing-tool-settings)
+- [Enable or disable a tool](#basic-tool-settings)
+- [Configure allow and deny rules](#advanced-tool-settings)
+- [Set organizational controls](#organizational-controls)
+
+For approval settings and session permissions, see [Permissions](permissions.md).
+
 ## Accessing tool settings
 
 To configure Gordon's tools:

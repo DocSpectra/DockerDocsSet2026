@@ -10,6 +10,19 @@ aliases:
 The `docker build` and `docker buildx build` commands build Docker images from
 a [Dockerfile](/reference/dockerfile.md) and a context.
 
+## Choose a context task
+
+| Task | Steps and caveats |
+| --- | --- |
+| Build from local files | [Local directories](#local-directories), [Dockerfile from stdin](#local-context-with-dockerfile-from-stdin), [local tarballs](#local-tarballs) |
+| Build from a Git repository | [Git repositories](#git-repositories), [URL fragments](#url-fragments), [URL queries](#url-queries) |
+| Authenticate to a private Git repository | [Private repositories](#private-repositories), [Git authentication secrets](../building/secrets.md#git-authentication-for-remote-contexts) |
+| Retain Git metadata | [Keep .git directory](#keep-git-directory) |
+| Use remote files | [Dockerfile from stdin](#remote-context-with-dockerfile-from-stdin), [remote tarballs and download location](#remote-tarballs) |
+| Build without filesystem inputs | [Empty context and COPY limitation](#empty-context) |
+| Exclude files from a context | [.dockerignore filenames](#filename-and-location), [patterns](#syntax), [exceptions](#negating-matches) |
+| Combine input sources | [Named contexts](#named-contexts), [named contexts with Bake](#named-contexts-with-bake) |
+
 ## What is a build context?
 
 The build context is the set of files that your build can access.

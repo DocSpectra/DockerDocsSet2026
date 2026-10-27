@@ -1,7 +1,7 @@
 ---
 title: Deploy your Node.js application
 linkTitle: Deploy your app
-weight: 50
+weight: 60
 keywords: deploy, kubernetes, node, node.js, production
 description: Learn how to deploy your containerized Node.js application to Kubernetes with production-ready configuration
 aliases:
@@ -9,9 +9,23 @@ aliases:
   - /guides/language/nodejs/deploy/
 ---
 
+[Node.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create the deployment manifest](#create-a-kubernetes-deployment-file)
+- [Customize the deployment](#configure-the-deployment)
+- [Review architecture and deployment settings](#understanding-the-deployment)
+- [Deploy](#step-1-deploy-to-kubernetes)
+- [Verify resources](#step-2-verify-the-deployment)
+- [Access the application](#step-3-access-your-application)
+- [Test and monitor](#step-4-test-the-deployment)
+- [Clean up](#step-5-clean-up)
+
 ## Prerequisites
 
-- Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md).
+- Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize a Node.js application](containerize.md).
 - [Turn on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 
 ## Overview

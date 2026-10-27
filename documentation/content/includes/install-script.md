@@ -10,6 +10,8 @@ about installation steps to install using the package repository. The source cod
 for the script is open source, and you can find it in the
 [`docker-install` repository on GitHub](https://github.com/docker/docker-install).
 
+#### Review risks and limitations
+
 <!-- prettier-ignore -->
 Always examine scripts downloaded from the internet before running them locally.
 Before installing, make yourself familiar with potential risks and limitations
@@ -39,6 +41,8 @@ of the convenience script:
 > $ curl -fsSL https://get.docker.com -o get-docker.sh
 > $ sudo sh ./get-docker.sh --dry-run
 > ```
+
+#### Install the latest stable release
 
 This example downloads the script from
 [https://get.docker.com/](https://get.docker.com/) and runs it to install the

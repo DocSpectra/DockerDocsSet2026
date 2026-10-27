@@ -8,6 +8,8 @@ aliases:
   - /language/python/lint-format-typing/
 ---
 
+[Python guide overview](_index.md)
+
 ## Prerequisites
 
 Complete [Develop your app](develop.md).
@@ -128,3 +130,5 @@ These tools help maintain code quality and catch errors early in development.
 - [Configure GitHub Actions](configure-github-actions.md) to run these checks automatically
 - Customize linting rules to match your team's style preferences
 - Explore advanced type checking features
+
+Continue: [Configure GitHub Actions](configure-github-actions.md).

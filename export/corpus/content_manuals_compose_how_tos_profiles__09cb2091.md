@@ -91,9 +91,8 @@ Only the targeted service (and any of its declared dependencies via `depends_on`
 - They are also explicitly targeted, or
 - The profile is explicitly enabled using `--profile` or `COMPOSE_PROFILES`.
 
-When a service with assigned `profiles` is explicitly targeted on the command
-line its profiles are started automatically so you don't need to start them
-manually. This can be used for one-off services and debugging tools.
+### Example: run a one-off service
+
 As an example consider the following configuration:
 
 ```yaml
@@ -122,6 +121,8 @@ $ docker compose run db-migrations
 ```
 
 In this example, `db-migrations` runs even though it is assigned to the tools profile, because it was explicitly targeted. The `db` service is also started automatically because it is listed in `depends_on`.
+
+### Dependencies gated by profiles
 
 If the targeted service has dependencies that are also gated behind a profile, you must ensure those dependencies are either: 
  - In the same profile

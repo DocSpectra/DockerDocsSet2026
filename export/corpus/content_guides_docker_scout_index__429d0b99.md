@@ -45,6 +45,23 @@ compliance with security standards.
 - Review SBOMs and how to use them
 - Detect and monitor vulnerabilities
 
+## Follow the guide
+
+1. [Why Docker Scout?](./why.md)
+2. [Docker Scout demo](./demo.md)
+3. [Software supply chain security](./s3c.md)
+4. [Software Bill of Materials](./sbom.md)
+5. [Attestations](./attestations.md)
+6. [Remediation](./remediation.md)
+
+See also [Common challenges and questions](./common-questions.md).
+
+## Try the tasks
+
+- [Install Docker Scout](/manuals/scout/install.md)
+- [Analyze and fix the example image](/manuals/scout/quickstart.md)
+- [Choose a Docker Scout task](/manuals/scout/_index.md#choose-a-task)
+
 ## Tools integration
 
 Works well with Docker Desktop, GitHub Actions, Jenkins, Kubernetes, and

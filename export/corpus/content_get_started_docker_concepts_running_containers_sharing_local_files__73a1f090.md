@@ -7,10 +7,14 @@ aliases:
  - /guides/docker-concepts/running-containers/sharing-local-files/
 ---
 
+On this page: [Choose a mount type](#volume-versus-bind-mounts) · [Mount syntax and missing paths](#sharing-files-between-a-host-and-container) · [Permissions and synchronized shares](#file-permissions-for-docker-access-to-host-files) · [Run the sample](#run-a-container) · [Mount host files and review PowerShell syntax](#use-a-bind-mount) · [Inspect file changes](#access-the-file-on-the-docker-desktop-dashboard).
+
 {{< youtube-embed 2dAzsVg3Dek >}}
 
 
-## Explanation
+<a id="explanation"></a>
+
+## Volumes, bind mounts, and access to host files
 
 Each container has everything it needs to function with no reliance on any pre-installed dependencies on the host machine. Since containers run in isolation, they have minimal influence on the host and other containers. This isolation has a major benefit: containers minimize conflicts with the host system and other containers. However, this isolation also means containers can't directly access data on the host machine by default.
 
@@ -63,7 +67,9 @@ Read-only bind mounts let the container access the mounted files on the host for
 >
 > As your codebase grows larger, traditional methods of file sharing like bind mounts may become inefficient or slow, especially in development environments where frequent access to files is necessary. [Synchronized file shares](/manuals/desktop/features/synchronized-file-sharing.md) improve bind mount performance by leveraging synchronized filesystem caches. This optimization ensures that file access between the host and virtual machine (VM) is fast and efficient.
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Share host files with a container
 
 In this hands-on guide, you’ll practice how to create and use a bind mount to share files between a host and a container.
 
@@ -131,6 +137,9 @@ Using a bind mount, you can map the configuration file on your host computer to 
 
 4. It's time to run the container. The `--mount` and `-v` examples produce the same result. You can't run them both unless you remove the `my_site` container after running the first one.
 
+   > [!TIP]  
+   > When using the `-v` or `--mount` flag in Windows PowerShell, you need to provide the absolute path to your directory instead of just `./`. This is because PowerShell handles relative paths differently from bash (commonly used in Mac and Linux environments).    
+
    {{< tabs >}}
    {{< tab name="`-v`" >}}
 
@@ -147,12 +156,6 @@ Using a bind mount, you can map the configuration file on your host computer to 
 
    {{< /tab >}}
    {{< /tabs >}}
-
-
-   > [!TIP]  
-   > When using the `-v` or `--mount` flag in Windows PowerShell, you need to provide the absolute path to your directory instead of just `./`. This is because PowerShell handles relative paths differently from bash (commonly used in Mac and Linux environments).    
-
-
 
    With everything now up and running, you should be able to access the site via [http://localhost:8080](http://localhost:8080) and find a new webpage that welcomes you with a friendly whale.
 
@@ -199,4 +202,4 @@ The following resources will help you learn more about bind mounts:
 
 Now that you have learned about sharing local files with containers, it’s time to learn about multi-container applications.
 
-{{< button text="Multi-container applications" url="Multi-container applications" >}}
+{{< button text="Multi-container applications" url="multi-container-applications.md" >}}

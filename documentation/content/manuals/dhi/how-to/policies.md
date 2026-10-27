@@ -24,6 +24,14 @@ With policy evaluation built into Docker Scout, you can monitor image compliance
 in real time, integrate checks into your CI/CD workflows, and maintain
 consistent standards for image security and provenance.
 
+Choose a task:
+
+- [View existing policies](#view-existing-policies)
+- [Build and evaluate a DHI-based image](#example-build-and-evaluate-a-dhi-based-image)
+
+For mirroring prerequisites, see [Mirror a repository](./mirror.md). For signed
+security metadata, see [Verify an image or chart](./verify.md).
+
 ## View existing policies
 
 To see the current policies applied to a mirrored DHI repository:

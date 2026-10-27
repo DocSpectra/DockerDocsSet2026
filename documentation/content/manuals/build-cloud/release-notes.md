@@ -9,6 +9,8 @@ tags: [Release notes]
 This page contains information about the new features, improvements, known
 issues, and bug fixes in Docker Build Cloud releases. 
 
+For configuration steps, see [Builder settings](builder-settings.md).
+
 ## 2025-02-24
 
 ### New

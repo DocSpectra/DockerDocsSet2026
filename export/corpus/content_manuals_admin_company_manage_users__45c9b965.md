@@ -18,6 +18,16 @@ verify their email address before they can accept an invitation to join the
 organization. Pending invitations occupy seats for the organization
 the user is invited to.
 
+## Find a member task
+
+- [Invite by Docker ID or email](#invite-members-via-docker-id-or-email-address)
+- [Invite by CSV and review import requirements](#invite-members-via-csv-file)
+- [Invite through the API](#invite-members-via-api)
+- [Resend invitations](#resend-invitations-to-users)
+- [Manage team members](#manage-members-on-a-team)
+- [Accept an organization invitation](../../organization/manage/members.md#accept-invitation)
+- [Update an organization member's role](../../organization/manage/members.md#update-a-member-role)
+
 ## Invite members via Docker ID or email address
 
 Use the following steps to invite members to your organization via Docker ID or
@@ -45,6 +55,24 @@ email address.
 
 ## Invite members via CSV file
 
+### CSV file requirements
+
+The following is an example of the contents of a valid CSV file:
+
+```text
+email
+docker.user-0@example.com
+docker.user-1@example.com
+```
+
+- The file must contain a header row with at least one heading named `email`.
+  Additional columns are allowed and are ignored in the import.
+- The file must contain a maximum of 1000 email addresses (rows). To invite
+  more than 1000 users, create multiple CSV files and perform all steps in
+  this task for each file.
+
+### Upload a CSV file and invite members
+
 To invite multiple members to an organization via a CSV file containing email
 addresses:
 
@@ -54,22 +82,7 @@ addresses:
    to invite members to.
 1. Select **Members**, then **Invite**.
 1. Select **CSV upload**.
-1. Select **Download the template CSV file** to optionally download an example
-   CSV file. The following is an example of the contents of a valid CSV file.
-
-   ```text
-   email
-   docker.user-0@example.com
-   docker.user-1@example.com
-   ```
-
-   CSV file requirements:
-   - The file must contain a header row with at least one heading named `email`.
-     Additional columns are allowed and are ignored in the import.
-   - The file must contain a maximum of 1000 email addresses (rows). To invite
-     more than 1000 users, create multiple CSV files and perform all steps in
-     this task for each file.
-
+1. Select **Download the template CSV file** to optionally download an example CSV file.
 1. Create a new CSV file or export a CSV file from another application.
    - To export a CSV file from another application, see the application’s
      documentation.

@@ -5,6 +5,11 @@ description: Understand what CVEs are, how Docker Hardened Images reduce exposur
 keywords: docker cve scan, grype vulnerability scanner, trivy image scan, vex attestation, secure container images
 ---
 
+For scanner setup, VEX export requirements, and CI workflows, see [Scan Docker
+Hardened Images](../how-to/scan.md) and [Scan child images and CI
+builds](../how-to/scan-child-images.md). For scanner selection, see [Scanner
+integrations](../explore/scanner-integrations.md).
+
 ## What are CVEs?
 
 CVEs are publicly disclosed cybersecurity flaws in software or hardware. Each

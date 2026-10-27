@@ -5,6 +5,8 @@ description: Share containers across multiple test classes using the singleton c
 weight: 40
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-lifecycle/#prerequisites) · [Previous: Extension annotations](/guides/testcontainers-java-lifecycle/extension-annotations/)
+
 As the number of test classes grows, starting containers for each class adds
 up. The singleton containers pattern starts all required containers once in a
 common base class and reuses them across all integration tests.
@@ -111,3 +113,7 @@ without the `@Testcontainers` and `@Container` annotations.
 - [Testcontainers JUnit 5 quickstart](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
 - [Testcontainers singleton containers pattern](https://java.testcontainers.org/test_framework_integration/manual_lifecycle_control/#singleton-containers)
 - [Testing a Spring Boot REST API with Testcontainers](/guides/testcontainers-java-spring-boot-rest-api/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-lifecycle/)

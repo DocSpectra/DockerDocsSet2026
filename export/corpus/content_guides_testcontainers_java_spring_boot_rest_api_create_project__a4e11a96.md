@@ -5,6 +5,16 @@ description: Set up a Spring Boot project with Spring Data JPA, PostgreSQL, and 
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-spring-boot-rest-api/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the JPA entity](#create-the-jpa-entity)
+- [Create the Spring Data JPA repository](#create-the-spring-data-jpa-repository)
+- [Add the schema creation script](#add-the-schema-creation-script)
+- [Create the REST API endpoint](#create-the-rest-api-endpoint)
+
 ## Set up the project
 
 Create a Spring Boot project from [Spring Initializr](https://start.spring.io)
@@ -179,3 +189,7 @@ class CustomerController {
   }
 }
 ```
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-spring-boot-rest-api/write-tests/)

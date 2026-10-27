@@ -17,6 +17,8 @@ An external cache becomes almost essential in CI/CD build environments. Such
 environments usually have little-to-no persistence between runs, but it's still
 important to keep the runtime of image builds as low as possible.
 
+## Driver requirements and secrets
+
 The default `docker` driver supports the `inline`, `local`, `registry`, and
 `gha` cache backends, but only if you have enabled the [containerd image store](/manuals/desktop/features/containerd.md).
 Other cache backends require you to select a different [driver](/manuals/build/builders/drivers/_index.md).
@@ -29,27 +31,34 @@ Other cache backends require you to select a different [driver](/manuals/build/b
 > Manually managing secrets using `COPY` or `ARG` could result in leaked
 > credentials.
 
+## Find cache setup steps
+
+- [Choose a backend](#backends).
+- [Export and import cache](#command-syntax).
+- [Use multiple caches](#multiple-caches).
+- Configure [cache mode](#cache-mode), [compression](#cache-compression), or [OCI media types](#oci-media-types).
+
 ## Backends
 
 Buildx supports the following cache storage backends:
 
-- `inline`: embeds the build cache into the image.
+- [`inline`](./inline.md): embeds the build cache into the image.
 
   The inline cache gets pushed to the same location as the main output result.
   This only works with the [`image` exporter](../../exporters/image-registry.md).
 
-- `registry`: embeds the build cache into a separate image, and pushes to a
+- [`registry`](./registry.md): embeds the build cache into a separate image, and pushes to a
   dedicated location separate from the main output.
 
-- `local`: writes the build cache to a local directory on the filesystem.
+- [`local`](./local.md): writes the build cache to a local directory on the filesystem.
 
-- `gha`: uploads the build cache to
+- [`gha`](./gha.md): uploads the build cache to
   [GitHub Actions cache](https://docs.github.com/en/rest/actions/cache) (beta).
 
-- `s3`: uploads the build cache to an
+- [`s3`](./s3.md): uploads the build cache to an
   [AWS S3 bucket](https://aws.amazon.com/s3/) (unreleased).
 
-- `azblob`: uploads the build cache to
+- [`azblob`](./azblob.md): uploads the build cache to
   [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/)
   (unreleased).
 

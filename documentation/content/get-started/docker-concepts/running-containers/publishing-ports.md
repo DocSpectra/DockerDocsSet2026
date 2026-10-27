@@ -7,9 +7,13 @@ aliases:
  - /guides/docker-concepts/running-containers/publishing-ports/
 ---
 
+On this page: [Publish ports and review network access](#publishing-ports) · [Let Docker select a port](#publishing-to-ephemeral-ports) · [Publish all exposed ports](#publishing-all-ports) · [Use the CLI](#use-the-docker-cli) · [Use Compose](#use-docker-compose).
+
 {{< youtube-embed 9JnqOmJ96ds >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Port publishing and exposure
 
 If you've been following the guides so far, you understand that containers provide isolated processes for each component of your application. Each component - a React frontend, a Python API, and a Postgres database - runs in its own sandbox environment, completely isolated from everything else on your host machine. This isolation is great for security and managing dependencies, but it also means you can’t access them directly. For example, you can’t access the web app in your browser.
 
@@ -70,7 +74,9 @@ For example, the following command will publish all of the exposed ports configu
 $ docker run -P nginx
 ```
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Publish ports with Docker CLI and Compose
 
 In this hands-on guide, you'll learn how to publish container ports using both the CLI and Docker Compose for deploying a web application.
 

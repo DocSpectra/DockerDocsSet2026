@@ -9,6 +9,8 @@ aliases:
   - /guides/language/r/develop/
 ---
 
+[R guide overview](_index.md)
+
 ## Prerequisites
 
 Complete [Containerize a R application](containerize.md).
@@ -17,8 +19,8 @@ Complete [Containerize a R application](containerize.md).
 
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 
-- Adding a local database and persisting data
-- Configuring Compose to automatically update your running Compose services as you edit and save your code
+- [Adding a local database and persisting data](#add-a-local-database-and-persist-data)
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
 
 ## Get the sample application
 
@@ -94,6 +96,8 @@ secrets:
 > To learn more about the instructions in the Compose file, see [Compose file
 > reference](/reference/compose-file/).
 
+### Create the database password file
+
 Before you run the application using Compose, notice that this Compose file specifies a `password.txt` file to hold the database's password. You must create this file as it's not included in the source repository.
 
 In the cloned repository's directory, create a new directory named `db` and inside that directory create a file named `password.txt` that contains the password for the database. Using your favorite IDE or text editor, add the following contents to the `password.txt` file.
@@ -122,6 +126,8 @@ directory.
 │ ├── README.Docker.md
 │ └── README.md
 ```
+
+### Start and check the application
 
 Now, run the following `docker compose up` command to start your application.
 
@@ -220,3 +226,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue: [Configure CI/CD](configure-ci-cd.md).

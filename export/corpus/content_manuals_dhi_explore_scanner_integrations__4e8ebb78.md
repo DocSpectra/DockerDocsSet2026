@@ -10,6 +10,12 @@ accurate results that reflect the actual security posture of these images, your
 scanner needs to understand the VEX (Vulnerability Exploitability eXchange)
 attestations included with each image.
 
+For scan commands and configuration, choose [Docker
+Scout](../how-to/scan.md#docker-scout), [Trivy](../how-to/scan.md#trivy),
+[Grype](../how-to/scan.md#grype), [Wiz](../how-to/scan.md#wiz), or
+[Mend.io](../how-to/scan.md#mendio). For VEX files, see [Export VEX
+attestations](../how-to/scan.md#export-vex-attestations).
+
 ## Scanners with VEX support
 
 The following scanners can read and apply VEX attestations included with Docker

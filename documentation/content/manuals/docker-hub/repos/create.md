@@ -7,26 +7,31 @@ toc_max: 3
 weight: 20
 ---
 
+## Before you create a repository
+
+You can choose to locate the repository under your own user account, or under any
+organization where you are an owner or editor.
+
+The repository name needs to:
+
+- Be unique
+- Have between 2 and 255 characters
+- Only contain lowercase letters, numbers, hyphens (`-`), and underscores
+  (`_`)
+
+> [!NOTE]
+>
+> You can't rename a Docker Hub repository once it's created.
+
+For namespace privacy settings, see [Default privacy](../settings.md#default-privacy).
+
+## Create the repository
+
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select **My Hub** > **Repositories**.
 3. Near the top-right corner, select **Create repository**.
 4. Select a **Namespace**.
-
-   You can choose to locate it under your own user account, or under any
-   organization where you are an owner or editor.
-
 5. Specify the **Repository Name**.
-
-   The repository name needs to:
-    - Be unique
-    - Have between 2 and 255 characters
-    - Only contain lowercase letters, numbers, hyphens (`-`), and underscores
-      (`_`)
-
-   > [!NOTE]
-   >
-   > You can't rename a Docker Hub repository once it's created.
-
 6. Specify the **Short description**.
 
    The description can be up to 100 characters. It appears in search results.
@@ -39,7 +44,7 @@ weight: 20
      is only accessible to you and collaborators. In addition, if you selected
      an organization's namespace, then the repository is accessible to those
      with applicable roles or permissions. For more details, see [Roles and
-     permissions](/manuals/enterprise/security/roles-and-permissions.md).
+     permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
    > [!NOTE]
    >
@@ -47,6 +52,8 @@ weight: 20
    > visibility to choose, then Docker recommends that you select **Private**.
 
 8. Select **Create**.
+
+## Next steps
 
 After the repository is created, the **General** page appears. You are now able to manage:
 

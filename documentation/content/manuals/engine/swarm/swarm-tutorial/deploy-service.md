@@ -6,6 +6,8 @@ weight: 30
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 After you [create a swarm](create-swarm.md), you can deploy a service to the
 swarm. For this tutorial, you also [added worker nodes](add-nodes.md), but that
 is not a requirement to deploy a service.

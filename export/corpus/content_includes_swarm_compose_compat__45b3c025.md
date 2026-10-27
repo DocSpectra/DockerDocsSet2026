@@ -8,3 +8,5 @@
 >
 > For more information about the evolution of Compose, see
 > [History of Compose](/compose/history/).
+>
+> For deployment steps, see [Deploy a stack to a swarm](/manuals/engine/swarm/stack-deploy.md#prerequisites).

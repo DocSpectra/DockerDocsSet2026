@@ -25,12 +25,13 @@ This guide will show you how to create, test, and deploy containerized Go applic
 
 In this guide, you’ll learn how to:
 
-- Create a `Dockerfile` which contains the instructions for building a container image for a program written in Go.
-- Run the image as a container in your local Docker instance and manage the container's lifecycle.
-- Use multi-stage builds for building small images efficiently while keeping your Dockerfiles easy to read and maintain.
-- Use Docker Compose to orchestrate running of multiple related containers together in a development environment.
-- Configure a CI/CD pipeline for your application using [GitHub Actions](https://docs.github.com/en/actions)
-- Deploy your containerized Go application.
+- [Create a `Dockerfile`](build-images.md#create-a-dockerfile-for-the-application) which contains the instructions for building a container image for a program written in Go.
+- [Run the image as a container](run-containers.md) in your local Docker instance and manage the container's lifecycle.
+- Use [multi-stage builds](build-images.md#multi-stage-builds) for building small images efficiently while keeping your Dockerfiles easy to read and maintain.
+- Use [Docker Compose](develop.md#better-productivity-with-docker-compose) to orchestrate running of multiple related containers together in a development environment.
+- [Run your Go tests](run-tests.md).
+- [Configure a CI/CD pipeline](configure-ci-cd.md) for your application using [GitHub Actions](https://docs.github.com/en/actions)
+- [Deploy your containerized Go application](deploy.md).
 
 ## Prerequisites
 
@@ -51,4 +52,4 @@ Some familiarity with the command line is also expected.
 
 The aim of this guide is to provide enough examples and instructions for you to containerize your own Go application and deploy it into the Cloud.
 
-Start by building your first Go image.
+Start by [building your first Go image](build-images.md).

@@ -6,3 +6,5 @@ params:
 aliases:
   - /build/dockerfile/release-notes/
 ---
+
+[Read the release notes](https://github.com/moby/buildkit/releases).

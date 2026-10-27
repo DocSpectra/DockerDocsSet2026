@@ -6,3 +6,7 @@ aliases:
 - /compose/django/
 - /samples/django/
 ---
+
+## Browse samples
+
+[All samples](_index.md) / [Frameworks](_index.md#frameworks)

@@ -5,6 +5,14 @@ description: Set up an ASP.NET Core Razor Pages project with integration test de
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-dotnet-aspnet-core/#prerequisites)
+
+## In this step
+
+- [Background](#background)
+- [Clone the repository](#clone-the-repository)
+- [Project structure](#project-structure)
+
 ## Background
 
 This guide builds on top of Microsoft's
@@ -238,5 +246,9 @@ public class CustomWebApplicationFactory<TProgram>
 ```
 
 While this approach works, SQLite has behavioral differences from the database
-you'd use in production. In the next section, you'll replace it with a
+you'd use in production. In [Write tests](/guides/testcontainers-dotnet-aspnet-core/write-tests/), you'll replace it with a
 Testcontainers-managed Microsoft SQL Server instance.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-dotnet-aspnet-core/write-tests/)

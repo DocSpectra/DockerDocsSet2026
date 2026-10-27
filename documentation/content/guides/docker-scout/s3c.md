@@ -65,4 +65,9 @@ advisories](/manuals/scout/deep-dive/advisory-db-sources.md), and updates its
 vulnerability database in real-time. This ensures that your security posture is
 represented using the latest available information.
 
+## Continue
+
+- [Software Bill of Materials](./sbom.md)
+- [Guide contents](./_index.md)
+
 <div id="scout-lp-survey-anchor"></div>

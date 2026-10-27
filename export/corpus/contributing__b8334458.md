@@ -13,6 +13,14 @@ Before contributing, review our documentation standards:
 The following guidelines describe how to contribute to the
 Docker documentation at <https://docs.docker.com/>, and how to get started.
 
+## Find your task
+
+- [Report an issue or request content](#reporting-issues)
+- [Check which content is maintained elsewhere](#content-not-edited-here)
+- [Review editing and pull request guidelines](#editing-content)
+- [Set up a local preview](#local-setup) and check the [requirements](#requirements)
+- [Stop the preview](#stop-the-development-server) or [test your changes](#testing)
+
 ## Reporting issues
 
 If you encounter a problem with the content, or the site in general, feel free
@@ -53,9 +61,13 @@ Help make reviewing easier by following these guidelines:
 
 You can use Docker (surprise) to build and serve the files locally.
 
+#### Requirements
+
 > [!IMPORTANT]
 > This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
 > Compose version [**2.22**](https://docs.docker.com/compose/how-tos/file-watch/) or later.
+
+#### Fork, clone, and create a branch
 
 1. [Fork the docker/docs repository.](https://github.com/docker/docs/fork)
 
@@ -80,22 +92,26 @@ You can use Docker (surprise) to build and serve the files locally.
    $ git checkout -b <branch>
    ```
 
-5. Start the local development server:
+#### Start the development server
 
-   ```console
-   $ docker compose watch
-   ```
+Start the local development server:
+
+```console
+$ docker compose watch
+```
 
 The site will be served for local preview at <http://localhost:1313>. The
 development server watches for changes and automatically rebuilds your site.
+
+> [!NOTE]
+> Alternatively, if you have installed Hugo, you can build with `hugo serve`.
+
+#### Stop the development server
 
 To stop the development server:
 
 1. In your terminal, press `<Ctrl+C>` to exit the file watch mode of Compose.
 2. Stop the Compose service with the `docker compose down` command.
-
-> [!NOTE]
-> Alternatively, if you have installed Hugo, you can build with `hugo serve`.
 
 ### Testing
 

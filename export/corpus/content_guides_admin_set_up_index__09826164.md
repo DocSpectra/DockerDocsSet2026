@@ -37,6 +37,13 @@ This guide helps you set up and configure Docker products to maximize
 productivity and success for your team while meeting compliance and security
 policies.
 
+## Follow the setup guide
+
+1. [Communicate with teams and gather requirements](comms-and-info-gathering.md).
+2. [Finalize settings, organizations, SSO, and product setup](finalize-plans-and-setup.md).
+3. [Test sign-in, settings, and product access](testing.md).
+4. [Deploy the setup across your company](deploy.md).
+
 ## Who’s this for?
 
 - Administrators responsible for managing Docker environments within their

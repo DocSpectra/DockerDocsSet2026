@@ -13,13 +13,29 @@ aliases:
   - /engine/api/sdk/examples/
 ---
 
+## Before you start
+
 After you
 [install Docker](/get-started/get-docker.md), you can
-[install the Go or Python SDK](index.md#install-the-sdks) and
+[install the Go or Python SDK](_index.md#install-the-sdks) and
 also try out the Docker Engine API.
 
 Each of these examples show how to perform a given Docker operation using the Go
 and Python SDKs and the HTTP API using `curl`.
+
+See also [API version selection](../_index.md#versioned-api-and-sdk),
+[Docker Desktop for Linux socket setup](_index.md#connect-to-docker-desktop-for-linux),
+and [HTTP socket and cURL version caveats](#http-socket-and-curl-version-caveats).
+
+## Choose a task
+
+| Task | Example |
+| :--- | :--- |
+| Run containers | [Run a container](#run-a-container) · [Run in the background](#run-a-container-in-the-background) |
+| Manage containers | [List containers](#list-and-manage-containers) · [Stop all running containers](#stop-all-running-containers) |
+| Read logs | [Print a container's logs](#print-the-logs-of-a-specific-container) |
+| Work with images | [List images](#list-all-images) · [Pull an image](#pull-an-image) · [Pull with authentication](#pull-an-image-with-authentication) |
+| Create an image | [Commit a container](#commit-a-container) |
 
 ## Run a container
 
@@ -126,6 +142,11 @@ $ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_e
 hello world
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
+## HTTP socket and cURL version caveats
+
 When using cURL to connect over a Unix socket, the hostname isn't important. The
 previous examples use `localhost`, but any hostname would work.
 
@@ -137,9 +158,6 @@ previous examples use `localhost`, but any hostname would work.
 >
 > If you're' using an older version of cURL, use `http:/<API version>/` instead,
 > for example: `http:/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start`.
-
-{{< /tab >}}
-{{< /tabs >}}
 
 ## Run a container in the background
 

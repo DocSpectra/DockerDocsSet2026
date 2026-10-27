@@ -17,6 +17,13 @@ might occur. This guide outlines how to configure Docker containers and builds
 to properly handle Zscaler's custom certificates, ensuring smooth operation in
 monitored environments.
 
+## Choose a task
+
+- [Configure the Docker Desktop proxy](#configure-zscaler-proxy-for-docker-desktop).
+- [Obtain and export the root certificate](#obtaining-the-root-certificate).
+- [Build an image with the certificate](#building-with-the-certificate).
+- [Install the certificate in a multi-stage build](#using-multi-stage-builds).
+
 ## The role of certificates in Docker
 
 When Docker builds or runs containers, it often needs to fetch resources from
@@ -72,11 +79,15 @@ Certificate Store).
 5. Save the certificate in ASCII PEM format.
 6. Open the exported file in a text editor to confirm it includes `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`.
 
+#### Store the exported certificate
+
 When you have obtained the certificate, store it in an accessible repository,
 such as JFrog Artifactory or a Git repository. Alternatively, use generic
 storage like AWS S3.
 
 ### Building with the certificate
+
+#### Copy the certificate from the build context
 
 To install these certificates when building images, copy the certificate into
 the build container and update the trust store. An example Dockerfile looks
@@ -92,6 +103,8 @@ RUN apt-get update && \
 
 Here, `zscaler-root-ca.crt` is the root certificate, located at the root of the
 build context (often within the application's Git repository).
+
+#### Fetch the certificate from an artifact repository
 
 If you use an artifact repository, you can fetch the certificate directly using
 the `ADD` instruction. You can also use the `--checksum` flag to verify that

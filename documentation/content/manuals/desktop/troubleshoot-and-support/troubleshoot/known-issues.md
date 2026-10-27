@@ -8,8 +8,12 @@ aliases:
  - /desktop/troubleshoot/known-issues/
 ---
 
-{{< tabs >}}
-{{< tab name="For Mac with Intel chip" >}}
+Choose your Mac architecture: [Intel chip](#mac-with-intel-chip) · [Apple silicon](#mac-with-apple-silicon).
+
+For installation or startup problems, see [Fix “Docker.app is damaged”](mac-damaged-dialog.md), [the macOS startup and inaccurate malware-warning issue](/manuals/desktop/cert-revoke-solution.md), or [other troubleshooting topics](topics.md#topics-for-mac).
+
+## Mac with Intel chip
+
 - The Mac Activity Monitor reports that Docker is using twice the amount of memory it's actually using. This is due to a [bug in macOS](https://docs.google.com/document/d/17ZiQC1Tp9iH320K-uqVLyiJmk4DHJ3c4zgQetJiKYQM/edit?usp=sharing).
 
 - **"Docker.app is damaged" dialog**: If you see a "Docker.app is damaged and can't be opened" dialog during installation or updates, this is typically caused by non-atomic copy operations when other applications are using the Docker CLI. See [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) for resolution steps.
@@ -36,8 +40,7 @@ aliases:
   $ export DOCKER_HOST=unix:///var/run/docker.sock
   ```
 
-{{< /tab >}}
-{{< tab name="For Mac with Apple silicon" >}}
+## Mac with Apple silicon
 
 - Some command line tools do not work when Rosetta 2 is not installed.
   - The old version 1.x of `docker-compose`. Use Compose V2 instead - type `docker compose`.
@@ -48,6 +51,3 @@ aliases:
 
    In summary, running Intel-based containers on Arm-based machines should be regarded as "best effort" only. We recommend running `arm64` containers on Apple silicon machines whenever possible, and encouraging container authors to produce `arm64`, or multi-arch, versions of their containers. This issue should become less common over time, as more and more images are rebuilt [supporting multiple architectures](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/).
 - Users may occasionally experience data drop when a TCP stream is half-closed.
-
-{{< /tab >}}
-{{< /tabs >}}

@@ -5,6 +5,8 @@ description: Understand why using H2 in-memory databases for testing gives false
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-replace-h2/#prerequisites)
+
 A common practice is to use lightweight databases like H2 or HSQL as
 in-memory databases for testing while using PostgreSQL, MySQL, or Oracle in
 production. This approach has significant drawbacks:
@@ -59,3 +61,7 @@ class ProductRepositoryTest {
 
 Spring Boot uses H2 automatically when it's on the classpath. The test passes,
 but it doesn't catch PostgreSQL-specific issues.
+
+## Continue
+
+[Next: JDBC URL approach](/guides/testcontainers-java-replace-h2/jdbc-url-approach/)

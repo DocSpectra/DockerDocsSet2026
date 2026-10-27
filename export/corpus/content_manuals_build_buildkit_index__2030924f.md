@@ -30,6 +30,18 @@ only the updates made to these
 files between repeated build invocations, there is no need to wait for local
 files to be read or uploaded before the work can begin.
 
+## Getting started
+
+BuildKit is the default builder for Docker Desktop and Docker Engine users.
+If you're building Windows containers, the legacy builder is used instead.
+
+## BuildKit tasks
+
+- [Configure registries, networking, and resource limits](configure.md)
+- [Choose Dockerfile syntax and release channels](frontend.md)
+- [Review Windows limitations, prerequisites, and setup](#buildkit-on-windows)
+- [Capture build traces](../debug/opentelemetry.md)
+
 ## LLB
 
 At the core of BuildKit is a
@@ -65,11 +77,6 @@ work for the features used by their definition.
 For example, to build a [Dockerfile](/reference/dockerfile.md) with
 BuildKit, you would
 [use an external Dockerfile frontend](frontend.md).
-
-## Getting started
-
-BuildKit is the default builder for Docker Desktop and Docker Engine users.
-If you're building Windows containers, the legacy builder is used instead.
 
 ## BuildKit on Windows
 

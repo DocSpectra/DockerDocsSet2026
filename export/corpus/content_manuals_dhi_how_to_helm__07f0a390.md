@@ -26,6 +26,18 @@ charts to reference customized images and mirrored repositories. The customized
 chart build pipeline ensures that your customizations are built securely, use
 the latest base charts, and include attestations.
 
+Choose a task:
+
+- [Find a chart](#find-a-docker-helm-chart)
+- [Mirror a chart or its images](#mirror-a-helm-chart-andor-its-images-to-a-third-party-registry)
+- [Create the image pull secret](#create-a-kubernetes-secret-for-pulling-images)
+- [Install the chart](#install-a-helm-chart)
+- [Customize image references](#customize-a-helm-chart)
+- [Verify chart attestations](#verify-a-helm-chart-and-view-its-attestations)
+
+For OpenShift deployment settings and chart-specific value paths, see
+[Deploy DHI Helm charts on OpenShift](/guides/dhi-openshift/#deploy-dhi-helm-charts-on-openshift).
+
 ## Find a Docker Helm chart
 
 To find a Docker Helm chart for DHI:

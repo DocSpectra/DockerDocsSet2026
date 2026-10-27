@@ -35,6 +35,14 @@ The project showcases the following technologies:
 > [David Cardozo](https://www.davidcardozo.com/) for his contribution
 > to this guide.
 
+## Follow the guide
+
+- [Check prerequisites and API keys](#prerequisites)
+- [Get and run the application](#get-and-run-the-application)
+- [Transcribe and index a video](#using-the-yt-whisper-service)
+- [Ask questions about indexed videos](#using-the-dockerbot-service)
+- [Explore the architecture](#explore-the-application-architecture) and [technologies](#explore-the-technologies-used-and-their-role)
+
 ## Prerequisites
 
 - You have an [OpenAI API Key](https://platform.openai.com/api-keys).

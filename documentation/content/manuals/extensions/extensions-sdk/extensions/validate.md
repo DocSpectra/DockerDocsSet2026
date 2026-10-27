@@ -20,6 +20,8 @@ The Extensions CLI lets you validate your extension before installing and runnin
 
 The validation checks if the extension’s `Dockerfile` specifies all the required labels and if the metadata file is valid against the JSON schema file.
 
+## Validate an extension image
+
 To validate, run:
 
 ```console
@@ -31,6 +33,8 @@ If your extension is valid, the following message displays:
 ```console
 The extension image "name-of-your-extension" is valid
 ```
+
+## Validate metadata before building
 
 Before the image is built, it's also possible to validate only the `metadata.json` file:
 

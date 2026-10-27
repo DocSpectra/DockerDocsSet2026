@@ -8,6 +8,14 @@ weight: 30
 
 The **Volumes** view in Docker Desktop lets you create, inspect, delete, clone, empty, export, and import [Docker volumes](/manuals/engine/storage/volumes.md). You can also browse files and folders in volumes and see which containers are using them.
 
+## Find a volume task
+
+- [View and filter volumes](#view-your-volumes) or [inspect files and container usage](#inspect-a-volume)
+- [Create](#create-a-volume) or [clone](#clone-a-volume) a volume
+- [Export now](#export-a-volume-now), [schedule an export](#schedule-a-volume-export), or [import](#import-a-volume)
+- [Delete volumes](#delete-one-or-more-volumes) or [empty a volume](#empty-a-volume)
+- [Back up and restore other Docker Desktop data](../settings-and-maintenance/backup-and-restore.md)
+
 ## View your volumes
 
 You can view the following information about your volumes:
@@ -80,6 +88,101 @@ To clone a volume:
 3. In the **Clone a volume** modal, specify a **Volume name**, and then select
    **Clone**.
 
+## Export a volume
+
+You can export the content of a volume to a local file, a local image, and to an
+image in Docker Hub, or to a supported cloud provider. When exporting content
+from a volume used by one or more running containers, the containers are
+temporarily stopped while Docker exports the content, and then restarted when
+the export process is completed.
+
+You can either [export a volume now](#export-a-volume-now) or [schedule a recurring export](#schedule-a-volume-export).
+
+### Export a volume now
+
+1. Sign in to Docker Desktop. You must be signed in to export a volume.
+2. In the **Volumes** view, select the volume you want to export.
+3. Select the **Exports** tab.
+4. Select **Quick export**.
+5. Select whether to export the volume to **Local or Hub storage** or **External
+   cloud storage**, then [specify the destination details](#choose-an-export-destination).
+
+6. Select **Save**.
+
+### Schedule a volume export
+
+1. Sign in to Docker Desktop. You must be signed in and have a paid [Docker subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to schedule a volume export.
+2. In the **Volumes** view, select the volume you want to export.
+3. Select the **Exports** tab.
+4. Select **Schedule export**.
+5. In **Recurrence**, select how often the export occurs, and then specify the
+   following additional details based on your selection.
+
+   - **Daily**: Specify the time that the backup occurs each day.
+   - **Weekly**: Specify one or more days, and the time that the backup occurs
+     each week.
+   - **Monthly**: Specify which day of the month and the time that the backup
+     occurs each month.
+
+6. Select whether to export the volume to **Local or Hub storage** or **External
+   cloud storage**, then [specify the destination details](#choose-an-export-destination).
+
+7. Select **Save**.
+
+### Choose an export destination
+
+{{< tabs >}}
+{{< tab name="Local or Hub storage" >}}
+
+- **Local file**: Specify a file name and select a folder.
+- **Local image**: Select a local image to export the content to. Any
+  existing data in the image will be replaced by the exported content.
+- **New image**: Specify a name for the new image.
+- **Registry**: Specify a Docker Hub repository.
+
+{{< /tab >}}
+{{< tab name="External cloud storage" >}}
+
+You must have a [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to export to an external cloud provider.
+
+Select your cloud provider and then specify the URL to upload to the storage.
+Refer to the following documentation for your cloud provider to learn how to
+obtain a URL.
+
+- Amazon Web Services: [Create a presigned URL of Amazon S3 using an AWS SDK](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example_s3_Scenario_PresignedUrl_section.html)
+- Microsoft Azure: [Generate a SAS token and URL](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/generate-sas-token)
+- Google Cloud: [Create a signed URL to upload an object](https://cloud.google.com/storage/docs/access-control/signing-urls-with-helpers#upload-object)
+
+{{< /tab >}}
+{{< /tabs >}}
+
+Return to [exporting a volume now](#export-a-volume-now) or
+[scheduling a volume export](#schedule-a-volume-export).
+
+## Import a volume
+
+You can import a local file, a local image, or an image from Docker Hub. Any
+existing data in the volume is replaced by the imported content. When importing
+content to a volume used by one or more running containers, the containers are
+temporarily stopped while Docker imports the content, and then restarted when
+the import process is completed.
+
+To import a volume:
+
+1. Sign in to Docker Desktop. You must be signed in to import a volume.
+2. Optionally, [create](#create-a-volume) a new volume to import the content
+   into.
+3. Select the volume you want to import content in to.
+4. Select **Import**.
+5. Select where the content is coming from and then specify the following
+   additional details depending on your selection:
+
+   - **Local file**: Select the file that contains the content.
+   - **Local image**: Select the local image that contains the content.
+   - **Registry**: Specify the image from Docker Hub that contains the content.
+
+6. Select **Import**.
+
 ## Delete one or more volumes
 
 Deleting a volume deletes the volume and all its data. When a container is using
@@ -113,123 +216,6 @@ To empty a volume:
 2. In the **Volumes** view, select the volume you want to empty.
 3. Next to **Import**, select the **More volume actions** icon, and then select **Empty volume**.
 4. In the **Empty a volume?** modal, select **Empty**.
-
-## Export a volume
-
-You can export the content of a volume to a local file, a local image, and to an
-image in Docker Hub, or to a supported cloud provider. When exporting content
-from a volume used by one or more running containers, the containers are
-temporarily stopped while Docker exports the content, and then restarted when
-the export process is completed.
-
-You can either [export a volume now](#export-a-volume-now) or [schedule a recurring export](#schedule-a-volume-export).
-
-### Export a volume now
-
-1. Sign in to Docker Desktop. You must be signed in to export a volume.
-2. In the **Volumes** view, select the volume you want to export.
-3. Select the **Exports** tab.
-4. Select **Quick export**.
-5. Select whether to export the volume to **Local or Hub storage** or **External
-   cloud storage**, then specify the following additional details depending on
-   your selection.
-
-   {{< tabs >}}
-   {{< tab name="Local or Hub storage" >}}
-   
-   - **Local file**: Specify a file name and select a folder.
-   - **Local image**: Select a local image to export the content to. Any
-    existing data in the image will be replaced by the exported content.
-   - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository.
-
-   {{< /tab >}}
-   {{< tab name="External cloud storage" >}}
-
-   You must have a [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to export to an external cloud provider.
-
-   Select your cloud provider and then specify the URL to upload to the storage.
-   Refer to the following documentation for your cloud provider to learn how to
-   obtain a URL.
-
-   - Amazon Web Services: [Create a presigned URL of Amazon S3 using an AWS SDK](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example_s3_Scenario_PresignedUrl_section.html)
-   - Microsoft Azure: [Generate a SAS token and URL](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/generate-sas-token)
-   - Google Cloud: [Create a signed URL to upload an object](https://cloud.google.com/storage/docs/access-control/signing-urls-with-helpers#upload-object)
-
-   {{< /tab >}}
-   {{< /tabs >}}
-
-6. Select **Save**.
-
-### Schedule a volume export
-
-1. Sign in to Docker Desktop. You must be signed in and have a paid [Docker subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to schedule a volume export.
-2. In the **Volumes** view, select the volume you want to export.
-3. Select the **Exports** tab.
-4. Select **Schedule export**.
-5. In **Recurrence**, select how often the export occurs, and then specify the
-   following additional details based on your selection.
-
-   - **Daily**: Specify the time that the backup occurs each day.
-   - **Weekly**: Specify one or more days, and the time that the backup occurs
-     each week.
-   - **Monthly**: Specify which day of the month and the time that the backup
-     occurs each month.
-
-6. Select whether to export the volume to **Local or Hub storage** or **External
-   cloud storage**, then specify the following additional details depending on
-   your selection.
-   
-   {{< tabs >}}
-   {{< tab name="Local or Hub storage" >}}
-   
-   - **Local file**: Specify a file name and select a folder.
-   - **Local image**: Select a local image to export the content to. Any
-    existing data in the image will be replaced by the exported content.
-   - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository.
-
-   {{< /tab >}}
-   {{< tab name="External cloud storage" >}}
-
-   You must have a [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopVolumes) to export to an external cloud provider.
-
-   Select your cloud provider and then specify the URL to upload to the storage.
-   Refer to the following documentation for your cloud provider to learn how to
-   obtain a URL.
-
-   - Amazon Web Services: [Create a presigned URL of Amazon S3 using an AWS SDK](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example_s3_Scenario_PresignedUrl_section.html)
-   - Microsoft Azure: [Generate a SAS token and URL](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/generate-sas-token)
-   - Google Cloud: [Create a signed URL to upload an object](https://cloud.google.com/storage/docs/access-control/signing-urls-with-helpers#upload-object)
-
-   {{< /tab >}}
-   {{< /tabs >}}
-
-7. Select **Save**.
-
-## Import a volume
-
-You can import a local file, a local image, or an image from Docker Hub. Any
-existing data in the volume is replaced by the imported content. When importing
-content to a volume used by one or more running containers, the containers are
-temporarily stopped while Docker imports the content, and then restarted when
-the import process is completed.
-
-To import a volume:
-
-1. Sign in to Docker Desktop. You must be signed in to import a volume.
-2. Optionally, [create](#create-a-volume) a new volume to import the content
-   into.
-3. Select the volume you want to import content in to.
-4. Select **Import**.
-5. Select where the content is coming from and then specify the following
-   additional details depending on your selection:
-
-   - **Local file**: Select the file that contains the content.
-   - **Local image**: Select the local image that contains the content.
-   - **Registry**: Specify the image from Docker Hub that contains the content.
-
-6. Select **Import**.
 
 ## Additional resources
 

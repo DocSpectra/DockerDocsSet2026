@@ -20,3 +20,13 @@ Docker Compose provides two other options to manage this complexity when working
 - [Extend a Compose file](extends.md) by referring to another Compose file and selecting the bits you want to use in your own application, with the ability to override some attributes.
 - [Include other Compose files](include.md) directly in your Compose file.
 
+
+## Find steps and caveats
+
+| Task | Steps | Path rules and caveats |
+| --- | --- | --- |
+| Merge files | [How to merge](merge.md#how-to-merge-multiple-compose-files) | [Merging rules](merge.md#merging-rules), [limitations](merge.md#limitations) |
+| Reuse service configuration | [How extends works](extends.md#how-the-extends-attribute-works) | [Path requirements](extends.md#path-requirements), [relative paths](extends.md#relative-paths) |
+| Include Compose files | [Example](include.md#example) | [Path resolution](include.md#path-resolution-and-recursive-includes), [overrides and conflicts](include.md#using-overrides-with-included-compose-files) |
+
+For remote sources, see the [trust model for Compose files](../../trust-model.md).

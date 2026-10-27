@@ -14,6 +14,17 @@ Extensions can also be used with [anchors and aliases](fragments.md).
 They also can be used within any structure in a Compose file where user-defined keys are not expected. 
 Compose uses those to enable experimental features, the same way browsers add support for [custom CSS features](https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#vendor-keywords)
 
+## Find an extension task
+
+- [Declare custom extension fields](#example-1).
+- [Share an environment block between services](#example-2).
+- [Share service attributes with an anchor](#example-3).
+- [Combine extensions and check YAML merge restrictions](#example-4).
+- [Look up historical vendor prefixes](#informative-historical-notes).
+- [Specify byte values](#specifying-byte-values) or [durations](#specifying-durations).
+
+For anchor syntax, see [Fragments](fragments.md).
+
 ## Example 1
 
 ```yml

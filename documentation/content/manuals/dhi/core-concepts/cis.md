@@ -4,6 +4,10 @@ description: Learn how Docker Hardened Images comply with the CIS Docker Benchma
 keywords: docker cis benchmark, cis docker compliance, cis docker images, docker hardened images, secure container images
 ---
 
+For catalog steps, go to [Identify CIS-compliant images](#identify-cis-compliant-images).
+For the scope and exception, see [How Docker Hardened Images comply with the
+CIS Benchmark](#how-docker-hardened-images-comply-with-the-cis-benchmark).
+
 ## What is the CIS Docker Benchmark?
 
 The [CIS Docker Benchmark](https://www.cisecurity.org/benchmark/docker) is part

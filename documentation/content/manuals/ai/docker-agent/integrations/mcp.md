@@ -21,6 +21,28 @@ agent, you ask Claude to use it and Claude calls it for you.
 This guide covers setup for Claude Desktop and Claude Code. If you want agents
 embedded in your editor instead, see [ACP integration](./acp.md).
 
+## Find an MCP task
+
+- [Check prerequisites](#prerequisites)
+- Configure [Claude Desktop](#claude-desktop), [Claude Code](#claude-code), or [another client](#other-mcp-clients)
+- [Use local or registry agent references](#agent-references)
+- [Design agents for direct MCP calls](#designing-agents-for-mcp)
+- [Test your setup](#testing-your-setup)
+- [Configure gateway tools for agents](#mcp-gateway)
+
+## Prerequisites
+
+Before configuring MCP integration, you need:
+
+- **Docker Agent installed** - See the [installation guide](../_index.md#installation)
+- **Agent configuration** - A YAML file defining your agent. See the
+  [tutorial](../tutorial.md) or [example
+  configurations](https://github.com/docker/docker-agent/tree/main/examples)
+- **MCP client** - Claude Desktop, Claude Code, or another MCP-compatible
+  application
+- **API keys** - Environment variables for any model providers your agents use
+  (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc.)
+
 ## How it works
 
 You configure Claude Desktop (or another MCP client) to connect to Docker Agent. Your
@@ -61,19 +83,6 @@ configuration options.
 
 You can also use the [MCP Toolkit](/ai/mcp-catalog-and-toolkit/) to explore and
 manage MCP servers interactively.
-
-## Prerequisites
-
-Before configuring MCP integration, you need:
-
-- **Docker Agent installed** - See the [installation guide](../_index.md#installation)
-- **Agent configuration** - A YAML file defining your agent. See the
-  [tutorial](../tutorial.md) or [example
-  configurations](https://github.com/docker/docker-agent/tree/main/examples)
-- **MCP client** - Claude Desktop, Claude Code, or another MCP-compatible
-  application
-- **API keys** - Environment variables for any model providers your agents use
-  (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc.)
 
 ## MCP client configuration
 

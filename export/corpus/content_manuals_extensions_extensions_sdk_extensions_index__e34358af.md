@@ -9,6 +9,15 @@ weight: 40
 
 This section describes how to make your extension available and more visible, so users can discover it and install it with a single click.
 
+## Choose a release task
+
+- [Add image labels and preview the Marketplace listing](labels.md)
+- [Validate the image or metadata](validate.md)
+- [Package and release the extension](DISTRIBUTION.md)
+- [Build for multiple architectures](multi-arch.md)
+- [Create a share link](share.md)
+- [Submit to the Marketplace](publish.md)
+
 ## Release your extension
 
 After you have developed your extension and tested it locally, you are ready to release the extension and make it available for others to install and use (either internally with your team, or more publicly).

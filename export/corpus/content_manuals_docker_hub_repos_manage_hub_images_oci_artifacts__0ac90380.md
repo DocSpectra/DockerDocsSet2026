@@ -55,16 +55,20 @@ registry API conforms to a standard protocol defined in the
 
 This section shows some examples on using OCI artifacts with Docker Hub.
 
+- [Push a Helm chart](#push-a-helm-chart)
+- [Push a volume](#push-a-volume)
+- [Push a generic artifact file](#push-a-generic-artifact-file)
+
 ### Push a Helm chart
 
 The following procedure shows how to push a Helm chart as an OCI artifact to
 Docker Hub.
 
-Prerequisites:
+#### Prerequisites
 
 - Helm version 3.0.0 or later
 
-Steps:
+#### Steps
 
 1. Create a new Helm chart
 
@@ -113,11 +117,11 @@ Steps:
 The following procedure shows how to push container volume as an OCI artifact to
 Docker Hub.
 
-Prerequisites:
+#### Prerequisites
 
 - ORAS CLI version 0.15 or later
 
-Steps:
+#### Steps
 
 1. Create a dummy file to use as volume content.
 
@@ -152,11 +156,11 @@ Steps:
 
 The following procedure shows how to push a generic OCI artifact to Docker Hub.
 
-Prerequisites:
+#### Prerequisites
 
 - ORAS CLI version 0.15 or later
 
-Steps:
+#### Steps
 
 1. Create your artifact file.
 

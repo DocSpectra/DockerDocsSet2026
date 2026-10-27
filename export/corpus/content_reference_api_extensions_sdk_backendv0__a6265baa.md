@@ -7,6 +7,14 @@ aliases:
  - /extensions/extensions-sdk/dev/api/reference/interfaces/BackendV0/
 ---
 
+## Find a backend method
+
+- [Container methods](#container-methods)
+- [HTTP methods](#http-methods)
+- [VM methods](#vm-methods)
+
+See also the [backend API examples](/manuals/extensions/extensions-sdk/dev/api/backend.md) and [API task index](_index.md).
+
 ## Container Methods
 
 ### execInContainer

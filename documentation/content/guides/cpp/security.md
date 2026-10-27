@@ -9,6 +9,8 @@ aliases:
 - /guides/language/cpp/security/
 ---
 
+[C++ guide overview](_index.md)
+
 ## Prerequisites
 
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
@@ -33,7 +35,7 @@ This section walks you through extracting Software Bill of Materials (SBOMs) fro
 
 ## Generate an SBOM
 
-Here we will use the Docker image that we built in the [Create a multi-stage build for your C++ application](/guides/language/cpp/multistage/) guide. If you haven't already built the image, follow the steps in that guide to build the image.
+Here we will use the Docker image that we built in the [Create a multi-stage build for your C++ application](multistage.md) guide. If you haven't already built the image, follow the steps in that guide to build the image.
 The image is named `hello`. To generate an SBOM for the `hello` image, run the following command:
 
 ```bash
@@ -48,6 +50,8 @@ $ docker scout sbom --format=list hello
 ```
 
 This command will tell you the same thing.
+
+The normal image scanners will not be able to generate SBOMs from scratch images.
 
 ## Generate an SBOM attestation
 
@@ -82,6 +86,8 @@ Now, build the image with the following command:
 $ docker buildx build --sbom=true -t hello:sbom .
 ```
 
+### Inspecting attestations with Docker Scout
+
 This command will build the image and generate an SBOM attestation. You can verify that the SBOM is attached to the image by running the following command:
 
 ```bash
@@ -93,4 +99,5 @@ Note that the normal `docker sbom` command will not load the SBOM attestation.
 ## Summary
 
 In this section, you learned how to generate SBOM attestation for a C++ Docker image during the build process.
-The normal image scanners will not be able to generate SBOMs from scratch images.
+
+Return to the [C++ guide overview](_index.md).

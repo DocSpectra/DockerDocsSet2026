@@ -16,9 +16,14 @@ Docker restarts. Restart policies start linked containers in the correct order.
 Docker recommends that you use restart policies, and avoid using process
 managers to start containers.
 
-Restart policies are different from the `--live-restore` flag of the `dockerd`
+Restart policies are different from the [`--live-restore` flag](../daemon/live-restore.md) of the `dockerd`
 command. Using `--live-restore` lets you to keep your containers running during
 a Docker upgrade, though networking and user input are interrupted.
+
+- [Choose a restart policy](#use-a-restart-policy)
+- [Review restart policy details](#restart-policy-details)
+- [Understand foreground container restarts](#restarting-foreground-containers)
+- [Use a process manager](#use-a-process-manager)
 
 ## Use a restart policy
 

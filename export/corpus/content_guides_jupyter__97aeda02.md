@@ -19,11 +19,16 @@ run reproducible data science environments. This guide is based on
 [Supercharging AI/ML Development with JupyterLab and
 Docker](https://www.docker.com/blog/supercharging-ai-ml-development-with-jupyterlab-and-docker/).
 
+## Choose a JupyterLab task
+
 In this guide, you'll learn how to:
 
-- Run a personal Jupyter Server with JupyterLab on your local machine
-- Customize your JupyterLab environment
-- Share your JupyterLab notebook and environment with other data scientists
+- [Run a personal Jupyter Server with JupyterLab on your local machine](#run-and-access-a-jupyterlab-container)
+- [Customize your JupyterLab environment](#customize-your-jupyterlab-environment)
+- [Share your JupyterLab notebook and environment with other data scientists](#share-your-work)
+- [Open an existing notebook with a bind mount](#open-an-existing-notebook-with-a-bind-mount)
+- [Save and access notebooks with a volume](#save-and-access-notebooks)
+- [Run with Compose](#use-compose-to-run-your-container)
 
 ## What is JupyterLab?
 
@@ -69,6 +74,8 @@ container, in a web browser navigate to
 [localhost:8889/lab?token=my-token](http://localhost:8889/lab?token=my-token).
 
 To stop the container, in the terminal press `ctrl`+`c`.
+
+### Open an existing notebook with a bind mount
 
 To access an existing notebook on your system, you can use a
 [bind mount](/storage/bind-mounts/). Open a terminal and

@@ -24,6 +24,16 @@ uses Okta and Microsoft Entra ID as a working example, the general process remai
 
 If you're unfamiliar with the SSO process, first review [SSO overview](/manuals/enterprise/security/single-sign-on/_index.md) to learn about how SSO works.
 
+## Choose a setup task
+
+- [Check prerequisites](#prerequisites).
+- [Add a domain](#step-1-add-a-domain) and [verify it](#step-2-verify-your-domain).
+- [Create the Docker connection](#step-3-create-an-sso-connection-in-docker), [configure your IdP](#step-4-create-an-sso-connection-in-your-idp), and [connect the two](#step-5-connect-docker-to-your-idp).
+- [Test the connection](#step-6-test-the-connection).
+- [Configure multiple IdPs](#configure-multiple-idps).
+- [Enforce SSO](#enforce-sso).
+- [Manage an existing connection](manage.md).
+
 ## Prerequisites
 
 Docker supports any SAML 2.0 or OIDC-compatible identity provider. Before you begin, make sure the following conditions are met:

@@ -41,6 +41,14 @@ Hardened Docker Desktop provides a collection of security features designed to s
 
 With Hardened Docker Desktop, you can enforce strict security policies that prevent developers and containers from bypassing organizational controls. You can also enhance container isolation to protect against security threats like malicious payloads that might breach the Docker Desktop Linux VM or underlying host system.
 
+## Choose a control
+
+- Manage configuration: [Settings Management](settings-management/_index.md).
+- Isolate containers: [enable ECI](enhanced-container-isolation/enable-eci.md), review [limitations](enhanced-container-isolation/limitations.md), or [configure socket exceptions](enhanced-container-isolation/config.md).
+- Control image sources: [registry access](registry-access-management.md) and [image access](image-access-management.md).
+- Restrict container networking: [air-gapped containers](air-gapped-containers.md).
+- Control personal namespace pushes: [namespace access](namespace-access.md).
+
 ## Who should use Hardened Docker Desktop?
 
 Hardened Docker Desktop is ideal for security-focused organizations that:

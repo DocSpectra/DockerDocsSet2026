@@ -15,12 +15,14 @@ During local development, it’s quite common to need to run multiple HTTP servi
 
 A reverse proxy can dramatically simplify this setup by being the single exposed service and then routing requests to the appropriate service based on the request URL (either by path or hostname). [Traefik](https://traefik.io/traefik/) is a modern, cloud-native reverse proxy and load balancer that makes developing and deploying multi-service applications easier. This guide will show you how to use Traefik with Docker to enhance your development environment.
 
+## Choose a routing task
+
 In this guide, you will learn how to:
 
-1. Start Traefik with Docker
-2. Configure routing rules to split traffic between two containers
-3. Use Traefik in a containerized development environment
-4. Use Traefik to send requests to non-containerized workloads
+1. [Start Traefik with Docker](#using-traefik-with-docker)
+2. [Configure routing rules to split traffic between two containers](#using-traefik-with-docker)
+3. [Use Traefik in a containerized development environment](#using-traefik-in-development)
+4. [Use Traefik to send requests to non-containerized workloads](#sending-traffic-to-non-containerized-workloads)
 
 ## Prerequisites
 
@@ -38,6 +40,8 @@ While there are [many Traefik-monitored labels](https://doc.traefik.io/traefik/r
 
 - `traefik.http.routers.<service-name>.rule` - used to indicate the routing rule ([view all of the available rules here](https://doc.traefik.io/traefik/routing/routers/#rule))
 - `traefik.http.services.<service-name>.loadbalancer.server.port` - indicates the port Traefik should forward the request to. Note that this container port does not need to be exposed on your host machine ([read about port detection here](https://doc.traefik.io/traefik/providers/docker/#port-detection))
+
+### Start Traefik and route between containers
 
 Let’s do a quick demo of starting Traefik and then configuring two additional containers to be accessible using different hostnames.
 
@@ -365,3 +369,7 @@ To run the example app that forwards requests from Traefik to native-running app
 ## Recap
 
 Running multiple services doesn’t have to require tricky port configuration and a good memory. With tools like Traefik, it’s easy to launch the services you need and easily access them - whether they’re for the app itself (such as the frontend and backend) or for additional development tooling (such as phpMyAdmin).
+
+## Related samples
+
+- [Traefik samples](../reference/samples/traefik.md)

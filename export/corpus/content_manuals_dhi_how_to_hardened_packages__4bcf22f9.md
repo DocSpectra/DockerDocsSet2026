@@ -21,6 +21,15 @@ Access to hardened packages varies by subscription:
   the enterprise package repository directly in your own images for full access
   to compliance and security-patched packages.
 
+Choose a task:
+
+- [Use the packages included in base images](#built-in-packages)
+- [Add packages through image customization](#add-packages-through-image-customization)
+- [Configure the public repository](#public-repository)
+- [Configure the Enterprise repository](#enterprise-repository), including CLI and authentication requirements
+- [Verify signatures and metadata](#verify-packages)
+- [Retrieve package attestations](#package-attestations)
+
 ## Built-in packages
 
 Supported distributions of Docker Hardened Images (DHI) automatically include

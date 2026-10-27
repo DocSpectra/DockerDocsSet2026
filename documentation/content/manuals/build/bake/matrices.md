@@ -10,6 +10,8 @@ variants, based on parameters that you specify. This works in a similar way to
 [Matrix strategies for GitHub Actions](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs).
 You can use this to reduce duplication in your Bake definition.
 
+## Define a matrix target
+
 The matrix attribute is a map of parameter names to lists of values. Bake
 builds each possible combination of values as a separate target.
 
@@ -60,6 +62,8 @@ $ docker buildx bake --print app
   }
 }
 ```
+
+For a walkthrough, see [Building variants](/guides/bake/index.md#building-variants).
 
 ## Multiple axes
 

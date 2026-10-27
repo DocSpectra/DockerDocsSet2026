@@ -5,6 +5,8 @@ description: Run your Testcontainers-based integration tests and explore next st
 weight: 40
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-go-getting-started/#prerequisites) · [Previous: Test suites](/guides/testcontainers-go-getting-started/test-suites/)
+
 ## Run the tests
 
 Run all the tests using `go test ./...`. Optionally add the `-v` flag for
@@ -34,3 +36,7 @@ To learn more about Testcontainers, visit the
 - [Testcontainers for Go documentation](https://golang.testcontainers.org/)
 - [Testcontainers for Go quickstart](https://golang.testcontainers.org/quickstart/)
 - [Testcontainers Postgres module for Go](https://golang.testcontainers.org/modules/postgres/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-go-getting-started/)

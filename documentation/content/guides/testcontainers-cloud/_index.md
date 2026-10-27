@@ -25,6 +25,10 @@ params:
       url: https://www.docker.com/search/?_sf_s=testcontainers%20cloud
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
+## Overview
+
 Testcontainers Cloud is a cloud-based solution designed to streamline and enhance the process of running integration tests using Testcontainers. Testcontainers is the open source framework, which allows developers to easily spin up containerized dependencies such as databases, message brokers, and other services required for testing. By shifting the management of Testcontainers-based services to the cloud, Testcontainers Cloud optimizes performance, reduces resource constraints on local machines or CI servers, and ensures consistent test environments. This solution is particularly beneficial for teams working on complex, distributed systems, as it allows for scalable, isolated, and reliable testing without the typical overhead of managing containers locally.
 
 ## What you'll learn
@@ -37,6 +41,8 @@ Testcontainers Cloud is a cloud-based solution designed to streamline and enhanc
 
 Works well with Docker Desktop, GitHub Actions, Jenkins, Kubernetes, and other CI solutions
 
+## Runtime minutes
+
 Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runtime minutes, and additional minutes are available via consumption pricing. Testcontainers Cloud runtime minutes do not rollover month to month.
 
 ## Who’s this for?
@@ -45,3 +51,10 @@ Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runt
 - DevOps Teams that integrate automated container-based testing into CI/CD pipelines for continuous testing.
 - QA Teams that seek scalable and consistent test environments for comprehensive integration and end-to-end testing.
 - Developers who need reliable, containerized test environments for testing microservices and databases.
+
+## Guide steps
+
+1. [Why Testcontainers Cloud?](/guides/testcontainers-cloud/why/)
+2. [Set up local development](/guides/testcontainers-cloud/demo-local/)
+3. [Configure a CI pipeline](/guides/testcontainers-cloud/demo-ci/)
+4. [Runtime, configuration, cleanup, and pricing questions](/guides/testcontainers-cloud/common-questions/)

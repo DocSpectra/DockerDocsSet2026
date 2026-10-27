@@ -7,6 +7,21 @@ description: Learn how to containerize an Angular application with Docker by cre
 
 ---
 
+[Angular guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Get the sample application](#get-the-sample-application)
+- [Generate Docker files](#generate-a-dockerfile)
+- [Choose a base image and configure the Dockerfile](#step-2-configure-the-dockerfile)
+- [Configure .dockerignore](#step-3-configure-the-dockerignore-file)
+- [Configure Nginx](#step-4-create-the-nginxconf-file)
+- [Build the image](#step-5-build-the-angular-application-image)
+- [Run the application](#run-the-containerized-application)
+- [Check the running container](#check-the-running-container)
+- [Stop the application](#stop-the-application)
+
 ## Prerequisites
 
 Before you begin, make sure the following tools are installed and available on your system:
@@ -455,7 +470,7 @@ What this command does:
 - Tags the image as docker-angular-sample so you can reference it later
 
 
-#### Step 6:  View local images
+### Step 6:  View local images
 
 After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 
@@ -513,6 +528,8 @@ $ docker compose up --build -d
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see your Angular application running in the browser.
 
 
+### Check the running container
+
 To confirm that the container is running, use `docker ps` command:
 
 ```console
@@ -528,6 +545,8 @@ CONTAINER ID   IMAGE                          COMMAND                  CREATED  
 eb13026806d1   docker-angular-sample-server   "nginx -c /etc/nginx…"   About a minute ago  Up About a minute  0.0.0.0:8080->8080/tcp   docker-angular-sample-server-1
 ```
 
+
+### Stop the application
 
 To stop the application, run:
 
@@ -580,3 +599,4 @@ With your Angular application now containerized, you're ready to move on to the 
 
 In the next section, you'll learn how to develop your application using Docker containers, enabling a consistent, isolated, and reproducible development environment across any machine.
 
+Continue to [development](develop.md).

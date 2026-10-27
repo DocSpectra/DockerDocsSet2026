@@ -25,6 +25,14 @@ This guide walks you through building and pushing Docker images using [Azure Pip
 - Configure Docker authentication securely.
 - Set up an automated pipeline to build and push images.
 
+## Follow the tasks
+
+- [Configure a Docker Hub service connection](#step-1-configure-a-docker-hub-service-connection)
+- [Set the Docker username variable](#configure-the-docker-username)
+- [Create the pipeline](#step-2-create-your-pipeline)
+- [Review the pipeline behavior](#what-this-pipeline-does)
+- [Read the configuration walkthrough](#how-the-pipeline-works)
+
 ## Set up Azure DevOps to work with Docker Hub
 
 ### Step 1: Configure a Docker Hub service connection
@@ -40,6 +48,17 @@ To securely authenticate with Docker Hub using Azure Pipelines:
 > [!IMPORTANT]
 >
 > Avoid selecting the option to grant access to all pipelines unless absolutely necessary. Always apply the principle of least privilege.
+
+### Configure the Docker username
+
+> [!IMPORTANT]
+>
+> The variable `dockerUsername` is not set automatically.  
+> Set it securely in your Azure DevOps pipeline variables:  
+>   1. Go to **Pipelines > Edit > Variables**  
+>   2. Add `dockerUsername` with your Docker Hub username  
+>
+> Learn more: [Define and use variables in Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch)
 
 ### Step 2: Create your pipeline
 
@@ -157,14 +176,7 @@ These variables ensure consistent naming, versioning, and reuse throughout the p
 - `buildTag`: a unique tag for each pipeline run
 - `latestTag`: a stable alias for your most recent image
 
-> [!IMPORTANT]
->
-> The variable `dockerUsername` is not set automatically.  
-> Set it securely in your Azure DevOps pipeline variables:  
->   1. Go to **Pipelines > Edit > Variables**  
->   2. Add `dockerUsername` with your Docker Hub username  
->
-> Learn more: [Define and use variables in Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch)
+For the username setup, see [Configure the Docker username](#configure-the-docker-username).
  
 ### Step 3: Define pipeline stages and jobs
 

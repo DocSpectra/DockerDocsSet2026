@@ -7,6 +7,8 @@ aliases:
  - /desktop/extensions-sdk/guides/oauth2-flow/
 ---
 
+## Prerequisites
+
 > [!NOTE]
 >
 > This page assumes that you already have an Identity Provider (IdP), such as Google, Entra ID (formerly Azure AD) or Okta, which handles the authentication process and returns an access token.
@@ -59,11 +61,11 @@ You can get the authorization code from the extension UI by listing `docker-desk
 >
 > Using this feature requires the extension SDK 0.3.3 in Docker Desktop. You need to ensure that the required SDK version for your extension set with `com.docker.desktop.extension.api.version` in [image labels](../extensions/labels.md) is higher than 0.3.3.
 
-#### Authorization
+### Authorization
 
 This step is where the user enters their credentials in the browser. After the authorization is complete, the user is redirected back to your extension user interface, and the extension UI code can consume the authorization code that's part of the query parameters in the URL.
 
-#### Exchange the Authorization Code
+### Exchange the Authorization Code
 
 Next, you exchange the authorization code for an access token.
 

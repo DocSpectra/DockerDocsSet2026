@@ -15,6 +15,21 @@ allowing you to [verify](/manuals/dhi/how-to/verify.md) image signatures and
 [scan](/manuals/dhi/how-to/scan.md) for vulnerabilities to ensure the security
 and integrity of your images.
 
+## Before you begin
+
+> [!NOTE]
+>
+> You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
+> Use your Docker ID credentials (the same username and password you use for
+> Docker Hub). If you don't have a Docker account, [create
+> one](../../accounts/create-account.md) for free.
+>
+> Run `docker login dhi.io` to authenticate.
+
+Review the [migration checklist](./checklist.md). For image users, shells,
+package managers, and entry points, see [image variant
+details](../how-to/explore.md#image-variant-details).
+
 ## Migration steps
 
 The following example demonstrates how to migrate a Dockerfile from a
@@ -29,14 +44,6 @@ needed to install packages and dependencies.
 The following example diff snippet from a Dockerfile shows the old base image
 replaced by the new hardened image.
 
-> [!NOTE]
->
-> You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
-> Use your Docker ID credentials (the same username and password you use for
-> Docker Hub). If you don't have a Docker account, [create
-> one](../../accounts/create-account.md) for free.
->
-> Run `docker login dhi.io` to authenticate.
 
 ```diff
 - ## Original base image

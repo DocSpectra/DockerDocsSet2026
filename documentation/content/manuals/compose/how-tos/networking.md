@@ -8,6 +8,8 @@ aliases:
   - /compose/networking/
 ---
 
+## Default network and service discovery
+
 By default Compose sets up a single
 [network](/reference/cli/docker/network/create/) for your app. Each
 container for a service joins the default network and is both reachable by
@@ -19,6 +21,8 @@ other containers on that network, and discoverable by the service's name.
 > which is based on the name of the directory it lives in. You can override the
 > project name with either the [`--project-name` flag](/reference/cli/docker/compose/)
 > or the [`COMPOSE_PROJECT_NAME` environment variable](environment-variables/envvars.md#compose_project_name).
+
+### Example: connect web and database services
 
 For example, suppose your app is in a directory called `myapp`, and your `compose.yaml` looks like this:
 
@@ -46,6 +50,8 @@ Each container can now look up the service name `web` or `db` and
 get back the appropriate container's IP address. For example, `web`'s
 application code could connect to the URL `postgres://db:5432` and start
 using the Postgres database.
+
+### Host ports and container ports
 
 It is important to note the distinction between `HOST_PORT` and `CONTAINER_PORT`.
 In the above example, for `db`, the `HOST_PORT` is `8001` and the container port is

@@ -21,6 +21,8 @@ $ docker buildx build --push -t <registry>/<image> \
   --cache-from type=local,src=path/to/local/dir .
 ```
 
+### Parameters
+
 The following table describes the available CSV parameters that you can pass to
 `--cache-to` and `--cache-from`.
 
@@ -41,6 +43,8 @@ The following table describes the available CSV parameters that you can pass to
 [2]: _index.md#oci-media-types
 [3]: _index.md#cache-compression
 [4]: #cache-versioning
+
+### Missing cache
 
 If the `src` cache doesn't exist, then the cache import step will fail, but the
 build continues.

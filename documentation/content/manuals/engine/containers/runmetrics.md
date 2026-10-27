@@ -11,6 +11,22 @@ aliases:
   - /config/containers/runmetrics/
 ---
 
+## Find a metrics task
+
+- [Stream container metrics with docker stats](#docker-stats)
+- [Identify the cgroup version](#enumerate-cgroups)
+- [Change cgroup version](#changing-cgroup-version)
+- [Review cgroup v2 requirements and behavior](#running-docker-on-cgroup-v2)
+- [Find a container's cgroup](#find-the-cgroup-for-a-given-container)
+- [Read memory, CPU, and block I/O metrics](#metrics-from-cgroups-memory-cpu-block-io)
+- [Collect network metrics](#network-metrics)
+- [Collect metrics at high resolutions](#tips-for-high-performance-metric-collection)
+- [Collect metrics when a container exits](#collect-metrics-when-a-container-exits)
+
+For related tasks, see [Resource constraints](resource_constraints.md),
+[Docker daemon metrics with Prometheus](../daemon/prometheus.md), and
+[OpenTelemetry for the Docker CLI](../cli/otel.md).
+
 ## Docker stats
 
 You can use the `docker stats` command to live stream a container's
@@ -275,7 +291,7 @@ it also means that when a cgroup is terminated, it could increase the
 memory usage of another cgroup, because they're not splitting the cost
 anymore for those memory pages.
 
-### CPU metrics: `cpuacct.stat`
+#### CPU metrics: `cpuacct.stat`
 
 Now that we've covered memory metrics, everything else is
 simple in comparison. CPU metrics are in the

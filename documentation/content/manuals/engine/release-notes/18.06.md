@@ -5,6 +5,18 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [18.06.2](#18062), [18.06.0-ce](#18060-ce) |
+| Security sections | [18.06.3-ce](#18063-ce), [18.06.2](#18062) |
+| Deprecation and removal sections | [18.06.0-ce](#18060-ce) |
+| Important release notes | [18.06.0-ce](#18060-ce) |
+| Initial release entry | [18.06.0-ce](#18060-ce) |
+
 ## 18.06.3-ce
 
 2019-02-19

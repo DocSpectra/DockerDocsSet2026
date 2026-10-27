@@ -12,6 +12,8 @@ switch to an annual billing cycle.
 If you're on a monthly plan, you can switch to a yearly plan at any time.
 However, switching from a yearly to a monthly cycle isn't supported.
 
+## Before changing your billing cycle
+
 When you change your billing cycle:
 
 - Your next billing date reflects the new cycle. To find your next billing date,
@@ -24,6 +26,8 @@ When you change your billing cycle:
   credit toward an annual subscription. For example, if your monthly cost is $10
   and you're used value is $5, when you switch to an annual cycle ($100), the
   final charge is $95 ($100-$5).
+
+Choose the steps for a [personal account](#change-personal-account-to-an-annual-cycle) or [organization](#change-organization-to-an-annual-cycle).
 
 ## Change personal account to an annual cycle
 

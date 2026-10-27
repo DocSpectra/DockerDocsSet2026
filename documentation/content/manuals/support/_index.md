@@ -11,9 +11,26 @@ params:
 
 Docker offers multiple support channels depending on your subscription level and needs.
 
+## Find support information
+
+- [Request paid subscription support](#request-support)
+- [Review response times](#support-response-times) and [severity levels](#support-severity-levels)
+- [Find community support](#community-support)
+- [Check Docker Desktop supported versions](#supported-versions), [machine limits](#number-of-machines), and [operating systems](#supported-operating-systems)
+- [Review Docker Desktop support coverage and exclusions](#scope-of-support)
+- [Review diagnostic data and privacy](#diagnostic-data-and-privacy)
+
 ## Paid subscription support
 
 All Docker Pro, Team, and Business subscribers receive email support for Docker products.
+
+### Request support
+
+> [!TIP]
+>
+> Before reaching out for support, review the troubleshooting documentation for your product.
+
+If you have a paid Docker subscription, [contact the Support team](https://hub.docker.com/support/contact/).
 
 ### Support response times
 
@@ -33,14 +50,6 @@ All Docker Pro, Team, and Business subscribers receive email support for Docker 
 | High     | Team or department-level impact preventing significant users from accessing core functionality. Severe business impact with no workaround exists.                          |
 | Medium   | Individual user or small group impact causing partial loss of functionality. Business operations continue, often with workarounds available but reduced productivity.      |
 
-### Request support
-
-> [!TIP]
->
-> Before reaching out for support, review the troubleshooting documentation for your product.
-
-If you have a paid Docker subscription, [contact the Support team](https://hub.docker.com/support/contact/).
-
 ## Community support
 
 All Docker users can seek support through community resources, where Docker or the community respond on a best effort basis:
@@ -51,6 +60,23 @@ All Docker users can seek support through community resources, where Docker or t
 ## Docker Desktop support
 
 Docker Desktop support is available with a paid subscription.
+
+### Supported versions
+
+- Docker Business: Versions up to six months older than the latest version (fixes applied to latest version only)
+- Docker Pro and Team: Latest version only
+
+### Number of machines
+
+- Docker Pro: One machine
+- Docker Team: Number of machines equal to subscription seats
+- Docker Business: Unlimited machines
+
+### Supported operating systems
+
+- [Mac system requirements](/manuals/desktop/setup/install/mac-install.md#system-requirements)
+- [Windows system requirements](/manuals/desktop/setup/install/windows-install.md#system-requirements)
+- [Linux system requirements](/manuals/desktop/setup/install/linux/_index.md#system-requirements)
 
 ### Scope of support
 
@@ -101,23 +127,6 @@ Docker Desktop support excludes:
 
 {{< /tab >}}
 {{< /tabs >}}
-
-### Supported versions
-
-- Docker Business: Versions up to six months older than the latest version (fixes applied to latest version only)
-- Docker Pro and Team: Latest version only
-
-### Number of machines
-
-- Docker Pro: One machine
-- Docker Team: Number of machines equal to subscription seats
-- Docker Business: Unlimited machines
-
-### Supported operating systems
-
-- [Mac system requirements](/manuals/desktop/setup/install/mac-install.md#system-requirements)
-- [Windows system requirements](/manuals/desktop/setup/install/windows-install.md#system-requirements)
-- [Linux system requirements](/manuals/desktop/setup/install/linux/_index.md#system-requirements)
 
 ### Community resources
 

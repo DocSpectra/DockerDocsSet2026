@@ -113,6 +113,27 @@ params:
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
 
+## Find task-specific steps
+
+| Task | Instructions |
+| --- | --- |
+| Install Docker | [Choose an installation](/get-started/get-docker.md), [Docker Engine](engine/install/_index.md), [Docker Desktop](desktop/setup/install/_index.md), [Docker Compose](compose/install/_index.md) |
+| Build an image | [Build steps](build/_index.md#find-build-steps) |
+| Configure containers | [Container tasks](engine/containers/_index.md), [Compose how-tos](compose/how-tos/_index.md) |
+| Connect containers | [Engine networking](engine/network/_index.md), [Compose networking](compose/how-tos/networking.md), [Desktop networking](desktop/features/networking/networking-how-tos.md) |
+| Store or back up data | [Storage](engine/storage/_index.md), [Desktop backup and restore](desktop/settings-and-maintenance/backup-and-restore.md) |
+| Configure a proxy | [Containers and builds](engine/cli/proxy.md), [Docker daemon](engine/daemon/proxy.md), [Docker Desktop](desktop/settings-and-maintenance/settings.md#proxies) |
+| Secure Docker | [Developer security](security/_index.md), [Engine security](engine/security/_index.md), [Enterprise security](enterprise/security/_index.md) |
+| Manage an organization | [Administration tasks](admin/_index.md#find-an-administration-task) |
+
+## Browse by area
+
+- [Open source](#open-source)
+- [AI](#ai)
+- [Products](#products)
+- [Platform](#platform)
+- [Enterprise](#enterprise)
+
 ## Open source
 
 Open source development and containerization technologies.

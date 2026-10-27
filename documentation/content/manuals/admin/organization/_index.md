@@ -48,6 +48,16 @@ A Docker organization is a collection of teams and repositories with centralized
 management. It helps administrators group members and assign access in a
 streamlined, scalable way.
 
+## Find an organization task
+
+- [Create an organization](setup/orgs.md#create-an-organization), [convert an account](setup/convert-account.md), or [merge organizations](setup/orgs.md#merge-organizations)
+- [Review onboarding prerequisites](setup/onboard.md#prerequisites) and [choose an onboarding workflow](setup/onboard.md#onboard-with-guided-setup)
+- [Invite members](manage/members.md#invite-members), [manage invitations](manage/members.md#manage-invitations), or [update roles](manage/members.md#update-a-member-role)
+- [Create a team and set repository permissions](manage/manage-a-team.md)
+- [Manage product access and monitor usage](manage/manage-products.md)
+- [Update organization information](setup/general-settings.md)
+- [Review deactivation prerequisites](deactivate-account.md#prerequisites)
+
 ## Organization structure
 
 The following diagram shows how organizations relate to teams and members.

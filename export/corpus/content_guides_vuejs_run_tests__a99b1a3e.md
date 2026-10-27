@@ -7,9 +7,17 @@ description: Learn how to run your vue.js tests in a container.
 
 ---
 
+[Vue.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Configure the test service](#step-1-update-composeyaml)
+- [Run tests](#step-2-run-the-tests)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize Vue.js application](containerize.md).
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize Vue.js application](containerize.md).
 
 ## Overview
 
@@ -137,3 +145,5 @@ Explore official references and best practices to sharpen your Docker testing wo
 ## Next steps
 
 Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions to automatically build and test your Vue.js application in a containerized environment. This ensures your code is validated on every push or pull request, maintaining consistency and reliability across your development workflow.
+
+Continue to [CI/CD](configure-github-actions.md).

@@ -56,6 +56,22 @@ Docker Swarm mode is built into the Docker Engine. Do not confuse Docker Swarm m
 with [Docker Classic Swarm](https://github.com/docker/classicswarm)
 which is no longer actively developed.
 
+## Choose a Swarm task
+
+- Get started: [concepts](key-concepts.md), [tutorial prerequisites](swarm-tutorial/_index.md#set-up),
+  and [the tutorial sequence](swarm-tutorial/_index.md#tutorial-steps).
+- Set up a cluster: [create a swarm and configure addresses](swarm-mode.md),
+  [join nodes](join-nodes.md), and [manage nodes](manage-nodes.md).
+- Deploy workloads: [services](services.md), [stacks](stack-deploy.md),
+  [configs](configs.md), and [secrets](secrets.md).
+- Configure networking: [service networks and encryption](networking.md) and
+  [published ports and routing mesh](ingress.md).
+- Maintain the cluster: [administration, backups, and recovery](admin_guide.md),
+  [manager autolock](swarm_manager_locking.md), and [PKI](how-swarm-mode-works/pki.md).
+- Review how Swarm works: [nodes](how-swarm-mode-works/nodes.md),
+  [services](how-swarm-mode-works/services.md), [task states](how-swarm-mode-works/swarm-task-states.md),
+  and [Raft consensus](raft.md).
+
 ## Feature highlights
 
 ### Cluster management integrated with Docker Engine

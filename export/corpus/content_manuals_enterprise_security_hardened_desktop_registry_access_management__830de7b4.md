@@ -18,6 +18,13 @@ Registry Access Management (RAM) lets administrators control which container reg
 
 RAM works with all registry types including cloud services, on-premises registries, and registry mirrors. You can allow any hostname or domain, but must include redirect domains (like `s3.amazonaws.com` for some registries) in your allowlist.
 
+## Choose a registry access task
+
+- Check [prerequisites](#prerequisites), [platform constraints](#registry-limits-and-platform-constraints), [build and deployment restrictions](#build-and-deployment-restrictions), and [bypass considerations](#security-bypass-considerations).
+- [Configure registry permissions](#configure-registry-permissions).
+- [Verify restrictions](#verify-restrictions-are-working).
+- Review [allowlist best practices](#registry-allowlist-best-practices).
+
 ## Supported registries
 
 Registry Access Management works with any container registry, including:

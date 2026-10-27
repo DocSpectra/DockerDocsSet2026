@@ -22,6 +22,8 @@ structures, automatically resolves platforms, provides human-readable summaries,
 validates in one step with `--verify`, and integrates tightly with Docker's
 attestation infrastructure.
 
+## Before you begin
+
 > [!IMPORTANT]
 >
 > You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
@@ -30,6 +32,30 @@ attestation infrastructure.
 > [create one](../../accounts/create-account.md) for free.
 >
 > Run `docker login dhi.io` to authenticate.
+
+> [!IMPORTANT]
+>
+> When using cosign, you must first authenticate to both the DHI registry
+> and the Docker Scout registry.
+>
+> For example:
+>
+> ```console
+> $ docker login dhi.io
+> $ docker login registry.scout.docker.com
+> $ cosign verify ...
+> ```
+
+Choose a task:
+
+- [List image attestations](#list-available-attestations)
+- [Retrieve an image attestation](#retrieve-a-specific-attestation)
+- [Validate an image attestation](#validate-the-attestation)
+- [Handle missing transparency log entries](#handle-missing-transparency-log-entries), including the Docker Scout version requirement
+- [Show the equivalent cosign command](#show-the-equivalent-cosign-command)
+- [Verify package attestations](#verify-package-attestations)
+- [Verify Helm chart attestations](#verify-helm-chart-attestations-with-docker-scout)
+- [Browse attestations on Docker Hub](#explore-attestations-on-docker-hub)
 
 ## Verify image attestations
 
@@ -289,18 +315,6 @@ Example output:
     v cosign verify ...
 ```
 
-> [!IMPORTANT]
->
-> When using cosign, you must first authenticate to both the DHI registry
-> and the Docker Scout registry.
->
-> For example:
->
-> ```console
-> $ docker login dhi.io
-> $ docker login registry.scout.docker.com
-> $ cosign verify ...
-> ```
 
 ## Verify package attestations
 

@@ -22,7 +22,7 @@ Lifecycle hooks are particularly useful because they can have special privileges
 for security. This means that certain tasks requiring higher permissions can be done without 
 compromising the overall security of the container.
 
-### Post-start hooks
+## Post-start hooks
 
 Post-start hooks are commands that run after the container has started, but there's no 
 set time for when exactly they will execute. The hook execution timing is not assured during 
@@ -49,7 +49,7 @@ volumes:
   data: {} # a Docker volume is created with root ownership
 ```
 
-### Pre-stop hooks
+## Pre-stop hooks
 
 Pre-stop hooks are commands that run before the container is stopped by a specific 
 command (like `docker compose down` or stopping it manually with `Ctrl+C`). 
@@ -65,6 +65,10 @@ services:
     pre_stop:
       - command: ./data_flush.sh
 ```
+
+## Related tasks
+
+- [Control startup and shutdown order](startup-order.md)
 
 ## Reference information
 

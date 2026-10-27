@@ -5,6 +5,17 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| Security sections | [17.06.1-ce](#17061-ce), [17.06.0-ce](#17060-ce) |
+| Deprecation and removal sections | [17.06.0-ce](#17060-ce) |
+| Release notices | [17.06.0-ce](#17060-ce) |
+| Initial release entry | [17.06.0-ce](#17060-ce) |
+
 ## 17.06.2-ce
 2017-09-05
 
@@ -80,14 +91,20 @@ toc_max: 2
 ## 17.06.0-ce
 2017-06-28
 
-> [!NOTE]: Docker 17.06.0 has an issue in the image builder causing a change in the behavior
+> [!NOTE]
+>
+> Docker 17.06.0 has an issue in the image builder causing a change in the behavior
 > of the `ADD` instruction of Dockerfile when referencing a remote `.tar.gz` file. The issue will be
 > fixed in Docker 17.06.1.
 
-> [!NOTE]: Starting with Docker CE 17.06, Ubuntu packages are also available
+> [!NOTE]
+>
+> Starting with Docker CE 17.06, Ubuntu packages are also available
 > for IBM Z using the s390x architecture.
 
-> [!NOTE]: Docker 17.06 by default disables communication with legacy (v1)
+> [!NOTE]
+>
+> Docker 17.06 by default disables communication with legacy (v1)
 > registries. If you require interaction with registries that have not yet
 > migrated to the v2 protocol, set the `--disable-legacy-registry=false` daemon
 > option. Interaction with v1 registries will be removed in Docker 17.12.

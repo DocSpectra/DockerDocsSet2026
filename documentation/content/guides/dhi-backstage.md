@@ -23,6 +23,19 @@ By the end of this guide, you'll have a Backstage container image that is distro
 - Docker Desktop or Docker Engine with BuildKit enabled
 - A Docker Hub account authenticated with `docker login` and `docker login dhi.io`
 - A Backstage project created with `@backstage/create-app`
+- Basic familiarity with multi-stage Dockerfiles and Node.js native modules
+
+Choose a step:
+
+- [Review native-module requirements](#why-backstage-needs-customization)
+- [Examine the original Dockerfile](#step-1-examine-the-original-dockerfile)
+- [Switch the build stages to DHI](#step-2-switch-the-build-stages-to-dhi)
+- [Add Socket Firewall](#step-3-add-socket-firewall-protection)
+- [Customize the runtime image](#step-4-remove-the-shell-and-the-package-manager-with-dhi-customizations)
+- [Verify the results](#step-5-verify-the-results)
+
+For customization access and mirroring steps, see [Get started with DHI Select
+and Enterprise](/dhi/how-to/select-enterprise/).
 
 ## Why Backstage needs customization
 
@@ -99,6 +112,8 @@ RUN --mount=type=cache,target=/home/node/.cache/yarn,sharing=locked,uid=1000,gid
 COPY --from=build --chown=node:node /app/packages/backend/dist/bundle/ ./
 CMD ["node", "packages/backend", "--config", "app-config.yaml"]
 ```
+
+### Build and inspect the original image
 
 Run this image and inspect what's available inside the container:
 
@@ -207,6 +222,8 @@ docker build -t backstage:dhi-dev .
 >
 > The `-dev` variant includes a shell and package manager, which is why `apk add` works. Backstage requires `python3` and native build tools in the runtime image because `yarn workspaces focus --all --production` recompiles native modules during the production install. This is specific to Backstage's build process — most Node.js applications can use the standard (non-dev) DHI runtime variant without additional packages.
 
+### Inspect the DHI attestations
+
 The DHI images come with attestations that the original `node:24-trixie-slim` images don't have. Check what's attached:
 
 ```console
@@ -306,7 +323,13 @@ For Backstage, the runtime image needs:
 - **sqlite-libs** - the shared library that the compiled `better-sqlite3` native module links against (added as a system package).
 - **Python** - if your Backstage plugins or configuration require Python at runtime. Added as the `python-3.14` system package from the DHI catalog. Unlike `python3` installed via `apk`, this package is patched by Docker and tracked in the image SBOM.
 
+> [!NOTE]
+>
+> If your Backstage configuration does not require Python at runtime, you can omit the `python-3.14` from the packages list. The `sqlite-libs` package alone is sufficient to run Backstage with `better-sqlite3`.
+
 Docker will continuously build with SLSA Level 3 compliance and patch these customized images within the guaranteed SLA for CVE patching.
+
+### Create the runtime customization
 
 To create the customization, use one of the following methods.
 
@@ -383,10 +406,6 @@ dhictl customization build list --org YOUR_ORG YOUR_ORG/dhi-node "backstage"
 
 Docker builds the customized image on its secure infrastructure and publishes it as `YOUR_ORG/dhi-node:24-alpine3.23_backstage`.
 
-> [!NOTE]
->
-> If your Backstage configuration does not require Python at runtime, you can omit the `python-3.14` from the packages list. The `sqlite-libs` package alone is sufficient to run Backstage with `better-sqlite3`.
-
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -408,6 +427,8 @@ Build this version:
 ```console
 docker build -t backstage:dhi .
 ```
+
+### Check the runtime image
 
 Since the customization includes only runtime libraries and OCI artifacts — no build tools, no package manager, no shell — the resulting image is distroless:
 
@@ -462,6 +483,8 @@ A typical comparison across the approaches shows results similar to the followin
 > [!NOTE]
 >
 > The `-sfw-dev` variant is larger because Socket Firewall adds monitoring tooling to the image. The additional size is in the build stages, and the security benefit during `yarn install` outweighs the size increase.
+
+### Scan with multiple tools
 
 For a more thorough assessment, scan with multiple tools:
 

@@ -16,6 +16,12 @@ aliases:
 The following options allow you to customize your automated build and automated
 test processes.
 
+- [Build and test environment variables](#environment-variables-for-building-and-testing)
+- [Override build, test, or push commands](#override-build-test-or-push-commands)
+- [Custom build phase hooks](#custom-build-phase-hooks)
+- [Build hook examples](#build-hook-examples)
+- [Work with shallow source clones](#source-repository-or-branch-clones)
+
 ## Environment variables for building and testing
 
 Several utility environment variables are set by the build process, and are
@@ -94,8 +100,8 @@ The following hooks are available:
 * `hooks/post_build`
 * `hooks/pre_test`
 * `hooks/post_test`
-* `hooks/pre_push` (only used when executing a build rule or [Automated build](index.md) )
-* `hooks/post_push` (only used when executing a build rule or [Automated build](index.md) )
+* `hooks/pre_push` (only used when executing a build rule or [Automated build](./_index.md) )
+* `hooks/post_push` (only used when executing a build rule or [Automated build](./_index.md) )
 
 ### Build hook examples
 

@@ -16,6 +16,10 @@ aliases:
 These optional post-installation procedures describe how to configure your
 Linux host machine to work better with Docker.
 
+- [Manage Docker as a non-root user](#manage-docker-as-a-non-root-user)
+- [Configure Docker to start on boot](#configure-docker-to-start-on-boot-with-systemd)
+- [Configure the default logging driver](#configure-default-logging-driver)
+
 ## Manage Docker as a non-root user
 
 The Docker daemon binds to a Unix socket, not a TCP port. By default it's the
@@ -39,7 +43,7 @@ manually create the group.
 > [!NOTE]
 >
 > To run Docker without root privileges, see
-> [Run the Docker daemon as a non-root user (Rootless mode)](../security/rootless.md).
+> [Run the Docker daemon as a non-root user (Rootless mode)](../security/rootless/_index.md).
 
 To create the `docker` group and add your user:
 

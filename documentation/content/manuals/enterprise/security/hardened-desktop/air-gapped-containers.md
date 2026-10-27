@@ -15,6 +15,13 @@ Air-gapped containers let you restrict container network access by controlling w
 
 Docker Desktop can configure container network traffic to accept connections, reject connections, or tunnel through HTTP or SOCKS proxies. You control which TCP ports the policy applies to and whether to use a single proxy or per-destination policies via Proxy Auto-Configuration (PAC) files.
 
+## Choose a network policy task
+
+- Check [prerequisites](#prerequisites) and [security considerations](#security-considerations).
+- [Configure the container proxy](#configure-air-gapped-containers).
+- [Define PAC file rules](#proxy-auto-configuration-pac-files).
+- [Verify blocked, allowed, and proxied access](#verify-air-gapped-container-configuration).
+
 ## Who should use air-gapped containers?
 
 Use air-gapped containers if:

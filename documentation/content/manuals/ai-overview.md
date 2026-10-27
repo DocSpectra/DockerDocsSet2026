@@ -22,6 +22,14 @@ Each tool serves a different purpose.
 | Build and orchestrate custom multi-agent teams                  | [Docker Agent](./ai/docker-agent/)                       | `docker agent`   |
 | Run coding agents in isolated environments                      | [Docker Sandboxes](./ai/sandboxes/)                      | `docker sandbox` |
 
+## Find setup and task guides
+
+- Model Runner: [requirements](./ai/model-runner/_index.md#requirements), [setup](./ai/model-runner/get-started.md), [API access](./ai/model-runner/api-reference.md), and [troubleshooting](./ai/model-runner/troubleshooting.md)
+- Docker Agent: [installation](./ai/docker-agent/_index.md#installation), [model providers](./ai/docker-agent/model-providers.md), [local models](./ai/docker-agent/local-models.md), and [coding-agent tutorial](./ai/docker-agent/tutorial.md)
+- Gordon: [prerequisites](./ai/gordon/_index.md#prerequisites), [CLI](./ai/gordon/how-to/cli.md), [permissions](./ai/gordon/how-to/permissions.md), and [data privacy](./ai/gordon/concepts/data-privacy.md)
+- Compose: [define and bind models](./ai/compose/models-and-compose.md)
+- Applications and labs: [AI task guides](../guides/ai-task-guides.md)
+
 ## How these tools relate
 
 **Gordon** is Docker's built-in AI assistant. It helps with Docker-specific

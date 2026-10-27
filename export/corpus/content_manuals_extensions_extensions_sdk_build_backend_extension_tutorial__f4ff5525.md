@@ -11,11 +11,22 @@ aliases:
 
 Your extension can ship a backend part with which the frontend can interact with. This page provides information on why and how to add a backend.
 
+## Prerequisites
+
 Before you start, make sure you have installed the latest version of [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 > Tip
 >
 > Check the [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>`. They provide a better base for your extension as it's more up-to-date and related to your install of Docker Desktop.
+
+## On this page
+
+- [Decide whether to add a backend](#why-add-a-backend)
+- [Add backend code](#add-a-backend-to-the-extension)
+- [Adapt the Dockerfile](#adapt-the-dockerfile)
+- [Configure metadata](#configure-the-metadata-file)
+- [Call the backend from the frontend](#invoke-the-extension-backend-from-your-frontend)
+- [Rebuild and update](#re-build-the-extension-and-update-it)
 
 ## Why add a backend?
 

@@ -22,15 +22,26 @@ issues are detected, such as missing or outdated attestations, Docker Scout can
 guide you on how to add or update them, ensuring compliance and improving
 visibility into the image's security status.
 
+## Attestation types
+
 There are two key types of attestations:
 
 - SBOM, which lists the software artifacts within the image.
 - Provenance, which details how the image was built.
+
+## Create attestations
 
 You can create attestations by using `docker buildx build` with the
 `--provenance` and `--sbom` flags. Attestations attach to the image index,
 allowing you to inspect them without pulling the entire image. Docker Scout
 leverages this metadata to give you more precise recommendations and better
 control over your image's security.
+
+For build requirements and commands, see [Improve compliance in the quickstart](/manuals/scout/quickstart.md#step-6-improve-compliance).
+
+## Continue
+
+- [Remediation](./remediation.md)
+- [Guide contents](./_index.md)
 
 <div id="scout-lp-survey-anchor"></div>

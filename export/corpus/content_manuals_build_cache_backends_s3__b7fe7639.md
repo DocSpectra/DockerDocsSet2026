@@ -12,6 +12,8 @@ The `s3` cache storage uploads your resulting build cache to
 [Amazon S3 file storage service](https://aws.amazon.com/s3/)
 or other S3-compatible services, such as [MinIO](https://min.io/).
 
+## Driver requirements
+
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
 [Build drivers](/manuals/build/builders/drivers/_index.md) for more information.
@@ -23,6 +25,8 @@ $ docker buildx build --push -t <user>/<image> \
   --cache-to type=s3,region=<region>,bucket=<bucket>,name=<cache-image>[,parameters...] \
   --cache-from type=s3,region=<region>,bucket=<bucket>,name=<cache-image> .
 ```
+
+### Parameters
 
 The following table describes the available CSV parameters that you can pass to
 `--cache-to` and `--cache-from`.

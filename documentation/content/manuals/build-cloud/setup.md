@@ -31,6 +31,16 @@ build` command, you also need a version of Docker Compose that supports Docker
 Build Cloud. You can find compatible Docker Compose binaries on the releases
 page of [this repository](https://github.com/docker/compose-desktop).
 
+## Firewall configuration
+
+To use Docker Build Cloud behind a firewall, ensure that your firewall allows
+traffic to the following addresses:
+
+- 3.211.38.21
+- https://auth.docker.io
+- https://build-cloud.docker.com
+- https://hub.docker.com
+
 ## Steps
 
 You can add a cloud builder using the CLI, with the `docker buildx create`
@@ -78,16 +88,6 @@ command, or using the Docker Desktop settings GUI.
 The builder has native support for the `linux/amd64` and `linux/arm64`
 architectures. This gives you a high-performance build cluster for building
 multi-platform images natively.
-
-## Firewall configuration
-
-To use Docker Build Cloud behind a firewall, ensure that your firewall allows
-traffic to the following addresses:
-
-- 3.211.38.21
-- https://auth.docker.io
-- https://build-cloud.docker.com
-- https://hub.docker.com
 
 ## What's next
 

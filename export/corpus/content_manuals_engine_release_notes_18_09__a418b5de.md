@@ -18,6 +18,19 @@ toc_max: 2
 > See the [installation instructions](../install/_index.md) for the corresponding
 > Linux distribution for details.
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [18.09.8](#18098), [18.09.7](#18097), [18.09.4](#18094), [18.09.2](#18092), [18.09.1](#18091) |
+| Known issue and limitation sections | [18.09.8](#18098), [18.09.7](#18097), [18.09.6](#18096), [18.09.5](#18095), [18.09.4](#18094), [18.09.3](#18093), [18.09.2](#18092), [18.09.1](#18091), [18.09.0](#18090) |
+| Security sections | [18.09.2](#18092), [18.09.1](#18091) |
+| Deprecation and removal sections | [18.09.0](#18090) |
+| Important release notes | [18.09.1](#18091), [18.09.0](#18090) |
+| Initial release entry | [18.09.0](#18090) |
+
 ## 18.09.9
 2019-09-03
 

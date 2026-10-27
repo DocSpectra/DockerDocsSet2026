@@ -18,11 +18,22 @@ test services based upon images you've created or other available images. In
 your production environment, Swarm mode provides a fault-tolerant platform with
 cluster management features to keep your services running and available.
 
+## Prerequisites
+
 These instructions assume you have installed the Docker Engine on
 a machine to serve as a manager node in your swarm.
 
 If you haven't already, read through the [Swarm mode key concepts](key-concepts.md)
 and try the [Swarm mode tutorial](swarm-tutorial/_index.md).
+
+## Choose an initialization task
+
+- Review [network ports and trust requirements](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts).
+- Plan [default address pools](#configuring-default-address-pools) and
+  [the advertise address](#configure-the-advertise-address).
+- [Create the swarm](#create-a-swarm).
+- [Retrieve or rotate join tokens](#view-the-join-command-or-update-a-swarm-join-token).
+- [Join nodes](join-nodes.md) or [enable manager autolock](swarm_manager_locking.md).
 
 ## Create a swarm
 

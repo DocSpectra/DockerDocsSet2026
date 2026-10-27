@@ -21,6 +21,15 @@ If you haven't already, read through the
 [Swarm mode overview](../_index.md) and
 [key concepts](../key-concepts.md).
 
+## Explore node roles
+
+- [Manager nodes and fault tolerance](#manager-nodes)
+- [Worker nodes and task placement](#worker-nodes)
+- [Change node roles](#change-roles)
+
+For task steps, see [Join nodes](../join-nodes.md),
+[Manage nodes](../manage-nodes.md), and [Swarm administration](../admin_guide.md).
+
 ## Manager nodes
 
 Manager nodes handle cluster management tasks:
@@ -44,11 +53,12 @@ from the failure of a manager node without downtime.
 * A five-manager swarm tolerates a maximum simultaneous loss of two
 manager nodes.
 * An odd number `N` of manager nodes in the cluster tolerates the loss of at most `(N-1)/2` managers.
+
 Docker recommends a maximum of seven manager nodes for a swarm.
 
-    > [!IMPORTANT]
-    >
-    > Adding more managers does NOT mean increased scalability or higher performance. In general, the opposite is true.
+> [!IMPORTANT]
+>
+> Adding more managers does NOT mean increased scalability or higher performance. In general, the opposite is true.
 
 ## Worker nodes
 

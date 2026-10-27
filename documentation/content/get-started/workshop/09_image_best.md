@@ -10,6 +10,10 @@ aliases:
  - /guides/workshop/09_image_best/
 ---
 
+On this page: [Inspect image layers](#image-layering) · [Cache dependencies](#layer-caching) · [Multi-stage builds](#multi-stage-builds) · [Maven and Tomcat example](#maventomcat-example) · [React example and its scope](#react-example).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](08_using_compose.md) · [All tasks](_index.md#workshop-tasks).
+
 ## Image layering
 
 Using the `docker image history` command, you can see the command that was used
@@ -176,6 +180,9 @@ being created, which can be overridden using the `--target` flag.
 
 ### React example
 
+  > [!Tips]
+  > This React example is for illustration purposes. The getting-started todo app is a `Node.js` backend application, not a React frontend.
+
 When building React applications, you need a Node environment to compile the JS code (typically JSX), SASS stylesheets,
 and more into static HTML, JS, and CSS. If you aren't doing server-side rendering, you don't even need a Node environment
 for your production build. You can ship the static resources in a static nginx container.
@@ -198,8 +205,7 @@ In the previous Dockerfile example, it uses the `node:24-alpine` image to perfor
 into an nginx container.
 
 
-  > [!Tips]
-  > This React example is for illustration purposes. The getting-started todo app is a `Node.js` backend application, not a React frontend.
+
 
 
 ## Summary

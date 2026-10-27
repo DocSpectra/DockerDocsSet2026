@@ -5,7 +5,7 @@ description: Explore common challenges and questions related to Docker Scout.
 
 <!-- vale Docker.HeadingLength = NO -->
 
-### How is Docker Scout different from other security tools?
+## How is Docker Scout different from other security tools?
 
 Docker Scout takes a broader approach to container security compared to
 third-party security tools. Third-party security tools, if they offer
@@ -21,7 +21,7 @@ with strong policy enforcement, Docker Scout goes beyond just identifying
 vulnerabilities in your containers. It helps you build secure applications from
 the ground up.
 
-### Can I use Docker Scout with external registries other than Docker Hub?
+## Can I use Docker Scout with external registries other than Docker Hub?
 
 You can use Scout with registries other than Docker Hub. Integrating Docker Scout
 with third-party container registries enables Docker Scout to run image
@@ -36,16 +36,16 @@ The following container registry integrations are available:
 
 Learn more about configuring Scout with your registries in [Integrating Docker Scout with third-party registries](/scout/integrations/#container-registries).
 
-### Does Docker Scout CLI come by default with Docker Desktop?
+## Does Docker Scout CLI come by default with Docker Desktop?
 
 Yes, the Docker Scout CLI plugin comes pre-installed with Docker Desktop.
 
-### Is it possible to run `docker scout` commands on a Linux system without Docker Desktop?
+## Is it possible to run `docker scout` commands on a Linux system without Docker Desktop?
 
 If you run Docker Engine without Docker Desktop, Docker Scout doesn't come
 pre-installed, but you can [install it as a standalone binary](/scout/install/).
 
-### How is Docker Scout using an SBOM?
+## How is Docker Scout using an SBOM?
 
 An SBOM, or software bill of materials, is a list of ingredients that make up
 software components. [Docker Scout uses SBOMs](/scout/concepts/sbom/) to
@@ -56,5 +56,7 @@ the image.
 
 The SBOM is cross-referenced with the advisory database to determine if any of
 the components in the image have known vulnerabilities.
+
+[Guide contents](./_index.md)
 
 <div id="scout-lp-survey-anchor"></div>

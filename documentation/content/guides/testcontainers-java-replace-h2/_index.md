@@ -14,6 +14,8 @@ params:
   time: 15 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-replace-h2-with-real-database-for-testing -->
 
 In this guide, you will learn how to:
@@ -33,3 +35,14 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [The H2 problem](/guides/testcontainers-java-replace-h2/problem-with-h2/)
+2. [JDBC URL approach](/guides/testcontainers-java-replace-h2/jdbc-url-approach/)
+3. [JUnit 5 extension](/guides/testcontainers-java-replace-h2/junit-extension-approach/)
+
+## Find a specific task
+
+- [Initialize the database with a script](/guides/testcontainers-java-replace-h2/jdbc-url-approach/#initialize-the-database-with-a-script)
+- [Test JdbcTemplate-based repositories](/guides/testcontainers-java-replace-h2/jdbc-url-approach/#testing-jdbctemplate-based-repositories)

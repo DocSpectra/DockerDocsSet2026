@@ -10,27 +10,27 @@ grid:
   - title: "The build and publish process"
     description: Understand the process for building and publishing an extension.
     icon: "checklist"
-    link: "/extensions/extensions-sdk/process/"
+    link: "/manuals/extensions/extensions-sdk/process/"
   - title: "Quickstart guide"
     description: Follow the quickstart guide to create a basic Docker extension quickly.
     icon: "explore"
-    link: "/extensions/extensions-sdk/quickstart/"
+    link: "/manuals/extensions/extensions-sdk/quickstart/"
   - title: "View the design guidelines"
     description: Ensure your extension aligns to Docker's design guidelines and principles.
     icon: "design_services"
-    link: "/extensions/extensions-sdk/design/design-guidelines/"
+    link: "/manuals/extensions/extensions-sdk/design/design-guidelines/"
   - title: "Publish your extension"
     description: Understand how to publish your extension to the Marketplace.
     icon: "publish"
-    link: "/extensions/extensions-sdk/extensions/"
+    link: "/manuals/extensions/extensions-sdk/extensions/"
   - title: "Interacting with Kubernetes"
     description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker extension.
     icon: "multiple_stop"
-    link: "/extensions/extensions-sdk/guides/kubernetes/"
+    link: "/manuals/extensions/extensions-sdk/guides/kubernetes/"
   - title: "Multi-arch extensions"
     description: Build your extension for multiple architectures.
     icon: "content_copy"
-    link: "/extensions/extensions-sdk/extensions/multi-arch/"
+    link: "/manuals/extensions/extensions-sdk/extensions/multi-arch/"
 ---
 
 The resources in this section help you create your own Docker extension.
@@ -48,5 +48,17 @@ You distribute extensions through Docker Hub. However, you can develop them loca
 the extension to Docker Hub. See [Extensions distribution](extensions/DISTRIBUTION.md) for further details.
 
 {{% include "extensions-form.md" %}}
+
+## Find a task
+
+| Task | Documentation |
+| --- | --- |
+| Create an extension | [Quickstart](quickstart.md), [build tutorials](build/_index.md) |
+| Understand the components and permissions | [Architecture](architecture/_index.md), [metadata](architecture/metadata.md), [security](architecture/security.md) |
+| Design the interface | [Design and UI styling](design/_index.md), [design guidelines](design/design-guidelines.md) |
+| Call APIs from the frontend | [UI API setup and examples](dev/api/overview.md), [API reference](/reference/api/extensions-sdk/_index.md) |
+| Test during development | [Developer SDK tools](dev/_index.md) |
+| Add integrations | [Developer guides](guides/_index.md) |
+| Package, validate, share, or publish | [Release and publication](extensions/_index.md) |
 
 {{< grid >}}

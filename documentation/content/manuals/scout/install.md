@@ -12,7 +12,22 @@ If you run Docker Engine without Docker Desktop,
 Docker Scout doesn't come pre-installed,
 but you can install it as a standalone binary.
 
+## Choose an installation method
+
+- [Installation script](#installation-script)
+- [Manual installation for Linux, macOS, or Windows](#manual-installation)
+- [Run the CLI container image](#container-image)
+- [Use the GitHub Action](#github-action)
+
+For CLI settings after installation, see [environment variables](./how-tos/configure-cli.md).
+
 ## Installation script
+
+> [!NOTE]
+>
+> Always examine scripts downloaded from the internet before running them
+> locally. Before installing, make yourself familiar with potential risks and
+> limitations of the convenience script.
 
 To install the latest version of the plugin, run the following commands:
 
@@ -20,12 +35,6 @@ To install the latest version of the plugin, run the following commands:
 $ curl -fsSL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh -o install-scout.sh
 $ sh install-scout.sh
 ```
-
-> [!NOTE]
->
-> Always examine scripts downloaded from the internet before running them
-> locally. Before installing, make yourself familiar with potential risks and
-> limitations of the convenience script.
 
 ## Manual installation
 

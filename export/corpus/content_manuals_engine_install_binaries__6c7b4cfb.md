@@ -46,6 +46,7 @@ This topic discusses binary installation for Linux, Windows, and macOS:
 - [Install daemon and client binaries on Linux](#install-daemon-and-client-binaries-on-linux)
 - [Install client binaries on macOS](#install-client-binaries-on-macos)
 - [Install server and client binaries on Windows](#install-server-and-client-binaries-on-windows)
+- [Upgrade static binaries](#upgrade-static-binaries)
 
 ## Install daemon and client binaries on Linux
 

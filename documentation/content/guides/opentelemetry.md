@@ -16,12 +16,14 @@ A key component of OpenTelemetry is the OpenTelemetry Protocol (OTLP) a general-
 
 This guide walks you through how to instrument a simple Node.js application with OpenTelemetry and run both the app and a collector using Docker. This setup is ideal for local development and testing observability before integrating with external observability platforms like Prometheus, Jaeger, or Grafana.
 
+## Choose an instrumentation task
+
 In this guide, you'll learn how to:
 
-- How to set up OpenTelemetry in a Node.js app.
-- How to run an OpenTelemetry Collector in Docker.
-- How to visualize traces with Jaeger.
-- How to use Docker Compose to manage the full observability stack.
+- [How to set up OpenTelemetry in a Node.js app.](#create-a-simple-nodejs-app)
+- [How to run an OpenTelemetry Collector in Docker.](#configure-the-opentelemetry-collector)
+- [How to visualize traces with Jaeger.](#verify-traces-in-jaeger)
+- [How to use Docker Compose to manage the full observability stack.](#add-docker-compose-configuration)
 
 ## Using OpenTelemetry with Docker
 

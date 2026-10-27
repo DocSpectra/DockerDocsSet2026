@@ -34,6 +34,13 @@ This guide assumes that you're familiar with:
 - You have Git installed for cloning repositories.
 - You're using the [containerd](/manuals/desktop/features/containerd.md) image store.
 
+## Follow the tasks
+
+- [Clone the project and run the initial build](#introduction)
+- [Add unit tests, linting, and a validation group](#testing-and-linting)
+- [Build release and debug variants](#building-variants)
+- [Export binaries for local and multiple platforms](#exporting-build-artifacts)
+
 ## Introduction
 
 This guide uses an example project to demonstrate how Docker Buildx Bake can
@@ -120,6 +127,8 @@ This section shows how to add two types of tests:
 - Unit testing with `go test`.
 - Linting for style violations with `golangci-lint`.
 
+### Add unit tests
+
 In Test-Driven Development (TDD) fashion, start by adding a new `test` target
 to the Bake file:
 
@@ -170,6 +179,8 @@ Now, running the `test` target with Bake will evaluate the unit tests for this
 project. If you want to verify that it works, you can make an arbitrary change
 to `main_test.go` to cause the test to fail.
 
+### Add linting
+
 Next, to enable linting, add another target to the Bake file, named `lint`:
 
 ```hcl
@@ -198,6 +209,8 @@ FROM golangci/golangci-lint:v${GOLANGCI_LINT_VERSION}-alpine AS lint
 RUN --mount=target=.,rw \
     golangci-lint run
 ```
+
+### Run tests and linting together
 
 Lastly, to enable running both tests simultaneously, you can use the `groups`
 construct in the Bake file. A group can specify multiple targets to run with a
@@ -373,6 +386,8 @@ usually portable, creating alternate build targets for exporting only the
 binary is trivial. All you need to do is add an empty stage in the Dockerfile
 containing nothing but the binary that you want to export.
 
+### Export a binary for the local platform
+
 First, let's add a quick way to build a binary for your local platform and
 export it to `./build/local` on the local filesystem.
 
@@ -415,6 +430,8 @@ $ file ./build/bin/bakeme
 ./build/bin/bakeme: Mach-O 64-bit executable arm64
 ```
 
+### Export binaries for multiple platforms
+
 Next, let's add a target to build all of the platform variants of the program.
 To do this, you can [inherit](/manuals/build/bake/inheritance.md) the `bin`
 target that you just created, and extend it by adding the desired platforms.
@@ -448,6 +465,8 @@ build/
 
 5 directories, 4 files
 ```
+
+### Export release and debug variants
 
 To also generate "release" and "debug" variants, you can use a matrix just like
 you did with the default target. When using a matrix, you also need to

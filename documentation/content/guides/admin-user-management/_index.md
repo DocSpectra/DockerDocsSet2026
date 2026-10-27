@@ -24,6 +24,14 @@ params:
 
 Managing roles and permissions is key to securing your Docker environment while enabling easy collaboration and operational efficiency. This guide walks IT administrators through the essentials of user and access management, offering strategies for assigning roles, provisioning users, and using tools like activity logs and Insights to monitor and optimize Docker usage.
 
+## Follow the guide
+
+1. [Identify users and set up roles and teams](setup.md).
+2. [Invite owners and members and configure provisioning](onboard.md).
+3. [Monitor activity and usage](audit-and-monitor.md).
+
+For task-by-task onboarding steps and prerequisites, see [Onboard your organization](/manuals/admin/organization/setup/onboard.md).
+
 ## Who's this for?
 
 - IT teams tasked with configuring and maintaining secure user access

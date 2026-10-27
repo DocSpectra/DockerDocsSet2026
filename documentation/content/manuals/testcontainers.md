@@ -33,18 +33,7 @@ Using Testcontainers, you can write tests that depend on the same services you u
 
 {{< grid items=intro >}}
 
-## Quickstart
-
-### Supported languages
-
-Testcontainers provide support for the most popular languages, and Docker sponsors the development of the following Testcontainers implementations:
-
-- [Go](https://golang.testcontainers.org/quickstart/)
-- [Java](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
-
-The rest are community-driven and maintained by independent contributors.
-
-### Prerequisites
+## Prerequisites
 
 Testcontainers requires a Docker-API compatible container runtime.
 During development, Testcontainers is actively tested against recent versions of Docker on Linux, as well as against Docker Desktop on Mac and Windows.
@@ -57,6 +46,17 @@ and additional manual configuration might be necessary.
 If you have further questions about configuration details for your setup or whether it supports running Testcontainers-based tests,
 contact the Testcontainers team and other users from the Testcontainers community on [Slack](https://slack.testcontainers.org/).
 
+## Quickstart
+
+### Supported languages
+
+Testcontainers provide support for the most popular languages, and Docker sponsors the development of the following Testcontainers implementations:
+
+- [Go](https://golang.testcontainers.org/quickstart/)
+- [Java](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
+
+The rest are community-driven and maintained by independent contributors.
+
 {{< grid items=quickstart >}}
 
 ## Guides
@@ -64,22 +64,44 @@ contact the Testcontainers team and other users from the Testcontainers communit
 Explore hands-on Testcontainers guides to learn how to use Testcontainers
 with different languages and popular frameworks:
 
+### Get started in your language
+
 - [Getting started with Testcontainers for .NET](/guides/testcontainers-dotnet-getting-started/)
 - [Getting started with Testcontainers for Go](/guides/testcontainers-go-getting-started/)
 - [Getting started with Testcontainers for Java](/guides/testcontainers-java-getting-started/)
 - [Getting started with Testcontainers for Node.js](/guides/testcontainers-nodejs-getting-started/)
 - [Getting started with Testcontainers for Python](/guides/testcontainers-python-getting-started/)
-- [Testing a Spring Boot REST API with Testcontainers](/guides/testcontainers-java-spring-boot-rest-api/)
+
+### Test databases and configure containers
+
 - [Testcontainers container lifecycle management](/guides/testcontainers-java-lifecycle/)
 - [Replace H2 with a real database for testing](/guides/testcontainers-java-replace-h2/)
 - [Configuration of services running in a container](/guides/testcontainers-java-service-configuration/)
-- [Testing an ASP.NET Core web app](/guides/testcontainers-dotnet-aspnet-core/)
-- [Testing Spring Boot Kafka Listener](/guides/testcontainers-java-spring-boot-kafka/)
-- [Testing REST API integrations using MockServer](/guides/testcontainers-java-mockserver/)
-- [Testing AWS service integrations using LocalStack](/guides/testcontainers-java-aws-localstack/)
 - [Testing Quarkus applications with Testcontainers](/guides/testcontainers-java-quarkus/)
 - [Working with jOOQ and Flyway using Testcontainers](/guides/testcontainers-java-jooq-flyway/)
+
+### Test web APIs and authentication
+
+- [Testing a Spring Boot REST API with Testcontainers](/guides/testcontainers-java-spring-boot-rest-api/)
+- [Testing an ASP.NET Core web app](/guides/testcontainers-dotnet-aspnet-core/)
+- [Testing REST API integrations using MockServer](/guides/testcontainers-java-mockserver/)
 - [Testing REST API integrations using WireMock](/guides/testcontainers-java-wiremock/)
 - [Securing Spring Boot with Keycloak and Testcontainers](/guides/testcontainers-java-keycloak-spring-boot/)
 - [Testing Micronaut REST API with WireMock](/guides/testcontainers-java-micronaut-wiremock/)
+
+### Test messaging and AWS services
+
+- [Testing Spring Boot Kafka Listener](/guides/testcontainers-java-spring-boot-kafka/)
+- [Testing AWS service integrations using LocalStack](/guides/testcontainers-java-aws-localstack/)
 - [Testing Micronaut Kafka Listener](/guides/testcontainers-java-micronaut-kafka/)
+
+### Run containers in the cloud
+
+- [Testcontainers Cloud guide](/guides/testcontainers-cloud/)
+- [Testcontainers Cloud documentation](https://testcontainers.com/cloud/docs/)
+
+### Run services with Docker
+
+- [Mock OAuth services with Dex](/guides/dex/)
+- [Develop and test AWS applications with LocalStack](/guides/localstack/)
+- [Mock API services with WireMock](/guides/wiremock/)

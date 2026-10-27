@@ -9,6 +9,19 @@ aliases:
 
 {{< summary-bar feature_name="SSO" >}}
 
+## Before setup
+
+Review the [SCIM prerequisites and management scope](_index.md#prerequisites).
+
+## Choose a SCIM task
+
+- [Review supported attributes and JIT precedence](#supported-attributes).
+- [Enable SCIM in Docker](#enable-scim-in-docker), then [in your IdP](#enable-scim-in-your-idp).
+- [Configure role, organization, and team mapping](#set-up-role-mapping).
+- [Test provisioning](#test-scim-provisioning).
+- [Disable SCIM](#disable-scim).
+- [Migrate existing JIT users](migrate-scim.md).
+
 ## Supported attributes
 
 SCIM uses attributes (name, email, etc.) to sync user information between your

@@ -5,7 +5,17 @@ description: How to access NVIDIA GPUs from a container
 keywords: docker, GPU, NVIDIA, cuda, nvidia-smi, device, container toolkit
 ---
 
+## Related GPU tasks
+
+- [Docker Desktop for Windows prerequisites and validation](/manuals/desktop/features/gpu.md).
+- [Run Compose services with GPU access](/manuals/compose/how-tos/gpu-support.md).
+
 ## Access an NVIDIA GPU
+
+- [Prepare drivers](#prerequisites)
+- [Install NVIDIA Container Toolkit](#install-nvidia-container-toolkit)
+- [Expose GPUs to a container](#expose-gpus-for-use)
+- [Set NVIDIA capabilities](#set-nvidia-capabilities)
 
 ### Prerequisites
 
@@ -20,6 +30,10 @@ Verify that your GPU is running and accessible.
 Follow the official NVIDIA Container Toolkit [installation instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
 ### Expose GPUs for use
+
+> [!NOTE]
+>
+> NVIDIA GPUs can only be accessed by systems running a single engine.
 
 Include the `--gpus` flag when you start a container to access GPU resources.
 
@@ -85,10 +99,6 @@ $ docker run -it --rm --gpus '"device=0,2"' ubuntu nvidia-smi
 
 This exposes the GPUs at index `0` and `2` — the first and third GPUs listed in
 `nvidia-smi` output.
-
-> [!NOTE]
->
-> NVIDIA GPUs can only be accessed by systems running a single engine.
 
 ### Set NVIDIA capabilities
 

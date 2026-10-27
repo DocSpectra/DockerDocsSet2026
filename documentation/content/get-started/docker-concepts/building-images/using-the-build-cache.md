@@ -14,11 +14,15 @@ aliases:
  - /guides/docker-concepts/building-images/using-the-build-cache/
 ---
 
+On this page: [Cache invalidation](#explanation) · [Set up and compare builds](#build-the-application) · [Cache dependencies](#cache-dependencies) · [Additional resources](#additional-resources).
+
 {{< youtube-embed Ri6jMknjprY >}}
 
-## Explanation
+<a id="explanation"></a>
 
-Consider the following Dockerfile that you created for the [getting-started](./writing-a-dockerfile/) app.
+## Cache reuse and invalidation
+
+Consider the following Dockerfile that you created for the [getting-started](writing-a-dockerfile.md) app.
 
 
 ```dockerfile
@@ -43,7 +47,9 @@ Here are a few examples of situations that can cause cache to be invalidated:
 
 When you're writing or editing a Dockerfile, keep an eye out for unnecessary cache misses to ensure that builds run as fast and efficiently as possible.
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Compare builds and cache dependencies
 
 In this hands-on guide, you will learn how to use the Docker build cache effectively for a Node.js application.
 
@@ -233,6 +239,10 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
     Going back to the `docker image history` output, you see that each command in the Dockerfile becomes a new layer in the image. You might remember that when you made a change to the image, the `yarn` dependencies had to be reinstalled. Is there a way to fix this? It doesn't make much sense to reinstall the same dependencies every time you build, right?
 
     To fix this, restructure your Dockerfile so that the dependency cache remains valid unless it really needs to be invalidated. For Node-based applications, dependencies are defined in the `package.json` file. You'll want to reinstall the dependencies if that file changes, but use cached dependencies if the file is unchanged. So, start by copying only that file first, then install the dependencies, and finally copy everything else. Then, you only need to recreate the yarn dependencies if there was a change to the `package.json` file.
+
+<a id="cache-dependencies"></a>
+
+### Cache dependencies before copying source code
 
 6. Update the Dockerfile to copy in the `package.json` file first, install dependencies, and then copy everything else in.
 

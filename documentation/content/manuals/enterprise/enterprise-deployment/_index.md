@@ -32,4 +32,12 @@ grid:
 
 Docker Desktop supports scalable deployment options tailored for enterprise IT environments. Whether you're rolling out Docker across hundreds of developer workstations or enforcing consistent configuration through MDM solutions like Intune or Jamf, this section provides everything you need to install, configure, and manage Docker Desktop in a secure, repeatable way. Learn how to use MSI and PKG installers, configure default settings, control updates, and ensure compliance with your organization's policies—across Windows, macOS, and Linux systems.
 
+## Choose a deployment task
+
+- Install and configure Docker Desktop: [MSI installer](msi-install-and-configure.md) or [PKG installer](pkg-install-and-configure.md).
+- Deploy through device management: [Intune](use-intune.md) or [Jamf Pro](use-jamf-pro.md).
+- Review [Microsoft Store update behavior and WSL considerations](ms-store.md).
+- Review [Microsoft Dev Box prerequisites and setup](dev-box.md#setup).
+- Follow the [company setup guide](/guides/admin-set-up/_index.md) for planning, testing, and rollout.
+
 {{< grid >}}

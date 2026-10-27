@@ -27,6 +27,19 @@ Buildx supports the following exporters:
 - `cacheonly`: doesn't export a build output, but runs the build and creates a
   cache.
 
+## Choose an output task
+
+| Task | Steps | Exporter reference |
+| --- | --- | --- |
+| Run a built image locally | [Load to image store](#load-to-image-store) | [OCI and Docker](./oci-docker.md) |
+| Publish an image | [Push to registry](#push-to-registry) | [Image and registry](./image-registry.md) |
+| Save an image layout | [Export image layout to file](#export-image-layout-to-file) | [OCI and Docker](./oci-docker.md) |
+| Save files or binaries | [Export filesystem](#export-filesystem) | [Local and tar](./local-tar.md) |
+| Build without an output | [Cache-only export](#cache-only-export) | [Cache-only defaults and warning](#cache-only-export) |
+| Export several outputs | [Multiple exporters and version requirements](#multiple-exporters) | [Shared configuration](#configuration-options) |
+
+For a worked example, see [Export binaries](../building/export.md).
+
 ## Using exporters
 
 To specify an exporter, use the following command syntax:

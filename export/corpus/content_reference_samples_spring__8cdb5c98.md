@@ -5,3 +5,7 @@ service: spring
 aliases:
 - /samples/spring/
 ---
+
+## Browse samples
+
+[All samples](_index.md) / [Frameworks](_index.md#frameworks)

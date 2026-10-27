@@ -5,6 +5,8 @@ description: Run the jOOQ and Flyway integration tests and explore next steps.
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-jooq-flyway/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-jooq-flyway/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -35,3 +37,7 @@ To learn more about Testcontainers, visit the
 - [jOOQ code generation](https://www.jooq.org/doc/latest/manual/code-generation/)
 - [Spring Boot Testcontainers support](https://docs.spring.io/spring-boot/reference/testing/testcontainers.html)
 - [Replace H2 with a real database for testing](/guides/testcontainers-java-replace-h2/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-jooq-flyway/)

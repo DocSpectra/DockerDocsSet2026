@@ -4,6 +4,8 @@ description: Ensure you have the required tools and knowledge before setting up 
 weight: 10
 ---
 
+[Laravel guide overview](_index.md)
+
 Before you begin setting up Laravel with Docker Compose, make sure you meet the following prerequisites:
 
 ## Docker and Docker Compose
@@ -23,3 +25,7 @@ This guide assumes you have a basic understanding of Laravel and PHP. Familiarit
 
 - Laravel CLI: You should be comfortable using Laravel’s command-line tool (`artisan`).
 - Laravel Project Structure: Familiarize yourself with Laravel’s folder structure (`app`, `config`, `routes`, `tests`, etc.).
+
+## Next steps
+
+[Set up the production image and services](production-setup.md), then [set up development](development-setup.md).

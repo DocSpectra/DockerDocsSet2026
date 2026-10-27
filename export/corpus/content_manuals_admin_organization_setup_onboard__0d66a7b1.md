@@ -28,6 +28,12 @@ These actions help administrators gain visibility into user activity and
 enforce security settings. Organization members also receive increased pull
 limits and other benefits when they are signed in.
 
+## Choose an onboarding path
+
+- [Review prerequisites](#prerequisites)
+- [Use guided setup](#onboard-with-guided-setup)
+- [Follow the recommended steps](#recommended-onboarding-steps): [identify users](#step-one-identify-your-docker-users), [invite owners](#step-two-invite-owners), [invite members](#step-three-invite-members), [configure SSO and SCIM](#step-four-manage-user-access-with-sso-and-scim), [enforce sign-in](#step-five-enforce-sign-in-for-docker-desktop), and [manage Desktop security](#step-six-manage-docker-desktop-security)
+
 ## Prerequisites
 
 Before you start onboarding your organization, ensure you:
@@ -105,7 +111,7 @@ add additional owners.
 
 To add an owner, invite a user and assign them the owner role. For more
 details, see [Invite members](/manuals/admin/organization/manage/members.md) and
-[Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+[Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ### Step three: Invite members
 
@@ -116,7 +122,7 @@ they are signed in.
 
 To add a member, invite a user and assign them the member role.
 For more details, see [Invite members](/manuals/admin/organization/manage/members.md) and
-[Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+[Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ### Step four: Manage user access with SSO and SCIM
 
@@ -166,7 +172,7 @@ security posture:
 
 - [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md): Control which types of images your developers can pull from Docker Hub.
 - [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md): Define which registries your developers can access.
-- [Settings management](/manuals/enterprise/security/hardened-desktop/settings-management.md): Set and control Docker Desktop settings for your users.
+- [Settings management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md): Set and control Docker Desktop settings for your users.
 
 ## What's next
 

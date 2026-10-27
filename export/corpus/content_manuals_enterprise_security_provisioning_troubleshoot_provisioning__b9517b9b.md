@@ -12,6 +12,12 @@ aliases:
 
 This page helps troubleshoot common user provisioning issues including user roles, attributes, and unexpected account behavior with SCIM and Just-in-Time (JIT) provisioning.
 
+## Find an issue
+
+- [SCIM attribute values are overwritten or ignored](#scim-attribute-values-are-overwritten-or-ignored).
+- [SCIM updates don't apply to existing users](#scim-updates-dont-apply-to-existing-users).
+- For sign-in errors, see [Troubleshoot single sign-on](../single-sign-on/troubleshoot-sso.md).
+
 ## SCIM attribute values are overwritten or ignored
 
 ### Error message
@@ -74,6 +80,11 @@ linked to manage them.
 
 ### Solution
 
+> [!WARNING]
+>
+> Deleting a user removes their resource ownership (e.g., repositories).
+> Transfer ownership before removing the user.
+
 SCIM only manages users that it provisions. To allow SCIM to manage an
 existing user:
 
@@ -81,7 +92,3 @@ existing user:
 1. Trigger provisioning from your IdP.
 1. SCIM will re-create the user with correct attributes.
 
-> [!WARNING]
->
-> Deleting a user removes their resource ownership (e.g., repositories).
-> Transfer ownership before removing the user.

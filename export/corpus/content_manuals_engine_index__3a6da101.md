@@ -70,6 +70,18 @@ such as images, containers, networks, and volumes.
 For more details, see
 [Docker Architecture](/get-started/docker-overview.md#docker-architecture).
 
+## Find a task
+
+- [Install Docker Engine](install/_index.md) and follow the [Linux post-installation steps](install/linux-postinstall.md).
+- [Start and configure the daemon](daemon/_index.md).
+- [Use the Docker CLI](cli/_index.md).
+- [Configure and monitor containers](containers/_index.md).
+- [Choose storage mounts or daemon storage backends](storage/_index.md).
+- [Configure networking](network/_index.md).
+- [View container logs](logging/_index.md) or [configure logging drivers](logging/configure.md).
+- [Choose a security task](security/_index.md#choose-a-security-task).
+- [Manage contexts, labels, and unused resources](manage-resources/_index.md).
+
 {{< grid >}}
 
 ## Licensing

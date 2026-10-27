@@ -10,9 +10,20 @@ self-hosted web interface that provides a ChatGPT-like experience for local
 AI models. You can connect it to Docker Model Runner to get a polished chat
 interface for your models.
 
+## Find a setup task
+
+- [Check prerequisites](#prerequisites)
+- [Start with Compose](#quick-start-with-docker-compose)
+- [Choose an API configuration](#configuration-options) and review [network configuration](#network-configuration)
+- [Enable authentication](#enabling-authentication)
+- [Select or pull models and chat](#using-open-webui)
+- [Set up multiple models](#complete-example-with-multiple-models)
+- [Customize prompts and parameters](#customization) or [change the port](#running-on-a-different-port)
+- [Troubleshoot Open WebUI](#troubleshooting)
+
 ## Prerequisites
 
-- Docker Model Runner enabled with TCP access
+- [Docker Model Runner enabled with TCP access](get-started.md#enable-docker-model-runner)
 - A model pulled (e.g., `docker model pull ai/llama3.2`)
 
 ## Quick start with Docker Compose

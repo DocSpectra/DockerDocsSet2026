@@ -6,7 +6,9 @@ weight: 10
 notoc: true
 ---
 
-After you complete the [tutorial setup](index.md) steps, you're ready
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
+After you complete the [tutorial setup](_index.md) steps, you're ready
 to create a swarm. Make sure the Docker Engine daemon is started on the host
 machines.
 

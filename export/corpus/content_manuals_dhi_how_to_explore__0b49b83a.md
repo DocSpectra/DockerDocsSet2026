@@ -16,6 +16,15 @@ This page explains how to search available DHI repositories, review image
 metadata, examine variant details, and compare images to evaluate security
 improvements and differences.
 
+Choose a task:
+
+- [Search the catalog](#search-the-catalog) or [review a repository](#repository-details)
+- [Find image variants](#image-variants) and [inspect a variant's specifications and attestations](#image-variant-details)
+- [Compare images](#compare-and-evaluate-images), starting with the [comparison prerequisites](#prerequisites)
+
+For distribution and variant choices, see [Image types](../explore/available.md).
+For CLI installation and configuration, see [Use the DHI CLI](./cli.md).
+
 ## Search the catalog
 
 You can browse, search, or filter images by category in the [Hardened Image

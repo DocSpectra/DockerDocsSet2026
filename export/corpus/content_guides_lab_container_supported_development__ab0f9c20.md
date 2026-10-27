@@ -27,9 +27,7 @@ message queues — without installing anything locally. This lab walks through
 running PostgreSQL in a container, writing a `compose.yaml` your whole team
 can share, and adding a pgAdmin visualizer to the dev stack.
 
-## Launch the lab
-
-{{< labspace-launch image="dockersamples/labspace-container-supported-development" >}}
+Jump to: [learning objectives](#what-youll-learn), [modules](#modules), or [launch the lab](#launch-the-lab).
 
 ## What you'll learn
 
@@ -50,3 +48,13 @@ By the end of this Labspace, you will have completed the following:
 | 3   | Making Life Easier with Compose  | Replace `docker run` commands with a shared `compose.yaml`                      |
 | 4   | Adding Dev Tools                 | Add pgAdmin to the Compose stack for database visualization                     |
 | 5   | Recap                            | Review key takeaways and explore related guides                                 |
+
+## Launch the lab
+
+{{< labspace-launch image="dockersamples/labspace-container-supported-development" >}}
+
+## Related learning paths
+
+- [Getting Started with Docker](lab-container-getting-started.md)
+- [The Containerized SDLC](lab-containerized-sdlc.md)
+- [Container-supported development videos](container-supported-development.md)

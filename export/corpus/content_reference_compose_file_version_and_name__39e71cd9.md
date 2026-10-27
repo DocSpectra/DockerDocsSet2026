@@ -7,6 +7,8 @@ aliases:
 weight: 10
 ---
 
+Use [Version](#version-top-level-element-obsolete) for schema validation and warning behavior, or [Name](#name-top-level-element) for project naming and COMPOSE_PROJECT_NAME.
+
 ## Version top-level element (obsolete)
 
 > [!IMPORTANT]

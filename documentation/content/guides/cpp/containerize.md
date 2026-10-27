@@ -9,6 +9,8 @@ aliases:
   - /guides/language/cpp/containerize/
 ---
 
+[C++ guide overview](_index.md)
+
 ## Prerequisites
 
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
@@ -91,3 +93,5 @@ Related information:
 
 In the next section, you'll learn how you can develop your application using
 containers.
+
+Continue: [Develop locally](develop.md).

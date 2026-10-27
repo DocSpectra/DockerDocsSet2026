@@ -27,6 +27,24 @@ Docker Scout image analysis is available by default for Docker Hub repositories.
 You can also integrate third-party registries and other services. To learn more,
 see [Integrating Docker Scout with other systems](/manuals/scout/integrations/_index.md).
 
+## Choose an analysis task
+
+- [Activate analysis for a repository](#activate-docker-scout-on-a-repository)
+- [Analyze registry images](#analyze-registry-images)
+- [Analyze local images in Desktop or the CLI](#analyze-images-locally)
+- [Understand severity ratings](#vulnerability-severity-assessment)
+
+For artifact prefixes and source-code analysis, see [artifact types](../how-tos/artifact-types.md).
+
+## Maximum image size
+
+Image analysis on the Docker Scout platform, and analysis triggered by background
+indexing in Docker Desktop, has an image file size limit of 10 GB (uncompressed).
+To analyze images larger than that:
+
+- Attach an [SBOM attestation](/manuals/build/metadata/attestations/sbom.md) at build-time. When an image includes an SBOM attestation, Docker Scout uses it instead of generating one, so the 10 GB limit doesn’t apply.
+- Alternatively, you can use the [CLI](#cli) to analyze the image locally. The 10 GB limit doesn’t apply when using the CLI. If the image includes an SBOM attestation, the CLI uses it to complete the analysis faster.
+
 ## Activate Docker Scout on a repository
 
 See [Subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsScoutAnalysis)
@@ -221,12 +239,3 @@ For more information, see [Vulnerability Metrics (NIST)](https://nvd.nist.gov/vu
 Note that, given the advisory prioritization and fallback mechanism described
 earlier, severity ratings displayed in Docker Scout may deviate from this
 rating system.
-
-## Maximum image size
-
-Image analysis on the Docker Scout platform, and analysis triggered by background
-indexing in Docker Desktop, has an image file size limit of 10 GB (uncompressed).
-To analyze images larger than that:
-
-- Attach an [SBOM attestation](/manuals/build/metadata/attestations/sbom.md) at build-time. When an image includes an SBOM attestation, Docker Scout uses it instead of generating one, so the 10 GB limit doesn’t apply.
-- Alternatively, you can use the [CLI](#cli) to analyze the image locally. The 10 GB limit doesn’t apply when using the CLI. If the image includes an SBOM attestation, the CLI uses it to complete the analysis faster.

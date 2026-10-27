@@ -15,6 +15,8 @@ aliases:
 
 ## Failing builds
 
+### Retry a failed build
+
 If a build fails, a **Retry** icon appears next to the build report line on the
 **General** and **Builds** tabs. The **Build report** page and **Timeline logs** also display a **Retry** button.
 
@@ -24,6 +26,8 @@ If a build fails, a **Retry** icon appears next to the build report line on the
 >
 > If you are viewing the build details for a repository that belongs to an
 > organization, the **Cancel** and **Retry** buttons only appear if you have `Read & Write` access to the repository.
+
+### Build execution time limit
 
 Automated builds have a 4-hour execution time limit. If a build reaches this time limit, it's
 automatically cancelled, and the build logs display the following message:
@@ -37,6 +41,8 @@ whether a build was automatically cancelled, check the build duration.
 
 
 ## Build repositories with linked private submodules
+
+For service-user setup, see [Service users for team autobuilds](./setup.md#service-users-for-team-autobuilds).
 
 Docker Hub sets up a deploy key in your source code repository that allows it
 to clone the repository and build it. This key only works for a single,
@@ -61,7 +67,7 @@ system access to the repositories.
     This step is optional, but allows you to revoke the build-only keypair without removing other access.
 
 2. Copy the private half of the keypair to your clipboard.
-3. In Docker Hub, navigate to the build page for the repository that has linked private submodules. (If necessary, [follow the steps here](index.md#configure-automated-builds) to configure the automated build.)
+3. In Docker Hub, navigate to the build page for the repository that has linked private submodules. (If necessary, [follow the steps here](./setup.md#configure-automated-builds) to configure the automated build.)
 4. At the bottom of the screen, select the **plus** icon next to **Build Environment variables**.
 5. Enter `SSH_PRIVATE` as the name for the new environment variable.
 6. Paste the private half of the keypair into the **Value** field.

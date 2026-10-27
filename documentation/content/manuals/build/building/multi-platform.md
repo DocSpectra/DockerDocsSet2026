@@ -17,6 +17,14 @@ multiple different operating system or CPU architecture combinations. When
 building images, this lets you create a single image that can run on multiple
 platforms, such as `linux/amd64`, `linux/arm64`, and `windows/amd64`.
 
+## Find build steps
+
+- Check [image store and builder prerequisites](#prerequisites).
+- [Run a multi-platform build](#build-multi-platform-images).
+- Choose [QEMU](#qemu), [multiple native nodes](#multiple-native-nodes), or [cross-compilation](#cross-compilation).
+- Follow an [example](#examples).
+- For binary files, see [Exporting multi-platform builds](./export.md#exporting-multi-platform-builds).
+
 ## Why multi-platform builds?
 
 Docker solves the "it works on my machine" problem by packaging applications

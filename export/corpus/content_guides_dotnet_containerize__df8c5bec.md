@@ -11,6 +11,8 @@ aliases:
 - /guides/language/dotnet/containerize/
 ---
 
+[.NET guide overview](_index.md)
+
 ## Prerequisites
 
 * You have installed the latest version of [Docker
@@ -227,3 +229,5 @@ Related information:
 
 In the next section, you'll learn how you can develop your application using
 Docker containers.
+
+Continue: [Develop locally](develop.md).

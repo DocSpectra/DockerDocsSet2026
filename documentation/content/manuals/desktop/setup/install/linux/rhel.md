@@ -18,6 +18,10 @@ aliases:
 
 This page contains information on how to install, launch and upgrade Docker Desktop on a Red Hat Enterprise Linux (RHEL) distribution.
 
+Choose a task: [Check prerequisites](#prerequisites) · [Install](#install-docker-desktop) · [Launch](#launch-docker-desktop) · [Upgrade](#upgrade-docker-desktop).
+
+For shared requirements and caveats, see [Docker Desktop on Linux](_index.md).
+
 ## Prerequisites
 
 To install Docker Desktop successfully, you must:
@@ -107,6 +111,8 @@ To install Docker Desktop on RHEL:
    ```console
    $ sudo dnf install ./docker-desktop-x86_64-rhel.rpm
    ```
+
+### Post-install setup
 
 The RPM package includes a post-install script that completes additional setup steps automatically.
 

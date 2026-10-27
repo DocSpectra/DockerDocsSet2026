@@ -38,10 +38,26 @@ grid:
   description: Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
   icon: move_down
   link: /compose/bridge
-- title: Browse common FAQs
-  description: Explore general FAQs and find out how to give feedback.
+- title: Find task-specific steps
+  description: Browse Compose how-tos.
+  icon: category
+  link: /compose/how-tos/
+- title: Common challenges and questions
+  description: Browse questions about Compose.
   icon: help
-  link: /compose/faq
+  link: /guides/docker-compose/common-questions/
+- title: Give feedback
+  description: Find out how to give feedback.
+  icon: help
+  link: /compose/support-and-feedback/feedback/
+- title: Review the trust model
+  description: Read the trust model for Compose files.
+  icon: note_add
+  link: /compose/trust-model/
+- title: Use the Compose SDK
+  description: Explore the Compose SDK.
+  icon: category
+  link: /compose/compose-sdk/
 aliases:
 - /compose/cli-command/
 - /compose/networking/swarm/

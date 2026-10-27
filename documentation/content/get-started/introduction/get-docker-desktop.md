@@ -13,9 +13,13 @@ aliases:
  - /getting-started/get-docker-desktop/
 ---
 
+On this page: [Install and review Desktop terms](#explanation) · [Run a container](#run-your-first-container) · [Open the frontend](#access-the-frontend) · [Inspect and manage containers](#manage-containers-using-docker-desktop).
+
 {{< youtube-embed C2bPVhiNU-0 >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Install Docker Desktop
 
 Docker Desktop is the all-in-one package to build images, run containers, and so much more.
 This guide will walk you through the installation process, enabling you to experience Docker Desktop firsthand.
@@ -45,14 +49,16 @@ This guide will walk you through the installation process, enabling you to exper
 
 Once it's installed, complete the setup process and you're all set to run a Docker container.
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Run and inspect your first container
 
 In this hands-on guide, you will see how to run a Docker container using Docker Desktop.
 
 Follow the instructions to run a container using the CLI.
 
 
-## Run your first container
+### Run your first container
 
 Open your CLI terminal and start a container by running the `docker run` command:
 
@@ -62,7 +68,7 @@ Open your CLI terminal and start a container by running the `docker run` command
 $ docker run -d -p 8080:80 docker/welcome-to-docker
 ```
 
-## Access the frontend
+### Access the frontend
 
 For this container, the frontend is accessible on port `8080`. To open the website, visit [http://localhost:8080](http://localhost:8080) in your browser.
 
@@ -72,7 +78,7 @@ For this container, the frontend is accessible on port `8080`. To open the websi
 
 ![Screenshot of the landing page of the Nginx web server, coming from the running container](../docker-concepts/the-basics/images/access-the-frontend.webp?border=true)
 
-## Manage containers using Docker Desktop
+### Manage containers using Docker Desktop
 
 
 1. Open Docker Desktop and select the **Containers** field on the left sidebar.

@@ -18,4 +18,9 @@ security and ensuring a robust software supply chain.
   removing unnecessary packages
 - Verify and validate remediation efforts using Docker Scout
 
+## Continue
+
+- [Software supply chain security](./s3c.md)
+- [Guide contents](./_index.md)
+
 <div id="scout-lp-survey-anchor"></div>

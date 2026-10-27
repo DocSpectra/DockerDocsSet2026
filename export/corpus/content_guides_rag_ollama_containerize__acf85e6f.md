@@ -8,6 +8,13 @@ aliases:
   - /guides/use-case/rag-ollama/containerize/
 ---
 
+## Follow this page
+
+- [Get the sample](#get-the-sample-application)
+- [Review containerization essentials](#containerizing-your-application-essentials)
+- [Run the application](#run-the-application)
+- [Configure the database and LLM](develop.md)
+
 ## Overview
 
 This section walks you through containerizing a RAG application using Docker.
@@ -93,7 +100,7 @@ winy:
 ```
 
 If you don't have the services running, continue with this guide to learn how you can run some or all of these services with Docker.
-Remember that the `ollama` service is empty; it doesn't have any model. For this reason you need to pull a model before starting to use the RAG application. All the instructions are in the following page.
+Remember that the `ollama` service is empty; it doesn't have any model. For this reason you need to pull a model before starting to use the RAG application. All the instructions are in the [development page](develop.md#add-a-local-or-remote-llm-service).
 
 In the terminal, press `ctrl`+`c` to stop the application.
 
@@ -104,5 +111,5 @@ application using Docker.
 
 ## Next steps
 
-In the next section, you'll learn how to properly configure the application with your preferred LLM model, completely locally, using Docker.
+In the [next section](develop.md), you'll learn how to properly configure the application with your preferred LLM model, completely locally, using Docker.
 

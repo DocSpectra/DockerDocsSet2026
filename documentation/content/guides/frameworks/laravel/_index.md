@@ -36,11 +36,21 @@ This guide is intended for educational purposes, helping developers adapt and op
 
 ## What you’ll learn
 
-- How to use Docker Compose to set up a Laravel development and production environment.
-- Defining services that make Laravel development easier, including PHP-FPM, Nginx, and database containers.
-- Best practices for managing Laravel environments using containerization.
+- How to use Docker Compose to set up a Laravel [development](development-setup.md) and [production](production-setup.md) environment.
+- [Defining services that make Laravel development easier](development-setup.md#create-a-docker-compose-configuration-for-development), including PHP-FPM, Nginx, and database containers.
+- [Best practices for managing Laravel environments using containerization](common-questions.md).
 
 ## Who’s this for?
 
 - Developers who work with Laravel and want to streamline environment management.
 - DevOps engineers seeking efficient ways to manage and deploy Laravel applications.
+
+## Follow the setup
+
+1. [Review the prerequisites](prerequisites.md).
+2. [Set up the production image and services](production-setup.md).
+3. [Set up development](development-setup.md).
+
+## Related guides
+
+- [PHP guide](../../php/_index.md)

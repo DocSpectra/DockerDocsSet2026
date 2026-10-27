@@ -5,6 +5,26 @@ description: Replace SQLite with a real Microsoft SQL Server using Testcontainer
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-dotnet-aspnet-core/#prerequisites) · [Previous: Create the project](/guides/testcontainers-dotnet-aspnet-core/create-project/)
+
+## In this step
+
+- [Check SQL Server compatibility](#check-sql-server-compatibility)
+- [Replace SQLite](#replace-sqlite)
+- [Add dependencies](#add-dependencies)
+- [Create the test class](#create-the-test-class)
+- [Understand the test structure](#understand-the-test-structure)
+
+## Check SQL Server compatibility
+
+> [!NOTE]
+> The Microsoft SQL Server Docker image isn't compatible with ARM devices, such
+> as Macs with Apple Silicon. You can use the
+> [SqlEdge](https://www.nuget.org/packages/Testcontainers.SqlEdge) module or
+> [Testcontainers Cloud](https://www.testcontainers.cloud/) as alternatives.
+
+## Replace SQLite
+
 The existing tests use an in-memory SQLite database. While convenient, this
 doesn't match production behavior. You can replace it with a real Microsoft SQL
 Server instance managed by Testcontainers.
@@ -181,8 +201,6 @@ This factory:
 3. Adds a new `ApplicationDbContext` configured with the SQL Server connection
    string from the Testcontainers-managed container
 
-> [!NOTE]
-> The Microsoft SQL Server Docker image isn't compatible with ARM devices, such
-> as Macs with Apple Silicon. You can use the
-> [SqlEdge](https://www.nuget.org/packages/Testcontainers.SqlEdge) module or
-> [Testcontainers Cloud](https://www.testcontainers.cloud/) as alternatives.
+## Continue
+
+[Next: Run tests](/guides/testcontainers-dotnet-aspnet-core/run-tests/)

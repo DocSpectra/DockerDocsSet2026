@@ -57,4 +57,21 @@ packaging your code. It's a whole ecosystem of tools and features that support
 not only common workflow tasks but also provides support for more complex and
 advanced scenarios.
 
+## Find build steps
+
+| Task | Start here |
+| --- | --- |
+| Understand the build tools | [Docker Build overview](./concepts/overview.md) |
+| Write a Dockerfile and build an image | [Dockerfile overview](./concepts/dockerfile.md) |
+| Choose files for a build | [Build context](./concepts/context.md) |
+| Choose a build technique | [Building](./building/_index.md) |
+| Check a Dockerfile and build options | [Build checks](./checks.md) |
+| Reuse or manage build cache | [Build cache](./cache/_index.md) |
+| Choose where build results go | [Exporters](./exporters/_index.md) |
+| Add or inspect image metadata | [Metadata](./metadata/_index.md) |
+| Validate build inputs with policies | [Build policies](./policies/_index.md) |
+| Follow a hands-on image-building lab | [Building Container Images](/guides/lab-building-images.md) |
+
+## Explore build tools and features
+
 {{< grid >}}

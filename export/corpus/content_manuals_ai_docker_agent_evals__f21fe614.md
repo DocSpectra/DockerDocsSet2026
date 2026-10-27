@@ -10,6 +10,13 @@ When you save a conversation as an eval, you can replay it later to see if the
 agent responds differently. Evals measure consistency, not correctness - they
 tell you if behavior changed, not whether it's right or wrong.
 
+## Find an eval task
+
+- Review [what evals measure](#what-are-evals), [common workflows](#common-workflows), and [when to use them](#when-to-use-evals)
+- [Save a conversation](#creating-an-eval)
+- [Run saved conversations](#running-evals)
+- [Understand and interpret results](#understanding-results)
+
 ## What are evals
 
 An eval is a saved conversation you can replay. When you run evals, Docker Agent
@@ -42,6 +49,20 @@ that behavior changes over time.
 
 Evals measure whether behavior changed. You determine if that change is good or
 bad.
+
+## When to use evals
+
+Evals help you track behavior changes over time. They're useful for catching
+regressions when you upgrade models or dependencies, documenting known failure
+cases you want to fix, and understanding how edge cases evolve as you iterate.
+
+Evals aren't appropriate for determining which agent configuration works best -
+they measure similarity to a saved conversation, not correctness. Use manual
+testing to evaluate different configurations and decide which works better.
+
+Save conversations worth tracking. Build a collection of important workflows,
+interesting edge cases, and known issues. Run your evals when making changes to
+see what shifted.
 
 ## Creating an eval
 
@@ -139,20 +160,6 @@ conversation to replace the eval. If it's worse, you found a regression.
 
 The scores guide you to what changed. Your judgment determines if the change is
 good or bad.
-
-## When to use evals
-
-Evals help you track behavior changes over time. They're useful for catching
-regressions when you upgrade models or dependencies, documenting known failure
-cases you want to fix, and understanding how edge cases evolve as you iterate.
-
-Evals aren't appropriate for determining which agent configuration works best -
-they measure similarity to a saved conversation, not correctness. Use manual
-testing to evaluate different configurations and decide which works better.
-
-Save conversations worth tracking. Build a collection of important workflows,
-interesting edge cases, and known issues. Run your evals when making changes to
-see what shifted.
 
 ## What's next
 

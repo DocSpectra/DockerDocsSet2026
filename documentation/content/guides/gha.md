@@ -24,6 +24,17 @@ If you want to follow along with the guide, ensure you have the following:
 This guide assumes basic knowledge of Docker concepts but provides explanations
 for using Docker in GitHub Actions workflows.
 
+## Follow the tasks
+
+- [Get a project](#get-the-sample-app)
+- [Configure repository credentials](#configure-your-github-repository)
+- [Set up workflow triggers](#set-up-your-github-actions-workflow)
+- [Extract metadata](#extract-metadata-for-tags-and-annotations)
+- [Authenticate to the registry](#authenticate-to-your-registry)
+- [Build and push](#build-and-push-the-image)
+- [Add attestations](#attestations)
+- [View the complete workflow](#complete-workflow)
+
 ## Get the sample app
 
 This guide is project-agnostic and assumes you have an application with a
@@ -194,10 +205,15 @@ Here's the updated snippet:
           sbom: true
 ```
 
+For default provenance, output requirements, and secret exposure warnings, see
+[Attestations with GitHub Actions](/manuals/build/ci/github-actions/attestations.md).
+
 For more details about attestations, refer to
 [the documentation](/manuals/build/metadata/attestations/_index.md).
 
 ## Conclusion
+
+### Complete workflow
 
 With all the steps outlined in the previous section, here's the full workflow
 configuration:

@@ -37,6 +37,14 @@ For information about Docker Engine SDKs, see [Develop with Docker Engine SDKs](
 The Docker Engine API is a RESTful API accessed by an HTTP client such as `wget` or
 `curl`, or the HTTP library which is part of most modern programming languages.
 
+## Choose a task
+
+- [Install a Go or Python SDK](sdk/_index.md#install-the-sdks).
+- [Run the quickstart](sdk/quickstart.md) or [find an SDK and API task example](sdk/examples.md#choose-a-task).
+- [Check supported API versions](#check-supported-api-versions).
+- [Select an API version](#select-an-api-version) or [review version negotiation](#minimum-api-version).
+- [Find a reference by Docker version](#api-version-matrix) or [find archived API documentation](#deprecated-api-versions).
+
 ## View the API reference
 
 You can
@@ -67,6 +75,8 @@ A new version of the API is released when new features are added. The Docker API
 is backward-compatible, so you don't need to update code that uses the API
 unless you need to take advantage of new features.
 
+### Check supported API versions
+
 To see the highest and lowest version of the API your Docker daemon and client
 support, use `docker version`:
 
@@ -91,6 +101,8 @@ Server: Docker Engine - Community
   OS/Arch:          linux/arm64
   ...
 ```
+
+### Select an API version
 
 You can specify the API version to use in any of the following ways:
 

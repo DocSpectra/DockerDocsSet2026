@@ -11,6 +11,17 @@ environment, streamlining development and deployment processes.
 - Configure a multi-container web app using a Compose file
 - Run a multi-container web app using one command
 
+## Installation instructions
+
+- [Install Docker Compose](/manuals/compose/install/_index.md)
+
+## Watch the demo
+
 {{< youtube-embed P5RBKmOLPH4 >}}
+
+## Continue
+
+- [Follow the written Quickstart](/manuals/compose/gettingstarted.md)
+- [Common challenges and questions](common-questions.md)
 
 <div id="compose-lp-survey-anchor"></div>

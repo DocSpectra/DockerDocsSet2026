@@ -10,6 +10,15 @@ weight: 20
 The `docker ai` command provides a Terminal User Interface (TUI) for Gordon,
 integrating AI assistance directly into your terminal.
 
+Before starting, review the [prerequisites](../_index.md#prerequisites) and [permissions](permissions.md).
+
+## On this page
+
+- [Launch the TUI or pass a prompt](#basic-usage)
+- [Set the working directory](#working-directory)
+- [Disable Gordon](#disabling-gordon)
+- [Check version or send feedback](#commands)
+
 ## Basic usage
 
 Launch the interactive TUI:
@@ -48,15 +57,12 @@ Override with `-C` or `--working-dir`:
 $ docker ai -C ~/different-project
 ```
 
+For working directory access caveats, see [Security considerations](permissions.md#security-considerations).
+
 ## Disabling Gordon
 
-Gordon CLI is part of Docker Desktop. To disable it, disable Gordon in Docker
-Desktop Settings:
-
-1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
-3. Clear the **Enable Gordon** option.
-4. Select **Apply**.
+Gordon CLI is part of Docker Desktop. To disable it, follow the
+[Docker Desktop steps](docker-desktop.md#disabling-gordon).
 
 ## Commands
 

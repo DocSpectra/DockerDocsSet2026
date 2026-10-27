@@ -23,6 +23,8 @@ $ docker buildx build --output type=local[,parameters] .
 $ docker buildx build --output type=tar[,parameters] .
 ```
 
+### Parameters
+
 The following table describes the available parameters:
 
 | Parameter        | Type    | Default | Description                                                                       |

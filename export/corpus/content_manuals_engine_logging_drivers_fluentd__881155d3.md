@@ -98,7 +98,7 @@ Two of the above specify the same address, because `tcp` is default.
 ### tag
 
 By default, Docker uses the first 12 characters of the container ID to tag log messages.
-Refer to the [log tag option documentation](log_tags.md) for customizing
+Refer to the [log tag option documentation](../log_tags.md) for customizing
 the log tag format.
 
 ### labels, labels-regex, env, and env-regex
@@ -111,7 +111,7 @@ logging message.
 The `env-regex` and `labels-regex` options are similar to and compatible with
 respectively `env` and `labels`. Their values are regular expressions to match
 logging-related environment variables and labels. It is used for advanced
-[log tag options](log_tags.md).
+[log tag options](../log_tags.md).
 
 ### fluentd-async
 

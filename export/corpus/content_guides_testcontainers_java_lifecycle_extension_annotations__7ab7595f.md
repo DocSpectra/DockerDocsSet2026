@@ -5,9 +5,24 @@ description: Manage Testcontainers container lifecycle using @Testcontainers and
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-lifecycle/#prerequisites) · [Previous: Lifecycle callbacks](/guides/testcontainers-java-lifecycle/lifecycle-callbacks/)
+
 The Testcontainers library provides a JUnit 5 extension that simplifies
 starting and stopping containers using annotations. To use it, add the
 `org.testcontainers:testcontainers-junit-jupiter` test dependency.
+
+## Choose the container scope
+
+Instead of manually starting and stopping the container in `@BeforeAll` and
+`@AfterAll`, the `@Testcontainers` annotation on the class and the
+`@Container` annotation on the field handle it automatically:
+
+- The extension finds all `@Container`-annotated fields.
+- **Static fields** start once before all tests and stop after all tests.
+- **Instance fields** start before each test and stop after each test (not
+  recommended — it's resource-intensive).
+
+## Write the test
 
 ```java
 package com.testcontainers.demo;
@@ -65,11 +80,7 @@ class CustomerServiceWithJUnit5ExtensionTest {
 }
 ```
 
-Instead of manually starting and stopping the container in `@BeforeAll` and
-`@AfterAll`, the `@Testcontainers` annotation on the class and the
-`@Container` annotation on the field handle it automatically:
 
-- The extension finds all `@Container`-annotated fields.
-- **Static fields** start once before all tests and stop after all tests.
-- **Instance fields** start before each test and stop after each test (not
-  recommended — it's resource-intensive).
+## Continue
+
+[Next: Singleton containers](/guides/testcontainers-java-lifecycle/singleton-containers/)

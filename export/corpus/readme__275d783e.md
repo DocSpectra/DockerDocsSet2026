@@ -10,6 +10,13 @@ Welcome to the Docker Documentation repository. This is the source for the [Dock
 
 Feel free to open pull requests or issues. Our docs are completely open source, and we deeply appreciate contributions from the Docker community!
 
+## Find your next step
+
+- [Report documentation issues or give feedback](#provide-feedback)
+- [Get community or subscription support](#get-support)
+- [Report a product bug or request a feature](#report-product-issues)
+- [Contribute to Docker docs](#contribute-to-docker-docs)
+
 ## Provide feedback
 
 We’d love to hear your feedback! To submit feedback:
@@ -19,9 +26,13 @@ We’d love to hear your feedback! To submit feedback:
   [docs.docker.com](https://docs.docker.com/), or
 - Click **Give feedback** on every page in the docs.
 
+## Get support
+
 To get community support, use the [Docker Community Slack](https://dockr.ly/comm-slack). Personalized support is available
 through the Docker Pro, Team, and Business subscriptions. See [Docker
 Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsReadme) for details.
+
+## Report product issues
 
 If you have an idea for a new feature or behavior change in a specific aspect of
 Docker or have found a product bug, file an issue in the project's

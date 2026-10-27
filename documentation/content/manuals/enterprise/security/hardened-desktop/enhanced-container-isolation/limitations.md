@@ -13,6 +13,13 @@ aliases:
 
 Enhanced Container Isolation has some platform-specific limitations and feature constraints. Understanding these limitations helps you plan your security strategy and set appropriate expectations.
 
+## Find a limitation
+
+- Platforms: [WSL 2](#wsl-2-security-considerations) and [Windows containers](#windows-containers-not-supported).
+- Workloads: [Docker Build](#docker-build-protection-varies), [Kubernetes](#docker-desktop-kubernetes-not-protected-in-kubeadm-mode), and [unprotected container types](#unprotected-container-types).
+- Socket exceptions: [global command restrictions](#global-command-restrictions), [local-only images](#local-only-images-not-supported), and [unsupported commands](#unsupported-docker-commands).
+- Compatibility: [performance](#performance-considerations) and [production behavior](#production-compatibility).
+
 ## WSL 2 security considerations
 
 > [!NOTE]

@@ -16,6 +16,12 @@ in all services.
 For illustration, this page assumes you want all your services to be built with an `alpine` base
 image and install the system package `openssl`.
 
+## Choose a build approach
+
+- [Share declarations in a multi-stage Dockerfile](#multi-stage-dockerfile)
+- [Use another service's image as the base image](#use-another-services-image-as-the-base-image)
+- [Build with Bake](#build-with-bake)
+
 ## Multi-stage Dockerfile
 
 The recommended approach is to group the shared declaration in a single Dockerfile, and use multi-stage features

@@ -18,6 +18,15 @@ Docker driver. For example:
 - Build multi-arch images, see [QEMU](#qemu)
 - Advanced options for [cache import and export](/manuals/build/cache/backends/_index.md)
 
+## On this page
+
+- [Create a builder](#synopsis)
+- [Set driver options](#driver-options)
+- [Run a build and review output behavior](#usage)
+- [Preserve cache when removing a builder](#cache-persistence)
+- [Build non-native platforms with QEMU](#qemu)
+- [Use a custom network](#custom-network)
+
 ## Synopsis
 
 Run the following command to create a new builder, named `container`, that uses
@@ -30,6 +39,8 @@ $ docker buildx create \
   --driver-opt=[key=value,...]
 container
 ```
+
+## Driver options
 
 The following table describes the available driver-specific options that you can
 pass to `--driver-opt`:
@@ -72,6 +83,9 @@ WARNING: No output specified with docker-container driver. Build result will onl
 #1 DONE 2.4s
 ...
 ```
+
+For loading results into the local image store, see
+[Loading to local image store](_index.md#loading-to-local-image-store).
 
 ## Cache persistence
 

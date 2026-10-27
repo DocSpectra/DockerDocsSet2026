@@ -13,6 +13,8 @@ aliases:
 
 This page contains the domain URLs that you need to add to a firewall allowlist to ensure Docker Desktop works properly within your organization.
 
+For related setup tasks, see [Install Docker Desktop](install/_index.md) and [Sign in](sign-in.md).
+
 ## Domain URLs to allow
 
 | Domains                                                                              | Description                                  |

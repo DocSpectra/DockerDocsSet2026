@@ -5,6 +5,8 @@ description: Use the Testcontainers special JDBC URL to swap H2 for a real Postg
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-replace-h2/#prerequisites) · [Previous: The H2 problem](/guides/testcontainers-java-replace-h2/problem-with-h2/)
+
 Replacing H2 with a real PostgreSQL database requires two test properties:
 
 ```java
@@ -98,3 +100,7 @@ class JdbcProductRepositoryTest {
   }
 }
 ```
+
+## Continue
+
+[Next: JUnit 5 extension](/guides/testcontainers-java-replace-h2/junit-extension-approach/)

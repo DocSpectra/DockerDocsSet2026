@@ -4,6 +4,25 @@ description: "Specifies the Docker Registry v2 authentication"
 keywords: registry, images, tags, repository, distribution, Bearer authentication, advanced
 ---
 
+- [Review requirements](#requirements)
+- [Follow the authentication workflow](#authentication-workflow)
+- [Handle the authentication challenge](#how-to-authenticate)
+- [Request a token](#requesting-a-token)
+- [Use the Bearer token](#using-the-bearer-token)
+
+## Requirements
+
+- Registry clients which can understand and respond to token auth challenges
+  returned by the resource server.
+- An authorization server capable of managing access controls to their
+  resources hosted by any given service (such as repositories in a Docker
+  Registry).
+- A Docker Registry capable of trusting the authorization server to sign tokens
+  which clients can use for authorization and the ability to verify these
+  tokens for single use or for use during a sufficiently short period of time.
+
+## Authentication workflow
+
 This document outlines the registry authentication scheme:
 
 ![v2 registry auth](./images/v2-registry-auth.png)
@@ -19,17 +38,6 @@ This document outlines the registry authentication scheme:
    the request's Authorization header.
 6. The Registry authorizes the client by validating the Bearer token and the
    claim set embedded within it and begins the push/pull session as usual.
-
-## Requirements
-
-- Registry clients which can understand and respond to token auth challenges
-  returned by the resource server.
-- An authorization server capable of managing access controls to their
-  resources hosted by any given service (such as repositories in a Docker
-  Registry).
-- A Docker Registry capable of trusting the authorization server to sign tokens
-  which clients can use for authorization and the ability to verify these
-  tokens for single use or for use during a sufficiently short period of time.
 
 ## Authorization server endpoint descriptions
 
@@ -155,6 +163,8 @@ provided in the request.
 
 ### Example
 
+#### Authenticate the client
+
 For this example, the client makes an HTTP GET request to the following URL:
 
 ```text
@@ -173,6 +183,8 @@ Whether the token server requires authentication is up to the policy of that
 access control provider. Some requests may require authentication to determine
 access (such as pushing or pulling a private repository) while others may not
 (such as pulling from a public repository).
+
+#### Determine the granted scope
 
 After authenticating the client (which may simply be an anonymous client if
 no attempt was made to authenticate), the token server must next query its
@@ -197,6 +209,8 @@ would only be `[pull]`. If the client has no access to the repository then the
 intersected set would be empty, `[]`.
 
 It is this intersected set of access which is placed in the returned token.
+
+#### Return the token
 
 The server then constructs an implementation-specific token with this
 intersected set of access, and returns it to the Docker client to use to

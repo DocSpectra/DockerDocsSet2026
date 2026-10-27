@@ -8,6 +8,13 @@ aliases:
   - /guides/use-case/genai-pdf-bot/develop/
 ---
 
+## Follow this page
+
+- [Check prerequisites](#prerequisites)
+- [Add a local database](#add-a-local-database)
+- [Choose and configure an LLM service](#add-a-local-or-remote-llm-service)
+- [Run the application](#run-your-genai-application)
+
 ## Prerequisites
 
 Complete [Containerize a generative AI application](containerize.md).

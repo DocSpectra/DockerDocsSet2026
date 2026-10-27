@@ -30,6 +30,8 @@ aliases:
 
 This page provides download links, system requirements, and step-by-step installation instructions for Docker Desktop on Windows.
 
+Choose a task: [Check requirements](#system-requirements) · [Set up WSL](#wsl-verification-and-setup) · [Review administrator privileges](#administrator-privileges) · [Install interactively](#install-interactively) · [Install from the command line](#install-from-the-command-line) · [Start Docker Desktop](#start-docker-desktop) · [Installer flags](#installer-flags) · [Switch container mode](#windows-containers).
+
 {{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" >}}
 {{< button text="Docker Desktop for Windows - x86_64 on the Microsoft Store" url="https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB" >}}
 {{< button text="Docker Desktop for Windows - Arm (Early Access)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
@@ -84,7 +86,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](/manuals
   - 8GB system RAM
   - Turn on BIOS/UEFI-level hardware virtualization support in the
     BIOS/UEFI settings. For more information, see
-    [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
+    [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#docker-desktop-fails-due-to-virtualization-not-working).
 
 > [!NOTE]
 >
@@ -108,7 +110,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](/manuals
   - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
   - 8GB system RAM
   - Enable hardware virtualization in BIOS/UEFI. For more information, see
-    [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
+    [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#docker-desktop-fails-due-to-virtualization-not-working).
 
 > [!IMPORTANT]
 >
@@ -124,6 +126,43 @@ accounts use the same VM to build and run containers. Note that it is not possib
 Running Docker Desktop inside a VMware ESXi or Azure VM is supported for Docker Business customers.
 It requires enabling nested virtualization on the hypervisor first.
 For more information, see [Running Docker Desktop in a VM or VDI environment](/manuals/desktop/setup/vm-vdi.md).
+
+## WSL: Verification and setup
+
+If you have chosen to use WSL, first verify that your installed version meets system requirements by running the following command in your terminal:
+
+```console
+wsl --version
+```
+
+If version details do not appear, you are likely using the inbox version of WSL. This version does not support modern capabilities and must be updated.
+
+You can update or install WSL using one of the following methods:
+
+### Option 1: Install or update WSL via the terminal
+
+1. Open PowerShell or Windows Command Prompt in administrator mode.
+2. Run either the install or update command. You may be prompted to restart your machine. For more information, refer to [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
+```console
+wsl --install
+
+wsl --update
+```
+
+### Option 2: Install WSL via the MSI package
+
+If Microsoft Store access is blocked due to security policies:
+1. Go to the official [WSL GitHub Releases page](https://github.com/microsoft/WSL/releases).
+2. Download the `.msi` installer from the latest stable release (under the Assets drop-down).
+3. Run the downloaded installer and follow the setup instructions.
+
+## Administrator privileges
+
+Installing Docker Desktop requires administrator privileges. However, once installed, it can be used without administrative access. Some actions, though, still need elevated permissions. See [Understand permission requirements for Windows](./windows-permission-requirements.md) for more detail.
+
+See the [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md#how-do-i-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
+
+If you're an IT admin and your users do not have administrator rights and plan to perform operations that require elevated privileges, be sure to install Docker Desktop using the `--always-run-service` installer flag. This ensures those actions can still be executed without prompting for User Account Control (UAC) elevation. See [Installer Flags](#installer-flags) for more detail.
 
 ## Install Docker Desktop on Windows
 
@@ -208,35 +247,6 @@ Docker Desktop does not start automatically after installation. To start Docker 
 
 ## Advanced system configuration and installation options
 
-### WSL: Verification and setup
-
-If you have chosen to use WSL, first verify that your installed version meets system requirements by running the following command in your terminal:
-
-```console
-wsl --version
-```
-
-If version details do not appear, you are likely using the inbox version of WSL. This version does not support modern capabilities and must be updated.
-
-You can update or install WSL using one of the following methods:
-
-#### Option 1: Install or update WSL via the terminal
-
-1. Open PowerShell or Windows Command Prompt in administrator mode.
-2. Run either the install or update command. You may be prompted to restart your machine. For more information, refer to [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-```console
-wsl --install
-
-wsl --update
-```
-
-#### Option 2: Install WSL via the MSI package
-
-If Microsoft Store access is blocked due to security policies:
-1. Go to the official [WSL GitHub Releases page](https://github.com/microsoft/WSL/releases).
-2. Download the `.msi` installer from the latest stable release (under the Assets drop-down).
-3. Run the downloaded installer and follow the setup instructions.
-
 ### Installer flags
 
 > [!NOTE]
@@ -291,14 +301,6 @@ If Microsoft Store access is blocked due to security policies:
 - `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
 - `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
 
-### Administrator privileges
-
-Installing Docker Desktop requires administrator privileges. However, once installed, it can be used without administrative access. Some actions, though, still need elevated permissions. See [Understand permission requirements for Windows](./windows-permission-requirements.md) for more detail.
-
-See the [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md#how-do-i-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
-
-If you're an IT admin and your users do not have administrator rights and plan to perform operations that require elevated privileges, be sure to install Docker Desktop using the `--always-run-service` installer flag. This ensures those actions can still be executed without prompting for User Account Control (UAC) elevation. See [Installer Flags](#installer-flags) for more detail.
-
 ### Windows containers 
 
 From the Docker Desktop menu, you can toggle which daemon (Linux or Windows)
@@ -319,7 +321,7 @@ For more information on Windows containers, refer to the following documentation
   [forked here to use containers](https://github.com/friism/MusicStore), is a good example of a multi-container application.
 
 - To understand how to connect to Windows containers from the local host, see
-  [I want to connect to a container from Windows](/manuals/desktop/features/networking.md#i-want-to-connect-to-a-container-from-the-host)
+  [I want to connect to a container from Windows](/manuals/desktop/features/networking/networking-how-tos.md#connect-to-a-container-from-the-host)
 
 > [!NOTE]
 >

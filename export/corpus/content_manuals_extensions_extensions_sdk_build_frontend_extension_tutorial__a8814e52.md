@@ -13,7 +13,19 @@ weight: 20
 
 To start creating your extension, you first need a directory with files which range from the extension’s source code to the required extension-specific files. This page provides information on how to set up an extension with a more advanced frontend.
 
+## Prerequisites
+
 Before you start, make sure you have installed the latest version of [Docker Desktop](/manuals/desktop/release-notes.md).
+
+## On this page
+
+- [Set up the extension folder](#extension-folder-structure)
+- [Adapt the Dockerfile](#adapting-the-dockerfile)
+- [Configure metadata](#configure-the-metadata-file)
+- [Build and install](#build-the-extension-and-install-it)
+- [Use the API client](#use-the-extension-apis-client)
+- [Read frontend policies and storage behavior](#policies-enforced-for-the-front-end-code)
+- [Rebuild and update](#re-build-the-extension-and-update-it)
 
 ## Extension folder structure
 

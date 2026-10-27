@@ -26,19 +26,11 @@ const images = await ddClient.docker.listImages();
 
 See the [Docker API reference](/reference/api/extensions-sdk/Docker.md) for details about these methods.
 
-> Deprecated access to Docker objects
->
-> The methods below are deprecated and will be removed in a future version. Use the methods specified above.
-
-```typescript
-const containers = await window.ddClient.listContainers();
-
-const images = await window.ddClient.listImages();
-```
-
 ## Docker commands
 
 Extensions can also directly execute the `docker` command line.
+
+### Execute a command and parse output
 
 ▸ **exec**(`cmd`, `args`): `Promise`<[`ExecResult`](/reference/api/extensions-sdk/ExecResult.md)\>
 
@@ -64,6 +56,8 @@ For convenience, the command result object also has methods to easily parse it:
 - `result.lines(): string[]` splits output lines.
 - `result.parseJsonObject(): any` parses a well-formed json output.
 - `result.parseJsonLines(): any[]` parses each output line as a json object.
+
+### Stream command output
 
 ▸ **exec**(`cmd`, `args`, `options`): `void`
 
@@ -91,6 +85,8 @@ await ddClient.docker.cli.exec("logs", ["-f", "..."], {
 });
 ```
 
+### Close a streaming process
+
 The child process created by the extension is killed (`SIGTERM`) automatically when you close the dashboard in Docker Desktop or when you exit the extension UI.
 If needed, you can also use the result of the `exec(streamOptions)` call in order to kill (`SIGTERM`) the process.
 
@@ -104,6 +100,8 @@ const logListener = await ddClient.docker.cli.exec("logs", ["-f", "..."], {
 // when done listening to logs or before starting a new one, kill the process
 logListener.close();
 ```
+
+### Listen to Docker events
 
 This `exec(streamOptions)` API can also be used to listen to docker events:
 
@@ -138,9 +136,25 @@ await ddClient.docker.cli.exec(
 
 See the [Exec API reference](/reference/api/extensions-sdk/Exec.md) for details about these methods.
 
+## Deprecated APIs
+
+### Access Docker objects
+
+> Deprecated access to Docker objects
+>
+> The methods below are deprecated and will be removed in a future version. Use the [Docker object methods above](#docker-objects).
+
+```typescript
+const containers = await window.ddClient.listContainers();
+
+const images = await window.ddClient.listImages();
+```
+
+### Execute Docker commands
+
 > Deprecated execution of Docker commands
 >
-> This method is deprecated and will be removed in a future version. Use the one specified just below.
+> This method is deprecated and will be removed in a future version. Use the [Docker command method above](#docker-commands).
 
 ```typescript
 const output = await window.ddClient.execDockerCmd(

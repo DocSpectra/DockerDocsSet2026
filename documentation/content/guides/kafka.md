@@ -18,12 +18,14 @@ With the rise of microservices, event-driven architectures have become increasin
 heart of these architectures. Unfortunately, setting up and deploying your own Kafka instance for development
 is often tricky. Fortunately, Docker and containers make this much easier.
 
+## Choose a Kafka task
+
 In this guide, you will learn how to:
 
-1. Use Docker to launch up a Kafka cluster
-2. Connect a non-containerized app to the cluster
-3. Connect a containerized app to the cluster
-4. Deploy Kafka-UI to help with troubleshooting and debugging
+1. [Use Docker to launch up a Kafka cluster](#launching-kafka)
+2. [Connect a non-containerized app to the cluster](#connecting-to-kafka-from-a-non-containerized-app)
+3. [Connect a containerized app to the cluster](#connecting-to-kafka-from-both-containers-and-native-apps)
+4. [Deploy Kafka-UI to help with troubleshooting and debugging](#adding-cluster-visualization)
 
 ## Prerequisites
 
@@ -203,6 +205,8 @@ services:
       # Required for a single node cluster
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 ```
+
+### Run the Compose example
 
 Give it a try using the steps below.
 

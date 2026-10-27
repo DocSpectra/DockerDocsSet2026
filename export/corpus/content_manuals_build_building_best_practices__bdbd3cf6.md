@@ -16,6 +16,20 @@ aliases:
   - /develop/security-best-practices/
 ---
 
+## Find guidance for your task
+
+| Task | Sections |
+| --- | --- |
+| Organize build stages | [Multi-stage builds](#use-multi-stage-builds), [reusable stages](#create-reusable-stages) |
+| Choose and maintain dependencies | [Base image selection](#choose-the-right-base-image), [rebuilding](#rebuild-your-images-often), [pinning versions](#pin-base-image-versions) |
+| Refresh a build | [Pull base images](#use---pull-to-get-fresh-base-images), [disable cache](#use---no-cache-for-clean-builds) |
+| Reduce build inputs and image contents | [.dockerignore](#exclude-with-dockerignore), [unnecessary packages](#dont-install-unnecessary-packages), [ADD or COPY](#add-or-copy) |
+| Organize container behavior | [Ephemeral containers](#create-ephemeral-containers), [decouple applications](#decouple-applications) |
+| Review command behavior | [RUN](#run), [apt-get](#apt-get), [pipes](#using-pipes), [CMD](#cmd), [ENTRYPOINT](#entrypoint) |
+| Review environment and permissions | [ENV](#env), [USER](#user), [WORKDIR](#workdir) |
+| Review other instructions | [Dockerfile instructions](#dockerfile-instructions) |
+| Build and test in a pipeline | [CI](#build-and-test-your-images-in-ci), [build checks](../checks.md) |
+
 ## Use multi-stage builds
 
 Multi-stage builds let you reduce the size of your final image, by creating a

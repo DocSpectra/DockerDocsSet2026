@@ -17,6 +17,15 @@ Windows Subsystem for Linux (WSL) 2 is a full Linux kernel built by Microsoft th
 
 Because WSL 2 uses dynamic memory allocation, Docker Desktop requests only the CPU and memory it actually needs — freeing resources for the rest of your system, while still letting memory-intensive tasks such as multi-stage image builds run at full speed.
 
+## Find a WSL task
+
+- [Check prerequisites](#prerequisites) and [turn on the WSL 2 engine](#turn-on-docker-desktop-wsl-2)
+- [Enable Docker in a Linux distribution](#enable-docker-in-a-wsl-2-distribution)
+- [Develop with VS Code](use-wsl.md)
+- [Improve file system performance and limit resources](best-practices.md)
+- [Review the security model](#wsl-2-security-in-docker-desktop)
+- [Review custom kernel support and recommendations](custom-kernels.md)
+
 ## Prerequisites
 
 Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
@@ -25,15 +34,17 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 - Met the Docker Desktop for Windows' [system requirements](/manuals/desktop/setup/install/windows-install.md#system-requirements).
 - Installed the WSL 2 feature on Windows. For detailed instructions, refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
+Before installing Docker Desktop, uninstall any version of Docker Engine or the Docker CLI
+that was installed directly inside a WSL Linux distribution. Running both can cause conflicts.
+
+For the WSL and kernel requirements for Enhanced Container Isolation, see [Keep WSL up to date](best-practices.md#keep-wsl-up-to-date).
+
 > [!TIP]
 >
 > Consider enabling the WSL [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings) setting, available since WSL 1.3.10 (experimental).
 >This setting allows Windows to reclaim unused memory from the WSL virtual machine, preventing the Linux kernel's page cache from holding onto large amounts of RAM after container image builds complete. The result is better memory availability for other applications on the host. 
 
 ## Turn on Docker Desktop WSL 2
-
-Before installing Docker Desktop, uninstall any version of Docker Engine or the Docker CLI
-that was installed directly inside a WSL Linux distribution. Running both can cause conflicts.
 
 1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows).
 2. Follow the usual installation instructions to install Docker Desktop. Depending on which version of Windows you are using, Docker Desktop may prompt you to turn on WSL 2 during installation. Read the information displayed on the screen and turn on the WSL 2 feature to continue.

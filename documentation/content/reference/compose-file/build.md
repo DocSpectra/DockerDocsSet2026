@@ -9,6 +9,21 @@ weight: 130
 
 {{% include "compose/build.md" %}}
 
+## Find a build setting
+
+| Task | Sections |
+| --- | --- |
+| Choose a context and Dockerfile | [Build syntax](#build-syntax-and-paths), [context](#context), [additional_contexts](#additional_contexts), [dockerfile](#dockerfile), [dockerfile_inline](#dockerfile_inline) |
+| Choose between pulling and building | [Using build and image](#using-build-and-image), [service pull_policy](services.md#pull_policy) |
+| Publish images and attestations | [Publishing requirements](#publishing-built-images), [tags](#tags), [provenance](#provenance), [sbom](#sbom) |
+| Pass build inputs and credentials | [args](#args), [secrets](#secrets), [ssh](#ssh) |
+| Control caching and image retrieval | [cache_from](#cache_from), [cache_to](#cache_to), [no_cache](#no_cache), [pull](#pull) |
+| Configure build networking | [network](#network), [extra_hosts](#extra_hosts) |
+| Configure platforms, privileges, and limits | [platforms and errors](#platforms), [isolation](#isolation), [entitlements](#entitlements), [privileged](#privileged), [shm_size](#shm_size), [ulimits](#ulimits) |
+| Select a build stage or image metadata | [target](#target), [labels](#labels) |
+
+## Build syntax and paths
+
 When `build` is specified as a string, the whole path is used as a
 Docker context to execute a Docker build, looking for a canonical
 `Dockerfile` at the root of the directory.

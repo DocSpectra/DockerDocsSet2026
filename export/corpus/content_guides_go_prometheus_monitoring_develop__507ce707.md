@@ -6,7 +6,15 @@ keywords: go, golang, containerize, initialize
 description: Learn how to develop the Golang application with Docker.
 ---
 
+[Guide overview and prerequisites](_index.md#prerequisites) / [Application](application.md) / [Containerize](containerize.md) / [Compose](compose.md) / [Develop and visualize](develop.md)
+
 In the last section, you saw how using Docker Compose, you can connect your services together. In this section, you will learn how to develop the Golang application with Docker. You will also see how to use Docker Compose Watch to rebuild the image whenever you make changes to the code. Lastly, you will test the application and visualize the metrics in Grafana using Prometheus as the data source.
+
+## Choose a development task
+
+- [Rebuild the application manually](#developing-the-application)
+- [Rebuild automatically with Compose Watch](#rebuild-with-compose-watch)
+- [Visualize metrics and import the dashboard](#testing-the-application)
 
 ## Developing the application
 
@@ -17,6 +25,8 @@ docker compose up --build
 ```
 
 But, this is not the best approach. This is not efficient. Every time you make a change in the code, you need to rebuild manually. This is not is not a good flow for development. 
+
+### Rebuild with Compose Watch
 
 The better approach is to use Docker Compose Watch. In the `compose.yml` file, under the service `api`, you have added the `develop` section. So, it's more like a hot reloading. Whenever you make changes to code (defined in `path`), it will rebuild the image (or restart depending on the action). This is how you can use it:
 

@@ -9,6 +9,8 @@ aliases:
   - /guides/language/python/develop/
 ---
 
+[Python guide overview](_index.md)
+
 ## Prerequisites
 
 Complete [Containerize a Python application](containerize.md).
@@ -17,8 +19,8 @@ Complete [Containerize a Python application](containerize.md).
 
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 
-- Adding a local database and persisting data
-- Configuring Compose to automatically update your running Compose services as you edit and save your code
+- [Adding a local database and persisting data](#add-a-local-database-and-persist-data)
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
 
 ## Get the sample application
 
@@ -54,65 +56,6 @@ You'll need to clone a new repository to get a sample application that includes 
    ? What version of Python do you want to use? 3.12
    ? What port do you want your app to listen on? 8001
    ? What is the command to run your app? python3 -m uvicorn app:app --host=0.0.0.0 --port=8001
-   ```
-
-   Create a file named `.gitignore` with the following contents.
-
-   ```text {collapse=true,title=".gitignore"}
-   # Byte-compiled / optimized / DLL files
-   __pycache__/
-   *.py[cod]
-   *$py.class
-
-   # C extensions
-   *.so
-
-   # Distribution / packaging
-   .Python
-   build/
-   develop-eggs/
-   dist/
-   downloads/
-   eggs/
-   .eggs/
-   lib/
-   lib64/
-   parts/
-   sdist/
-   var/
-   wheels/
-   share/python-wheels/
-   *.egg-info/
-   .installed.cfg
-   *.egg
-   MANIFEST
-
-   # Unit test / coverage reports
-   htmlcov/
-   .tox/
-   .nox/
-   .coverage
-   .coverage.*
-   .cache
-   nosetests.xml
-   coverage.xml
-   *.cover
-   *.py,cover
-   .hypothesis/
-   .pytest_cache/
-   cover/
-
-   # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-   __pypackages__/
-
-   # Environments
-   .env
-   .venv
-   env/
-   venv/
-   ENV/
-   env.bak/
-   venv.bak/
    ```
 
    {{< /tab >}}
@@ -268,67 +211,69 @@ You'll need to clone a new repository to get a sample application that includes 
    README.md
    ```
 
-   Create a file named `.gitignore` with the following contents.
-
-   ```text {collapse=true,title=".gitignore"}
-   # Byte-compiled / optimized / DLL files
-   __pycache__/
-   *.py[cod]
-   *$py.class
-
-   # C extensions
-   *.so
-
-   # Distribution / packaging
-   .Python
-   build/
-   develop-eggs/
-   dist/
-   downloads/
-   eggs/
-   .eggs/
-   lib/
-   lib64/
-   parts/
-   sdist/
-   var/
-   wheels/
-   share/python-wheels/
-   *.egg-info/
-   .installed.cfg
-   *.egg
-   MANIFEST
-
-   # Unit test / coverage reports
-   htmlcov/
-   .tox/
-   .nox/
-   .coverage
-   .coverage.*
-   .cache
-   nosetests.xml
-   coverage.xml
-   *.cover
-   *.py,cover
-   .hypothesis/
-   .pytest_cache/
-   cover/
-
-   # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-   __pypackages__/
-
-   # Environments
-   .env
-   .venv
-   env/
-   venv/
-   ENV/
-   env.bak/
-   venv.bak/
-   ```
-
    {{< /tab >}}
    {{< /tabs >}}
+
+### Create the Git ignore file
+
+Create a file named `.gitignore` with the following contents.
+
+```text {collapse=true,title=".gitignore"}
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+```
 
 ## Add a local database and persist data
 
@@ -387,6 +332,8 @@ secrets:
 > To learn more about the instructions in the Compose file, see [Compose file
 > reference](/reference/compose-file/).
 
+### Create the database password file
+
 Before you run the application using Compose, notice that this Compose file specifies a `password.txt` file to hold the database's password. You must create this file as it's not included in the source repository.
 
 In the cloned repository's directory, create a new directory named `db` and inside that directory create a file named `password.txt` that contains the password for the database. Using your favorite IDE or text editor, add the following contents to the `password.txt` file.
@@ -414,6 +361,8 @@ directory.
 │ ├── README.Docker.md
 │ └── README.md
 ```
+
+### Start and check the application
 
 Now, run the following `docker compose up` command to start your application.
 
@@ -570,3 +519,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll learn how you can set up linting, formatting and type checking to follow the best practices in python apps.
+
+Continue: [Lint, format, and check types](lint-format-typing.md).

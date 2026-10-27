@@ -24,6 +24,15 @@ By the end of this tutorial, you'll understand:
 - Buildx version 0.31 or later
 - Basic familiarity with Dockerfiles and building images
 
+## Follow the tutorial
+
+- [Understand policy evaluation](#how-policies-work).
+- [Create a first policy](#create-your-first-policy) and review [local file access](#about-inputlocal).
+- [Review automatic loading](#automatic-policy-loading) and [run a build](#run-a-build-with-your-policy).
+- [Debug failures](#debugging-policy-failures) and [add error messages](#add-helpful-error-messages).
+- [Learn Rego rules](#understand-rego-rules), [input fields](#access-input-fields), and [pattern matching](#pattern-matching-and-strings).
+- [Review policy file locations](#policy-file-location).
+
 ## How policies work
 
 When you build an image, Buildx resolves all the inputs your

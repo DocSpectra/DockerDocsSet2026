@@ -5,6 +5,8 @@ description: Write your first integration test using testcontainers-go and Postg
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-go-getting-started/#prerequisites) · [Previous: Create the project](/guides/testcontainers-go-getting-started/create-project/)
+
 You have the `Repository` implementation ready, but for testing you need a
 PostgreSQL database. You can use testcontainers-go to spin up a Postgres
 database in a Docker container and run your tests against that database.
@@ -87,6 +89,8 @@ func TestCustomerRepository(t *testing.T) {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - Calls `postgres.Run()` with the `postgres:16-alpine` Docker image as the
@@ -105,3 +109,7 @@ Here's what the test does:
   `Repository`.
 - Creates a customer with the email `henry@gmail.com` and verifies that the
   customer exists in the database.
+
+## Continue
+
+[Next: Test suites](/guides/testcontainers-go-getting-started/test-suites/)

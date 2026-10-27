@@ -15,7 +15,7 @@ The easiest way to deploy an application is to run it on a single server,
 similar to how you would run your development environment. If you want to scale
 up your application, you can run Compose apps on a Swarm cluster.
 
-### Modify your Compose file for production
+## Modify your Compose file for production
 
 You may need to make changes to your app configuration to make it ready for
 production. These changes might include:
@@ -42,7 +42,7 @@ $ docker compose -f compose.yaml -f compose.production.yaml up -d
 
 See [Using multiple compose files](multiple-compose-files/_index.md) for a more complete example, and other options.
 
-### Deploying changes
+## Deploying changes
 
 When you make changes to your app code, remember to rebuild your image and
 recreate your app's containers. To redeploy a service called
@@ -57,7 +57,7 @@ This first command rebuilds the image for `web` and then stops, destroys, and re
 just the `web` service. The `--no-deps` flag prevents Compose from also
 recreating any services that `web` depends on.
 
-### Running Compose on a single server
+## Running Compose on a single server
 
 You can use Compose to deploy an app to a remote Docker host by setting the
 `DOCKER_HOST`, `DOCKER_TLS_VERIFY`, and `DOCKER_CERT_PATH` environment variables

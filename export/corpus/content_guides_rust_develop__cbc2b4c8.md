@@ -9,6 +9,8 @@ aliases:
   - /guides/language/rust/develop/
 ---
 
+[Rust guide overview](_index.md)
+
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
@@ -284,6 +286,8 @@ secrets:
 
 Note that the file doesn't specify a network for those 2 services. When you use Compose, it automatically creates a network and connects the services to it. For more information see [Networking in Compose](/manuals/compose/how-tos/networking.md).
 
+### Create the database password file
+
 Before you run the application using Compose, notice that this Compose file specifies a `password.txt` file to hold the database's password. You must create this file as it's not included in the source repository.
 
 In the cloned repository's directory, create a new directory named `db` and inside that directory create a file named `password.txt` that contains the password for the database. Using your favorite IDE or text editor, add the following contents to the `password.txt` file.
@@ -291,6 +295,8 @@ In the cloned repository's directory, create a new directory named `db` and insi
 ```text
 mysecretpassword
 ```
+
+### Start and check the Compose application
 
 If you have any other containers running from the previous sections, [stop](./run-containers.md#stop-start-and-name-containers) them now.
 
@@ -326,3 +332,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue: [Configure CI/CD](configure-ci-cd.md).

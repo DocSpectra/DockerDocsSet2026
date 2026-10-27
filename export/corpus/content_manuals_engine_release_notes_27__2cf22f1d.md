@@ -22,6 +22,18 @@ For more information about:
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [27.5.1](#2751), [27.2.1](#2721), [27.1.1](#2711), [27.1.0](#2710) |
+| Known issue and limitation sections | [27.2.0](#2720) |
+| Security sections | [27.1.1](#2711) |
+| Deprecation and removal sections | [27.4.0](#2740), [27.1.0](#2710), [27.0.2](#2702), [27.0.1](#2701) |
+| Initial release entry | [27.0.0](#2700) |
+
 ## 27.5
 
 Release notes for Docker Engine version 27.5 releases.
@@ -306,7 +318,7 @@ if an image is a multi-platform image.
 - Update Compose to [v2.29.2](https://github.com/docker/compose/releases/tag/v2.29.2). [docker/docker-ce-packaging#1050](https://github.com/docker/docker-ce-packaging/pull/1050)
 - Update containerd to [v1.7.21](https://github.com/containerd/containerd/releases/tag/v1.7.21). [moby/moby#48383](https://github.com/moby/moby/pull/48383), [docker/containerd-packaging#389](https://github.com/docker/containerd-packaging/pull/389)
 
-### Known Issues
+#### Known Issues
 
 - There is a known issue when authenticating against a registry in the Docker CLI (`docker login [registry address]`) where, if the provided registry address includes a repository/image name (such as `docker login index.docker.io/docker/welcome-to-docker`), the repository part (`docker/welcome-to-docker`) is not normalized and results in credentials being stored incorrectly, which causes subsequent pulls from the registry (`docker pull index.docker.io/docker/welcome-to-docker`) to not be authenticated. To prevent this, don't include any extraneous suffix in the registry address when running `docker login`.
   > [!NOTE]

@@ -13,6 +13,22 @@ is the component responsible for pushing, pulling, and storing images on your
 filesystem. The containerd image store supports features like multi-platform
 images, image attestations, and alternative snapshotters.
 
+For capabilities and compatibility, see [What is the containerd image store?](#what-is-the-containerd-image-store) and [Classic image store](#classic-image-store).
+
+## Switch image stores
+
+The containerd image store is enabled by default in Docker Desktop version 4.34
+and later. To switch between image stores:
+
+1. Navigate to **Settings** in Docker Desktop.
+2. In the **General** tab, check or clear the **Use containerd for pulling and storing images** option.
+3. Select **Apply**.
+
+> [!NOTE]
+>
+> Docker Desktop maintains separate image stores for the classic and containerd image stores.
+> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
+
 ## What is `containerd`?
 
 `containerd` is a container runtime that provides a lightweight, consistent
@@ -48,20 +64,6 @@ you can't load multi-platform images locally or build images with attestations.
 Most users have no reason to use the classic image store. It's available for
 cases where you need to match older behavior or have compatibility
 requirements.
-
-## Switch image stores
-
-The containerd image store is enabled by default in Docker Desktop version 4.34
-and later. To switch between image stores:
-
-1. Navigate to **Settings** in Docker Desktop.
-2. In the **General** tab, check or clear the **Use containerd for pulling and storing images** option.
-3. Select **Apply**.
-
-> [!NOTE]
->
-> Docker Desktop maintains separate image stores for the classic and containerd image stores.
-> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
 
 ## Build multi-platform images
 

@@ -25,6 +25,8 @@ To enable WSL 2 GPU Paravirtualization, you need:
 - The latest version of the WSL 2 Linux kernel. Use `wsl --update` on the command line
 - To make sure the [WSL 2 backend is turned on](wsl/_index.md#turn-on-docker-desktop-wsl-2) in Docker Desktop
 
+For backend setup, see [Turn on Docker Desktop WSL 2](wsl/_index.md#turn-on-docker-desktop-wsl-2). For WSL version guidance, see [Keep WSL up to date](wsl/best-practices.md#keep-wsl-up-to-date).
+
 ## Validate GPU support
 
 To confirm GPU access is working inside Docker, run the following:
@@ -62,6 +64,11 @@ GPU Device 0: "GeForce RTX 2060 with Max-Q Design" with compute capability 7.5
 = 136.219 billion interactions per second
 = 2724.379 single-precision GFLOP/s at 20 flops per interaction
 ```
+
+## Related GPU tasks
+
+- [Run Compose services with GPU access](/manuals/compose/how-tos/gpu-support.md).
+- [GPU access with Docker Engine](/manuals/engine/containers/gpu.md).
 
 ## Run a real-world model: SmolLM2 with Docker Model Runner
 

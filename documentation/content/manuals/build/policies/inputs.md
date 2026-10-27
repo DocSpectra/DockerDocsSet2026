@@ -10,6 +10,17 @@ When Buildx evaluates policies, it provides information about build inputs
 through the `input` object. The structure of `input` depends on the type of
 resource your Dockerfile references.
 
+## Find input fields
+
+- [Input types and Dockerfile instructions](#input-types).
+- [HTTP inputs](#http-inputs).
+- [Image inputs](#image-inputs).
+- [Git inputs](#git-inputs).
+- [Local inputs](#local-inputs).
+- [Build environment fields](#environment-fields).
+
+For source inspection commands, see [Using build policies](./usage.md#exploring-sources-with-policy-eval).
+
 ## Input types
 
 Build inputs correspond to Dockerfile instructions:

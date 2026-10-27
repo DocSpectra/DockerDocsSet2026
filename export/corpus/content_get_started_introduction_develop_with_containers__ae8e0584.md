@@ -12,21 +12,27 @@ aliases:
   - /guides/getting-started/develop-with-containers/
 ---
 
+On this page: [Start the project](#start-the-project) · [Explore the environment](#whats-in-the-environment) · [Edit backend and frontend code](#make-changes-to-the-app) · [Recap](#recap).
+
 {{< youtube-embed D0SDBrS3t9I >}}
 
-## Explanation
+<a id="explanation"></a>
 
-Now that you have Docker Desktop installed, you are ready to do some application development. Specifically, you will do the following:
+## Development workflow
+
+Now that you have [Docker Desktop installed](get-docker-desktop.md), you are ready to do some application development. Specifically, you will do the following:
 
 1. Clone and start a development project
 2. Make changes to the backend and frontend
 3. See the changes immediately
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Develop the to-do application
 
 In this hands-on guide, you'll learn how to develop with containers.
 
-## Start the project
+### Start the project
 
 1. To get started, either clone or [download the project as a ZIP file](https://github.com/docker/getting-started-todo-app/archive/refs/heads/main.zip) to your local machine.
 
@@ -54,7 +60,7 @@ In this hands-on guide, you'll learn how to develop with containers.
 
    ![Screenshot of the getting started to-do app after its first launch](images/develop-getting-started-app-first-launch.webp)
 
-### What's in the environment?
+#### What's in the environment?
 
 Now that the environment is up and running, what's actually in it? At a high-level, there are several containers (or processes) that each serve a specific need for the application:
 
@@ -66,11 +72,11 @@ Now that the environment is up and running, what's actually in it? At a high-lev
 
 With this environment, you as the developer don’t need to install or configure any services, populate a database schema, configure database credentials, or anything. You only need Docker Desktop. The rest just works.
 
-## Make changes to the app
+### Make changes to the app
 
 With this environment up and running, you’re ready to make a few changes to the application and see how Docker helps provide a fast feedback loop.
 
-### Change the greeting
+#### Change the greeting
 
 The greeting at the top of the page is populated by an API call at `/api/greeting`. Currently, it always returns "Hello world!". You’ll now modify it to return one of three randomized messages (that you'll get to choose).
 
@@ -99,7 +105,7 @@ The greeting at the top of the page is populated by an API call at `/api/greetin
 
    ![Screenshot of the to-do app with a new greeting](images/develop-app-with-greetings.webp)
 
-### Change the placeholder text
+#### Change the placeholder text
 
 When you look at the app, you'll see the placeholder text is simply "New Item". You’ll now make that a little more descriptive and fun. You’ll also make a few changes to the styling of the app too.
 
@@ -123,7 +129,7 @@ When you look at the app, you'll see the placeholder text is simply "New Item". 
 
 ![Screenshot of the to-do app with an updated placeholder in the add item text field"](images/develop-app-with-updated-placeholder.webp)
 
-### Change the background color
+#### Change the background color
 
 Before you consider the application finalized, you need to make the colors better.
 

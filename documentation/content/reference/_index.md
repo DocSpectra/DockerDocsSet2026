@@ -51,6 +51,13 @@ params:
 This section includes the reference documentation for the Docker platform's
 various APIs, CLIs, drivers and specifications, and file formats.
 
+## Find a reference
+
+- [File formats](#file-formats)
+- [Command-line interfaces](#command-line-interfaces-clis)
+- [Application programming interfaces](#application-programming-interfaces-apis)
+- [Glossary](glossary.md)
+
 ## File formats
 
 {{< grid items="grid_files" >}}

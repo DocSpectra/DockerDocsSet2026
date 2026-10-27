@@ -4,8 +4,12 @@ description: General guidelines for using antivirus software with Docker
 keywords: antivirus, security
 ---
 
+## Scan-related command hangs
+
 When antivirus software scans files used by Docker, these files may be locked
 in a way that causes Docker commands to hang.
+
+## Configure exclusions and scheduled scans
 
 One way to reduce these problems is to add the Docker data directory
 (`/var/lib/docker` on Linux, `%ProgramData%\docker` on Windows Server, or `$HOME/Library/Containers/com.docker.docker/` on Mac) to the

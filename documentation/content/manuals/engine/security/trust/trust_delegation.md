@@ -19,6 +19,20 @@ Fortunately when using the `$ docker trust` commands, we will automatically
 initialize a repository, manage the repository keys, and add a collaborator's key to the 
 `targets/releases` delegation via `docker trust signer add`. 
 
+## Choose a delegation task
+
+- Configure the [Docker client](#configuring-the-docker-client) or
+  [Notary client](#configuring-the-notary-client).
+- [Create and view delegation keys](#creating-delegation-keys).
+- [Initialize a repository](#initiating-the-repository).
+- [Add signers](#adding-additional-signers) or
+  [add keys to an existing delegation](#adding-keys-to-an-existing-delegation).
+- [Remove a delegation](#removing-a-delegation) and
+  [troubleshoot signature thresholds](#troubleshooting).
+- Remove [one contributor key](#removing-a-contributors-key-from-a-delegation),
+  [a local private key](#removing-a-local-delegation-private-key), or
+  [all repository trust data](#removing-all-trust-data-from-a-repository).
+
 ## Configuring the Docker client
 
 By default, the `$ docker trust` commands expect the notary server URL to be the
@@ -486,7 +500,7 @@ No signatures or cannot access registry.example.com/admin/demo
 
 ## Related information
 
-* [Content trust in Docker](index.md)
+* [Content trust in Docker](_index.md)
 * [Manage keys for content trust](trust_key_mng.md)
 * [Automation with content trust](trust_automation.md)
 * [Play in a content trust sandbox](trust_sandbox.md)

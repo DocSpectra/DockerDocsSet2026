@@ -5,6 +5,15 @@ description: Set up a Micronaut project with an external REST API integration us
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-micronaut-wiremock/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the Album and Photo models](#create-the-album-and-photo-models)
+- [Create the PhotoServiceClient](#create-the-photoserviceclient)
+- [Create the REST API endpoint](#create-the-rest-api-endpoint)
+
 ## Set up the project
 
 Create a Micronaut project from [Micronaut Launch](https://micronaut.io/launch)
@@ -212,3 +221,7 @@ response like:
   ]
 }
 ```
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-micronaut-wiremock/write-tests/)

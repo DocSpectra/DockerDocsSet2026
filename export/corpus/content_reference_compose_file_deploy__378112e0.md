@@ -9,6 +9,21 @@ weight: 140
 
 {{% include "compose/deploy.md" %}}
 
+## Find a deployment setting
+
+| Task | Attributes |
+| --- | --- |
+| Configure service discovery | [endpoint_mode](#endpoint_mode) |
+| Set service metadata | [labels](#labels) |
+| Run services or completion jobs | [mode and job restrictions](#mode), [replicas](#replicas) |
+| Select nodes | [placement](#placement), [constraints](#constraints), [preferences](#preferences) |
+| Limit or reserve CPU, memory, and PIDs | [resources](#resources), [cpus](#cpus), [memory](#memory), [pids](#pids) |
+| Reserve devices | [devices and required capabilities](#devices), [count](#count), [device_ids](#device_ids), [options](#options) |
+| Configure restarts | [restart_policy](#restart_policy), [service restart](services.md#restart) |
+| Configure rolling updates and rollbacks | [update_config](#update_config), [rollback_config](#rollback_config) |
+
+For implementation support and validity, see [service deployment requirements](services.md#deploy-support).
+
 ## Attributes
 
 ### `endpoint_mode`

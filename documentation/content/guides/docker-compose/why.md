@@ -19,4 +19,9 @@ Docker Compose provides several benefits:
 
 {{< youtube-embed 2EqarOM2V4U >}}
 
+## Next steps
+
+- [Watch the setup demo](setup.md)
+- [Explore Compose benefits and use cases](/manuals/compose/intro/features-uses.md)
+
 <div id="compose-lp-survey-anchor"></div>

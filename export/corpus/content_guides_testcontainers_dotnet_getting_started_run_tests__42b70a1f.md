@@ -5,6 +5,8 @@ description: Run your Testcontainers-based integration tests and explore next st
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-dotnet-getting-started/#prerequisites) · [Previous: Write tests](/guides/testcontainers-dotnet-getting-started/write-tests/)
+
 ## Run the tests
 
 Run the tests:
@@ -37,4 +39,8 @@ To learn more about Testcontainers, visit the
 
 ## Further reading
 
-- [Testing an ASP.NET Core web app](https://testcontainers.com/guides/testing-an-aspnet-core-web-app/)
+- [Testing an ASP.NET Core web app](/guides/testcontainers-dotnet-aspnet-core/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-dotnet-getting-started/)

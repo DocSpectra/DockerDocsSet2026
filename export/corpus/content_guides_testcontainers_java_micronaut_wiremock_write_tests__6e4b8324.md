@@ -5,9 +5,17 @@ description: Test external REST API integrations using WireMock and the Testcont
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-micronaut-wiremock/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-micronaut-wiremock/create-project/)
+
 Mocking external API interactions at the HTTP protocol level, rather than
 mocking Java methods, lets you verify marshalling and unmarshalling behavior and
 simulate network issues.
+
+## In this step
+
+- [Test with WireMock's JUnit 5 extension](#test-with-wiremocks-junit-5-extension)
+- [Stub using JSON mapping files](#stub-using-json-mapping-files)
+- [Use the Testcontainers WireMock module](#use-the-testcontainers-wiremock-module)
 
 ## Test with WireMock's JUnit 5 extension
 
@@ -103,6 +111,8 @@ class AlbumControllerTest {
     }
 }
 ```
+
+### How the test works
 
 Here's what this test does:
 
@@ -373,6 +383,8 @@ class AlbumControllerTestcontainersTests {
 }
 ```
 
+### How the test works
+
 Here's what this test does:
 
 - `@Testcontainers` and `@Container` annotations start a `WireMockContainer`
@@ -389,3 +401,7 @@ Here's what this test does:
   from the photo service propagates to the caller.
 - `shouldReturnEmptyPhotos()` verifies the application handles an empty photo
   list.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-micronaut-wiremock/run-tests/)

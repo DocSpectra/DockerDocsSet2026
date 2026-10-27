@@ -13,6 +13,16 @@ make changes, run tests, and even look up documentation.
 By the end, you'll understand how to structure agent instructions, configure
 tools, and compose multiple agents for complex workflows.
 
+## Follow the tutorial
+
+Start with the [prerequisites](#prerequisites), then:
+
+1. [Create your first agent](#creating-your-first-agent)
+2. [Add tools](#adding-tools)
+3. [Structure agent instructions](#structuring-agent-instructions)
+4. [Compose multiple agents](#composing-multiple-agents)
+5. [Adapt the agent for your project](#adapting-for-your-project)
+
 ## What you'll build
 
 A coding agent that can:

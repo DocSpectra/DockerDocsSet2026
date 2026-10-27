@@ -13,6 +13,13 @@ weight: 20
 
 This page shows you how to configure Docker socket exceptions and other advanced settings for Enhanced Container Isolation (ECI). These configurations enable trusted tools like Testcontainers to work with ECI while maintaining security.
 
+## Choose a socket exception task
+
+- [Configure socket exceptions](#configure-socket-exceptions).
+- Define the [image allowlist](#image-allowlist-configuration), [derived image support](#derived-images-support), and [command restrictions](#command-restrictions).
+- Find examples for [Testcontainers](#testcontainers-setup), [CI/CD tools](#cicd-pipeline-tools), and [development environments](#development-environments).
+- Review [security recommendations](#security-recommendations) and [socket exception limitations](limitations.md#global-command-restrictions).
+
 ## Docker socket mount permissions
 
 By default, Enhanced Container Isolation blocks containers from mounting the Docker socket to prevent malicious access to Docker Engine. However, some tools require Docker socket access.

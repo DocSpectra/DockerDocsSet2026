@@ -25,6 +25,11 @@ orchestrators. Two of the most popular orchestration tools are Kubernetes and
 Docker Swarm. Docker Desktop provides development environments for both of these
 orchestrators.
 
+## Choose a setup or deployment task
+
+- [Turn on Kubernetes and validate it](#turn-on-kubernetes).
+- [Enable Docker Swarm and validate it](#enable-docker-swarm).
+
 The advanced modules teach you how to:
 
 1. [Set up and use a Kubernetes environment on your development machine](kube-deploy.md)

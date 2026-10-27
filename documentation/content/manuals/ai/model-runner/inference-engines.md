@@ -10,6 +10,15 @@ Each engine has different strengths, supported platforms, and model format
 requirements. This guide helps you choose the right engine and configure it for
 your use case.
 
+## Find an engine task
+
+- [Compare engines](#engine-comparison)
+- Set up [llama.cpp](#llamacpp), [vLLM](#vllm), or [Diffusers](#diffusers)
+- [Run multiple engines](#running-multiple-engines)
+- [Install, reinstall, or inspect engines](#managing-inference-engines)
+- [Package models](#packaging-models-for-each-engine)
+- [Troubleshoot engine startup, speed, or memory](#troubleshooting)
+
 ## Engine comparison
 
 | Feature | llama.cpp | vLLM | Diffusers                           |

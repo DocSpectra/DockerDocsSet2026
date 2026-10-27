@@ -14,6 +14,8 @@ params:
   time: 25 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-testcontainers-in-quarkus-applications -->
 
 In this guide, you'll learn how to:
@@ -35,3 +37,15 @@ In this guide, you'll learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-quarkus/create-project/)
+2. [Write tests](/guides/testcontainers-java-quarkus/write-tests/)
+3. [Run tests](/guides/testcontainers-java-quarkus/run-tests/)
+
+## Find a specific task
+
+- [Customize test configuration](/guides/testcontainers-java-quarkus/write-tests/#customize-test-configuration)
+- [Test services not supported by Dev Services](/guides/testcontainers-java-quarkus/write-tests/#test-with-services-not-supported-by-dev-services)
+- [Run the application locally](/guides/testcontainers-java-quarkus/run-tests/#run-the-application-locally)

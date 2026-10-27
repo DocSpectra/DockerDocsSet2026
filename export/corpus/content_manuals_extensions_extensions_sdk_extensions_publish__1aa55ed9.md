@@ -7,23 +7,7 @@ aliases:
 weight: 50
 ---
 
-## Submit your extension to the Marketplace
-
-Docker Desktop displays published extensions in the Extensions Marketplace on [Docker Desktop](https://open.docker.com/extensions/marketplace) and [Docker Hub](https://hub.docker.com/search?q=&type=extension).
-The Extensions Marketplace is a space where developers can discover extensions to improve their developer experience and propose their own extension to be available for all Desktop users.
-
-Whenever you are [ready to publish](DISTRIBUTION.md) your extension in the Marketplace, you can [self-publish your extension](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)
-
-> [!NOTE]
->
-> As the Extension Marketplace continues to add new features for both Extension users and publishers, you are expected
-> to maintain your extension over time to ensure it stays available in the Marketplace.
-
-> [!IMPORTANT]
->
-> The Docker manual review process for extensions is paused at the moment. Submit your extension through the [automated submission process](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)
-
-### Before you submit
+## Before you submit
 
 Before you submit your extension, it must pass the [validation](validate.md) checks.
 
@@ -40,7 +24,23 @@ These guidelines don't replace Docker's terms of service or guarantee approval:
 - Test your extension on various platforms (Mac, Windows, Linux)
 - Read the [Terms of Service](https://www.docker.com/legal/extensions_marketplace_developer_agreement/)
 
-#### Validation process
+## Submit your extension to the Marketplace
+
+Docker Desktop displays published extensions in the Extensions Marketplace on [Docker Desktop](https://open.docker.com/extensions/marketplace) and [Docker Hub](https://hub.docker.com/search?q=&type=extension).
+The Extensions Marketplace is a space where developers can discover extensions to improve their developer experience and propose their own extension to be available for all Desktop users.
+
+Whenever you are [ready to publish](DISTRIBUTION.md) your extension in the Marketplace, you can [self-publish your extension](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)
+
+> [!NOTE]
+>
+> As the Extension Marketplace continues to add new features for both Extension users and publishers, you are expected
+> to maintain your extension over time to ensure it stays available in the Marketplace.
+
+> [!IMPORTANT]
+>
+> The Docker manual review process for extensions is paused at the moment. Submit your extension through the [automated submission process](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)
+
+## Validation process
 
 Submitted extensions go through an automated validation process. If all the validation checks pass successfully, the extension is
 published on the Marketplace and accessible to all users within a few hours.

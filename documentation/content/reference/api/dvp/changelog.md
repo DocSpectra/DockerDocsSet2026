@@ -11,6 +11,8 @@ toc_max: 2
 Here you can learn about the latest changes, new features, bug fixes, and known
 issues for Docker Verified Publisher API.
 
+See also the [API reference](./latest.md) and [deprecated endpoints](./deprecated.md).
+
 ---
 
 ## 2025-06-27

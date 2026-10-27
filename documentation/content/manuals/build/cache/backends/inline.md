@@ -26,6 +26,8 @@ $ docker buildx build --push -t <registry>/<image> \
 
 No additional parameters are supported for the `inline` cache.
 
+## Export inline cache
+
 To export cache using `inline` storage, pass `type=inline` to the `--cache-to`
 option:
 
@@ -41,6 +43,8 @@ Alternatively, you can also export inline cache by setting the build argument
 $ docker buildx build --push -t <registry>/<image> \
   --build-arg BUILDKIT_INLINE_CACHE=1 .
 ```
+
+## Import inline cache
 
 To import the resulting cache on a future build, pass `type=registry` to
 `--cache-from` which lets you extract the cache from inside a Docker image in

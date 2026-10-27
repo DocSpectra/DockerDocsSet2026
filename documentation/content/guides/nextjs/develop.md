@@ -7,9 +7,22 @@ description: Learn how to develop your Next.js application locally using contain
 
 ---
 
+[Next.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create Dockerfile.dev](#step-1-create-a-development-dockerfile)
+- [Configure Compose services](#step-2-update-your-composeyaml-file)
+- [Configure Next.js development](#step-3-configure-nextjs-for-docker-development)
+- [Start Compose Watch](#step-4-start-compose-watch)
+- [Verify live updates](#step-5-test-compose-watch-with-nextjs)
+
 ## Prerequisites
 
 Complete [Containerize Next.js application](containerize.md).
+
+The `next.config.ts` file you created during containerization already includes the [`output: "standalone"`](standalone.md) option for production. For development, Next.js automatically uses its built-in development server with hot reloading enabled.
 
 ---
 
@@ -30,7 +43,7 @@ Use Compose Watch to automatically sync source file changes into your
 containerized development environment. This automatically syncs file changes
 without needing to restart or rebuild containers manually.
 
-## Step 1: Create a development Dockerfile
+### Step 1: Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content (matching the [sample project](https://github.com/kristiyan-velkov/docker-nextjs-sample)):
 
@@ -127,8 +140,6 @@ services:
 
 Next.js works well inside Docker containers out of the box, but there are a few configurations that can improve the development experience.
 
-The `next.config.ts` file you created during containerization already includes the `output: "standalone"` option for production. For development, Next.js automatically uses its built-in development server with hot reloading enabled.
-
 > [!NOTE]
 > The Next.js development server automatically:
 > - Enables Hot Module Replacement (HMR) for instant updates
@@ -208,3 +219,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your Next.js application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+Continue to [tests](run-tests.md).

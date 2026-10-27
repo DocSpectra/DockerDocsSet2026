@@ -16,12 +16,16 @@ Fortunately, when you use containers in development, it is easy to add additiona
 
 The [pgAdmin](https://www.pgadmin.org/) tool is a popular open-source tool designed to help administer and visualize PostgreSQL databases.
 
+## Choose a pgAdmin task
+
 In this guide you will learn how to:
 
-1. Add pgAdmin to your application stack
-2. Configure pgAdmin to automatically connect to the development database
+1. [Add pgAdmin to your application stack](#adding-pgadmin-to-your-stack)
+2. [Configure pgAdmin to automatically connect to the development database](#configuring-pgadmin-to-auto-connect-to-the-database)
 
 
+
+For database setup and connection steps, see the [PostgreSQL guide](postgresql/_index.md).
 
 ## Adding pgAdmin to your stack
 
@@ -168,3 +172,8 @@ Fortunately, there is an ability to auto-connect to the database.
 Using containers makes it easy to not only run your application's dependencies, but also additional tools to help with troubleshooting and debugging. 
 
 When you add tools, think about the experience and possible friction your teammates might experience and how you might be able to remove it. In this case, you were able to take an extra step to add configuration to automatically configure and connect the databases, saving your teammates valuable time.
+
+## Related tasks
+
+- [Deploy pgAdmin in Server Mode and configure connection pooling](postgresql/companions-for-postgresql.md)
+- [Troubleshoot PostgreSQL connections](postgresql/networking-and-connectivity.md#troubleshooting)

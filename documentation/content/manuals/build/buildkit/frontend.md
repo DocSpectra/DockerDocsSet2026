@@ -7,6 +7,10 @@ aliases:
   - /build/dockerfile/frontend/
 ---
 
+Use the sections below to [set the frontend](#dockerfile-frontend),
+[choose a stable version](#stable-channel), or
+[review the labs channel and compatibility caveats](#labs-channel).
+
 ## Dockerfile frontend
 
 BuildKit supports loading frontends dynamically from container images. To use

@@ -8,9 +8,13 @@ aliases:
  - /guides/docker-concepts/running-containers/persisting-container-data/
 ---
 
+On this page: [Volumes and lifecycle](#container-volumes) · [Volume management commands](#managing-volumes) · [Create and reuse a volume](#use-volumes) · [View volume contents](#view-volume-contents) · [Remove volumes](#remove-volumes).
+
 {{< youtube-embed 10_2BjqB_Ls >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Volumes and data persistence
 
 When a container starts, it uses the files and configuration provided by the image. Each container is able to create, modify, and delete files and does so without affecting any other containers. When the container is deleted, these file changes are also deleted.
 
@@ -51,7 +55,9 @@ Volumes have their own lifecycle beyond that of containers and can grow quite la
 
 
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Persist Postgres data across container replacement
 
 In this guide, you'll practice creating and using volumes to persist data created by a Postgres container. When the database runs, it stores files into the `/var/lib/postgresql` directory. By attaching the volume here, you will be able to restart the container multiple times while keeping the data.
 

@@ -18,12 +18,16 @@ alt="outdated icon" >}}) next to them on the [**Repositories**
 page](https://hub.docker.com/repositories/). Consider reviewing these
 highlighted repositories and archiving them if necessary.
 
+## Effects of archiving
+
 When a repository is archived, the following occurs:
 
 - The repository information can't be modified.
 - New images can't be pushed to the repository.
 - An **Archived** label is displayed on the public repository page.
 - Users can still pull the images.
+
+### Effects of unarchiving
 
 You can unarchive an archived repository to remove the archived state. When
 unarchived, the following occurs:

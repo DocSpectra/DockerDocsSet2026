@@ -30,6 +30,9 @@ You can build multiple targets at once by passing multiple target names to the
 $ docker buildx bake webapp api tests
 ```
 
+For a first build walkthrough, see [Introduction to Bake](introduction.md).
+For configuration reuse, see [Inheritance](inheritance.md).
+
 ## Default target
 
 If you don't specify a target when running `docker buildx bake`, Bake will

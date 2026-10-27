@@ -9,6 +9,10 @@ weight: 90
 
 {{% include "compose/interpolation.md" %}}
 
+Find [substitution formats](#substitution-syntax), [supported expressions](#supported-expressions), [literal dollar signs](#use-a-literal-dollar-sign), [unresolved variable behavior](#unresolved-variables), [merge order](#interpolation-and-merge-order), or [label and environment syntax](#interpolate-labels-and-environment-entries).
+
+## Substitution syntax
+
 For braced expressions, the following formats are supported:
 - Direct substitution
   - `${VAR}` -> value of `VAR`
@@ -28,12 +32,16 @@ Interpolation can also be nested:
 - `${VARIABLE?$FOO}`
 - `${VARIABLE:-${FOO:-default}}`
 
+## Supported expressions
+
 Other extended shell-style features, such as `${VARIABLE/foo/bar}`, are not
 supported by Compose.
 
 Compose processes any string following a `$` sign as long as it makes it
 a valid variable definition - either an alphanumeric name (`[_a-zA-Z][_a-zA-Z0-9]*`)
 or a braced string starting with `${`. In other circumstances, it will be preserved without attempting to interpolate a value.
+
+## Use a literal dollar sign
 
 You can use a `$$` (double-dollar sign) when your configuration needs a literal
 dollar sign. This also prevents Compose from interpolating a value, so a `$$`
@@ -46,10 +54,16 @@ web:
   command: "$$VAR_NOT_INTERPOLATED_BY_COMPOSE"
 ```
 
+## Unresolved variables
+
 If Compose can't resolve a substituted variable and no default value is defined, it displays a warning and substitutes the variable with an empty string.
+
+## Interpolation and merge order
 
 As any values in a Compose file can be interpolated with variable substitution, including compact string notation
 for complex elements, interpolation is applied before a merge on a per-file basis.
+
+## Interpolate labels and environment entries
 
 Interpolation applies only to YAML values, not to keys. For the few places where keys are actually arbitrary
 user-defined strings, such as [labels](services.md#labels) or [environment](services.md#environment), an alternate equal sign syntax

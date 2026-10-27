@@ -105,6 +105,10 @@ Docker Engine has two types of update channels, **stable** and **test**:
 Use the test channel with caution. Pre-release versions include experimental and
 early-access features that are subject to breaking changes.
 
+### Upgrade path
+
+Patch releases are always backward compatible with its major and minor version.
+
 ## Support
 
 Docker Engine is an open source project, supported by the Moby project maintainers
@@ -115,11 +119,7 @@ Docker Engine as one of its components.
 For information about the open source project, refer to the
 [Moby project website](https://mobyproject.org/).
 
-### Upgrade path
-
-Patch releases are always backward compatible with its major and minor version.
-
-### Licensing
+## Licensing
 
 Commercial use of Docker Engine obtained via Docker Desktop
 within larger enterprises (exceeding 250 employees OR with annual revenue surpassing
@@ -135,6 +135,10 @@ DO NOT file a public issue. Instead, submit your report privately to security@do
 Security reports are greatly appreciated, and Docker will publicly thank you for it.
 
 ## Get started
+
+- [Post-installation steps for Linux](linux-postinstall.md)
+- [Start the daemon](../daemon/start.md)
+- [Troubleshoot the daemon](../daemon/troubleshoot.md)
 
 After setting up Docker, you can learn the basics with
 [Getting started with Docker](/get-started/introduction/_index.md).

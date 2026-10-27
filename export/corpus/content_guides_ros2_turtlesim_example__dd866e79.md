@@ -6,11 +6,24 @@ keywords: ros2, turtlesim, example, nodes, topics, teleop
 description: Run a complete end-to-end ROS 2 example with Turtlesim.
 ---
 
+[ROS 2 overview and prerequisites](_index.md#prerequisites) / [Run ROS 2](run-ros2.md) / [Develop a workspace](develop.md) / [Turtlesim example](turtlesim-example.md)
+
 ## Overview
 
 Turtlesim is a simple simulation tool that demonstrates fundamental ROS 2 concepts such as nodes, topics, and services. In this section, you'll run a complete example with Turtlesim, control the turtle, monitor topics, and visualize the system with rqt.
 
 ---
+
+## Choose an example task
+
+- [Configure display forwarding on Linux or macOS](#configure-display-forwarding)
+- [Start the workspace container](#start-the-container)
+- [Install and run Turtlesim](#install-and-run-turtlesim)
+- [Control the turtle](#control-the-turtle)
+- [Monitor topics](#monitor-topics)
+- [Visualize nodes, topics, services, and plots with rqt](#visualize-the-system-with-rqt)
+- [Call ROS 2 services](#call-ros-2-services)
+- [Create a publisher](#create-a-simple-publisher)
 
 ## Configure display forwarding
 
@@ -44,7 +57,7 @@ On macOS, use XQuartz to provide X11 support. Install XQuartz using Homebrew:
 
 ## Start the container
 
-Start the container using the same Docker Compose setup from the workspace section.
+Start the container using the same Docker Compose setup from the [workspace section](develop.md).
 
 For Linux:
 

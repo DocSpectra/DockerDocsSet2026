@@ -7,6 +7,16 @@ description: Learn how to develop your Angular application locally using contain
 
 ---
 
+[Angular guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create Dockerfile.dev](#step-1-create-a-development-dockerfile)
+- [Configure Compose services](#step-2-update-your-composeyaml-file)
+- [Start Compose Watch](#step-4-start-compose-watch)
+- [Verify live updates](#step-5-test-compose-watch-with-angular)
+
 ## Prerequisites
 
 Complete [Containerize Angular application](containerize.md).
@@ -28,7 +38,7 @@ You’ll learn how to:
 
 Use Compose Watch to automatically sync source file changes into your containerized development environment. This provides a seamless, efficient development experience without restarting or rebuilding containers manually.
 
-## Step 1: Create a development Dockerfile
+### Step 1: Create a development Dockerfile
 
 Create a file named `Dockerfile.dev` in your project root with the following content:
 
@@ -116,7 +126,7 @@ After completing the previous steps, your project directory should now contain t
 │ └── README.Docker.md
 ```
 
-### Step 4: Start Compose Watch
+### Step 3: Start Compose Watch {#step-4-start-compose-watch}
 
 Run the following command from the project root to start the container in watch mode
 
@@ -124,7 +134,7 @@ Run the following command from the project root to start the container in watch 
 $ docker compose watch angular-dev
 ```
 
-### Step 5: Test Compose Watch with Angular
+### Step 4: Test Compose Watch with Angular {#step-5-test-compose-watch-with-angular}
 
 To verify that Compose Watch is working correctly:
 
@@ -177,3 +187,5 @@ Deepen your knowledge and improve your containerized development workflow with t
 ## Next steps
 
 In the next section, you'll learn how to run unit tests for your Angular application inside Docker containers. This ensures consistent testing across all environments and removes dependencies on local machine setup.
+
+Continue to [tests](run-tests.md).

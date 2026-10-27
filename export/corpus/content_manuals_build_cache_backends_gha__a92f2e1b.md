@@ -15,9 +15,21 @@ recommended cache to use inside your GitHub Actions workflows, as long as your
 use case falls within the
 [size and usage limits set by GitHub](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy).
 
+## Driver requirements
+
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
 [Build drivers](/manuals/build/builders/drivers/_index.md) for more information.
+
+## Find GitHub Actions cache steps
+
+- [Review driver requirements](#driver-requirements).
+- [Configure cache import and export](#synopsis).
+- [Provide authentication](#authentication).
+- [Keep image caches separate](#scope).
+- [Select a cache API version](#version).
+- [Use build-push-action](#using-dockerbuild-push-action).
+- [Avoid API throttling](#avoid-github-actions-cache-api-throttling).
 
 ## Synopsis
 
@@ -26,6 +38,8 @@ $ docker buildx build --push -t <registry>/<image> \
   --cache-to type=gha[,parameters...] \
   --cache-from type=gha[,parameters...] .
 ```
+
+### Parameters
 
 The following table describes the available CSV parameters that you can pass to
 `--cache-to` and `--cache-from`.

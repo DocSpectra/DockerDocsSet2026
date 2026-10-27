@@ -67,6 +67,14 @@ Docker provides security guardrails for both administrators and developers.
 If you're an administrator, you can enforce sign-in across Docker products for your developers, and
 scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management.
 
+## Find a security task
+
+- Set up access: [verify domains](domain-management.md), [connect SSO](single-sign-on/connect.md), and [configure Desktop sign-in enforcement](enforce-sign-in/methods.md).
+- Manage users: [choose a provisioning method](provisioning/_index.md) and [assign roles and permissions](roles-and-permissions/_index.md).
+- Authenticate automation: [create organization access tokens](access-tokens.md).
+- Secure developer workstations: [choose Hardened Docker Desktop controls](hardened-desktop/_index.md).
+- Resolve issues: [SSO troubleshooting](single-sign-on/troubleshoot-sso.md) and [provisioning troubleshooting](provisioning/troubleshoot-provisioning.md).
+
 ## For administrators
 
 Explore the security features Docker offers to satisfy your company's security policies.

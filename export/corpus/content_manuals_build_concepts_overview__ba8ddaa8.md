@@ -76,3 +76,9 @@ Examples of resources that BuildKit can request from Buildx include:
 - Registry authentication tokens
 
 For more information about BuildKit, see [BuildKit](/manuals/build/buildkit/_index.md).
+
+## Next steps
+
+- [Write a Dockerfile and build an image](./dockerfile.md).
+- [Choose a build context](./context.md).
+- [Choose a build task](../building/_index.md).

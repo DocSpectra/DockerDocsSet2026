@@ -11,26 +11,7 @@ more flexibility to configure these definitions. For example, you might want to
 override an attribute when building in a particular environment or for a
 specific target.
 
-The following list of attributes can be overridden:
-
-- `args`
-- `attest`
-- `cache-from`
-- `cache-to`
-- `context`
-- `contexts`
-- `dockerfile`
-- `entitlements`
-- `labels`
-- `network`
-- `no-cache`
-- `output`
-- `platform`
-- `pull`
-- `secrets`
-- `ssh`
-- `tags`
-- `target`
+For the list of attributes, see [Overridable attributes](#overridable-attributes).
 
 To override these attributes, you can use the following methods:
 
@@ -225,6 +206,8 @@ $ docker buildx bake --set foo*.args.mybuildarg=value  # overrides build arg for
 $ docker buildx bake --set *.platform=linux/arm64      # overrides platform for all targets
 $ docker buildx bake --set foo*.no-cache               # bypass caching only for targets starting with "foo"
 ```
+
+### Overridable attributes
 
 Complete list of attributes that can be overridden with `--set` are:
 

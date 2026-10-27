@@ -22,3 +22,6 @@ opens a feedback form where you can share ideas directly with the Docker Team.
 ## Report bugs or problems on GitHub
 
 To report bugs or problems, visit the [Docker Desktop issue tracker](https://github.com/docker/desktop-feedback).
+
+
+For diagnostic steps before reporting an issue, see [Troubleshoot Docker Offload](troubleshoot.md).

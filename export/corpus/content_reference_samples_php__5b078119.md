@@ -5,3 +5,7 @@ service: php
 aliases:
 - /samples/php/
 ---
+
+## Browse samples
+
+[All samples](_index.md) / [Languages](_index.md#languages)

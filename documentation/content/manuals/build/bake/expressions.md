@@ -11,6 +11,11 @@ aliases:
 Bake files in the HCL format support expression evaluation, which lets you
 perform arithmetic operations, conditionally set values, and more.
 
+Choose an example: [arithmetic](#arithmetic-operations),
+[ternary operators](#ternary-operators), or
+[expressions with variables](#expressions-with-variables).
+For functions, see [Functions](funcs.md).
+
 ## Arithmetic operations
 
 You can perform arithmetic operations in expressions. The following example

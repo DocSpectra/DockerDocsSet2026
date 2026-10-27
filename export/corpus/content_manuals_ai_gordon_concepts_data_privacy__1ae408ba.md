@@ -10,6 +10,15 @@ weight: 30
 This page explains what data Gordon accesses, how it's used, and what privacy
 protections are in place.
 
+## Find a privacy topic
+
+- [Data Gordon accesses](#what-data-gordon-accesses)
+- [Retention by subscription](#data-retention-policy)
+- [Data security](#data-security)
+- [Organizational policies](#organizational-data-policies)
+- [Disable Gordon](#disabling-gordon)
+- [Privacy terms and support](#questions-about-privacy)
+
 ## What data Gordon accesses
 
 When you use Gordon, the data it accesses depends on your query and
@@ -82,12 +91,7 @@ for configuration details.
 
 You can disable Gordon at any time:
 
-Individual users:
-
-1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
-3. Clear the **Enable Gordon** option.
-4. Select **Apply**.
+Individual users: Follow the [Docker Desktop steps](../how-to/docker-desktop.md#disabling-gordon).
 
 Business organizations:
 

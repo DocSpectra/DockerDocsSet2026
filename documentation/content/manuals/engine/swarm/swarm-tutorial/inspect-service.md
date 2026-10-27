@@ -6,6 +6,8 @@ weight: 40
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 When you have [deployed a service](deploy-service.md) to your swarm, you can use
 the Docker CLI to see details about the service running in the swarm.
 

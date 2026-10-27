@@ -11,6 +11,14 @@ aliases:
 
 0.2.0
 
+## Choose a destination
+
+- [Containers](#container-methods)
+- [Images](#images-methods)
+- [Volumes](#volume-methods)
+
+See also the [navigation example](/manuals/extensions/extensions-sdk/dev/api/dashboard-routes-navigation.md).
+
 ## Container Methods
 
 ### viewContainers

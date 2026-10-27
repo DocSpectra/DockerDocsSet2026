@@ -26,20 +26,6 @@ The Vue.js language-specific guide shows you how to containerize an Vue.js appli
 > Docker extends its sincere gratitude to [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) for authoring this guide. As a Docker Captain and highly skilled Front-end engineer, Kristiyan brings exceptional expertise in modern web development, Docker, and DevOps. His hands-on approach and clear, actionable guidance make this guide an essential resource for developers aiming to build, optimize, and secure Vue.js applications with Docker.
 ---
 
-## What will you learn?
-
-In this guide, you will learn how to:
-
-- Containerize and run an Vue.js application using Docker.
-- Set up a local development environment for Vue.js inside a container.
-- Run tests for your Vue.js application within a Docker container.
-- Configure a CI/CD pipeline using GitHub Actions for your containerized app.
-- Deploy the containerized Vue.js application to a local Kubernetes cluster for testing and debugging.
-
-You'll start by containerizing an existing Vue.js application and work your way up to production-level deployments.
-
----
-
 ## Prerequisites
 
 Before you begin, ensure you have a working knowledge of:
@@ -50,3 +36,17 @@ Before you begin, ensure you have a working knowledge of:
 - Understanding of core Docker concepts such as images, containers, and Dockerfiles. If you're new to Docker, start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
 
 Once you've completed the Vue.js getting started modules, you’ll be fully prepared to containerize your own Vue.js application using the detailed examples and best practices outlined in this guide.
+
+---
+
+## What will you learn?
+
+In this guide, you will learn how to:
+
+- [Containerize and run an Vue.js application using Docker.](containerize.md)
+- [Set up a local development environment for Vue.js inside a container.](develop.md)
+- [Run tests for your Vue.js application within a Docker container.](run-tests.md)
+- [Configure a CI/CD pipeline using GitHub Actions for your containerized app.](configure-github-actions.md)
+- [Deploy the containerized Vue.js application to a local Kubernetes cluster for testing and debugging.](deploy.md)
+
+You'll start by containerizing an existing Vue.js application and work your way up to production-level deployments.

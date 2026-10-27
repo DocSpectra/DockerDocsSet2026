@@ -1,1 +1,3 @@
 Profiles help you adjust your Compose application for different environments or use cases by selectively activating services. Services can be assigned to one or more profiles; unassigned services start/stop by default, while assigned ones only start/stop when their profile is active. This setup means specific services, like those for debugging or development, to be included in a single `compose.yml` file and activated only as needed.
+
+See [profile selection](/reference/compose-file/profiles.md#select-active-services), [dependency restrictions](/reference/compose-file/profiles.md#references-and-dependencies), and [steps for using profiles](/manuals/compose/how-tos/profiles.md).

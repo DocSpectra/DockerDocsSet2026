@@ -5,6 +5,17 @@ description: Set up a Spring Boot project with Spring Cloud AWS, S3, and SQS.
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-aws-localstack/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the configuration properties](#create-the-configuration-properties)
+- [Implement StorageService for S3](#implement-storageservice-for-s3)
+- [Create the SQS message model](#create-the-sqs-message-model)
+- [Implement the message sender](#implement-the-message-sender)
+- [Implement the message listener](#implement-the-message-listener)
+
 ## Set up the project
 
 Create a Spring Boot project from [Spring Initializr](https://start.spring.io)
@@ -239,3 +250,7 @@ public class MessageListener {
 
 The `${app.queue}` expression reads the queue name from application
 configuration instead of hard-coding it.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-aws-localstack/write-tests/)

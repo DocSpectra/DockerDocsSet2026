@@ -10,9 +10,22 @@ aliases:
   - /guides/python/configure-ci-cd/
 ---
 
+[Python guide overview](_index.md)
+
 ## Prerequisites
 
 Complete all the previous sections of this guide, starting with [Containerize a Python application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
+
+## Overview
+
+GitHub Actions is a CI/CD (Continuous Integration and Continuous Deployment) automation tool built into GitHub. It allows you to define custom workflows for building, testing, and deploying your code when specific events occur (e.g., pushing code, creating a pull request, etc.). A workflow is a YAML-based automation script that defines a sequence of steps to be executed when triggered. Workflows are stored in the `.github/workflows/` directory of a repository.
+
+In this section, you'll learn how to set up and use GitHub Actions to build your Docker image as well as push it to Docker Hub. You will complete the following steps:
+
+1. Define the GitHub Actions workflow.
+2. Run the workflow.
+
+## Prepare the repository and Docker Hub credentials
 
 If you didn't create a [GitHub repository](https://github.com/new) for your project yet, it is time to do it. After creating the repository, don't forget to [add a remote](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories) and ensure you can commit and [push your code](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push) to GitHub.
 
@@ -24,15 +37,6 @@ If you didn't create a [GitHub repository](https://github.com/new) for your proj
 
 4. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
-
-## Overview
-
-GitHub Actions is a CI/CD (Continuous Integration and Continuous Deployment) automation tool built into GitHub. It allows you to define custom workflows for building, testing, and deploying your code when specific events occur (e.g., pushing code, creating a pull request, etc.). A workflow is a YAML-based automation script that defines a sequence of steps to be executed when triggered. Workflows are stored in the `.github/workflows/` directory of a repository.
-
-In this section, you'll learn how to set up and use GitHub Actions to build your Docker image as well as push it to Docker Hub. You will complete the following steps:
-
-1. Define the GitHub Actions workflow.
-2. Run the workflow.
 
 ## 1. Define the GitHub Actions workflow
 
@@ -134,3 +138,4 @@ Related information:
 
 In the next section, you'll learn how you can develop locally using kubernetes.
 
+Continue: [Test the deployment on Kubernetes](deploy.md).

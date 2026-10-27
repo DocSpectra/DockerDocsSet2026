@@ -35,6 +35,10 @@ Or you can use the `daemon.json` file, if your distribution doesn't use systemd.
 Configuring Docker to listen for connections using both the systemd unit file
 and the `daemon.json` file causes a conflict that prevents Docker from starting.
 
+- [Configure with a systemd unit file](#configuring-remote-access-with-systemd-unit-file)
+- [Configure with daemon.json](#configuring-remote-access-with-daemonjson)
+- [Allow API access through a firewall](#allow-access-to-the-remote-api-through-a-firewall)
+
 ### Configuring remote access with systemd unit file
 
 1. Use the command `sudo systemctl edit docker.service` to open an override file
@@ -125,3 +129,6 @@ system down more.
 
 For more detailed information on configuration options for remote access to the daemon, refer to the
 [dockerd CLI reference](/reference/cli/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket).
+
+- [Manage daemon connections with Docker contexts](../manage-resources/contexts.md)
+- [Troubleshoot configuration conflicts](troubleshoot.md#configure-the-daemon-host-with-systemd)

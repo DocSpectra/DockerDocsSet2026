@@ -9,6 +9,19 @@ Once Model Runner is enabled, new API endpoints are available. You can use
 these endpoints to interact with a model programmatically. Docker Model Runner
 provides compatibility with OpenAI, Anthropic, and Ollama API formats.
 
+## Before you begin
+
+[Enable Docker Model Runner](get-started.md#enable-docker-model-runner) before using the endpoints.
+
+## Find an API task
+
+- [Determine the base URL](#determine-the-base-url)
+- [Choose an API format](#supported-apis)
+- [Send requests from a container or host](#rest-api-examples)
+- [Use an OpenAI SDK](#using-with-openai-sdks)
+- [Generate images](#image-generation-api-diffusers)
+- [Manage models](#dmr-native-endpoints)
+
 ## Determine the base URL
 
 The base URL to interact with the endpoints depends on how you run Docker and
@@ -23,7 +36,7 @@ which API format you're using.
 | Host processes (TCP) | `http://localhost:12434` |
 
 > [!NOTE]
-> TCP host access must be enabled. See [Enable Docker Model Runner](get-started.md#enable-docker-model-runner-in-docker-desktop).
+> TCP host access must be enabled. See [Enable Docker Model Runner](get-started.md#docker-desktop).
 
 {{< /tab >}}
 {{< tab name="Docker Engine">}}
@@ -327,7 +340,7 @@ To call the `chat/completions` OpenAI endpoint from the host via TCP:
    For example: `docker desktop enable model-runner --tcp <port>`.
 
    If you are running on Windows, also enable GPU-backed inference.
-   See [Enable Docker Model Runner](get-started.md#enable-docker-model-runner-in-docker-desktop).
+   See [Enable Docker Model Runner](get-started.md#docker-desktop).
 
 1. Interact with it as documented in the previous section using `localhost` and the correct port.
 

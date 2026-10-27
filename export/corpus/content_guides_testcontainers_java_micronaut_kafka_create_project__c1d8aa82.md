@@ -5,6 +5,17 @@ description: Set up a Micronaut project with Kafka, Micronaut Data JPA, and MySQ
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-micronaut-kafka/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the JPA entity](#create-the-jpa-entity)
+- [Create the Micronaut Data JPA repository](#create-the-micronaut-data-jpa-repository)
+- [Create the event payload](#create-the-event-payload)
+- [Implement the Kafka listener](#implement-the-kafka-listener)
+- [Configure the datasource](#configure-the-datasource)
+
 ## Set up the project
 
 Create a Micronaut project from [Micronaut Launch](https://micronaut.io/launch) by
@@ -280,3 +291,7 @@ Create `src/test/resources/application-test.properties`:
 ```properties
 jpa.default.properties.hibernate.hbm2ddl.auto=create-drop
 ```
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-micronaut-kafka/write-tests/)

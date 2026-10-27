@@ -20,8 +20,8 @@ a proxy server to access images stored on Docker Hub and other registries,
 and to reach other nodes in a Docker swarm.
 
 This page describes how to configure a proxy for the Docker daemon. For
-instructions on configuring proxy settings for the Docker CLI, see [Configure
-Docker CLI to use a proxy server](/manuals/engine/cli/proxy.md).
+instructions on configuring proxy settings for containers and builds, see
+[Configure proxy settings for containers and builds](/manuals/engine/cli/proxy.md).
 
 > [!IMPORTANT]
 > Proxy configurations specified in the `daemon.json` are ignored by Docker
@@ -77,7 +77,7 @@ systemd drop-in file that sets the variables for the `docker` service.
 > **Note for rootless mode**
 >
 > The location of systemd configuration files are different when running Docker
-> in [rootless mode](/manuals/engine/security/rootless.md). When running in
+> in [rootless mode](/manuals/engine/security/rootless/_index.md). When running in
 > rootless mode, Docker is started as a user-mode systemd service, and uses
 > files stored in each users' home directory in
 > `~/.config/systemd/<user>/docker.service.d/`. In addition, `systemctl` must

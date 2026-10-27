@@ -4,6 +4,10 @@ description: Understand how Docker Hardened Images are cryptographically signed 
 keywords: container image signing, cosign docker image, verify image signature, signed container image, sigstore cosign
 ---
 
+For commands, go to [view signatures](#view-signatures) or [sign your own
+images](#sign-images). For authentication and transparency log exceptions, see
+[Verify an image or chart](../how-to/verify.md).
+
 ## What is code signing?
 
 Code signing is the process of applying a cryptographic signature to software

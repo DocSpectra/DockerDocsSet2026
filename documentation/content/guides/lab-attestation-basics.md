@@ -29,6 +29,12 @@ provenance with BuildKit, signing images with Cosign, and writing VEX
 statements to declare which CVEs affect your image — the techniques used
 to meet supply chain security requirements like NIST SSDF and EO 14028.
 
+## Find your starting point
+
+- [Launch the lab](#launch-the-lab).
+- [Review the learning goals](#what-youll-learn).
+- [Browse the modules](#modules).
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-attestation-basics" >}}
@@ -54,3 +60,10 @@ By the end of this Labspace, you will have completed the following:
 | 5   | VEX Statements                    | Scan for CVEs, write an OpenVEX document, and attach it as a signed attestation      |
 | 6   | Bringing It All Together          | Run the complete build-sign-attest workflow and see the full supply chain picture    |
 | 7   | Recap                             | Summary of skills and next steps for policy enforcement and higher SLSA levels       |
+
+## Related attestation documentation
+
+- [Build attestations](/manuals/build/metadata/attestations/_index.md).
+- [Create and verify SBOM attestations](/manuals/build/metadata/attestations/sbom.md).
+- [Configure and inspect provenance attestations](/manuals/build/metadata/attestations/slsa-provenance.md).
+- [Validate image inputs with policies](/manuals/build/policies/validate-images.md).

@@ -10,7 +10,7 @@ The Docker Hub MCP Server is a Model Context Protocol (MCP) server that
 interfaces with Docker Hub APIs to make rich image metadata accessible to LLMs,
 enabling intelligent content discovery and repository management.
 
-For more information about MCP concepts and how MCP servers work, see the [Docker MCP Catalog and Toolkit](index.md) overview page.
+For more information about MCP concepts and how MCP servers work, see the [Docker MCP Catalog and Toolkit](_index.md) overview page.
 
 ## Key features
 

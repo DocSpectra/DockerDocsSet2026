@@ -10,6 +10,8 @@ aliases:
   - /guides/language/golang/run-tests/
 ---
 
+[Go guide overview](_index.md)
+
 ## Prerequisites
 
 Complete the [Build your Go image](build-images.md) section of this guide.
@@ -94,3 +96,5 @@ You should see output containing the following.
 
 In this section, you learned how to run tests when building your image. Next,
 you’ll learn how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue: [Configure CI/CD](configure-ci-cd.md).

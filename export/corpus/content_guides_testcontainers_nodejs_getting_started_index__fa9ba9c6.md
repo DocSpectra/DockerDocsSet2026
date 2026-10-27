@@ -14,6 +14,8 @@ params:
   time: 15 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-getting-started-with-testcontainers-for-nodejs -->
 
 In this guide, you will learn how to:
@@ -32,3 +34,14 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-nodejs-getting-started/create-project/)
+2. [Write tests](/guides/testcontainers-nodejs-getting-started/write-tests/)
+3. [Run tests](/guides/testcontainers-nodejs-getting-started/run-tests/)
+
+## Find a specific task
+
+- [Allow time for container startup](/guides/testcontainers-nodejs-getting-started/write-tests/#allow-time-for-startup)
+- [View Testcontainers debug output](/guides/testcontainers-nodejs-getting-started/run-tests/#view-testcontainers-debug-output)

@@ -1,9 +1,23 @@
 ---
 description: Tips for the Rootless mode
 keywords: security, namespaces, rootless
-title: Tips
+title: Run and configure Rootless Docker
 weight: 20
 ---
+
+## Choose a configuration task
+
+- [Start and manage the daemon](#daemon)
+- [Connect the Docker client](#client)
+- [Run Rootless Docker in Docker](#rootless-docker-in-docker)
+- [Expose the API through TCP](#expose-docker-api-socket-through-tcp) or
+  [SSH](#expose-docker-api-socket-through-ssh)
+- [Enable ping](#routing-ping-packets) or [privileged ports](#exposing-privileged-ports)
+- [Limit resources and check cgroup requirements](#limiting-resources)
+
+For installation, see [Rootless mode](_index.md#install). Review
+[known limitations](troubleshoot.md#known-limitations) and
+[troubleshooting](troubleshoot.md#troubleshooting).
 
 ## Advanced usage
 

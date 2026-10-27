@@ -7,9 +7,19 @@ description: Learn how to run your React.js tests in a container.
 
 ---
 
+[React.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Install testing tools](#step-1-install-vitest-and-react-testing-library)
+- [Configure Vitest](#step-2-configure-vitest)
+- [Configure the test service](#step-3-update-composeyaml)
+- [Run tests](#step-4-run-the-tests)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize React.js application](containerize.md).
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize React.js application](containerize.md).
 
 ## Overview
 
@@ -178,3 +188,5 @@ Explore official references and best practices to sharpen your Docker testing wo
 ## Next steps
 
 Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions to automatically build and test your React.js application in a containerized environment. This ensures your code is validated on every push or pull request, maintaining consistency and reliability across your development workflow.
+
+Continue to [CI/CD](configure-github-actions.md).

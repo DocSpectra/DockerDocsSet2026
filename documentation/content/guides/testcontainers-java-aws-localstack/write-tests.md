@@ -5,6 +5,8 @@ description: Test Spring Cloud AWS S3 and SQS integration using Testcontainers a
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-aws-localstack/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-aws-localstack/create-project/)
+
 To test the application, you need a running LocalStack instance that emulates
 the AWS S3 and SQS services. Testcontainers spins up LocalStack in a Docker
 container and `@DynamicPropertySource` connects it to Spring Cloud AWS.
@@ -131,6 +133,8 @@ class MessageListenerTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@SpringBootTest` starts the full Spring application context.
@@ -146,3 +150,7 @@ Here's what the test does:
   The listener receives the message and stores its content in the S3 bucket
   with the UUID as the key. Awaitility waits up to 10 seconds for the expected
   content to appear in the bucket.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-aws-localstack/run-tests/)

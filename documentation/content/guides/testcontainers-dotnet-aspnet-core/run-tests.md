@@ -5,6 +5,8 @@ description: Run the Testcontainers-based integration tests and explore next ste
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-dotnet-aspnet-core/#prerequisites) · [Previous: Write tests](/guides/testcontainers-dotnet-aspnet-core/write-tests/)
+
 ## Run the tests
 
 Run the tests from the solution root:
@@ -43,3 +45,7 @@ To learn more about Testcontainers, visit the
 - [Testcontainers for .NET modules](https://dotnet.testcontainers.org/modules/)
 - [Microsoft SQL Server module](https://www.nuget.org/packages/Testcontainers.MsSql)
 - [Integration tests in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-dotnet-aspnet-core/)

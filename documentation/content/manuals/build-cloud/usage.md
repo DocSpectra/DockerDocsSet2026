@@ -8,12 +8,31 @@ aliases:
   - /build/cloud/usage/
 ---
 
+## Before building
+
+See [Setup](setup.md) for prerequisites and builder connection steps.
+Review [Loading build results](#loading-build-results) when choosing build output.
+
+## Build with a cloud builder
+
 To build using Docker Build Cloud, invoke a build command and specify the name of the
 builder using the `--builder` flag.
 
 ```console
 $ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> --tag <IMAGE> .
 ```
+
+## Find a build task
+
+- [Use a cloud builder by default](#use-by-default)
+- [Build with Docker Compose](#use-with-docker-compose)
+- [Load, push, or discard results](#loading-build-results)
+- [Build multiple platforms](#multi-platform-builds)
+- [Inspect builds in Docker Desktop](#cloud-builds-in-docker-desktop)
+- [Pass build secrets](#use-secrets-with-docker-build-cloud)
+- [Inspect or prune cache and review shared-cache effects](#managing-build-cache)
+- [Revert the default builder](#unset-docker-build-cloud-as-the-default-builder)
+- [Access internal registries](#registries-on-internal-networks)
 
 ## Use by default
 

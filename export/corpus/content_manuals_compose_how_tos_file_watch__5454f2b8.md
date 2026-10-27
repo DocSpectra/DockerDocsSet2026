@@ -11,6 +11,34 @@ aliases:
 
 {{% include "compose/watch.md" %}}
 
+## Prerequisites
+
+In order to work properly, `watch` relies on common executables. Make sure your service image contains the following binaries:
+* stat
+* mkdir
+* rmdir
+
+`watch` also requires that the container's `USER` can write to the target path so it can update files. A common pattern is for 
+initial content to be copied into the container using the `COPY` instruction in a Dockerfile. To ensure such files are owned 
+by the configured user, use the `COPY --chown` flag:
+
+```dockerfile
+# Run as a non-privileged user
+FROM node:18
+RUN useradd -ms /bin/sh -u 1001 app
+USER app
+
+# Install dependencies
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy source files into application directory
+COPY --chown=app:app . /app
+```
+
+## File paths and service selection
+
 `watch` adheres to the following file path rules:
 * All paths are relative to the project directory, apart from ignore file patterns
 * Directories are watched recursively
@@ -38,6 +66,15 @@ For example, in a Node.js project, it's not recommended to sync the `node_module
 
 ## Configuration
 
+- [Choose an action](#action)
+- [Map path to target](#path-and-target)
+- [Ignore paths](#ignore)
+- [Configure initial sync](#initial_sync)
+- [Example 1](#example-1)
+- [Example 2](#example-2)
+- [Run watch](#use-watch)
+
+
 The `watch` attribute defines a list of rules that control automatic service updates based on local file changes.
 
 Each rule requires a `path` pattern and `action` to take when a modification is detected. There are two possible actions for `watch` and depending on
@@ -45,32 +82,6 @@ the `action`, additional fields might be accepted or required.
 
 Watch mode can be used with many different languages and frameworks.
 The specific paths and rules will vary from project to project, but the concepts remain the same. 
-
-### Prerequisites
-
-In order to work properly, `watch` relies on common executables. Make sure your service image contains the following binaries:
-* stat
-* mkdir
-* rmdir
-
-`watch` also requires that the container's `USER` can write to the target path so it can update files. A common pattern is for 
-initial content to be copied into the container using the `COPY` instruction in a Dockerfile. To ensure such files are owned 
-by the configured user, use the `COPY --chown` flag:
-
-```dockerfile
-# Run as a non-privileged user
-FROM node:18
-RUN useradd -ms /bin/sh -u 1001 app
-USER app
-
-# Install dependencies
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-
-# Copy source files into application directory
-COPY --chown=app:app . /app
-```
 
 ### `action`
 

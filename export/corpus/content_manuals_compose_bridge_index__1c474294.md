@@ -19,6 +19,12 @@ Compose Bridge helps you bridge the gap between Compose and Kubernetes, making i
 
 It's a flexible tool that lets you either take advantage of the [default transformation](usage.md) or [create a custom transformation](customize.md) to suit specific project needs and requirements. 
 
+## Choose a task
+
+- [Convert and deploy with the default transformation](usage.md)
+- [Customize templates or build a transformation](customize.md)
+- [Use Docker Model Runner](use-model-runner.md)
+
 ## How it works
 
 Compose Bridge uses transformations to convert a Compose model into another form. 

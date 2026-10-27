@@ -6,6 +6,8 @@ aliases:
   - /config/daemon/logs/
 ---
 
+## Locate daemon logs
+
 The daemon logs may help you diagnose problems. The logs may be saved in one of
 a few locations, depending on the operating system configuration and the logging
 subsystem used:
@@ -16,6 +18,8 @@ subsystem used:
 | macOS (Docker Desktop)       | `~/Library/Containers/com.docker.docker/Data/log/vm/init.log`                                                                            |
 | Windows (WSL2)               | `%LOCALAPPDATA%\Docker\log\vm\init.log`                                                                                                  |
 | Windows (Windows containers) | Logs are in the Windows Event Log                                                                                                        |
+
+### Read Docker Desktop's multiplexed logs
 
 On macOS and Windows (WSL2), Docker Desktop writes daemon logs (`dockerd`,
 `containerd`, and other VM services) to a single multiplexed `init.log` file
@@ -77,6 +81,13 @@ create, and this may make debugging more difficult.
 
 ## Force a stack trace to be logged
 
+> [!NOTE]
+>
+> It isn't possible to manually generate a stack trace on Docker Desktop for
+> Mac or Docker Desktop for Windows. However, you can click the Docker taskbar
+> icon and choose **Troubleshoot** to send information to Docker if you run into
+> issues.
+
 If the daemon is unresponsive, you can force a full stack trace to be logged by
 sending a `SIGUSR1` signal to the daemon.
 
@@ -109,13 +120,6 @@ The Docker daemon log can be viewed by using one of the following methods:
 - By running `journalctl -u docker.service` on Linux systems using `systemctl`
 - `/var/log/messages`, `/var/log/daemon.log`, or `/var/log/docker.log` on older
   Linux systems
-
-> [!NOTE]
->
-> It isn't possible to manually generate a stack trace on Docker Desktop for
-> Mac or Docker Desktop for Windows. However, you can click the Docker taskbar
-> icon and choose **Troubleshoot** to send information to Docker if you run into
-> issues.
 
 Look in the Docker logs for a message like the following:
 

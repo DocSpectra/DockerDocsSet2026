@@ -5,6 +5,21 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+Browse component and caveat sections:
+
+- [Builder](#builder)
+- [Client](#client)
+- [Documentation](#documentation)
+- [Experimental](#experimental)
+- [Logging](#logging)
+- [Networking](#networking)
+- [Runtime](#runtime)
+- [Swarm mode](#swarm-mode)
+
 ## 18.01.0-ce
 2018-01-10
 

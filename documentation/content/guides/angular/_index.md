@@ -24,20 +24,6 @@ The Angular language-specific guide shows you how to containerize an Angular app
 
 ---
 
-## What will you learn?
-
-In this guide, you will learn how to:
-
-- Containerize and run an Angular application using Docker.
-- Set up a local development environment for Angular inside a container.
-- Run tests for your Angular application within a Docker container.
-- Configure a CI/CD pipeline using GitHub Actions for your containerized app.
-- Deploy the containerized Angular application to a local Kubernetes cluster for testing and debugging.
-
-You'll start by containerizing an existing Angular application and work your way up to production-level deployments.
-
----
-
 ## Prerequisites
 
 Before you begin, ensure you have a working knowledge of:
@@ -48,3 +34,17 @@ Before you begin, ensure you have a working knowledge of:
 - Understanding of core Docker concepts such as images, containers, and Dockerfiles. If you're new to Docker, start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
 
 Once you've completed the Angular getting started modules, you’ll be fully prepared to containerize your own Angular application using the detailed examples and best practices outlined in this guide.
+
+---
+
+## What will you learn?
+
+In this guide, you will learn how to:
+
+- [Containerize and run an Angular application using Docker.](containerize.md)
+- [Set up a local development environment for Angular inside a container.](develop.md)
+- [Run tests for your Angular application within a Docker container.](run-tests.md)
+- [Configure a CI/CD pipeline using GitHub Actions for your containerized app.](configure-github-actions.md)
+- [Deploy the containerized Angular application to a local Kubernetes cluster for testing and debugging.](deploy.md)
+
+You'll start by containerizing an existing Angular application and work your way up to production-level deployments.

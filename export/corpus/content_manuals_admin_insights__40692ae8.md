@@ -23,6 +23,14 @@ Key benefits include:
 - Optimized license use: Ensure that developers have access to advanced
   features provided by a Docker subscription.
 
+## On this page
+
+- [Prerequisites](#prerequisites)
+- [View Insights](#view-insights-for-organization-users)
+- [Export Docker Desktop user data](#export-docker-desktop-user-data) and [read the export fields](#understanding-export-data)
+- [Read Insights charts](#insights-charts)
+- [Troubleshoot missing data](#troubleshoot-insights)
+
 ## Prerequisites
 
 To use Insights, you must meet the following requirements:
@@ -46,6 +54,42 @@ following steps:
 > Insights data is not real-time and is updated daily. At the top-right of the
 > Insights page, view the **Last updated** date to understand when the data was
 > last updated.
+
+## Export Docker Desktop user data
+
+You can export Docker Desktop user data as a CSV file:
+
+1. Open [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
+1. Select **Admin Console** in the left-hand navigation menu.
+1. Select **Desktop insights**.
+1. Choose a timeframe for your insights data: **1 Week**, **1 Month**, or
+   **3 Months**.
+1. Select **Export** and choose **Docker Desktop users** from the drop-down.
+
+Your export will automatically download. Open the file to view
+the export data.
+
+### Understanding export data
+
+A Docker Desktop user export file contains the following data points:
+
+- Name: User's name
+- Username: User's Docker ID
+- Email: User's email address associated with their Docker ID
+- Type: User type
+- Role: User [role](/manuals/enterprise/security/roles-and-permissions/_index.md)
+- Teams: Team(s) within your organization the user is a
+  member of
+- Date Joined: The date the user joined your organization
+- Last Logged-In Date: The last date the user logged into Docker using
+  their web browser (this includes Docker Hub and Docker Home)
+- Docker Desktop Version: The version of Docker Desktop the user has
+  installed
+- Last Seen Date: The last date the user used the Docker Desktop application
+- Opted Out Analytics: Whether the user has opted out of the
+  [Send usage statistics](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#send-usage-statistics) setting in Docker Desktop
+
+## Insights charts
 
 ### Docker Desktop users
 
@@ -141,40 +185,6 @@ The chart contains the following data:
 | :--------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Percentage of org with extensions installed    | The percentage of users in your organization with at least one Docker Desktop extension installed.                                               |
 | Top 5 extensions installed in the organization | A list of the top 5 Docker Desktop extensions installed by users in your organization and the number of users who have installed each extension. |
-
-## Export Docker Desktop user data
-
-You can export Docker Desktop user data as a CSV file:
-
-1. Open [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Select **Admin Console** in the left-hand navigation menu.
-1. Select **Desktop insights**.
-1. Choose a timeframe for your insights data: **1 Week**, **1 Month**, or
-   **3 Months**.
-1. Select **Export** and choose **Docker Desktop users** from the drop-down.
-
-Your export will automatically download. Open the file to view
-the export data.
-
-### Understanding export data
-
-A Docker Desktop user export file contains the following data points:
-
-- Name: User's name
-- Username: User's Docker ID
-- Email: User's email address associated with their Docker ID
-- Type: User type
-- Role: User [role](/manuals/enterprise/security/roles-and-permissions.md)
-- Teams: Team(s) within your organization the user is a
-  member of
-- Date Joined: The date the user joined your organization
-- Last Logged-In Date: The last date the user logged into Docker using
-  their web browser (this includes Docker Hub and Docker Home)
-- Docker Desktop Version: The version of Docker Desktop the user has
-  installed
-- Last Seen Date: The last date the user used the Docker Desktop application
-- Opted Out Analytics: Whether the user has opted out of the
-  [Send usage statistics](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#send-usage-statistics) setting in Docker Desktop
 
 ## Troubleshoot Insights
 

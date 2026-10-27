@@ -11,7 +11,15 @@ The sandbox allows you to configure and try trust operations locally without
 impacting your production images.
 
 Before working through this sandbox, you should have read through the
-[trust overview](index.md).
+[trust overview](_index.md).
+
+## Follow the sandbox tasks
+
+1. [Check prerequisites](#prerequisites) and [review the sandbox components](#what-is-in-the-sandbox).
+2. [Build the sandbox](#build-the-sandbox).
+3. [Test trust operations](#test-some-trust-operations).
+4. [Test with malicious images](#test-with-malicious-images).
+5. [Clean up services and volumes](#clean-up-your-sandbox).
 
 ## Prerequisites
 

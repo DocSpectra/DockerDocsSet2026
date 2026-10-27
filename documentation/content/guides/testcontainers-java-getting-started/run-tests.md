@@ -5,6 +5,8 @@ description: Run your Testcontainers-based integration tests and explore next st
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-getting-started/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-getting-started/write-tests/)
+
 ## Run the tests
 
 Run the tests using Maven:
@@ -37,6 +39,10 @@ To learn more about Testcontainers, visit the
 
 ## Further reading
 
-- [Testcontainers container lifecycle management using JUnit 5](https://testcontainers.com/guides/testcontainers-container-lifecycle/)
-- [Replace H2 with a real database for testing](https://testcontainers.com/guides/replace-h2-with-real-database-for-testing/)
-- [Getting started with Testcontainers in a Java Spring Boot project](https://testcontainers.com/guides/testing-spring-boot-rest-api-using-testcontainers/)
+- [Testcontainers container lifecycle management using JUnit 5](/guides/testcontainers-java-lifecycle/)
+- [Replace H2 with a real database for testing](/guides/testcontainers-java-replace-h2/)
+- [Getting started with Testcontainers in a Java Spring Boot project](/guides/testcontainers-java-spring-boot-rest-api/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-getting-started/)

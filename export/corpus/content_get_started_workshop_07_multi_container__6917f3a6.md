@@ -10,6 +10,10 @@ aliases:
  - /guides/workshop/07_multi_container/
 ---
 
+On this page: [Container networking](#container-networking) · [Start MySQL](#start-mysql) · [Find MySQL with DNS](#connect-to-mysql) · [Connection settings and production secrets](#run-your-app-with-mysql) · [Verify stored items](#verify-the-mysql-data).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](06_bind_mounts.md) · [All tasks](_index.md#workshop-tasks).
+
 Up to this point, you've been working with single container apps. But, now you will add MySQL to the
 application stack. The following question often arises - "Where will MySQL run? Install it in the same
 container or run it separately?" In general, each container should do one thing and do it well. The following are a few reasons to run the container separately:
@@ -286,6 +290,8 @@ You can now start your dev-ready container.
    Connected to mysql db at host mysql
    Listening on port 3000
    ```
+
+### Verify the MySQL data
 
 3. Open the app in your browser and add a few items to your todo list.
 

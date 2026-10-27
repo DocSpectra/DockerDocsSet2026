@@ -20,6 +20,16 @@ You should understand the policy basics from the [Introduction](./intro.md):
 creating policy files, basic Rego syntax, and how policies evaluate during
 builds.
 
+## Choose Git checks
+
+- [Identify Git inputs](#what-are-git-inputs).
+- [Match repositories](#match-specific-repositories).
+- [Pin versions](#pin-to-specific-versions), [use version allowlists](#use-version-allowlists), or [match version patterns](#validate-with-regex-patterns).
+- [Inspect commit metadata](#inspect-commit-metadata).
+- [Require signed commits](#require-signed-commits) or [signed tags](#require-signed-tags).
+- [Verify signatures with public keys](#verify-signatures-with-public-keys).
+- [Apply conditional rules](#apply-conditional-rules).
+
 ## What are Git inputs?
 
 Git inputs come from `ADD` instructions that reference Git repositories:

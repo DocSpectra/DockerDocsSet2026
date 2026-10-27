@@ -8,3 +8,6 @@
 > [Docker Compose](/compose/) instead.
 > If you're developing for a Kubernetes deployment, consider using the
 > [integrated Kubernetes feature](/manuals/desktop/use-desktop/kubernetes.md) in Docker Desktop.
+>
+> For Swarm setup steps, see [tutorial prerequisites](/manuals/engine/swarm/swarm-tutorial/_index.md#set-up)
+> or [enable Docker Swarm in Docker Desktop](/guides/orchestration.md#enable-docker-swarm).

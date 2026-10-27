@@ -1,1 +1,3 @@
 Networks let services communicate with each other. By default Compose sets up a single network for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by the service's name. The top-level `networks` element lets you configure named networks that can be reused across multiple services. 
+
+See [network declarations](/reference/compose-file/networks.md#find-a-network-task), [service attachments](/reference/compose-file/services.md#networks), and [network mode restrictions](/reference/compose-file/services.md#network_mode).

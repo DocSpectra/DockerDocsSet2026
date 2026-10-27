@@ -34,7 +34,7 @@ more efficient:
 For more information on how to optimize your builds, see
 [Building best practices](/manuals/build/building/best-practices.md).
 
-### Dockerignore files
+## Dockerignore files
 
 Using a [`.dockerignore` file](/manuals/build/concepts/context.md#dockerignore-files),
 you can be explicit about which local files you don’t want to include in the
@@ -53,7 +53,7 @@ Some examples of things you might want to add to your `.dockerignore` file are:
 In general, the contents of your `.dockerignore` file should be similar to what
 you have in your `.gitignore`.
 
-### Slim base images
+## Slim base images
 
 Selecting smaller images for your `FROM` instructions in your Dockerfile can
 help reduce the size of the final image. The [Alpine image](https://hub.docker.com/_/alpine)
@@ -64,7 +64,7 @@ There’s also the [special `scratch` image](https://hub.docker.com/_/scratch),
 which contains nothing at all. Useful for creating images of statically linked
 binaries, for example.
 
-### Multi-stage builds
+## Multi-stage builds
 
 [Multi-stage builds](/build/building/multi-stage/) can make your build run faster,
 because stages can run in parallel. It can also make your end-result smaller.
@@ -77,7 +77,7 @@ It’s also possible to
 using the Dockerfile `COPY --from` instruction. This technique can reduce the
 number of layers, and the size of those layers, in the final stage.
 
-### Fetch remote files in build
+## Fetch remote files in build
 
 When possible, you should fetch files from a remote location in the build,
 rather than bundling the files into the build context. Downloading files on the
@@ -88,7 +88,7 @@ You can fetch remote files during the build using the
 [Dockerfile `ADD` instruction](/reference/dockerfile/#add),
 or in your `RUN` instructions with tools like `wget` and `rsync`.
 
-### Multi-threaded tools
+## Multi-threaded tools
 
 Some tools that you use in your build instructions may not utilize multiple
 cores by default. One such example is `make` which uses a single thread by

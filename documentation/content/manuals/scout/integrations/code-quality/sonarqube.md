@@ -7,7 +7,7 @@ keywords: scout, supply chain, integration, code quality
 
 The SonarQube integration enables Docker Scout to surface SonarQube quality
 gate checks through Policy Evaluation, under a new [SonarQube Quality Gates
-Policy](/manuals/scout/policy/_index.md#sonarqube-quality-gates-policy).
+Policy](/manuals/scout/policy/_index.md#sonarqube-quality-gates).
 
 ## How it works
 

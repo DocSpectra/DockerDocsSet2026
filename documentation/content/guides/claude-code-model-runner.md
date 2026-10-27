@@ -19,12 +19,14 @@ longer repository prompts.
 >
 > Docker would like to thank [Pradumna Saraf](https://twitter.com/pradumna_saraf) for his contribution to this guide.
 
-In this guide, you'll learn how to:
+## Find a Claude Code task
 
-- Pull a coding model and start Claude Code with Docker Model Runner
-- Make the endpoint configuration persistent
-- Verify the local API endpoint and inspect requests
-- Package `gpt-oss` with a larger context window for longer prompts
+- [Check prerequisites and TCP access](#prerequisites)
+- [Pull a coding model](#step-1-pull-a-coding-model) and [start Claude Code](#step-2-start-claude-code-with-docker-model-runner)
+- [Troubleshoot the first launch](#step-3-troubleshoot-your-first-launch)
+- [Make the endpoint persistent](#step-4-make-the-endpoint-persistent)
+- [Verify the API endpoint](#step-5-verify-the-api-endpoint) and [inspect requests](#step-6-inspect-claude-code-requests)
+- [Package gpt-oss with a larger context window](#step-7-package-gpt-oss-with-a-larger-context-window)
 
 ## Prerequisites
 

@@ -11,15 +11,6 @@ aliases:
 > Automated builds require a Docker Pro, Team, or Business subscription.
 
 
-## Cancel or retry a build
-
-While a build is in queue or running, a **Cancel** icon appears next to its build
-report link on the **General** tab and on the **Builds** tab. You can also select
-**Cancel** on the **Build report** page, or from the **Timeline** tab's logs
-display for the build.
-
-![List of builds showing the cancel icon](images/build-cancelicon.png)
-
 ## Check your active builds
 
 A summary of a repository's builds appears both on the repository **General**
@@ -39,6 +30,17 @@ repository and branch, or tag, the build logs, the build duration, creation time
 > You can now view the progress of your builds every 30 seconds when you refresh the **Builds** page. With the in-progress build logs, you can debug your builds before they're finished.
 
 ![Build report](./images/index-report.png)
+
+## Cancel or retry a build
+
+While a build is in queue or running, a **Cancel** icon appears next to its build
+report link on the **General** tab and on the **Builds** tab. You can also select
+**Cancel** on the **Build report** page, or from the **Timeline** tab's logs
+display for the build.
+
+![List of builds showing the cancel icon](images/build-cancelicon.png)
+
+For retry controls, see [Retry a failed build](./troubleshoot.md#retry-a-failed-build).
 
 ## Disable an automated build
 

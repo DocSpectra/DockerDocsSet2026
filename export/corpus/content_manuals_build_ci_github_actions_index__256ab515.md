@@ -13,6 +13,14 @@ deployment pipeline. Docker provides a set of official GitHub Actions for you to
 use in your workflows. These official actions are reusable, easy-to-use
 components for building, annotating, and pushing images.
 
+## Get started with GitHub Actions
+
+The [Introduction to GitHub Actions with Docker](/guides/gha.md) guide walks
+you through the process of setting up and using Docker GitHub Actions for
+building Docker images, and pushing images to Docker Hub.
+
+## Available actions
+
 The following GitHub Actions are available:
 
 - [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
@@ -41,13 +49,36 @@ flexibility for customizing build parameters.
 
 ## Examples
 
-If you're looking for examples on how to use the Docker GitHub Actions,
-refer to the following sections:
+### Set up builds
 
-{{% sectionlinks %}}
+- [Configure the builder](configure-builder.md)
+- [Use Docker GitHub Builder reusable workflows](github-builder/_index.md)
+- [Manage cache](cache.md)
+- [Build multi-platform images](multi-platform.md)
 
-## Get started with GitHub Actions
+### Configure and validate inputs
 
-The [Introduction to GitHub Actions with Docker](/guides/gha.md) guide walks
-you through the process of setting up and using Docker GitHub Actions for
-building Docker images, and pushing images to Docker Hub.
+- [Use named contexts](named-contexts.md)
+- [Pass build secrets and SSH mounts](secrets.md)
+- [Set reproducible build timestamps](reproducible-builds.md)
+- [Run build checks](checks.md)
+
+### Add image metadata
+
+- [Manage tags and labels](manage-tags-labels.md)
+- [Add annotations](annotations.md)
+- [Add SBOM and provenance attestations](attestations.md)
+
+### Use and publish results
+
+- [Load an image into Docker](export-docker.md)
+- [Use a local registry](local-registry.md)
+- [Share an image between jobs](share-image-jobs.md)
+- [Test an image before pushing](test-before-push.md)
+- [Push to multiple registries](push-multi-registries.md)
+- [Copy an image between registries](copy-image-registries.md)
+- [Update the Docker Hub description](update-dockerhub-desc.md)
+
+### Inspect builds
+
+- [View summaries and import build records](build-summary.md)

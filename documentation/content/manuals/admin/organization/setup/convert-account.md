@@ -16,10 +16,14 @@ useful if you need multiple users to access your account and the repositories
 it’s connected to. Converting it to an organization gives you better control
 over permissions for these users through
 [teams](/manuals/admin/organization/manage/manage-a-team.md) and
-[roles](/manuals/enterprise/security/roles-and-permissions.md).
+[roles](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 When you convert a user account to an organization, the account is migrated to
 a Docker Team subscription by default.
+
+## Before converting
+
+Review the [prerequisites](#prerequisites), [conversion effects](#what-happens-when-you-convert-your-account), and [permanent-conversion warning and steps](#convert-an-account-into-an-organization).
 
 ## Prerequisites
 

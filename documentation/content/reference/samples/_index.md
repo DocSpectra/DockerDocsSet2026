@@ -14,6 +14,21 @@ aliases:
 
 Learn how to containerize different types of services by walking through Official Docker samples.
 
+## Find task steps
+
+| Task | Guide |
+| --- | --- |
+| Run, connect to, and persist a database | [Containerized databases](../../guides/databases.md) |
+| Set up and configure PostgreSQL | [PostgreSQL](../../guides/postgresql/_index.md) |
+| Add database administration to a development stack | [pgAdmin](../../guides/pgadmin.md) |
+| Seed database schema and data | [Pre-seeding](../../guides/pre-seeding.md) |
+| Develop event-driven applications | [Kafka](../../guides/kafka.md) |
+| Run and share notebooks | [JupyterLab](../../guides/jupyter.md) |
+| Monitor a Golang application | [Prometheus and Grafana](../../guides/go-prometheus-monitoring/_index.md) |
+| Collect application traces | [OpenTelemetry](../../guides/opentelemetry.md) |
+| Route HTTP requests | [Traefik](../../guides/traefik.md) |
+| Run ROS 2 and develop a workspace | [ROS 2](../../guides/ros2/_index.md) |
+
 ## Databases
 
 [MariaDB](../samples/mariadb.md) \| [MongoDB](../samples/mongodb.md) \| [MS-SQL](../samples/ms-sql.md) \| [MySQL](../samples/mysql.md) \| [PostgreSQL](../samples/postgres.md) \| [Redis](../samples/redis.md)

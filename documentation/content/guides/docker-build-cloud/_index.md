@@ -52,6 +52,14 @@ productivity, reduce frustrations, and help you shorten the release cycle.
 - Accelerating builds for multi-platform images
 - Reusing pre-built images to expedite workflows
 
+## Choose a guide step
+
+- [Why Docker Build Cloud?](why.md)
+- [Set up and use Build Cloud in development](dev.md)
+- [Use Build Cloud in CI](ci.md)
+- [Common challenges and questions](common-questions.md)
+- [Setup prerequisites and steps](/manuals/build-cloud/setup.md)
+
 ## Tools integration
 
 Works well with Docker Compose, GitHub Actions, and other CI solutions

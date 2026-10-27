@@ -10,6 +10,22 @@ keywords: cli, compose, oci, docker hub, artificats, publish, package, distribut
 
 Docker Compose supports working with [OCI artifacts](/manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md), allowing you to package and distribute your Compose applications through container registries. This means you can store your Compose files alongside your container images, making it easier to version, share, and deploy your multi-container applications.
 
+## Choose a task
+
+- [Review publishing limitations](#limitations)
+- [Publish your application](#publish-your-compose-application-as-an-oci-artifact)
+- [Review publishing confirmations](#publishing-confirmations)
+- [Publish non-interactively](#publish-non-interactively)
+- [Start an OCI artifact application](#start-an-oci-artifact-application)
+- [Review the trust model for Compose files](../trust-model.md)
+
+## Limitations
+
+There are limitations to publishing Compose applications as OCI artifacts. You can't publish a Compose configuration:
+- With service(s) containing bind mounts
+- With service(s) containing only a `build` section
+- That includes local files with the `include` attribute. To publish successfully, ensure that any included local files are also published. You can then use  `include` to reference these files as remote `include` is supported.
+
 ## Publish your Compose application as an OCI artifact
 
 To distribute your Compose application as an OCI artifact, you can use the `docker compose publish` command, to publish it to an OCI-compliant registry. 
@@ -46,6 +62,8 @@ When publishing, you can pass additional options:
 - `--resolve-image-digests`: Pin image tags to digests.
 - `--with-env`: Include environment variables in the published OCI artifact.
 
+### Publishing confirmations
+
 Compose checks to make sure there isn't any sensitive data in your configuration and displays your environment variables to confirm you want to publish them.
 
 ```text
@@ -79,12 +97,13 @@ Are you ok to publish these environment variables? [y/N]:
 
 If you decline, the publish process stops without sending anything to the registry.
 
-## Limitations
+### Publish non-interactively
 
-There are limitations to publishing Compose applications as OCI artifacts. You can't publish a Compose configuration:
-- With service(s) containing bind mounts
-- With service(s) containing only a `build` section
-- That includes local files with the `include` attribute. To publish successfully, ensure that any included local files are also published. You can then use  `include` to reference these files as remote `include` is supported.
+The `docker compose publish` command supports non-interactive execution, letting you skip the confirmation prompt by including the `-y` (or `--yes`) flag: 
+
+```console
+$ docker compose publish -y username/my-compose-app:latest
+```
 
 ## Start an OCI artifact application
 
@@ -135,12 +154,6 @@ If you agree to start the application, Compose displays the directory where all 
 Do you want to continue? [y/N]: y
 
 Your compose stack "oci://registry.example.com/stack:latest" is stored in "~/Library/Caches/docker-compose/964e715660d6f6c3b384e05e7338613795f7dcd3613890cfa57e3540353b9d6d"
-```
-
-The `docker compose publish` command supports non-interactive execution, letting you skip the confirmation prompt by including the `-y` (or `--yes`) flag: 
-
-```console
-$ docker compose publish -y username/my-compose-app:latest
 ```
 
 ## Next steps

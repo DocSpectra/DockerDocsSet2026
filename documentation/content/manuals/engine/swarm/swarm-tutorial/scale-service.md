@@ -6,6 +6,8 @@ weight: 50
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 Once you have [deployed a service](deploy-service.md) to a swarm, you are ready
 to use the Docker CLI to scale the number of containers in
 the service. Containers running in a service are called tasks.

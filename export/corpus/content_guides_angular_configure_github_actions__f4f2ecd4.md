@@ -7,9 +7,18 @@ description: Learn how to configure CI/CD using GitHub Actions for your Angular 
 
 ---
 
+[Angular guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Configure repositories and credentials](#connect-your-github-repository-to-docker-hub)
+- [Set up the workflow](#step-2-set-up-the-workflow)
+- [Run and verify the workflow](#step-3-run-the-workflow)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize an Angular application](containerize.md).
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize an Angular application](containerize.md).
 
 You must also have:
 - A [GitHub](https://github.com/signup) account.
@@ -126,7 +135,7 @@ Once completed, your code will be available on GitHub, and any GitHub Actions wo
 
 ---
 
-### Step 2: Set up the workflow
+## Step 2: Set up the workflow
 
 Now you'll create a GitHub Actions workflow that builds your Docker image, runs tests, and pushes the image to Docker Hub.
 
@@ -251,7 +260,7 @@ This workflow performs the following tasks for your Angular application:
 
 ---
 
-### Step 3: Run the workflow
+## Step 3: Run the workflow
 
 After you've added your workflow file, it's time to trigger and observe the CI/CD process in action.
 
@@ -321,3 +330,5 @@ Deepen your understanding of automation and best practices for containerized app
 ## Next steps
 
 Next, learn how you can locally test and debug your Angular workloads on Kubernetes before deploying. This helps you ensure your application behaves as expected in a production-like environment, reducing surprises during deployment.
+
+Continue to [deployment](deploy.md).

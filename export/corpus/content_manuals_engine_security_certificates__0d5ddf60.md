@@ -19,6 +19,13 @@ properly authenticated using certificate-based client-server authentication.
 We show you how to install a Certificate Authority (CA) root certificate
 for the registry and how to set the client TLS certificate for verification.
 
+## On this page
+
+- [Configure certificate directories](#understand-the-configuration)
+- [Create client certificates and check the platform caveat](#create-the-client-certificates)
+- [Troubleshoot certificate extensions](#troubleshooting-tips)
+- [Configure a registry accessed without a port](#registry-without-a-port-number)
+
 ## Understand the configuration
 
 A custom certificate is configured by creating a directory under
@@ -84,6 +91,8 @@ following error message:
 ```text
 Missing key KEY_NAME for client certificate CERT_NAME. CA certificates should use the extension .crt.
 ```
+
+### Registry without a port number
 
 If the Docker registry is accessed without a port number, do not add the port to the directory name.  The following shows the configuration for a registry on default port 443 which is accessed with `docker login my-https.registry.example.com`:
 

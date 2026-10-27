@@ -12,6 +12,8 @@ The `oci` exporter outputs the build result into an
 tarball. The `docker` exporter behaves the same way, except it exports a Docker
 image layout instead.
 
+## Driver requirements
+
 The [`docker` driver](/manuals/build/builders/drivers/docker.md) doesn't support these exporters. You
 must use `docker-container` or some other driver if you want to generate these
 outputs.
@@ -27,6 +29,8 @@ $ docker buildx build --output type=oci[,parameters] .
 ```console
 $ docker buildx build --output type=docker[,parameters] .
 ```
+
+### Parameters
 
 The following table describes the available parameters:
 

@@ -9,6 +9,14 @@ Patterns you learn from building and running agents with Docker Agent. These are
 features or configuration options - they're approaches that work well in
 practice.
 
+## Find a pattern
+
+- [Handle large command outputs](#handling-large-command-outputs)
+- [Structure agent teams](#structuring-agent-teams)
+- [Optimize RAG performance](#optimizing-rag-performance)
+- [Preserve document scope](#preserving-document-scope)
+- [Select models by role](#model-selection)
+
 ## Handling large command outputs
 
 Shell commands that produce large output can overflow your agent's context

@@ -18,6 +18,10 @@ results of this testing are embedded as signed attestations, which can be
 [inspected and verified](#view-and-verify-the-test-attestation) programmatically
 using the Docker Scout CLI.
 
+For commands, go to [View and verify the test
+attestation](#view-and-verify-the-test-attestation). For authentication and
+verification caveats, see [Verify an image](../how-to/verify.md).
+
 ## Testing strategy overview
 
 The testing process for DHIs focuses on two main areas:

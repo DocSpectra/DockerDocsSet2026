@@ -24,4 +24,9 @@ development process. It also integrates with popular development tools like
 Docker Desktop and GitHub Actions, providing seamless security management and
 compliance checks within existing workflows.
 
+## Continue
+
+- [Docker Scout demo](./demo.md)
+- [Guide contents](./_index.md)
+
 <div id="scout-lp-survey-anchor"></div>

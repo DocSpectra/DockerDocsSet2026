@@ -23,6 +23,18 @@ For more information about:
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [28.5.2](#2852), [28.3.3](#2833), [28.0.1](#2801) |
+| Security sections | [28.3.3](#2833) |
+| Deprecation and removal sections | [28.5.2](#2852), [28.5.1](#2851), [28.5.0](#2850), [28.4.0](#2840), [28.3.0](#2830), [28.2.0](#2820), [28.1.0](#2810), [28.0.2](#2802), [28.0.0](#2800) |
+| Release notices | [28.5.2](#2852), [28.5.0](#2850), [28.2.0](#2820) |
+| Initial release entry | [28.0.0](#2800) |
+
 ## 28.5.2
 
 {{< release-date date="2025-11-05" >}}

@@ -12,6 +12,19 @@ image to the repository automatically triggers image analysis. You can view
 image insights using the Docker Scout Dashboard, or the `docker scout` CLI
 commands.
 
+## Choose a task
+
+- [Review prerequisites](#prerequisites) and [AWS resources and costs](#cloudformation-stack-template)
+- [Integrate your first registry](#integrate-your-first-registry)
+- [Integrate additional registries](#integrate-additional-registries)
+- [Remove an integration and its AWS resources](#remove-integration)
+- [Troubleshoot integration or missing images](#troubleshooting)
+
+## Prerequisites
+
+- You must have access to an AWS account with permission to create resources.
+- You have be an owner of the Docker organization.
+
 ## How it works
 
 To help you integrate Docker Scout with ECR, you can use a CloudFormation stack
@@ -58,11 +71,6 @@ The following table describes the configuration resources.
 
 Create the CloudFormation stack in your AWS account to enable the Docker Scout
 integration.
-
-Prerequisites:
-
-- You must have access to an AWS account with permission to create resources.
-- You have be an owner of the Docker organization.
 
 To create the stack:
 

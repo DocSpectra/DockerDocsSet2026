@@ -9,6 +9,8 @@ aliases:
   - /guides/language/python/deploy/
 ---
 
+[Python guide overview](_index.md)
+
 ## Prerequisites
 
 - Complete all the previous sections of this guide, starting with [Use containers for Python development](develop.md).
@@ -19,6 +21,8 @@ aliases:
 In this section, you'll learn how to use Docker Desktop to deploy your application to a fully-featured Kubernetes environment on your development machine. This allows you to test and debug your workloads on Kubernetes locally before deploying.
 
 ## Create a Kubernetes YAML file
+
+### Create the database manifest
 
 In your `python-docker-dev-example` directory, create a file named `docker-postgres-kubernetes.yaml`. Open the file in an IDE or text editor and add
 the following contents.
@@ -95,6 +99,8 @@ data:
   POSTGRES_PASSWORD: cG9zdGdyZXNfcGFzc3dvcmQ= # Base64 encoded password (e.g., 'postgres_password')
 ```
 
+### Create the application manifest
+
 In your `python-docker-dev-example` directory, create a file named
 `docker-python-kubernetes.yaml`. Replace `DOCKER_USERNAME/REPO_NAME` with your
 Docker username and the repository name that you created in [Configure CI/CD for
@@ -152,6 +158,8 @@ spec:
       nodePort: 30001
 ```
 
+### Review the Kubernetes objects
+
 In these Kubernetes YAML file, there are various objects, separated by the `---`:
 
 - A Deployment, describing a scalable group of identical pods. In this case,
@@ -167,6 +175,8 @@ In these Kubernetes YAML file, there are various objects, separated by the `---`
   from the network.
 
 To learn more about Kubernetes objects, see the [Kubernetes documentation](https://kubernetes.io/docs/home/).
+
+### Production ingress caveat
 
 > [!NOTE]
 >
@@ -258,3 +268,5 @@ Related information:
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
 - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md)
 - [Swarm mode overview](/manuals/engine/swarm/_index.md)
+
+Return to the [Python guide overview](_index.md).

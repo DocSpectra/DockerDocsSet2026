@@ -14,6 +14,8 @@ params:
   time: 20 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-getting-started-with-testcontainers-for-go -->
 
 In this guide, you will learn how to:
@@ -34,3 +36,14 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-go-getting-started/create-project/)
+2. [Write tests](/guides/testcontainers-go-getting-started/write-tests/)
+3. [Test suites](/guides/testcontainers-go-getting-started/test-suites/)
+4. [Run tests](/guides/testcontainers-go-getting-started/run-tests/)
+
+## Find a specific task
+
+- [Test data caveat when reusing containers](/guides/testcontainers-go-getting-started/test-suites/#test-data-caveat)

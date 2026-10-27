@@ -95,3 +95,10 @@ maintained so you don't have to. They offer:
 - Audit-ready images: All DHIs include signed SBOMs, VEX, and provenance that support security and compliance workflows.
 - Images that work with your stack: Available in Alpine and Debian flavors, DHIs drop into your existing Dockerfiles and pipelines.
 - Images backed by enterprise support: Get peace of mind with Docker's support and rapid response to critical vulnerabilities.
+
+## Next steps
+
+- [Run a Community image](../get-started.md)
+- [Get started with Select or Enterprise](../how-to/select-enterprise.md)
+- [Choose an image variant](./available.md)
+- [Plan a migration](../migration/_index.md)

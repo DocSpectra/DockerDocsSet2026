@@ -15,6 +15,21 @@ Refer to [How nodes work](how-swarm-mode-works/nodes.md)
 for a brief overview of Docker Swarm mode and the difference between manager and
 worker nodes.
 
+## Choose an administration task
+
+- Plan managers: [quorum](#maintain-the-quorum-of-managers),
+  [static advertise addresses](#configure-the-manager-to-advertise-on-a-static-ip-address),
+  [fault tolerance](#add-manager-nodes-for-fault-tolerance), and
+  [manager-only nodes](#run-manager-only-nodes).
+- Manage workload distribution: [add workers](#add-worker-nodes-for-load-balancing) or
+  [force a rebalance and review disruption](#force-the-swarm-to-rebalance).
+- Diagnose failures: [monitor health](#monitor-swarm-health),
+  [troubleshoot a manager](#troubleshoot-a-manager-node), or
+  [forcibly remove a node](#forcibly-remove-a-node).
+- Protect and recover state: [back up](#back-up-the-swarm),
+  [restore a backup](#restore-from-a-backup), or
+  [recover a lost quorum](#recover-from-losing-the-quorum).
+
 ## Operate manager nodes in a swarm
 
 Swarm manager nodes use the [Raft Consensus Algorithm](raft.md) to manage the

@@ -35,6 +35,22 @@ This page shows you how to customize the Docker daemon, `dockerd`.
 > This page is for users who've installed Docker Engine manually. If you're
 > using Docker Desktop, refer to the [settings page](/manuals/desktop/settings-and-maintenance/settings.md#docker-engine).
 
+## Find a daemon task
+
+| Task | Instructions |
+| --- | --- |
+| Start or stop the daemon | [Start the daemon](start.md) |
+| Choose configuration files or flags | [Configure the Docker daemon](#configure-the-docker-daemon) |
+| Locate or move daemon data | [Daemon data directory](#daemon-data-directory) |
+| Set up a proxy | [Daemon proxy configuration](proxy.md) |
+| Configure remote connections | [Remote access](remote-access.md) |
+| Configure IPv6 | [IPv6 networking](ipv6.md) |
+| Choose a container runtime | [Alternative runtimes](alternative-runtimes.md) |
+| Keep containers running during daemon outages | [Live restore](live-restore.md) |
+| Read logs or enable debugging | [Daemon logs](logs.md) |
+| Collect daemon metrics | [Prometheus](prometheus.md) |
+| Diagnose a problem | [Troubleshoot the daemon](troubleshoot.md) |
+
 ## Configure the Docker daemon
 
 There are two ways to configure the Docker daemon:
@@ -45,7 +61,8 @@ There are two ways to configure the Docker daemon:
 
 You can use both of these options together as long as you don't specify the same
 option both as a flag and in the JSON file. If that happens, the Docker daemon
-won't start and prints an error message.
+won't start and prints an error message. See
+[Troubleshoot configuration conflicts](troubleshoot.md#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts).
 
 ### Configuration file
 

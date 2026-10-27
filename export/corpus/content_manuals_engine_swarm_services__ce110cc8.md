@@ -22,6 +22,31 @@ For an overview of Swarm mode, see [Swarm mode key concepts](key-concepts.md).
 For an overview of how services work, see
 [How services work](how-swarm-mode-works/services.md).
 
+## Choose a service task
+
+- Manage the lifecycle: [create](#create-a-service), [update](#update-a-service),
+  or [remove](#remove-a-service).
+- Configure execution: [runtime environment](#configure-the-runtime-environment),
+  [command](#update-the-command-an-existing-service-runs), and [templates](#create-services-using-templates).
+- Select images: [versions and digests](#specify-the-image-version-a-service-should-use),
+  [image updates](#update-a-services-image-after-creation), and
+  [private registry authentication](#create-a-service-using-an-image-on-a-private-registry).
+- Configure networking: [publish ports](#publish-ports) and
+  [connect overlay networks](#connect-the-service-to-an-overlay-network).
+- Configure access and isolation: [secrets](#grant-a-service-access-to-secrets),
+  [gMSA](#gmsa-for-swarm), [managed account credential specs](#provide-credential-specs-for-managed-service-accounts),
+  and [Windows isolation](#customize-a-services-isolation-mode).
+- Control scheduling: [replicated or global services](#replicated-or-global-services),
+  [resource reservations](#reserve-memory-or-cpus-for-a-service),
+  [placement constraints](#placement-constraints), and [preferences](#placement-preferences).
+- Manage changes: [rolling updates](#configure-a-services-update-behavior),
+  [manual rollback](#roll-back-to-the-previous-version-of-a-service), and
+  [automatic rollback](#automatically-roll-back-if-an-update-fails).
+- Store data: [volumes and bind mounts](#give-a-service-access-to-volumes-or-bind-mounts).
+
+For setup, see [Run Docker Engine in swarm mode](swarm-mode.md) and
+[tutorial prerequisites](swarm-tutorial/_index.md#set-up).
+
 ## Create a service
 
 To create a single-replica service with no extra configuration, you only need
@@ -217,7 +242,7 @@ See the command-line references for
 [`docker service update`](/reference/cli/docker/service/update/), or run
 one of those commands with the `--help` flag.
 
-### Configure the runtime environment
+## Configure the runtime environment
 
 You can configure the following options for the runtime environment in the
 container:
@@ -238,7 +263,7 @@ $ docker service create --name helloworld \
   alpine ping docker.com
 ```
 
-### Update the command an existing service runs
+## Update the command an existing service runs
 
 To update the command an existing service runs, you can use the `--args` flag.
 The following example updates an existing service called `helloworld` so that
@@ -249,7 +274,7 @@ before:
 $ docker service update --args "ping docker.com" helloworld
 ```
 
-### Specify the image version a service should use
+## Specify the image version a service should use
 
 When you create a service without specifying any details about the version of
 the image to use, the service uses the version tagged with the `latest` tag.
@@ -343,7 +368,7 @@ operations such as scaling the service, adding or removing networks or volumes,
 renaming the service, or any other type of update operation do not update the
 service's image.
 
-### Update a service's image after creation
+## Update a service's image after creation
 
 Each tag represents a digest, similar to a Git hash. Some tags, such as
 `latest`, are updated often to point to a new digest. Others, such as
@@ -367,7 +392,7 @@ updates, redeploying each task to use the new image. If the manager can't
 resolve the tag or some other problem occurs, the next two sections outline what
 to expect.
 
-#### If the manager resolves the tag
+### If the manager resolves the tag
 
 If the swarm manager can resolve the image tag to a digest, it instructs the
 worker nodes to redeploy the tasks and use the image at that digest.
@@ -382,7 +407,7 @@ worker nodes to redeploy the tasks and use the image at that digest.
     worker node. Docker tries again to deploy the task, possibly on a different
     worker node.
 
-#### If the manager cannot resolve the tag
+### If the manager cannot resolve the tag
 
 If the swarm manager cannot resolve the image to a digest, all is not lost:
 
@@ -401,7 +426,7 @@ If the swarm manager cannot resolve the image to a digest, all is not lost:
   - If this fails, the task fails to deploy and the manager tries again to deploy
     the task, possibly on a different worker node.
 
-### Publish ports
+## Publish ports
 
 When you create a swarm service, you can publish that service's ports to hosts
 outside the swarm in two ways:
@@ -420,7 +445,7 @@ outside the swarm in two ways:
 
 Keep reading for more information and use cases for each of these methods.
 
-#### Publish a service's ports using the routing mesh
+### Publish a service's ports using the routing mesh
 
 To publish a service's ports externally to the swarm, use the
 `--publish <PUBLISHED-PORT>:<SERVICE-PORT>` flag. The swarm makes the service
@@ -432,7 +457,7 @@ connects to a service, any worker node running a service task may respond. For
 more details about swarm service networking, see
 [Manage swarm service networks](networking.md).
 
-##### Example: Run a three-task Nginx service on 10-node swarm
+#### Example: Run a three-task Nginx service on 10-node swarm
 
 Imagine that you have a 10-node swarm, and you deploy an Nginx service running
 three tasks on a 10-node swarm:
@@ -466,7 +491,7 @@ $ curl localhost:8080
 
 Subsequent connections may be routed to the same swarm node or a different one.
 
-#### Publish a service's ports directly on the swarm node
+### Publish a service's ports directly on the swarm node
 
 Using the routing mesh may not be the right choice for your application if you
 need to make routing decisions based on application state or you need total
@@ -486,7 +511,7 @@ option to the `--publish` flag.
 > `--mode=global` flag on `docker service create`, it is difficult to know
 > which nodes are running the service to route work to them.
 
-##### Example: Run an `nginx` web server service on every swarm node
+#### Example: Run an `nginx` web server service on every swarm node
 
 [nginx](https://hub.docker.com/_/nginx/) is an open source reverse proxy, load
 balancer, HTTP cache, and a web server. If you run nginx as a service using the
@@ -514,7 +539,7 @@ service or container on any swarm node which binds to port 8080.
 > routing framework for a multi-tiered service is complex and out of scope for
 > this topic.
 
-### Connect the service to an overlay network
+## Connect the service to an overlay network
 
 You can use overlay networks to connect one or more services within the swarm.
 
@@ -558,13 +583,13 @@ For more information on overlay networking and service discovery, refer to
 [Attach services to an overlay network](networking.md) and
 [Docker swarm mode overlay network security model](/manuals/engine/network/drivers/overlay.md).
 
-### Grant a service access to secrets
+## Grant a service access to secrets
 
 To create a service with access to Docker-managed secrets, use the `--secret`
 flag. For more information, see
 [Manage sensitive strings (secrets) for Docker services](secrets.md)
 
-### Customize a service's isolation mode
+## Customize a service's isolation mode
 
 > [!IMPORTANT]
 >
@@ -592,7 +617,7 @@ mode. The isolation mode can be one of the following:
 You can specify the isolation mode when creating or updating a new service using
 the `--isolation` flag.
 
-### Control service placement
+## Control service placement
 
 Swarm services provide a few different ways for you to control scale and
 placement of services on different nodes.
@@ -633,7 +658,7 @@ placement of services on different nodes.
   of whether that node has the `rack` label or not.
 
 
-#### Replicated or global services
+### Replicated or global services
 
 Swarm mode has two types of services: replicated and global. For replicated
 services, you specify the number of replica tasks for the swarm manager to
@@ -672,7 +697,7 @@ service based upon node attributes and metadata or engine metadata. For more
 information on constraints, refer to the `docker service create`
 [CLI reference](/reference/cli/docker/service/create/).
 
-#### Reserve memory or CPUs for a service
+### Reserve memory or CPUs for a service
 
 To reserve a given amount of memory or number of CPUs for a service, use the
 `--reserve-memory` or `--reserve-cpu` flags. If no available nodes can satisfy
@@ -680,7 +705,7 @@ the requirement (for instance, if you request 4 CPUs and no node in the swarm
 has 4 CPUs), the service remains in a pending state until an appropriate node is
 available to run its tasks.
 
-##### Out Of Memory Exceptions (OOME)
+#### Out Of Memory Exceptions (OOME)
 
 If your service attempts to use more memory than the swarm node has available,
 you may experience an Out Of Memory Exception (OOME) and a container, or the
@@ -692,7 +717,7 @@ see
 Swarm services allow you to use resource constraints, placement preferences, and
 labels to ensure that your service is deployed to the appropriate swarm nodes.
 
-#### Placement constraints
+### Placement constraints
 
 Use placement constraints to control the nodes a service can be assigned to. In
 the following example, the service only runs on nodes with the
@@ -735,7 +760,7 @@ possible to fulfill.
 For more information on constraints, refer to the `docker service create`
 [CLI reference](/reference/cli/docker/service/create/).
 
-#### Placement preferences
+### Placement preferences
 
 While [placement constraints](#placement-constraints) limit the nodes a service
 can run on, _placement preferences_ try to place tasks on appropriate nodes
@@ -803,7 +828,7 @@ appends a new placement preference after all existing placement preferences.
 argument.
 
 
-### Configure a service's update behavior
+## Configure a service's update behavior
 
 When you create a service, you can specify a rolling update behavior for how the
 swarm should apply changes to the service when you run `docker service update`.
@@ -851,7 +876,7 @@ seconds, which means that a task failing in the first 30 seconds after it's
 started counts towards the service update failure threshold, and a failure
 after that is not counted.
 
-### Roll back to the previous version of a service
+## Roll back to the previous version of a service
 
 In case the updated version of a service doesn't function as expected, it's
 possible to manually roll back to the previous version of the service using
@@ -876,7 +901,7 @@ Manual rollback is handled at the server side, which allows manually-initiated
 rollbacks to respect the new rollback parameters. Note that `--rollback` cannot
 be used in conjunction with other flags to `docker service update`.
 
-### Automatically roll back if an update fails
+## Automatically roll back if an update fails
 
 You can configure a service in such a way that if an update to the service
 causes redeployment to fail, the service can automatically roll back to the
@@ -907,7 +932,7 @@ $ docker service create --name=my_redis \
                         redis:latest
 ```
 
-### Give a service access to volumes or bind mounts
+## Give a service access to volumes or bind mounts
 
 For best performance and portability, you should avoid writing important data
 directly into a container's writable layer. You should instead use data volumes
@@ -919,7 +944,7 @@ You can create two types of mounts for services in a swarm, `volume` mounts or
 flag when updating an existing service. The default is a data volume if you
 don't specify a type.
 
-#### Data volumes
+### Data volumes
 
 Data volumes are storage that exist independently of a container. The
 lifecycle of data volumes under swarm services is similar to that under
@@ -953,7 +978,7 @@ For more information on how to create data volumes and the use of volume
 drivers, see [Use volumes](/manuals/engine/storage/volumes.md).
 
 
-#### Bind mounts
+### Bind mounts
 
 Bind mounts are file system paths from the host where the scheduler deploys
 the container for the task. Docker mounts the path into the container. The
@@ -999,7 +1024,7 @@ The following examples show bind mount syntax:
 >   guarantee that your application runs the same way in development as it does
 >   in production.
 
-### Create services using templates
+## Create services using templates
 
 You can use templates for some flags of `service create`, using the syntax
 provided by the Go's [text/template](https://golang.org/pkg/text/template/)
@@ -1023,7 +1048,7 @@ Valid placeholders for the Go template are:
 | `.Task.Name`      | Task name      |
 | `.Task.Slot`      | Task slot      |
 
-#### Template example
+### Template example
 
 This example sets the template of the created containers based on the
 service's name and the ID of the node where the container is running:

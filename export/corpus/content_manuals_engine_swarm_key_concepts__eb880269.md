@@ -7,6 +7,16 @@ title: Swarm mode key concepts
 This topic introduces some of the concepts unique to the cluster management and
 orchestration features of Docker Engine 1.12.
 
+## Explore the concepts
+
+- [Swarm](#what-is-a-swarm)
+- [Nodes](#nodes)
+- [Services and tasks](#services-and-tasks)
+- [Load balancing](#load-balancing)
+
+For task steps, see [create a swarm](swarm-mode.md),
+[deploy services](services.md), or [deploy a stack](stack-deploy.md).
+
 ## What is a swarm?
 
 The cluster management and orchestration features embedded in Docker Engine
@@ -107,5 +117,5 @@ the service.
 
 ## What's next?
 
-* Read the [Swarm mode overview](index.md).
+* Read the [Swarm mode overview](_index.md).
 * Get started with the [Swarm mode tutorial](swarm-tutorial/_index.md).

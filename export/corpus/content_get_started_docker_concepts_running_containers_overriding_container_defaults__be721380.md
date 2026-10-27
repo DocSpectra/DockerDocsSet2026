@@ -7,9 +7,13 @@ aliases:
  - /guides/docker-concepts/running-containers/overriding-container-defaults/
 ---
 
+On this page: [Environment variables](#setting-environment-variables) · [Run multiple instances](#run-multiple-instances-of-the-postgres-database) · [Use a custom network](#run-postgres-container-in-a-controlled-network) · [Limit resources](#manage-the-resources) · [Override startup with Compose](#override-the-default-cmd-and-entrypoint-in-docker-compose) · [Override startup with docker run](#override-startup-with-docker-run).
+
 {{< youtube-embed PFszWK3BB8I >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Container configuration overrides
 
 When a Docker container starts, it executes an application or command. The container gets this executable (script or file) from its image’s configuration. Containers come with default settings that usually work well, but you can change them if needed. These adjustments help the container's program run exactly how you want it to.
 
@@ -65,7 +69,9 @@ This command limits container memory usage to 512 MB and defines the CPU quota o
 
 By effectively using these `docker run` flags, you can tailor your containerized application's behavior to fit your specific requirements.
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Override Postgres container settings
 
 In this hands-on guide, you'll see how to use the `docker run` command to override the container defaults.
 
@@ -184,6 +190,8 @@ Sometimes, you might need to override the default commands (`CMD`) or entry poin
     > [!NOTE]
     > 
     > The PostgreSQL image sets up trust authentication locally so you may notice a password isn't required when connecting from localhost (inside the same container). However, a password will be required if connecting from a different host/container.
+
+<a id="override-startup-with-docker-run"></a>
 
 ### Override the default CMD and ENTRYPOINT with `docker run`
 

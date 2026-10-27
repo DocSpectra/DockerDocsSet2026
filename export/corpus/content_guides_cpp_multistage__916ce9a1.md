@@ -9,6 +9,8 @@ aliases:
 - /guides/language/cpp/multistage/
 ---
 
+[C++ guide overview](_index.md)
+
 ## Prerequisites
 
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
@@ -103,6 +105,8 @@ You should see the output `Hello, World!` in the terminal.
 In this section, you learned how to create a multi-stage build for a C++ application. Multi-stage builds help you optimize the size of your final image and separate build dependencies from runtime dependencies.
 In this example, the final image only contains the static binary and doesn't include any build dependencies.
 
+## Caveat: tools absent from the runtime image
+
 As the image has an empty base, the usual OS tools are also absent. So, for example, you can't run a simple `ls` command in the container:
 
 ```bash
@@ -110,3 +114,7 @@ $ docker run hello ls
 ```
 
 This makes the image very lightweight and secure.
+
+## Next steps
+
+Continue: [Containerize and run the application](containerize.md).

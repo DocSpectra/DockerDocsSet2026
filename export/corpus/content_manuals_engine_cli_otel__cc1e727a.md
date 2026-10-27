@@ -53,11 +53,15 @@ generating more useful graphs, such as Grafana.
 
 ## Setup
 
+### Prerequisites
+
 To get started capturing telemetry data for the Docker CLI, you'll need to:
 
 - Set the `DOCKER_CLI_OTEL_EXPORTER_OTLP_ENDPOINT` environment variable to point to an OpenTelemetry collector endpoint
 - Run an OpenTelemetry collector that receives the signals from CLI command invocations
 - Run a backend for storing the data received from the collector
+
+### Create the service and configuration files
 
 The following Docker Compose file bootstraps a set of services to get started with OpenTelemetry.
 It includes an OpenTelemetry collector that the CLI can send metrics to,
@@ -125,6 +129,8 @@ This service assumes that the following two configuration files exist alongside
       static_configs:
         - targets: ["otelcol:8889"]
   ```
+
+### Start services and view metrics
 
 With these files in place:
 

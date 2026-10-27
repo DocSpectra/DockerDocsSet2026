@@ -10,6 +10,14 @@ aliases:
 
 <!-- vale Docker.We = NO -->
 
+## Find a task
+
+- [Review Dockerfile instructions](#dockerfile).
+- [Choose a filename](#filename).
+- [Read the example](#example) and its [instruction walkthrough](#dockerfile-syntax).
+- [Build the image](#building) and [run the container](#run-the-container).
+- [Choose the build context](./context.md).
+
 ## Dockerfile
 
 It all starts with a Dockerfile.
@@ -257,6 +265,8 @@ For more information about these differences, see
 
 ## Building
 
+### Build the image
+
 To build a container image using the Dockerfile example from the
 [previous section](#example), you use the `docker build` command:
 
@@ -270,6 +280,8 @@ The single dot (`.`) at the end of the command sets the
 [build context](./context.md) to the current directory. This means that the
 build expects to find the Dockerfile and the `hello.py` file in the directory
 where the command is invoked. If those files aren't there, the build fails.
+
+### Run the container
 
 After the image has been built, you can run the application as a container with
 `docker run`, specifying the image name:

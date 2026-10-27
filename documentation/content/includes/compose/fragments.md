@@ -1,1 +1,3 @@
 With Compose, you can use built-in [YAML](https://www.yaml.org/spec/1.2/spec.html#id2765878) features to make your Compose file neater and more efficient. Anchors and aliases let you create reusable blocks. This is useful if you start to find common configurations that span multiple services. Having reusable blocks minimizes potential mistakes.
+
+See [anchor and alias syntax](/reference/compose-file/fragments.md#define-anchors-and-aliases), [reuse patterns](/reference/compose-file/fragments.md#find-a-reuse-pattern), and [YAML merge restrictions](/reference/compose-file/fragments.md#example-4).

@@ -5,6 +5,8 @@ description: Run your Testcontainers-based Spring Boot integration tests and exp
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-spring-boot-rest-api/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-spring-boot-rest-api/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -35,3 +37,7 @@ To learn more about Testcontainers, visit the
 - [Testcontainers JUnit 5 quickstart](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
 - [Testcontainers Postgres module](https://java.testcontainers.org/modules/databases/postgres/)
 - [Testcontainers JDBC support](https://java.testcontainers.org/modules/databases/jdbc/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-spring-boot-rest-api/)

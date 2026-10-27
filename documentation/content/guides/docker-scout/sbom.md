@@ -46,4 +46,11 @@ by analyzing the contents of the image.
 The SBOM is cross-referenced with the [advisory database](/manuals/scout/deep-dive/advisory-db-sources.md)
 to determine if any of the components in the image have known vulnerabilities.
 
+For task instructions, see [View, attach, and extract SBOMs](/manuals/scout/how-tos/view-create-sboms.md).
+
+## Continue
+
+- [Attestations](./attestations.md)
+- [Guide contents](./_index.md)
+
 <div id="scout-lp-survey-anchor"></div>

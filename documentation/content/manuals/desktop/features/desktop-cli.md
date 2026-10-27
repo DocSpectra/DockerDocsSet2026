@@ -38,3 +38,10 @@ docker desktop COMMAND [OPTIONS]
 | `diagnose`           | Diagnose Docker Desktop and upload the diagnostics. Available with Docker Desktop 4.60 and later. |
 
 For more details on each command, see the [Docker Desktop CLI reference](/reference/cli/docker/desktop/).
+
+## Related tasks
+
+- [Use the Docker Desktop Dashboard](../use-desktop/_index.md)
+- [Create and manage a Kubernetes cluster](../use-desktop/kubernetes.md)
+- [Change Docker Desktop settings](../settings-and-maintenance/settings.md)
+- [Start Docker Offload](/manuals/offload/quickstart.md#step-2-start-docker-offload)

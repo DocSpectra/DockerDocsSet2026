@@ -9,6 +9,8 @@ restrict the actions available within the container. The `seccomp()` system
 call operates on the seccomp state of the calling process. You can use this
 feature to restrict your application's access.
 
+## Prerequisites
+
 This feature is available only if Docker has been built with `seccomp` and the
 kernel is configured with `CONFIG_SECCOMP` enabled. To check if your kernel
 supports `seccomp`:
@@ -17,6 +19,13 @@ supports `seccomp`:
 $ grep CONFIG_SECCOMP= /boot/config-$(uname -r)
 CONFIG_SECCOMP=y
 ```
+
+## On this page
+
+- [Check prerequisites](#prerequisites)
+- [Review the default profile and pass a custom profile](#pass-a-profile-for-a-container)
+- [Review blocked system calls](#significant-syscalls-blocked-by-the-default-profile)
+- [Run without the default profile](#run-without-the-default-seccomp-profile)
 
 ## Pass a profile for a container
 
@@ -36,6 +45,8 @@ to allow variants of those system calls with specific arguments.
 
 `seccomp` is instrumental for running Docker containers with least privilege. It
 is not recommended to change the default `seccomp` profile.
+
+### Run with a custom profile
 
 When you run a container, it uses the default profile unless you override it
 with the `--security-opt` option. For example, the following explicitly

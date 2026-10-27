@@ -5,10 +5,12 @@ build:
   render: never
 ---
 
-This is an initial attempt to make it easier to test the TLS (HTTPS) examples in the protect-access.md
-doc.
+This is an initial attempt to make it easier to test the TLS (HTTPS) examples in the
+[daemon socket documentation](../protect-access.md).
 
 At this point, it is a manual thing, and I've been running it in boot2docker.
+
+## Generate certificates and start the test daemon
 
 My process is as following:
 
@@ -22,6 +24,8 @@ lots of things to see and manually answer, as openssl wants to be interactive
 > [!NOTE]: make sure you enter the hostname (`boot2docker` in my case) when prompted for `Computer Name`)
 
     root@boot2docker:/# sudo make run
+
+## Test the client connection
 
 Start another terminal:
 

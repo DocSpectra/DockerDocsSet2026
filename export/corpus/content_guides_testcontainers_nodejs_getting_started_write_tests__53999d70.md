@@ -5,6 +5,15 @@ description: Write integration tests using Testcontainers for Node.js and Jest w
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-nodejs-getting-started/#prerequisites) · [Previous: Create the project](/guides/testcontainers-nodejs-getting-started/create-project/)
+
+## Allow time for startup
+
+The test timeout is set to 60 seconds to allow time for the container to start
+on the first run (when the Docker image needs to be pulled).
+
+## Create the test file
+
 Create `src/customer-repository.test.js` with the test:
 
 ```javascript
@@ -49,6 +58,8 @@ describe("Customer Repository", () => {
 });
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - The `beforeAll` block starts a real PostgreSQL container using
@@ -58,5 +69,6 @@ Here's what the test does:
 - The test inserts two customers, fetches all customers, and asserts the
   results match.
 
-The test timeout is set to 60 seconds to allow time for the container to start
-on the first run (when the Docker image needs to be pulled).
+## Continue
+
+[Next: Run tests](/guides/testcontainers-nodejs-getting-started/run-tests/)

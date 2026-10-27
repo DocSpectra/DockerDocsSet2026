@@ -29,3 +29,10 @@ allowed by your organization. To manage this setting:
 2. Select the settings icon in the Docker Desktop Dashboard header.
 3. In **Settings**, select **Docker Offload**.
 4. Toggle **Enable Docker Offload**. When enabled, you can start Offload sessions.
+
+## Related settings and tasks
+
+- [Idle timeout and GPU settings in Docker Desktop](../desktop/settings-and-maintenance/settings.md#docker-offload)
+- [Prerequisites and access checks](quickstart.md#prerequisites)
+- [Start or stop a session](quickstart.md#step-2-start-docker-offload)
+- [Session management and idle state](about.md#session-management-and-idle-state)

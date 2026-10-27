@@ -20,6 +20,16 @@ Gordon is an AI-powered assistant that takes action on your Docker workflows. It
 your environment, proposes solutions, and executes commands with your
 permission. Available in Docker Desktop and via the `docker ai` CLI command.
 
+## Find a Gordon task
+
+- [Check prerequisites and subscription setup](#prerequisites)
+- [Start in Docker Desktop](how-to/docker-desktop.md) or [use the CLI](how-to/cli.md)
+- [Find example prompts](use-cases.md)
+- Review [approval requirements and exceptions](how-to/permissions.md#what-requires-approval)
+- [Configure tools and command rules](how-to/configure-tools.md)
+- Review [capabilities](concepts/capabilities.md) and [data privacy](concepts/data-privacy.md)
+- [Disable Gordon](how-to/docker-desktop.md#disabling-gordon)
+
 ## What Gordon does
 
 Gordon takes action to help you with Docker tasks:

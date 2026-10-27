@@ -341,5 +341,5 @@ containers and persisting even when no running container is using them.
 ## Related Information
 
 - [Volumes](../volumes.md)
-- [Understand images, containers, and storage drivers](index.md)
+- [Understand images, containers, and storage drivers](_index.md)
 - [Select a storage driver](select-storage-driver.md)

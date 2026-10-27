@@ -6,6 +6,8 @@ keywords: go, golang, containerize, initialize
 description: Learn how to containerize a Golang application.
 ---
 
+[Guide overview and prerequisites](_index.md#prerequisites) / [Application](application.md) / [Containerize](containerize.md) / [Compose](compose.md) / [Develop and visualize](develop.md)
+
 Containerization helps you bundle the application and its dependencies into a single package called a container. This package can run on any platform without worrying about the environment. In this section, you will learn how to containerize a Golang application using Docker.
 
 To containerize a Golang application, you first need to create a Dockerfile. The Dockerfile contains instructions to build and run the application in a container. Also, when creating a Dockerfile, you can follow different sets of best practices to optimize the image size and make it more secure.
@@ -100,4 +102,4 @@ Related information:
 
 ## Next steps
 
-In the next section, you will learn how to use Docker Compose to connect and run multiple services together to monitor a Golang application with Prometheus and Grafana.
+In the next section, you will learn how to [use Docker Compose to connect and run multiple services together](compose.md) to monitor a Golang application with Prometheus and Grafana.

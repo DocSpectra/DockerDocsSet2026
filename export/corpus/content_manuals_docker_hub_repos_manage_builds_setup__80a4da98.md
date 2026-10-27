@@ -15,6 +15,17 @@ aliases:
 > Automated builds require a
 > Docker Pro, Team, or Business subscription.
 
+## Setup tasks
+
+- [Link a source provider account](./link-source.md)
+- [Review team permissions and service users](#autobuild-for-teams)
+- [Configure automated builds](#configure-automated-builds)
+- [Set up build rules](#set-up-build-rules)
+- [Set build environment variables](#environment-variables-for-builds)
+- [Set the build context and Dockerfile location](#set-the-build-context-and-dockerfile-location)
+- [Use regexes for branches, tags, and image tags](#regexes-and-automated-builds)
+- [Choose the build system](#build-images-with-buildkit)
+
 ## Configure automated builds
 
 You can configure repositories in Docker Hub so that they automatically
@@ -223,7 +234,7 @@ sources. For example, you might have
 ### Build images with BuildKit
 
 Autobuilds use the BuildKit build system by default. If you want to use the legacy
-Docker build system, add the [environment variable](index.md#environment-variables-for-builds)
+Docker build system, add the [environment variable](#environment-variables-for-builds)
 `DOCKER_BUILDKIT=0`. Refer to the [BuildKit](/manuals/build/buildkit/_index.md)
 page for more information on BuildKit.
 

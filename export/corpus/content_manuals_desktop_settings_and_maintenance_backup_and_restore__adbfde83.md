@@ -10,6 +10,14 @@ aliases:
 
 Use this procedure to back up and restore your images and container data. This is useful if you want to reset your VM disk or to move your Docker environment to a new computer, or recover from a failed Docker Desktop update or installation.
 
+## Choose a backup or restore procedure
+
+- Docker Desktop starts: [Save your data](#save-your-data), then [restore your data](#restore-your-data).
+- Docker Desktop cannot start: [Back up and restore the VM disk](#if-docker-desktop-fails-to-start).
+- For Dashboard volume operations, see [Export a volume](../use-desktop/volumes.md#export-a-volume) and [Import a volume](../use-desktop/volumes.md#import-a-volume).
+
+## Before you begin
+
 > [!IMPORTANT]
 >
 > If you use volumes or bind-mounts to store your container data, backing up your containers may not be needed, but make sure to remember the options that were used when creating the container or use a [Docker Compose file](/reference/compose-file/_index.md) if you want to re-create your containers with the same configuration after re-installation.
@@ -26,7 +34,7 @@ Use this procedure to back up and restore your images and container data. This i
    Also note that filesystem changes in a volume that are attached to the
    container are not included in the image, and must be backed up separately.
 
-   If you used a [named volume](/manuals/engine/storage/_index.md#more-details-about-mount-types) to store container data, such as databases, refer to the [back up, restore, or migrate data volumes](/manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section.
+   If you used a [named volume](/manuals/engine/storage/volumes.md#named-and-anonymous-volumes) to store container data, such as databases, refer to the [back up, restore, or migrate data volumes](/manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section.
 
 2. Use [`docker push`](/reference/cli/docker/image/push/) to push any
    images you have built locally and want to keep to the [Docker Hub registry](/manuals/docker-hub/_index.md).

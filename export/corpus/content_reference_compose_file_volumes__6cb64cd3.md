@@ -10,6 +10,8 @@ weight: 40
 
 {{% include "compose/volumes.md" %}}
 
+## Grant service access
+
 To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
 
 > [!TIP]
@@ -17,6 +19,15 @@ To use a volume across multiple services, you must explicitly grant each service
 > Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase? 
 > Compose now takes advantage of [Synchronized file shares](/manuals/desktop/features/synchronized-file-sharing.md) and automatically creates file shares for bind mounts. 
 > Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+
+## Find a volume task
+
+- [Share a named volume for database backups](#example).
+- [Choose a driver](#driver) and [driver options](#driver_opts).
+- [Use an existing volume and check external attribute restrictions](#external).
+- [Add volume metadata and check label scope](#labels).
+- [Set or parameterize the volume name](#name).
+- [Configure service mounts and check host path caveats](services.md#volumes).
 
 ## Example
 

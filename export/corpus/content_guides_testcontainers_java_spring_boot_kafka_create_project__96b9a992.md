@@ -5,6 +5,18 @@ description: Set up a Spring Boot project with Kafka, Spring Data JPA, and MySQL
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-spring-boot-kafka/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the JPA entity](#create-the-jpa-entity)
+- [Create the Spring Data JPA repository](#create-the-spring-data-jpa-repository)
+- [Add a schema creation script](#add-a-schema-creation-script)
+- [Create the event payload](#create-the-event-payload)
+- [Implement the Kafka listener](#implement-the-kafka-listener)
+- [Configure Kafka serialization](#configure-kafka-serialization)
+
 ## Set up the project
 
 Create a Spring Boot project from [Spring Initializr](https://start.spring.io)
@@ -293,3 +305,7 @@ spring.kafka.consumer.properties.spring.json.trusted.packages=com.testcontainers
 The `productCode` key is (de)serialized using `StringSerializer`/`StringDeserializer`,
 and the `ProductPriceChangedEvent` value is (de)serialized using
 `JsonSerializer`/`JsonDeserializer`.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-spring-boot-kafka/write-tests/)

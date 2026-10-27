@@ -32,6 +32,13 @@ repositories:
   repository to another container registry, such as Amazon ECR, Google Artifact
   Registry, or a private Harbor instance.
 
+For a specific mirroring task, go to:
+
+- [Stop mirroring](#stop-mirroring-a-repository), including ELS-only settings
+- [Copy an image and its attestations with regctl](#example-mirroring-with-regctl)
+- [Keep an external registry synchronized with regsync](#example-ongoing-mirroring-with-regsync)
+- [Configure webhook automation](#automate-syncing-with-webhooks)
+
 ## Mirror a DHI repository to your organization
 
 To mirror repositories, you must be an organization owner or editor, or use a
@@ -47,7 +54,7 @@ Terraform tabs in the following sections for required permission scopes.
   the chart. This is particularly useful when using customized images or when
   you've mirrored images to a third-party registry and need the chart to
   reference those custom locations. For more details, see [Customize a Docker
-  Hardened Helm chart](./customize.md#customize-a-docker-hardened-helm-chart).
+  Hardened Helm chart](./customize.md#customize-a-dhi-helm-chart).
 
 {{< tabs >}}
 {{< tab name="Docker Hub" >}}
@@ -256,50 +263,6 @@ OCI-aware CLI that supports mirroring images along with attached artifacts such
 as SBOMs, vulnerability reports, and SLSA provenance. For ongoing synchronization,
 you can use [`regsync`](https://regclient.org/cli/regsync/).
 
-### Automate syncing with webhooks
-
-To keep external registries or systems in sync with your mirrored Docker
-Hardened Images, and to receive notifications when updates occur, you can
-configure a [webhook](/docker-hub/repos/manage/webhooks/) on the mirrored
-repository in Docker Hub. A webhook sends a `POST` request to a URL you define
-whenever a new image tag is pushed or updated.
-
-For example, you might configure a webhook to call a CI/CD system at
-`https://ci.example.com/hooks/dhi-sync` whenever a new tag is mirrored. The
-automation triggered by this webhook can pull the updated image from Docker Hub
-and push it to an internal registry such as Amazon ECR, Google Artifact
-Registry, or GitHub Container Registry.
-
-Other common webhook use cases include:
-
-- Triggering validation or vulnerability scanning workflows
-- Signing or promoting images
-- Sending notifications to downstream systems
-
-#### Example webhook payload
-
-When a webhook is triggered, Docker Hub sends a JSON payload like the following:
-
-```json{collapse=true}
-{
-  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
-  "push_data": {
-    "pushed_at": 1712345678,
-    "pusher": "trustedbuilder",
-    "tag": "3.13-alpine3.21"
-  },
-  "repository": {
-    "name": "dhi-python",
-    "namespace": "exampleorg",
-    "repo_name": "exampleorg/dhi-python",
-    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
-    "is_private": true,
-    "status": "Active",
-    ...
-  }
-}
-```
-
 ### Example mirroring with `regctl`
 
 The following example shows how to mirror a specific tag of a Docker Hardened
@@ -447,6 +410,50 @@ To run the sync with the configuration file:
 $ regsync once -c regsync.yaml
 ```
 
+### Automate syncing with webhooks
+
+To keep external registries or systems in sync with your mirrored Docker
+Hardened Images, and to receive notifications when updates occur, you can
+configure a [webhook](/docker-hub/repos/manage/webhooks/) on the mirrored
+repository in Docker Hub. A webhook sends a `POST` request to a URL you define
+whenever a new image tag is pushed or updated.
+
+For example, you might configure a webhook to call a CI/CD system at
+`https://ci.example.com/hooks/dhi-sync` whenever a new tag is mirrored. The
+automation triggered by this webhook can pull the updated image from Docker Hub
+and push it to an internal registry such as Amazon ECR, Google Artifact
+Registry, or GitHub Container Registry.
+
+Other common webhook use cases include:
+
+- Triggering validation or vulnerability scanning workflows
+- Signing or promoting images
+- Sending notifications to downstream systems
+
+#### Example webhook payload
+
+When a webhook is triggered, Docker Hub sends a JSON payload like the following:
+
+```json{collapse=true}
+{
+  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
+  "push_data": {
+    "pushed_at": 1712345678,
+    "pusher": "trustedbuilder",
+    "tag": "3.13-alpine3.21"
+  },
+  "repository": {
+    "name": "dhi-python",
+    "namespace": "exampleorg",
+    "repo_name": "exampleorg/dhi-python",
+    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
+    "is_private": true,
+    "status": "Active",
+    ...
+  }
+}
+```
+
 ## What next
 
-After mirroring, see [Pull a DHI](./use.md#pull-a-dhi) to learn how to pull and use mirrored images.
+After mirroring, see [Pull, run, and reference DHIs](./use.md#pull-run-and-reference-dhis) to learn how to pull and use mirrored images.

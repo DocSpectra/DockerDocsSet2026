@@ -11,6 +11,15 @@ aliases:
 By default, Docker runs through a non-networked UNIX socket. It can also
 optionally communicate using SSH or a TLS (HTTPS) socket.
 
+## Choose a connection task
+
+- [Connect using SSH](#use-ssh-to-protect-the-docker-daemon-socket)
+- [Set up TLS and a certificate authority](#use-tls-https-to-protect-the-docker-daemon-socket)
+- [Review the key access warning](#key-access-warning)
+- [Configure secure client defaults](#secure-by-default)
+- [Review daemon and client TLS modes](#other-modes)
+- [Test the API with curl](#connecting-to-the-secure-docker-port-using-curl)
+
 ## Use SSH to protect the Docker daemon socket
 
 > [!NOTE]
@@ -97,6 +106,8 @@ it only connects to servers with a certificate signed by that CA.
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 
+#### Generate the CA
+
 First, on the Docker daemon's host machine, generate CA private and public keys:
 
 ```console
@@ -125,6 +136,8 @@ Organizational Unit Name (eg, section) []:Sales
 Common Name (e.g. server FQDN or YOUR name) []:$HOST
 Email Address []:Sven@home.org.au
 ```
+
+#### Create the server key and certificate
 
 Now that you have a CA, you can create a server key and certificate
 signing request (CSR). Make sure that "Common Name" matches the hostname you use
@@ -179,6 +192,8 @@ to other information described in the above document, authorization plugins
 running on a Docker daemon receive the certificate information for connecting
 Docker clients.
 
+#### Create the client key and certificate
+
 For client authentication, create a client key and certificate signing
 request:
 
@@ -215,6 +230,8 @@ Getting CA Private Key
 Enter pass phrase for ca-key.pem:
 ```
 
+#### Remove requests and protect the keys
+
 After generating `cert.pem` and `server-cert.pem` you can safely remove the
 two certificate signing requests and extensions config files:
 
@@ -239,6 +256,8 @@ prevent accidental damage:
 $ chmod -v 0444 ca.pem server-cert.pem cert.pem
 ```
 
+#### Start the daemon with certificate verification
+
 Now you can make the Docker daemon only accept connections from clients
 providing a certificate trusted by your CA:
 
@@ -250,6 +269,8 @@ $ dockerd \
     --tlskey=server-key.pem \
     -H=0.0.0.0:2376
 ```
+
+#### Connect from the client
 
 To connect to Docker and validate its certificate, provide your client keys,
 certificates and trusted CA:
@@ -276,6 +297,8 @@ $ docker --tlsverify \
 > [!NOTE]
 >
 > Docker over TLS should run on TCP port 2376.
+
+#### Key access warning
 
 > [!WARNING]
 >

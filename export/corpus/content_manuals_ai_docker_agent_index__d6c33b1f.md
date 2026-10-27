@@ -26,6 +26,19 @@ any LLM provider.
 > Docker Agent is a framework for building and running custom agent teams.
 > For Docker's built-in AI assistant, see [Gordon](/ai/gordon/) (`docker ai`).
 
+## Find a task
+
+- [Install Docker Agent](#installation) and [run the example team](#get-started)
+- Choose [cloud model providers](model-providers.md) or [local models](local-models.md)
+- [Build a coding agent](tutorial.md)
+- [Configure agents, models, tools, and RAG](reference/config.md)
+- [Choose toolsets](reference/toolsets.md)
+- [Connect agents to an editor, MCP client, or other agents](integrations/_index.md)
+- [Share agents through a registry](sharing-agents.md)
+- [Set up retrieval over code and documentation](rag.md)
+- [Save and replay conversations with evals](evals.md)
+- [Find CLI commands](reference/cli.md) or [agent examples](reference/examples.md)
+
 ## Why agent teams
 
 One agent handling complex work means constant context-switching. Split the work

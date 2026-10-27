@@ -22,15 +22,7 @@ Whether you need to orchestrate containers as part of
 a deployment pipeline, build custom management tools, or embed container orchestration into your application, the
 Compose SDK offers the same powerful capabilities that drive the Docker Compose command-line tool.
 
-## Set up the SDK
-
-To get started, create an SDK instance using the `NewComposeService()` function, which initializes a service with the
-necessary configuration to interact with the Docker daemon and manage Compose projects. This service instance provides
-methods for all core Compose operations including creating, starting, stopping, and removing containers, as well as
-loading and validating Compose files. The service handles the underlying Docker API interactions and resource
-management, allowing you to focus on your application logic.
-
-### Requirements
+## Requirements
 
 Before using the SDK, make sure you're using a compatible version of the Docker CLI. 
 
@@ -41,6 +33,14 @@ require (
 ```
 
 Docker CLI version 29.0.0 and later depends on the new `github.com/moby/moby` module, whereas Docker Compose v5 currently depends on `github.com/docker/docker`. This means you need to pin `docker/cli v28.5.2+incompatible` to ensure compatibility and avoid build errors.
+
+## Set up the SDK
+
+To get started, create an SDK instance using the `NewComposeService()` function, which initializes a service with the
+necessary configuration to interact with the Docker daemon and manage Compose projects. This service instance provides
+methods for all core Compose operations including creating, starting, stopping, and removing containers, as well as
+loading and validating Compose files. The service handles the underlying Docker API interactions and resource
+management, allowing you to focus on your application logic.
 
 ### Example usage
 

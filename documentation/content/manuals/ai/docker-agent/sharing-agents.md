@@ -12,6 +12,13 @@ around or asking you where your agent configuration lives.
 When you update the agent in the registry, everyone gets the new version
 the next time they pull or restart their client.
 
+## Find a sharing task
+
+- [Authenticate](#prerequisites)
+- [Publish and tag an agent](#publishing-agents)
+- [Pull or run a published agent](#using-published-agents)
+- Use a shared agent in an [editor](#editor-integration-acp) or [MCP client](#mcp-client-integration)
+
 ## Prerequisites
 
 To push agents to a registry, authenticate first:

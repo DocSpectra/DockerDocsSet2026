@@ -15,6 +15,41 @@ aliases:
 >
 > If you do not find a solution in troubleshooting, browse the GitHub repositories or [create a new issue](https://github.com/docker/desktop-feedback).
 
+## Find a symptom or task
+
+### All platforms
+
+- [Registry certificate and TLS errors](#certificates-not-set-up-correctly)
+- [Green, distorted, or visually corrupted UI](#docker-desktops-ui-appears-green-distorted-or-has-visual-artifacts)
+- [Mounted-volume file access or service startup errors](#using-mounted-volumes-and-getting-runtime-errors-indicating-an-application-file-is-not-found-access-to-a-volume-mount-is-denied-or-a-service-cannot-start)
+- [Port already allocated](#port-already-allocated-errors)
+
+### Mac and Linux
+
+- [Startup failure and Unix socket path lengths](#docker-desktop-fails-to-start-on-mac-or-linux-platforms)
+
+### Mac
+
+- [Upgrade without administrator privileges](#upgrade-requires-administrator-privileges)
+- [Configuration integrity notifications](#persistent-notification-telling-me-an-application-has-changed-my-desktop-configurations)
+- [Privileged helper still running after quitting](#comdockervmnetd-is-still-running-after-i-quit-the-app)
+- [Incompatible CPU](#incompatible-cpu-detected)
+- [“Docker.app is damaged” dialog](mac-damaged-dialog.md)
+- [Startup and inaccurate malware-warning issue](/manuals/desktop/cert-revoke-solution.md)
+
+### Windows
+
+- [Startup failure with anti-virus software](#docker-desktop-fails-to-start-when-anti-virus-software-is-installed)
+- [Shared-volume permission errors](#permissions-errors-on-data-directories-for-shared-volumes)
+- [Syntax errors and line endings](#unexpected-syntax-errors-use-unix-style-line-endings-for-files-in-containers)
+- [Volume path conversion](#path-conversion-errors-on-windows)
+- [Docker commands failing in Git Bash](#docker-commands-failing-in-git-bash)
+- [Virtualization and WSL startup errors](#docker-desktop-fails-due-to-virtualization-not-working): [WSL 2](#wsl-2-and-windows-home), [Hyper-V](#hyper-v), [BIOS virtualization](#virtualization-must-be-turned-on), [hypervisor at startup](#hypervisor-enabled-at-windows-startup), or [nested virtualization](#turn-on-nested-virtualization)
+- [“The media is write protected”](#docker-desktop-with-windows-containers-fails-with-the-media-is-write-protected)
+- [Access denied on startup](#docker-desktop-access-denied-error-message-when-starting-docker-desktop)
+
+For [diagnostics and logs](_index.md), [known issues](known-issues.md), or [support](/manuals/support/_index.md), follow the linked guidance.
+
 ## Topics for all platforms
 
 ### Certificates not set up correctly 
@@ -167,7 +202,7 @@ On macOS, users without administrator privileges cannot perform in-app upgrades 
 To upgrade Docker Desktop:
 
 - Ask an administrator to install the newer version over the existing one.
-- Use the []`--user` install flag](/manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
+- Use the [`--user` install flag](/manuals/desktop/setup/install/mac-install.md#installation-behavior) if appropriate for your setup.
 
 ### Persistent notification telling me an application has changed my Desktop configurations
 

@@ -12,6 +12,13 @@ Dockerfile defines a stage with the same name it's overwritten.
 This can be useful with GitHub Actions to reuse results from other builds or pin
 an image to a specific tag in your workflow.
 
+## Choose a context task
+
+- [Pin an image to a tag](#pin-image-to-a-tag)
+- [Reuse an image in subsequent steps](#use-image-in-subsequent-steps)
+- [Use a container builder and review image-store isolation](#using-with-a-container-builder)
+- [Share an image between jobs](share-image-jobs.md)
+
 ## Pin image to a tag
 
 Replace `alpine:latest` with a pinned one:

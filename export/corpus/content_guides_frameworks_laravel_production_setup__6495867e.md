@@ -4,10 +4,17 @@ description: Set up a production-ready environment for Laravel using Docker Comp
 weight: 20
 ---
 
+[Laravel guide overview](_index.md)
+
 This guide demonstrates how to set up a production-ready Laravel environment using Docker and Docker Compose. This configuration is designed for streamlined, scalable, and secure Laravel application deployments.
 
 > [!NOTE]
 > To experiment with a ready-to-run configuration, download the [Laravel Docker Examples](https://github.com/dockersamples/laravel-docker-examples) repository. It contains pre-configured setups for both development and production.
+
+## Before you begin
+
+- [Review the prerequisites](prerequisites.md).
+- [Compare development and production configurations](common-questions.md#5-what-is-the-difference-between-development-and-production-docker-configurations).
 
 ## Project structure
 
@@ -425,6 +432,8 @@ volumes:
   laravel-storage-production:
 ```
 
+### Prepare the environment file
+
 > [!NOTE]
 > Ensure you have an `.env` file at the root of your Laravel project with the necessary configurations to match the Docker Compose setup.
 
@@ -441,3 +450,8 @@ This command will build and start all the services in detached mode, providing a
 ## Summary
 
 By setting up a Docker Compose environment for Laravel in production, you ensure that your application is optimized for performance, scalable, and secure. This setup makes deployments consistent and easier to manage, reducing the likelihood of errors due to differences between environments.
+
+## Next steps
+
+- [Set up development](development-setup.md).
+- [Review data persistence](common-questions.md#4-how-can-i-persist-data-in-development-and-production).

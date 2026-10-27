@@ -15,6 +15,17 @@ You can reuse and modularize Docker Compose configurations by including other Co
 - You need to factor out parts of your application model into separate Compose files so they can be managed separately or shared with others.
 - Teams need to maintain a Compose file with only necessary complexity for the limited amount of resources it has to declare for its own sub-domain within a larger deployment.
 
+## Find an include task
+
+- [Check loading order, resource conflicts, and recursive includes](#loading-paths-and-conflicts).
+- [Use mandatory variables in include paths](#interpolate-include-paths).
+- [Include files with the short syntax](#short-syntax).
+- [Use the long syntax](#long-syntax) to configure [paths](#path), [the project directory](#project_directory), or [environment files and precedence](#env_file).
+
+For override rules, see [Merge](merge.md).
+
+## Loading, paths, and conflicts
+
 The `include` top-level section is used to define the dependency on another Compose application, or sub-domain.
 Each path listed in the `include` section is loaded as an individual Compose application model, with its own project directory, in order to resolve relative paths.
 
@@ -37,6 +48,8 @@ services:
     depends_on:
       - serviceB #use serviceB directly as if it was declared in this Compose file
 ```
+
+## Interpolate include paths
 
 Compose also supports the use of interpolated variables with `include`. It's recommended that you [specify mandatory variables](interpolation.md). For example:
 

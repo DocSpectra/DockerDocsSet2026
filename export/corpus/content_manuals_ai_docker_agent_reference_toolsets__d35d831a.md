@@ -13,6 +13,16 @@ executing commands, accessing external resources, and managing state.
 For configuration file syntax and how to set up toolsets in your agent YAML,
 see the [Configuration file reference](./config.md).
 
+## Find a toolset task
+
+- [Configure toolsets](#configuration) and [common options](#common-configuration-options)
+- [Restrict tool selection](#tool-selection), [defer loading](#deferred-loading), or [compress output](#output-compression)
+- [Configure binary auto-installation](#auto-installation-of-tool-binaries)
+- Work with [files](#filesystem), [language servers](#lsp), or [shell commands](#shell)
+- Manage [reasoning](#think), [todos](#todo), [tasks](#tasks), or [memory](#memory)
+- [Fetch URLs](#fetch), [prompt the user](#user-prompt), [call APIs](#api), or [wrap scripts](#script)
+- [Use automatic delegation tools](#automatic-tools)
+
 ## How agents use tools
 
 When you configure toolsets for an agent, those tools become available in the

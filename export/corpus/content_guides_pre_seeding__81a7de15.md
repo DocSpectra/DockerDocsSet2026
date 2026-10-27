@@ -11,12 +11,14 @@ params:
 
 Pre-seeding databases with essential data and schema during local development is a common practice to enhance the development and testing workflow. By simulating real-world scenarios, this practice helps catch frontend issues early, ensures alignment between Database Administrators and Software Engineers, and facilitates smoother collaboration. Pre-seeding offers benefits like confident deployments, consistency across environments, and early issue detection, ultimately improving the overall development process.
 
+## Choose a seeding task
+
 In this guide, you will learn how to:
 
-- Use Docker to launch up a Postgres container
-- Pre-seed Postgres using a SQL script
-- Pre-seed Postgres by copying SQL files into Docker image
-- Pre-seed Postgres using JavaScript code
+- [Use Docker to launch up a Postgres container](#launching-postgres)
+- [Pre-seed Postgres using a SQL script](#pre-seed-the-postgres-database-using-a-sql-script)
+- [Pre-seed Postgres by copying SQL files into Docker image](#pre-seed-the-database-by-bind-mounting-a-sql-script)
+- [Pre-seed Postgres using JavaScript code](#pre-seed-the-database-using-javascript-code)
 
 ## Using Postgres with Docker
 
@@ -341,3 +343,10 @@ It is called at the end of the script to initiate the seeding process. The try..
 
 Pre-seeding a database with schema and data at startup is essential for creating a consistent and realistic testing environment, which helps in identifying issues early in development and aligning frontend and backend work. This guide has equipped you with the knowledge and practical steps to achieve pre-seeding using various methods, including SQL script, Docker integration, and JavaScript code. 
 
+
+## Related PostgreSQL tasks
+
+- [Set up persistent PostgreSQL storage](postgresql/immediate-setup-and-data-persistence.md)
+- [Mount initialization scripts and review first-run behavior](postgresql/advanced-configuration-and-initialization.md#initialization-scripts)
+- [Connect from containers or the host](postgresql/networking-and-connectivity.md)
+- [Add pgAdmin](pgadmin.md)

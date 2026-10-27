@@ -16,6 +16,10 @@ aliases:
   - /guides/walkthroughs/containerize-your-app/
 ---
 
+On this page: [Prerequisites](#prerequisites) · [Get the app](#get-the-app) · [Build the image](#build-the-apps-image) · [Start a container](#start-an-app-container) · [Verify the running container](#view-the-running-container).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [All tasks](_index.md#workshop-tasks).
+
 For the rest of this guide, you'll be working with a simple todo
 list manager that runs on Node.js. If you're not familiar with Node.js,
 don't worry. This guide doesn't require any prior experience with JavaScript.
@@ -125,6 +129,8 @@ Now that you have an image, you can run the application in a container using the
 3. Add an item or two and see that it works as you expect. You can mark items as complete and remove them. Your frontend is successfully storing items in the backend.
 
 At this point, you have a running todo list manager with a few items.
+
+### View the running container
 
 If you take a quick look at your containers, you should see at least one container running that's using the `getting-started` image and on port `3000`. To see your containers, you can use the CLI or Docker Desktop's graphical interface.
 

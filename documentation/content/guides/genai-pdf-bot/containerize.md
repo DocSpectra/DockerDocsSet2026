@@ -8,6 +8,14 @@ aliases:
   - /guides/use-case/genai-pdf-bot/containerize/
 ---
 
+## Follow this page
+
+- [Check prerequisites and GPU support](#prerequisites)
+- [Get the sample](#get-the-sample-application)
+- [Initialize Docker assets](#initialize-docker-assets)
+- [Run the application](#run-the-application)
+- [Configure the database and LLM](develop.md)
+
 ## Prerequisites
 
 > [!NOTE]
@@ -121,7 +129,7 @@ Open a browser and view the application at [http://localhost:8000](http://localh
 The application requires a Neo4j database service and an LLM service to
 function. If you have access to services that you ran outside of Docker, specify
 the connection information and try it out. If you don't have the services
-running, continue with this guide to learn how you can run some or all of these
+running, continue with [local development](develop.md) to learn how you can run some or all of these
 services with Docker.
 
 In the terminal, press `ctrl`+`c` to stop the application.
@@ -137,4 +145,4 @@ Related information:
 
 ## Next steps
 
-In the next section, you'll learn how you can run your application, database, and LLM service all locally using Docker.
+In the [next section](develop.md), you'll learn how you can run your application, database, and LLM service all locally using Docker.

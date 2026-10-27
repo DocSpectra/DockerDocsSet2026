@@ -11,6 +11,21 @@ aliases:
 - /security/security/
 ---
 
+## Choose a security task
+
+- Protect access: [daemon socket over SSH or TLS](protect-access.md) and
+  [registry client certificates](certificates.md).
+- Configure isolation: [Rootless mode](rootless/_index.md),
+  [user namespace remapping](userns-remap.md), [seccomp](seccomp.md), and
+  [AppArmor](apparmor.md).
+- Work with image signatures: [content trust](trust/_index.md),
+  [signing keys](trust/trust_key_mng.md), and
+  [delegations](trust/trust_delegation.md).
+- Review operational caveats: [antivirus scanning](antivirus.md) and
+  [security non-events and exceptions](non-events.md).
+
+## Review the security model
+
 There are four major areas to consider when reviewing Docker security:
 
  - The intrinsic security of the kernel and its support for
@@ -83,7 +98,7 @@ started in 2006, and initially merged in kernel 2.6.24.
 
 Running containers (and applications) with Docker implies running the
 Docker daemon. This daemon requires `root` privileges unless you opt-in
-to [Rootless mode](rootless.md), and you should therefore be aware of
+to [Rootless mode](rootless/_index.md), and you should therefore be aware of
 some important details.
 
 First of all, only trusted users should be allowed to control your

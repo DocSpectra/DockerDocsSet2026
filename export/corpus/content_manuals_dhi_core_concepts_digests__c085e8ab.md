@@ -4,6 +4,12 @@ description: Learn how Docker Hardened Images help secure every stage of your so
 keywords: docker image digest, pull image by digest, immutable container image, secure container reference, multi-platform manifest
 ---
 
+Choose a task:
+
+- [View a digest](#view-an-image-digest)
+- [Pull by digest](#pull-an-image-by-digest)
+- [Review multi-platform manifests and digest scope](#multi-platform-images-and-manifests)
+
 ## What are Docker image digests?
 
 A Docker image digest is a unique, cryptographic identifier (SHA-256 hash)

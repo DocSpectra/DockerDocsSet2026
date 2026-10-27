@@ -18,6 +18,15 @@ connected to the same cloud builder.
 >
 > Windows container image builds use the legacy builder and do not appear in the **Builds** view. Only BuildKit-powered builds are shown here.
 
+## Find a build task
+
+- [Show build history and active builds](#show-build-list)
+- [Import build records](#import-builds)
+- [Inspect build details](#inspect-builds), [logs](#build-logs), or [errors](#dockerfile-source-and-errors)
+- [Export and inspect traces with Jaeger](#inspect-build-traces-with-jaeger)
+- [Compare related builds](#build-history)
+- [Manage builders](#manage-builders)
+
 ## Show build list
 
 Open the **Builds** view from the Docker Dashboard to access:
@@ -50,17 +59,19 @@ Docker Desktop.
 To inspect a build, select the build that you want to view in the list.
 The inspection view contains a number of tabs.
 
+### Build information
+
 The **Info** tab displays details about the build.
 
 If you're inspecting a multi-platform build, the drop-down menu in the
 top-right of this tab lets you filter the information down to a specific
 platform:
 
-The **Source details** section shows information about the frontend
+The **Source details** section shows information about the
 [frontend](/manuals/build/buildkit/frontend.md) and, if available,
 the source code repository used for the build.
 
-### Build timing
+#### Build timing
 
 The **Build timing** section of the Info tab contains charts
 showing a breakdown of the build execution from various angles.
@@ -85,7 +96,7 @@ operations are defined as follows:
 | SBOM                 | Time spent generating the [SBOM attestation](/manuals/build/metadata/attestations/sbom.md).                                                                                                 |
 | Idle                 | Idle time for build workers, which can happen if you have configured a [max parallelism limit](/manuals/build/buildkit/configure.md#max-parallelism).                              |
 
-### Build dependencies
+#### Build dependencies
 
 The **Dependencies** section shows images and remote resources used during
 the build. Resources listed here include:
@@ -94,7 +105,7 @@ the build. Resources listed here include:
 - Git repositories included using the `ADD` Dockerfile instruction
 - Remote HTTPS resources included using the `ADD` Dockerfile instruction
 
-### Arguments, secrets, and other parameters
+#### Arguments, secrets, and other parameters
 
 The **Configuration** section of the Info tab shows parameters passed to the build:
 
@@ -104,7 +115,7 @@ The **Configuration** section of the Info tab shows parameters passed to the bui
 - Labels
 - [Additional contexts](/reference/cli/docker/buildx/build/#build-context)
 
-### Outputs and artifacts
+#### Outputs and artifacts
 
 The **Build results** section shows a summary of the generated build artifacts,
 including image manifest details, attestations, and build traces.
@@ -119,7 +130,7 @@ BuildKit. The traces are available in two formats: OTLP and Jaeger. You can
 download build traces from Docker Desktop by opening the actions menu and
 selecting the format you want to download.
 
-#### Inspect build traces with Jaeger
+### Inspect build traces with Jaeger
 
 Using a Jaeger client, you can import and inspect build traces from Docker
 Desktop. The following steps show you how to export a trace from Docker Desktop

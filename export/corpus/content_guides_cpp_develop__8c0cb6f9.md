@@ -9,6 +9,8 @@ aliases:
   - /guides/language/cpp/develop/
 ---
 
+[C++ guide overview](_index.md)
+
 ## Prerequisites
 
 Complete [Containerize a C++ application](containerize.md).
@@ -17,7 +19,7 @@ Complete [Containerize a C++ application](containerize.md).
 
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 
-- Configuring Compose to automatically update your running Compose services as you edit and save your code
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
 
 ## Get the sample application
 
@@ -75,3 +77,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue: [Configure CI/CD](configure-ci-cd.md).

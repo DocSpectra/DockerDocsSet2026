@@ -128,5 +128,5 @@ using the `vfs` storage driver.
 
 ## Related information
 
-- [Understand images, containers, and storage drivers](index.md)
+- [Understand images, containers, and storage drivers](_index.md)
 - [Select a storage driver](select-storage-driver.md)

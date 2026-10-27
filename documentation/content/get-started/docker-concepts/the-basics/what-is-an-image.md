@@ -8,9 +8,13 @@ aliases:
   - /get-started/run-docker-hub-images/
 ---
 
+On this page: [Images and layers](#explanation) · [Find trusted images](#finding-images) · [Search, pull, and inspect with GUI or CLI](#try-it-out) · [Additional resources](#additional-resources).
+
 {{< youtube-embed NyvT9REqLe4 >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Images, layers, and trusted content
 
 Seeing as a [container](./what-is-a-container.md) is an isolated process, where does it get its files and configuration? How do you share those environments?
 
@@ -39,7 +43,11 @@ Docker Hub provides a variety of Docker-supported and endorsed images known as D
 
 For example, [Redis](https://hub.docker.com/_/redis) and [Memcached](https://hub.docker.com/_/memcached) are a few popular ready-to-go Docker Official Images. You can download these images and have these services up and running in a matter of seconds. There are also base images, like the [Node.js](https://hub.docker.com/_/node) Docker image, that you can use as a starting point and add your own files and configurations. For production workloads requiring enhanced security, Docker Hardened Images offer minimal variants of popular images like Node.js, Python, and Go.
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Find, download, and inspect an image
+
+Installation: [Get Docker](../../get-docker.md).
 
 {{< tabs group=concept-usage persist=true >}}
 {{< tab name="Using the GUI" >}}

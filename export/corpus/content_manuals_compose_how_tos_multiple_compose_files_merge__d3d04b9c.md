@@ -71,205 +71,223 @@ webapp:
 
 ## Merging rules 
 
-- Paths are evaluated relative to the base file. When you use multiple Compose files, you must make sure all paths in the files are relative to the base Compose file (the first Compose file specified
+### Resolve paths and review the configuration
+
+Paths are evaluated relative to the base file. When you use multiple Compose files, you must make sure all paths in the files are relative to the base Compose file (the first Compose file specified
 with `-f`). This is required because override files need not be valid
 Compose files. Override files can contain small fragments of configuration.
 Tracking which fragment of a service is relative to which path is difficult and
 confusing, so to keep paths easier to understand, all paths must be defined
 relative to the base file.
 
-   >[!TIP]
-   >
-   > You can use `docker compose config` to review your merged configuration and avoid path-related issues.
+>[!TIP]
+>
+> You can use `docker compose config` to review your merged configuration and avoid path-related issues.
 
-- Compose copies configurations from the original service over to the local one.
+### Combine service configurations
+
+Compose copies configurations from the original service over to the local one.
 If a configuration option is defined in both the original service and the local
 service, the local value replaces or extends the original value.
 
-   - For single-value options like `image`, `command` or `mem_limit`, the new value replaces the old value.
+### Single-value options
 
-      original service:
+For single-value options like `image`, `command` or `mem_limit`, the new value replaces the old value.
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python app.py
-      ```
+original service:
 
-      local service:
+```yaml
+services:
+  myservice:
+    # ...
+    command: python app.py
+```
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python otherapp.py
-      ```
+local service:
 
-      result:
+```yaml
+services:
+  myservice:
+    # ...
+    command: python otherapp.py
+```
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python otherapp.py
-      ```
+result:
 
-   - For the multi-value options `ports`, `expose`, `external_links`, `dns`, `dns_search`, and `tmpfs`, Compose concatenates both sets of values:
+```yaml
+services:
+  myservice:
+    # ...
+    command: python otherapp.py
+```
 
-      original service:
+### Multi-value options
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "3000"
-      ```
+For the multi-value options `ports`, `expose`, `external_links`, `dns`, `dns_search`, and `tmpfs`, Compose concatenates both sets of values:
 
-      local service:
+original service:
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "4000"
-            - "5000"
-      ```
+```yaml
+services:
+  myservice:
+    # ...
+    expose:
+      - "3000"
+```
 
-      result:
+local service:
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "3000"
-            - "4000"
-            - "5000"
-      ```
+```yaml
+services:
+  myservice:
+    # ...
+    expose:
+      - "4000"
+      - "5000"
+```
 
-   - In the case of `environment`, `labels`, `volumes`, and `devices`, Compose "merges" entries together with locally defined values taking precedence. For `environment` and `labels`, the environment variable or label name determines which value is used:
+result:
 
-      original service:
+```yaml
+services:
+  myservice:
+    # ...
+    expose:
+      - "3000"
+      - "4000"
+      - "5000"
+```
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - FOO=original
-            - BAR=original
-      ```
+### Environment, labels, volumes, and devices
 
-      local service:
+In the case of `environment`, `labels`, `volumes`, and `devices`, Compose "merges" entries together with locally defined values taking precedence. For `environment` and `labels`, the environment variable or label name determines which value is used:
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - BAR=local
-            - BAZ=local
-      ```
+original service:
 
-     result:
+```yaml
+services:
+  myservice:
+    # ...
+    environment:
+      - FOO=original
+      - BAR=original
+```
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - FOO=original
-            - BAR=local
-            - BAZ=local
-      ```
+local service:
 
-   - Entries for `volumes` and `devices` are merged using the mount path in the container:
+```yaml
+services:
+  myservice:
+    # ...
+    environment:
+      - BAR=local
+      - BAZ=local
+```
 
-      original service:
+result:
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./original:/foo
-            - ./original:/bar
-      ```
+```yaml
+services:
+  myservice:
+    # ...
+    environment:
+      - FOO=original
+      - BAR=local
+      - BAZ=local
+```
 
-      local service:
+### Volume and device mount paths
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./local:/bar
-            - ./local:/baz
-      ```
+Entries for `volumes` and `devices` are merged using the mount path in the container:
 
-      result:
+original service:
 
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./original:/foo
-            - ./local:/bar
-            - ./local:/baz
-      ```
+```yaml
+services:
+  myservice:
+    # ...
+    volumes:
+      - ./original:/foo
+      - ./original:/bar
+```
+
+local service:
+
+```yaml
+services:
+  myservice:
+    # ...
+    volumes:
+      - ./local:/bar
+      - ./local:/baz
+```
+
+result:
+
+```yaml
+services:
+  myservice:
+    # ...
+    volumes:
+      - ./original:/foo
+      - ./local:/bar
+      - ./local:/baz
+```
 
 For more merging rules, see [Merge and override](/reference/compose-file/merge.md) in the Compose Specification. 
 
 ### Additional information
 
-- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yaml` and a `compose.override.yaml` file. You must supply at least the `compose.yaml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
+#### Default file discovery
 
-- You can use a `-f` with `-` (dash) as the filename to read the configuration from `stdin`. For example: 
-   ```console
-   $ docker compose -f - <<EOF
-     webapp:
-       image: examples/web
-       ports:
-        - "8000:8000"
-       volumes:
-        - "/data"
-       environment:
-        - DEBUG=1
-     EOF
-   ```
-   
-   When `stdin` is used, all paths in the configuration are relative to the current working directory.
-   
-- You can use the `-f` flag to specify a path to a Compose file that is not located in the current directory, either from the command line or by setting up a [COMPOSE_FILE environment variable](../environment-variables/envvars.md#compose_file) in your shell or in an environment file.
+Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yaml` and a `compose.override.yaml` file. You must supply at least the `compose.yaml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
 
-   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yaml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](/reference/cli/docker/compose/pull/) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yaml pull db`
+#### Read configuration from stdin
 
-   Here's the full example:
+You can use a `-f` with `-` (dash) as the filename to read the configuration from `stdin`. For example: 
+```console
+$ docker compose -f - <<EOF
+  webapp:
+    image: examples/web
+    ports:
+     - "8000:8000"
+    volumes:
+     - "/data"
+    environment:
+     - DEBUG=1
+  EOF
+```
 
-   ```console
-   $ docker compose -f ~/sandbox/rails/compose.yaml pull db
-   Pulling db (postgres:18)...
-   18: Pulling from library/postgres
-   ef0380f84d05: Pull complete
-   50cf91dc1db8: Pull complete
-   d3add4cd115c: Pull complete
-   467830d8a616: Pull complete
-   089b9db7dc57: Pull complete
-   6fba0a36935c: Pull complete
-   81ef0e73c953: Pull complete
-   338a6c4894dc: Pull complete
-   15853f32f67c: Pull complete
-   044c83d92898: Pull complete
-   17301519f133: Pull complete
-   dcca70822752: Pull complete
-   cecf11b8ccf3: Pull complete
-   Digest: sha256:1364924c753d5ff7e2260cd34dc4ba05ebd40ee8193391220be0f9901d4e1651
-   Status: Downloaded newer image for postgres:18
-   ```
+When `stdin` is used, all paths in the configuration are relative to the current working directory.
+
+#### Use files outside the working directory
+
+You can use the `-f` flag to specify a path to a Compose file that is not located in the current directory, either from the command line or by setting up a [COMPOSE_FILE environment variable](../environment-variables/envvars.md#compose_file) in your shell or in an environment file.
+
+For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yaml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](/reference/cli/docker/compose/pull/) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yaml pull db`
+
+Here's the full example:
+
+```console
+$ docker compose -f ~/sandbox/rails/compose.yaml pull db
+Pulling db (postgres:18)...
+18: Pulling from library/postgres
+ef0380f84d05: Pull complete
+50cf91dc1db8: Pull complete
+d3add4cd115c: Pull complete
+467830d8a616: Pull complete
+089b9db7dc57: Pull complete
+6fba0a36935c: Pull complete
+81ef0e73c953: Pull complete
+338a6c4894dc: Pull complete
+15853f32f67c: Pull complete
+044c83d92898: Pull complete
+17301519f133: Pull complete
+dcca70822752: Pull complete
+cecf11b8ccf3: Pull complete
+Digest: sha256:1364924c753d5ff7e2260cd34dc4ba05ebd40ee8193391220be0f9901d4e1651
+Status: Downloaded newer image for postgres:18
+```
 
 ## Example
 

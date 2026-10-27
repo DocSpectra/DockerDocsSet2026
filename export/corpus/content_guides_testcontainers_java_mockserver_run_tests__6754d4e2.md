@@ -5,6 +5,8 @@ description: Run your Testcontainers MockServer integration tests and explore ne
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-mockserver/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-mockserver/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -37,3 +39,7 @@ To learn more about Testcontainers, visit the
 - [Testcontainers MockServer module](https://java.testcontainers.org/modules/mockserver/)
 - [MockServer documentation](https://www.mock-server.com/)
 - [Testcontainers JUnit 5 quickstart](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-mockserver/)

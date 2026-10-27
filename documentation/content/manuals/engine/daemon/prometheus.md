@@ -26,6 +26,13 @@ The following example shows you how to configure your Docker daemon, set up
 Prometheus to run as a container on your local machine, and monitor your Docker
 instance using Prometheus.
 
+- [Configure the daemon](#configure-the-daemon)
+- [Create a Prometheus configuration](#create-a-prometheus-configuration)
+- [Run Prometheus in a container](#run-prometheus-in-a-container)
+- [Open the dashboard](#open-the-prometheus-dashboard)
+- [Use Prometheus](#use-prometheus)
+- [Configure a Prometheus instance on another system](#next-steps)
+
 ### Configure the daemon
 
 To configure the Docker daemon as a Prometheus target, you need to specify the

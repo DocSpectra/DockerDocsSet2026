@@ -18,6 +18,15 @@ weight: 30
 
 You can upgrade or downgrade your Docker subscription at any time to match your changing needs. This page explains how to make subscription changes and what to expect with billing and feature access.
 
+## Choose a subscription change
+
+- [Upgrade](#upgrade-your-subscription)
+- [Review downgrade considerations](#downgrade-considerations) and [downgrade steps](#downgrade-steps)
+- [Review the pause policy](#subscription-pause-policy)
+- [Change the billing cycle](../billing/cycle.md), [manage seats](manage-seats.md), or [add consumption capacity](scale.md)
+
+For payment requirements, see [Payment methods](../billing/payment-method.md) and [3D Secure verification](../billing/3d-secure.md).
+
 ## Upgrade your subscription
 
 When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier.
@@ -47,6 +56,12 @@ Consider the following before downgrading:
 
 For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 
+### Downgrade steps
+
+> [!IMPORTANT]
+>
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
+
 To downgrade your subscription:
 
 1. Sign in to [Docker Home](https://app.docker.com/) and select
@@ -54,10 +69,6 @@ To downgrade your subscription:
 1. Select **Billing**.
 1. Select the action icon and then **Cancel subscription**.
 1. Fill out the feedback survey to continue with cancellation.
-
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 
 ## Subscription pause policy
 

@@ -30,6 +30,14 @@ To follow the examples in this guide, you'll need:
 
 Run `docker context` to verify that your Docker client supports contexts.
 
+## Find a context task
+
+- [List and inspect contexts](#the-anatomy-of-a-context)
+- [Create a context](#create-a-new-context)
+- [Switch or override the current context](#use-a-different-context)
+- [Export and import contexts](#exporting-and-importing-docker-contexts)
+- [Update a context](#updating-a-context)
+
 ## The anatomy of a context
 
 A context is a combination of several properties. These include:
@@ -78,7 +86,7 @@ $ docker context inspect default
 ]
 ```
 
-### Create a new context
+## Create a new context
 
 You can create new contexts with the `docker context create` command.
 

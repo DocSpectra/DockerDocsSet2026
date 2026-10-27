@@ -22,6 +22,9 @@ Docker account, pull and run an image, and compare it with a Docker Official Ima
 > Hub to enable customization, SLA-backed security updates, and access to
 > compliance variants.
 
+For authentication options, see [Use an image](./how-to/use.md). For build and
+runtime caveats, see the [migration checklist](./migration/checklist.md).
+
 ## Step 1: Find an image to use
 
 1. Go to the Hardened Images catalog in [Docker

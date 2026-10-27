@@ -42,4 +42,16 @@ A Docker account is required to:
 - Receive organization invitations
 - Manage your personal settings and security features
 
+## Find an account task
+
+- [Create and verify an account](create-account.md#create-and-verify-your-account)
+- [Sign in](create-account.md#sign-in-to-your-account) or [reset a forgotten password](create-account.md#reset-your-password)
+- [Update account information, email, or password](manage-account.md)
+- [Manage connected Google or GitHub accounts](manage-account.md#manage-connected-accounts)
+- [Create and use personal access tokens](../security/access-tokens.md)
+- [Enable or disable two-factor authentication](../security/2fa/_index.md) or [recover access](../security/2fa/recover-hub-account.md)
+- [Review prerequisites for deactivating an account](deactivate-user-account.md#prerequisites)
+
+## Account resources
+
 {{< grid >}}

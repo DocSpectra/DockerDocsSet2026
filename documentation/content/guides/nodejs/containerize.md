@@ -12,6 +12,22 @@ aliases:
   - /guides/language/nodejs/containerize/
 ---
 
+[Node.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Get the sample application](#get-the-sample-application)
+- [Generate Docker files](#generate-a-dockerfile)
+- [Configure Compose services](#create-a-docker-compose-file)
+- [Configure environment variables](#create-environment-configuration)
+- [Choose a base image and configure the Dockerfile](#step-1-configure-the-dockerfile)
+- [Configure .dockerignore](#step-2-configure-the-dockerignore-file)
+- [Build the image](#step-3-build-the-nodejs-application-image)
+- [Run the application](#run-the-containerized-application)
+- [Check the running container](#check-the-running-container)
+- [Stop the application](#stop-the-application)
+
 ## Prerequisites
 
 Before you begin, make sure the following tools are installed and available on your system:
@@ -727,7 +743,7 @@ What this command does:
 - Packages the application and its dependencies into a Docker image
 - Tags the image as docker-nodejs-sample so you can reference it later
 
-#### Step 4: View local images
+### Step 4: View local images
 
 After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, use the Docker CLI.
 
@@ -772,6 +788,8 @@ The development application will start with both servers:
 - **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with React frontend
 - **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
 
+### Run the production service
+
 For production deployment, you can use:
 
 ```console
@@ -793,6 +811,8 @@ $ docker compose up app-dev --build -d
 ```
 
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000) (API) or [http://localhost:5173](http://localhost:5173) (frontend). You should see the Todo application running.
+
+### Check the running container
 
 To confirm that the container is running, use `docker ps` command:
 
@@ -820,6 +840,8 @@ $ docker compose up app-prod -d
 # Run tests
 $ docker compose up app-test -d
 ```
+
+### Stop the application
 
 To stop the application, run:
 
@@ -873,3 +895,5 @@ Explore official references and best practices to sharpen your Docker workflow:
 With your Node.js application now containerized, you're ready to move on to the next step.
 
 In the next section, you'll learn how to develop your application using Docker containers, enabling a consistent, isolated, and reproducible development environment across any machine.
+
+Continue to [development](develop.md).

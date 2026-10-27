@@ -19,6 +19,8 @@ service options in one place and refer to it from anywhere. You can refer to
 another Compose file and select a service you want to also use in your own
 application, with the ability to override some attributes for your own needs.
 
+## Path requirements
+
 > [!IMPORTANT]
 >
 > When you use multiple Compose files, you must make sure all paths in the files
@@ -190,6 +192,12 @@ services:
     env_file: 
       - ../commons/container.env
 ```
+
+## Related tasks
+
+- [Include whole Compose files](include.md)
+- [Merge Compose files](merge.md)
+- [Inspect the dependency chain and full configuration](../../trust-model.md#the-dependency-chain)
 
 ## Reference information
 

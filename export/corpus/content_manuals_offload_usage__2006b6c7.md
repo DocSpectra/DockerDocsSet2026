@@ -12,6 +12,14 @@ keywords: cloud, usage, Offload
 The **Offload activity** page in Docker Home provides visibility into user
 activity and session metrics for Docker Offload.
 
+## Monitor usage
+
+- [Review overview metrics](#overview-metrics)
+- [Filter data or download a CSV](#filter-and-export-your-data)
+- [Explore activity cards](#activity-cards)
+- [Inspect individual sessions](#offload-sessions)
+- [View a current session in Docker Desktop](quickstart.md#step-4-monitor-your-offload-session)
+
 To monitor your usage:
 
 1. Sign in to [Docker Home](https://app.docker.com/).
@@ -77,3 +85,9 @@ A detailed list of Offload sessions appears following the activity cards. The li
   permissions, or **My Offload sessions** if viewing only your own data
 
 Select any session to view more details in a side panel.
+
+## Related guidance
+
+- [Session management and idle state](about.md#session-management-and-idle-state)
+- [Fair use policy](about.md#fair-use)
+- [Optimize Docker Offload usage](optimize.md)

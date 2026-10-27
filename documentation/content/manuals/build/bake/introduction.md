@@ -10,6 +10,8 @@ Bake is an abstraction for the `docker build` command that lets you more easily
 manage your build configuration (CLI flags, environment variables, etc.) in a
 consistent way for everyone on your team.
 
+## Prerequisite
+
 Bake is a command built into the Buildx CLI, so as long as you have Buildx
 installed, you also have access to bake, via the `docker buildx bake` command.
 

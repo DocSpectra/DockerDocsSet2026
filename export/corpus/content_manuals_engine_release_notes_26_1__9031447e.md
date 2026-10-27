@@ -14,6 +14,17 @@ For more information about:
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [26.1.4](#2614) |
+| Security sections | [26.1.4](#2614) |
+| Release notices | [26.1.1](#2611) |
+| Initial release entry | [26.1.0](#2610) |
+
 ## 26.1.4
 
 {{< release-date date="2024-06-05" >}}

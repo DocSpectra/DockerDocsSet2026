@@ -7,6 +7,8 @@ tags: [Troubleshooting]
 weight: 30
 ---
 
+Choose a task: [Identify the error](#error-message) · [Review the possible cause](#possible-cause) · [Follow the recovery steps](#solution) · [Get help if it persists](#if-the-dialog-persists) · [Prevent recurrence](#prevention).
+
 ## Error message
 
 macOS shows the following dialog when you try to open Docker Desktop:

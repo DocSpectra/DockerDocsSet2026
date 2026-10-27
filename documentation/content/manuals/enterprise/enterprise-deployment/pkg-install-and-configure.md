@@ -12,6 +12,22 @@ aliases:
 
 The PKG package supports various MDM (Mobile Device Management) solutions, making it ideal for bulk installations and eliminating the need for manual setups by individual users. With this package, IT administrators can ensure standardized, policy-driven installations of Docker Desktop, enhancing efficiency and software management across their organizations.
 
+## Choose a task
+
+- [Install interactively](#install-interactively).
+- [Install from the command line](#install-from-the-command-line).
+- [Review update behavior](#updates).
+
+## Updates
+
+> [!NOTE]
+>
+> When installing Docker Desktop with the PKG, in-app updates are automatically disabled. This ensures organizations can maintain version consistency and prevent unapproved updates. For Docker Desktop installed with the `.dmg` installer, in-app updates remain supported.
+>
+> Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the **Enterprise deployment** page.
+>
+> To keep up to date with new releases, check the [release notes](/manuals/desktop/release-notes.md) page.
+
 ## Install interactively
 
 1. In [Docker Home](http://app.docker.com), choose your organization.
@@ -25,14 +41,6 @@ The PKG package supports various MDM (Mobile Device Management) solutions, makin
    - **Installation Type**: Select **Install**.
    - **Installation**: Authenticate using your administrator password or Touch ID.
    - **Summary**: When the installation completes, select **Close**.
-
-> [!NOTE]
->
-> When installing Docker Desktop with the PKG, in-app updates are automatically disabled. This ensures organizations can maintain version consistency and prevent unapproved updates. For Docker Desktop installed with the `.dmg` installer, in-app updates remain supported.
->
-> Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the **Enterprise deployment** page.
->
-> To keep up to date with new releases, check the [release notes](/manuals/desktop/release-notes.md) page.
 
 ## Install from the command line
 
@@ -48,4 +56,4 @@ The PKG package supports various MDM (Mobile Device Management) solutions, makin
 ## Additional resources
 
 - See how you can deploy Docker Desktop for Mac using [Intune](use-intune.md) or [Jamf Pro](use-jamf-pro.md)
-- Explore how to [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/methods.md#plist-method-mac-only) for your users.
+- Explore how to [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/methods.md#mac-plist-file-method) for your users.

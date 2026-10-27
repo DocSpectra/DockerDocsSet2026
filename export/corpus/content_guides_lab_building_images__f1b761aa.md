@@ -28,6 +28,12 @@ Take a working but naïve Dockerfile and progressively improve it into a
 production-grade image. Each section introduces one technique, applied to
 a real Python Flask app, so you can see the impact directly.
 
+## Find your starting point
+
+- [Launch the lab](#launch-the-lab).
+- [Review the learning goals](#what-youll-learn).
+- [Browse the modules](#modules).
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-building-images" >}}
@@ -54,3 +60,12 @@ By the end of this Labspace, you will have completed the following:
 | 5   | Choosing a Base Image      | Compare slim, Alpine, and Docker Hardened Images                       |
 | 6   | Build Secrets              | Show why `ARG` leaks secrets and use `--mount=type=secret` safely      |
 | 7   | Wrap-up                    | Review the complete best-practices checklist and next steps            |
+
+## Related build documentation
+
+- [Dockerfile best practices](/manuals/build/building/best-practices.md).
+- [Optimize build cache](/manuals/build/cache/optimize.md).
+- [.dockerignore files](/manuals/build/concepts/context.md#dockerignore-files).
+- [Multi-stage builds](/manuals/build/building/multi-stage.md).
+- [Base images](/manuals/build/building/base-images.md).
+- [Build secrets](/manuals/build/building/secrets.md).

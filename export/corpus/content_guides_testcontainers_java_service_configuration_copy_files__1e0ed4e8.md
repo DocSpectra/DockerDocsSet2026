@@ -5,6 +5,8 @@ description: Initialize containers by copying files into specific locations.
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-service-configuration/#prerequisites)
+
 Sometimes you need to initialize a container by placing files in a specific
 location. For example, PostgreSQL runs SQL scripts from
 `/docker-entrypoint-initdb.d/` when the container starts.
@@ -78,6 +80,8 @@ The `withCopyFileToContainer(MountableFile, String)` method copies `init-db.sql`
 from the classpath into `/docker-entrypoint-initdb.d/` inside the container.
 PostgreSQL executes scripts in that directory automatically at startup.
 
+## Copy a file from the host
+
 You can also copy files from any path on the host:
 
 ```java
@@ -86,3 +90,7 @@ You can also copy files from any path on the host:
     "/docker-entrypoint-initdb.d/"
 );
 ```
+
+## Continue
+
+[Next: Execute commands](/guides/testcontainers-java-service-configuration/exec-in-container/)

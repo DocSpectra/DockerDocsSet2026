@@ -26,6 +26,14 @@ extractive summarizations. This works by first embedding the sentences, then
 running a clustering algorithm, finding the sentences that are closest to the
 cluster's centroids.
 
+## Find a task
+
+- [Check prerequisites](#prerequisites)
+- [Get the sample](#get-the-sample-application)
+- [Build, run, and test the application](#run-the-application), including the Windows line-ending note
+- [Explore the Dockerfile and entrypoint](#explore-the-application-environment)
+- [Explore application code and dependencies](#explore-the-application-code)
+
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
@@ -56,98 +64,90 @@ cluster's centroids.
    README.md
    ```
 
-## Explore the application code
+## Run the application
 
-The source code for the text summarization application is in the `Docker-NLP/04_text_summarization.py` file. Open `04_text_summarization.py` in a text or code editor to explore its contents in the following steps.
+To run the application using Docker:
 
-1. Import the required libraries.
+1. Build the image.
 
-   ```python
-   from summarizer import Summarizer
+   In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
+
+   ```console
+   $ docker build -t basic-nlp .
    ```
 
-   This line of code imports the `Summarizer` class from the `summarizer`
-   package, essential for your text summarization application. The summarizer
-   module implements the Bert Extractive Summarizer, leveraging the HuggingFace
-   Pytorch transformers library, renowned in the NLP (Natural Language
-   Processing) domain. This library offers access to pre-trained models like
-   BERT, which revolutionized language understanding tasks, including text
-   summarization.
+   The following is a break down of the command:
 
-   The BERT model, or Bidirectional Encoder Representations from Transformers,
-   excels in understanding context in language, using a mechanism known as
-   "attention" to determine the significance of words in a sentence. For
-   summarization, the model embeds sentences and then uses a clustering
-   algorithm to identify key sentences, those closest to the centroids of these
-   clusters, effectively capturing the main ideas of the text.
+   - `docker build`: This is the primary command used to build a Docker image
+     from a Dockerfile and a context. The context is typically a set of files at
+     a specified location, often the directory containing the Dockerfile.
+   - `-t basic-nlp`: This is an option for tagging the image. The `-t` flag
+     stands for tag. It assigns a name to the image, which in this case is
+     `basic-nlp`. Tags are a convenient way to reference images later,
+     especially when pushing them to a registry or running containers.
+   - `.`: This is the last part of the command and specifies the build context.
+     The period (`.`) denotes the current directory. Docker will look for a
+     Dockerfile in this directory. The build context (the current directory, in
+     this case) is sent to the Docker daemon to enable the build. It includes
+     all the files and subdirectories in the specified directory.
 
-2. Specify the main execution block.
+   For more details, see the [docker build CLI reference](/reference/cli/docker/buildx/build/).
 
-   ```python
-   if __name__ == "__main__":
+   Docker outputs several logs to your console as it builds the image. You'll
+   see it download and install the dependencies. Depending on your network
+   connection, this may take several minutes. Docker does have a caching
+   feature, so subsequent builds can be faster. The console will
+   return to the prompt when it's complete.
+
+2. Run the image as a container.
+
+   In a terminal, run the following command.
+
+   ```console
+   $ docker run -it basic-nlp 04_text_summarization.py
    ```
 
-   This Python idiom ensures that the following code block runs only if this
-   script is the main program. It provides flexibility, allowing the script to
-   function both as a standalone program and as an imported module.
+   The following is a break down of the command:
 
-3. Create an infinite loop for continuous input.
+   - `docker run`: This is the primary command used to run a new container from
+     a Docker image.
+   - `-it`: This is a combination of two options:
+     - `-i` or `--interactive`: This keeps the standard input (STDIN) open even
+       if not attached. It lets the container remain running in the
+       foreground and be interactive.
+     - `-t` or `--tty`: This allocates a pseudo-TTY, essentially simulating a
+       terminal, like a command prompt or a shell. It's what lets you
+       interact with the application inside the container.
+   - `basic-nlp`: This specifies the name of the Docker image to use for
+     creating the container. In this case, it's the image named `basic-nlp` that
+     you created with the `docker build` command.
+   - `04_text_summarization.py`: This is the script you want to run inside the
+     Docker container. It gets passed to the `entrypoint.sh` script, which runs
+     it when the container starts.
 
-   ```python
-      while True:
-         input_text = input("Enter the text for summarization (type 'exit' to end): ")
+   For more details, see the [docker run CLI reference](/reference/cli/docker/container/run/).
 
-         if input_text.lower() == 'exit':
-            print("Exiting...")
-            break
+   > [!NOTE]
+   >
+   > For Windows users, you may get an error when running the container. Verify
+   > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),
+   > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](/desktop/troubleshoot-and-support/troubleshoot/topics/#Unexpected-syntax-errors-use-Unix-style-line endings-for-files-in-containers).
+
+   You will see the following in your console after the container starts.
+
+   ```console
+   Enter the text for summarization (type 'exit' to end):
    ```
 
-   An infinite loop continuously prompts you for text
-   input, ensuring interactivity. The loop breaks when you type `exit`, allowing
-   you to control the application flow effectively.
+3. Test the application.
 
-4. Create an instance of Summarizer.
+   Enter some text to get the text summarization.
 
-   ```python
-         bert_model = Summarizer()
+   ```console
+   Enter the text for summarization (type 'exit' to end): Artificial intelligence (AI) is a branch of computer science that aims to create machines capable of intelligent behavior. These machines are designed to mimic human cognitive functions such as learning, problem-solving, and decision-making. AI technologies can be classified into two main types: narrow or weak AI, which is designed for a particular task, and general or strong AI, which possesses the ability to understand, learn, and apply knowledge across various domains. One of the most popular approaches in AI is machine learning, where algorithms are trained on large datasets to recognize patterns and make predictions.
+
+   Artificial intelligence (AI) is a branch of computer science that aims to create machines capable of intelligent behavior. These machines are designed to mimic human cognitive functions such as learning, problem-solving, and decision-making.
    ```
-
-   Here, you create an instance of the Summarizer class named `bert_model`. This
-   instance is now ready to perform the summarization task using the BERT model,
-   simplifying the complex processes of embedding sentences and clustering into
-   an accessible interface.
-
-5. Generate and print a summary.
-
-   ```python
-   summary = bert_model(input_text)
-   print(summary)
-   ```
-
-   Your input text is processed by the bert_model instance, which then returns a
-   summarized version. This demonstrates the power of Python's high-level
-   libraries in enabling complex operations with minimal code.
-
-6. Create `requirements.txt`. The sample application already contains the
-   `requirements.txt` file to specify the necessary modules that the
-   application imports. Open `requirements.txt` in a code or text editor to
-   explore its contents.
-
-   ```text
-   ...
-
-   # 04 text_summarization
-   bert-extractive-summarizer==0.10.1
-
-   ...
-
-   torch==2.1.2
-   ```
-
-   The `bert-extractive-summarizer` and `torch` modules are required for the
-   text summarization application. The summarizer module generates a summary of
-   the input text. This requires PyTorch because the underlying BERT model,
-   which is used for generating the summary, is implemented in PyTorch.
 
 ## Explore the application environment
 
@@ -257,90 +257,98 @@ The following steps explain each part of the `Dockerfile`. For more details, see
    editor. As the sample contains several applications, the script lets you
    specify which application to run when the container starts.
 
-## Run the application
+## Explore the application code
 
-To run the application using Docker:
+The source code for the text summarization application is in the `Docker-NLP/04_text_summarization.py` file. Open `04_text_summarization.py` in a text or code editor to explore its contents in the following steps.
 
-1. Build the image.
+1. Import the required libraries.
 
-   In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
-
-   ```console
-   $ docker build -t basic-nlp .
+   ```python
+   from summarizer import Summarizer
    ```
 
-   The following is a break down of the command:
+   This line of code imports the `Summarizer` class from the `summarizer`
+   package, essential for your text summarization application. The summarizer
+   module implements the Bert Extractive Summarizer, leveraging the HuggingFace
+   Pytorch transformers library, renowned in the NLP (Natural Language
+   Processing) domain. This library offers access to pre-trained models like
+   BERT, which revolutionized language understanding tasks, including text
+   summarization.
 
-   - `docker build`: This is the primary command used to build a Docker image
-     from a Dockerfile and a context. The context is typically a set of files at
-     a specified location, often the directory containing the Dockerfile.
-   - `-t basic-nlp`: This is an option for tagging the image. The `-t` flag
-     stands for tag. It assigns a name to the image, which in this case is
-     `basic-nlp`. Tags are a convenient way to reference images later,
-     especially when pushing them to a registry or running containers.
-   - `.`: This is the last part of the command and specifies the build context.
-     The period (`.`) denotes the current directory. Docker will look for a
-     Dockerfile in this directory. The build context (the current directory, in
-     this case) is sent to the Docker daemon to enable the build. It includes
-     all the files and subdirectories in the specified directory.
+   The BERT model, or Bidirectional Encoder Representations from Transformers,
+   excels in understanding context in language, using a mechanism known as
+   "attention" to determine the significance of words in a sentence. For
+   summarization, the model embeds sentences and then uses a clustering
+   algorithm to identify key sentences, those closest to the centroids of these
+   clusters, effectively capturing the main ideas of the text.
 
-   For more details, see the [docker build CLI reference](/reference/cli/docker/buildx/build/).
+2. Specify the main execution block.
 
-   Docker outputs several logs to your console as it builds the image. You'll
-   see it download and install the dependencies. Depending on your network
-   connection, this may take several minutes. Docker does have a caching
-   feature, so subsequent builds can be faster. The console will
-   return to the prompt when it's complete.
-
-2. Run the image as a container.
-
-   In a terminal, run the following command.
-
-   ```console
-   $ docker run -it basic-nlp 04_text_summarization.py
+   ```python
+   if __name__ == "__main__":
    ```
 
-   The following is a break down of the command:
+   This Python idiom ensures that the following code block runs only if this
+   script is the main program. It provides flexibility, allowing the script to
+   function both as a standalone program and as an imported module.
 
-   - `docker run`: This is the primary command used to run a new container from
-     a Docker image.
-   - `-it`: This is a combination of two options:
-     - `-i` or `--interactive`: This keeps the standard input (STDIN) open even
-       if not attached. It lets the container remain running in the
-       foreground and be interactive.
-     - `-t` or `--tty`: This allocates a pseudo-TTY, essentially simulating a
-       terminal, like a command prompt or a shell. It's what lets you
-       interact with the application inside the container.
-   - `basic-nlp`: This specifies the name of the Docker image to use for
-     creating the container. In this case, it's the image named `basic-nlp` that
-     you created with the `docker build` command.
-   - `04_text_summarization.py`: This is the script you want to run inside the
-     Docker container. It gets passed to the `entrypoint.sh` script, which runs
-     it when the container starts.
+3. Create an infinite loop for continuous input.
 
-   For more details, see the [docker run CLI reference](/reference/cli/docker/container/run/).
+   ```python
+      while True:
+         input_text = input("Enter the text for summarization (type 'exit' to end): ")
 
-   > [!NOTE]
-   >
-   > For Windows users, you may get an error when running the container. Verify
-   > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),
-   > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](/desktop/troubleshoot-and-support/troubleshoot/topics/#Unexpected-syntax-errors-use-Unix-style-line endings-for-files-in-containers).
-
-   You will see the following in your console after the container starts.
-
-   ```console
-   Enter the text for summarization (type 'exit' to end):
+         if input_text.lower() == 'exit':
+            print("Exiting...")
+            break
    ```
 
-3. Test the application.
+   An infinite loop continuously prompts you for text
+   input, ensuring interactivity. The loop breaks when you type `exit`, allowing
+   you to control the application flow effectively.
 
-   Enter some text to get the text summarization.
+4. Create an instance of Summarizer.
 
-   ```console
-   Enter the text for summarization (type 'exit' to end): Artificial intelligence (AI) is a branch of computer science that aims to create machines capable of intelligent behavior. These machines are designed to mimic human cognitive functions such as learning, problem-solving, and decision-making. AI technologies can be classified into two main types: narrow or weak AI, which is designed for a particular task, and general or strong AI, which possesses the ability to understand, learn, and apply knowledge across various domains. One of the most popular approaches in AI is machine learning, where algorithms are trained on large datasets to recognize patterns and make predictions.
-
-   Artificial intelligence (AI) is a branch of computer science that aims to create machines capable of intelligent behavior. These machines are designed to mimic human cognitive functions such as learning, problem-solving, and decision-making.
+   ```python
+         bert_model = Summarizer()
    ```
+
+   Here, you create an instance of the Summarizer class named `bert_model`. This
+   instance is now ready to perform the summarization task using the BERT model,
+   simplifying the complex processes of embedding sentences and clustering into
+   an accessible interface.
+
+5. Generate and print a summary.
+
+   ```python
+   summary = bert_model(input_text)
+   print(summary)
+   ```
+
+   Your input text is processed by the bert_model instance, which then returns a
+   summarized version. This demonstrates the power of Python's high-level
+   libraries in enabling complex operations with minimal code.
+
+6. Create `requirements.txt`. The sample application already contains the
+   `requirements.txt` file to specify the necessary modules that the
+   application imports. Open `requirements.txt` in a code or text editor to
+   explore its contents.
+
+   ```text
+   ...
+
+   # 04 text_summarization
+   bert-extractive-summarizer==0.10.1
+
+   ...
+
+   torch==2.1.2
+   ```
+
+   The `bert-extractive-summarizer` and `torch` modules are required for the
+   text summarization application. The summarizer module generates a summary of
+   the input text. This requires PyTorch because the underlying BERT model,
+   which is used for generating the summary, is implemented in PyTorch.
 
 ## Summary
 
@@ -359,4 +367,4 @@ Related information:
 
 ## Next steps
 
-Explore more [natural language processing guides](./_index.md).
+Explore more [natural language processing guides](ai-task-guides.md#natural-language-processing) or browse [all guides](./_index.md).

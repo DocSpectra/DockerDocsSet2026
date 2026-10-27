@@ -12,6 +12,7 @@ You can use webhooks to cause an action in another service in response to a push
 ## Create a webhook
 
 To create a webhook:
+
 1. In your chosen repository, select the **Webhooks** tab.
 2. Provide a name for the webhook.
 3. Provide a destination webhook URL. This is where webhook POST requests are delivered.
@@ -20,6 +21,7 @@ To create a webhook:
 ## View webhook delivery history
 
 To view the history of the webhook:
+
 1. Hover over your webhook under the **Current Webhooks section**.
 2. Select the **Menu options** icon.
 3. Select **View History**.
@@ -27,6 +29,10 @@ To view the history of the webhook:
 You can then view the delivery history, and whether delivering the POST request was successful or not.
 
 ## Example webhook payload
+
+> [!NOTE]
+>
+> The `callback_url` field is a legacy field and is no longer supported.
 
 Webhook payloads have the following JSON format:
 
@@ -57,7 +63,3 @@ Webhook payloads have the following JSON format:
   }
 }
 ```
-
-> [!NOTE]
->
-> The `callback_url` field is a legacy field and is no longer supported.

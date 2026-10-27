@@ -5,6 +5,8 @@ description: Test external REST API integrations using the Testcontainers MockSe
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-mockserver/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-mockserver/create-project/)
+
 Mocking external API interactions at the HTTP protocol level, rather than
 mocking Java methods, lets you verify marshalling and unmarshalling behavior and
 simulate network issues.
@@ -147,6 +149,8 @@ class AlbumControllerTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@SpringBootTest` starts the full application on a random port.
@@ -164,3 +168,7 @@ Here's what the test does:
   reached MockServer.
 - `shouldReturn404StatusWhenAlbumNotFound()` configures MockServer to return a
   404 status and verifies the application propagates that status to the caller.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-mockserver/run-tests/)

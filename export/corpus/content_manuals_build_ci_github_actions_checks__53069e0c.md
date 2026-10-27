@@ -8,6 +8,11 @@ keywords: github actions, gha, build, checks
 [Build checks](/manuals/build/checks.md) let you validate your `docker build`
 configuration without actually running the build.
 
+Choose [build-push-action](#run-checks-with-dockerbuild-push-action) or
+[bake-action](#run-checks-with-dockerbake-action), including the
+[direct `call` input](#using-the-call-input-directly).
+For image execution tests, see [Test before push](test-before-push.md).
+
 ## Run checks with `docker/build-push-action`
 
 To run build checks in a GitHub Actions workflow with the `build-push-action`,

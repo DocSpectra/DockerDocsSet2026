@@ -20,6 +20,12 @@ product, including how to set up and configure them, see the following manuals:
 - [Testcontainers Cloud](https://testcontainers.com/cloud/docs/#getting-started)
 - [Docker Offload](../../../offload/_index.md)
 
+## Choose a product task
+
+- [Manage access](#manage-product-access-for-your-organization) using the product tabs below
+- [Monitor product usage](#monitor-product-usage-for-your-organization)
+- [Scale consumption](../../../subscription/scale.md) or [manage subscription seats](../../../subscription/manage-seats.md)
+
 ## Manage product access for your organization
 
 Access to the Docker products included in your subscription is turned on by

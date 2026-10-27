@@ -6,7 +6,7 @@ weight: 30
 
 <!-- vale Docker.HeadingLength = NO -->
 
-### Do I need to maintain a separate Compose file for my development, testing, and staging environments?
+## Do I need to maintain a separate Compose file for my development, testing, and staging environments?
 
 You don't necessarily need to maintain entirely separate Compose files for your
 development, testing, and staging environments. You can define all your
@@ -27,7 +27,7 @@ leaving the rest inactive.
 For more information on using profiles, see [Using profiles with
 Compose](/compose/how-tos/profiles/).
 
-### How can I enforce the database service to start up before the frontend service?
+## How can I enforce the database service to start up before the frontend service?
 
 Docker Compose ensures services start in a specific order by using the
 `depends_on` property. This tells Compose to start the database service before
@@ -45,7 +45,7 @@ handle requests.
 For more information on setting the startup order of your services, see
 [Control startup and shutdown order in Compose](/compose/how-tos/startup-order/).
 
-### Can I use Compose to build a Docker image?
+## Can I use Compose to build a Docker image?
 
 Yes, you can use Docker Compose to build Docker images. Docker Compose is a
 tool for defining and running multi-container applications. Even if your
@@ -58,20 +58,25 @@ the build context and Dockerfile for each service. When you run the command
 service and then start the containers.
 
 For more information on building Docker images using Compose, see the [Compose
-Build Specification](/compose/compose-file/build/).
+Build Specification](/reference/compose-file/build.md).
 
-### What is the difference between Docker Compose and Dockerfile?
+## What is the difference between Docker Compose and Dockerfile?
 
 A Dockerfile provides instructions to build a container image while a Compose
 file defines your running containers. Quite often, a Compose file references a
 Dockerfile to build an image to use for a particular service.
 
-### What is the difference between the `docker compose up` and `docker compose run` commands?
+## What is the difference between the `docker compose up` and `docker compose run` commands?
 
 The `docker compose up` command creates and starts all your services. It's
 perfect for launching your development environment or running the entire
 application. The `docker compose run` command focuses on individual services.
 It starts a specified service along with its dependencies, allowing you to run
 tests or perform one-off tasks within that container.
+
+## Continue with Compose
+
+- [Browse Compose how-tos](/manuals/compose/how-tos/_index.md)
+- [Follow the Quickstart](/manuals/compose/gettingstarted.md)
 
 <div id="compose-lp-survey-anchor"></div>

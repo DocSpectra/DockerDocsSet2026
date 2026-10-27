@@ -7,6 +7,13 @@ keywords: Docker, ai, model runner, examples, github actions, genai, sample proj
 
 See some examples of complete workflows using Docker Model Runner.
 
+## Choose an example
+
+- [Run the sample GenAI application](#sample-project)
+- [Use Model Runner in GitHub Actions](#use-model-runner-in-github-actions)
+
+For setup, see [Get started with DMR](get-started.md).
+
 ## Sample project
 
 You can now start building your generative AI application powered by Docker

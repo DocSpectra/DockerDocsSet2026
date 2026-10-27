@@ -69,3 +69,8 @@ With image signatures, you can:
 - [Provenance attestations](/build/metadata/attestations/slsa-provenance/)
 - [Image signatures](./signatures.md)
 - [Attestations overview](./attestations.md)
+
+## Related tasks
+
+- [Retrieve and verify attestations](../how-to/verify.md)
+- [Build child images with provenance](../how-to/scan-child-images.md#build-child-images-with-provenance-attestations)

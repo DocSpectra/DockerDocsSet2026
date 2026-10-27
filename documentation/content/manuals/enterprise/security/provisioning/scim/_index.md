@@ -58,6 +58,10 @@ SCIM automates:
 > For more information, see
 > [Manage organization members](/manuals/admin/organization/manage/members.md).
 
+## Set up SCIM
+
+Follow [Set up SCIM provisioning](provision-scim.md) to configure Docker and your IdP, map roles, test provisioning, or disable SCIM.
+
 ## Next steps
 
 - [Migrate JIT to SCIM](/manuals/enterprise/security/provisioning/scim/migrate-scim.md) if users were provisioned with Just-in-Time (JIT) before you enabled SCIM.

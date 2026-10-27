@@ -11,6 +11,8 @@ aliases:
   - /guides/language/ruby/containerize/
 ---
 
+[Ruby on Rails guide overview](_index.md)
+
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
@@ -233,6 +235,8 @@ CMD ["./bin/thrust", "./bin/rails", "server"]
 {{< /tab >}}
 {{< /tabs >}}
 
+### Application server alternatives
+
 The Dockerfile above assumes you are using Thruster together with Puma as an application server. In case you are using any other server, you can replace the last three lines with the following:
 
 ```dockerfile
@@ -240,6 +244,8 @@ The Dockerfile above assumes you are using Thruster together with Puma as an app
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
 ```
+
+### Create the entrypoint script
 
 This Dockerfile uses a script at `./bin/docker-entrypoint` as the container's entrypoint. This script prepares the database and runs the application server. Below is an example of such a script.
 
@@ -259,6 +265,8 @@ fi
 
 exec "${@}"
 ```
+
+### Create the Docker ignore file
 
 Besides the two files above you will also need a `.dockerignore` file. This file is used to exclude files and directories from the context of the build. Below is an example of a `.dockerignore` file.
 
@@ -311,6 +319,8 @@ Besides the two files above you will also need a `.dockerignore` file. This file
 /.dockerignore
 /Dockerfile*
 ```
+
+### Create the optional Compose file
 
 The last optional file that you may want is the `compose.yaml` file, which is used by Docker Compose to define the services that make up the application. Since SQLite is being used as the database, there is no need to define a separate service for the database. The only service required is the Rails application itself.
 
@@ -386,3 +396,4 @@ Related information:
 
 In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
 
+Continue: [Configure GitHub Actions](configure-github-actions.md).

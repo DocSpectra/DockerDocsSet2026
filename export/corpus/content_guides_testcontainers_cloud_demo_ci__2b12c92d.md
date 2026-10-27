@@ -4,6 +4,12 @@ description: Use Testcontainers Cloud with GitHub Workflows to automate testing 
 weight: 30
 ---
 
+[Guide overview](/guides/testcontainers-cloud/)
+
+For setup details, see [project integration](/guides/testcontainers-cloud/common-questions/#how-do-i-integrate-testcontainers-cloud-into-my-project).
+
+## Watch the CI demo
+
 {{< youtube-embed "NlZY9aumKJU" >}}
 
 This demo shows how Testcontainers Cloud can be seamlessly integrated into a
@@ -21,3 +27,7 @@ making it an ideal solution for modern, containerized development workflows.
 - Understand how to set up a GitHub Actions workflow to automate the build and testing of a project.   
 - Learn how to configure Testcontainers Cloud within GitHub Actions to offload containerized testing to the cloud, improving efficiency and resource management.
 - Explore how Testcontainers Cloud integrates with GitHub workflows to run integration tests that require containerized services, such as databases and message brokers.
+
+## Continue
+
+[Next: Runtime, configuration, cleanup, and pricing questions](/guides/testcontainers-cloud/common-questions/)

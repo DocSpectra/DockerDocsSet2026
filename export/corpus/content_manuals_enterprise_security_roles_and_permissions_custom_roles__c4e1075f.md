@@ -10,6 +10,14 @@ Custom roles allow you to create tailored permission sets that match your
 organization's specific needs. This page covers custom roles and steps
 to create and manage them.
 
+## Choose a role task
+
+- [Check prerequisites](#prerequisites) and [create a custom role](#create-a-custom-role).
+- [Edit a role](#edit-a-custom-role).
+- [Assign roles](#assign-custom-roles) or [view assignments](#view-role-assignments).
+- [Reassign users and teams](#reassign-custom-roles) before [deleting a role](#delete-a-custom-role).
+- [Look up available permissions](#custom-roles-permissions-reference).
+
 ## What are custom roles?
 
 Custom roles let you create tailored permission sets for your organization. You

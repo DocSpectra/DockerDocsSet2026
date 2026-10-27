@@ -1,5 +1,5 @@
 ---
-title: Use a proxy server with the Docker CLI
+title: Configure proxy settings for containers and builds
 linkTitle: Proxy configuration
 weight: 20
 description: How to configure the Docker client CLI to use a proxy server
@@ -23,6 +23,7 @@ configure it in different ways:
 
 - [Configure the Docker client](#configure-the-docker-client)
 - [Set proxy using the CLI](#set-proxy-using-the-cli)
+- [Review proxy settings in build environments](#proxy-as-environment-variable-for-builds)
 
 > [!NOTE]
 >
@@ -39,6 +40,23 @@ You can add proxy configurations for the Docker client using a JSON
 configuration file, located in `~/.docker/config.json`.
 Builds and containers use the configuration specified in this file.
 
+These settings are used to configure proxy environment variables for containers
+only, and not used as proxy settings for the Docker CLI or the Docker Engine
+itself.
+Refer to the [environment variables](/reference/cli/docker/#environment-variables)
+and [configure the Docker daemon to use a proxy server](/manuals/engine/daemon/proxy.md)
+sections for configuring proxy settings for the CLI and daemon.
+
+> [!WARNING]
+>
+> Proxy settings may contain sensitive information. For example, some proxy servers
+> require authentication information to be included in their URL, or their
+> address may expose IP-addresses or hostnames of your company's environment.
+>
+> Environment variables are stored as plain text in the container's configuration,
+> and as such can be inspected through the remote API or committed to an image
+> when using `docker commit`.
+
 ```json
 {
  "proxies": {
@@ -50,16 +68,6 @@ Builds and containers use the configuration specified in this file.
  }
 }
 ```
-
-> [!WARNING]
->
-> Proxy settings may contain sensitive information. For example, some proxy servers
-> require authentication information to be included in their URL, or their
-> address may expose IP-addresses or hostnames of your company's environment.
->
-> Environment variables are stored as plain text in the container's configuration,
-> and as such can be inspected through the remote API or committed to an image
-> when using `docker commit`.
 
 The configuration becomes active after saving the file, you don't need to
 restart Docker. However, the configuration only applies to new containers and
@@ -74,13 +82,6 @@ The following table describes the available configuration parameters.
 | `ftpProxy`   | Sets the `FTP_PROXY` and `ftp_proxy` environment variables and build arguments.     |
 | `noProxy`    | Sets the `NO_PROXY` and `no_proxy` environment variables and build arguments.       |
 | `allProxy`   | Sets the `ALL_PROXY` and `all_proxy` environment variables and build arguments.     |
-
-These settings are used to configure proxy environment variables for containers
-only, and not used as proxy settings for the Docker CLI or the Docker Engine
-itself.
-Refer to the [environment variables](/reference/cli/docker/#environment-variables)
-and [configure the Docker daemon to use a proxy server](/manuals/engine/daemon/proxy.md)
-sections for configuring proxy settings for the CLI and daemon.
 
 ### Run containers with a proxy configuration
 

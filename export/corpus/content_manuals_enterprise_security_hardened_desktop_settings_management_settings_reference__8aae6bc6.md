@@ -14,6 +14,20 @@ This reference documents Docker Desktop settings that administrators can configu
 >
 > This page only covers configurable settings for administrators who are deploying Docker Desktop to their organization. For the full list of Docker Desktop user-facing settings, see [Change settings](/manuals/desktop/settings-and-maintenance/settings.md).
 
+## Find settings
+
+- [General](#general) and [extensions](#extensions).
+- [AI](#ai) and [features in development](#features-in-development).
+- [File sharing and emulation](#file-sharing-and-emulation).
+- [Scout](#scout).
+- [Proxy](#proxy) and [containers proxy](#containers-proxy).
+- [Linux VM](#linuxvm) and [Windows containers](#windows-containers).
+- [Kubernetes](#kubernetes).
+- [Enhanced Container Isolation](#enhance-container-isolation).
+- [Network](#network) and [other settings](#other).
+
+For configuration steps, use the [Admin Console guide](configure-admin-console.md) or [JSON file guide](configure-json-file.md). For JSON-specific tables and version scopes, see [JSON configurations](configure-json-file.md#admin-settingsjson-configurations).
+
 ## General
 
 ### Send usage statistics
@@ -627,7 +641,7 @@ Sets the default IP protocol used when Docker creates new networks.
 | JSON key | `defaultNetworkingMode` |
 | Admin Console | **Default network IP mode** |
 
-For more information, see [Networking](/manuals/desktop/features/networking.md#networking-mode-and-dns-behaviour-for-mac-and-windows).
+For more information, see [Networking](/manuals/desktop/features/networking/networking-how-tos.md#network-how-tos-for-mac-and-windows).
 
 ### Inhibit DNS resolution for IPv4/IPv6 
 
@@ -641,7 +655,7 @@ Filters unsupported DNS record types to improve reliability in environments wher
 | JSON key | `dnsInhibition` |
 | Admin Console | **DNS filtering behavior** |
 
-For more information, see [Networking](/manuals/desktop/features/networking.md#networking-mode-and-dns-behaviour-for-mac-and-windows).
+For more information, see [Networking](/manuals/desktop/features/networking/networking-how-tos.md#network-how-tos-for-mac-and-windows).
 
 ### Port binding behavior
 

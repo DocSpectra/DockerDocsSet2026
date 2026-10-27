@@ -60,6 +60,45 @@ COPY --chmod=0755 binaries/unix/hello.sh /linux/hello.sh
 COPY --chmod=0755 binaries/unix/hello.sh /darwin/hello.sh
 ```
 
+## Configure the metadata file
+
+The host binaries must be specified in the `metadata.json` file so that Docker Desktop copies them on to the host when installing
+the extension. Once the extension is uninstalled, the binaries that were copied are removed as well.
+
+```json
+{
+  "vm": {
+    ...
+  },
+  "ui": {
+    ...
+  },
+  "host": {
+    "binaries": [
+      {
+        "darwin": [
+          {
+            "path": "/darwin/hello.sh"
+          }
+        ],
+        "linux": [
+          {
+            "path": "/linux/hello.sh"
+          }
+        ],
+        "windows": [
+          {
+            "path": "/windows/hello.cmd"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+The `path` must reference the path of the binary inside the container.
+
 ## Invoke the executable from the UI
 
 In your extension, use the Docker Desktop Client object to [invoke the shell script](../dev/api/backend.md#invoke-an-extension-binary-on-the-host)
@@ -122,42 +161,3 @@ export function App() {
 
 {{< /tab >}}
 {{< /tabs >}}
-
-## Configure the metadata file
-
-The host binaries must be specified in the `metadata.json` file so that Docker Desktop copies them on to the host when installing
-the extension. Once the extension is uninstalled, the binaries that were copied are removed as well.
-
-```json
-{
-  "vm": {
-    ...
-  },
-  "ui": {
-    ...
-  },
-  "host": {
-    "binaries": [
-      {
-        "darwin": [
-          {
-            "path": "/darwin/hello.sh"
-          }
-        ],
-        "linux": [
-          {
-            "path": "/linux/hello.sh"
-          }
-        ],
-        "windows": [
-          {
-            "path": "/windows/hello.cmd"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-The `path` must reference the path of the binary inside the container.

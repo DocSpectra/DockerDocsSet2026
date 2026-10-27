@@ -57,7 +57,14 @@ Compose waits for healthchecks to pass on dependencies marked with `service_heal
 
 The healthcheck for the `db` service uses the `pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}` command to check if the PostgreSQL database is ready. The service is retried every 10 seconds, up to 5 times.
 
+## Shutdown order
+
 Compose also removes services in dependency order. `web` is removed before `db` and `redis`.
+
+## Related tasks
+
+- [Use lifecycle hooks](lifecycle.md)
+- [Quickstart: fix the startup race with health checks](../gettingstarted.md#step-3-fix-the-startup-race-with-health-checks)
 
 ## Reference information 
 

@@ -26,6 +26,16 @@ rotate this key encryption key at any time.
 > You don't need to unlock the swarm when a new node joins the swarm,
 > because the key is propagated to it over mutual TLS.
 
+## Choose an autolock task
+
+- [Initialize a swarm with autolock](#initialize-a-swarm-with-autolocking-enabled)
+- [Enable or disable autolock on an existing swarm](#enable-or-disable-autolock-on-an-existing-swarm)
+- [Unlock a swarm after restart](#unlock-a-swarm)
+- [Retrieve the current unlock key](#view-the-current-unlock-key-for-a-running-swarm)
+- [Rotate the key and review the old-key warning](#rotate-the-unlock-key)
+
+For backup and restore steps, see [Back up the swarm](admin_guide.md#back-up-the-swarm).
+
 ## Initialize a swarm with autolocking enabled
 
 When you initialize a new swarm, you can use the `--autolock` flag to

@@ -14,6 +14,8 @@ aliases:
 
 Learn how to deploy Docker Desktop on Windows and macOS devices using Microsoft Intune. It covers app creation, installer configuration, and assignment to users or devices.
 
+For installer downloads and configuration, see the [MSI installer](msi-install-and-configure.md) and [PKG installer](pkg-install-and-configure.md).
+
 {{< tabs >}}
 {{< tab name="Windows" >}}
 

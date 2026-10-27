@@ -23,12 +23,15 @@ Unlike the [OpenCode sandbox guide](../manuals/ai/sandboxes/agents/opencode.md),
 this guide focuses on using OpenCode as a local coding tool backed by Docker
 Model Runner rather than running OpenCode in a containerized sandbox.
 
-In this guide, you'll learn how to:
+## Find an OpenCode task
 
-- Pull coding models for OpenCode
-- Configure OpenCode to use Docker Model Runner
-- Verify the local API endpoint and start OpenCode
-- Package `gpt-oss` with a larger context window when you need it
+- [Check prerequisites and TCP access](#prerequisites)
+- [Pull coding models](#step-1-pull-a-coding-model)
+- [Create a global or project configuration](#step-2-create-an-opencode-configuration)
+- [Verify the endpoint](#step-3-verify-the-endpoint)
+- [Start OpenCode and select a model](#step-4-start-opencode)
+- [Package gpt-oss with a larger context window](#step-5-package-gpt-oss-with-a-larger-context-window)
+- [Troubleshoot connections and missing models](#troubleshooting)
 
 ## Prerequisites
 

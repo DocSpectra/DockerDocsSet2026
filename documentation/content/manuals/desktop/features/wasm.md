@@ -29,6 +29,14 @@ alongside your Linux containers in Docker.
 >
 > Learn more about Wasm use cases and tradeoffs in the [Docker Wasm technical preview blog post](https://www.docker.com/blog/docker-wasm-technical-preview/).
 
+## Find a Wasm task
+
+- [Turn on Wasm workloads](#turn-on-wasm-workloads)
+- [Run with Docker CLI](#running-a-wasm-application-with-docker-run) or [Docker Compose](#running-a-wasm-application-with-docker-compose)
+- [Run a multi-service application](#running-a-multi-service-application-with-wasm)
+- [Build and push a module](#building-and-pushing-a-wasm-module)
+- [Troubleshoot runtime errors](#troubleshooting) and review [known issues](#known-issues)
+
 ## Turn on Wasm workloads
 
 Wasm workloads require the [containerd image store](containerd.md)
@@ -200,7 +208,7 @@ store](./containerd.md), an error similar to the following displays:
 docker: Error response from daemon: Unknown runtime specified io.containerd.wasmedge.v1.
 ```
 
-[Turn on the containerd feature](./containerd.md#enable-the-containerd-image-store)
+[Turn on the containerd feature](./containerd.md#switch-image-stores)
 in Docker Desktop settings and try again.
 
 ### Failed to start shim: failed to resolve runtime path

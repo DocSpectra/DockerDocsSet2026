@@ -57,6 +57,12 @@ or enhance your software supply security with Docker Hardened Images.
 
 Explore the following sections to learn more.
 
+## Account security tasks
+
+- [Create a personal access token](access-tokens.md#create-a-personal-access-token), [use it with the CLI](access-tokens.md#use-personal-access-tokens), or [modify a token](access-tokens.md#modify-personal-access-tokens)
+- [Review two-factor authentication prerequisites](2fa/_index.md#prerequisites), [enable 2FA](2fa/_index.md#enable-two-factor-authentication), or [disable 2FA](2fa/_index.md#disable-two-factor-authentication)
+- [Generate a new recovery code](2fa/recover-hub-account.md#generate-a-new-recovery-code) or [recover an account without access](2fa/recover-hub-account.md#recover-your-account-without-access)
+
 ## For developers
 
 {{< grid items="grid_developers" >}}

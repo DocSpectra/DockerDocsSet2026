@@ -28,9 +28,20 @@ Consult your operating system's documentation for enabling them. See also the
 [Docker Engine troubleshooting guide](../daemon/troubleshoot.md#kernel-cgroup-swap-limit-capabilities)
 for more information.
 
+## Choose a resource task
+
+- [Review out-of-memory risks](#understand-the-risks-of-running-out-of-memory)
+- [Limit container memory](#limit-a-containers-access-to-memory)
+- [Configure memory and swap](#--memory-swap-details)
+- [Configure CPU limits with CFS](#configure-the-default-cfs-scheduler)
+- [Configure real-time CPU scheduling](#configure-the-real-time-scheduler)
+- [Access GPUs](gpu.md)
+- [Measure container resource usage](runmetrics.md#docker-stats)
+- [Review Docker behavior on cgroup v2](runmetrics.md#running-docker-on-cgroup-v2)
+
 ## Memory
 
-## Understand the risks of running out of memory
+### Understand the risks of running out of memory
 
 It's important not to allow a running container to consume too much of the
 host machine's memory. On Linux hosts, if the kernel detects that there isn't

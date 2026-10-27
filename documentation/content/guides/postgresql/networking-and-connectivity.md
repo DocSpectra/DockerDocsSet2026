@@ -6,12 +6,25 @@ keywords:
 weight: 30
 ---
 
+[PostgreSQL guide](_index.md) / [Setup and persistence](immediate-setup-and-data-persistence.md) / [Configuration](advanced-configuration-and-initialization.md) / [Networking](networking-and-connectivity.md) / [Companions](companions-for-postgresql.md)
+
 This guide covers two common ways to connect to PostgreSQL running in Docker:
 
 - **Container-to-container**: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host.
 - **Host-to-container**: Connect from your laptop or development machine using `localhost` and a published port.
 
-**Prerequisite**: This guide assumes you have PostgreSQL running with persistent storage. If you don't, follow the [Immediate Setup & Data Persistence](/guides/postgresql/immediate-setup-and-data-persistence/) guide first.
+## Prerequisites
+
+This guide assumes you have PostgreSQL running with persistent storage. If you don't, follow the [Immediate Setup & Data Persistence](/guides/postgresql/immediate-setup-and-data-persistence/) guide first.
+
+## Choose a connection task
+
+- [Connect from another container](#internal-network-access-container-to-container)
+- [Use application connection strings](#connection-string-examples)
+- [Connect from the host](#connecting-from-the-host-external-access)
+- [Review external access security](#postgresql-security-considerations-for-external-access)
+- [Configure networking with Compose](#using-docker-compose-for-networking)
+- [Troubleshoot connection issues](#troubleshooting)
 
 ## Internal network access (container-to-container)
 
@@ -336,3 +349,5 @@ This section covers common PostgreSQL connection issues and their solutions when
 
 - Ensure the network exists before starting containers: `docker network create my-app-net`
 - If using Docker Compose, the network is created automatically when you run `docker compose up`
+
+Continue to [Companions for PostgreSQL](companions-for-postgresql.md), or see [pgAdmin in a development stack](../pgadmin.md).

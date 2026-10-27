@@ -10,6 +10,15 @@ When policies don't work as expected, use the tools available to inspect policy
 evaluation and understand what's happening. This guide covers the debugging
 techniques and common gotchas.
 
+## Find a debugging task
+
+- [Show policy checks](#policy-output-with---progressplain) or [complete input data](#debug-logging).
+- [Debug conditional rules with print](#conditional-debugging-with-print).
+- [Resolve repository-name mismatches](#full-repository-path-or-repository-name).
+- [Review repeated evaluations](#policy-evaluation-happens-multiple-times).
+- [Fetch missing fields for policy eval](#fields-missing-with-policy-eval---print).
+- For loading problems, see [When policies don't load](./usage.md#when-policies-dont-load).
+
 ## Quick reference
 
 Essential debugging commands:

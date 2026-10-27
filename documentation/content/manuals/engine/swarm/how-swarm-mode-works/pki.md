@@ -9,12 +9,26 @@ makes it simple to securely deploy a container orchestration system. The nodes
 in a swarm use mutual Transport Layer Security (TLS) to authenticate, authorize,
 and encrypt the communications with other nodes in the swarm.
 
+## Choose a PKI topic
+
+- [Root CA creation](#root-ca-creation)
+- [Join tokens and node identity](#join-tokens-and-node-identity)
+- [Certificate renewal](#certificate-renewal)
+- [CA rotation and the MKE exception](#rotating-the-ca-certificate)
+
+For task steps, see [Create a swarm](../swarm-mode.md#create-a-swarm) and
+[Join nodes](../join-nodes.md).
+
+## Root CA creation
+
 When you create a swarm by running `docker swarm init`, Docker designates itself
 as a manager node. By default, the manager node generates a new root Certificate
 Authority (CA) along with a key pair, which are used to secure communications
 with other nodes that join the swarm. If you prefer, you can specify your own
 externally-generated root CA, using the `--external-ca` flag of the
 [docker swarm init](/reference/cli/docker/swarm/init/) command.
+
+## Join tokens and node identity
 
 The manager node also generates two tokens to use when you join additional nodes
 to the swarm: one worker token and one manager token. Each token
@@ -50,6 +64,8 @@ Certificate:
         Subject: O=ec2adilxf4ngv7ev8fwsi61i7, OU=swarm-worker, CN=dw02poa4vqvzxi5c10gm4pq2g
 ...snip...
 ```
+
+## Certificate renewal
 
 By default, each node in the swarm renews its certificate every three months.
 You can configure this interval by running the `docker swarm update

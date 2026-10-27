@@ -5,6 +5,8 @@ description: Run your Testcontainers-based Spring Boot Keycloak integration test
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-keycloak-spring-boot/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-keycloak-spring-boot/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -33,7 +35,11 @@ To learn more about Testcontainers, visit the
 
 ## Further reading
 
-- [Getting started with Testcontainers in a Java Spring Boot project](https://testcontainers.com/guides/testing-spring-boot-rest-api-using-testcontainers/)
+- [Getting started with Testcontainers in a Java Spring Boot project](/guides/testcontainers-java-spring-boot-rest-api/)
 - [Testcontainers Keycloak module](https://testcontainers.com/modules/keycloak/)
 - [testcontainers-keycloak GitHub repository](https://github.com/dasniko/testcontainers-keycloak)
 - [Spring Boot OAuth 2.0 Resource Server](https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/index.html)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-keycloak-spring-boot/)

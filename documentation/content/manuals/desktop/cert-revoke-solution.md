@@ -13,6 +13,13 @@ This guide provides steps to address a recent issue affecting some macOS users o
 >
 > Docker Desktop versions 4.28 and earlier are not impacted by this issue. 
 
+## Choose a recovery task
+
+- [Upgrade to version 4.37.2](#upgrade-to-docker-desktop-version-4372-recommended).
+- [Install a patch for versions 4.32–4.36](#install-a-patch-if-you-have-version-432---436).
+- [Use the MDM script](#mdm-script).
+- [Reinstall a Homebrew cask installation](#homebrew-casks).
+
 ## Available solutions
 
 There are a few options available depending on your situation:

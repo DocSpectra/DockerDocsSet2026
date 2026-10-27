@@ -21,6 +21,11 @@ Microsoft Dev Box provides cloud-based, pre-configured developer workstations th
 - Session state persists between uses
 - Works with your existing Docker subscription
 
+## Limitations
+
+- Microsoft Dev Box is only available on Windows 10 and 11 (Linux VMs are not supported).
+- Performance may vary based on your Dev Box configuration and network conditions.
+
 ## Setup
 
 ### Prerequisites
@@ -54,7 +59,3 @@ For issues related to:
 - Docker Desktop configuration, usage, or licensing: Create a support ticket through [Docker Support](https://hub.docker.com/support).
 - Dev Box creation, Azure portal configuration, or networking: Contact Azure Support.
 
-## Limitations
-
-- Microsoft Dev Box is only available on Windows 10 and 11 (Linux VMs are not supported).
-- Performance may vary based on your Dev Box configuration and network conditions.

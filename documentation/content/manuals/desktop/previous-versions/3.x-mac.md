@@ -2,6 +2,7 @@
 description: Change log / release notes for Docker Desktop for Mac 3.x
 keywords: Docker Desktop for Mac 3.x release notes
 title: Docker Desktop for Mac 3.x release notes
+linkTitle: Mac 3.x
 toc_min: 1
 toc_max: 2
 aliases:
@@ -12,6 +13,17 @@ sitemap: false
 ---
 
 This page contains release notes for Docker Desktop for Mac 3.x. 
+
+## Find release-specific caveats
+
+Choose a release below or in the page contents. For another platform or series, use [Previous releases](_index.md).
+
+| Find | Release entries |
+| --- | --- |
+| Known issue sections | [3.4.0](#docker-desktop-340), [3.3.1](#docker-desktop-331), [3.2.0](#docker-desktop-320), [3.0.4](#docker-desktop-304), [3.0.3](#docker-desktop-303), [3.0.2](#docker-desktop-302), [3.0.1](#docker-desktop-301), [3.0.0](#docker-desktop-300) |
+| Deprecation sections | [3.4.0](#docker-desktop-340) |
+
+See also [Docker Desktop 4.x release notes and download availability](../release-notes.md#check-download-availability-and-rollout) and [Docker Engine release notes](/manuals/engine/release-notes/overview.md).
 
 ## Docker Desktop 3.6.0
 2021-08-11
@@ -175,7 +187,7 @@ This page contains release notes for Docker Desktop for Mac 3.x.
 
 - Fixed the diagnostics failing to upload from the Troubleshoot screen.
 
-### Docker Desktop 3.3.2
+## Docker Desktop 3.3.2
 2021-05-03
 
 ### Upgrades

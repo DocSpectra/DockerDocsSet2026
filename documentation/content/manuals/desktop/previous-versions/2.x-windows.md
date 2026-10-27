@@ -2,6 +2,7 @@
 description: Docker Desktop for Windows 2.x Release notes
 keywords: Docker Desktop for Windows 2.x, release notes
 title: Docker for Windows 2.x release notes
+linkTitle: Windows 2.x
 toc_min: 1
 toc_max: 2
 aliases: /desktop/windows/release-notes/2.x/
@@ -9,6 +10,19 @@ sitemap: false
 ---
 
 This page contains release notes for Docker Desktop for Windows 2.x. 
+
+## Find release-specific caveats
+
+Choose a release below or in the page contents. For another platform or series, use [Previous releases](_index.md).
+
+| Find | Release entries |
+| --- | --- |
+| CVE references | [2.0.0.3 2019-02-15](#docker-community-edition-2003-2019-02-15), [2.0.0.2 2019-01-16](#docker-community-edition-2002-2019-01-16) |
+| Known issue sections | [2.4.0.0](#docker-desktop-community-2400), [2.3.0.5](#docker-desktop-community-2305), [2.3.0.2](#docker-desktop-community-2302), [2.2.0.4](#docker-desktop-community-2204), [2.2.0.3](#docker-desktop-community-2203), [2.2.0.0](#docker-desktop-community-2200) |
+| Deprecation sections | [2.5.0.0](#docker-desktop-community-2500) |
+| Kubernetes reset notices | [2.5.0.0](#docker-desktop-community-2500), [2.4.0.0](#docker-desktop-community-2400), [2.2.0.0](#docker-desktop-community-2200), [2.1.0.5](#docker-desktop-community-2105), [2.1.0.4](#docker-desktop-community-2104), [2.1.0.2](#docker-desktop-community-2102) |
+
+See also [Docker Desktop 4.x release notes and download availability](../release-notes.md#check-download-availability-and-rollout) and [Docker Engine release notes](/manuals/engine/release-notes/overview.md).
 
 ## Docker Desktop Community 2.5.0.1
 2020-11-10
@@ -322,7 +336,7 @@ Docker Desktop 2.4.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 
 ### Known issues
 
-- DockerNAT has been removed from Docker Desktop 2.2.0.0 as using an IP address to communicate from the host to a container is not a supported feature. To communicate from a container to the host, you must use the special DNS name `host.docker.internal`. We also recommend using ports to communicate from the host to a container. For more information, see [Networking](/manuals/desktop/features/networking.md#use-cases-and-workarounds-for-all-platforms).
+- DockerNAT has been removed from Docker Desktop 2.2.0.0 as using an IP address to communicate from the host to a container is not a supported feature. To communicate from a container to the host, you must use the special DNS name `host.docker.internal`. We also recommend using ports to communicate from the host to a container. For more information, see [Networking](/manuals/desktop/features/networking/networking-how-tos.md#core-networking-how-tos).
 
   However, if your current setup relies on IP addresses for communication, you can use a temporary workaround to reinstate DockerNAT. To do this, open
   `C:\Program Files\Docker\Docker\resources\MobyLinux.ps1` and add `$SwitchName = "DockerNAT"` between line 175 and 176. Note that the temporary workaround to reinstate DockerNAT may be removed from future releases.
@@ -503,7 +517,7 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
 * When two services have a common exposed port, Docker Desktop exposes the available ports for the second service.
 * Fixed the UI lock when changing the Kubernetes state.
 
-### Docker Community Edition 2.0.0.3 2019-02-15
+## Docker Community Edition 2.0.0.3 2019-02-15
 
 * Upgrades
   - [Docker 18.09.2](https://github.com/docker/docker-ce/releases/tag/v18.09.2), fixes [CVE-2019-5736](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5736)
@@ -511,7 +525,7 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
 * Bug fix
   - Fix crash in system tray menu when the Hub login fails or Air gap mode
 
-### Docker Community Edition 2.0.0.2 2019-01-16
+## Docker Community Edition 2.0.0.2 2019-01-16
 
 * Upgrades
   - [Docker 18.09.1](https://github.com/docker/docker-ce/releases/tag/v18.09.1)
@@ -525,7 +539,7 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
   - Rename Docker for Windows to Docker Desktop
   - Add 18.09 missing daemon options
 
-### Docker Community Edition 2.0.0.0-win81 2018-12-07
+## Docker Community Edition 2.0.0.0-win81 2018-12-07
 
 * Upgrades
   - [Docker compose 1.23.2](https://github.com/docker/compose/releases/tag/1.23.2)
@@ -533,7 +547,7 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
 * Bug fixes and minor changes
   - Compose: Fixed a bug where build context URLs would fail to build on Windows. Fixes [docker/for-win#2918](https://github.com/docker/for-win/issues/2918)
 
-### Docker Community Edition 2.0.0.0-win78 2018-11-19
+## Docker Community Edition 2.0.0.0-win78 2018-11-19
 
 * Upgrades
   - [Docker 18.09.0](https://github.com/docker/docker-ce-packaging/releases/tag/v18.09.0)

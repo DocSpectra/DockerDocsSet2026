@@ -11,6 +11,8 @@ aliases:
   - /guides/language/r/containerize/
 ---
 
+[R guide overview](_index.md)
+
 ## Prerequisites
 
 - You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
@@ -98,3 +100,5 @@ Related information:
 
 In the next section, you'll learn how you can develop your application using
 containers.
+
+Continue: [Develop locally](develop.md).

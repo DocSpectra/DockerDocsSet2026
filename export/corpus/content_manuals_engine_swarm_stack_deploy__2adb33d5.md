@@ -10,6 +10,8 @@ a stack description in the form of a [Compose file](/reference/compose-file/lega
 
 {{% include "swarm-compose-compat.md" %}}
 
+## Prerequisites
+
 To run through this tutorial, you need:
 
 1.  A Docker Engine running in [Swarm mode](swarm-mode.md).
@@ -27,6 +29,15 @@ To run through this tutorial, you need:
     > node.
 
 2.  A current version of [Docker Compose](/manuals/compose/install/_index.md).
+
+## Follow the stack deployment tasks
+
+1. [Set up a registry](#set-up-a-docker-registry).
+2. [Create the example application](#create-the-example-application).
+3. [Test with Compose](#test-the-app-with-compose).
+4. [Push the generated image](#push-the-generated-image-to-the-registry).
+5. [Deploy and verify the stack](#deploy-the-stack-to-the-swarm).
+6. [Remove the stack and registry](#clean-up).
 
 ## Set up a Docker registry
 
@@ -267,7 +278,9 @@ The stack is now ready to be deployed.
     Hello World! I have been seen 4 times.
     ```
 
-3.  Bring the stack down with `docker stack rm`:
+## Clean up
+
+1.  Bring the stack down with `docker stack rm`:
 
     ```console
     $ docker stack rm stackdemo
@@ -277,13 +290,13 @@ The stack is now ready to be deployed.
     Removing network stackdemo_default
     ```
 
-4.  Bring the registry down with `docker service rm`:
+2.  Bring the registry down with `docker service rm`:
 
     ```console
     $ docker service rm registry
     ```
 
-5.  If you're just testing things out on a local machine and want to bring your
+3.  If you're just testing things out on a local machine and want to bring your
     Docker Engine out of Swarm mode, use `docker swarm leave`:
 
     ```console

@@ -9,6 +9,8 @@ aliases:
   - /guides/language/rust/run-containers/
 ---
 
+[Rust guide overview](_index.md)
+
 ## Prerequisite
 
 You have completed [Build your Rust image](build-images.md) and you have built an image.
@@ -44,6 +46,8 @@ curl: (7) Failed to connect to localhost port 8000 after 2236 ms: Couldn't conne
 As you can see, your `curl` command failed. This means you weren't able to connect to the localhost on port 8000. This is normal because your container is running in isolation which includes networking. Stop the container and restart with port 8000 published on your local network.
 
 To stop the container, press ctrl-c. This will return you to the terminal prompt.
+
+### Publish a port and check the application
 
 To publish a port for your container, you’ll use the `--publish` flag (`-p` for short) on the `docker run` command. The format of the `--publish` command is `[host port]:[container port]`. So, if you wanted to expose port 8000 inside the container to port 3001 outside the container, you would pass `3001:8000` to the `--publish` flag.
 
@@ -133,6 +137,8 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED         
 
 You should now see several containers listed. These are containers that you started and stopped but you haven't removed.
 
+### Restart a stopped container
+
 Restart the container that you just stopped. Locate the name of the container you just stopped and replace the name of the container in following restart command.
 
 ```console
@@ -158,6 +164,8 @@ $ docker stop youthful_lamport
 youthful_lamport
 ```
 
+### Remove stopped containers
+
 Now that you have stopped all of your containers, remove them. When you remove a container, it's no longer running, nor is it in the stopped status, but the process inside the container has been stopped and the metadata for the container has been removed.
 
 To remove a container, run the `docker rm` command with the container name. You can pass multiple container names to the command using a single command. Again, replace the container names in the following command with the container names from your system.
@@ -170,6 +178,8 @@ magical_bhabha
 ```
 
 Run the `docker ps --all` command again to see that Docker removed all containers.
+
+### Assign a container name
 
 Now, it's time to address the random naming issue. Standard practice is to name your containers for the simple reason that it's easier to identify what's running in the container and what application or service it's associated with.
 
@@ -196,3 +206,5 @@ Related information:
 ## Next steps
 
 In the next section, you’ll learn how to run a database in a container and connect it to a Rust application.
+
+Continue: [Develop locally](develop.md).

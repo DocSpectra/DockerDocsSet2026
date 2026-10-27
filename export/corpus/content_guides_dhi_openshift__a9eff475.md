@@ -26,6 +26,23 @@ environments, covering Security Context Constraints (SCCs), arbitrary user ID
 assignment, file permission requirements, and best practices for both runtime
 and development image variants.
 
+## Prerequisites
+
+- An OpenShift cluster (version 4.11 or later recommended)
+- The oc CLI authenticated to your cluster
+- A Docker Hub account with access to Docker Hardened Images
+- Familiarity with OpenShift Security Context Constraints (SCCs)
+
+## Choose a task
+
+- [Review OpenShift security differences](#how-openshift-security-differs-from-kubernetes) and the [compatibility summary](#dhi-and-openshift-compatibility-summary)
+- [Configure registry authentication](#pull-dhi-images-into-openshift)
+- [Build an OpenShift-compatible image](#build-openshift-compatible-images-from-dhi)
+- [Handle arbitrary UIDs](#handle-arbitrary-user-ids) or [use a fixed UID](#use-the-non-root-scc-for-fixed-uids)
+- [Use dev variants or debug on the cluster](#use-dhi-dev-variants-in-openshift)
+- [Deploy a Helm chart](#deploy-dhi-helm-charts-on-openshift)
+- [Verify a deployment](#verify-your-deployment) or [resolve a common issue](#common-issues-and-solutions)
+
 ## How OpenShift security differs from Kubernetes
 
 OpenShift extends Kubernetes with Security Context Constraints (SCCs), which
@@ -35,7 +52,9 @@ are more granular and enforced by default.
 
 The key differences that affect DHI deployments:
 
-**Arbitrary user IDs.** By default, OpenShift runs containers using an
+### Arbitrary user IDs
+
+By default, OpenShift runs containers using an
 arbitrarily assigned user ID (UID) from a range allocated to each project. The
 default `restricted-v2` SCC (introduced in OpenShift 4.11) uses the
 `MustRunAsRange` strategy, which overrides the `USER` directive in the container
@@ -43,7 +62,9 @@ image with a UID from the project’s allocated range (typically starting higher
 1000000000). This means even though a DHI image specifies a non-root user
 (UID 65532), OpenShift will run the container as a different, unpredictable UID.
 
-**Root group requirement.** OpenShift assigns the arbitrary UID to the root
+### Root group requirement
+
+OpenShift assigns the arbitrary UID to the root
 group (GID 0). The container process always runs with `gid=0(root)`. Any
 directories or files that the process needs to write to must be owned by the
 root group (GID 0) with group read/write permissions. This is documented in the
@@ -58,11 +79,25 @@ root group (GID 0) with group read/write permissions. This is documented in the
 > writable path. This is the most common source of permission errors when
 > deploying DHI on OpenShift.
 
-**Capability restrictions.** The `restricted-v2` SCC drops all Linux
+### Capability restrictions
+
+The `restricted-v2` SCC drops all Linux
 capabilities by default and enforces `allowPrivilegeEscalation: false`,
 `runAsNonRoot: true`, and a `seccompProfile` of type `RuntimeDefault`. DHI
 runtime images already satisfy these constraints because they run as a non-root
 user and don’t require elevated capabilities.
+
+## DHI and OpenShift compatibility summary
+
+|Feature                      |DHI runtime                      |DHI `-dev`          |DHI with Enterprise customization|
+|-----------------------------|---------------------------------|--------------------|---------------------------------|
+|Default SCC (`restricted-v2`)|Yes, with GID 0 permissions      |Requires `anyuid`   |Yes, with GID 0 permissions      |
+|Non-root by default          |Yes (UID 65532)                  |No (root)           |Yes (configurable UID)           |
+|Arbitrary UID support        |Yes, with `chown <UID>:0`        |Yes                 |Yes, with `chown <UID>:0`        |
+|Distroless (no shell)        |Yes — no `RUN` in Dockerfile     |No                  |Yes — no `RUN` in Dockerfile     |
+|Unprivileged ports           |Yes (higher than 1024)                 |Configurable        |Yes (higher than 1024)                 |
+|SLSA Build Level 3           |Yes                              |Yes                 |Yes                              |
+|Debug on cluster             |`oc debug` / ephemeral containers|`oc exec` with shell|`oc debug` / ephemeral containers|
 
 ## Pull DHI images into OpenShift
 
@@ -559,25 +594,33 @@ docker scout quickview YOUR_ORG/dhi-nginx:1.29-alpine3.23
 
 ## Common issues and solutions
 
-**Pod fails to start with “container has runAsNonRoot and image has group or
-user ID set to root.”** This happens when deploying a DHI `-dev` variant with
+### Pod rejected because the image runs as root
+
+Pod fails to start with “container has runAsNonRoot and image has group or
+user ID set to root.” This happens when deploying a DHI `-dev` variant with
 the default `restricted-v2` SCC. Either use the runtime variant instead, or
 grant the `anyuid` SCC to the service account.
 
-**Application cannot write to a directory.** The arbitrary UID assigned by
+### Application cannot write to a directory
+
+Application cannot write to a directory. The arbitrary UID assigned by
 OpenShift doesn’t have write permissions. This is the most common issue with DHI
 on OpenShift. All writable paths must be owned by GID 0 with group write
 permissions. Fix this in the build stage:
 `chgrp -R 0 /path && chmod -R g=u /path`, then `COPY --chown=<UID>:0` into the
 runtime stage.
 
-**Application fails with “user not found” or “no matching entries in passwd
-file.”** Some applications require a valid `/etc/passwd` entry. OpenShift 4.x
+### User not found
+
+Application fails with “user not found” or “no matching entries in passwd
+file.” Some applications require a valid `/etc/passwd` entry. OpenShift 4.x
 automatically injects the arbitrary UID into `/etc/passwd` in most cases. If
 your application still fails, use the passwd-injection pattern (requires a `-dev`
 variant) or use the `nonroot` SCC to run with the image’s built-in UID.
 
-**Pod fails to bind to port 80 or 443.** Ports lower than 1024 require root
+### Pod cannot bind to port 80 or 443
+
+Pod fails to bind to port 80 or 443. Ports lower than 1024 require root
 privileges. DHI images use unprivileged ports by default (for example, Nginx
 uses 8080). Configure your OpenShift Service to map the external port to the
 container’s unprivileged port:
@@ -595,30 +638,22 @@ spec:
     app: nginx-dhi
 ```
 
-**ImagePullBackOff with “unauthorized: authentication required.”** Verify the
+### ImagePullBackOff with an authentication error
+
+ImagePullBackOff with “unauthorized: authentication required.” Verify the
 pull secret is correctly configured and linked to the service account. Check
 with `oc get secret dhi-pull-secret` and `oc describe sa default`.
 
-**Dockerfile build fails with “exec: not found” in runtime stage.** You are
+### Runtime-stage build fails with exec not found
+
+Dockerfile build fails with “exec: not found” in runtime stage. You are
 using `RUN` in a distroless runtime stage. DHI runtime images have no shell, so
 `RUN` commands cannot execute. Move all `RUN` commands to the `-dev` build stage
 and use `COPY --chown` to transfer results.
 
-## DHI and OpenShift compatibility summary
-
-|Feature                      |DHI runtime                      |DHI `-dev`          |DHI with Enterprise customization|
-|-----------------------------|---------------------------------|--------------------|---------------------------------|
-|Default SCC (`restricted-v2`)|Yes, with GID 0 permissions      |Requires `anyuid`   |Yes, with GID 0 permissions      |
-|Non-root by default          |Yes (UID 65532)                  |No (root)           |Yes (configurable UID)           |
-|Arbitrary UID support        |Yes, with `chown <UID>:0`        |Yes                 |Yes, with `chown <UID>:0`        |
-|Distroless (no shell)        |Yes — no `RUN` in Dockerfile     |No                  |Yes — no `RUN` in Dockerfile     |
-|Unprivileged ports           |Yes (higher than 1024)                 |Configurable        |Yes (higher than 1024)                 |
-|SLSA Build Level 3           |Yes                              |Yes                 |Yes                              |
-|Debug on cluster             |`oc debug` / ephemeral containers|`oc exec` with shell|`oc debug` / ephemeral containers|
-
 ## What’s next
 
-- [Use an image in Kubernetes](/dhi/how-to/k8s/) — general DHI Kubernetes deployment guide.
+- [Use an image in Kubernetes](/dhi/how-to/kubernetes/) — general DHI Kubernetes deployment guide.
 - [Customize an image](/dhi/how-to/customize/) — add packages to DHI images using Enterprise customization.
 - [Debug a container](/dhi/troubleshoot/#general-debugging) — troubleshoot distroless containers with Docker Debug (local development).
 - [Managing SCCs](https://docs.openshift.com/container-platform/4.14/authentication/managing-security-context-constraints.html) — Red Hat’s reference documentation on Security Context Constraints.

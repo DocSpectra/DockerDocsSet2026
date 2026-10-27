@@ -17,6 +17,17 @@ A container's environment is not set until there's an explicit entry in the serv
 > Don't use environment variables to pass sensitive information, such as passwords, in to your containers. Use [secrets](../use-secrets.md) instead.
 
 
+## Choose a method
+
+- [Use the environment attribute](#use-the-environment-attribute)
+- [Use the env_file attribute](#use-the-env_file-attribute)
+- [Use multiple environment files](#use-multiple-environment-files)
+- [Make an environment file optional](#use-an-optional-environment-file)
+- [Use an alternative file format](#use-an-alternative-file-format)
+- [Set variables with docker compose run --env](#set-environment-variables-with-docker-compose-run---env)
+- [Review precedence](envvars-precedence.md)
+- [Use interpolation in the Compose file](variable-interpolation.md)
+
 ## Use the `environment` attribute
 
 You can set environment variables directly in your container's environment with the
@@ -84,17 +95,29 @@ The paths to your `.env` file, specified in the `env_file` attribute, are relati
 
 ### Additional information 
 
-- If multiple files are specified, they are evaluated in order and can override values set in previous files.
-- As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-  ```yaml
-  env_file:
-    - path: ./default.env
-      required: true # default
-    - path: ./override.env
-      required: false
-  ``` 
-- As of Docker Compose version 2.30.0, you can use an alternative file format for the `env_file` with the `format` attribute. For more information, see [`format`](/reference/compose-file/services.md#format).
-- Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
+#### Use multiple environment files
+
+If multiple files are specified, they are evaluated in order and can override values set in previous files.
+
+#### Use an optional environment file
+
+As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
+
+```yaml
+env_file:
+  - path: ./default.env
+    required: true # default
+  - path: ./override.env
+    required: false
+``` 
+
+#### Use an alternative file format
+
+As of Docker Compose version 2.30.0, you can use an alternative file format for the `env_file` with the `format` attribute. For more information, see [`format`](/reference/compose-file/services.md#format).
+
+#### Override values from the command line
+
+Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
 
 ## Set environment variables with `docker compose run --env`
 

@@ -19,6 +19,12 @@ USB/IP enables you to share USB devices over the network, which can then be acce
 
 ## Setup and use
 
+1. [Run a USB/IP server](#step-one-run-a-usbip-server).
+2. [Start a privileged container](#step-two-start-a-privileged-docker-container).
+3. [Enter the mount namespace](#step-three-enter-the-mount-namespace-of-pid-1).
+4. [List, attach, and verify the device](#step-four-use-the-usbip-tools).
+5. [Access the device from another container](#step-five-access-the-device-from-another-container).
+
 ### Step one: Run a USB/IP server
 
 To use USB/IP, you need to run a USB/IP server. For this guide, the implementation provided by [jiegec/usbip](https://github.com/jiegec/usbip) will be used.
@@ -102,6 +108,10 @@ event0  mice
 
 ### Step five: Access the device from another container
 
+> [!IMPORTANT]
+>
+> The initial container must remain running to maintain the connection to the USB device. Exiting the container will stop the device from working.
+
 While the initial container remains running to keep the USB device operational, you can access the attached device from another container. For example:
 
 1. Start a new container with the attached device.
@@ -132,7 +142,3 @@ While the initial container remains running to keep the USB device operational, 
     Event: time 1717575532.881540, -------------- SYN_REPORT ------------
     ...
     ```
-
-> [!IMPORTANT]
->
-> The initial container must remain running to maintain the connection to the USB device. Exiting the container will stop the device from working.

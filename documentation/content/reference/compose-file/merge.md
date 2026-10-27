@@ -10,7 +10,14 @@ weight: 100
 
 {{% include "compose/merge.md" %}}
 
-These rules are outlined below. 
+## Find a merge rule
+
+- [Merge mappings](#mapping) or [append sequences](#sequence).
+- Check exceptions for [shell commands](#shell-commands) and [unique resources](#unique-resources).
+- [Remove a value with !reset](#reset-value).
+- [Replace a value with !override and check feature availability](#replace-value).
+
+For service inheritance rules, see [extends](services.md#extends). For including another application model, see [Include](include.md).
 
 ## Mapping
 

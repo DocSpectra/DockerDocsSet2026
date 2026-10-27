@@ -15,6 +15,8 @@ params:
   time: 20 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-testing-rest-api-integrations-using-wiremock -->
 
 In this guide, you'll learn how to:
@@ -33,3 +35,15 @@ In this guide, you'll learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-wiremock/create-project/)
+2. [Write tests](/guides/testcontainers-java-wiremock/write-tests/)
+3. [Run tests](/guides/testcontainers-java-wiremock/run-tests/)
+
+## Choose a testing approach
+
+- [Test using WireMock JUnit 5 extension](/guides/testcontainers-java-wiremock/write-tests/#test-using-wiremock-junit-5-extension)
+- [Stub using JSON mapping files](/guides/testcontainers-java-wiremock/write-tests/#stub-using-json-mapping-files)
+- [Test using the Testcontainers WireMock module](/guides/testcontainers-java-wiremock/write-tests/#test-using-the-testcontainers-wiremock-module)

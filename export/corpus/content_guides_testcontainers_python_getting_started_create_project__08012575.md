@@ -5,6 +5,8 @@ description: Set up a Python project with a PostgreSQL-backed customer service.
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-python-getting-started/#prerequisites)
+
 ## Initialize the project
 
 Start by creating a Python project with a virtual environment:
@@ -124,7 +126,13 @@ def delete_all_customers():
             conn.commit()
 ```
 
+## Connection handling caveat
+
 > [!NOTE]
 > To keep it straightforward for this guide, each function creates a new
 > connection. In a real-world application, use a connection pool to reuse
 > connections.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-python-getting-started/write-tests/)

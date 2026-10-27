@@ -139,6 +139,8 @@ mount the source code required to generate the artifact into the build. If you
 use `COPY` to add the files to the build container, BuildKit will include all
 of those files in the cache, even if the files aren't used in the final image.
 
+### Bind mount caveats
+
 There are a few things to be aware of when using bind mounts in a build:
 
 - Bind mounts are read-only by default. If you need to write to the mounted
@@ -285,6 +287,8 @@ RUN --mount=type=cache,target=/tmp/cache \
 
 {{< /tab >}}
 {{< /tabs >}}
+
+### Cache mount requirements
 
 It's important that you read the documentation for the build tool you're using
 to make sure you're using the correct cache mount options. Package managers

@@ -38,6 +38,15 @@ features, and announcements:
 For guides that demonstrate how to use Docker Hardened Images in various
 scenarios, see the [guides section filtered by DHI](/guides/?tags=dhi).
 
+| Task | Guide |
+|---|---|
+| Migrate from Docker Official Images | [Alpine or Debian migration](./migration/migrate-from-doi.md) |
+| Migrate from Wolfi | [Wolfi migration](./migration/migrate-from-wolfi.md) |
+| Migrate a language application | [Go](./migration/examples/go.md), [Node.js](./migration/examples/node.md), [Python](./migration/examples/python.md) |
+| Work through a Node.js lab | [Migrating a Node App to DHI](/guides/lab-dhi-node/) |
+| Secure a Backstage application | [Backstage guide](/guides/dhi-backstage/) |
+| Deploy on OpenShift | [OpenShift guide](/guides/dhi-openshift/) |
+
 ## Docker Hub
 
 Docker Hardened Images are available on Docker Hub:
@@ -87,4 +96,3 @@ organization:
   Docker sales team for enterprise inquiries
 - [Docker Support](https://www.docker.com/support/): Access support resources
   for DHI Select and Enterprise customers
-

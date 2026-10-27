@@ -18,6 +18,17 @@ This page explains how to configure and use networking features, connect contain
 
 For details on how Docker Desktop routes network traffic and file I/O between containers, the VM, and the host, see [Network overview](/manuals/desktop/features/networking/_index.md#overview).
 
+## Choose a networking task
+
+| Task | Steps and caveats |
+| --- | --- |
+| Reach a service on the host | [Connect a container to the host](#connect-a-container-to-a-service-on-the-host) |
+| Reach a container from the host | [Publish ports](#connect-to-a-container-from-the-host) and [review IP addressing limitations](#known-limitations) |
+| Use a VPN or proxy | [VPNs](#working-with-vpns), [proxy setup](#working-with-proxies), and [proxy authentication](../../settings-and-maintenance/settings.md#proxy-authentication) |
+| Configure IP protocols and DNS on Mac and Windows | [Networking mode](#default-networking-mode) and [DNS filtering](#dns-resolution-behavior) |
+| Forward SSH on Mac and Linux | [SSH agent forwarding](#ssh-agent-forwarding) |
+| Change internal IPs | [Required Kubernetes and Swarm actions](#changing-internal-ip-addresses) |
+
 ## Core networking how-tos
 
 ### Connect a container to a service on the host
@@ -104,7 +115,7 @@ For more details on proxies and proxy configurations, see the [Proxy settings do
 
 You can control how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
 
-You can set the following settings on the **Network** tab in the Docker Desktop Dashboard settings, or if you're an admin, with Settings Management via the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#networking), or the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+You can set the following settings on the **Network** tab in the Docker Desktop Dashboard settings, or if you're an admin, with Settings Management via the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#networking-settings), or the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 
 > [!NOTE]
 >

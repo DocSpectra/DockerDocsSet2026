@@ -14,6 +14,8 @@ params:
   time: 25 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-working-with-jooq-flyway-using-testcontainers -->
 
 In this guide, you will learn how to:
@@ -34,3 +36,9 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-jooq-flyway/create-project/)
+2. [Write tests](/guides/testcontainers-java-jooq-flyway/write-tests/)
+3. [Run tests](/guides/testcontainers-java-jooq-flyway/run-tests/)

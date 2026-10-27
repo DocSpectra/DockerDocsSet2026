@@ -15,6 +15,16 @@ allowing you to connect to externally managed BuildKit instances. This is useful
 for scenarios that require manual management of the BuildKit daemon, or where a
 BuildKit daemon is exposed from another source.
 
+## Choose a connection setup
+
+- [Unix socket](#example-remote-buildkit-over-unix-sockets)
+- [BuildKit in a Docker container](#example-remote-buildkit-in-docker-container)
+- [BuildKit in Kubernetes](#example-remote-buildkit-in-kubernetes)
+- [Debug a remote builder in Kubernetes](#debug-a-remote-builder-in-kubernetes)
+
+See also [driver options](#driver-options) and
+[loading results to the local image store](_index.md#loading-to-local-image-store).
+
 ## Synopsis
 
 ```console
@@ -23,6 +33,8 @@ $ docker buildx create \
   --driver remote \
   tcp://localhost:1234
 ```
+
+## Driver options
 
 The following table describes the available driver-specific options that you can
 pass to `--driver-opt`:

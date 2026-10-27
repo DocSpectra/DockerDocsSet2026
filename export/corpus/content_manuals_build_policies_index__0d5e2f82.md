@@ -53,6 +53,20 @@ need:
 If you're using Docker Desktop, ensure you're on a version that includes these
 updates.
 
+## Choose a policy task
+
+| Task | Guide |
+| --- | --- |
+| Write a first policy | [Introduction](./intro.md) |
+| Load policies for builds or Bake | [Using build policies](./usage.md) |
+| Validate container images | [Image validation](./validate-images.md) |
+| Validate source repositories | [Git validation](./validate-git.md) |
+| Adapt a complete policy | [Templates and examples](./examples.md) |
+| Test policy logic | [Testing](./testing.md) |
+| Diagnose a policy failure | [Debugging](./debugging.md) |
+| Look up input fields | [Input reference](./inputs.md) |
+| Look up helper functions | [Built-in functions](./built-ins.md) |
+
 ## Build policies
 
 Buildx version 0.31.0 added support for build policies. Build policies are

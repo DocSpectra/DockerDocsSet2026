@@ -7,8 +7,8 @@ linkTitle: Uninstall
 
 How you uninstall Docker Compose depends on how it was installed. This guide covers uninstallation instructions for:
 
-- Docker Compose installed via Docker Desktop
-- Docker Compose installed as a CLI plugin
+- [Docker Compose installed via Docker Desktop](#uninstalling-docker-compose-with-docker-desktop)
+- [Docker Compose installed as a CLI plugin](#uninstalling-the-docker-compose-cli-plugin)
 
 ## Uninstalling Docker Compose with Docker Desktop
 
@@ -18,7 +18,17 @@ If you want to uninstall Docker Compose and you have installed Docker Desktop, s
 >
 > Unless you have other Docker instances installed on that specific environment, uninstalling Docker Desktop removes all Docker components, including Docker Engine, Docker CLI, and Docker Compose.
 
+## Inspect the location of the Compose CLI plugin
+
+To check where Compose is installed, use:
+
+```console
+$ docker info --format '{{range .ClientInfo.Plugins}}{{if eq .Name "compose"}}{{.Path}}{{end}}{{end}}'
+```
+
 ## Uninstalling the Docker Compose CLI plugin
+
+### Installed with a package manager
 
 If you installed Docker Compose via a package manager, run:
 
@@ -55,10 +65,3 @@ If installed for all users, remove it from the system directory:
 > methods, you do not have the permissions needed to remove
 > Docker Compose. To force the removal, prepend `sudo` to either of the previous instructions and run it again.
 
-### Inspect the location of the Compose CLI plugin
-
-To check where Compose is installed, use:
-
-```console
-$ docker info --format '{{range .ClientInfo.Plugins}}{{if eq .Name "compose"}}{{.Path}}{{end}}{{end}}'
-```

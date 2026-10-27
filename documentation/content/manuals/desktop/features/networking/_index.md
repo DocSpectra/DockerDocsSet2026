@@ -8,6 +8,19 @@ weight: 30
 
 This page explains how Docker Desktop routes network traffic and file I/O between containers, the VM, and the host, and how this behavior is visible to firewalls and endpoint protection tools.
 
+## Find networking guidance
+
+- [Connect containers to the host or publish ports](networking-how-tos.md#core-networking-how-tos)
+- [Configure proxies](networking-how-tos.md#working-with-proxies) or [work with a VPN](networking-how-tos.md#working-with-vpns)
+- [Choose networking mode and DNS behavior on Mac and Windows](networking-how-tos.md#network-how-tos-for-mac-and-windows)
+- [Forward an SSH agent on Mac and Linux](networking-how-tos.md#ssh-agent-forwarding)
+- [Review known limitations](networking-how-tos.md#known-limitations)
+- [Review backend components](#overview) and [firewall visibility](#firewalls-and-endpoint-visibility)
+
+For related tasks, see [Engine networking](/manuals/engine/network/_index.md),
+[port publishing](/manuals/engine/network/port-publishing.md), and
+[networking in Compose](/manuals/compose/how-tos/networking.md).
+
 ## Overview
 
 Docker Desktop runs the Docker Engine inside a lightweight Linux virtual machine (VM). Depending on your system configuration and operating system, Docker Desktop routes network and file operations between the Docker VM and the host using different backend components.

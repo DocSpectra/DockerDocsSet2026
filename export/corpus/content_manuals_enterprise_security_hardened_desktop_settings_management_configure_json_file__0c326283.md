@@ -14,6 +14,15 @@ aliases:
 
 Settings Management lets you configure and enforce Docker Desktop settings across your organization using an `admin-settings.json` file. This standardizes Docker Desktop environments and ensures consistent configurations for all users.
 
+## Choose a JSON configuration task
+
+1. Check [prerequisites](#prerequisites).
+2. [Create the settings file](#step-one-create-the-settings-file).
+3. [Configure settings and locks](#step-two-configure-settings).
+4. [Apply the settings](#step-three-apply-the-settings).
+
+Use the [example file](#example-admin-settingsjson-file), the [JSON configuration tables](#admin-settingsjson-configurations), or the [settings reference](settings-reference.md) while configuring settings.
+
 ## Prerequisites
 
 Before you begin, make sure you have:
@@ -89,7 +98,25 @@ Example for `enhancedContainerIsolation`:
 }
 ```
 
-### Example `admin-settings.json` file
+## Step three: Apply the settings
+
+Settings take effect after Docker Desktop restarts and the user signs in.
+
+For new installations:
+
+1. Launch Docker Desktop.
+1. Sign in with your Docker account.
+
+For existing installations:
+
+1. Quit Docker Desktop completely.
+1. Relaunch Docker Desktop.
+
+> [!IMPORTANT]
+>
+> You must fully quit and reopen Docker Desktop. Restarting from the menu isn't sufficient.
+
+## Example `admin-settings.json` file
 
 The following sample is an `admin-settings.json` file with common enterprise settings configured. You can use this example as a template with the [`admin-settings.json` configurations](#admin-settingsjson-configurations):
 
@@ -245,24 +272,6 @@ The following sample is an `admin-settings.json` file with common enterprise set
 }
 ```
 
-## Step three: Apply the settings
-
-Settings take effect after Docker Desktop restarts and the user signs in.
-
-For new installations:
-
-1. Launch Docker Desktop.
-1. Sign in with your Docker account.
-
-For existing installations:
-
-1. Quit Docker Desktop completely.
-1. Relaunch Docker Desktop.
-
-> [!IMPORTANT]
->
-> You must fully quit and reopen Docker Desktop. Restarting from the menu isn't sufficient.
-
 ## `admin-settings.json` configurations
 
 The following tables describe all available settings in the `admin-settings.json` file.
@@ -369,7 +378,7 @@ The following tables describe all available settings in the `admin-settings.json
 | `dnsInhibition`         | Windows and Mac only        | Controls DNS record filtering returned to containers. Options: `auto` (recommended), `ipv4`, `ipv6`, `none`                                                                                                                 | |
 | `portBindingBehavior`   | Linux-based containers only | Defines port binding restrictions and default behavior, allowing admins to control how a user exposes ports from their containers. Options: `default-port-binding`, `default-local-port-binding`, `local-only-port-binding` | Docker Desktop version 4.52 and later. |
 
-For more information, see [Networking](/manuals/desktop/features/networking.md#networking-mode-and-dns-behaviour-for-mac-and-windows).
+For more information, see [Networking](/manuals/desktop/features/networking/networking-how-tos.md#network-how-tos-for-mac-and-windows).
 
 ### AI settings
 

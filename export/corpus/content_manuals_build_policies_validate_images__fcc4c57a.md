@@ -20,6 +20,15 @@ You should understand the policy basics from the [Introduction](./intro.md):
 creating policy files, basic Rego syntax, and how policies evaluate during
 builds.
 
+## Choose image checks
+
+- [Identify image inputs](#what-are-image-inputs).
+- [Allowlist repositories](#allowlist-specific-repositories) or [restrict registries](#restrict-registries).
+- [Compare semantic versions](#compare-semantic-versions) or [require digest references](#require-digest-references).
+- [Validate platforms](#validate-platform-constraints) or [image metadata](#inspect-image-metadata).
+- [Require attestations](#require-attestations-and-provenance) or [check GitHub Actions signatures](#verify-github-actions-signatures).
+- [Combine checks](#combine-multiple-checks).
+
 ## What are image inputs?
 
 Image inputs come from two Dockerfile instructions:

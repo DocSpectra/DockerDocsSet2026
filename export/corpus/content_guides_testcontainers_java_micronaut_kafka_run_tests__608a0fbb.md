@@ -5,6 +5,8 @@ description: Run your Testcontainers-based Micronaut Kafka integration tests and
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-micronaut-kafka/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-micronaut-kafka/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -34,7 +36,11 @@ To learn more about Testcontainers, visit the
 
 - [Testing REST API integrations in Micronaut apps using WireMock](/guides/testcontainers-java-micronaut-wiremock/)
 - [Testing Spring Boot Kafka Listener using Testcontainers](/guides/testcontainers-java-spring-boot-kafka/)
-- [Getting started with Testcontainers in a Java Spring Boot project](https://testcontainers.com/guides/testing-spring-boot-rest-api-using-testcontainers/)
+- [Getting started with Testcontainers in a Java Spring Boot project](/guides/testcontainers-java-spring-boot-rest-api/)
 - [Awaitility](http://www.awaitility.org/)
 - [Testcontainers Kafka module](https://java.testcontainers.org/modules/kafka/)
 - [Testcontainers MySQL module](https://java.testcontainers.org/modules/databases/mysql/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-micronaut-kafka/)

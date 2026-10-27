@@ -35,6 +35,15 @@ In this guide, you will be creating a Golang server with some endpoints to simul
 - You must me familiar with Prometheus and creating dashboards in Grafana.
 - You must have familiarity with Docker concepts like containers, images, and Dockerfiles. If you are new to Docker, you can start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
 
+## Choose a monitoring task
+
+1. [Get the sample application, register metrics, and run it locally](application.md)
+2. [Build and run the application in a container](containerize.md)
+3. [Connect the application, Prometheus, and Grafana with Compose](compose.md)
+4. [Rebuild with Compose Watch and visualize metrics in Grafana](develop.md)
+
+For sample navigation, see [Go samples](../../reference/samples/go.md) and [Prometheus samples](../../reference/samples/prometheus.md).
+
 ## Next steps
 
-You will create a Golang server and expose metrics using Prometheus.
+You will [create a Golang server and expose metrics using Prometheus](application.md).

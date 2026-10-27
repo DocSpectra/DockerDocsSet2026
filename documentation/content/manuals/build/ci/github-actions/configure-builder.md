@@ -8,6 +8,18 @@ keywords: ci, github actions, gha, buildkit, buildx
 This page contains instructions on configuring your BuildKit instances when
 using our [Setup Buildx Action](https://github.com/docker/setup-buildx-action).
 
+## Choose a builder task
+
+- [Pin Buildx or BuildKit versions](#version-pinning)
+- [View BuildKit container logs](#buildkit-container-logs)
+- [Configure the daemon](#buildkit-daemon-configuration)
+- [Append builder nodes](#append-additional-nodes-to-the-builder)
+- [Authenticate to a remote builder](#authentication-for-remote-builders)
+- [Use standalone mode](#standalone-mode)
+- [Select isolated builders](#isolated-builders)
+
+For cloud builders, see [Use Docker Build Cloud in CI](/manuals/build-cloud/ci.md).
+
 ## Version pinning
 
 By default, the action will attempt to use the latest version of [Buildx](https://github.com/docker/buildx)

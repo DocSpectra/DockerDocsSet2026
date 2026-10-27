@@ -15,7 +15,7 @@ organized under the correct accounts or namespaces.
 > [!NOTE]
 >
 > For bulk migrations, multi-arch images, or scripted workflows, see [Bulk
-> migrate Docker images](/manuals/docker-hub/repos/manage/hub-images/bulk-migrate.md).
+> migrate Docker images](./bulk-migrate.md).
 
 ## Personal to personal
 

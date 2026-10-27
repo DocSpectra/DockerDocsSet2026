@@ -10,6 +10,10 @@ aliases:
  - /guides/workshop/06_bind_mounts/
 ---
 
+On this page: [Compare mount types](#quick-volume-type-comparisons) · [Check file sharing and try bind mounts](#trying-out-bind-mounts) · [Run a development container](#run-your-app-in-a-development-container) · [Edit and rebuild the app](#develop-your-app-with-the-development-container).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](05_persisting_data.md) · [All tasks](_index.md#workshop-tasks).
+
 In [part 4](./05_persisting_data.md), you used a volume mount to persist the
 data in your database. A volume mount is a great choice when you need somewhere
 persistent to store your application data.

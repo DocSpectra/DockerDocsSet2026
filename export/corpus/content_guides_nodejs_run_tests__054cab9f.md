@@ -1,7 +1,7 @@
 ---
 title: Run Node.js tests in a container
 linkTitle: Run your tests
-weight: 30
+weight: 40
 keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
 aliases:
@@ -9,9 +9,22 @@ aliases:
   - /guides/language/nodejs/run-tests/
 ---
 
+[Node.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Run tests locally](#run-tests-locally-without-docker)
+- [Configure the test service](#add-test-service-to-docker-compose)
+- [Run tests in a container](#run-tests-in-a-container)
+- [Generate coverage](#run-tests-with-coverage)
+- [Configure the test image](#run-tests-when-building)
+- [Run the dedicated test service](#run-tests-in-a-dedicated-test-container)
+- [Run coverage in CI/CD](#run-tests-with-coverage-in-cicd)
+
 ## Prerequisites
 
-Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md).
+Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize a Node.js application](containerize.md).
 
 ## Overview
 
@@ -216,7 +229,7 @@ You should see output containing the following:
 
 In this section, you learned how to run tests when developing locally using Docker Compose and how to run tests when building your image.
 
-Related information:
+## Related resources
 
 - [Dockerfile reference](/reference/dockerfile/) – Understand all Dockerfile instructions and syntax.
 - [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.
@@ -226,3 +239,5 @@ Related information:
 ## Next steps
 
 Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions.
+
+Continue to [CI/CD](configure-github-actions.md).

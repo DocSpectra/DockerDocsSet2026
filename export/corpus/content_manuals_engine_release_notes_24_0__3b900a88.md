@@ -15,6 +15,18 @@ For more information about:
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [24.0.9](#2409), [24.0.7](#2407) |
+| Security sections | [24.0.9](#2409), [24.0.7](#2407) |
+| Deprecation and removal sections | [24.0.1](#2401), [24.0.0](#2400) |
+| Release notices | [24.0.9](#2409) |
+| Initial release entry | [24.0.0](#2400) |
+
 ## 24.0.9
 
 {{< release-date date="2024-01-31" >}}
@@ -24,7 +36,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - [docker/cli, 24.0.9 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
 - [moby/moby, 24.0.9 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
 
-## Security
+### Security
 
 This release contains security fixes for the following CVEs
 affecting Docker Engine and its components.

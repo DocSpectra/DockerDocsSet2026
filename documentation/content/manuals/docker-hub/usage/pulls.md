@@ -63,13 +63,13 @@ Attribution is based on the following:
   organizations under the company, the pull is attributed to the user's personal
   namespace.
 
-### Authentication
+## Authentication
 
 To ensure correct attribution of your pulls, you must authenticate with Docker
 Hub. The following sections provide information on how to sign in to Docker Hub
 to authenticate your pulls.
 
-#### Docker Desktop
+### Docker Desktop
 
 If you are using Docker Desktop, you can sign in to Docker Hub from the Docker
 Desktop menu.
@@ -77,13 +77,13 @@ Desktop menu.
 Select **Sign in / Create Docker ID** from the Docker Desktop menu and follow
 the on-screen instructions to complete the sign-in process.
 
-#### Docker Engine
+### Docker Engine
 
 If you're using a standalone version of Docker Engine, run the `docker login`
 command from a terminal to authenticate with Docker Hub. For information on how
 to use the command, see [docker login](/reference/cli/docker/login/).
 
-#### Docker Swarm
+### Docker Swarm
 
 If you're running Docker Swarm, you must use the `--with-registry-auth` flag to
 authenticate with Docker Hub. For more information, see [Create a
@@ -91,21 +91,21 @@ service](/reference/cli/docker/service/create/#with-registry-auth). If you
 are using a Docker Compose file to deploy an application stack, see [docker
 stack deploy](/reference/cli/docker/stack/deploy/).
 
-#### GitHub Actions
+### GitHub Actions
 
 If you're using GitHub Actions to build and push Docker images to Docker Hub,
 see [login action](https://github.com/docker/login-action#dockerhub). If you are
 using another Action, you must add your username and access token in a similar
 way for authentication.
 
-#### Kubernetes
+### Kubernetes
 
 If you're running Kubernetes, follow the instructions in [Pull an Image from a
 Private
 Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
 for information on authentication.
 
-#### Third-party platforms
+### Third-party platforms
 
 If you're using any third-party platforms, follow your provider’s instructions on using registry authentication.
 

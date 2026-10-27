@@ -15,6 +15,18 @@ development and production needs.
 You can explore the DHI catalog on [Docker Hub](https://hub.docker.com/search?q=&image_filter=store%2Cdhi) or use the [DHI CLI](../how-to/cli.md) to browse
 available images, tags, and metadata from the command line.
 
+Choose an image type or variant:
+
+- [Framework and application images](#framework-and-application-images)
+- [Debian or Alpine base distributions](#base-image-distributions), with a [glibc and musl comparison](../core-concepts/glibc-musl.md)
+- [Development or runtime variants](#development-and-runtime-variants)
+- [FIPS and STIG variants](#fips-and-stig-variants)
+- [Compatibility variants](#compatibility-variants)
+
+For tags and runtime specifications, see [Search and evaluate
+images](../how-to/explore.md). For migration caveats, see the
+[checklist](../migration/checklist.md).
+
 ## Framework and application images
 
 DHI includes a selection of popular frameworks and application images, each
@@ -79,7 +91,7 @@ For example, you might find tags like the following in a DHI repository:
 - `3.9.23-debian12`: runtime image for Python 3.9.23
 - `3.9.23-debian12-dev`: development image for Python 3.9.23
 
-## FIPs and STIG variants
+## FIPS and STIG variants
 
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 

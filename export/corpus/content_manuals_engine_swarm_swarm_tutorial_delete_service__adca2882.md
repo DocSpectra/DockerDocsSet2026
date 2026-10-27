@@ -6,6 +6,8 @@ weight: 60
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 The remaining steps in the tutorial don't use the `helloworld` service, so now
 you can delete the service from the swarm.
 

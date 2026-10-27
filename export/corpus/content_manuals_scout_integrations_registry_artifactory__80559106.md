@@ -14,6 +14,12 @@ images from Artifactory. This integration is powered by a long-running
 pushes image data to Docker Scout. View results in the Docker Scout Dashboard or
 with `docker scout` CLI.
 
+## On this page
+
+- [How the watch process works](#how-it-works)
+- [Artifactory registry string options](#artifactory-specific-registry-string-options)
+- [Integrate a registry: host setup, credentials, indexing, and continuous watching](#integrate-an-artifactory-registry)
+
 ## How it works
 
 You run [`docker scout watch`](/reference/cli/docker/scout/watch/) on a host you

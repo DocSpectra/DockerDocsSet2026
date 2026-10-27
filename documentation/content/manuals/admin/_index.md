@@ -40,6 +40,18 @@ Administrators can manage companies and organizations using the
 provides centralized observability, access management, and security controls
 across Docker environments.
 
+## Find an administration task
+
+- [Create an organization](organization/setup/orgs.md) or [convert a user account](organization/setup/convert-account.md)
+- [Onboard an organization](organization/setup/onboard.md)
+- [Invite members and manage roles](organization/manage/members.md)
+- [Create teams and set repository permissions](organization/manage/manage-a-team.md)
+- [Manage product access and usage](organization/manage/manage-products.md)
+- [Create a company](company/new-company.md) or [manage company organizations](company/manage/organizations.md)
+- [View activity logs](activity-logs.md) or [Docker usage Insights](insights.md)
+- [Manage subscription seats](../subscription/manage-seats.md) or [billing](../billing/_index.md)
+- [Deactivate an organization](organization/deactivate-account.md)
+
 ## Company and organization hierarchy
 
 The [Docker Admin Console](https://app.docker.com/admin) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.

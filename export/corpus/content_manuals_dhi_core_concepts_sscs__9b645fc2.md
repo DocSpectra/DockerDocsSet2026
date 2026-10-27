@@ -50,3 +50,9 @@ following features:
   regular updates and security patches, backed by an [SLA for addressing critical
   and high-severity vulnerabilities](https://docs.docker.com/go/dhi-sla/). This proactive approach helps ensure that
   images remain secure and compliant with enterprise standards.
+
+## Related tasks
+
+- [Verify images and charts](../how-to/verify.md)
+- [Scan images](../how-to/scan.md)
+- [Review roles and responsibilities](../explore/responsibility.md)

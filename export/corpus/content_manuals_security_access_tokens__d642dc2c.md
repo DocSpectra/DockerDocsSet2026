@@ -11,28 +11,13 @@ aliases:
 
 Personal access tokens (PATs) provide a secure alternative to passwords for Docker CLI authentication. Use PATs to authenticate automated systems, CI/CD pipelines, and development tools without exposing your Docker Hub password.
 
-## Key benefits
+## Find a token task
 
-PATs offer significant security advantages over password authentication:
-
-- Enhanced security: Investigate token usage, disable suspicious tokens, and prevent administrative actions that could compromise your account if your system is compromised.
-- Better automation: Issue multiple tokens for different integrations, each with specific permissions, and revoke them independently when no longer needed.
-- Two-factor authentication compatibility: Required when you have two-factor authentication turned on, providing secure CLI access without bypassing 2FA protection.
-- Usage tracking: Monitor when and how tokens are used to identify potential security issues or unused automation.
-
-## Who should use personal access tokens?
-
-Use PATs for these common scenarios:
-
-- Development workflows: Authenticate Docker CLI during local development
-- CI/CD pipelines: Automate image builds and deployments in continuous integration systems
-- Automation scripts: Push and pull images in automated deployment or backup scripts
-- Development tools: Integrate Docker Hub access with IDEs, container management tools, or monitoring systems
-- Two-factor authentication: Required for CLI access when 2FA is turned on
-
-> [!NOTE]
->
-> For organization-wide automation, consider [organization access tokens](/manuals/enterprise/security/access-tokens.md) which aren't tied to individual user accounts.
+- [Create a token](#create-a-personal-access-token)
+- [Use a token with the CLI](#use-personal-access-tokens)
+- [Rename, activate, deactivate, or delete a token](#modify-personal-access-tokens)
+- [Review Docker Desktop auto-generated tokens](#auto-generated-tokens)
+- [Review token benefits](#key-benefits), [use cases](#who-should-use-personal-access-tokens), and [fair use policy](#fair-use-policy)
 
 ## Create a personal access token
 
@@ -74,9 +59,10 @@ You can rename, activate, deactivate, or delete a token as needed. You can manag
 1. Sign in to [Docker Home](https://app.docker.com/login).
 1. Select your avatar in the top-right corner and from the drop-down menu select **Account settings**.
 1. Select **Personal access tokens**.
-      - This page shows an overview of all your tokens, and lists if the token was generated manually or if it was
+
+   This page shows an overview of all your tokens, and lists if the token was generated manually or if it was
    [auto-generated](#auto-generated-tokens). You can also view the scope of the
-   tokens, which tokens are activate and inactive, when they were created, when
+   tokens, which tokens are active and inactive, when they were created, when
    they were last used, and their expiration date.
 1. Select the actions menu on the far right of a token row, then select **Deactivate** or **Activate**, **Edit**, or **Delete** to modify the token.
 1. After editing the token, select **Save token**.
@@ -92,6 +78,29 @@ Docker Desktop automatically creates authentication tokens when you sign in, wit
 - Automatic cleanup: Older tokens are deleted when new ones are created
 
 You can manually delete auto-generated tokens if needed, but they'll be recreated when you use Docker Desktop.
+
+## Key benefits
+
+PATs offer significant security advantages over password authentication:
+
+- Enhanced security: Investigate token usage, disable suspicious tokens, and prevent administrative actions that could compromise your account if your system is compromised.
+- Better automation: Issue multiple tokens for different integrations, each with specific permissions, and revoke them independently when no longer needed.
+- Two-factor authentication compatibility: Required when you have two-factor authentication turned on, providing secure CLI access without bypassing 2FA protection.
+- Usage tracking: Monitor when and how tokens are used to identify potential security issues or unused automation.
+
+## Who should use personal access tokens?
+
+Use PATs for these common scenarios:
+
+- Development workflows: Authenticate Docker CLI during local development
+- CI/CD pipelines: Automate image builds and deployments in continuous integration systems
+- Automation scripts: Push and pull images in automated deployment or backup scripts
+- Development tools: Integrate Docker Hub access with IDEs, container management tools, or monitoring systems
+- Two-factor authentication: Required for CLI access when 2FA is turned on
+
+> [!NOTE]
+>
+> For organization-wide automation, consider [organization access tokens](/manuals/enterprise/security/access-tokens.md) which aren't tied to individual user accounts.
 
 ## Fair use policy
 

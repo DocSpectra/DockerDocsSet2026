@@ -34,3 +34,10 @@ Instead, from a Linux shell use a command like `docker run -v ~/my-project:/sour
 ## Limit CPU and memory usage
 
 If you have concerns about CPU or memory usage, configure limits on the memory, CPU, and swap size allocated to the [WSL 2 utility VM](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#global-configuration-options-with-wslconfig).
+
+## Related tasks
+
+- [Check prerequisites and turn on WSL 2](_index.md#prerequisites)
+- [Develop with Docker and VS Code](use-wsl.md)
+- [Configure Resource Saver and review its WSL memory behavior](/manuals/desktop/use-desktop/resource-saver.md#resource-saver-mode-on-windows)
+- [Validate GPU support](../gpu.md#validate-gpu-support)

@@ -24,4 +24,7 @@ there are no shared processes or data between cloud builders.
 
 {{< youtube-embed "8AqKhEO2PQA" >}}
 
+Continue to the [development demo](dev.md), or go to
+[setup prerequisites and steps](/manuals/build-cloud/setup.md).
+
 <div id="dbc-lp-survey-anchor"></div>

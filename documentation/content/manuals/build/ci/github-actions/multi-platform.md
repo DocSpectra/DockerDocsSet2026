@@ -5,6 +5,15 @@ description: Build for multiple architectures with GitHub Actions using QEMU emu
 keywords: ci, github actions, gha, buildkit, buildx, multi-platform
 ---
 
+## Choose a multi-platform task
+
+- [Build and push with QEMU](#build-and-push-with-qemu)
+- [Load results into the runner and review image-store requirements](#build-and-load-multi-platform-images)
+- [Distribute builds across runners](#distribute-build-across-multiple-runners)
+- [Distribute a Bake build](#with-bake)
+
+## Build and push with QEMU
+
 You can build [multi-platform images](../../building/multi-platform.md) using
 the `platforms` option, as shown in the following example:
 

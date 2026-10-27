@@ -5,6 +5,8 @@ description: Set up a Go project with a PostgreSQL-backed repository.
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-go-getting-started/#prerequisites)
+
 ## Initialize the project
 
 Start by creating a Go project.
@@ -101,3 +103,7 @@ Here's what the code does:
 - `Repository` holds a `*pgx.Conn` for performing database operations.
 - `NewRepository(connStr)` takes a database connection string and initializes a `Repository`.
 - `CreateCustomer()` and `GetCustomerByEmail()` are methods on the `Repository` receiver that insert and query customer records.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-go-getting-started/write-tests/)

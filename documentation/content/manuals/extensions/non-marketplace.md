@@ -7,7 +7,7 @@ aliases:
  - /desktop/extensions/non-marketplace/
 ---
 
-## Install an extension not available in the Marketplace
+## Before you install
 
 > [!WARNING]
 >
@@ -21,7 +21,9 @@ You can install an extension that has been developed by the community or interna
 > [!NOTE]
 >
 > Ensure the option **Allow only extensions distributed through the Docker Marketplace** is disabled. Otherwise, this prevents any extension not listed in the Marketplace, via the Extension SDK tools from, being installed.
-> You can change this option in **Settings**. 
+> You can change this option in [**Settings**](settings-feedback.md#turn-on-or-turn-off-extensions-not-available-in-the-marketplace). 
+
+## Install an extension not available in the Marketplace
 
 To install an extension which is not present in the Marketplace, you can use the Extensions CLI that is bundled with Docker Desktop.
 

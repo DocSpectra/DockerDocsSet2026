@@ -7,9 +7,13 @@ aliases:
  - /guides/docker-concepts/running-containers/multi-container-applications/
 ---
 
+On this page: [Service separation and Compose](#explanation) · [Get the sample](#set-up) · [Build images](#build-the-images) · [Run containers](#run-the-containers) · [Use Compose](#simplify-the-deployment-using-docker-compose).
+
 {{< youtube-embed 1jUwR6F9hvM >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Separate services and manage application stacks
 
 Starting up a single-container application is easy. For example, a Python script that performs a specific data processing task runs within a container with all its dependencies. Similarly, a Node.js application serving a static website with a small API endpoint can be effectively containerized with all its necessary libraries and dependencies. However, as applications grow in size, managing them as individual containers becomes more difficult.
 
@@ -40,7 +44,9 @@ Docker Compose defines your entire multi-container application in a single YAML 
 By leveraging Docker Compose for running multi-container setups, you can build complex applications with modularity, scalability, and consistency at their core.
 
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Run the counter application with CLI and Compose
 
 In this hands-on guide, you'll first see how to build and run a counter web application based on Node.js, an Nginx reverse proxy, and a Redis database using the `docker run` commands. You’ll also see how you can simplify the entire deployment process using Docker Compose.
 
@@ -218,6 +224,6 @@ In this guide, you learned how easy it is to use Docker Compose to start and sto
 
 ## Additional resources
 
-* [`docker container run` CLI reference](reference/cli/docker/container/run/)
+* [`docker container run` CLI reference](/reference/cli/docker/container/run/)
 * [What is Docker Compose](/get-started/docker-concepts/the-basics/what-is-docker-compose/)
 

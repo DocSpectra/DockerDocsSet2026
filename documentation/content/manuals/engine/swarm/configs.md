@@ -4,6 +4,18 @@ description: How to store configuration data separate from the runtime
 keywords: swarm, configuration, configs
 ---
 
+## Choose a config task
+
+- Review [config scope and size](#about-configs), [Windows caveats](#windows-support),
+  and [storage and access](#how-docker-manages-configs).
+- [Update, rotate, or remove configs](#update-rotate-and-remove-configs).
+- [Get started with a Redis service](#simple-example-get-started-with-configs).
+- [Use configs in a Windows service](#simple-example-use-configs-in-a-windows-service).
+- [Use a templated config](#example-use-a-templated-config).
+- [Configure Nginx with secrets and a config](#advanced-example-use-configs-with-a-nginx-service),
+  then [rotate its config](#example-rotate-a-config).
+- [Find CLI commands](#read-more-about-docker-config-commands).
+
 ## About configs
 
 Docker swarm service configs  allow you to store non-sensitive information,
@@ -26,7 +38,7 @@ Config values can be generic strings or binary content (up to 500 kb in size).
 
 Configs are supported on both Linux and Windows services.
 
-### Windows support
+## Windows support
 
 Docker includes support for configs on Windows containers, but there are differences
 in the implementations, which are called out in the examples below. Keep the
@@ -88,6 +100,8 @@ If a node loses connectivity to the swarm while it is running a task container
 with access to a config, the task container still has access to its configs, but
 cannot receive updates until the node reconnects to the swarm.
 
+## Update, rotate, and remove configs
+
 You can add or inspect an individual config at any time, or list all
 configs. You cannot remove a config that a running service is
 using. See [Rotate a config](configs.md#example-rotate-a-config) for a way to
@@ -108,16 +122,6 @@ removes any config that was created by `docker stack deploy` with the same stack
 name. This removes _all_ configs, including those not referenced by services and
 those remaining after a `docker service update --config-rm`.
 
-## Read more about `docker config` commands
-
-Use these links to read about specific commands, or continue to the
-[example about using configs with a service](#advanced-example-use-configs-with-a-nginx-service).
-
-- [`docker config create`](/reference/cli/docker/config/create/)
-- [`docker config inspect`](/reference/cli/docker/config/inspect/)
-- [`docker config ls`](/reference/cli/docker/config/ls/)
-- [`docker config rm`](/reference/cli/docker/config/rm/)
-
 ## Examples
 
 This section includes graduated examples which illustrate how to use
@@ -135,7 +139,7 @@ The `docker stack` command supports defining configs in a Compose file.
 However, the `configs` key is not supported for `docker compose`. See
 [the Compose file reference](/reference/compose-file/configs.md) for details.
 
-### Simple example: Get started with configs
+## Simple example: Get started with configs
 
 This simple example shows how configs work in just a few commands. For a
 real-world example, continue to
@@ -230,7 +234,7 @@ real-world example, continue to
     $ docker config rm my-config
     ```
 
-### Simple example: Use configs in a Windows service
+## Simple example: Use configs in a Windows service
 
 This is a very simple example which shows how to use configs with a Microsoft
 IIS service running on Docker for Windows running Windows containers on
@@ -282,7 +286,7 @@ This example assumes that you have PowerShell installed.
     docker config rm homepage
     ```
 
-### Example: Use a templated config
+## Example: Use a templated config
 
 To create a configuration in which the content will be generated using a
 template engine, use the `--template-driver` parameter and specify the engine
@@ -332,7 +336,7 @@ name as its argument. The template will be rendered when container is created.
     </html>
     ```
 
-### Advanced example: Use configs with a Nginx service
+## Advanced example: Use configs with a Nginx service
 
 This example is divided into two parts.
 [The first part](#generate-the-site-certificate) is all about generating
@@ -342,7 +346,7 @@ and use the site certificate as a series of secrets and the Nginx configuration
 as a config. The example shows how to set options on the config, such as the
 target location within the container and the file permissions (`mode`).
 
-#### Generate the site certificate
+### Generate the site certificate
 
 Generate a root CA and TLS certificate and key for your site. For production
 sites, you may want to use a service such as `Let’s Encrypt` to generate the
@@ -429,7 +433,7 @@ generate the site key and certificate, name the files `site.key` and
     you need them if you want to generate a new site certificate. Protect
     the `root-ca.key` file.
 
-#### Configure the Nginx container
+### Configure the Nginx container
 
 1.  Produce a very basic Nginx configuration that serves static files over HTTPS.
     The TLS certificate and key are stored as Docker secrets so that they
@@ -605,7 +609,7 @@ You have now configured a Nginx service with its configuration decoupled from
 its image. You could run multiple sites with exactly the same image but
 separate configurations, without the need to build a custom image at all.
 
-### Example: Rotate a config
+## Example: Rotate a config
 
 To rotate a config, you first save a new config with a different name than the
 one that is currently in use. You then redeploy the service, removing the old
@@ -666,3 +670,13 @@ configuration file.
 
 You have now updated your `nginx` service's configuration without the need to
 rebuild its image.
+
+## Read more about `docker config` commands
+
+Use these links to read about specific commands, or return to the
+[example about using configs with a service](#advanced-example-use-configs-with-a-nginx-service).
+
+- [`docker config create`](/reference/cli/docker/config/create/)
+- [`docker config inspect`](/reference/cli/docker/config/inspect/)
+- [`docker config ls`](/reference/cli/docker/config/ls/)
+- [`docker config rm`](/reference/cli/docker/config/rm/)

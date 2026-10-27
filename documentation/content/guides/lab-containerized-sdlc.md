@@ -27,9 +27,7 @@ development lifecycle. You'll write a Compose file for local development,
 integration tests using Testcontainers, a CI/CD pipeline, and Kubernetes
 manifests — using the same container image throughout.
 
-## Launch the lab
-
-{{< labspace-launch image="dockersamples/labspace-containerized-sdlc" browserUrl="http://dockerlabs.xyz" >}}
+Jump to: [learning objectives](#what-youll-learn), [modules](#modules), or [launch the lab](#launch-the-lab).
 
 ## What you'll learn
 
@@ -52,3 +50,13 @@ By the end of this Labspace, you will have completed the following:
 | 5   | Continuous Integration with Gitea Actions | Build a pipeline that tests, builds, and pushes a container image        |
 | 6   | Deploying to Kubernetes                   | Write manifests and deploy to a live k3s cluster with automated rollouts |
 | 7   | The Containerized SDLC: A Recap           | Review the portability, consistency, and reproducibility gains           |
+
+## Launch the lab
+
+{{< labspace-launch image="dockersamples/labspace-containerized-sdlc" browserUrl="http://dockerlabs.xyz" >}}
+
+## Related learning paths
+
+- [Getting Started with Docker](lab-container-getting-started.md)
+- [Container-Supported Development](lab-container-supported-development.md)
+- [Container-supported development videos](container-supported-development.md)

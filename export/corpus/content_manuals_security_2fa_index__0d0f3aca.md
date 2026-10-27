@@ -24,6 +24,13 @@ Two-factor authentication significantly improves your account security:
 - Compliance requirements: Many organizations require 2FA for accessing development and production resources.
 - Peace of mind: Know that your Docker repositories, images, and account settings are protected by industry-standard security practices.
 
+## Find a 2FA task
+
+- [Review prerequisites](#prerequisites) and [enable 2FA](#enable-two-factor-authentication)
+- [Use a personal access token with the CLI](../access-tokens.md#use-personal-access-tokens)
+- [Generate a new recovery code](recover-hub-account.md#generate-a-new-recovery-code) or [recover an account without access](recover-hub-account.md#recover-your-account-without-access)
+- [Disable 2FA](#disable-two-factor-authentication)
+
 ## Prerequisites
 
 Before turning on two-factor authentication, you need:

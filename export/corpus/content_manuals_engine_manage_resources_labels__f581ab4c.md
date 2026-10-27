@@ -21,6 +21,12 @@ You can use labels to organize your images, record licensing information, annota
 relationships between containers, volumes, and networks, or in any way that makes
 sense for your business or application.
 
+For label syntax, see [Label keys and values](#label-keys-and-values).
+For commands, go to the object type:
+[images](#images), [containers](#containers), [local daemons](#local-docker-daemons),
+[volumes](#volumes), [networks](#networks), [Swarm nodes](#swarm-nodes), or
+[Swarm services](#swarm-services).
+
 ## Label keys and values
 
 A label is a key-value pair, stored as a string. You can specify multiple labels

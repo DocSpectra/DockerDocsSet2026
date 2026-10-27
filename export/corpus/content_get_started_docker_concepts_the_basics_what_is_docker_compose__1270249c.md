@@ -8,9 +8,13 @@ aliases:
  - /guides/docker-concepts/the-basics/what-is-docker-compose/
 ---
 
+On this page: [Compose and Dockerfiles](#explanation) · [Start the application](#start-the-application) · [Tear down and review volume persistence](#tear-it-down) · [Additional resources](#additional-resources).
+
 {{< youtube-embed xhcUIK4fGtY >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Compose and multi-container applications
 
 If you've been following the guides so far, you've been working with single container applications. But, now you're wanting to do something more complicated - run databases, message queues, caches, or a variety of other services. Do you install everything in a single container? Run multiple containers? If you run multiple, how do you connect them all together?
 
@@ -27,7 +31,9 @@ It's important to understand that Compose is a declarative tool - you simply def
 > A Dockerfile provides instructions to build a container image while a Compose file defines your running containers. Quite often, a Compose file references a Dockerfile to build an image to use for a particular service.
 
 
-## Try it out 
+<a id="try-it-out"></a>
+
+## Exercise: Start and tear down a Compose application
 
 In this hands-on, you will learn how to use a Docker Compose to run a multi-container application. You'll use a simple to-do list app built with Node.js and MySQL as a database server.
 

@@ -10,6 +10,13 @@ posture. These attestations are a core part of secure software supply chain
 practices and help users validate that an image is trustworthy and
 policy-compliant.
 
+Choose a task:
+
+- [List image attestation types](#image-attestations) or [chart attestation types](#helm-chart-attestations)
+- [View and verify attestations](../how-to/verify.md)
+- [Retrieve package attestations](../how-to/hardened-packages.md#package-attestations)
+- [Add attestations to derivative images](#add-your-own-attestations)
+
 ## What is an attestation?
 
 An attestation is a signed statement that provides verifiable information

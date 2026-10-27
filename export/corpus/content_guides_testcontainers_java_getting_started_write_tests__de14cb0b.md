@@ -5,6 +5,8 @@ description: Write your first integration test using Testcontainers for Java and
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-getting-started/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-getting-started/create-project/)
+
 You have the `CustomerService` implementation ready, but for testing you need a
 PostgreSQL database. You can use Testcontainers to spin up a Postgres database
 in a Docker container and run your tests against it.
@@ -80,6 +82,8 @@ class CustomerServiceTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - Declares a `PostgreSQLContainer` with the `postgres:16-alpine` Docker image.
@@ -92,3 +96,7 @@ Here's what the test does:
 - `shouldGetCustomers()` inserts 2 customer records, fetches all customers,
   and asserts the count.
 - The `@AfterAll` callback stops the container after all test methods finish.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-getting-started/run-tests/)

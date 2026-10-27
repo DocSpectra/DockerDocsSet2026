@@ -15,6 +15,8 @@ params:
   time: 20 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-testing-rest-api-integrations-using-mockserver -->
 
 In this guide, you will learn how to:
@@ -32,3 +34,9 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Create the project](/guides/testcontainers-java-mockserver/create-project/)
+2. [Write tests](/guides/testcontainers-java-mockserver/write-tests/)
+3. [Run tests](/guides/testcontainers-java-mockserver/run-tests/)

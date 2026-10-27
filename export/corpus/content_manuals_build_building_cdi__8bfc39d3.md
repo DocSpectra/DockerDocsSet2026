@@ -44,7 +44,23 @@ in one of the following locations:
 > is enabled. Buildx v0.27+ is also required to mount the WSL libraries in the
 > container.
 
+> [!NOTE]
+> [`RUN --device` command](/reference/dockerfile.md#run---device) is only
+> featured in [`labs` channel](../buildkit/frontend.md#labs-channel) since
+> [Dockerfile frontend v1.14.0-labs](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0-labs)
+> and not yet available in stable syntax.
+
+## Find a device task
+
+- [Set up CDI](#getting-started).
+- [Build with a simple device specification](#building-with-a-simple-cdi-specification).
+- [Allow a requested device](#allow-the-device).
+- [Set up a GPU container builder](#set-up-a-container-builder-with-gpu-support).
+- [Build with GPU support](#building-with-gpu-support).
+
 ## Building with a simple CDI specification
+
+### Define the device
 
 Let's start with a simple CDI specification that injects an environment variable
 into the build environment and write it to `/etc/cdi/foo.yaml`:
@@ -58,6 +74,8 @@ devices:
     env:
     - FOO=injected
 ```
+
+### Inspect the device
 
 Inspect the `default` builder to verify that `vendor1.com/device` is detected
 as a device:
@@ -101,6 +119,8 @@ GC Policy rule#3:
  Min Free Space: 2.794GiB
 ```
 
+### Request the device
+
 Now let's create a Dockerfile to use this device:
 
 ```dockerfile
@@ -114,12 +134,6 @@ Here we use the [`RUN --device` command](/reference/dockerfile.md#run---device)
 and set `vendor1.com/device` which requests the first device available in the
 specification. In this case it uses `foo`, which is the first device in
 `/etc/cdi/foo.yaml`.
-
-> [!NOTE]
-> [`RUN --device` command](/reference/dockerfile.md#run---device) is only
-> featured in [`labs` channel](../buildkit/frontend.md#labs-channel) since
-> [Dockerfile frontend v1.14.0-labs](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0-labs)
-> and not yet available in stable syntax.
 
 Now let's build this Dockerfile:
 
@@ -145,6 +159,8 @@ Devices:
  Automatically allowed: false
 ```
 
+### Allow the device
+
 To allow the device, you can use the [`--allow` flag](/reference/cli/docker/buildx/build/#allow)
 with the `docker buildx build` command:
 
@@ -166,6 +182,8 @@ devices:
 annotations:
   org.mobyproject.buildkit.device.autoallow: true
 ```
+
+### Verify the build
 
 Now running the build again with the `--allow device` flag:
 

@@ -30,6 +30,17 @@ learning workflows, or integrating AI into your software development lifecycle,
 Docker Model Runner provides a consistent, secure, and efficient way to work
 with AI models locally.
 
+## Find a task
+
+- [Check platform requirements](#requirements), then [install and enable DMR](get-started.md#enable-docker-model-runner)
+- [Pull and run a model](get-started.md#pull-a-model)
+- [Publish a model](get-started.md#publish-a-model)
+- [Choose and set up an inference engine](inference-engines.md#engine-comparison)
+- [Configure context size and runtime flags](configuration.md)
+- [Call the API](api-reference.md#determine-the-base-url) or [connect an IDE or tool](ide-integrations.md)
+- [Use models in Compose](../compose/models-and-compose.md)
+- [Troubleshoot DMR](troubleshooting.md) or review [privacy and data collection](#privacy-and-data-collection)
+
 ## Key features
 
 - [Pull and push models to and from Docker Hub or any OCI-compliant registry](https://hub.docker.com/u/ai)
@@ -124,21 +135,7 @@ See [Configuration options](configuration.md) for details on context size and ot
 
 ### `docker model` is not recognised
 
-If you run a Docker Model Runner command and see:
-
-```text
-docker: 'model' is not a docker command
-```
-
-It means Docker can't find the plugin because it's not in the expected CLI plugins directory.
-
-To fix this, create a symlink so Docker can detect it:
-
-```console
-$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
-```
-
-Once linked, rerun the command.
+See [Fix plugin discovery](troubleshooting.md#docker-model-is-not-recognised).
 
 ## Privacy and data collection
 

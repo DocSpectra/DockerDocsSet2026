@@ -5,6 +5,17 @@ description: Set up a Spring Boot project with jOOQ, Flyway, PostgreSQL, and Tes
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-jooq-flyway/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create Flyway migration scripts](#create-flyway-migration-scripts)
+- [Configure jOOQ code generation](#configure-jooq-code-generation)
+- [Create model classes](#create-model-classes)
+- [Implement repositories using jOOQ](#implement-repositories-using-jooq)
+- [Fetch complex object graphs](#fetch-complex-object-graphs)
+
 ## Set up the project
 
 Create a Spring Boot project from [Spring Initializr](https://start.spring.io)
@@ -329,3 +340,7 @@ This uses jOOQ's
 for the many-to-one `Post`-to-`User` association and
 [MULTISET](https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/multiset-value-constructor/)
 for the one-to-many `Post`-to-`Comment` association.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-jooq-flyway/write-tests/)

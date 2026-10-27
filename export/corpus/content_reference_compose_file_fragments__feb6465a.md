@@ -9,9 +9,20 @@ weight: 70
 
 {{% include "compose/fragments.md" %}}
 
+## Define anchors and aliases
+
 Anchors are created using the `&` sign. The sign is followed by an alias name. You can use this alias with the `*` sign later to reference the value following the anchor. Make sure there is no space between the `&` and the `*` characters and the following alias name. 
 
 You can use more than one anchor and alias in a single Compose file.
+
+## Find a reuse pattern
+
+- [Reuse a volume definition](#example-1).
+- [Reuse environment variables](#example-2).
+- [Override part of a reused definition](#example-3).
+- [Extend a mapping and check sequence restrictions](#example-4).
+
+For reusable extension fields, see [Extensions](extension.md). For merging separate Compose files, see [Merge](merge.md).
 
 ## Example 1
 

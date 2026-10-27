@@ -2,7 +2,7 @@
 description: Discover how to manage access to repositories on Docker Hub.
 keywords: Docker Hub, Hub, repository access, repository collaborators, repository privacy
 title: Access management
-LinkTItle: Access
+linkTitle: Access
 weight: 50
 aliases:
 - /docker-hub/repos/access/
@@ -11,6 +11,17 @@ aliases:
 In this topic learn about the features available to manage access to your
 repositories. This includes visibility, collaborators, roles, teams, and
 organization access tokens.
+
+## Find an access task
+
+- [Change repository visibility](#change-repository-visibility)
+- [Manage personal repository collaborators](#manage-collaborators)
+- [Review organization roles](#organization-roles)
+- [Configure team repository permissions](#configure-team-repository-permissions)
+- [Review organization access tokens](#organization-access-tokens-oats)
+- [Invite distributor members for gated distribution](#invite-distributor-members-via-api)
+
+For namespace defaults, see [Default privacy](../../settings.md#default-privacy).
 
 ## Repository visibility
 
@@ -94,7 +105,7 @@ repository from that repository's **Settings** page.
 
 Organizations can use roles for individuals, giving them different
 permissions in the organization. For more details, see [Roles and
-permissions](/manuals/enterprise/security/roles-and-permissions.md).
+permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ## Organization teams
 
@@ -156,7 +167,7 @@ If you are interested in Gated Distribution contact the [Docker Sales Team](http
 ### Invite distributor members via API
 
 > [!NOTE]
-> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for details about the access permissions for each role.
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md) for details about the access permissions for each role.
 
 Distributor members (used for gated distribution) can only be invited using the Docker Hub API. UI-based invitations are not currently supported for this role. To invite distributor members, use the Bulk create invites API endpoint.
 

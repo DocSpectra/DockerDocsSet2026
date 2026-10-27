@@ -6,6 +6,8 @@ weight: 80
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 In earlier steps of the tutorial, all the nodes have been running with `Active`
 availability. The swarm manager can assign tasks to any `Active` node, so up to
 now all nodes have been available to receive tasks.

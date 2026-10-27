@@ -32,6 +32,14 @@ grid:
   description: Explore usage limits and how to better utilize Docker Hub.
   icon: leaderboard
   link: /docker-hub/usage/
+- title: Troubleshoot
+  description: Troubleshoot Docker Hub.
+  icon: note_add
+  link: /docker-hub/troubleshoot/
+- title: API references
+  description: Docker Hub API reference, changelog, and deprecated endpoints.
+  icon: book
+  link: /reference/api/hub/
 - title: Release notes
   description: Find out about new features, improvements, and bug fixes.
   icon: note_add

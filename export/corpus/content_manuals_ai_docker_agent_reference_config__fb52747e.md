@@ -13,6 +13,18 @@ and RAG sources.
 For detailed documentation of each toolset's capabilities and specific options,
 see the [Toolsets reference](./toolsets.md).
 
+## Find a configuration section
+
+- [File structure](#file-structure)
+- [Agent properties](#agents), [delegation and handoff](#task-delegation-versus-conversation-handoff), [commands](#commands), and [structured output](#structured-output)
+- [Model properties](#models), [thinking budget](#thinking-budget), and [Docker Model Runner](#docker-model-runner-dmr)
+- [Toolset syntax](#tools) and [toolset capabilities](toolsets.md)
+- [RAG strategies, chunking, and results](#rag)
+- [Metadata](#metadata)
+- [Complete example](#example-configuration)
+
+For setup steps, see [Model providers](../model-providers.md), [Local models](../local-models.md), or the [coding-agent tutorial](../tutorial.md).
+
 ## File structure
 
 A configuration file has four top-level sections:

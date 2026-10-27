@@ -4,6 +4,8 @@ description: Gather your company's requirements from key stakeholders and commun
 weight: 10
 ---
 
+Previous: [Guide overview](_index.md). Next: [Finalize plans and begin setup](finalize-plans-and-setup.md).
+
 ## Communicate with your developers and IT teams
 
 Before rolling out Docker Desktop across your organization, coordinate with key stakeholders to ensure a smooth transition.
@@ -64,7 +66,7 @@ Review these areas together:
   for Docker Desktop users
 - Additional Docker products included in your subscriptions
 
-To view the parameters that can be preset, see [Configure Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#step-two-configure-the-settings-you-want-to-lock-in).
+To view the parameters that can be preset, see [Configure Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#step-two-configure-settings).
 
 ## Optional: Meet with the Docker Implementation team
 

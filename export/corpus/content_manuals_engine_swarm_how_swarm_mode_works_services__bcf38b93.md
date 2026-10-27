@@ -21,6 +21,16 @@ service including:
 - A rolling update policy
 - The number of replicas of the image to run in the swarm
 
+## Explore services and scheduling
+
+- [Services, tasks, and containers](#services-tasks-and-containers)
+- [Tasks and scheduling](#tasks-and-scheduling)
+- [Pending services and scheduling caveats](#pending-services)
+- [Replicated and global services](#replicated-and-global-services)
+
+For task steps, see [Deploy services](../services.md). To inspect task states,
+see [Swarm task states](swarm-task-states.md#view-task-state).
+
 ## Services, tasks, and containers
 
 When you deploy the service to the swarm, the swarm manager accepts your service

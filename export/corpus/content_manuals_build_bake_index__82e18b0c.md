@@ -51,6 +51,25 @@ $ docker buildx bake
 This executes the `default` group, which builds the `frontend` and `backend`
 targets concurrently.
 
+## Find a Bake task
+
+- [Start with a single build](introduction.md)
+- [Define targets and groups](targets.md)
+- [Reuse target configuration](inheritance.md)
+- [Set and validate variables](variables.md)
+- [Override configuration with files, CLI flags, or environment variables](overrides.md)
+- [Build variants with matrices](matrices.md)
+- [Evaluate expressions](expressions.md) or [define functions](funcs.md)
+- [Use additional build contexts](contexts.md)
+- [Build from a Compose file](compose-file.md)
+- [Load a remote Bake definition](remote-definition.md)
+
+## Follow a guide
+
+- [Build, test, and export artifacts with Bake](/guides/bake/index.md)
+- [Extend a Compose project with Bake](/guides/compose-bake/index.md)
+- [Use Bake with Docker GitHub Builder](../ci/github-actions/github-builder/bake.md)
+
 ## Get started
 
 To learn how to get started with Bake, head over to the [Bake introduction](./introduction.md).

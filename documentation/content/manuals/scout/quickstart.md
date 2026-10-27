@@ -14,6 +14,18 @@ This guide takes a vulnerable container image and shows you how to use Docker
 Scout to identify and fix the vulnerabilities, compare image versions over time,
 and share the results with your team.
 
+## Follow the steps
+
+For installation instructions, see [Install Docker Scout](./install.md).
+
+1. [Set up the example project](#step-1-setup)
+2. [Enable Docker Scout](#step-2-enable-docker-scout)
+3. [Analyze vulnerabilities](#step-3-analyze-image-vulnerabilities)
+4. [Fix application vulnerabilities](#step-4-fix-application-vulnerabilities)
+5. [Evaluate policy compliance](#step-5-evaluate-policy-compliance)
+6. [Improve compliance and add attestations](#step-6-improve-compliance)
+7. [View results in the Dashboard](#step-7-view-in-dashboard)
+
 ## Step 1: Setup
 
 [This example project](https://github.com/docker/scout-demo-service) contains
@@ -46,7 +58,7 @@ a vulnerable Node.js application that you can use to follow along.
 Docker Scout analyzes all local images by default. To analyze images in
 remote repositories, you need to enable it first.
 You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
-[Find out how in the overview guide](/scout).
+[Find out how to activate repository analysis](./explore/analysis.md#activate-docker-scout-on-a-repository).
 
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.

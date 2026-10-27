@@ -11,6 +11,12 @@ weight: 20
 
 This page explains how to recover your Docker account and manage recovery codes for two-factor authentication.
 
+## Choose a recovery task
+
+- [Generate a new recovery code while you still have account access](#generate-a-new-recovery-code)
+- [Recover access after losing both the authenticator and recovery code](#recover-your-account-without-access)
+- [Enable or disable two-factor authentication](_index.md)
+
 ## Generate a new recovery code
 
 If you lost your two-factor authentication recovery code but still have access to your Docker Hub account, you can generate a new recovery code.

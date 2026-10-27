@@ -11,6 +11,14 @@ aliases:
 Docker Scout uses SBOM attestations if available on the image (recommended).
 If no SBOM attestation is available, Docker Scout creates one by indexing the image contents.
 
+## Choose an SBOM task
+
+- [View an SBOM in the CLI](#view-from-cli)
+- [Attach an SBOM at build-time](#attest)
+- [Extract an SPDX JSON file from a remote or local image](#extract-to-file)
+
+For an introduction, see [Software Bill of Materials](/guides/docker-scout/sbom/).
+
 ## View from CLI
 
 To view the contents of the SBOM that Docker Scout generates, you can use the
@@ -61,6 +69,16 @@ reference](/reference/cli/docker/scout/sbom/).
 
 ## Attach as build attestation {#attest}
 
+### Prerequisites
+
+To build images with SBOM attestations, you must use either the [containerd
+image store](/manuals/desktop/features/containerd.md) feature, or use a `docker-container`
+builder together with the `--push` flag to push the image (with attestations)
+directly to a registry. The classic image store doesn't support manifest lists
+or image indices, which is required for adding attestations to an image.
+
+### Build with the Docker Scout generator
+
 You can generate the SBOM and attach it to the image at build-time as an
 [attestation](/manuals/build/metadata/attestations/_index.md). BuildKit provides a default
 SBOM generator which is different from what Docker Scout uses.
@@ -74,12 +92,6 @@ $ docker build --tag <org>/<image> \
   --attest type=sbom,generator=docker/scout-sbom-indexer:latest \
   --push .
 ```
-
-To build images with SBOM attestations, you must use either the [containerd
-image store](/manuals/desktop/features/containerd.md) feature, or use a `docker-container`
-builder together with the `--push` flag to push the image (with attestations)
-directly to a registry. The classic image store doesn't support manifest lists
-or image indices, which is required for adding attestations to an image.
 
 ## Extract to file
 

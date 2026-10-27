@@ -1,15 +1,25 @@
 ---
 description: Docker Desktop for Mac Release notes for older versions
 keywords: Docker Desktop for Mac, release notes
-title: Release notes for previous versions
+title: Docker Desktop for Mac stable release archive
+linkTitle: Mac stable archive
 toc_min: 1
-toc_max: 2
+toc_max: 3
 aliases:
 - /desktop/mac/release-notes/archive/
 sitemap: false
 ---
 
 This page contains release notes for older versions of Docker Desktop for Mac.
+
+## Find archived changes and upgrade caveats
+
+| Task | Release entries |
+| --- | --- |
+| Browse stable releases by year | [2018](#stable-releases-of-2018), [2017](#stable-releases-of-2017), [2016](#stable-releases-of-2016) |
+| Review AUFS disk reset requirements and macOS support notices | [18.06.0-ce-mac70](#docker-community-edition-18060-ce-mac70-2018-07-25) |
+
+For another platform or series, use [Previous releases](_index.md). For download availability, see the [Docker Desktop release notes](../release-notes.md#check-download-availability-and-rollout).
 
 ## Stable Releases of 2018
 

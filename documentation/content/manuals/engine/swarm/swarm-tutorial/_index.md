@@ -21,6 +21,19 @@ terminal window.
 
 If you are brand new to Docker, see [About Docker Engine](../../_index.md).
 
+## Tutorial steps
+
+1. [Check setup requirements](#set-up).
+2. [Create a swarm](create-swarm.md).
+3. [Add nodes](add-nodes.md).
+4. [Deploy a service](deploy-service.md).
+5. [Inspect the service](inspect-service.md).
+6. [Scale the service](scale-service.md).
+7. [Delete the service](delete-service.md).
+8. [Apply rolling updates](rolling-update.md).
+9. [Drain a node](drain-node.md).
+10. [Use the routing mesh](../ingress.md).
+
 ## Set up
 
 To run this tutorial, you need:

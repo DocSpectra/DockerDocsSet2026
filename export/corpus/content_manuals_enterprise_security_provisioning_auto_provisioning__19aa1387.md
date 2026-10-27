@@ -12,7 +12,7 @@ Auto-provisioning automatically adds users to your organization when they sign i
 >
 > For domains that are part of an SSO connection, Just-in-Time (JIT) provisioning takes precedence over auto-provisioning when adding users to an organization.
 
-### Overview
+## Overview
 
 When auto-provisioning is enabled for a verified domain:
 
@@ -22,7 +22,7 @@ When auto-provisioning is enabled for a verified domain:
 - Company and organization owners receive email notifications when new users are added.
 - You may need to [manage seats](/manuals/subscription/manage-seats.md) to accommodate new users.
 
-### Enable auto-provisioning
+## Enable auto-provisioning
 
 Auto-provisioning is configured per domain. To enable it:
 
@@ -38,7 +38,7 @@ organization.
 
 The **Auto-provisioning** column will update to **Enabled** for the domain.
 
-### Disable auto-provisioning
+## Disable auto-provisioning
 
 To disable auto-provisioning for a user:
 

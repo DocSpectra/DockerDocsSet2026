@@ -18,6 +18,21 @@ Debian-based DHI variant. If you're using an Alpine-based image, migrate to the
 Alpine-based DHI variant. This minimizes changes to package management and
 dependencies during migration.
 
+## Before you begin
+
+> [!NOTE]
+>
+> You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
+> Use your Docker ID credentials (the same username and password you use for
+> Docker Hub). If you don't have a Docker account, [create
+> one](../../accounts/create-account.md) for free.
+>
+> Run `docker login dhi.io` to authenticate.
+
+Review the [migration checklist](./checklist.md). For image users, shells,
+package managers, and entry points, see [image variant
+details](../how-to/explore.md#image-variant-details).
+
 ## Key differences
 
 When migrating from non-hardened images to DHI, be aware of these key differences:
@@ -42,15 +57,6 @@ needed to install packages and dependencies.
 
 The following example diff snippet from a Dockerfile shows the old base image
 replaced by the new hardened image.
-
-> [!NOTE]
->
-> You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
-> Use your Docker ID credentials (the same username and password you use for
-> Docker Hub). If you don't have a Docker account, [create
-> one](../../accounts/create-account.md) for free.
->
-> Run `docker login dhi.io` to authenticate.
 
 
 ```diff

@@ -9,6 +9,8 @@ aliases:
   - /guides/language/ruby/develop/
 ---
 
+[Ruby on Rails guide overview](_index.md)
+
 ## Prerequisites
 
 Complete [Containerize a Ruby on Rails application](containerize.md).
@@ -17,8 +19,8 @@ Complete [Containerize a Ruby on Rails application](containerize.md).
 
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 
-- Adding a local database and persisting data
-- Configuring Compose to automatically update your running Compose services as you edit and save your code
+- [Adding a local database and persisting data](#add-a-local-database-and-persist-data)
+- [Configuring Compose to automatically update your running Compose services as you edit and save your code](#automatically-update-services)
 
 ## Add a local database and persist data
 
@@ -61,6 +63,8 @@ secrets:
 > To learn more about the instructions in the Compose file, see [Compose file
 > reference](/reference/compose-file/).
 
+### Create the database password file
+
 Before you run the application using Compose, notice that this Compose file specifies a `password.txt` file to hold the database's password. You must create this file as it's not included in the source repository.
 
 In the cloned repository's directory, create a new directory named `db` and inside that directory create a file named `password.txt` that contains the password for the database. Using your favorite IDE or text editor, add the following contents to the `password.txt` file.
@@ -101,11 +105,15 @@ directory.
 └── vendor
 ```
 
+### Start and check the application
+
 Now, run the following `docker compose up` command to start your application.
 
 ```console
 $ docker compose up --build
 ```
+
+### Migrate the database and verify persistence
 
 In Ruby on Rails, `db:migrate` is a Rake task that is used to run migrations on the database. Migrations are a way to alter the structure of your database schema over time in a consistent and easy way.
 
@@ -201,3 +209,5 @@ Related information:
 ## Next steps
 
 In the next section, you'll learn how you can locally test and debug your workloads on Kubernetes before deploying.
+
+Continue: [Test the deployment on Kubernetes](deploy.md).

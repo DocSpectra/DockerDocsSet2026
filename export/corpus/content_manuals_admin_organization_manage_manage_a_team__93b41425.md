@@ -25,6 +25,14 @@ The organization owner can add additional organization owners to help them
 manage users, teams, and repositories in the organization by assigning them
 the owner role.
 
+## Find a team task
+
+- [Review organization owner permissions](#what-is-an-organization-owner)
+- [Create a team](#create-a-team)
+- [Add or remove team members](members.md#manage-members-on-a-team)
+- [Set repository permissions](#set-team-repository-permissions) and [review permission levels](#permissions-reference)
+- [Delete a team](#delete-a-team)
+
 ## What is an organization owner?
 
 An organization owner is an administrator who has the following permissions:
@@ -46,7 +54,7 @@ Organization owners can add others with the owner role to help them
 manage users, teams, and repositories in the organization.
 
 For more information on roles, see
-[Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+[Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
 
 ## Create a team
 
@@ -57,8 +65,7 @@ For more information on roles, see
 ## Set team repository permissions
 
 You must create a team before you are able to configure repository permissions.
-For more details, see [Create and manage a
-team](/manuals/admin/organization/manage/manage-a-team.md).
+For more details, see [Create a team](#create-a-team).
 
 To set team repository permissions:
 

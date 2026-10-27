@@ -17,6 +17,13 @@ To understand your usage patterns, [view your consumption](../admin/organization
 >
 > Legacy Docker subscribers must upgrade to new Docker subscriptions to access scaling options. Legacy subscriptions apply to subscribers who last purchased or renewed before December 10, 2024. For details, see [Announcing Upgraded Docker Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
 
+## Find a capacity task
+
+- [Review minute expiration and rollover considerations](#usage-considerations)
+- [Add Docker Build Cloud minutes](#add-docker-build-cloud-build-minutes)
+- [Add Testcontainers Cloud runtime minutes](#add-docker-testcontainers-cloud-runtime-minutes)
+- [Manage subscription seats](manage-seats.md)
+
 ## Usage considerations
 
 Minutes don't roll over. Base subscription minutes reset each billing period and don't accumulate. Additional purchased minutes expire at the end of your subscription period.

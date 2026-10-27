@@ -10,6 +10,15 @@ To add content to a repository on Docker Hub, you need to tag your Docker image
 and then push it to your repository. This process lets you share your
 images with others or use them in different environments.
 
+## Before you begin
+
+- [Sign in before pushing](../../../quickstart.md#step-3-build-and-push-an-image-to-docker-hub)
+- [Review repository access](../access.md)
+- [Review archive status](../../archive.md)
+- [Review tag mutability settings](./immutable-tags.md)
+
+## Tag and push the image
+
 1. Tag your Docker image.
 
    The `docker tag` command assigns a tag to your Docker image, which includes

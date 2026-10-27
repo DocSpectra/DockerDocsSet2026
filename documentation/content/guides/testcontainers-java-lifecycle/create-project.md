@@ -5,6 +5,8 @@ description: Set up a Java project with a PostgreSQL-backed customer service for
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-lifecycle/#prerequisites)
+
 ## Set up the project
 
 Create a Java project with Maven and add the required dependencies:
@@ -164,3 +166,7 @@ public class CustomerService {
   }
 }
 ```
+
+## Continue
+
+[Next: Lifecycle callbacks](/guides/testcontainers-java-lifecycle/lifecycle-callbacks/)

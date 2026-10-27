@@ -6,6 +6,20 @@ keywords: swarm, secrets, credentials, sensitive strings, sensitive data, securi
 tags: [Secrets]
 ---
 
+## Choose a secrets task
+
+- Review [secret scope and size](#about-secrets), [Windows caveats](#windows-support),
+  and [storage and access](#how-docker-manages-secrets).
+- [Inspect, remove, and version secrets](#inspect-remove-and-version-secrets).
+- [Get started with a Redis service](#simple-example-get-started-with-secrets).
+- [Use secrets in a Windows service](#simple-example-use-secrets-in-a-windows-service).
+- [Configure Nginx with TLS secrets](#intermediate-example-use-secrets-with-a-nginx-service).
+- [Configure WordPress and MySQL](#advanced-example-use-secrets-with-a-wordpress-service),
+  then [rotate the password](#example-rotate-a-secret).
+- [Adapt an image to read secrets](#build-support-for-docker-secrets-into-your-images).
+- [Use secrets in Compose](#use-secrets-in-compose).
+- [Find CLI commands](#read-more-about-docker-secret-commands).
+
 ## About secrets
 
 In terms of Docker Swarm services, a _secret_ is a blob of data, such as a
@@ -46,7 +60,7 @@ files. However, Docker supports the use of [configs](configs.md)
 for storing non-sensitive data. Configs are mounted into the container's
 filesystem directly, without the use of a RAM disk.
 
-### Windows support
+## Windows support
 
 Docker includes support for secrets on Windows containers. Where there are
 differences in the implementations, they are called out in the
@@ -104,6 +118,8 @@ If a node loses connectivity to the swarm while it is running a task container
 with access to a secret, the task container still has access to its secrets, but
 cannot receive updates until the node reconnects to the swarm.
 
+## Inspect, remove, and version secrets
+
 You can add or inspect an individual secret at any time, or list all
 secrets. You cannot remove a secret that a running service is
 using. See [Rotate a secret](secrets.md#example-rotate-a-secret) for a way to
@@ -112,18 +128,6 @@ remove a secret without disrupting running services.
 To update or roll back secrets more easily, consider adding a version
 number or date to the secret name. This is made easier by the ability to control
 the mount point of the secret within a given container.
-
-## Read more about `docker secret` commands
-
-Use these links to read about specific commands, or continue to the
-[example about using secrets with a service](secrets.md#simple-example-get-started-with-secrets).
-
-- [`docker secret create`](/reference/cli/docker/secret/create/)
-- [`docker secret inspect`](/reference/cli/docker/secret/inspect/)
-- [`docker secret ls`](/reference/cli/docker/secret/ls/)
-- [`docker secret rm`](/reference/cli/docker/secret/rm/)
-- [`--secret`](/reference/cli/docker/service/create/#secret) flag for `docker service create`
-- [`--secret-add` and `--secret-rm`](/reference/cli/docker/service/update/#secret-add) flags for `docker service update`
 
 ## Examples
 
@@ -145,7 +149,7 @@ Both the `docker-compose` and `docker stack` commands support defining secrets
 in a compose file. See
 [the Compose file reference](/reference/compose-file/legacy-versions.md) for details.
 
-### Simple example: Get started with secrets
+## Simple example: Get started with secrets
 
 This simple example shows how secrets work in just a few commands. For a
 real-world example, continue to
@@ -264,7 +268,7 @@ real-world example, continue to
     $ docker secret rm my_secret_data
     ```
 
-### Simple example: Use secrets in a Windows service
+## Simple example: Use secrets in a Windows service
 
 This is a very simple example which shows how to use secrets with a Microsoft
 IIS service running on Docker for Windows running Windows containers on
@@ -322,7 +326,7 @@ This example assumes that you have PowerShell installed.
     > docker image remove secret-test
     ```
 
-### Intermediate example: Use secrets with a Nginx service
+## Intermediate example: Use secrets with a Nginx service
 
 This example is divided into two parts.
 [The first part](#generate-the-site-certificate) is all about generating
@@ -330,7 +334,7 @@ the site certificate and does not directly involve Docker secrets at all, but
 it sets up [the second part](#configure-the-nginx-container), where you store
 and use the site certificate and Nginx configuration as secrets.
 
-#### Generate the site certificate
+### Generate the site certificate
 
 Generate a root CA and TLS certificate and key for your site. For production
 sites, you may want to use a service such as `Let’s Encrypt` to generate the
@@ -417,7 +421,7 @@ generate the site key and certificate, name the files `site.key` and
     you need them if you want to generate a new site certificate. Protect
     the `root-ca.key` file.
 
-#### Configure the Nginx container
+### Configure the Nginx container
 
 1.  Produce a very basic Nginx configuration that serves static files over HTTPS.
     The TLS certificate and key are stored as Docker secrets so that they
@@ -617,7 +621,7 @@ generate the site key and certificate, name the files `site.key` and
     $ docker secret rm site.crt site.key site.conf
     ```
 
-### Advanced example: Use secrets with a WordPress service
+## Advanced example: Use secrets with a WordPress service
 
 In this example, you create a single-node MySQL service with a custom root
 password, add the credentials as secrets, and create a single-node WordPress
@@ -828,7 +832,7 @@ line.
 8.  Do not clean up any services or secrets if you intend to proceed to the next
     example, which demonstrates how to rotate the MySQL root password.
 
-### Example: Rotate a secret
+## Example: Rotate a secret
 
 This example builds upon the previous one. In this scenario, you create a new
 secret with a new MySQL password, update the `mysql` and `wordpress` services to
@@ -1035,3 +1039,15 @@ for that secret data.
 
 More information on short and long syntax for secrets can be found in the
 [Compose Specification](/reference/compose-file/secrets.md).
+
+## Read more about `docker secret` commands
+
+Use these links to read about specific commands, or return to the
+[example about using secrets with a service](secrets.md#simple-example-get-started-with-secrets).
+
+- [`docker secret create`](/reference/cli/docker/secret/create/)
+- [`docker secret inspect`](/reference/cli/docker/secret/inspect/)
+- [`docker secret ls`](/reference/cli/docker/secret/ls/)
+- [`docker secret rm`](/reference/cli/docker/secret/rm/)
+- [`--secret`](/reference/cli/docker/service/create/#secret) flag for `docker service create`
+- [`--secret-add` and `--secret-rm`](/reference/cli/docker/service/update/#secret-add) flags for `docker service update`

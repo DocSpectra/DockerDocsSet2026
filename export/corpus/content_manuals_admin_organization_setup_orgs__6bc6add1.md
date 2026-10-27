@@ -19,6 +19,15 @@ There are multiple ways to create an organization. You can either:
 
 These procedures walk you through creating an organization from the Admin Console.
 
+## On this page
+
+- [Prerequisites](#prerequisites)
+- [Create an organization](#create-an-organization)
+- [View an organization](#view-an-organization)
+- [Merge organizations and review billing caveats](#merge-organizations)
+
+For conversion prerequisites and consequences, see [Convert an account into an organization](convert-account.md).
+
 ## Prerequisites
 
 - Before you create an organization, you need a [Docker ID](/manuals/accounts/create-account.md).

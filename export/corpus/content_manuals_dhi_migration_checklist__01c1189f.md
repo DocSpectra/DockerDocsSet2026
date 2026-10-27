@@ -19,3 +19,12 @@ Use this checklist to ensure you address key considerations when migrating to Do
 | Ports              | Configure your application to listen on port 1025 or higher inside the container, as the nonroot user can't bind to privileged ports (below 1024) in Kubernetes or Docker Engine versions older than 20.10. |
 | Entry point        | Check the entry point of your chosen DHI using `docker inspect` or the image documentation. Update your Dockerfile's `ENTRYPOINT` or `CMD` instructions if your application relies on a different entry point.                                                                                                                                                                        |
 | No shell           | Move any shell commands (`RUN`, `SHELL`) to build stages using `dev`-tagged images. Runtime images don't include a shell, so copy all necessary artifacts from the build stage.                                                                                                                                                                            |
+
+## Continue with a migration guide
+
+- [Alpine or Debian Docker Official Images](./migrate-from-doi.md)
+- [Ubuntu](./migrate-from-ubuntu.md)
+- [Wolfi](./migrate-from-wolfi.md)
+- [Gordon](./migrate-with-ai.md)
+- [Language-specific Dockerfile examples](./examples/_index.md)
+- [Troubleshooting](../troubleshoot.md)

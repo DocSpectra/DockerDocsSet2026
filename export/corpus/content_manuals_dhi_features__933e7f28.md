@@ -27,6 +27,10 @@ DHI provides security for everyone:
   catalog access, and optional Extended Lifecycle Support (ELS) for post-EOL
   coverage.
 
+For setup steps, choose the [Community quickstart](./get-started.md) or
+[Select and Enterprise walkthrough](./how-to/select-enterprise.md). For a
+subscription comparison, see the [DHI overview](./_index.md).
+
 ## DHI Community features
 
 DHI's core features are open and free to use, share, and build on with no

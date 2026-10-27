@@ -12,6 +12,14 @@ You can customize how Compose Bridge converts your Docker Compose files into pla
 
 This page explains how Compose Bridge uses templating to generate Kubernetes manifests and how you can customize these templates for your specific requirements and needs, or how you can build your own transformation.  
 
+## Choose a customization task
+
+- [Modify the default templates](#modify-the-default-templates)
+- [Customize Model Runner templates](#model-runner-templates)
+- [Add your own templates](#add-your-own-templates)
+- [Build your own transformation](#build-your-own-transformation)
+- [Use the default transformation](usage.md)
+
 ## How it works 
 
 Compose bridge uses transformations to let you convert a Compose model into another form. 
@@ -190,7 +198,7 @@ $ docker compose bridge convert \
     --transformation mycompany/transform 
 ```
 
-### Build your own transformation
+## Build your own transformation
 
 While Compose Bridge templates make it easy to customize with minimal changes,
 you may want to make significant changes, or rely on an existing conversion tool.

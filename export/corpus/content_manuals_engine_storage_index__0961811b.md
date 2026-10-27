@@ -18,9 +18,14 @@ persists independently of container lifecycle.
 [storage drivers](drivers/)): How the daemon stores image layers and container
 writable layers on disk.
 
-This page focuses on container data persistence. For information about how
-Docker stores images and container layers, see
-[containerd image store](containerd.md) or [Storage drivers](drivers/).
+## Find storage steps
+
+- [Choose a storage mount](#storage-mount-options).
+- [Create and mount volumes](volumes.md) or [use a volume with Compose](volumes.md#use-a-volume-with-docker-compose).
+- [Back up, restore, or migrate volumes](volumes.md#back-up-restore-or-migrate-data-volumes).
+- [Manage volumes in Docker Desktop](../../desktop/use-desktop/volumes.md).
+- [Back up and restore Docker Desktop data](../../desktop/settings-and-maintenance/backup-and-restore.md).
+- [Locate or move daemon data](../daemon/_index.md#daemon-data-directory).
 
 ## Container layer basics
 

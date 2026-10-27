@@ -10,6 +10,10 @@ aliases:
  - /guides/workshop/03_updating_app/
 ---
 
+On this page: [Update source and rebuild](#update-the-source-code) · [Port already allocated](#port-already-allocated) · [Stop and remove the old container](#remove-the-old-container) · [Start the updated app](#start-the-updated-app-container).
+
+Workshop navigation: [Prerequisites](02_our_app.md#prerequisites) · [Previous part](02_our_app.md) · [All tasks](_index.md#workshop-tasks).
+
 In [part 1](./02_our_app.md), you containerized a todo application. In this part, you'll update the application and image. You'll also learn how to stop and remove a container.
 
 ## Update the source code
@@ -35,6 +39,8 @@ In the following steps, you'll change the "empty text" when you don't have any t
    ```console
    $ docker run -dp 127.0.0.1:3000:3000 getting-started
    ```
+
+### Port already allocated
 
 You probably saw an error like this:
 
@@ -88,7 +94,7 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 {{< /tab >}}
 {{< /tabs >}}
 
-### Start the updated app container
+## Start the updated app container
 
 1. Now, start your updated app using the `docker run` command.
 

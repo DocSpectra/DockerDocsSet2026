@@ -5,6 +5,16 @@ description: Set up a Quarkus project with Hibernate ORM with Panache, PostgreSQ
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-quarkus/#prerequisites)
+
+## In this step
+
+- [Set up the project](#set-up-the-project)
+- [Create the JPA entity](#create-the-jpa-entity)
+- [Create the CustomerService CDI bean](#create-the-customerservice-cdi-bean)
+- [Add the Flyway database migration script](#add-the-flyway-database-migration-script)
+- [Create the REST API endpoints](#create-the-rest-api-endpoints)
+
 ## Set up the project
 
 Create a Quarkus project from [code.quarkus.io](https://code.quarkus.io/) by
@@ -189,3 +199,7 @@ public class CustomerResource {
     }
 }
 ```
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-quarkus/write-tests/)

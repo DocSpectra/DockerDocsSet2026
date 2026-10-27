@@ -5,6 +5,8 @@ description: Run your Testcontainers-based integration tests and explore next st
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-nodejs-getting-started/#prerequisites) · [Previous: Write tests](/guides/testcontainers-nodejs-getting-started/write-tests/)
+
 ## Run the tests
 
 Add the test script to `package.json` if it isn't there already:
@@ -34,6 +36,8 @@ Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 ```
 
+## View Testcontainers debug output
+
 To see what Testcontainers is doing under the hood — which containers it
 starts, what versions it uses — set the `DEBUG` environment variable:
 
@@ -58,3 +62,7 @@ To learn more about Testcontainers, visit the
 ## Further reading
 
 - [Testcontainers for Node.js documentation](https://node.testcontainers.org)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-nodejs-getting-started/)

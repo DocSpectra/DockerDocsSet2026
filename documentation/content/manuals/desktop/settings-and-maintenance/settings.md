@@ -26,6 +26,23 @@ You can also locate the `settings-store.json` file at:
 
 For information on enforcing settings at an organization level, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
 
+## Find a setting
+
+| Task | Settings or instructions |
+| --- | --- |
+| Change startup, terminal, image store, VMM, or feature defaults | [General](#general) |
+| Set CPU, memory, disk, or idle resource usage | [Resources: Advanced](#advanced) and [Resource Saver](../use-desktop/resource-saver.md) |
+| Share host files | [File sharing](#file-sharing) |
+| Configure outbound access | [Proxies](#proxies) and [Network](#network) |
+| Integrate a WSL distribution | [WSL integration](#wsl-integration-windows-only) |
+| Configure the daemon | [Docker Engine](#docker-engine) |
+| Inspect, select, create, remove, or stop builders | [Builders](#builders) |
+| Configure or reset Kubernetes | [Kubernetes](#kubernetes) |
+| Manage updates, extensions, beta features, or notifications | [Software updates](#software-updates), [Extensions](#extensions), [Beta features](#beta-features), and [Notifications](#notifications) |
+| Change CLI paths or privileged permissions on Mac | [Advanced (Mac only)](#advanced-mac-only) |
+| Configure cloud workloads | [Docker Offload](#docker-offload) |
+| Back up before resetting or reinstalling | [Backup and restore data](backup-and-restore.md) |
+
 ## General
 
 Configure startup behavior, UI appearance, terminal preferences, and feature defaults for Docker Desktop.
@@ -38,7 +55,7 @@ Configure startup behavior, UI appearance, terminal preferences, and feature def
 | **Configure shell completions**                                  | Edits your shell configuration to enable word completion for commands, flags, and Docker objects when you press `<Tab>` in your terminal. For more information, see [Completion](/manuals/engine/cli/completion.md). | Disabled | All | |
 | **Choose container terminal** | Sets which terminal opens when you select a container terminal. Use the integrated terminal to run commands in a running container from the Dashboard. For more information, see [Explore containers](/manuals/desktop/use-desktop/container.md). | Disabled | All | |
 | **Enable Docker terminal**.                                       | Interact with your host machine and execute commands directly from Docker Desktop.  | Disabled | All | |
-| **Enable Docker Debug by default**                                | Use Docker Debug by default opening the integrated terminal. For more information, see [Explore containers](/manuals/desktop/use-desktop/container.md#integrated-terminal).   | Disabled | All | |
+| **Enable Docker Debug by default**                                | Use Docker Debug by default opening the integrated terminal. For more information, see [Explore containers](/manuals/desktop/use-desktop/container.md#execdebug).   | Disabled | All | |
 | **Include VM in Time Machine backups**                            | Back up the Docker Desktop virtual machine. | Disabled | Mac | |
 | **Use containerd for pulling and storing images**     | Uses containerd image store instead of classic image store. For more information, see [containerd image store](/manuals/desktop/features/containerd.md).| Enabled  | All   |           |
 | **Expose daemon on tcp://localhost:2375 without TLS** | Allow legacy clients to connect to the Docker daemon. Use with caution as exposing the daemon without TLS can result in remote code execution attacks. | Disabled                  | Windows (Hyper-V backend only) | |
@@ -88,6 +105,8 @@ the host while running and testing the code in a container.
 | **Virtual file shares** | Share local directories with Linux containers. By default the `/Users`, `/Volumes`, `/private`, `/tmp` and `/var/folders` directory are shared. If your project is outside this directory then it must be added to the list, otherwise you may get `Mounts denied` or `cannot start service` errors at runtime. | Mac, Linux, Windows Hyper-V | |
 
 
+#### File sharing performance and caveats
+
 - Share only the directories that you need with the container. File sharing
 introduces overhead as any changes to the files on the host need to be notified
 to the Linux VM. Sharing too many files can lead to high CPU load and slow
@@ -115,6 +134,8 @@ once a file called `test` is created, attempts to create a second file called
 For more information, see [Volume mounting requires file sharing for any project directories outside of `/Users`](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md).
 
 ### Proxies
+
+For setup steps, see [Working with proxies](../features/networking/networking-how-tos.md#working-with-proxies). For platform authentication caveats and CLI plugin configuration, see [Using Docker Desktop with a proxy](../features/networking/_index.md#using-docker-desktop-with-a-proxy).
 
 Docker Desktop supports HTTP/HTTPS and SOCKS5 proxies. SOCKS5 requires a Business subscription.
 
@@ -159,6 +180,8 @@ Used for outbound traffic from running containers.
 
 ### Network
 
+For changes to internal IP addresses, see [Changing internal IP addresses](../features/networking/networking-how-tos.md#changing-internal-ip-addresses).
+
 > [!NOTE]
 >
 > On Windows, the **Network** tab is not available in Windows container mode because Windows manages networking.
@@ -191,6 +214,8 @@ To see the full list of possible configuration options, see the
 
 ## Builders
 
+To inspect build results and logs, see [Builds](../use-desktop/builds.md).
+
 Use the **Builders** tab to inspect and manage builders in the Docker Desktop settings.
 
 ### Inspect
@@ -221,14 +246,14 @@ Your build commands now use the selected builder by default.
 ### Create a builder
 
 To create a builder, use the Docker CLI. See
-[Create a new builder](/build/builders/manage/#create-a-new-builder)
+[Create a new builder](/manuals/build/builders/manage.md#create-a-new-builder)
 
 ### Remove a builder
 
 You can remove a builder if:
 
-- The builder isn't your [selected builder](/build/builders/#selected-builder)
-- The builder isn't [associated with a Docker context](/build/builders/#default-builder).
+- The builder isn't your [selected builder](/manuals/build/builders/_index.md#selected-builder)
+- The builder isn't [associated with a Docker context](/manuals/build/builders/_index.md#default-builder).
 
   To remove builders associated with a Docker context, remove the context using
   the `docker context rm` command.
@@ -245,7 +270,7 @@ the build cache is also removed, along with the builder.
 ### Stop and start a builder
 
 Builders that use the
-[`docker-container` driver](/build/builders/drivers/docker-container/)
+[`docker-container` driver](/manuals/build/builders/drivers/docker-container.md)
 run the BuildKit daemon in a container.
 You can start and stop the BuildKit container using the drop-down menu.
 
@@ -338,5 +363,7 @@ Enable Docker Offload and configure idle timeout and GPU support for cloud-based
 | Setting             | Description                               | Notes                                 |
 | ------------------- | ----------------------------------------- | ------------------------------------- |
 | **Enable Docker Offload** | Run your containers in the cloud.  | Requires sign-in and an Offload subscription |
-| **Idle timeout** | Set the duration of time between no activity and Docker Offload entering idle mode. For details about idle timeout, see [Active and idle states](../../offload/configuration.md#understand-active-and-idle-states). | |
+| **Idle timeout** | Set the duration of time between no activity and Docker Offload entering idle mode. For details about idle timeout, see [Session management and idle state](../../offload/about.md#session-management-and-idle-state). | |
 | **Enable GPU support** | Let your workloads use cloud GPU if available. | |
+
+For access prerequisites and session steps, see [Docker Offload quickstart](../../offload/quickstart.md). For organization and developer settings, see [Configure Docker Offload](../../offload/configuration.md).

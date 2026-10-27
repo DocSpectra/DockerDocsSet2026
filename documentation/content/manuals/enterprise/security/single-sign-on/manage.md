@@ -16,6 +16,14 @@ This page covers how to manage single sign-on (SSO) after initial setup,
 including managing domains, connections, users, and provisioning
 settings.
 
+## Choose a management task
+
+- [Add or remove a domain on a connection](#manage-domains).
+- [View, edit, or delete connections](#manage-sso-connections).
+- [Manage users and provisioning](#manage-users-and-provisioning).
+- [Enable SSO enforcement](connect.md#enforce-sso).
+- [Add, verify, audit, or delete domains](../domain-management.md).
+
 ## Manage domains
 
 ### Add a domain
@@ -79,6 +87,11 @@ To modify an existing SSO connection:
 
 ### Delete a connection
 
+> [!WARNING]
+>
+> Deleting an SSO connection removes access for all users who authenticate through
+that connection.
+
 To remove an SSO connection:
 
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
@@ -86,11 +99,6 @@ To remove an SSO connection:
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Delete connection**.
 1. Follow the on-screen instructions to confirm the deletion.
-
-> [!WARNING]
->
-> Deleting an SSO connection removes access for all users who authenticate through
-that connection.
 
 ## Manage users and provisioning
 

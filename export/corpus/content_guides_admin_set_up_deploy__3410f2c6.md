@@ -10,6 +10,8 @@ weight: 40
 > MDM teams are prepared to handle any unexpected issues, as these steps will
 > affect all existing users signing into your Docker organization.
 
+Previous: [Test your setup](testing.md).
+
 ## Enforce SSO
 
 Enforcing SSO means that anyone who has a Docker profile with an email address
@@ -17,7 +19,7 @@ that matches your verified domain must sign in using your SSO connection. Make
 sure the Identity provider groups associated with your SSO connection cover all
 the developer groups that you want to have access to the Docker subscription.
 
-For instructions on how to enforce SSO, see [Enforce SSO](/manuals/enterprise/security/single-sign-on/connect.md).
+For instructions on how to enforce SSO, see [Enforce SSO](/manuals/enterprise/security/single-sign-on/connect.md#enforce-sso).
 
 ## Deploy configuration settings and enforce sign-in to users
 

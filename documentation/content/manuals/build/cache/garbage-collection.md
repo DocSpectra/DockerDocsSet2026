@@ -19,6 +19,12 @@ benefit from customizing these settings to better align with their workflow
 needs. The following sections explain how GC works and provide guidance on
 tailoring its behavior through custom configuration.
 
+## Choose a configuration path
+
+- [Review garbage collection policies](#garbage-collection-policies).
+- For the docker driver, see [Docker daemon configuration](#docker-daemon-configuration-file) and [custom policies](#custom-gc-policies-in-the-docker-daemon-configuration-file).
+- For other build drivers, see [BuildKit configuration](#buildkit-configuration-file) and [custom policies](#custom-gc-policies-in-buildkit).
+
 ## Garbage collection policies
 
 GC policies define a set of rules that determine how the build cache is managed

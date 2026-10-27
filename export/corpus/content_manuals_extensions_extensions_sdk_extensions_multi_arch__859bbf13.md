@@ -13,6 +13,10 @@ It is highly recommended that, at a minimum, your extension is supported for the
 
 Docker Desktop retrieves the extension image according to the user’s system architecture. If the extension does not provide an image that matches the user’s system architecture, Docker Desktop is not able to install the extension. As a result, users can’t run the extension in Docker Desktop.
 
+## Can I develop extensions that run Windows containers?
+
+Although Docker Extensions is supported on Docker Desktop for Windows, Mac, and Linux, the extension framework only supports Linux containers. Therefore, you must target `linux` as the OS when you build your extension image.
+
 ## Build and push for multiple architectures
 
 If you created an extension from the `docker extension init` command, the
@@ -139,7 +143,3 @@ As a result, when `TARGETARCH` equals:
 > The binary destination path for Darwin is `darwin/kubectl` in both cases. The only change is the architecture-specific binary that is downloaded.
 
 When the extension is installed, the extension framework copies the binaries from the extension image at `/darwin/kubectl` for Darwin, or `/windows/kubectl.exe` for Windows, to a specific location in the user’s host filesystem.
-
-## Can I develop extensions that run Windows containers?
-
-Although Docker Extensions is supported on Docker Desktop for Windows, Mac, and Linux, the extension framework only supports Linux containers. Therefore, you must target `linux` as the OS when you build your extension image.

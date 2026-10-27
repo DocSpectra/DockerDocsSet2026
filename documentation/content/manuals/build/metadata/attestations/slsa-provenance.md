@@ -24,6 +24,15 @@ using [the `version` parameter](#version).
 For more information about how BuildKit populates these provenance properties, refer to
 [SLSA definitions](slsa-definitions.md).
 
+## Find a provenance task
+
+- [Create an attestation](#create-provenance-attestations).
+- Choose [minimal](#min) or [maximum](#max) detail, including the warning about build argument values.
+- [Choose a schema version](#version).
+- [Inspect provenance or extract the Dockerfile](#inspecting-provenance).
+- [Read the maximum-detail example](#provenance-attestation-example).
+- To disable default attestations, see [Creating attestations](./_index.md#creating-attestations).
+
 ## Create provenance attestations
 
 To create a provenance attestation, pass the `--attest type=provenance` option

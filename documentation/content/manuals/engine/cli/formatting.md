@@ -33,6 +33,13 @@ include examples of customizing the output format.
 > ```
 >
 
+## Choose a formatting task
+
+- Inspect available fields: [Hint](#hint)
+- Work with strings: [join](#join), [lower](#lower), [split](#split), [title](#title), [upper](#upper), [truncate](#truncate)
+- Arrange output: [table](#table), [pad](#pad), [println](#println)
+- Encode data: [json](#json)
+
 ## join
 
 `join` concatenates a list of strings to create a single string.
@@ -118,7 +125,7 @@ This example displays the image repository name, truncating it to the first 15 c
 $ docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' container
 ```
 
-## Hint
+## Find available fields {#hint}
 
 To find out what data can be printed, show all content as json:
 

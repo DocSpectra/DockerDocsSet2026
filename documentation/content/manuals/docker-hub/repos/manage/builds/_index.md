@@ -12,6 +12,18 @@ aliases:
 Docker Hub can automatically build images from source code in an external
 repository and automatically push the built image to your Docker repositories.
 
+## Build tasks
+
+- [Link a GitHub or Bitbucket account](./link-source.md)
+- [Subscription requirements and build setup](./setup.md)
+- [Set up automated repository tests](./automated-testing.md)
+- [Customize builds, tests, and hooks](./advanced.md)
+- [Monitor, cancel, or disable builds](./manage-builds.md)
+- [Troubleshoot failed builds and private submodules](./troubleshoot.md)
+- [Migrate from Autobuilds to CI/CD](./migrate.md)
+
+## How automated builds work
+
 ![An automated build dashboard](images/index-dashboard.png)
 
 When you set up automated builds, also called autobuilds, you create a list of
@@ -29,6 +41,8 @@ If you have automated tests configured, these run after building, but before
 pushing to the registry. You can use these tests to create a continuous
 integration workflow where a build that fails its tests doesn't push the built
 image. Automated tests don't push images to the registry on their own. [Learn about automated image testing](automated-testing.md).
+
+## Build limits
 
 Depending on your [subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsHubRepoBuilds),
 you may get concurrent builds, which means that `N` autobuilds can be run at the

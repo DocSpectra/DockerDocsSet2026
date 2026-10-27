@@ -24,6 +24,18 @@ Make sure you have:
 - [Installed the latest version of Docker Compose](/manuals/compose/install/_index.md)
 - A basic understanding of Docker concepts and how Docker works
 
+## Tutorial steps
+
+1. [Set up the project](#step-1-set-up-the-project)
+2. [Define and start your services](#step-2-define-and-start-your-services)
+3. [Fix the startup race with health checks](#step-3-fix-the-startup-race-with-health-checks)
+4. [Enable Compose Watch for live updates](#step-4-enable-compose-watch-for-live-updates)
+5. [Persist data with named volumes](#step-5-persist-data-with-named-volumes)
+6. [Structure your project with multiple Compose files](#step-6-structure-your-project-with-multiple-compose-files)
+7. [Inspect and debug your running stack](#step-7-inspect-and-debug-your-running-stack)
+
+For the lab, see [Docker Compose Quickstart lab](/guides/lab-compose-quickstart.md).
+
 ## Step 1: Set up the project
 
 1. Create a directory for the project:
@@ -139,7 +151,7 @@ Compose simplifies the control of your entire application stack, making it easy 
 
    - The `redis` service uses a public [Redis](https://registry.hub.docker.com/_/redis/) image pulled from the Docker Hub registry.
 
-   For more information on the `compose.yaml` file, see [How Compose works](compose-application-model.md).
+   For more information on the `compose.yaml` file, see [How Compose works](intro/compose-application-model.md).
 
 2. Start up your application: 
 
@@ -437,6 +449,8 @@ With a fully configured stack, you can observe what's happening inside your cont
 without stopping anything. This step covers the core commands for inspecting the resolved configuration, streaming logs, and running commands
 inside a running container.
 
+### Inspect the resolved configuration
+
 Before starting the stack, verify that Compose has resolved your `.env` variables and
 merged all files correctly:
 
@@ -458,6 +472,8 @@ your files. A few things worth noting in the output:
 
 Use `docker compose config` any time you want to confirm what Compose will actually
 apply, especially when debugging variable substitution or working with multiple Compose files.
+
+### Start the stack for debugging
 
 Now start the stack in detached mode so the terminal stays free for the commands that
 follow:

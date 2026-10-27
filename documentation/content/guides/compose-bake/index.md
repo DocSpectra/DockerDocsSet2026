@@ -26,6 +26,18 @@ This guide assumes that you're familiar with
 - [Multi-stage builds](/manuals/build/building/multi-stage.md)
 - [Multi-platform builds](/manuals/build/building/multi-platform.md)
 
+## Follow the tasks
+
+- [Clone and explore the example project](#orientation)
+- [Build service images with Compose](#build-with-compose)
+- [Inspect the Bake configuration](#view-the-build-configuration)
+- [Choose the release build group](#customize-the-build-group)
+- [Override the target stage](#customize-targets)
+- [Add platforms, attestations, and annotations](#additional-build-features)
+
+For format limitations and environment variables, see
+[Building with Bake from a Compose file](/manuals/build/bake/compose-file.md).
+
 ## Orientation
 
 This guide will use the

@@ -5,6 +5,8 @@ description: Test the Spring Boot REST API using Testcontainers and REST Assured
 weight: 20
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-spring-boot-rest-api/#prerequisites) · [Previous: Create the project](/guides/testcontainers-java-spring-boot-rest-api/create-project/)
+
 To test the REST API, you need a running Postgres database and a started
 Spring context. Testcontainers spins up Postgres in a Docker container and
 `@DynamicPropertySource` connects it to Spring.
@@ -88,6 +90,8 @@ class CustomerControllerTest {
 }
 ```
 
+### How the test works
+
 Here's what the test does:
 
 - `@SpringBootTest` starts the full application on a random port.
@@ -98,3 +102,7 @@ Here's what the test does:
   pollution.
 - `shouldGetAllCustomers()` inserts two customers, calls `GET /api/customers`,
   and verifies the response contains 2 records.
+
+## Continue
+
+[Next: Run tests](/guides/testcontainers-java-spring-boot-rest-api/run-tests/)

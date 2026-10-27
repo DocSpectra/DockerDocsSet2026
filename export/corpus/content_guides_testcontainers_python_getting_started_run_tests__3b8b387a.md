@@ -5,6 +5,8 @@ description: Run your Testcontainers-based integration tests and explore next st
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-python-getting-started/#prerequisites) · [Previous: Write tests](/guides/testcontainers-python-getting-started/write-tests/)
+
 ## Run the tests
 
 Run the tests using pytest:
@@ -47,5 +49,9 @@ To learn more about Testcontainers, visit the
 
 - [testcontainers-python documentation](https://testcontainers-python.readthedocs.io/)
 - [Getting started with Testcontainers for Go](/guides/testcontainers-go-getting-started/)
-- [Getting started with Testcontainers for Java](https://testcontainers.com/guides/getting-started-with-testcontainers-for-java/)
-- [Getting started with Testcontainers for Node.js](https://testcontainers.com/guides/getting-started-with-testcontainers-for-nodejs/)
+- [Getting started with Testcontainers for Java](/guides/testcontainers-java-getting-started/)
+- [Getting started with Testcontainers for Node.js](/guides/testcontainers-nodejs-getting-started/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-python-getting-started/)

@@ -22,6 +22,15 @@ You can use them to parameterize the build, allowing for more flexible and confi
 >
 > See [Build secrets](./secrets.md) for more information.
 
+## Choose a variable task
+
+- Compare [build arguments and environment variables](#similarities-and-differences).
+- Follow the [ARG example](#arg-usage-example) or [ENV example](#env-usage-example).
+- Check [scope and inheritance](#scoping).
+- Use [multi-platform arguments](#multi-platform-build-arguments) or [proxy arguments](#proxy-arguments).
+- Configure [Buildx and BuildKit](#build-tool-configuration-variables).
+- For credentials, see [Build secrets](./secrets.md).
+
 ## Similarities and differences
 
 Build arguments and environment variables are similar.

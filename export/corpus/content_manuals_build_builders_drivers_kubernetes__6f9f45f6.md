@@ -14,6 +14,16 @@ The Kubernetes driver lets you connect your local development or CI
 environments to builders in a Kubernetes cluster to allow access to more
 powerful compute resources, optionally on multiple native architectures.
 
+## On this page
+
+- [Prerequisites and first build](#example-creating-a-buildx-builder-in-kubernetes)
+- [Create a builder and set driver options](#synopsis)
+- [Scale BuildKit](#scaling-buildkit)
+- [Configure persistent storage](#persistent-storage)
+- [Assign pods to nodes](#node-assignment)
+- [Build multiple platforms](#multi-platform-builds)
+- [Run in rootless mode](#rootless-mode)
+
 ## Synopsis
 
 Run the following command to create a new builder, named `kube`, that uses the
@@ -272,6 +282,9 @@ The Kubernetes driver supports rootless mode. For more information on how
 rootless mode works, and its requirements, refer to the
 [Rootless Buildkit documentation](https://github.com/moby/buildkit/blob/master/docs/rootless.md).
 
+Requires Kubernetes version 1.19 or later. Using Ubuntu as the host kernel is
+recommended.
+
 To turn it on in your cluster, you can use the `rootless=true` driver option:
 
 ```console
@@ -283,9 +296,6 @@ $ docker buildx create \
 
 This will create your pods without `securityContext.privileged`.
 
-Requires Kubernetes version 1.19 or later. Using Ubuntu as the host kernel is
-recommended.
-
 ## Example: Creating a Buildx builder in Kubernetes
 
 This guide shows you how to:
@@ -295,7 +305,7 @@ This guide shows you how to:
 - List the available builders
 - Build an image using your Kubernetes builders
 
-Prerequisites:
+### Prerequisites
 
 - You have an existing Kubernetes cluster. If you don't already have one, you
   can follow along by installing
@@ -303,6 +313,8 @@ Prerequisites:
 - The cluster you want to connect to is accessible via the `kubectl` command,
   with the `KUBECONFIG` environment variable
   [set appropriately](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#set-the-kubeconfig-environment-variable) if necessary.
+
+### Create the builder and build an image
 
 1. Create a `buildkit` namespace.
 

@@ -13,26 +13,13 @@ and policy data from Docker Scout, using Prometheus or Datadog. With this you
 can create your own, self-hosted Docker Scout dashboards for visualizing supply
 chain metrics.
 
-## Metrics
+## Set up metrics export
 
-The metrics endpoint exposes the following metrics:
+1. [Create an access token](#creating-an-access-token)
+2. [Choose a scrape interval](#scrape-interval)
+3. Configure [Prometheus](#prometheus) or [Datadog](#datadog)
 
-| Metric                          | Description                                         | Labels                            | Type  |
-| ------------------------------- | --------------------------------------------------- | --------------------------------- | ----- |
-| `scout_stream_vulnerabilities`  | Vulnerabilities in a stream                         | `streamName`, `severity`          | Gauge |
-| `scout_policy_compliant_images` | Compliant images for a policy in a stream           | `id`, `displayName`, `streamName` | Gauge |
-| `scout_policy_evaluated_images` | Total images evaluated against a policy in a stream | `id`, `displayName`, `streamName` | Gauge |
-
-> **Streams**
->
-> In Docker Scout, the streams concept is a superset of [environments](/manuals/scout/integrations/environment/_index.md).
-> Streams include all runtime environments that you've defined,
-> as well as the special `latest-indexed` stream.
-> The `latest-indexed` stream contains the most recently pushed (and analyzed) tag for each repository.
->
-> Streams is mostly an internal concept in Docker Scout,
-> with the exception of the data exposed through this metrics endpoint.
-{ #stream }
+See also [available metrics and streams](#metrics) and [token revocation](#revoke-an-access-token).
 
 ## Creating an access token
 
@@ -44,6 +31,21 @@ To create a PAT, follow the steps in [Create an access token](/manuals/security/
 
 Once you have created the PAT, store it in a secure location.
 You will need to provide this token to the exporter when scraping metrics.
+
+## Scrape interval
+
+By default, Prometheus and Datadog scrape metrics at a 15 second interval.
+Because of the own nature of vulnerability data, the metrics exposed through this API are unlikely to change at a high frequency.
+For this reason, the metrics endpoint has a 60-minute cache by default,
+which means a scraping interval of 60 minutes or higher is recommended.
+If you set the scrape interval to less than 60 minutes, you will see the same data in the metrics for multiple scrapes during that time window.
+
+To change the scrape interval:
+
+- Prometheus: set the `scrape_interval` field in the Prometheus configuration
+  file at the global or job level.
+- Datadog: set the `min_collection_interval` property in the Datadog agent
+  configuration file, see [Datadog documentation](https://docs.datadoghq.com/developers/custom_checks/write_agent_check/#updating-the-collection-interval).
 
 ## Prometheus
 
@@ -329,20 +331,26 @@ graphs about vulnerability and policy compliance for a specific [stream](#stream
 > vulnerabilities (they don't change too often) and the short time interval
 > selected in the date picker.
 
-## Scrape interval
+## Metrics
 
-By default, Prometheus and Datadog scrape metrics at a 15 second interval.
-Because of the own nature of vulnerability data, the metrics exposed through this API are unlikely to change at a high frequency.
-For this reason, the metrics endpoint has a 60-minute cache by default,
-which means a scraping interval of 60 minutes or higher is recommended.
-If you set the scrape interval to less than 60 minutes, you will see the same data in the metrics for multiple scrapes during that time window.
+The metrics endpoint exposes the following metrics:
 
-To change the scrape interval:
+| Metric                          | Description                                         | Labels                            | Type  |
+| ------------------------------- | --------------------------------------------------- | --------------------------------- | ----- |
+| `scout_stream_vulnerabilities`  | Vulnerabilities in a stream                         | `streamName`, `severity`          | Gauge |
+| `scout_policy_compliant_images` | Compliant images for a policy in a stream           | `id`, `displayName`, `streamName` | Gauge |
+| `scout_policy_evaluated_images` | Total images evaluated against a policy in a stream | `id`, `displayName`, `streamName` | Gauge |
 
-- Prometheus: set the `scrape_interval` field in the Prometheus configuration
-  file at the global or job level.
-- Datadog: set the `min_collection_interval` property in the Datadog agent
-  configuration file, see [Datadog documentation](https://docs.datadoghq.com/developers/custom_checks/write_agent_check/#updating-the-collection-interval).
+> **Streams**
+>
+> In Docker Scout, the streams concept is a superset of [environments](/manuals/scout/integrations/environment/_index.md).
+> Streams include all runtime environments that you've defined,
+> as well as the special `latest-indexed` stream.
+> The `latest-indexed` stream contains the most recently pushed (and analyzed) tag for each repository.
+>
+> Streams is mostly an internal concept in Docker Scout,
+> with the exception of the data exposed through this metrics endpoint.
+{ #stream }
 
 ## Revoke an access token
 

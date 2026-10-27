@@ -12,6 +12,8 @@ aliases:
 
 The [`include` top-level element](/reference/compose-file/include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
 
+## Path resolution and recursive includes
+
 Each path listed in the `include` section loads as an individual Compose application model, with its own project directory, in order to resolve relative paths.
 
 Once the included Compose application loads, all resources are copied into the current Compose application model.
@@ -89,6 +91,12 @@ services:
 ```
 
 Combined together, this allows you to benefit from third-party reusable components, and adjust the Compose model for your needs.
+
+## Related tasks
+
+- [Review the trust model for remote sources](../../trust-model.md)
+- [Publish and run OCI artifact applications](../oci-artifact.md)
+- [Compare ways to use multiple Compose files](_index.md)
 
 ## Reference information
 

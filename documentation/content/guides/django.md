@@ -34,11 +34,11 @@ params:
 This guide walks you through containerizing a Django application with Docker. By
 the end, you will:
 
-- Initialize a Django project using uv, either locally or inside a Docker
+- [Initialize a Django project using uv](#create-the-django-project), either locally or inside a Docker
   Hardened Image container.
-- Create a production-ready Dockerfile using [Docker Hardened Images
+- [Create a production-ready Dockerfile](#create-a-production-dockerfile) using [Docker Hardened Images
   (DHI)](/dhi/).
-- Add a `development` stage to your Dockerfile and configure Compose Watch for
+- [Add a `development` stage to your Dockerfile](#update-the-dockerfile) and [configure Compose Watch](#update-the-compose-file) for
   automatic code syncing.
 
 ---
@@ -431,3 +431,4 @@ Related information:
 - [Docker Hardened Images](/dhi/)
 - [Multi-stage builds](/manuals/build/building/multi-stage.md)
 - [uv documentation](https://docs.astral.sh/uv/)
+- [Python guide](python/_index.md)

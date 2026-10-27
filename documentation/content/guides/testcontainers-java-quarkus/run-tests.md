@@ -5,6 +5,8 @@ description: Run your Testcontainers-based Quarkus integration tests and explore
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-quarkus/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-quarkus/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -69,3 +71,7 @@ To learn more about Testcontainers, visit the
 - [Quarkus Dev Services overview](https://quarkus.io/guides/dev-services)
 - [Quarkus testing guide](https://quarkus.io/guides/getting-started-testing)
 - [Testcontainers Postgres module](https://java.testcontainers.org/modules/databases/postgres/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-quarkus/)

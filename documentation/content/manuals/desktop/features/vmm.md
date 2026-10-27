@@ -10,7 +10,16 @@ aliases:
 
 Docker Desktop supports multiple Virtual Machine Managers (VMMs) to power the Linux VM that runs containers. You can choose the most suitable option based on your system architecture (Intel or Apple Silicon), performance needs, and feature requirements. This page provides an overview of the available options.
 
+## Choose and change a VMM
+
+- [Docker VMM: memory requirement and known issues](#docker-vmm)
+- [Apple Virtualization framework](#apple-virtualization-framework)
+- [QEMU for Apple Silicon: deprecation notice](#qemu-legacy-for-apple-silicon)
+- [HyperKit for Intel-based Macs: deprecation notice](#hyperkit-legacy-for-intel-based-macs)
+
 To change the VMM, go to **Settings** > **General** > **Virtual Machine Manager**.
+
+See also [VMM, file sharing, and Rosetta settings](../settings-and-maintenance/settings.md#general).
 
 ## Docker VMM
 

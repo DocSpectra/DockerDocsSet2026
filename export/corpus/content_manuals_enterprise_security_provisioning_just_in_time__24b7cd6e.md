@@ -14,6 +14,13 @@ Just-in-Time (JIT) provisioning streamlines user onboarding by automatically cre
 
 This page explains how JIT provisioning works, SSO authentication flows, and how to disable JIT provisioning.
 
+## Choose a JIT task
+
+- Review authentication with JIT [enabled](#sso-authentication-with-jit-provisioning-enabled) or [disabled](#sso-authentication-with-jit-provisioning-disabled).
+- [Disable JIT provisioning](#disable-jit-provisioning).
+- [Migrate existing JIT users to SCIM](scim/migrate-scim.md).
+- [Troubleshoot JIT and SCIM attribute conflicts](troubleshoot-provisioning.md).
+
 ## Prerequisites
 
 Before you begin, you must have:
@@ -53,7 +60,7 @@ When JIT provisioning is disabled, the following actions occur during SSO authen
    - Invitation found: If the user is a member of the organization or has a pending invitation, sign-in is successful, and the invitation is automatically accepted.
    - No invitation found: If the user is not a member of the organization and has no pending invitation, the sign-in fails, and an `Access denied` error appears. The user must contact an administrator to be invited to the organization.
 
-With JIT disabled, group mapping is only available if you have [SCIM enabled](scim/#enable-scim-in-docker). If SCIM is not enabled, users won't be auto-provisioned to groups.
+With JIT disabled, group mapping is only available if you have [SCIM enabled](scim/provision-scim.md#enable-scim-in-docker). If SCIM is not enabled, users won't be auto-provisioned to groups.
 
 The following graphic provides an overview of SSO authentication with JIT disabled:
 
@@ -63,7 +70,7 @@ The following graphic provides an overview of SSO authentication with JIT disabl
 
 > [!WARNING]
 >
-> Disabling JIT provisioning may disrupt your users' access and workflows. With JIT disabled, users will not be automatically added to your organization. Users must already be a member of the organization or have a pending invitation to successfully sign in through SSO. To auto-provision users with JIT disabled, [use SCIM](./scim.md).
+> Disabling JIT provisioning may disrupt your users' access and workflows. With JIT disabled, users will not be automatically added to your organization. Users must already be a member of the organization or have a pending invitation to successfully sign in through SSO. To auto-provision users with JIT disabled, [use SCIM](scim/provision-scim.md).
 
 You may want to disable JIT provisioning for reasons such as the following:
 

@@ -5,6 +5,8 @@ description: Use the Testcontainers JUnit 5 extension for more control over the 
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-replace-h2/#prerequisites) · [Previous: JDBC URL approach](/guides/testcontainers-java-replace-h2/jdbc-url-approach/)
+
 If the special JDBC URL doesn't meet your needs, or you need more control over
 container creation (for example, to copy initialization scripts), use the
 Testcontainers JUnit 5 extension:
@@ -78,3 +80,7 @@ This approach:
 - [Testcontainers Postgres module](https://java.testcontainers.org/modules/databases/postgres/)
 - [Testcontainers JDBC support](https://java.testcontainers.org/modules/databases/jdbc/)
 - [Testing a Spring Boot REST API with Testcontainers](/guides/testcontainers-java-spring-boot-rest-api/)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-replace-h2/)

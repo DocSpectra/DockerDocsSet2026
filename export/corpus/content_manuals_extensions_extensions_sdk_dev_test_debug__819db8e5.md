@@ -10,7 +10,7 @@ weight: 10
 
 In order to improve the developer experience, Docker Desktop provides a set of tools to help you test and debug your extension.
 
-### Open Chrome DevTools
+## Open Chrome DevTools
 
 In order to open the Chrome DevTools for your extension when you select the **Extensions** tab, run:
 
@@ -26,7 +26,7 @@ $ docker extension dev reset <name-of-your-extensions>
 
 After an extension is deployed, it is also possible to open Chrome DevTools from the UI extension part using a variation of the [Konami Code](https://en.wikipedia.org/wiki/Konami_Code). Select the **Extensions** tab, and then hit the key sequence `up, up, down, down, left, right, left, right, p, d, t`.
 
-### Hot reloading whilst developing the UI
+## Hot reloading whilst developing the UI
 
 During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire
 extension. To do this, you can configure Docker Desktop to load your UI from a development server, such as the one

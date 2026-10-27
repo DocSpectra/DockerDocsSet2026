@@ -15,6 +15,15 @@ scalable, cloud-powered environment, enabling developers to work efficiently eve
 in virtual desktop infrastructure (VDI) environments or systems that don't support
 nested virtualization.
 
+## Find Offload guidance
+
+- [Check prerequisites and start a session](quickstart.md#prerequisites)
+- [Review cloud resource sizes](#cloud-resources)
+- [Review session prompts, idle state, and deletion conditions](#session-management-and-idle-state)
+- [Review fair use limits](#fair-use)
+- [Stop an Offload session](quickstart.md#step-5-stop-docker-offload)
+- [Monitor usage](usage.md)
+
 ## Key features
 
 Docker Offload includes the following capabilities to support modern container

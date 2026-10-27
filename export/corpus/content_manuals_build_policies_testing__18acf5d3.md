@@ -21,6 +21,16 @@ For testing against real sources (actual image metadata, Git repositories), use
 instead. You can use the `eval --print` option to resolve input for a specific
 source for writing a test case.
 
+## Find a test task
+
+- [Create and run a basic test](#basic-example).
+- [Filter tests or select a policy filename](#command-options).
+- [Read test output](#test-output).
+- [Test deny messages](#test-deny-messages).
+- [Test environment and registry rules](#test-patterns).
+- [Organize test files](#organize-test-files).
+- For real sources, see [Testing policies with policy eval](./usage.md#testing-policies-with-policy-eval).
+
 ## Basic example
 
 Start with a simple policy that only allows `alpine` images:

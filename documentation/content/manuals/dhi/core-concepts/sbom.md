@@ -5,6 +5,10 @@ description: Learn what SBOMs are, why they matter, and how Docker Hardened Imag
 keywords: sbom docker image, software bill of materials, signed sbom, container sbom verification, sbom compliance
 ---
 
+For commands, go to [view SBOMs](#view-sboms-in-docker-hardened-images) or
+[verify an SBOM](#verify-the-sbom-of-a-docker-hardened-image). For authentication
+and verification caveats, see [Verify an image or chart](../how-to/verify.md).
+
 ## What is an SBOM?
 
 An SBOM is a detailed inventory that lists all components, libraries, and

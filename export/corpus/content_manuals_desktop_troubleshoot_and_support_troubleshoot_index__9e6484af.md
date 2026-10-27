@@ -23,6 +23,15 @@ weight: 10
 
 This page contains information on how to diagnose and troubleshoot Docker Desktop, and how to check the logs.
 
+## Choose a troubleshooting task
+
+- [Find a symptom or error message](topics.md) or [review known issues](known-issues.md).
+- [Open the Troubleshoot menu](#troubleshoot-menu) to restart, reset, or uninstall.
+- Collect diagnostics [from the app](#diagnose-from-the-app), [from an error message](#diagnose-from-an-error-message), or [from the terminal](#diagnose-from-the-terminal).
+- [View a diagnostic file](#view-the-contents-of-the-diagnostic-file).
+- [Use your diagnostics ID to get help](#use-your-diagnostics-id-to-get-help).
+- [Check Docker Desktop logs](#check-the-logs) or [view Docker daemon logs](#view-the-docker-daemon-logs).
+
 ## Troubleshoot menu
 
 To navigate to **Troubleshoot** either:
@@ -146,6 +155,8 @@ After the diagnostics have finished, the terminal displays your diagnostics ID a
 >
 > You can also use the [`docker desktop diagnose` command](/manuals/desktop/features/desktop-cli.md) to diagnose Docker Desktop and upload the diagnostics ID.
 
+### View the contents of the diagnostic file
+
 To view the contents of the diagnostic file:
 
 {{< tabs group="os" >}}
@@ -184,7 +195,7 @@ $ unzip –l /tmp/<your-diagnostics-ID>.zip
 {{< /tab >}}
 {{< /tabs >}}
 
-#### Use your diagnostics ID to get help
+### Use your diagnostics ID to get help
 
 If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
 

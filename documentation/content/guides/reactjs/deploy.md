@@ -1,16 +1,28 @@
 ---
 title: Test your React.js deployment
 linkTitle: Test your deployment
-weight: 60
+weight: 70
 keywords: deploy, kubernetes, react, react.js
 description: Learn how to deploy locally to test and debug your Kubernetes deployment
 
 ---
 
+[React.js guide](_index.md) / [Guide prerequisites](_index.md#prerequisites)
+
+On this page:
+
+- [Prerequisites](#prerequisites)
+- [Create the Kubernetes manifest](#create-a-kubernetes-yaml-file)
+- [Apply the configuration](#step-1-apply-the-kubernetes-configuration)
+- [Check the deployment](#step-2-check-the-deployment-status)
+- [Check the service](#step-3-verify-the-service-exposure)
+- [Open the application](#step-4-access-your-app-in-the-browser)
+- [Clean up](#step-5-clean-up-kubernetes-resources)
+
 ## Prerequisites
 
 Before you begin, make sure you’ve completed the following:
-- Complete all the previous sections of this guide, starting with [Containerize React.js application](containerize.md).
+- Complete [all the previous sections of this guide](_index.md#what-will-you-learn), starting with [Containerize React.js application](containerize.md).
 - [Enable Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 
 > **New to Kubernetes?**  

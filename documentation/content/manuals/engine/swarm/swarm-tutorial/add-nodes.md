@@ -6,6 +6,8 @@ weight: 20
 notoc: true
 ---
 
+[Tutorial setup](_index.md#set-up) · [All tutorial steps](_index.md#tutorial-steps)
+
 Once you've [created a swarm](create-swarm.md) with a manager node, you're ready
 to add worker nodes.
 

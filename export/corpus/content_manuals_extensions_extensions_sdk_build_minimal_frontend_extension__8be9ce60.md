@@ -11,6 +11,8 @@ weight: 10
 
 To start creating your extension, you first need a directory with files which range from the extension’s source code to the required extension-specific files. This page provides information on how to set up a minimal frontend extension based on plain HTML.
 
+## Prerequisites
+
 Before you start, make sure you have installed the latest version of [Docker Desktop](/manuals/desktop/release-notes.md).
 
 > Tip

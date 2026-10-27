@@ -1,5 +1,8 @@
 Now that we have configured a CI/CD pipeline, let's look at how we can deploy the application. Docker supports deploying containers on Azure ACI and AWS ECS. You can also deploy your application to Kubernetes if you have enabled Kubernetes in Docker Desktop.
 
+Choose a deployment topic: [Azure ACI](#docker-and-azure-aci),
+[AWS ECS](#docker-and-aws-ecs), or [Kubernetes](#kubernetes).
+
 ## Docker and Azure ACI
 
 The Docker Azure Integration enables developers to use native Docker commands to run applications in Azure Container Instances (ACI) when building cloud-native applications. The new experience provides a tight integration between Docker Desktop and Microsoft Azure allowing developers to quickly run applications using the Docker CLI or VS Code extension to switch seamlessly from local development to cloud deployment.
@@ -18,6 +21,8 @@ For detailed instructions, see [Deploying Docker containers on ECS](/cloud/ecs-i
 
 Docker Desktop includes a standalone Kubernetes server and client, as well as Docker CLI integration that runs on your machine. When you enable Kubernetes, you can test your workloads on Kubernetes.
 
+### Enable Kubernetes
+
 To enable Kubernetes:
 
 1. From the Docker menu, select **Settings**.
@@ -25,4 +30,4 @@ To enable Kubernetes:
 
     This starts a Kubernetes single-node cluster when Docker Desktop starts.
 
-For detailed information, see [Deploy on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md) and [Describing apps using Kubernetes YAML](/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md) and [Describing apps using Kubernetes YAML](/guides/kube-deploy.md#describing-apps-using-kubernetes-yaml).

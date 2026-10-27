@@ -27,6 +27,13 @@ Supported context values are:
 - HTTP URLs
 - Name of another target in the Bake file
 
+## Choose a context example
+
+- [Pin an image version](#pinning-alpine-image)
+- [Use a secondary source directory](#using-a-secondary-source-directory)
+- [Use another target as a context and review the caveat](#using-a-target-as-a-build-context)
+- [Use local files with a remote definition](remote-definition.md#use-the-local-context-with-a-remote-definition)
+
 ## Pinning alpine image
 
 ```dockerfile {title=Dockerfile}

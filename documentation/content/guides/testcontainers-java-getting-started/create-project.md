@@ -5,6 +5,8 @@ description: Set up a Java project with Maven and implement a PostgreSQL-backed 
 weight: 10
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-getting-started/#prerequisites)
+
 ## Set up the Maven project
 
 Create a Java project with Maven from your preferred IDE. This guide uses
@@ -163,3 +165,7 @@ Here's what `CustomerService` does:
 - The constructor calls `createCustomersTableIfNotExists()` to ensure the table exists.
 - `createCustomer()` inserts a customer record into the database.
 - `getAllCustomers()` fetches all rows from the `customers` table and returns a list of `Customer` objects.
+
+## Continue
+
+[Next: Write tests](/guides/testcontainers-java-getting-started/write-tests/)

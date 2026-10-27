@@ -26,6 +26,8 @@ Get up and running with building agentic applications using Compose, Docker
 Model Runner, and the Docker MCP Gateway. This hands-on lab takes you from
 understanding AI models to building complete agentic applications.
 
+Review [what you'll learn](#what-youll-learn) and the [modules](#modules), or [launch the lab](#launch-the-lab).
+
 ## Launch the lab
 
 {{< labspace-launch image="dockersamples/labspace-agentic-apps-with-docker" model-download="true" >}}
@@ -55,3 +57,9 @@ file, and configuring your app to use those models and tools
 | 5 | The Docker MCP Gateway | Set up and configure the MCP Gateway |
 | 6 | Putting It All Together | Build a complete agentic application |
 | 7 | Conclusion | Summary and next steps |
+
+## Related documentation
+
+- [Model Runner setup](../manuals/ai/model-runner/get-started.md)
+- [Models and Compose](../manuals/ai/compose/models-and-compose.md)
+- [Written agentic application guide](agentic-ai.md)

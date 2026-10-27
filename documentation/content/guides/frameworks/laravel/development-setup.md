@@ -4,12 +4,19 @@ description: Set up a Laravel development environment using Docker Compose.
 weight: 30
 ---
 
+[Laravel guide overview](_index.md)
+
 This guide demonstrates how to configure a **development** environment for a Laravel application using Docker and Docker Compose. It builds **on top of** the production image for PHP-FPM and then adds developer-focused features—like Xdebug—to streamline debugging. By basing the development container on a known production image, you keep both environments closely aligned.
 
 This setup includes PHP-FPM, Nginx, and PostgreSQL services (although you can easily swap PostgreSQL for another database, like MySQL or MariaDB). Everything runs in containers, so you can develop in isolation without altering your host system.
 
 > [!NOTE]
 > To experiment with a ready-to-run configuration, download the [Laravel Docker Examples](https://github.com/dockersamples/laravel-docker-examples) repository. It contains pre-configured setups for both development and production.
+
+## Before you begin
+
+- [Review the prerequisites](prerequisites.md).
+- [Open the production PHP-FPM Dockerfile](production-setup.md#create-a-dockerfile-for-php-fpm-production).
 
 ## Project structure
 
@@ -309,6 +316,8 @@ volumes:
   postgres-data-development:
 ```
 
+### Prepare the environment file
+
 > [!NOTE]
 > Ensure you have an `.env` file at the root of your Laravel project with the necessary configurations. You can use the `.env.example` file as a template.
 
@@ -325,3 +334,9 @@ Run this command to build and start the development environment in detached mode
 ## Summary
 
 By building on top of the production image and adding debug tools like Xdebug, you create a Laravel development workflow that closely mirrors production. The optional workspace container simplifies tasks like asset building and running Artisan commands. If you prefer a separate container for every service (e.g., a dedicated `php-cli` and `node` container), you can skip the workspace approach. Either way, Docker Compose provides an efficient, consistent way to develop your Laravel project.
+
+## Related tasks
+
+- [Debug with Xdebug](common-questions.md#2-how-do-i-debug-my-laravel-application-with-docker-compose).
+- [Use another database](common-questions.md#3-can-i-use-docker-compose-with-databases-other-than-postgresql).
+- [Review data persistence](common-questions.md#4-how-can-i-persist-data-in-development-and-production).

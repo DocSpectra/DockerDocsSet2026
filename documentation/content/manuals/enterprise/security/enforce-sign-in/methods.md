@@ -16,15 +16,17 @@ You can enforce sign-in for Docker Desktop using several methods. Choose the met
 
 | Method | Platform |
 |:-------|:---------|
-| Registry key | Windows only |
-| Configuration profiles | Mac only |
-| `plist` file | Mac only |
-| `registry.json` | All platforms |
+| [Registry key](#windows-registry-key-method) | Windows only |
+| [Configuration profiles](#mac-configuration-profiles-method-recommended) | Mac only |
+| [`plist` file](#mac-plist-file-method) | Mac only |
+| [`registry.json`](#all-platforms-registryjson-method) | All platforms |
 
 > [!TIP]
 >
 > For Mac, configuration profiles offer the highest security because they're
 protected by Apple's System Integrity Protection (SIP).
+
+Review [method precedence](#method-precedence) when using multiple methods, or go to [troubleshooting](#troubleshoot-sign-in-enforcement).
 
 ## Windows: Registry key method
 

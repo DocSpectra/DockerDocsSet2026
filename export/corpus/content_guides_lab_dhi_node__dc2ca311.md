@@ -52,3 +52,11 @@ By the end of this Labspace, you will have completed the following:
 | 3   | Analyzing the Starting Image             | Build the app, scan it with Docker Scout, and review failing policies           |
 | 4   | Migrating to DHI                         | Rewrite the Dockerfile with multi-stage DHI build and compare results           |
 | 5   | DHI Attestations and Scanner Integration | Inspect SBOMs, FIPS attestations, STIG scans, and export VEX for external tools |
+
+## Related documentation
+
+- [Node.js migration Dockerfiles](/dhi/migration/examples/node/)
+- [Migration checklist](/dhi/migration/checklist/)
+- [Scan images and export VEX](/dhi/how-to/scan/)
+- [Scan child images and CI builds](/dhi/how-to/scan-child-images/)
+- [Verify image attestations](/dhi/how-to/verify/)

@@ -15,14 +15,20 @@ params:
   time: 20 minutes
 ---
 
+## Tasks
+
 The PHP language-specific guide teaches you how to create a containerized PHP application using Docker. In this guide, you'll learn how to:
 
-- Containerize and run a PHP application
-- Set up a local environment to develop a PHP application using containers
-- Run tests for a PHP application within containers
-- Configure a CI/CD pipeline for a containerized PHP application using GitHub Actions
-- Deploy your containerized application locally to Kubernetes to test and debug your deployment
+- [Containerize and run a PHP application](containerize.md)
+- [Set up a local environment to develop a PHP application using containers](develop.md)
+- [Run tests for a PHP application within containers](run-tests.md)
+- [Configure a CI/CD pipeline for a containerized PHP application using GitHub Actions](configure-ci-cd.md)
+- [Deploy your containerized application locally to Kubernetes to test and debug your deployment](deploy.md)
 
 After completing the PHP language-specific guide, you should be able to containerize your own PHP application based on the examples and instructions provided in this guide.
 
-Start by containerizing an existing PHP application.
+## Get started
+
+[Review the prerequisites](containerize.md#prerequisites).
+
+[Start by containerizing an existing PHP application](containerize.md).

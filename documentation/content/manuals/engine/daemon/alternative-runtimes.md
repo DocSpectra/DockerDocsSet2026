@@ -13,6 +13,12 @@ Docker Engine uses containerd for managing the container lifecycle,
 which includes creating, starting, and stopping containers.
 By default, containerd uses runc as its container runtime.
 
+- [Choose a runtime](#what-runtimes-can-i-use)
+- [Use a containerd shim](#use-containerd-shims)
+- [Register a shim outside PATH](#use-a-containerd-shim-without-installing-on-path)
+- [Configure a shim](#configure-shims)
+- [Set up youki](#youki) or [Wasmtime](#wasmtime)
+
 ## What runtimes can I use?
 
 You can use any runtime that implements the containerd 

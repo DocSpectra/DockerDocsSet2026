@@ -12,9 +12,13 @@ aliases:
  - /guides/getting-started/build-and-push-first-image/
 ---
 
+On this page: [Images and Docker Hub](#explanation) · [Sign in](#sign-in-with-your-docker-account) · [Create a repository](#create-an-image-repository) · [Build and push with CLI or VS Code](#build-and-push-the-image) · [Other registries](#other-registries).
+
 {{< youtube-embed 7ge1s5nAa34 >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Images and Docker Hub
 
 Now that you've updated the [to-do list app](develop-with-containers.md), you’re ready to create a container image for the application and share it on Docker Hub. To do so, you will need to do the following:
 
@@ -51,11 +55,13 @@ Explore the full catalog of trusted content on Docker Hub:
 - [Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher) – Images from verified software vendors
 - [Docker Sponsored Open Source](https://hub.docker.com/search?badges=open_source) – Images from sponsored OSS projects
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Sign in, build, and push an image
 
 In this hands-on guide, you'll learn how to sign in to Docker Hub and push images to Docker Hub repository.
 
-## Sign in with your Docker account
+### Sign in with your Docker account
 
 To push images to Docker Hub, you will need to sign in with a Docker account.
 
@@ -67,7 +73,7 @@ To push images to Docker Hub, you will need to sign in with a Docker account.
 
 Once you're done, you should see the **Sign in** button turn into a profile picture.
 
-## Create an image repository
+### Create an image repository
 
 Now that you have an account, you can create an image repository. Just as a Git repository holds source code, an image repository stores container images.
 
@@ -84,7 +90,7 @@ Now that you have an account, you can create an image repository. Just as a Git 
 4. Select **Create** to create the repository.
 
 
-## Build and push the image
+### Build and push the image
 
 Now that you have a repository, you are ready to build and push your image. An important note is that the image you are building extends the Node image, meaning you don't need to install or configure Node, yarn, etc. You can simply focus on what makes your application unique.
 
@@ -199,6 +205,8 @@ Going forward, you’ll want to remember that:
 - Docker Hub is the go-to registry for finding trusted content. Docker provides a collection of trusted content, composed of Docker Official Images, Docker Verified Publishers, and Docker Sponsored Open Source Software, to use directly or as bases for your own images.
 
 - Docker Hub provides a marketplace to distribute your own applications. Anyone can create an account and distribute images. While you are publicly distributing the image you created, private repositories can ensure your images are accessible to only authorized users.
+
+<a id="other-registries"></a>
 
 > **Usage of other registries**
 >

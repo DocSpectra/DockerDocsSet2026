@@ -11,6 +11,13 @@ The top-level `models` section declares AI models that are used by your Compose 
 
 Services can only access models when explicitly granted by a [`models` attribute](services.md#models) within the `services` top-level element.
 
+## Find a model task
+
+- [Connect a service to a model](#example-1).
+- [Customize the endpoint variable and model runtime settings](#example-2).
+- [Look up model attributes](#attributes).
+- [Configure service model references and generated environment variable names](services.md#models).
+
 ## Examples
 
 ### Example 1

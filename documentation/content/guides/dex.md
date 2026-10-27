@@ -19,15 +19,22 @@ In this guide, you'll learn how to:
 - Use Docker to launch up a Dex container.
 - Use mock OAuth in the GitHub Action (GHA) without relying on an external OAuth provider.
 
+## Find a task
+
+- [Prerequisites](#prerequisites)
+- [Set up Dex with Docker](#setting-up-dex-with-docker)
+- [Set the password hash](#set-the-password-hash)
+- [Use Dex in GitHub Actions](#using-dex-oauth-testing-in-gha)
+
 ## Using Dex with Docker
 
 The official [Docker image for Dex](https://hub.docker.com/r/dexidp/dex/) provides a convenient way to deploy and manage Dex instances. Dex is available for various CPU architectures, including amd64, armv7, and arm64, ensuring compatibility with different devices and platforms. You can learn more about Dex standalone on the [Dex docs site](https://dexidp.io/docs/getting-started/).
 
-### Prerequisites
+## Prerequisites
 
 [Docker Compose](/compose/): Recommended for managing multi-container Docker applications.
 
-### Setting Up Dex with Docker
+## Setting Up Dex with Docker
 
 Begin by creating a directory for your Dex project:
 
@@ -43,7 +50,8 @@ dex-mock-server/
 └── compose.yaml
 ```
 
-Create the Dex Configuration File:
+### Create the Dex configuration file
+
 The config.yaml file defines Dex's settings, including connectors, clients, and storage. For a mock server setup, you can use the following minimal configuration:
 
 ```yaml
@@ -67,7 +75,8 @@ staticPasswords:
     userID: "1234"
 ```
 
-Explanation:
+### Configuration reference
+
 - issuer: The public URL of Dex.
 
 - storage: Using in-memory storage for simplicity.
@@ -80,10 +89,15 @@ Explanation:
 
 - staticPasswords: Defines a static user for authentication. The hash is a bcrypt hash of the password.
 
+### Set the password hash
+
 > [!NOTE]
 >
 > Ensure the hash is a valid bcrypt hash of your desired password. You can generate this using tools like [bcrypt-generator.com](https://bcrypt-generator.com/).
-or use CLI tools like [htpasswd](https://httpd.apache.org/docs/2.4/programs/htpasswd.html) like in this following example:`echo password | htpasswd -BinC 10 admin | cut -d: -f2`
+>
+> or use CLI tools like [htpasswd](https://httpd.apache.org/docs/2.4/programs/htpasswd.html) like in this following example:`echo password | htpasswd -BinC 10 admin | cut -d: -f2`
+
+### Configure Docker Compose
 
 With Docker Compose configured, start Dex:
 ```yaml
@@ -100,6 +114,8 @@ services:
     command: ["dex", "serve", "/etc/dex/config.yaml"]
 ```
 
+### Start Dex
+
 Now it is possible to run the container using the `docker compose` command.
 ```bash
 docker compose up -d
@@ -108,13 +124,17 @@ docker compose up -d
 This command will download the Dex Docker image (if not already available) and start the container in detached mode.
 
 
+### Verify Dex is running
+
 To verify that Dex is running, check the logs to ensure Dex started successfully:
 ```bash
 docker compose logs -f dex
 ```
 You should see output indicating that Dex is listening on the specified port.
 
-### Using Dex OAuth testing in GHA
+## Using Dex OAuth testing in GHA
+
+### Configure the OAuth client and mock connector
 
 To test the OAuth flow, you'll need a client application configured to authenticate against Dex. One of the most typical use cases is to use it inside GitHub Actions. Since Dex supports mock authentication, you can predefine test users as suggested in the [docs](https://dexidp.io/docs). The `config.yaml` file should looks like:
 
@@ -143,6 +163,8 @@ connectors:
   id: mock
   name: Mock
 ```
+### Add the GitHub Actions workflow
+
 Now you can insert the Dex service inside your `~/.github/workflows/ci.yaml` file:
 
 ```yaml
@@ -164,6 +186,10 @@ jobs:
 ```
 
 
-### Conclusion
+## Conclusion
 
 By following this guide, you've set up Dex as an OAuth mock server using Docker. This setup is invaluable for testing and development, allowing you to simulate OAuth flows without relying on external identity providers. For more advanced configurations and integrations, refer to the [Dex documentation](https://dexidp.io/docs/).
+
+## Related guides
+
+- [Secure Spring Boot with Keycloak and Testcontainers](/guides/testcontainers-java-keycloak-spring-boot/)

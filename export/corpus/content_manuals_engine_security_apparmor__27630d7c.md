@@ -23,6 +23,14 @@ profile, it is located in
 [contrib/apparmor](https://github.com/moby/moby/tree/master/contrib/apparmor)
 in the Docker Engine source repository.
 
+## On this page
+
+- [Understand the default policy](#understand-the-policies)
+- [Load or unload a profile](#load-and-unload-profiles)
+- [Create and test an Nginx profile](#nginx-example-profile)
+- [Debug with dmesg or aa-status](#debug-apparmor)
+- [Find the AppArmor source](#contribute-to-dockers-apparmor-code)
+
 ## Understand the policies
 
 The `docker-default` profile is the default for running containers. It is
@@ -147,6 +155,8 @@ profile docker-nginx flags=(attach_disconnected,mediate_deleted) {
   deny /sys/kernel/security/** rwklx,
 }
 ```
+
+### Save, load, and test the profile
 
 1. Save the custom profile to disk in the
    `/etc/apparmor.d/containers/docker-nginx` file.

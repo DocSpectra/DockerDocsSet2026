@@ -22,46 +22,6 @@ ddClient.extension.vm.service
 
 See [Service API Reference](/reference/api/extensions-sdk/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
 
-> Deprecated extension backend communication
->
-> The methods below that use `window.ddClient.backend` are deprecated and will be removed in a future version. Use the methods specified above.
-
-The `window.ddClient.backend` object can be used to communicate with the backend
-defined in the [vm section](../../architecture/metadata.md#vm-section) of the
-extension metadata. The client is already connected to the backend.
-
-Example usages:
-
-```typescript
-window.ddClient.backend
-  .get("/some/service")
-  .then((value: any) => console.log(value));
-
-window.ddClient.backend
-  .post("/some/service", { ... })
-  .then((value: any) => console.log(value));
-
-window.ddClient.backend
-  .put("/some/service", { ... })
-  .then((value: any) => console.log(value));
-
-window.ddClient.backend
-  .patch("/some/service", { ... })
-  .then((value: any) => console.log(value));
-
-window.ddClient.backend
-  .delete("/some/service")
-  .then((value: any) => console.log(value));
-
-window.ddClient.backend
-  .head("/some/service")
-  .then((value: any) => console.log(value));
-
-window.ddClient.backend
-  .request({ url: "/url", method: "GET", headers: { 'header-key': 'header-value' }, data: { ... }})
-  .then((value: any) => console.log(value));
-```
-
 ## Run a command in the extension backend container
 
 For example, execute the command `ls -l` inside the backend container:
@@ -93,20 +53,6 @@ await ddClient.extension.vm.cli.exec("ls", ["-l"], {
 ```
 
 For more details, refer to the [Extension VM API Reference](/reference/api/extensions-sdk/ExtensionVM.md)
-
-> Deprecated extension backend command execution
->
-> This method is deprecated and will be removed in a future version. Use the specified method above.
-
-If your extension ships with additional binaries that should be run inside the
-backend container, you can use the `execInVMExtension` function:
-
-```typescript
-const output = await window.ddClient.backend.execInVMExtension(
-  `cliShippedInTheVm xxx`
-);
-console.log(output);
-```
 
 ## Invoke an extension binary on the host
 
@@ -144,9 +90,71 @@ You can stream the output of the command executed in the backend container or in
 
 For more details, refer to the [Extension Host API Reference](/reference/api/extensions-sdk/ExtensionHost.md)
 
+## Deprecated APIs
+
+### Backend communication
+
+> Deprecated extension backend communication
+>
+> The methods below that use `window.ddClient.backend` are deprecated and will be removed in a future version. Use the [backend communication method above](#get).
+
+The `window.ddClient.backend` object can be used to communicate with the backend
+defined in the [vm section](../../architecture/metadata.md#vm-section) of the
+extension metadata. The client is already connected to the backend.
+
+Example usages:
+
+```typescript
+window.ddClient.backend
+  .get("/some/service")
+  .then((value: any) => console.log(value));
+
+window.ddClient.backend
+  .post("/some/service", { ... })
+  .then((value: any) => console.log(value));
+
+window.ddClient.backend
+  .put("/some/service", { ... })
+  .then((value: any) => console.log(value));
+
+window.ddClient.backend
+  .patch("/some/service", { ... })
+  .then((value: any) => console.log(value));
+
+window.ddClient.backend
+  .delete("/some/service")
+  .then((value: any) => console.log(value));
+
+window.ddClient.backend
+  .head("/some/service")
+  .then((value: any) => console.log(value));
+
+window.ddClient.backend
+  .request({ url: "/url", method: "GET", headers: { 'header-key': 'header-value' }, data: { ... }})
+  .then((value: any) => console.log(value));
+```
+
+### Backend command execution
+
+> Deprecated extension backend command execution
+>
+> This method is deprecated and will be removed in a future version. Use the [backend command method above](#run-a-command-in-the-extension-backend-container).
+
+If your extension ships with additional binaries that should be run inside the
+backend container, you can use the `execInVMExtension` function:
+
+```typescript
+const output = await window.ddClient.backend.execInVMExtension(
+  `cliShippedInTheVm xxx`
+);
+console.log(output);
+```
+
+### Host binary invocation
+
 > Deprecated invocation of extension binary
 >
-> This method is deprecated and will be removed in a future version. Use the method specified above.
+> This method is deprecated and will be removed in a future version. Use the [host binary method above](#invoke-an-extension-binary-on-the-host).
 
 To execute a command in the host:
 

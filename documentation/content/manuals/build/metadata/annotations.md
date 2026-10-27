@@ -35,6 +35,13 @@ Annotations are not to be confused with [attestations]:
   Annotations attach to the image [config] as labels,
   or on the image index or manifest as properties.
 
+## Find an annotation task
+
+- [Add annotations and review image store limitations](#add-annotations).
+- [Choose annotation levels and platforms](#specify-annotation-level).
+- [Inspect an index or manifest](#inspect-annotations).
+- For build records, see [Build attestations](./attestations/_index.md).
+
 ## Add annotations
 
 You can add annotations to an image at build-time, or when creating the image
@@ -71,6 +78,63 @@ You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
 [CLI reference](/reference/cli/docker/buildx/imagetools/create/#annotation).
+
+## Specify annotation level
+
+By default, annotations are added to the image manifest. You can specify which
+level (OCI image component) to attach the annotation to by prefixing the
+annotation string with a special type declaration:
+
+```console
+$ docker build --annotation "<TYPE>:<KEY>=<VALUE>" .
+```
+
+The following types are supported:
+
+- `manifest`: annotates manifests.
+- `index`: annotates the root index.
+- `manifest-descriptor`: annotates manifest descriptors in the index.
+- `index-descriptor`:  annotates the index descriptor in the image layout.
+
+For example, to build an image with the annotation `foo=bar` attached to the
+image index:
+
+```console
+$ docker build --tag <IMAGE> --push --annotation "index:foo=bar" .
+```
+
+Note that the build must produce the component that you specify, or else the
+build will fail. For example, the following does not work, because the `docker`
+exporter does not produce an index:
+
+```console
+$ docker build --output type=docker --annotation "index:foo=bar" .
+```
+
+Likewise, the following example also does not work, because buildx creates a
+`docker` output by default under some circumstances, such as when provenance
+attestations are explicitly disabled:
+
+```console
+$ docker build --provenance=false --annotation "index:foo=bar" .
+```
+
+It is possible to specify types, separated by a comma, to add the annotation to
+more than one level. The following example creates an image with the annotation
+`foo=bar` on both the image index and the image manifest:
+
+```console
+$ docker build --tag <IMAGE> --push --annotation "index,manifest:foo=bar" .
+```
+
+You can also specify a platform qualifier within square brackets in the type
+prefix, to annotate only components matching specific OS and architectures. The
+following example adds the `foo=bar` annotation only to the `linux/amd64`
+manifest:
+
+```console
+$ docker build --tag <IMAGE> --push --annotation "manifest[linux/amd64]:foo=bar" .
+```
 
 ## Inspect annotations
 
@@ -136,63 +200,6 @@ $ docker buildx imagetools inspect <IMAGE>@sha256:d20246ef744b1d05a1dd69d0b3fa90
     "org.opencontainers.image.source": "https://git.example/foo.git",
   }
 }
-```
-
-## Specify annotation level
-
-By default, annotations are added to the image manifest. You can specify which
-level (OCI image component) to attach the annotation to by prefixing the
-annotation string with a special type declaration:
-
-```console
-$ docker build --annotation "<TYPE>:<KEY>=<VALUE>" .
-```
-
-The following types are supported:
-
-- `manifest`: annotates manifests.
-- `index`: annotates the root index.
-- `manifest-descriptor`: annotates manifest descriptors in the index.
-- `index-descriptor`:  annotates the index descriptor in the image layout.
-
-For example, to build an image with the annotation `foo=bar` attached to the
-image index:
-
-```console
-$ docker build --tag <IMAGE> --push --annotation "index:foo=bar" .
-```
-
-Note that the build must produce the component that you specify, or else the
-build will fail. For example, the following does not work, because the `docker`
-exporter does not produce an index:
-
-```console
-$ docker build --output type=docker --annotation "index:foo=bar" .
-```
-
-Likewise, the following example also does not work, because buildx creates a
-`docker` output by default under some circumstances, such as when provenance
-attestations are explicitly disabled:
-
-```console
-$ docker build --provenance=false --annotation "index:foo=bar" .
-```
-
-It is possible to specify types, separated by a comma, to add the annotation to
-more than one level. The following example creates an image with the annotation
-`foo=bar` on both the image index and the image manifest:
-
-```console
-$ docker build --tag <IMAGE> --push --annotation "index,manifest:foo=bar" .
-```
-
-You can also specify a platform qualifier within square brackets in the type
-prefix, to annotate only components matching specific OS and architectures. The
-following example adds the `foo=bar` annotation only to the `linux/amd64`
-manifest:
-
-```console
-$ docker build --tag <IMAGE> --push --annotation "manifest[linux/amd64]:foo=bar" .
 ```
 
 ## Related information

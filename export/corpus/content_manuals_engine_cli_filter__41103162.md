@@ -113,3 +113,9 @@ description for commands that support the `--filter` flag:
 - [`docker system prune`](/reference/cli/docker/system/prune/)
 - [`docker volume ls`](/reference/cli/docker/volume/ls/)
 - [`docker volume prune`](/reference/cli/docker/volume/prune/)
+
+## Related tasks
+
+- [Manage Docker object labels](../manage-resources/labels.md)
+- [Prune unused Docker objects](../manage-resources/pruning.md)
+- [Format command output](formatting.md)

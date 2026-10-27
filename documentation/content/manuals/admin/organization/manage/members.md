@@ -11,9 +11,20 @@ aliases:
 
 Learn how to manage members for your organization in Docker Hub and the Docker Admin Console.
 
+## On this page
+
+- [Invite members](#invite-members) by Docker ID, email, CSV, or API
+- [Accept an invitation](#accept-invitation)
+- [Resend or remove invitations](#manage-invitations)
+- [Add or remove team members](#manage-members-on-a-team)
+- [Update a member role](#update-a-member-role)
+- [Export members as CSV](#export-members-csv-file)
+
 ## Invite members
 
 Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email addresses. If an invitee does not have a Docker account, they must create an account and verify their email address before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies a seat.
+
+Before inviting members, see [Manage invitations](#manage-invitations) for seat requirements and [Manage seats](/manuals/subscription/manage-seats.md) to add seats.
 
 ### Invite members via Docker ID or email address
 
@@ -31,21 +42,25 @@ Pending invitations appear in the table. Invitees receive an email with a link t
 
 ### Invite members via CSV file
 
+#### CSV file requirements
+
+The following is an example of the contents of a valid CSV file:
+
+```text
+email
+docker.user-0@example.com
+docker.user-1@example.com
+```
+
+- The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.
+- The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file.
+
+#### Upload a CSV file and invite members
+
 To invite multiple members to an organization via a CSV file containing email addresses:
 
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down. Select **Members** > **Invite** > **CSV upload**.
-1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file:
-
-   ```text
-   email
-   docker.user-0@example.com
-   docker.user-1@example.com
-   ```
-
-   The example file demonstrates CSV file requirements:
-   - The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.
-   - The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file.
-
+1. Optional. Select **Download the template CSV file** to download an example CSV file.
 1. Create a new CSV file or export a CSV file from another application.
    - To export a CSV file from another application, see the application’s documentation.
    - To create a new CSV file, open a new file in a text editor, type email on the first line, type the user email addresses one per line on the following lines, and then save the file with a .csv extension.
@@ -126,6 +141,8 @@ Use Docker Hub or the Admin Console to add or remove team members. Organization 
 
 ### Add a member to a team
 
+An invitee must first accept the invitation to join the organization before being added to the team.
+
 To add a member to a team with the Admin Console:
 
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
@@ -133,8 +150,6 @@ To add a member to a team with the Admin Console:
 1. Select **Teams**.
 1. Select the team name.
 1. Select **Add member**. You can add the member by searching for their email address or username.
-
-An invitee must first accept the invitation to join the organization before being added to the team.
 
 ### Remove members from teams
 
@@ -148,7 +163,7 @@ Organization owners can remove a member from a team in Docker Hub or Admin Conso
 1. Select the **X** next to the user's name to remove them from the team.
 1. When prompted, select **Remove** to confirm.
 
-### Update a member role
+## Update a member role
 
 Organization owners can manage [roles](/manuals/enterprise/security/roles-and-permissions/_index.md)
 within an organization. If an organization is part of a company,

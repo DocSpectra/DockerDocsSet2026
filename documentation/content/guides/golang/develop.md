@@ -10,6 +10,8 @@ aliases:
   - /guides/language/golang/develop/
 ---
 
+[Go guide overview](_index.md)
+
 ## Prerequisites
 
 Work through the steps of the [run your image as a container](run-containers.md) module to learn how to manage the lifecycle of your containers.
@@ -353,6 +355,8 @@ $ docker build --tag docker-gs-ping-roach .
 
 Now, run your container. This time you'll need to set some environment variables so that your application knows how to access the database. For now, you’ll do this right in the `docker run` command. Later you'll see a more convenient method with Docker Compose.
 
+#### Insecure mode caveat
+
 > [!NOTE]
 >
 > Since you're running your CockroachDB cluster in insecure mode, the value for the password can be anything.
@@ -437,6 +441,8 @@ Run curl and see what the message counter says:
 $ curl localhost
 Hello, Docker! (2)
 ```
+
+### Verify that messages persist after removing containers
 
 In this example, you sent two messages and the database kept them. Or has it? Stop and remove all your containers, but not the volumes, and try again.
 
@@ -620,9 +626,13 @@ $ docker compose up --build
 
 You passed the `--build` flag so Docker will compile your image and then start it.
 
+### Rebuild after source changes
+
 > [!NOTE]
 >
 > Docker Compose is a useful tool, but it has its own quirks. For example, no rebuild is triggered on the update to the source code unless the `--build` flag is provided. It is a very common pitfall to edit one's source code, and forget to use the `--build` flag when running `docker compose up`.
+
+### Initialize the new Compose database volume
 
 Since your set-up is now run by Docker Compose, it has assigned it a project name, so you get a new volume for your CockroachDB instance. This means that your application will fail to connect to the database, because the database doesn't exist in this new volume. The terminal displays an authentication error for the database:
 
@@ -733,3 +743,5 @@ Since you didn't run a cluster of CockroachDB instances, you might be wondering 
 In this module, you set up a containerized development environment with your application and the database engine running in different containers. You also wrote a Docker Compose file which links the two containers together and provides for easy starting up and tearing down of the development environment.
 
 In the next module, you'll take a look at one possible approach to running functional tests in Docker.
+
+Continue: [Run tests](run-tests.md).

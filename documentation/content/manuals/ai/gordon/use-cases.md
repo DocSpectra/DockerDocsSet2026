@@ -10,6 +10,17 @@ weight: 10
 Gordon handles Docker workflows through natural conversation. This page shows
 example prompts for the most common use cases.
 
+## Choose a workflow
+
+- [Debug and troubleshoot](#debug-and-troubleshoot)
+- [Build and containerize](#build-and-containerize)
+- [Execute operations](#execute-operations)
+- [Develop and optimize](#develop-and-optimize)
+- [Manage resources](#manage-resources)
+- [Learn Docker](#learn-docker)
+
+Before using these examples, review the [prerequisites](./_index.md#prerequisites), [permissions](how-to/permissions.md), and [working directory context](#working-directory-context).
+
 ## Debug and troubleshoot
 
 Fix broken containers, diagnose build failures, and resolve issues.

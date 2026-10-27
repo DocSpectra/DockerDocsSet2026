@@ -14,6 +14,8 @@ The topic is structured to build up in scale:
 1. [Migrate a single image tag](#migrate-a-single-image-tag)
 2. [Migrate all tags for a repository](#migrate-all-tags-for-a-repository)
 3. [Migrate multiple repositories](#migrate-multiple-repositories)
+4. [Verify migration integrity](#verify-migration-integrity)
+5. [Complete the migration](#complete-the-migration)
 
 The recommended tool for this workflow is `crane`. An equivalent alternative
 using `regctl` is also shown. Both tools perform registry-to-registry copies
@@ -31,6 +33,8 @@ registry management tasks beyond image copying.
 > before migration. While you can migrate specific untagged manifests using
 > [digest references](#migrate-by-digest), there is no API to enumerate untagged
 > manifests in a repository.
+
+Before migrating, review the [prerequisites](#prerequisites) and [authentication instructions](#authenticate-to-registries).
 
 ## Prerequisites
 

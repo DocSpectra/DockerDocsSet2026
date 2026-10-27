@@ -14,6 +14,8 @@ params:
   time: 15 minutes
 ---
 
+[All Testcontainers guides](/testcontainers/#guides)
+
 <!-- Source: https://github.com/testcontainers/tc-guide-configuration-of-services-running-in-container -->
 
 In this guide, you will learn how to:
@@ -33,3 +35,8 @@ In this guide, you will learn how to:
 > If you're new to Testcontainers, visit the
 > [Testcontainers overview](https://testcontainers.com/getting-started/) to learn more about
 > Testcontainers and the benefits of using it.
+
+## Guide steps
+
+1. [Copy files](/guides/testcontainers-java-service-configuration/copy-files/)
+2. [Execute commands](/guides/testcontainers-java-service-configuration/exec-in-container/)

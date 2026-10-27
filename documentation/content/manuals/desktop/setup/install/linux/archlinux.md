@@ -21,6 +21,10 @@ aliases:
 
 This page contains information on how to install, launch and upgrade Docker Desktop on an Arch-based distribution. 
 
+Choose a task: [Check prerequisites](#prerequisites) · [Install](#install-docker-desktop) · [Launch](#launch-docker-desktop) · [Uninstall](/manuals/desktop/uninstall.md#arch).
+
+For shared requirements and caveats, see [Docker Desktop on Linux](_index.md).
+
 ## Prerequisites
 
 To install Docker Desktop successfully, you must meet the [general system requirements](_index.md#general-system-requirements).

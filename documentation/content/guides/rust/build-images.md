@@ -9,6 +9,8 @@ aliases:
   - /guides/language/rust/build-images/
 ---
 
+[Rust guide overview](_index.md)
+
 ## Prerequisites
 
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
@@ -339,3 +341,5 @@ Related information:
 ## Next steps
 
 In the next section learn how to run your image as a container.
+
+Continue: [Run containers](run-containers.md).

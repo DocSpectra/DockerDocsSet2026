@@ -55,3 +55,9 @@ Some common patterns that leverage immutability include:
 By combining immutable infrastructure principles with hardened images, you
 create a predictable and secure deployment workflow that resists tampering and
 minimizes long-term risk.
+
+## Related tasks
+
+- [View and pull image digests](./digests.md)
+- [Verify signed metadata](../how-to/verify.md)
+- [Evaluate image policies](../how-to/policies.md)

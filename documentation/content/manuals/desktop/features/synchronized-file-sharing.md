@@ -11,6 +11,18 @@ aliases:
 
 Synchronized file shares is an alternative file sharing mechanism that provides fast and flexible host-to-VM file sharing, enhancing bind mount performance through the use of synchronized filesystem caches. 
  
+## Before you create a share
+
+> [!NOTE]
+>
+> Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop.
+
+> [!IMPORTANT]
+>
+> Synchronized file shares isn't available on WSL or when using Windows containers. 
+
+For subscription availability and file sharing settings, see [File sharing](../settings-and-maintenance/settings.md#file-sharing). For troubleshooting, see [Known issues](#known-issues).
+
 ## Who is it for?
 
 Synchronized file shares is ideal for developers who: 
@@ -25,13 +37,7 @@ A Synchronized file share behaves just like a virtual file share, but takes adva
 
 After creating a file share instance, any container using a bind mount that points to a location on the host filesystem matching the specified synchronized file share location, or a subdirectory within it,  utilizes the Synchronized File Shares feature. Bind mounts that don't satisfy this condition are passed to the normal virtual filesystem [bind-mounting mechanism](/manuals/engine/storage/bind-mounts.md), for example VirtioFS or gRPC-FUSE.
 
-> [!NOTE]
->
-> Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop.
-
-> [!IMPORTANT]
->
-> Synchronized file shares isn't available on WSL or when using Windows containers. 
+For file exclusions, see [Use `.syncignore`](#use-syncignore).
 
 ## Create a file share instance 
 

@@ -23,6 +23,15 @@ the `docker swarm join` command. The node only uses the token at join time. If
 you subsequently rotate the token, it doesn't affect existing swarm nodes. Refer
 to [Run Docker Engine in swarm mode](swarm-mode.md#view-the-join-command-or-update-a-swarm-join-token).
 
+## Choose a node role
+
+- [Join as a worker](#join-as-a-worker-node).
+- [Join as a manager and review quorum requirements](#join-as-a-manager-node).
+
+See also [create a swarm](swarm-mode.md#create-a-swarm),
+[network prerequisites](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts), and
+[join token security and rotation](swarm-mode.md#view-the-join-command-or-update-a-swarm-join-token).
+
 ## Join as a worker node
 
 To retrieve the join command including the join token for worker nodes, run the

@@ -5,6 +5,20 @@ toc_min: 1
 toc_max: 2
 ---
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+Browse component and caveat sections:
+
+- [Builder](#builder)
+- [Client](#client)
+- [Experimental](#experimental)
+- [Logging](#logging)
+- [Networking](#networking)
+- [Packaging](#packaging)
+- [Runtime](#runtime)
+
 ## 18.02.0-ce
 2018-02-07
 

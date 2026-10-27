@@ -37,6 +37,19 @@ Changing the version format is a stepping-stone towards Go module compatibility,
 but the repository doesn't yet use Go modules, and still requires using a "+incompatible" version.
 Work continues towards Go module compatibility in a future release.
 
+## Find changes in this release series
+
+For another version or upgrade task, use the [Docker Engine release selector](overview.md).
+
+| Find | Releases |
+| --- | --- |
+| CVE references | [23.0.4](#2304), [23.0.3](#2303), [23.0.2](#2302) |
+| Known issue and limitation sections | [23.0.0](#2300) |
+| Security sections | [23.0.0](#2300) |
+| Deprecation and removal sections | [23.0.0](#2300) |
+| Release notices | [23.0.3](#2303) |
+| Initial release entry | [23.0.0](#2300) |
+
 ## 23.0.6
 
 {{< release-date date="2023-05-08" >}}

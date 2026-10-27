@@ -5,6 +5,8 @@ description: Run your Testcontainers-based Spring Cloud AWS integration tests an
 weight: 30
 ---
 
+[Guide overview and prerequisites](/guides/testcontainers-java-aws-localstack/#prerequisites) · [Previous: Write tests](/guides/testcontainers-java-aws-localstack/write-tests/)
+
 ## Run the tests
 
 ```console
@@ -35,3 +37,7 @@ To learn more about Testcontainers, visit the
 - [Testcontainers LocalStack module](https://java.testcontainers.org/modules/localstack/)
 - [Getting started with Testcontainers for Java](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
 - [Spring Cloud AWS documentation](https://docs.awspring.io/spring-cloud-aws/docs/3.0.3/reference/html/index.html)
+
+## Continue
+
+[Return to the guide overview](/guides/testcontainers-java-aws-localstack/)

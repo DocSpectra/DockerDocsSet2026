@@ -13,6 +13,14 @@ delete a policy altogether if it doesn't match your needs.
 > Historic evaluation results for the default policy configuration are removed
 > if you delete or customize a policy.
 
+## Choose an action
+
+- [Add a policy](#add-a-policy)
+- [Edit a policy](#edit-a-policy)
+- [Disable a policy](#disable-a-policy)
+- [Delete a policy](#delete-a-policy)
+- [Recover a deleted policy](#recover-a-deleted-policy)
+
 ## Add a policy
 
 To add a new policy, select the policy type that you want to customize. All

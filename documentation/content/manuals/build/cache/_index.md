@@ -12,6 +12,15 @@ aliases:
 When you build the same Docker image multiple times, knowing how to optimize
 the build cache is a great tool for making sure the builds run fast.
 
+## Find a cache task
+
+- [Understand cache invalidation](./invalidation.md).
+- [Optimize layers, contexts, and mounts](./optimize.md).
+- [Export and import cache](./backends/_index.md#command-syntax).
+- [Choose a cache backend](./backends/_index.md#backends).
+- [Configure garbage collection](./garbage-collection.md#configuration).
+- [Prune build cache now](/manuals/engine/manage-resources/pruning.md#prune-build-cache).
+
 ## How the build cache works
 
 Understanding Docker's build cache helps you write better Dockerfiles that
@@ -56,6 +65,6 @@ anything differently, they still need to re-run.
 For more information on using cache to do efficient builds, see:
 
 - [Cache invalidation](invalidation.md)
-- [Optimize build cache](optimization.md)
+- [Optimize build cache](optimize.md)
 - [Garbage collection](garbage-collection.md)
 - [Cache storage backends](./backends/_index.md)

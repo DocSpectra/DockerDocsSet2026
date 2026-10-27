@@ -18,6 +18,14 @@ Anyone can use Docker Extensions and there is no limit to the number of extensio
 
 ![Extensions Marketplace](/assets/images/extensions.webp)
 
+## Choose a task
+
+- [Install, update, or uninstall Marketplace extensions](marketplace.md)
+- [Install, list, update, or uninstall non-Marketplace extensions](non-marketplace.md)
+- [Configure a private marketplace](private-marketplace.md)
+- [Change extension settings or submit feedback](settings-feedback.md)
+- [Build and publish an extension with the SDK](extensions-sdk/_index.md)
+
 ## What extensions are available?
 
 There is a mix of partner and community-built extensions and Docker-built extensions.

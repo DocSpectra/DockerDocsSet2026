@@ -12,9 +12,13 @@ aliases:
 - /guides/docker-concepts/the-basics/what-is-a-container/
 ---
 
+On this page: [Containers and VMs](#explanation) · [Run a container with GUI or CLI](#try-it-out) · [Additional resources](#additional-resources).
+
 {{< youtube-embed W1kWqFkiu7k >}}
 
-## Explanation
+<a id="explanation"></a>
+
+## Containers and virtual machines
 
 Imagine you're developing a killer web app that has three main components - a React frontend, a Python API, and a PostgreSQL database. If you wanted to work on this project, you'd have to install Node, Python, and PostgreSQL. 
 
@@ -44,9 +48,13 @@ A container is simply an isolated process with all of the files it needs to run.
 > Quite often, you will see containers and VMs used together. As an example, in a cloud environment, the provisioned machines are typically VMs. However, instead of provisioning one machine to run one application, a VM with a container runtime can run multiple containerized applications, increasing resource utilization and reducing costs.
 
 
-## Try it out
+<a id="try-it-out"></a>
+
+## Exercise: Run, explore, and stop a container
 
 In this hands-on, you will see how to run a Docker container using the Docker Desktop GUI.
+
+Installation: [Get Docker](../../get-docker.md).
 
 {{< tabs group=concept-usage persist=true >}}
 {{< tab name="Using the GUI" >}}

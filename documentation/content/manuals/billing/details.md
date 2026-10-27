@@ -15,6 +15,13 @@ where Docker sends all invoices and other billing related communications.
 > Existing invoices, whether paid or unpaid, cannot be updated.
 > Changes only apply to future invoices.
 
+## Find a billing information task
+
+- [Update billing contact, address, or VAT ID](#manage-billing-information)
+- [Update the billing email address](#update-your-billing-email-address)
+- [Include a VAT number on an invoice](history.md#include-your-vat-number-on-your-invoice)
+- [Submit a tax exemption certificate](tax-certificate.md)
+
 ## Manage billing information
 
 ### Personal account

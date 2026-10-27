@@ -9,6 +9,8 @@ aliases:
   - /guides/language/java/run-tests/
 ---
 
+[Java guide overview](_index.md)
+
 ## Prerequisites
 
 Complete all the previous sections of this guide, starting with [Containerize a Java application](containerize.md).
@@ -17,7 +19,7 @@ Complete all the previous sections of this guide, starting with [Containerize a 
 
 Testing is an essential part of modern software development. Testing can mean a lot of things to different development teams. There are unit tests, integration tests and end-to-end testing. In this guide you'll take a look at running your unit tests in Docker.
 
-### Multi-stage Dockerfile for testing
+## Multi-stage Dockerfile for testing
 
 In the following example, you'll pull the testing commands into your Dockerfile.
 Replace the contents of your Dockerfile with the following.
@@ -95,6 +97,8 @@ fail if the tests fail.
 Finally, you updated the deps stage to be based on the base stage and removed
 the instructions that are now in the base stage.
 
+## Build the test stage and view results
+
 Run the following command to build a new image using the test stage as the target and view the test results. Include `--progress=plain` to view the build output, `--no-cache` to ensure the tests always run, and `--target test` to target the test stage.
 
 Now, build your image and run your tests. You'll run the `docker build` command and add the `--target test` flag so that you specifically run the test build stage.
@@ -123,3 +127,5 @@ You should see output containing the following
 
 In the next section, you’ll take a look at how to set up a CI/CD pipeline using
 GitHub Actions.
+
+Continue: [Configure CI/CD](configure-ci-cd.md).

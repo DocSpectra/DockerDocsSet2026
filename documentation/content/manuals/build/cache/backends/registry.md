@@ -18,6 +18,8 @@ everything that the inline cache can do, and more:
 - It works with other exporters for more flexibility, instead of only the
   `image` exporter.
 
+## Driver requirements
+
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
 [Build drivers](/manuals/build/builders/drivers/_index.md) for more information.
@@ -32,6 +34,8 @@ $ docker buildx build --push -t <registry>/<image> \
   --cache-to type=registry,ref=<registry>/<cache-image>[,parameters...] \
   --cache-from type=registry,ref=<registry>/<cache-image> .
 ```
+
+### Parameters
 
 The following table describes the available CSV parameters that you can pass to
 `--cache-to` and `--cache-from`.
@@ -51,12 +55,16 @@ The following table describes the available CSV parameters that you can pass to
 [2]: _index.md#oci-media-types
 [3]: _index.md#cache-compression
 
+## Choose a cache location
+
 You can choose any valid value for `ref`, as long as it's not the same as the
 target location that you push your image to. You might choose different tags
 (e.g. `foo/bar:latest` and `foo/bar:build-cache`), separate image names (e.g.
 `foo/bar` and `foo/bar-cache`), or even different repositories (e.g.
 `docker.io/foo/bar` and `ghcr.io/foo/bar`). It's up to you to decide the
 strategy that you want to use for separating your image from your cache images.
+
+## Missing cache
 
 If the `--cache-from` target doesn't exist, then the cache import step will
 fail, but the build continues.

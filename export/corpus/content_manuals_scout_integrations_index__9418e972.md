@@ -11,6 +11,15 @@ Docker Scout-enabled repositories on Docker Hub. You can integrate Docker Scout
 with additional third-party systems to get access to even more insights,
 including real-time information about you running workloads.
 
+## Choose an integration
+
+- [Container registries](#container-registries)
+- [Continuous integration](#continuous-integration)
+- [Environment monitoring](#environment-monitoring)
+- [Code quality](#code-quality)
+- [Source code management](#source-code-management)
+- [Team collaboration](#team-collaboration)
+
 ## Integration categories
 
 You'll get different insights depending on where and how you choose to integrate
@@ -73,7 +82,7 @@ you've enabled the integration.
 
 The following code quality integrations are available:
 
-- [SonarQube](sonarqube.md)
+- [SonarQube](./code-quality/sonarqube.md)
 
 ### Source code management
 
